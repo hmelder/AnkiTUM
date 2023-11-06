@@ -1,3 +1,7 @@
+name: Generate Anki Packages
+
+on: [push]
+
 jobs:
   build:
     runs-on: ubuntu-latest
