@@ -8,6 +8,8 @@ Please note that AnkiTUM is in its early stages.
 ### Downloading
 Prebuilt flashcard packages (apkg files) are available as build artifacts from this repository's GitHub Actions workflows. They are generated automatically with each push to the repository and can be downloaded for immediate use.
 
+[Actions](https://github.com/hmelder/AnkiTUM/actions)
+
 ### Installation
 To install the prebuilt flashcard packages:
 

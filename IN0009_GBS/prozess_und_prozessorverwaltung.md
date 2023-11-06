@@ -57,3 +57,55 @@ Prozessen (Scheduling), wodurch der Eindruck simultaner Ausführung entsteht.
 
 Ist der Anteil der Wartezeit auf I/O für einen Prozess p, so ist die erwartete
 CPU-Auslastung bei n gleichzeitig laufenden Prozessen probabilistisch 1 - p^n.
+
+## Was sind die Zustände eines Prozesses?
+
+- **ready**: Der Prozess ist bereit zur Ausführung und wartet auf Zuweisung eines Prozessors.
+- **running**: Der Prozess wird aktuell auf dem Prozessor ausgeführt.
+- **blocked/waiting**: Der Prozess kann nicht fortgesetzt werden, bis ein bestimmtes Ereignis eintritt.
+- **swapped out/ausgelagert**: Der Prozess wurde aus dem Arbeitsspeicher ausgelagert.
+- **swapped in/eingelagert**: Ein ausgelagerter Prozess wird wieder in den Arbeitsspeicher geladen.
+
+## Was initiiert der Zustandsübergang 'add' bei einem Prozess?
+
+Der Zustandsübergang 'add' fügt einen neu erzeugten Prozess zur Menge der rechenwilligen (ready) Prozesse hinzu.
+
+## Welche Wirkung hat der Zustandsübergang 'assign' auf einen Prozess?
+
+Der Zustandsübergang 'assign' ordnet einem Prozess die CPU zu und ändert seinen Status auf 'running'.
+
+## Durch was wird der Zustandsübergang 'block' bei einem Prozess veranlasst?
+
+Der Zustandsübergang 'block' wird durch einen I/O-Aufruf oder eine
+Synchronisationsoperation ausgelöst und versetzt den Prozess in den Zustand
+'blocked/waiting'.
+
+## Wann erfolgt der Zustandsübergang eines Prozesses zurück in 'ready'?
+
+Der Zustandsübergang zurück in 'ready' erfolgt, nachdem die blockierende
+Operation beendet ist oder die Blockade aufgehoben wurde.
+
+## Welcher Zustandsübergang wird mit 'resign' beschrieben?
+
+Der Zustandsübergang 'resign' entzieht einem laufenden Prozess die CPU, wodurch
+er in den Zustand 'ready' zurückkehrt.
+
+## Was kennzeichnet den Zustandsübergang 'retire' bei einem Prozess?
+
+Der Zustandsübergang 'retire' tritt ein, wenn ein Prozess seine Ausführung
+beendet und aus dem System entfernt wird.
+
+## Was resultiert aus dem Zustandsübergang 'swap out' für einen Prozess?
+
+Der Zustandsübergang 'swap out' lagert einen Prozess aus dem Arbeitsspeicher in
+die Swap-Datei auf der Festplatte aus.
+
+## Welchen Zustand erreicht ein Prozess durch den Zustandsübergang 'swap in'?
+
+Durch den Zustandsübergang 'swap in' wird ein ausgelagerter Prozess wieder in
+den Arbeitsspeicher geladen.
+
+## Prozess vs. Thread
+
+- **Prozess**: Einzelne Ausführungseinheit mit eigenem Adressraum, die Ressourcen wie CPU und Speicher nutzt.
+- **Thread**: Leichtgewichtiger Prozess innerhalb eines Prozesses, der einen eigenen Kontrollfluss hat, aber Ressourcen mit anderen Threads teilt.
