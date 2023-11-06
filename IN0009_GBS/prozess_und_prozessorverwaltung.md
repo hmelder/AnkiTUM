@@ -109,3 +109,9 @@ den Arbeitsspeicher geladen.
 
 - **Prozess**: Einzelne Ausführungseinheit mit eigenem Adressraum, die Ressourcen wie CPU und Speicher nutzt.
 - **Thread**: Leichtgewichtiger Prozess innerhalb eines Prozesses, der einen eigenen Kontrollfluss hat, aber Ressourcen mit anderen Threads teilt.
+
+## Thread-Kontext
+
+Der Thread-Kontext umfasst den Programmzähler, die Registerwerte und einen
+eigenen Stack für Unterprogrammaufrufe (Stackpointer), die zur Verwaltung der
+Ausführungszustände eines Threads erforderlich sind.
