@@ -1,43 +1,37 @@
-name: Generate Anki Packages
-
-on: [push]
-
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check out repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v3
 
     - name: Set up Python 3.x environment
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
 
-    - name: Create Virtual Environment
-      run: python -m venv venv
-
-    - name: Install dependencies
+    - name: Install markdown-anki-decks
       run: |
-        . venv/bin/activate
-        pip3 install markdown-anki-decks
+        python -m venv venv
+        source venv/bin/activate
+        pip install markdown-anki-decks
 
-    - name: Generate Anki packages
+    - name: Generate Anki packages and compress
       run: |
+        source venv/bin/activate
         for dir in */ ; do
           if [[ -d "$dir" && ! -L "$dir" ]]; then
             dirname=$(basename "$dir")
-            mkdir -p "${dirname}_Result"
-            . venv/bin/activate
-            mdankideck "$dir" "${dirname}_Result"
+            result_dir="${dirname}_Result"
+            mkdir -p "$result_dir"
+            mdankideck "$dir" "$result_dir"
+            tar -czvf "${dirname}_cards.tar.gz" -C "$result_dir" .
           fi
         done
 
-    - name: Archive and upload results
-      uses: actions/upload-artifact@v2
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v3
       with:
-        name: anki-packages
         path: |
-          */*_Result/
+          *_cards.tar.gz
 
