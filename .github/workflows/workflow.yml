@@ -24,7 +24,7 @@ jobs:
       run: |
         source venv/bin/activate
         for dir in */ ; do
-          if [[ -d "$dir" && ! -L "$dir" ]]; then
+          if [[ -d "$dir" && ! -L "$dir" && "$dir" != "*/" ]]; then
             dirname=$(basename "$dir")
             result_dir="${dirname}_Result"
             mkdir -p "$result_dir"
@@ -37,5 +37,6 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         path: |
+          name: flashcards
           *_cards.tar.gz
 
