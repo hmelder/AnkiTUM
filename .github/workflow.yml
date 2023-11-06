@@ -1,0 +1,43 @@
+name: Generate Anki Packages
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python 3.x environment
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Create Virtual Environment
+      run: python -m venv venv
+
+    - name: Install dependencies
+      run: |
+        . venv/bin/activate
+        pip3 install markdown-anki-decks
+
+    - name: Generate Anki packages
+      run: |
+        for dir in */ ; do
+          if [[ -d "$dir" && ! -L "$dir" ]]; then
+            dirname=$(basename "$dir")
+            mkdir -p "${dirname}_Result"
+            . venv/bin/activate
+            mdankideck "$dir" "${dirname}_Result"
+          fi
+        done
+
+    - name: Archive and upload results
+      uses: actions/upload-artifact@v2
+      with:
+        name: anki-packages
+        path: |
+          */*_Result/
+
