@@ -1,6 +1,10 @@
 name: Generate Anki Packages
 
-on: [push]
+on:
+  push:
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
 
 jobs:
   build:
