@@ -47,12 +47,11 @@ Maintain this format to ensure proper flashcard generation.
 ### Guidelines
 We welcome contributions from TUM students to enhance and expand the AnkiTUM flashcard collection. To contribute, follow these guidelines:
 
-1. **Fork the Repository:** Start by forking the AnkiTUM repository to your GitHub account.
-2. **Create Your Flashcards:** Add or edit markdown files following the specified format for decks (h1 tags) and cards (h2 tags and content).
-3. **Test Locally:** Generate the flashcards locally using the provided instructions to ensure they are formatted correctly.
-4. **Commit Your Changes:** Once you've tested your flashcards, commit the changes to your forked repository.
-5. **Submit a Pull Request (PR):** Create a PR against the main AnkiTUM repository. Include a clear description of your changes and any other relevant information.
-6. **Review:** Wait for a repository maintainer to review your PR. Be responsive to any feedback or required changes.
+1. **Create Your Flashcards:** Add or edit markdown files following the specified format for decks (h1 tags) and cards (h2 tags and content).
+2. **Test Locally:** Generate the flashcards locally using the provided instructions to ensure they are formatted correctly.
+3. **Commit Your Changes:** Once you've tested your flashcards, commit the changes to your forked repository.
+4. **Submit a Pull Request (PR):** Create a PR against the main AnkiTUM repository. Include a clear description of your changes and any other relevant information.
+5. **Review:** Wait for a repository maintainer to review your PR. Be responsive to any feedback or required changes.
 
 ### Best Practices
 - Ensure your flashcards are accurate and relevant to the CS modules.
