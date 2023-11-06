@@ -46,6 +46,10 @@ The flashcards are structured in the markdown files as follows:
 
 Maintain this format to ensure proper flashcard generation.
 
+## Releases
+
+Modules are released when they reach a stable iteration, reflecting the latest contributions at that time.
+
 ## Contributing
 
 ### Guidelines
