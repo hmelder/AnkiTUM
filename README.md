@@ -3,6 +3,8 @@
 ## Overview
 AnkiTUM is a collaborative repository for computer science students at the Technical University of Munich to create and share flashcards for various CS modules. The flashcards are generated from markdown files, making it easy to contribute and maintain the content.
 
+Please note that AnkiTUM is in its early stages.
+
 ### Downloading
 Prebuilt flashcard packages (apkg files) are available as build artifacts from this repository's GitHub Actions workflows. They are generated automatically with each push to the repository and can be downloaded for immediate use.
 
