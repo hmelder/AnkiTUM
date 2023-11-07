@@ -18,8 +18,18 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install markdown-anki-decks
+    - name: Set up private key
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
+        echo "$SSH_PRIVATE_KEY" | base64 --decode > $HOME/.ssh/id_ed25519
+        chmod 600 $HOME/.ssh/id_ed25519
+        ssh-keyscan -H ${{ secrets.MIRROR_IP }} >> $HOME/.ssh/known_hosts
+
+    - name: Install dependencies
+      run: |
+        apt-get update
+        apt-get install -y --no-install-recommends zip make
         python -m venv venv
         source venv/bin/activate
         pip install markdown-anki-decks
@@ -27,15 +37,14 @@ jobs:
     - name: Generate Anki packages and compress
       run: |
         source venv/bin/activate
-        for dir in */ ; do
-          if [[ -d "$dir" && ! -L "$dir" && "$dir" != "*/" ]]; then
-            dirname=$(basename "$dir")
-            result_dir="${dirname}_Result"
-            mkdir -p "$result_dir"
-            mdankideck "$dir" "$result_dir"
-            tar -czvf "${dirname}_cards.tar.gz" -C "$result_dir" .
-          fi
-        done
+        make
+    
+    - name: Upload via SFTP
+      env:
+        MIRROR_IP: ${{ secrets.MIRROR_IP }}
+        MIRROR_USER: ${{ secrets.MIRROR_USER }}
+      run: |
+        sftp -i $HOME/.ssh/id_rsa $MIRROR_USER@$MIRROR_IP:/var/www/html/anki-decks <<< $'put -r build/*.zip'
 
     - name: Upload Artifacts
       uses: actions/upload-artifact@v3
