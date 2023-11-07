@@ -22,6 +22,7 @@ jobs:
       env:
         SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
+        mkdir -p $HOME/.ssh
         echo "$SSH_PRIVATE_KEY" | base64 --decode > $HOME/.ssh/id_ed25519
         chmod 600 $HOME/.ssh/id_ed25519
         ssh-keyscan -H ${{ secrets.MIRROR_IP }} >> $HOME/.ssh/known_hosts
