@@ -6,9 +6,7 @@ AnkiTUM is a collaborative repository for computer science students at the Techn
 Please note that AnkiTUM is in its early stages.
 
 ### Downloading
-Prebuilt flashcard packages (apkg files) are available as build artifacts from this repository's GitHub Actions workflows. They are generated automatically with each push to the repository and can be downloaded for immediate use.
-
-[Actions](https://github.com/hmelder/AnkiTUM/actions)
+Prebuilt flashcard packages (apkg files) are available on my HTTP [mirror](https://mirror.hugomelder.com/anki-decks/), and are updated automatically.
 
 ### Installation
 To install the prebuilt flashcard packages:
@@ -30,12 +28,9 @@ To generate flashcards on your local machine, you need to have Python installed.
 2. Navigate to the cloned directory.
 3. Create a virtual environment: `python -m venv ankitum-env`
 4. Activate the virtual environment:
-   - On Windows: `ankitum-env\Scripts\activate`
    - On macOS and Linux: `source ankitum-env/bin/activate`
 5. Install the required tool: `pip install markdown-anki-decks`
-6. Run the following command to generate Anki packages (.apkg) from the markdown files: `mdankideck DIRNAME DIRNAME_Result`
-
-Replace `DIRNAME` with the name of the directory containing the markdown files for which you wish to generate flashcards.
+6. Run `make`. This will create `build/` with all the resulting decks
 
 ## Flashcard Format
 The flashcards are structured in the markdown files as follows:
