@@ -27,6 +27,13 @@ Von 0xFFFF...FFFF nach 0x0000...0000!
 Der Prozesskontext umfasst alle Informationen, die ein Betriebssystem über einen
 Prozess speichert, um dessen Ausführungszustand zu verwalten.
 
+## Was ist der virtuelle Addressraum?
+
+Der virtuelle Addressraum ist eine Abstraktion des physischen Speichers.
+Jeder Prozess verfügt über einen eigenen Addressraum, die voneinnander
+*abgeschottet* sind.
+
+
 ## Prozesskontext im Betriebssystem: Registerzustände
 - Registerinhalte
 - Program Counter
@@ -110,8 +117,40 @@ den Arbeitsspeicher geladen.
 - **Prozess**: Einzelne Ausführungseinheit mit eigenem Adressraum, die Ressourcen wie CPU und Speicher nutzt.
 - **Thread**: Leichtgewichtiger Prozess innerhalb eines Prozesses, der einen eigenen Kontrollfluss hat, aber Ressourcen mit anderen Threads teilt.
 
+## Warum lässt sich ein Prozess und Thread konzeptuell trennen?
+
+Ressourcen und Kontrollfluss sind unabhängige Konzepte und lassen sich trennen.
+
+## Eigenschaften eines Threads
+
+- Abstraktion eines physischen Prozessors
+- Jeder Prozess hat einen eigenen Kontrollfluss
+- Threads eines Prozesses teilen sich den Addressraum
+- Eigener Befehlzähler
+
 ## Thread-Kontext
 
-Der Thread-Kontext umfasst den Programmzähler, die Registerwerte und einen
-eigenen Stack für Unterprogrammaufrufe (Stackpointer), die zur Verwaltung der
-Ausführungszustände eines Threads erforderlich sind.
+Der Thread-Kontext umfasst u.a:
+- Programmzähler
+- Registerwerte 
+- Stackpointer auf eigenem Stack
+
+## Was sind die 5 möglichen Zustände eines Threads?
+- (erzeugt)
+- rechenwillig
+- rechnend
+- wartend
+- terminiert
+
+## Warum haben Threads generell einen geringeren Overhead als Prozesse?
+
+- Einfache Kommunikation zwischen Threads einens Prozesses über gemeinsamen Addressraum (Anstelle von aufwendiger inter-prozess-communication (IPC))
+- Erstellen eines Threads wesentlich geringer als einen Prozess zu erzeugen (Faktor 10-100)
+- Schneller Kontextwechsel
+
+## Was ist der Process Control Block (PCB)?
+
+Speicherung von Informationen über:
+- *Prozessverwaltung*
+- *Speicherverwaltung* (engl. memory management)
+- *Dateiverwaltung* (engl. file management)
