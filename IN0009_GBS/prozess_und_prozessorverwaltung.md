@@ -154,3 +154,25 @@ Speicherung von Informationen über:
 - *Prozessverwaltung*
 - *Speicherverwaltung* (engl. memory management)
 - *Dateiverwaltung* (engl. file management)
+
+## Welche Informationen werden für die Speicherverwaltung eines Prozesses benötigt?
+
+Pointer zu Code-, Daten-, und Stack-Segment
+Anfang und Größe der Segmente.
+
+## Welche Informationen werden für die Dateiverwaltung eines Prozesses benötigt?
+
+- Root Verzeichnis
+- File Deskriptoren
+- UID und GID
+
+## Was ist eine Prozesstabelle
+
+Eine verkettete Liste von PCBs
+
+## BS Dienste zur Prozessverwaltung
+
+- Dienste zur Erzeugung eines Prozesses
+- Dienste zur Terminierung von Prozessen
+- Strategien zur Prozessorzuteilung (Scheduling)
+- Dienste zur Prozessor-Anbundung (Dispatching)
