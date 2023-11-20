@@ -280,3 +280,81 @@ anderen rechenbereitem Prozess/Thread zu
 2. **Sichert den Kontext** des zuvor rechnenden Prozesses/Threads im PCB
 3. **Lädt den Kontext** des rechenbereiten Prozesses/Threads
 4. **Ändert den Zustand** des rechenbereiten Prozesses zu rechnend
+
+## Strategische Entscheidungen des Schedulers
+Der Scheduler trifft strategische Entscheidungen darüber, welchen Prozess oder
+Thread er wann und wie lange an die CPU bindet. In Multiprozessor-Systemen
+entscheidet er auch, an welche CPU der Prozess gebunden wird.
+
+## Wie nutzt der Scheduler das typische Verhalten von Prozessen für das Scheduling?
+Der Scheduler berücksichtigt, dass CPU-Nutzungs-Bursts sich mit I/O-Wartephasen
+abwechseln. Er beachtet sowohl CPU-limitierte als auch I/O-limitierte Prozesse,
+um eine effiziente CPU-Zuteilung zu erreichen.
+
+## Scheduler-Aktivierung
+Der Scheduler wird bei bestimmten Ereignissen aktiv:
+- Erzeugung neuer Prozesse
+- Terminierung von Prozessen
+- Wenn ein Prozess blockiert wird (z.B. durch I/O oder Semaphoren)
+- Interrupts, wie beispielsweise von einem I/O-Gerät
+
+## Welche Rolle spielt der Scheduler bei Prozessblockierungen und Interrupts?
+- Prozessblockierungen: Entscheidungen bei Blockierung durch I/O, Semaphoren etc.
+- Belegte Ressourcen: Was passiert, wenn ein blockierender Prozess eine benötigte Ressource belegt?
+- Nächster Prozess: Auswahl, wenn der nächste Prozess die belegte Ressource benötigt.
+- Interrupts: Aufwecken blockierter Prozesse durch I/O-Geräte-Interrupts.
+- Timer-Interrupts: Scheduling-Entscheidungen bei jedem Timer-Interrupt.
+
+## Thread Implementierungen
+- User-Level-Threads (Scheduling im User-Space)
+  - Meistens nur koorperativ (nicht-preemptiv)
+- Kernel-Level-Threads
+  - Threadtabelle im Kern. BS kontrolliert Zuteilung. 
+  - Thread-Operationen führen zu einem Trap in den Kern (Syscall)
+- Hybride Implementierung (n:m Abbildung zwischen n Threads in User-Space und m
+Kernel Threads)
+
+## Vorteile von User-Level Threads
+- BS-unabhängig
+- Schnelles Umschalten zwischen User-Level-Threads (keine Syscalls)
+- Anwendungsspezifisches Scheduling
+
+## Nachteile von User-Level Threads
+- Blockieren eines Threads
+- Threads werden eingesetzt, um blockierende Aufrufe zu parallelisieren
+- Threads können die CPU monopolisieren
+
+## Vorteile von Kernel-Level Threads
+1. **CPU-Scheduling und Multi-Processing**:
+   - Echte Parallelität
+2. **Einfacheres Blocking und I/O-Operationen**:
+   - Wenn ein Kernel-Thread eine blockierende I/O-Operation durchführt, kann das Betriebssystem andere Threads im selben Prozess weiterlaufen lassen.
+   - User-Level-Threads würden bei einer blockierenden Operation den gesamten Prozess blockieren.
+3. **Prioritätsgesteuertes Scheduling**:
+   - Das Betriebssystem kann Kernel-Threads basierend auf Prioritäten planen, was für Echtzeitanwendungen entscheidend sein kann.
+
+## Nachteile von Kernel-Level Threads
+1. **Overhead bei der Kontextumschaltung**:
+   - System Calls notwendig
+2. **Höhere Erzeugungs- und Verwaltungskosten**:
+   - Das Erstellen und Verwalten von Kernel-Threads ist oft aufwendiger als bei User-Level-Threads.
+   - Jeder Kernel-Thread benötigt eigene Kernel-Ressourcen, was bei vielen Threads zu einem erhöhten Ressourcenbedarf führt.
+3. **Skalierbarkeitsprobleme**:
+   - Betriebssysteme begrenzen häufig die Anzahl der Threads, die ein Prozess haben kann, was die Skalierbarkeit von Anwendungen mit vielen Threads einschränken kann.
+4. **Geringere Flexibilität in der Scheduling-Politik**:
+   - Bei Kernel-Level-Threads ist das Scheduling meist fest im Kernel verankert, was die Anpassung an spezifische Anwendungsbedürfnisse erschwert.
+
+## Unix-Threads
+- UNIX-Systeme unterstützen Kernel-Level Threads.
+- LinuxThreads: Erste Thread-Implementierung unter Linux.
+	- Gemeinsame Ressourcen: Threads teilen Adressraum, Datei-Deskriptoren, Signale etc.
+	- Eigene IDs: Jeder Thread hat unterschiedliche PIDs und PPIDs.
+	- Manager-Thread: Benötigt für Erzeugung und Terminierung von Threads.
+	- Thread-Erzeugung: Verwendung des Systemcalls clone().
+- Java Threads (JVM Verwendet NPTL)
+	- Java Thread wird 1:1 auf einen Kernel-Level-Thread abgebildet
+
+## Wichtige POSIX Threads Funktionen
+- pthread_create (Erstellen eines neuen Threads)
+- pthread_exit (Aufrufender Thread wird beendet)
+- pthread_join (Warten auf die Terminierung und Rückgabewert des Threads)
