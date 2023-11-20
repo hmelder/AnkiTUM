@@ -176,3 +176,107 @@ Eine verkettete Liste von PCBs
 - Dienste zur Terminierung von Prozessen
 - Strategien zur Prozessorzuteilung (Scheduling)
 - Dienste zur Prozessor-Anbundung (Dispatching)
+
+## Auslöser einer Prozesserzeugung
+
+- Während der Systeminitialisierung (Init started daemons)
+- Durch andere Prozesse (z.B. via fork)
+- Durch einen Benutzer (Beispiel: Starten eines Programmes)
+- Durch das BS (z.B. Batch-Systeme)
+
+## Was macht der POSIX-Systemcall `fork`?
+
+- Kindprozess mit gleichem Speicherabbild (Kopie)
+	- Auch file descriptors
+- Vergabe einer neuen PID
+- Prozesse laufen unabhängig voneinander
+
+## Was ist die Besonderheit bei dem Rückgabewert von `fork`?
+
+Eltern-Prozess bekommt die PID des Kindes zurückgegeben, während der
+Kindprozess `0` zurückgegeben bekommt. Das kann nützlich sein, um
+z.B. das Speicherabbild des Kindes zu überschreiben.
+
+## Welche Arten der Prozessterminierung gibt es?
+
+- Normale Beendigung (freiwillig)
+  - `void exit (int status)`
+  - `return status` aus `main()`
+- Vorzeitige Beendigung durch Fehler (freiwillig)
+  - Fehler wird von Programm abgefangen. Programm terminiert.
+- Vorzeitige Beendigung durch *fatalen* Fehler
+  - Exception wird nicht abgefangen, oder kann nicht abgefangen werden (i.e. Segmentation Fault)
+- Terminierung durch einen anderen Prozess
+  - Durch senden eines Signals
+
+## Welche PID hat der Prozess init?
+
+PID=1. Init ist der erste Prozess der bei einem UNIX(-ähnlichen) System startet.
+
+## Wer started PID 1?
+
+Der Kernel.
+
+## (Extra) Was würde passieren, wenn PID 1 crashed?
+- Alle Kinder sind nun Weisen (Praktisch alle anderen Prozesse)
+- Init ist normalerweise verantwortlich für das Herunterfahren und Neustarten des Systemes
+- PID 1 kann nicht neugestartet werden -> System Neustart notwendig
+
+## Was ist eine Prozessgruppe?
+Eine Prozessgruppe ist eine Gruppe von einem oder mehreren Prozessen, die für
+Zwecke der Jobsteuerung und Signalverarbeitung als eine einzelne Einheit
+behandelt werden.
+
+Jeder Prozess inkl. seiner Kinder formen eine Prozessgruppe (Mit PPID identifiziert).
+
+## Warum sind Prozesshierarchien natürlich in UNIX(-ähnlichen) Systemen?
+Ein Prozess wird von einem bestehenden Prozess erstellt und ist somit sein Kind.
+Der erste Prozess (PID 1) wird allerdings vom BS gestartet.
+
+## Zombies in Prozesshierarchien
+- Entsteht, wenn ein Kind-Prozess seine Ausführung beendet, bevor der Eltern-Prozess endet.
+- Speicher des Kind-Prozesses wird freigegeben, aber sein Exit-Status wird in den Process Control Block (PCB) geschrieben, wodurch ein Zombie entsteht.
+- Belegen Platz in der Prozesstabelle.
+- Führen keinen Code mehr aus
+
+## Umgang mit Zombie-Prozessen
+- Der Eltern-Prozess kann `wait` oder `waitpid` verwenden, um auf die Beendigung des Kind-Prozesses zu warten.
+- Der Eltern-Prozess blockiert (wird in die Wait-Queue eingefügt), bis das Kind terminiert.
+- Nach der Beendigung des Kindes kann der Elternprozess den Grund der Terminierung erfragen.
+- Das Lesen des Exit-Status des Kindes entfernt den Zombie-Prozess.
+
+## Waisenprozesse
+- Waisen entstehen, wenn der Eltern-Prozess vor dem Kind-Prozess endet.
+- Der verwaiste Kind-Prozess wird vom Init-Prozess adoptiert (PPID = 1).
+
+## Was ist erforderlich, damit ein Waisenprozess zu einem Daemon wird?
+Loslösung von Gruppen-ID und Benutzer-ID und die Umleitung von Filedeskriptoren
+(stdin, stdout, stderr).
+
+## Prozesshierarchien in Windows
+- Windows hat keine Prozesshierarchien ähnlich wie Unix/Linux.
+- Jeder Windows-Prozess erhält bei der Erstellung einen eindeutigen Handle.
+- Handles können zwischen Prozessen übertragen werden.
+
+## Welche zwei Hauptaufgaben werden in der Prozessorverwaltung unterschieden?
+- Verwaltung in Dispatcher und Scheduler aufgeteilt. Der Dispatcher realisiert
+Prozess-Zustandsübergänge von rechenwillig nach rechnend, während der Scheduler
+die Reihenfolge der Prozessausführung bestimmt.
+
+## Welche Rolle spielt der Scheduler in der Prozessorverwaltung?
+
+- Verwaltet die Warteschlange der rechenwilligen Prozesse (Run
+Queue)
+- Wählt mit Hilfe von Scheduling-Algorithmen den nächste(n) Prozess(e) zur
+Ausführung aus
+
+## Was macht ein Dispatcher?
+- Implementiert Zustandsübergang zwischen rechnend und rechenwillig
+- Dispatcher entzieht dem rechnenden Prozess/Thread die CPU und teilt sie einem
+anderen rechenbereitem Prozess/Thread zu
+
+## Abfolge von Dispatching
+1. **Ändert den Zustand** des rechnenden Prozesses zu wartend oder rechenbereit
+2. **Sichert den Kontext** des zuvor rechnenden Prozesses/Threads im PCB
+3. **Lädt den Kontext** des rechenbereiten Prozesses/Threads
+4. **Ändert den Zustand** des rechenbereiten Prozesses zu rechnend
