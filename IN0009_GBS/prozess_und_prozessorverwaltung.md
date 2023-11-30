@@ -347,7 +347,7 @@ Kernel Threads)
 ## Unix-Threads
 - UNIX-Systeme unterstützen Kernel-Level Threads.
 - LinuxThreads: Erste Thread-Implementierung unter Linux.
-	- Gemeinsame Ressourcen: Threads teilen Adressraum, Datei-Deskriptoren, Signale etc.
+	- Gemeinsame Ressourcen: Adressraum, Datei-Deskriptoren, Signale etc.
 	- Eigene IDs: Jeder Thread hat unterschiedliche PIDs und PPIDs.
 	- Manager-Thread: Benötigt für Erzeugung und Terminierung von Threads.
 	- Thread-Erzeugung: Verwendung des Systemcalls clone().
@@ -358,3 +358,93 @@ Kernel Threads)
 - pthread_create (Erstellen eines neuen Threads)
 - pthread_exit (Aufrufender Thread wird beendet)
 - pthread_join (Warten auf die Terminierung und Rückgabewert des Threads)
+
+## Was sind Scheduling Ziele für alle Systeme?
+- **Fairness**: Jeder Prozess soll einen fairen Anteil der CPU erhalten
+- **Balance**: Alle Teile des Systems (CPU, I/O) möglichst effektiv auslasten
+
+## Was sind Scheduling Ziele für Batch-Systeme?
+- **Durchsatz**: Maximiere Anzahl der Aufträge pro Zeit, Maß für Systemauslastung
+- **Ausführungszeit**: Minimiere Ausführungszeit
+- **CPU Belegung**: Konstante Belegung der CPU
+
+## Was sind Scheduling Ziele für Interaktive-Systeme?
+- **Antwortzeit**: Minimiere die Antwortzeit für eingehende Anfragen
+- **Proportionalität**: Berücksichtige die Erwartungshaltung der Benutzer
+
+## Was sind Scheduling Ziele für Echtzeit-Systeme?
+- **Deadlines einhalten**: Vermeide Datenverlust (Soft-Deadlines).
+- **Vorhersagbarkeit**: Vermeide Qualitätsverlust z.B. in Multimediasystemen
+
+## Was sind Kriterien zur Auswahl von Prozessen
+- Fairness vs. Priorität
+- I/O vs. CPU-Bound Prozesse
+- Wartezeit
+- CPU-Belegung vs. Durchsatz
+
+## Welche prinzipiellen Scheduling-Klassen gibt es?
+- **Nicht-unterbrechend** (non-preemptive)
+- **Unterbrechend** (preemptive)
+
+## Was zeichnet nicht-unterbrechendes Scheduling aus?
+Prozesse werden so lange ausgeführt, bis sie blockieren oder freiwillig
+die CPU abgeben.
+
+## Was zeichnet unterbrechendes Scheduling aus?
+Prozesse werden beim Auftreten von bestimmten Ereignissen (z.B.
+Timer-Interrupt) unterbrochen.
+
+## Welche drei Scheduling Strategien können für Batch-Systeme genutzt werden? Sind sie unterbrechend?
+- **First-Come-First-Served** (FCFS): nicht unterbrechend
+- **Shortest Job First** (SJF): nicht unterbrechend
+- **Shortest Remaining Time Next** (SRTN) unterbrechend
+
+## Wie ist FCFS aufgebaut?
+- FIFO-Run-Queue (Ready-Queue) mit rechenwilligen Prozessen
+- Prozess wird so lange ausgeführt, bis er blockiert, oder freiwillig die CPU abgibt
+- Bei Abgabe wird der nächste Prozess aus der FIFO Queue aktiv
+
+## Welchen Nachteil hat die FCFS Scheduling Strategie?
+Der Hauptnachteil der FCFS-Scheduling-Strategie ist der Convoy-Effekt, bei dem
+lange Prozesse kürzere Prozesse in der Warteschlange blockieren, was zu
+ineffizienter CPU-Nutzung und längeren Wartezeiten führt.
+
+## Warum sind "Shortest Job First" und "Shortest Remaining Time Next" ungeeignet für Scheduling in interaktiven Systemen?
+Die Ausführungszeiten müssen vorab bekannt sein.
+
+## Wann wird ein Prozess bei "Shortest Remaining Time Next" unterbrochen?
+Bei Ankunft neuer Prozesse.
+
+## Wie funktioniert die SJF Scheduling Strategie?
+- CPU wird einem Prozess mit der kürzesten Rechenzeit zugewiesen
+
+## Wann ist die SJF Scheduling Strategie optimal?
+Wenn alle Jobs am Anfang vorliegen und alle Rechenzeiten bekannt sind.
+
+## Wie können auch Prozesse mit unbekannter Rechenzeit mit der SJF Scheduling Strategie verarbeitet werden?
+Die Rechenzeit wird in Phasen approximiert. Dabei wird die nächste Rechenphase
+abgeschätzt und mit der letzten (tatsächlichen) Ausführungszeit korrigiert.
+
+TODO: Formel
+
+## Beschreibe wie die SRTN Scheduling Strategie funktioniert.
+SRTN (Shortest Remaining Time Next) ist die unterbrechbare Variante von Shortest Job First (SJF).
+
+1. Sobald ein neuer Prozess rechenwillig wird, wird seine Gesamt-Rechenzeit mit
+der verbleibenden Zeit des aktiven Prozesses verglichen
+2. Ist die Rechenzeit des neuen Prozesses kürzer, wird der aktive Prozess unterbrochen.
+
+## Nenne zwei Scheduling Strategien für interaktive Systeme.
+- **Round-Robin Scheduling** (RR)
+- **Priority Scheduling**
+
+## Was passiert, wenn das Zeitquantum bei m Round-Robin Scheduling Algorithmus zu kurz gewählt wird?
+Es werden zu viele teure Kontextwechsel erzeugt.
+
+## Was passiert, wenn das Zeitquantum bei m Round-Robin Scheduling Algorithmus zu lang gewählt wird?
+Das Verhalten ist ähnlich wie bei einem FCFS-Scheduling, was zu langen
+Wartezeiten für andere Prozesse und einer verringerten Systemreaktivität führt.
+
+## Wie heißen die zwei vorgestellten Scheduling-Strategien für Echtzeit-Systeme?
+- **Earliest Deadline First** (EDF)
+- **Rate-Monotonic Scheduling** (RMS)
