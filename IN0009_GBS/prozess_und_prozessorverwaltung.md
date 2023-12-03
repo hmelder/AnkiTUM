@@ -448,3 +448,142 @@ Wartezeiten für andere Prozesse und einer verringerten Systemreaktivität führ
 ## Wie heißen die zwei vorgestellten Scheduling-Strategien für Echtzeit-Systeme?
 - **Earliest Deadline First** (EDF)
 - **Rate-Monotonic Scheduling** (RMS)
+
+## Beschreibe wie Priority Scheduling für interaktive Systeme funktioniert
+- Jedem Prozess wird eine Priorität zugewiesen
+- CPU wird einem rechenwilligen Prozess mit der höchsten Priorität zugewiesen
+- Prozesse mit gleicher Priorität werden in einer Queue verwaltet -> **Eine Queue pro Priorität**
+- **Kontextwechsel**: Sobald *höher-prioritisierter*, *rechenwilliger* Prozess bereit ist
+
+## Welche Probleme entstehen wenn beim Priority Scheduling die Prioritäten nur statisch gewählt werden?
+1. **Prozesse verhungern**: Niedrig prioritisierte Prozesse könnten keine CPU Zeit bekommen und verhungern
+2. **Flexibilität**: Gerade bei interaktiven System ändert sich die Priorität häufig.
+3. **Vorausplanen** der Priorität schwierig bei interaktiven Systemen
+
+## Wie könnte eine Dynamische Prioritisierung (z.B. nach einem Timer-Interrupt) ablaufen?
+- **Prioritätsverringerung**: Vermeiden, dass zu hoch-prioritisiere Prozesse endlos laufen
+- **Prioritätserhöhung**: Vermeiden, dass niedrig-prioritisiere Prozesse verhungern
+- **I/O-Boost**: Kurzzeitige Bervorzugung von I/O-Bound Prozessen
+
+## Welche Datenstruktur kann für die Dynamische Prioritisierung genutzt werden?
+Multilevel-Feedback-Warteschlange
+
+## Was ist ein weiches Echtzeit System?
+- Es wird toleriert, dass nicht alle Deadlines eingehalten werden (**soft deadlines**)
+- Beispiel: Verlieren von (Netzwerk-)Paketen während einer Videokonferenz
+
+## Was ist ein hartes Echtzeit System?
+- Harte Deadlines die eingehalten werden müssen
+- Bsp. Sicherheitskritische Anwendungen, oder Prozessabläufe
+
+## Earliest Deadline First (EDF)
+- CPU wird dem Prozess der *nächsten* **Deadline** zugeordnet
+- Preemptive: Prozess wird unterprochen, **sobald** ein Prozess mit einer früheren Deadline rechenwillig ist.
+- Non-preemptive (Prozess muss kooperieren. Kontextwechsel nach Beendigung, oder Yield)
+
+## Rate-Monotonic Scheduling (RMS)
+- Für **periodische Prozesse**
+- Prozess-Priorität in Abhängigkeit von der Periode zugeordnet
+- Deadline entspricht dem Ende der Periode 
+- Periode mit der höchsten Frequenz (kleinste Periode) -> Höchste Priorität
+- Periode wird statisch vergeben
+
+## Was ist das Hauptziel des Mehrschichtigen Schedulings?
+Das Hauptziel des Mehrschichtigen Schedulings ist es, nicht alle rechenwilligen Prozesse sofort im Speicher zu lagern, sondern dies vorab effizient zu organisieren.
+
+## Wie unterscheidet sich preemptive von non-preemptive Scheduling?
+Preemptive Scheduling erlaubt die Unterbrechung eines laufenden Prozesses, während non-preemptive Scheduling den Prozess bis zu seinem Ende ohne Unterbrechung laufen lässt.
+
+## Was ist die Aufgabe des Short-Term-Schedulers (STS)?
+Der Short-Term-Scheduler (STS) wählt geeignete Prozesse aus der Run-Queue (Ready-Queue) für die Ausführung aus und verwendet dabei verschiedene vorgestellte Verfahren.
+
+## Wahr oder Falsch: Der Dispatcher ist immer Teil des Short-Term-Schedulers.
+Wahr. Der Dispatcher ist in der Regel ein Bestandteil des Short-Term-Schedulers und wird sehr häufig aufgerufen.
+
+## Was ist die Funktion des Medium-Term-Schedulers (MTS)?
+Der Medium-Term-Scheduler (MTS) entscheidet, ob ein Prozess in den Speicher eingelagert werden soll und ist ein Teil des Swapping-Mechanismus.
+
+## Erkläre die Rolle des Long-Term-Schedulers (LTS).
+Der Long-Term-Scheduler (LTS) zielt darauf ab, einen guten Mix aus I/O-intensiven und rechenintensiven Prozessen zu erreichen und entscheidet über die Einlagerung neuer Aufträge in den Arbeitsspeicher.
+
+## Wie beeinflusst der Long-Term-Scheduler den Grad des Multiprogrammings?
+Der Long-Term-Scheduler steuert, wie viele Prozesse gleichzeitig im Arbeitsspeicher liegen, und beeinflusst somit den Grad des Multiprogrammings.
+
+## Wann wird der Long-Term-Scheduler typischerweise aufgerufen?
+Der Long-Term-Scheduler wird aufgerufen, sobald ein neuer Prozess erzeugt wird, und entscheidet, ob dieser zur Ready-Queue hinzugefügt werden soll.
+
+## Wahr oder Falsch: Der Long-Term-Scheduler ist immer in Betriebssystemen vorhanden.
+Falsch. Der Long-Term-Scheduler ist nicht immer vorhanden, zum Beispiel nicht unter Linux.
+
+## Was ist der Unterschied zwischen Short-Term- und Long-Term-Scheduling?
+Short-Term-Scheduling befasst sich mit der Auswahl von Prozessen zur Ausführung aus der Ready-Queue, während Long-Term-Scheduling entscheidet, welche Prozesse in den Speicher gelangen und den Multiprogramming-Grad beeinflusst.
+
+## Wie werden Threads unter Linux für das Scheduling behandelt?
+Unter Linux werden Threads 1:1 auf Kernel-Level-Threads abgebildet, was zu einem thread-basierten Scheduling führt.
+
+## Welche drei Thread-Klassen unterscheidet Linux beim Scheduling?
+Linux unterscheidet zwischen Echtzeit-FIFO, Echtzeit-Round-Robin und Timesharing-Threads.
+
+## Was war die Besonderheit des Linux-Schedulers bis zur Kernelversion 2.6?
+Bis zur Kernelversion 2.6 verwendete Linux den O(1)-Scheduler, der auf Priority Scheduling mit 140 Prioritäten basierte.
+
+## Was ist der Completely-Fair-Scheduler (CFS) und wie unterscheidet er sich vom O(1)-Scheduler?
+Der Completely-Fair-Scheduler (CFS), eingeführt ab Kernelversion 2.6, verwendet eine Red-Black Tree basierte Run-Queue und ordnet Prozesse nach ihrer bereits verbrauchten CPU-Rechenzeit an, im Gegensatz zum O(1)-Scheduler.
+
+## Wie sind die 140 Prioritäten im Linux-Scheduling verteilt?
+Von den 140 Prioritäten unter Linux sind 0-99 für Echtzeit-Threads und 100-139 für Timesharing-Threads reserviert.
+
+## Wahr oder Falsch: Echtzeit-Threads unter dem Standard-Linux-Kernel können für Echtzeitanwendungen genutzt werden.
+Falsch. Echtzeit-Threads können mit dem Standard-Linux-Kernel nicht für Echtzeitanwendungen genutzt werden.
+
+## Welche Herausforderungen ergeben sich beim Multicore-/Multiprozessorscheduling?
+Zu den Herausforderungen gehören die Zuordnung von Prozessen zu einzelnen Kernen/Prozessoren, unterschiedliche Charakteristika der Recheneinheiten und die Balance zwischen Scheduling-Qualität und -geschwindigkeit.
+
+## Was ist das Ziel beim Scheduling von N Prozessen auf M Prozessoren und warum ist es komplex?
+Ziel ist es, einen Schedule zu finden, der die Gesamtausführungszeit minimiert. Für M>1 ist dies äquivalent zum multiway number partitioning und somit NP-hard, was es komplex macht.
+
+## Was sind die Unterschiede zwischen Time Sharing und Space Sharing im Kontext des Schedulings?
+Time Sharing ermöglicht die abwechselnde Nutzung von Ressourcen, während Space Sharing abhängigen Prozessen den direkten Austausch und gemeinsame Ressourcennutzung erlaubt.
+
+## Was versteht man unter Gang Scheduling?
+Gang Scheduling ist eine Kombination von Time und Space Sharing, bei der abhängige Prozesse als eine Einheit behandelt werden und gemeinsame Zeitscheiben für die Ausführung erhalten.
+
+## Erkläre das Konzept der "Globalen Warteschlange" im Kontext von CPU-Management und Multi-CPU Scheduling.
+- Alle CPUs nutzen eine gemeinsame Warteschlange für Prozesse
+- Gute CPU-Auslastung und Fairness für alle Prozesse
+- Schlechte Skalierbarkeit durch lock contention und schlechte Cache Lokalität
+
+## Was sind die Vorteile einer Warteschlange für jede CPU bei Multi-CPU Scheduling?
+Implementierung, Skalierbarkeit durch die Vermeidung von lock contention, und
+bessere Cache Lokalität.
+
+## Nenne einen Nachteil der Verwendung einer Warteschlange für jede CPU.
+Ungleiche Auslastung der CPUs, was zu Unfairness gegenüber Prozessen führen kann.
+
+## Was ist die hybridge Implementierung von CPU und Prozess Warteschlangen?
+- Verwendung einer globalen mit lokalen Warteschlangen
+- Verschiebung von lokale Warteschlange in eine andere
+   - Gute Auslastung
+   - Wiederverwendung von Daten im Cache
+
+## Was versteht man unter der Heterogenität von Prozessen?
+- Ausführungszeit eines Prozesses stark von der Wahl des Prozessors ab
+- **Cache Reuse**: Weiternutzen von existierenden Daten im Cache eines Prozessors
+- **Hitze**: Beispiel: Perfomance vs. Efficiency Cores
+
+## Was ist NUMA (Non-Uniform Memory Access)
+Zugriffszeit auf den Arbeitsspeicher ist nicht für alle Prozessoren identisch.
+Prozesse sollten möglichst nahe an dem von ihnen benötigten Speicher ausgeführt werden.
+
+## Nenne eine alternative Architektur, die den Kernel parallelisiert
+- Konzept heißt Multi-Kernel
+- Bisher:
+   - Bei paralleler Ausführung werden oftmals kritische Abschnitte geschützt (skaliert schlecht)
+   - Kernel muss für alle Applikationen möglichst gut sein
+- Aufteilung: Ein Kern pro Rechenkern oder NUMA-Knoten
+- Zustandsreplizierung zwischen verschiedenen Kernen
+
+## Datenzentrischer Kernel
+- Betriebsystem aggregiert und verwaltet viele Daten
+- Idee: Zentralisieren aller Daten in einer Datenbank
+- Bisher nur ein Konzept
