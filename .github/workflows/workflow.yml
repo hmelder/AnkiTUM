@@ -42,7 +42,7 @@ jobs:
     - name: Generate Anki packages and compress
       run: |
         source venv/bin/activate
-        sh build.sh
+        ./build.sh
     
     - name: Upload via SFTP
       env:
