@@ -37,6 +37,7 @@ jobs:
         python -m venv venv
         source venv/bin/activate
         git clone https://github.com/hmelder/AnkiTUM-Runtime
+        pip3 install -r AnkiTUM-Runtime/requirements.txt
         pip3 install ./AnkiTUM-Runtime
 
     - name: Generate Anki packages and compress
