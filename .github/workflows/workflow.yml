@@ -32,19 +32,20 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y --no-install-recommends zip make
+        sudo apt-get install -y --no-install-recommends zip git
         python -m venv venv
         source venv/bin/activate
-        pip install markdown-anki-decks
+        git clone https://github.com/hmelder/AnkiTUM-Runtime
+        pip3 install ./AnkiTUM-Runtime
 
     - name: Generate Anki packages and compress
       run: |
         source venv/bin/activate
-        make
+        sh build.sh
     
     - name: Upload via SFTP
       env:
         MIRROR_IP: ${{ secrets.MIRROR_IP }}
         MIRROR_USER: ${{ secrets.MIRROR_USER }}
       run: |
-        sftp -i $HOME/.ssh/id_rsa $MIRROR_USER@$MIRROR_IP:/var/www/html/anki-decks <<< $'put -r build/*.zip'
+        sftp -i $HOME/.ssh/id_rsa $MIRROR_USER@$MIRROR_IP:/var/www/html/anki-decks/beta <<< $'put -r build/*.zip'

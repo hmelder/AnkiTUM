@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DIRS="IN0009_GBS"
+DIRS="IN0009_GBS example"
 
 function build() {
 	mkdir -p build
@@ -9,10 +9,17 @@ function build() {
 		cd $dir
 		echo "Building $dir"
 
+		shopt -s nullglob
 		for deck in *.yaml; do
-			echo "Building Deck $deck"
-			ankitum $deck -o ../build/$dir/${deck%.yaml}.apkg
+			if [ -f "$deck" ]; then
+				echo "Building Deck $deck"
+				ankitum $deck -o ../build/$dir/${deck%.yaml}.apkg
+			fi
 		done
+		shopt -u nullglob
+
+		# Zip the generated decks
+		zip ../build/$dir.zip ../build/$dir/*.apkg
 		cd ..
 	done
 }
