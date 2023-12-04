@@ -33,11 +33,11 @@ jobs:
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y --no-install-recommends zip git
+        sudo apt-get install -y --no-install-recommends zip git python3.12-dev
         python -m venv venv
         source venv/bin/activate
         git clone https://github.com/hmelder/AnkiTUM-Runtime
-        python -m pip install --upgrade setuptools
+        pip3 install --upgrade setuptools
         pip3 install -r AnkiTUM-Runtime/requirements.txt
         pip3 install ./AnkiTUM-Runtime
 
