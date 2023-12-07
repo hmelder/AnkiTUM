@@ -13,7 +13,7 @@ function build() {
 		for deck in *.yaml; do
 			if [ -f "$deck" ]; then
 				echo "Building Deck $deck"
-				ankitum $deck -o ../build/$dir/${deck%.yaml}.apkg
+				ankitum $deck -l ../resources -o ../build/$dir/${deck%.yaml}.apkg
 			fi
 		done
 		shopt -u nullglob
