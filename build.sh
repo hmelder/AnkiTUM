@@ -1,27 +1,36 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
-DIRS="IN0009_GBS example"
+dirs=()
 
-function build() {
-	mkdir -p build
-	for dir in $DIRS; do
-		mkdir -p build/$dir
-		cd $dir
-		echo "Building $dir"
+for subdir in ./*/; do
 
-		shopt -s nullglob
-		for deck in *.yaml; do
-			if [ -f "$deck" ]; then
-				echo "Building Deck $deck"
-				ankitum $deck -l ../resources -o ../build/$dir/${deck%.yaml}.apkg
-			fi
-		done
-		shopt -u nullglob
+    # search all folders except "build"
+    if [ -d "$subdir" ] && [ "$(basename "$subdir")" != "build" ]; then
+        dirs+=("$subdir")
+    fi
+done
 
-		# Zip the generated decks
-		zip ../build/$dir.zip ../build/$dir/*.apkg
-		cd ..
-	done
-}
+# create output folder
+mkdir -p build
 
-build
+# loop over directories
+for dir in "${dirs[@]}"; do
+    mkdir -p build/$dir
+    echo "Building $dir"
+    (
+        shopt -s nullglob
+        for deck in "$dir"/*.yaml; do
+            echo $deck
+            if [ -f "./$deck" ]; then
+                echo "Building Deck $dir/$deck"
+
+                # make deck
+                deckname=$(basename "$deck")
+                ankitum "$deck" -l ./tum_logo.png -o ./build/$dir/"${deckname%.yaml}".apkg --debug
+            fi
+        done
+        shopt -u nullglob
+
+        zip ./build/$dir.zip ./build/$dir/*.apkg
+    )
+done
