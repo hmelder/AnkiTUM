@@ -1,19 +1,9 @@
 #!/bin/bash
 
-dirs=()
+dirs=("IN0009_GBS" "example")
 
-for subdir in ./*/; do
-
-    # search all folders except "build"
-    if [ -d "$subdir" ] && [ "$(basename "$subdir")" != "build" ]; then
-        dirs+=("$subdir")
-    fi
-done
-
-# create output folder
 mkdir -p build
 
-# loop over directories
 for dir in "${dirs[@]}"; do
     mkdir -p build/$dir
     echo "Building $dir"
