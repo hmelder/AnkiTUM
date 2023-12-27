@@ -50,4 +50,4 @@ jobs:
         MIRROR_IP: ${{ secrets.MIRROR_IP }}
         MIRROR_USER: ${{ secrets.MIRROR_USER }}
       run: |
-        sftp -i $HOME/.ssh/id_rsa $MIRROR_USER@$MIRROR_IP:/var/www/html/anki-decks/beta <<< $'put -r build/*.zip'
+        sftp -i $HOME/.ssh/id_rsa $MIRROR_USER@$MIRROR_IP:/var/www/html/anki-decks <<< $'put -r build/*.zip'
