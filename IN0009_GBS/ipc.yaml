@@ -1,0 +1,338 @@
+title: 'GBS: Kapitel 5: Inter-Prozesskommunikation (IPC)'
+author: AnkiTUM
+cards:
+- type: basic
+  format: md
+  front: Nenne drei Arten der Kommunikation zwischen Prozessen bzw. Threads.
+  back: |+
+    - Signalisierung von **Ereignissen**
+    - Austausch von **Nachrichten**
+      - Auch komplexe Kommunikationsprotokolle möglich (z.B. TCP, UDP)
+    - **Gemeinsamer Speicher**
+
+- type: basic
+  format: md
+  front: Sind Linux Signale ein schmal, oder breitbandiger Kanal?
+  back: |+
+    Schmalbanding. Prozesse können sich gegenseitig Signale senden, und bestimmte Signale explizit mithilfe einer Handler Routine abfangen.
+
+    SIGKILL und SIGSTOP können nicht abgefangen werden.
+
+- type: basic
+  format: md
+  front: Was passiert wenn der Prozess ein Linux Signal nicht abfängt?
+  back: |+
+    Er wird vom Betriebsystem **beendet**.
+
+- type: basic
+  format: md
+  front: Was ist ein Vorteil und ein Nachteil der Impliziten Kommunikation mittels
+    Shared Memory?
+  back: |+
+    Einfach und schnell, da kein Kopieren zwischen Adressräumen benötigt wird. Es werden aber Synchronisationsmechanismen benötigt, die u.u. eine weitere schmalbandige Kommunikation benötigt.
+
+- type: basic
+  format: md
+  front: Wofür werden schmalbandige Kanäle u.a. genutzt?
+  back: |+
+    - Übertragen von wenigen Btis an Infromation
+    - Melden von Ereignissen
+    - Synchronisationskonzepte und Unterbrechungskonzepte erforderlich
+
+- type: basic
+  format: md
+  front: Nenne zwei Methoden zur expliziten Übertrageung von größeren Datenmengen.
+  back: |+
+    - Pipes
+    - Sockets
+
+- type: basic
+  format: md
+  front: Nenne eine Methode zur impliziten, aber schnellen Übertragung von größeren
+    Datenmengen zwischen Prozessen.
+  back: |+
+    Shared Memory bzw. `mmap`.
+
+- type: basic
+  format: md
+  front: Inwiefern beeinflusst Synchronität den **Kopplungsgrad** zwischen Prozessen
+  back: |+
+    - **synchron**: beide Prozesse werden zur Nachrichtenübertragung synchronisiert, blockierend.
+    - **asynchron**: Entkopplung von Sender und Empfänger nicht blockierend
+
+- type: basic
+  format: md
+  front: Welche zwei primären **Muster** der Nachrichtenkommunikation gibt es?
+  back: |+
+    - Meldung: Unidirektional
+    - Auftrag (Request - Response): Bidirektional
+
+- type: basic
+  format: md
+  front: Wie läuft eine asynchrone Meldung zwischen Sender und Empfänger ab?
+  back: |+
+    1. **Sender** (S) übergibt die Nachricht an den **Nachrichtendienst** des Betriebsystems (`send()`)
+    2. BS puffert Nachrichten. Sender wartet nicht.
+    3. **Empfänger** (E) kann Nachricht mittels `recv()` empfangen. Wenn keine Nachricht gepuffert ist, wird der Empfänger blockiert.
+
+- type: basic
+  format: md
+  front: Wie läuft eine synchrone Meldung zwischen Sender und Empfänger ab?
+  back: |+
+    - **Empfänger** sendet nach Erhalt der Nachricht eine Bestätigung
+    - Sender wartet nach dem Senden auf die Empfangsbestätigung
+    - Empfangsbestätigung enthält hier keine Daten sondern dient nur der Synchronisation
+
+- type: basic
+  format: md
+  front: Beschreibe wie ein asynchroner Auftrag abläuft.
+  back: |+
+    - Auftrag und Resultat werden als **unabhängige Meldungen** verschickt
+    - Zwischen `send()` und `recv()` kann der Sender weitere Aufträge versenden
+    - Aufträge können an den **gleichen** oder **andere Empfänger** gesendet werden
+
+- type: basic
+  format: md
+  front: Beschreibe wie ein synchroner Auftrag abläuft.
+  back: |+
+    Sender wartet auf Antwort, während Empfänger antwort bearbeitet.
+
+- type: basic
+  format: md
+  front: Nenne drei Vorteile von asynchronem Senden.
+  back: |+
+    - Nützlich für **Echtzeitanwendungen**, wenn sendender Prozess nicht blockiert werden darf
+    - Ermöglicht **parallele Abarbeitung** durch Sender und Empfänger
+    - Anwendbar zum Signalisieren von Ereignissen
+
+- type: basic
+  format: md
+  front: Was sind zwei Nachteile von asynchronem Senden?
+  back: |+
+    - **Verwaltungsoverhead** im Betriebssystem (Puffer für Nachrichten)
+    - **Behandlung von Fehlern** schwieriger
+
+- type: basic
+  format: md
+  front: Beschreibe wie Message Passing funktioniert.
+  back: |+
+    Semaphoren werden durch `send()` und `recv()` Aufrufe ersetzt. Synchronisation auf BS Ebene.
+
+- type: basic
+  format: md
+  front: Wie können Datenströme (Streams) übertragen werden?
+  back: |+
+    - Nachrichten werden auf demm Kommunikationsweg **gepuffert**
+    - Als **logischer Bytestrom** vereinigt
+    - Bytestrom **kann unabhängig von den Nachrichtengrenzen** verarbeitet werden
+    - **Dienste im Betriebsystem**: Verbindungsauf- und -abbau, lesen und schreiben in Strom
+
+- type: basic
+  format: md
+  front: Eine Pipe ist ein bidirektionaler Strom. Ja oder Nein?
+  back: |+
+    Nein. Eine Pipe ist ein **unidirektionaler Strom**.
+    Eine bidirektionale Kommunkation mit Paaren von Pipes.
+
+- type: basic
+  format: md
+  front: Was ist der Unterschied zwischen anonymen und named Pipes?
+  back: |+
+    - `pipe()` erstellt zwei Kommunikationsendpunkte (erstellen einer anonymen Pipe)
+    - Ein Endpunkt kann mittels Fork an den Kindprozess übergeben werden (Oder Threads)
+    - Named pipes als "virtuelle Datei", da sie im Dateisystem verlinkt sind.
+
+- type: basic
+  format: md
+  front: Warum werden Ports benötigt?
+  back: |+
+    Es wird eine System-unabhängige Addressierungsart für ein System benötigt, da PIDs nicht eindeutig identifizierend sind.
+
+- type: basic
+  format: md
+  front: Warum gibt es eine Teilmenge an Ports die für die dynamische Nutzung bestimmt
+    sind?
+  back: "Einen festen Port haben nur Prozesse, die oftmals per Konvention über diesen
+    Port erreichbar sind. Prozesse die diese Dienste kontaktieren können \n\n"
+- type: basic
+  format: md
+  front: Beschreibe das Rendezvous-Problem.
+  back: |+
+    Sender und Empfänger stellen vor Austausch der Meldung die Sende- und Empfangsbereitschaft her
+
+- type: basic
+  format: md
+  front: Welche System Calls können für das Lesen, Schreiben und Schließen von File-Deskriptoren
+    verwendet werden?
+  back: |+
+    `read()`, `write()`, `close()`.
+
+- type: basic
+  format: md
+  front: Was macht `connect()` auf einem Socket?
+  back: |+
+    Initiiert eine Verbindung zu einem entfernten Host.
+
+    Es wird typischerweise von einem Client verwendet, um eine Verbindung mit
+    einem Server herzustellen, indem die IP-Adresse und der Port des Servers
+    angegeben werden.
+
+- type: basic
+  format: md
+  front: Was macht `bind()` auf einem Socket?
+  back: |+
+    Weist dem Socket eine lokale Adresse (Interface) und Port zu
+
+- type: basic
+  format: md
+  front: Was macht `listen()` auf einem Socket?
+  back: |+
+    Versetzt Socket in einen passiven Modus, wo er auf eingehende Verbindungsanfragen warten kann.
+
+- type: basic
+  format: md
+  front: Wie können Sockets gesteuert werden?
+  back: |+
+    `setsockopt()`, `getsockopt()`, `ioctl()`.
+
+- type: basic
+  format: md
+  front: Wie funktioniert Reference Counting und wo wird es u.a. im Kernel genutzt?
+  back: |+
+    Eine Resource verfügt über einen Zähler der alle Referenzen auf die Resource zählt.
+    Wenn ein Prozess z.B. einen File Descriptor öffnet, wird der Zähler für den File Descriptor inkrementiert, wenn die Resource geschlossen wird dekrementiert.
+
+    Üblicherweise wird die Ressource dealloziert, wenn Zähler == 0.
+
+- type: basic
+  format: md
+  front: Wie kann man zwei unterschiedliche Prozesse mit einer anonymen Pipe verbinden?
+  back: |+
+    1. **Pipe Erstellen**: Elternprozess erstellt eine `pipe()`
+    2. **Prozess Aufspalten**: Spaltung durch `fork()`.
+      - Beide Prozesse erben die Dateideskriptoren der Pipe
+    3. **Dateideskriptoren Schließen**:
+      - Im **Elternprozess** wird der Lese-Ende-Dateideskriptor der Pipe geschlossen, wenn der Elternprozess Daten
+    an den Kindprozess senden soll. Der Elternprozess verwendet dann den Schreib-Ende-Dateideskriptor,
+    um Daten in die Pipe zu schreiben.
+    - Im **Kindprozess** wird entsprechend der Schreib-Ende-Dateideskriptor geschlossen, wenn er Daten vom Elternprozess
+    lesen soll. Der Kindprozess verwendet dann den Lese-Ende-Dateideskriptor, um Daten
+    aus der Pipe zu lesen.
+    4. **Kommunikation Durchführen**:
+      - Der **Elternprozess** schreibt Daten mit `write()`
+      - Der **Kindprozess** liest Daten wie `read()`
+    5. **Pipe Schließen**: Schließen beider Enden der Pipe
+
+- type: basic
+  format: md
+  front: Was ist das Client-Server-Modell?
+  back: |+
+    Client-Programme senden Anfragen an Server-Programme, die Ressourcen oder Dienste bereitstellen.
+
+- type: basic
+  format: md
+  front: Beschreibe das Peer-to-Peer Modell (P2P).
+  back: |+
+    Teilnehmer (Peer) sowohl als Client als auch als Server fungiert. In einem P2P-Netzwerk kommunizieren Peers direkt miteinander, um Ressourcen wie Dateien oder Dienste ohne zentrale Koordination zu teilen und auszutauschen.
+
+- type: basic
+  format: md
+  front: Was ist DBus?
+  back: |+
+    Desktop Bus (DBus) ist ein **Software-Bussystem**, was das mithören von Nachrichten anderer Teilnehmer (Prozesse) ermöglicht.
+    Es erspart eine teure 1:1 Verbindung zwischen Kommunikationspartnern und wird für schmalbandige Kommunikation eingesetzt.
+
+- type: basic
+  format: md
+  front: Wie werden Dienste über DBus addressiert?
+  back: |+
+    Über Namen (Well-Known Names)
+
+- type: basic
+  format: md
+  front: Beschreibe den Ablauf für den Socket Setup eines Servers (6 Schritte)
+  back: |+
+    1. `socket()`: Erzeugung eines ungebundenen Sockets
+    2. `bind()`: Socket wird mit einem bestimmten Port verbunden
+    3. `listen()`: Server wartet auf Verbindungswünsche
+    4. `accept()`: Akzeptieren eines Verbindungswünsches -> Neuer Socket
+    5. `read/write()`: Austausch von Daten zwischen Client und Server
+    6. `close()`: Schließen der Verbindung auf Serverseite
+
+- type: basic
+  format: md
+  front: Beschreibe den Ablauf für den Socket Setup eines Servers (4 Schritte)
+  back: |+
+    1. `socket()`: Erzeugung eines ungebundenen Sockets
+    2. `connect()`: Socket wird mit dem Port des Servers verbunden
+    3. `read/write()`: Austausch von Daten zwischen Client und Server
+    4. `close()`: Schließen der Verbindung auf Clientseite
+
+- type: basic
+  format: md
+  front: Was ist der Unterschied zwischen SOCK_STREAM und SOCK_DGRAM?
+  back: |+
+    - **SOCK_STREAM**: TCP = stromorientierte Kommunikation
+    - **SOCK_DGRAM**: UDP = nachrichtenbasierte Kommunikation
+
+- type: basic
+  format: md
+  front: Inwiefern unterscheidet sich das Senden von Daten bei TCP und UDP in POSIX?
+  back: |+
+    - TCP: `write` und `writev` (mit iovec vector) und `send` für weitere Steuerung durch Flags
+    - UDP: `sendto` und `sendmsg`
+
+- type: basic
+  format: md
+  front: Mit welcher Funktion kann ein host long zu network byte-order konvertiert
+    werden?
+  back: "`htonl`, wobei long 32-bit groß ist. \n\n"
+- type: basic
+  format: md
+  front: Wie setzt sich der Funktionsname `htonl` zusammen?
+  back: |+
+    **h**ost **to** **n**etwork **l**ong
+
+    Umgekehrt auch ntoh{s,l}.
+
+- type: basic
+  format: md
+  front: Was sind Message Queues?
+  back: |+
+    - Verkettete Listen, die vom Kernel verwaltet werden
+    - Identifiziert durch einen eindeutigen Identifier (Key)
+    - Erlaubt asynchronen Nachrichtenaustausch
+
+- type: basic
+  format: md
+  front: Wie funktioniert `select` im Kontext von I/O Multiplexing?
+  back: |+
+    - Gleichzeitig auf mehrere I/O-Quellen warten
+    - Warten auf Ereignisse an mehreren File-Deskriptoren (In seperaten `fd_set`s), ohne ständig zu überprüfen, ob diese Ereignisse eingetreten sind (Kein Busy Wait)
+    - `readset`, `writeset`, `extset` (error fd) als File Deskriptoren zur Überwachung
+
+- type: basic
+  format: md
+  front: Beschreibe was die Funktion `poll` macht.
+  back: |+
+    - **File-Deskriptor-Liste**: Anstatt separate Sets von File-Deskriptoren wie bei `select` zu verwenden, nimmt poll eine Liste von pollfd Strukturen.
+    - poll-Funktion **blockiert**, bis eines der folgenden Ereignisse eintritt:
+
+- type: basic
+  format: md
+  front: 'Ja oder Nein: Die Funktion `poll` betreibt polling (= Busy waiting)'
+  back: |+
+    Nein. Die Funktion blockiert, bis eine Aktion eintritt.
+
+- type: basic
+  format: md
+  front: In welcher Einheit erlaubt `poll` einen Timeout?
+  back: |+
+    Millisekunden
+
+- type: basic
+  format: md
+  front: In welcher Einheit erlaubt `select` einen Timeout?
+  back: |
+    In Mikrosekunden mittels `struct timeval`.
+id: 2320780470485807225

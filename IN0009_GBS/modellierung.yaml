@@ -1,0 +1,127 @@
+title: 'GBS: Kapitel 4: Modellierung'
+author: AnkiTUM
+cards:
+- type: basic
+  format: md
+  front: Wie werden Stellen in einem Petri-Netz repräsentiert?
+  back: |+
+    S ist die endliche Menge von Stellen. Sie werden graphisch als Kreise repräsentiert.
+
+- type: basic
+  format: md
+  front: Wie werden Transitionen in einem Petri-Netz repräsentiert?
+  back: |+
+    T ist die endliche Menge von Transitionen. Sie werden Graphisch als Rechtecke repräsentiert.
+
+- type: basic
+  format: md
+  front: Aus welcher Menge wird die Flussrelation eines Petri-Netzes konstruiert?
+  back: |+
+    (S x T) union (T x S)
+
+- type: basic
+  format: md
+  front: Welche Kapazität hat eine Stelle die nicht explizit markiert wurde?
+  back: |+
+    Unendlich.
+
+- type: basic
+  format: md
+  front: Wann kann eine Transition schalten?
+  back: |+
+    Im folgenden ist M(s) die Belegung an der Stelle s, w(s, t) das Kantengewicht, und c(s) die maximal Belegung der Stelle s.
+
+    t ist eine Transition in T.
+
+    1. Für alle s in .t (Eingehende Stellen) gilt: M(s) >= w(s, t)
+    2. Für alle s' in t. (Ausgehende Stellen) gilt: M(s') <= c(s') - w(t, s')
+
+    Generell kann eine Transition also nur schalten, wenn alle Belegungseinschränkungen vor und nach der Transition nicht verletzt werden.
+
+- type: basic
+  format: md
+  front: Kann sich die Anzahl von Tokens im Laufe der Ausführung ändern?
+  back: |+
+    Ja, z.B kann eine Transition Token duplizieren. Dies geschieht, wenn eine Transition mehrere Ausgangskanten hat, die zur selben Stelle oder zu verschiedenen Stellen führen, wodurch die Anzahl der Token als Ergebnis des Auslösens der Transition effektiv erhöht wird.
+
+- type: basic
+  format: md
+  front: Beschreibe wie die Nebenläufigkeit in einem Petri-Netz modelliert werden
+    kann.
+  back: |+
+    Zwei Transitionen t0 und t1 sind nebenläufig, wenn sie unabhängig von einander schalten können, ohne sich gegenseitig zu beeinflussen.
+
+- type: basic
+  format: md
+  front: Wie kann einen nichtdeterministische Auswahl modelliert werden?
+  back: |+
+    Zwei Transitionen t0 und t1 stehen im Konflikt, wenn sie gemeinsame
+    Eingangs- oder Ausgangsstellen besitzen, und die Anzahl und Verteilung der
+    Marken nur ausreicht, um eine der beiden Transitionen zu aktivieren.
+
+    Es entsteht eine Konkurrenzsituation oder ein Konflikt. In diesem Fall kann
+    entweder t0 oder t1 schalten, aber nicht beide gleichzeitig.
+
+    In einem solchen Szenario muss eine Entscheidung getroffen werden, welche Transition
+    zuerst schaltet, wir gehen von einem nichtdeterminismus aus.
+
+- type: basic
+  format: md
+  front: Wann ist die Belegung M' von M in einem Petri-Netz erreichbar?
+  back: |+
+    Wenn es eine endliche Sequenz an Transitionen (bzw. Schaltfolgen) gibt, die M in den Endzustand M' überführt.
+
+- type: basic
+  format: md
+  front: Wie kann ein Deadlock mithilfe des Erreichbarkeitsgraphen erkannt werden?
+  back: |+
+    Ein Deadlock kann im Erreichbarkeitsgraphen identifiziert werden, indem man nach Knoten sucht, von denen aus keine ausgehenden Kanten (Transitionen) vorhanden sind.
+
+- type: basic
+  format: md
+  front: Wann ist ein Petri-Netz lebendig?
+  back: |+
+    Ein Petri-Netz gilt als lebendig, wenn es aus jedem erreichbaren Zustand möglich ist, jede Transition des Netzes irgendwann in der Zukunft zu schalten. Lebendigkeit ist also eine Sicherstellung, dass keine Transition für immer blockiert oder deaktiviert wird.
+
+- type: basic
+  format: md
+  front: Beschreibe was eine vollständige Verklemmung ist.
+  back: |+
+    Eine vollständige Verklemmung in einem Petri-Netz, auch als Deadlock bezeichnet, tritt auf, wenn das Netzwerk einen Zustand erreicht, in dem keine Transitionen mehr schalten können.
+
+- type: basic
+  format: md
+  front: Wenn ein Petri-Netz lebendig ist, ist es dann auch verklemmungsfrei?
+  back: |+
+    Ja.
+
+- type: basic
+  format: md
+  front: Wenn ein Petri-Netz verklemmungsfrei ist, ist es dann auch lebendig?
+  back: |+
+    Nein.
+
+- type: basic
+  format: md
+  front: Wann verhungert eine Transition?
+  back: |+
+    Eine Transition t in T verhungert, wenn es eine unendliche Sequenz gibt, in der t **trotz** Transitionsbereitschaft endlich oft auftritt.
+
+- type: basic
+  format: md
+  front: Definiere Fairness als Eigenschaft von Petri-Netzen.
+  back: |+
+    Das Netz ist fair wenn für alle Transitionen t ∈ T gilt:
+
+    Es gibt keine unendliche Sequenz (t0 → t4 → t1 → ...) in der t nur endlich oft auftritt, obwohl t unendlich oft transitionsbereit ist.
+
+    Es gibt also keine Transition, die verhungern kann.
+
+- type: basic
+  format: md
+  front: Nenne zwei Wege Semaphoren in Petri-Netzen zu modellieren.
+  back: |+
+    1. Kapazitätseinschränkung
+    2. Initialbelegung der Stelle (Semaphore)
+
+id: 1247492289984691005

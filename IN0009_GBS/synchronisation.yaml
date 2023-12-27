@@ -1,7 +1,8 @@
-title: 'TEST GBS: Kapitel 3: Parallele Systeme und Synchronisation'
+title: 'GBS: Kapitel 3: Parallele Systeme und Synchronisation'
 author: AnkiTUM
 cards:
 - type: basic
+  format: md
   front: Welche Interaktionen zwischen Prozessen sind möglich?
   back: |+
     - **Kausale Beziehungen**
@@ -10,6 +11,7 @@ cards:
     - **Konkurrenz**: Prozesse konkurrieren um gemeinsame Ressourcen
 
 - type: basic
+  format: md
   front: Warum kann die Parallelität von Aktivitäten zu nicht-deterministischem Verhalten
     von Prozessen führen?
   back: |+
@@ -17,12 +19,14 @@ cards:
     - Multi-Core/CPU Systeme mit echter Parallelität
 
 - type: basic
+  format: md
   front: Wie können parallele Aktivitäten auf der Modell-Ebene beschrieben werden?
   back: |+
     - **Aktionsstrukturen**: Fokus auf Aktionen und deren Abhängigkeiten
     - **Petri-Netze**: Fokus auf Zuständen und Zustandsübergängen
 
 - type: basic
+  format: md
   front: Wie können parallele Aktivitäten auf der Programmiersprachen-Ebene beschrieben
     werden?
   back: |+
@@ -32,6 +36,7 @@ cards:
     - Synchronisationskonzepte (lock, unlock)
 
 - type: basic
+  format: md
   front: Wie können parallele Aktivitäten auf der Betriebssystem-Ebene beschrieben
     werden?
   back: |+
@@ -46,12 +51,14 @@ cards:
       - Interrupts
 
 - type: basic
+  format: md
   front: Mit welchen zwei Sichten kann das Verhalten von Aktivitäten beschrieben werden?
   back: |+
     - **Aktionen**: Modellierenden Einheiten (z.B. C-Anweisungen, Maschinenbefehl)
     - **Ereignisse** Modellierten Einheiten, die Veränderungen bewirken
 
 - type: basic
+  format: md
   front: Was sind die fünf primären Eigenschaften paralleler Systeme
   back: |+
     - Determiniertheit
@@ -65,6 +72,7 @@ cards:
       - Keine Prozesse die nie ausgeführt werden
 
 - type: basic
+  format: md
   front: Was ist eine Race Condition?
   back: |+
     - Mindestens zwei Prozesse greifen lesend oder schreibend auf
@@ -72,17 +80,20 @@ cards:
     - Das Ergebnis hängt von der Reihenfolge der Prozess-Ausführung ab
 
 - type: basic
+  format: md
   front: Wie können Race Conditions verhindert werden?
   back: |+
     Wechselseitiger Ausschluss (engl. mutual exclusion) von konkurrierenden Aktionen.
 
 - type: basic
+  format: md
   front: Was ist ein kritischer Abschnitt?
   back: |+
     In Kritischen Abschnitten greifen Prozesse auf gemeinsame
     Ressourcen zu.
 
 - type: basic
+  format: md
   front: Was sind die vier Phasen des kritischen Abschnitts
   back: |+
     1. Ausführung der **un**kritischen Abschnitte
@@ -91,6 +102,7 @@ cards:
     4. **Verlassen** des kritischen Abschnitts
 
 - type: basic
+  format: md
   front: Was ist das Leser-Schreiber-Problem?
   back: |+
     - Mehrere Leser sind gleichzeitig zugelassen
@@ -98,6 +110,7 @@ cards:
     - Leser und Schreiber dürfen auch nicht gleichzeitig aktiv sein
 
 - type: basic
+  format: md
   front: Was sind die vier Anforderungen an die Realisierung des wechselseitigen Ausschlusses?
   back: |+
     1. Abschnitte sind **wechselseitig** ausgeschlossen
@@ -106,6 +119,7 @@ cards:
     4. Kein Prozess darf einen anderen Prozess *unendlich lange daran hindern*, seinen kritischen Abschnitt auszuführen
 
 - type: basic
+  format: md
   front: Wie kann der wechselseitige Ausschluss auf der Hardwareebene implementiert
     werden?
   back: |+
@@ -113,39 +127,46 @@ cards:
     - Atomare Maschinenbefehle u.a. TSL, cmpxchg
 
 - type: basic
+  format: md
   front: Nenne zwei einfache Betriebsystemdienste die als Locking Mechanismen dienen.`
   back: |+
     - Dienste mit *aktiven* Warten: z.B. Spin-Lock
     - Dienste mit *passiven* Warten: sleep, wakeup
 
 - type: basic
+  format: md
   front: Warum kann man ein Mutex auch als eine binäre Semaphore bezeichnen?
   back: |+
     Eine binäre Semaphore hat nur zwei Zustände: 0 und 1. Ein Mutex ist ähnlich, da er ebenfalls nur zwei Zustände hat: gesperrt (locked) und entsperrt (unlocked).
 
 - type: basic
+  format: md
   front: Was ist das Konzept von Eigentum bei einem Mutex?
   back: |+
     Konzept von "Eigentum": Nur der Thread, der den Mutex gesperrt hat, darf ihn auch wieder entsperren.
 
 - type: basic
+  format: md
   front: Was passiert mit einem aktiven Prozess, wenn ein Interrupt signalisiert wird?
   back: |+
     Bei Signalisierung eines Interrupts wird der aktive Prozess unterbrochen und in den Zustand rechenwillig/wartend überführt, wobei er die CPU freigibt. Die Unterbrechung wird dann durch einen Handler (oder Interrupt Service Routine ISR) behandelt.
 
 - type: basic
+  format: md
   front: Warum ist eine Unterbrechungssperre nur bei Ein-Prozessorsystemen zur Realisierung
     kritischer Abschnitte geeignet?
   back: |+
     In Multi-Prozessor Systemen verhindert die Unterbrechungssperre auf **einem** CPU nicht, dass andere Prozessoren auf die geteilte Ressource zuzugreifen.
 
 - type: basic
+  format: md
   front: Warum müssen Kritische Abschnitte, die durch Unterbrechungssperren geschützt
     sind, kurz sein?
   back: |+
     Lange kritische Abschnitte mit deaktivierten Interrupts verhindern das Behandlen von anderen wichtigen Unterbrechnungen. Die Folge sind Verzögerungen, oder das Verpassen von Events/Benachrichtigungen.
 
 - type: basic
+  format: md
   front: Warum sollte das Konzept einer Unterbrechnungssperre höchstens im Betriebssystem-Kern
     verwendet werden?
   back: |+
@@ -153,6 +174,7 @@ cards:
     - Einschränkung der Privilegien auf Nutzerebene
 
 - type: basic
+  format: md
   front: Wofür kann der "Compare and Exchange" Befehl verwendet werden?
   back: |+
     Atomarer Austausch von zwei Werten.
@@ -172,34 +194,40 @@ cards:
     ```
 
 - type: basic
+  format: md
   front: Wann sind Spin-Locks (aktives Warten) von Vorteil?
   back: |+
     - (Sehr) kurze Wartezeiten (gerade bei Multi-Core/CPU Systemen)
     - Weniger Overhead (kein Kontextswitch) kann bei schnellen Wechseln (bzw. sehr kurzen kritischen Abschnitten) effizienter sein
 
 - type: basic
+  format: md
   front: Kann aktives Warten zum Problem werden?
   back: |+
     Bei längeren kritischen Abschnitten, oder Wartezeiten.
 
 - type: basic
+  format: md
   front: Erkläre die Semantik der P-Operation bei Semaphoren und wie sie funktioniert.
   back: |+
     Die P-Operation (down) dekrementiert die Kontrollvariable s. Falls s < 0 wird, muss der Prozess warten. Bei passivem Warten wird der Prozess in den Zustand wartend überführt und in einer Wait-Queue verwaltet.
 
 - type: basic
+  format: md
   front: 'Was wird durch die V-Operation bei Semaphoren erreicht und wie interagiert
     sie mit der Wait-Queue? '
   back: |+
     Die V-Operation (up) inkrementiert die Kontrollvariable s. Bei passivem Warten wird, falls die Wait-Queue nicht leer ist, ein Prozess aus der Queue in den Zustand rechenbereit überführt.
 
 - type: basic
+  format: md
   front: Beschreibe, wie Semaphoren zur Realisierung kritischer Abschnitte genutzt
     werden.
   back: |+
     Semaphoren werden verwendet, indem ein Semaphor-Objekt definiert und seine Kontrollvariable initialisiert wird. Kritische Abschnitte werden dann mit P- und V-Operationsaufrufen geklammert, um wechselseitigen Ausschluss zu gewährleisten.
 
 - type: basic
+  format: md
   front: Wie wird das Erzeuger-Verbraucher-Problem unter Verwendung von Semaphoren
     korrekt gelöst?
   back: |+
@@ -208,6 +236,7 @@ cards:
     # Warum reicht bei dem Erzeuger-Verbraucher-Problem nicht ein einziges Semaphor?
 
 - type: basic
+  format: md
   front: Was ist das Monitor-Konzept?
   back: |+
     - Ziel: Abstrahieren von Semaphoren und Integrierung in Datenstrukturen
@@ -217,6 +246,7 @@ cards:
     - Beispiel: Methoden *Produce* und *Consume* auf gekapselten Puffer
 
 - type: basic
+  format: md
   front: Warum sind Mutexe != binäre Semaphore?
   back: |+
     - Mutexe haben einen **Owner**, Semaphore haben **keine** Owner.
@@ -224,6 +254,12 @@ cards:
     - Semaphore dienen zum Synchronisieren von Aktionen: z.B. im Producer-Consumer Problem modellieren sie die Anzahl der vollen bzw. leeren Plätze im Puffer.
 
 - type: basic
+  format: md
+  front: Was ist das "Speisende Philosophen" Problem?
+  back: |2+
+
+- type: basic
+  format: md
   front: Was sind die Takeaways vom "Speisenden Philosophen" Problem?
   back: |+
     - Kritische Abschnitte so kurz wie möglich halten, da unser Programm sonst zu einem sequentiellen Ablauf degeneriert.
@@ -231,6 +267,7 @@ cards:
     - Ressourcen erst belegen, wenn alle verfügbar sind.
 
 - type: basic
+  format: md
   front: Nenne die vier Bedingung für Deadlocks.
   back: |+
     1. **Exklusiv** nutzbare Ressource (Mutual Exclusion)
@@ -241,6 +278,7 @@ cards:
     Es müssen alle vier Bedingungen erfüllt sein, damit ein Deadlock auftreten kann.
 
 - type: basic
+  format: md
   front: Wie können Deadlocks modelliert werden?
   back: |+
     Die vier Deadlock Bedingungen können durch einen gerichteten Graphen, den **Belegungsanforderungsgraphen**, modelliert werden.
@@ -250,6 +288,7 @@ cards:
       - Prozess A fordert Ressource R an: gerichtete Kante *von A zu R*
 
 - type: basic
+  format: md
   front: Nenne die vier Strategien zum Umgang mit Deadlocks.
   back: |+
     1. **Ignorieren**: Vogel-Strauß Methode, wird in BS häufig gemacht z.B. Verwaltung der Prozesstabelle im Linux Kernel.
@@ -258,16 +297,19 @@ cards:
     4. **Deadlock-Avoidance** (Vermeidung): BS führt **keine** Ressourcenzuteilung durch, die potentiell in einem Deadlock enden könnte
 
 - type: basic
+  format: md
   front: Wann kann das Ignorieren eines Deadlocks sinnvoll sein?
   back: |+
     Wenn Prozesse neugestartet werden können, oder die Kosten für die Erkennung zu hoch sind.
 
 - type: basic
+  format: md
   front: Was sind mögliche Probleme bei der Deadlock Erkennung?
   back: |+
     Komplexität, höhere CPU Nutzung und Execution delay.
 
 - type: basic
+  format: md
   front: Was ist ein Problem bei der Vermeidung von Deadlocks?
   back: |+
     - Geringerer Durchsatz
@@ -275,12 +317,14 @@ cards:
     - Schlechte Skalierbarkeit
 
 - type: basic
+  format: md
   front: Vorteil und Nachteil des Bankiers-Algorithmus zur Vermeidung von Deadlocks.
   back: |+
     - Vorteil: Kein Ressourcen Entzug
     - Nachteil: Zukünftiger Bedarf muss bekannt sein
 
 - type: basic
+  format: md
   front: Vorteil und Nachteil zur Verhinderung von Deadlocks mittels fester Reihenfolge
     bei Zuteilung.
   back: |+
@@ -288,8 +332,9 @@ cards:
     - Nachteil: Statisch, inflexibel
 
 - type: basic
+  format: md
   front: 'Vorteil und Nachteil bei Erkennung von Deadlocks mittels periodischen Aufrufen:'
   back: |
     - Vorteil: Interaktive Reaktion
     - Nachteil: Verlust durch Abbruch
-id: 8005438177232349242
+id: 1210814131583567964
