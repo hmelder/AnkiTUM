@@ -53,7 +53,8 @@ card around.
 Our converter supports plaintext, markdown, and latex.
 
 Here is an example of a basic card with markdown:
-```
+
+```yaml
 # The unique ID of the deck
 id: 123
 # Deck Title
