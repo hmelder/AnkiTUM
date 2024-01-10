@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dirs=("IN0009_GBS" "example")
+dirs=("IN0009_GBS" "IN0008_GDB")
 
 mkdir -p build
 
