@@ -1,0 +1,225 @@
+title: 'GBS: Kapitel 6: Speicherverwaltung'
+author: AnkiTUM
+cards:
+- type: basic
+  format: md
+  front: Welche Probleme entstehen, wenn alle Programme vollen Zugriff auf den **kompleten** physischen Hauptspeicher haben?
+  back: |+
+    - Programme können das im Hauptspeicher befindliche Betriebsystem und andere Programme **ändern**
+    - Programme können sich gegenseitig stören
+    - Jedes Programm belegt potentiell den **gesamten** Hauptspeicher
+- type: basic
+  format: md
+  front: Wie kann vom physischen Speicher abstrahiert werden, um Störungen zwischen mehreren Programmen zu vermeiden?
+  back: |+
+    - Einführung einer Speicherabstraktion in Form von **Adressräumen**
+    - (Abstrakte) Menge von Speicherzellen, die ein Prozess adressieren kann. z.B. 4GByte
+    - Jeder Prozess erhält seinen *eigenen*, *isolierten* Adressraum
+- type: basic
+  format: md
+  front: Direkte Adressierung
+  back: Jede logische (virtuelle) Adresse entspricht ihrer physischen Adresse
+- type: basic
+  format: md
+  front: Wie können mehrere Programme bei direkter Adressierung gleichzeitig laufen?
+  back: |+
+    ## Option 1: Extensives Swapping
+    - Immer nur das ausführende Programm im Speicher
+    - Beim Wechsel wird der Speicherinhalt gewechselt (swapping)
+    ## Option 2: Relokation
+    - Programme weren an unterschiedliche Stellen im Speicher geladen
+    - Beim Laden müssen dann die Adressen in den Programmen umgeschrieben warden, damit sie zur Stelle im Speicher passen
+- type: basic
+  format: md
+  front: Können sich Programme bei direkter Adressierung und Relokation stören?
+  back: Ja. Programme können auf den gesamten Speicher zugreifen.
+- type: basic
+  format: md
+  front: Beschreibe die Basis-Adressierung
+  back: |+
+    - Das BS legt für jeden *logischen* Adressraum eines Prozesses eine Basisadresse b_x fest
+    - Bei Prozess-Start wird die Basisadresse bx in das Basisregister der CPU geladen
+- type: basic
+  format: md
+  front: Wie funktioniert die Adressberechnung bei der Basis-Adressierung
+  back: |+
+    - physische Adresse = logische Adresse + Basisadresse
+    - Berechnung erfolgt durch die CPU, bevor eine Adresse auf den Speicherbus gelegt wird
+- type: basic
+  format: md
+  front: Vorteile und Nachteile der Basis-Adressierung
+  back: |+
+    ## Vorteile
+      - Das BS kann Programme im Hauptspeicher verschieben (relocation)
+      - Das BS kann mehrere Prozesse zu einem Zeitpunkt in den Hauptspeicher laden
+    ## Nachteile
+      - Aufwendige Additionsoperation
+- type: basic
+  front: Ja oder Nein? Jedes Programm belegt bei direkter Adressierung potentiell den gesamten Hauptspeicher des Rechners.
+  back: Nein
+- type: basic
+  front: Ja oder Nein? Prozesse benötigen bei direkter Adressierung Kenntnis über Struktur des Hauptspeichers.
+  back: Nein
+- type: basic
+  front: Ja oder Nein? Programme können bei direkter Adressierung das ebenfalls im Hauptspeicher befindliche Betriebssystem korrumpieren.
+  back: Nein
+- type: basic
+  front: Ja oder Nein? Bei der Basisadressierung belegt jedes Programm potentiell den gesamten Hauptspeicher des Rechners.
+  back: Ja
+- type: basic
+  front: Ja oder Nein? Bei der Basisadressierung benötigen Prozesse Kenntnis über Struktur des Hauptspeichers.
+  back: Ja
+- type: basic
+  front: Ja oder Nein? Bei der Basisadressierung können Programme das ebenfalls im Hauptspeicher befindliche Betriebsystem korrumpieren
+  back: Ja
+- type: basic
+  format: md
+  front: Beschreibe die Segmentadressierung
+  back: |+
+    - Unterteilung des Adressraums in logische Segmente, unterschiedlicher Länge
+      - Beispiel: Stack-, Daten-, Code-Segment
+    - Mögliche Zugriffsberechtigungen
+    - Adressierung pro Segment erforderlich
+- type: basic
+  format: md
+  front: Wie funktioniert die Segmentadressierung beim Intel x86 Prozessor
+  back: |+
+    - Verwaltung einer Tabelle: **Global Descriptor Table** (GDT)
+    - Eintrag in der Tabelle enthält für jedes Segment:
+      - Basisadresse und Länge des Segments
+      - Flags (Zugriffsbeschränkungen, etc.)
+    - Segmentregister: Index in die Global Descriptor Table
+- type: basic
+  format: md
+  front: Welche Datenstrukturen bieten sich zur Freispeicherverwaltung an?
+  back: |+
+    1. Bitmap
+    2. Verkettete Liste von Frei-Speicherbereichen
+- type: basic
+  format: md
+  front: Beschreibe die Bitmap Datenstruktur zur Freispeicherverwaltung
+  back: |+
+    - Aufteilung des Speichers in **Blöcke gleicher Größe**
+    - Bitmap zur Indexierung des Speichers
+    - Pro Block 1 Bit zur Repräsentation in der Map (1 belegt, 0 frei)
+- type: basic
+  format: md
+  front: Nenne Vor- und Nachteile von einer Bitmap zur Freispeicherverwaltung
+  back: |+
+    # Vorteile
+      - Einfacher und schneller Zugriff
+    # Nachteile
+      - Bei Anfrage auf k freie Blöcke: Lineare Suche
+      - Bei zu *kleinen* Blöcken wird eine große Bitmap zur Verwaltung benötigt
+      - Bei zu *großen* Blöcken ist der Verschnitt ggf. hoch.
+- type: basic
+  format: md
+  front: Wie kann eine Freispeicherverwaltung mittels einer verketteten Liste erfolgen?
+  back: |+
+    # Aufbau
+    - BS verwaltet Liste mit Bereichen bestehend aus zusammenhängenden Hauptspeicherblöcken
+    - Bereiche sind einem Prozess zugeordnet, oder frei
+- type: basic
+  format: md
+  front: Welche Informationen enthält typischerweise ein Listeneintrag bei einer Freispeicherverwaltung?
+  back: |+
+    - Anfangsadresse des Bereichs
+    - Die Länge des Bereichs (in Blöcken)
+    - Einen Zeiger auf den nächsten Eintrag (oder NULL Terminator)
+- type: basic
+  format: md
+  front: Was sind Vor- und Nachteile bei der Freispeicherverwaltung mittels einer verketteten Liste?
+  back: |+
+    # Vorteile
+      - Flexible Speicheraufteilung
+    # Nachteile
+      - Lineare Suche
+      - Keine feste Verwaltungsstruktur (dynamischer Größenänderung)
+- type: basic
+  format: md
+  front: Was sind Optimierungsmöglichkeiten bei der Freispeicherverwaltung mittels einer verketteten Liste?
+  back: |+
+    - Getrennte listen für belegten und freien Speicher
+    - Sortierung nach Speichergröße
+    - Verwaltung in (balancierter) Baumstruktur
+- type: basic
+  format: md
+  front: Was ist ein Vorteil bei der Sortierung der Freibereichsliste?
+  back: |+
+    Es können leicher freie Speicherbereiche zusammengeführt werden.
+- type: basic
+  format: md
+  front: Welche Belegungsstrategien gibt es bei der Freispeicherverwaltung?
+  back: |+
+    - First-Fit
+    - Next-Fit
+    - Best-Fit
+    - Worst-Fit
+- type: basic
+  format: md
+  front: Was ist die Strategie des First-Fit in der Speicherzuweisung und was ist ihr Hauptvorteil?
+  back: |+
+    First-Fit durchsucht die Liste der Freibereiche vom Anfang und belegt den
+    ersten ausreichend großen Freibereich. Hauptvorteil ist die Einfachheit und
+    schnelle Auffindung eines passenden Freibereichs.
+- type: basic
+  format: md
+  front: Erkläre den Unterschied zwischen First-Fit und Next-Fit in der Speicherzuweisung
+  back: |+
+    Next-Fit ist eine Variante von First-Fit, beginnt aber die Suche im Speicher
+    beim zuletzt belegten Bereich, nicht am Anfang der Liste.
+- type: basic
+  format: md
+  front: Was bedeutet Best-Fit in der Speicherzuweisung und was könnte ein Nachteil dieser Strategie sein?
+  back: |+
+    Best-Fit durchsucht die Liste der Freibereiche vollständig und wählt den
+    Bereich mit dem geringsten Verschnitt.
+    
+    # Nachteil
+    Erhöhter Suchaufwand.
+- type: basic
+  format: md
+  front: 'Wahr oder Falsch: Worst-Fit belegt in der Speicherzuweisung immer den kleinsten verfügbaren Freibereich'
+  back: |+
+  Falsch. Worst-Fit belegt den Freibereich mit dem größten Verschnitt.
+- type: basic
+  format: md
+  front: Was könnte ein Problem bei der Anwendung der First-Fit Strategie sein?
+  back: |+
+    Ein mögliches Problem bei First-Fit könnte die zunehmende Fragmentierung des
+    Speichers sein, da immer der erste passende Freibereich genutzt wird.
+- type: basic
+  format: md
+  front: Was ist die interne Fragmentierung?
+  back: |+
+  Beim blockweisen Allokieren von Speicher wird meist **mehr** Speicher vergeben als benötigt.
+  Die interne Fragmentierung beschreibt diesen Verschnitt.
+- type: basic
+  format: md
+  front: Was ist die externe Fragmentierung?
+  back: |+
+  Anders als bei der internen Fragmentierung, bezeichnet die externe
+  Fragmentierung die "Löcher" im Hauptspeicher, die bei der Vergabe und Freigabe
+  von Speicherblöcken unterschiedlicher Größe entstehen können.
+- type: basic
+  format: md
+  front: Was ist das Ziel des Buddy-Algorithmus und wie wird der Speicher verwaltet?
+  back: |+
+    - Kompromiss zwischen der Verwaltung von Speicherblöcken fester und dynamischer Größe ab.
+    - Speicher wird in Blöcken der Größe 2^k verwaltet
+- type: basic
+  format: md
+  front: Beschreibe den Prozess der Speicherbelegung und -freigabe im Buddy-Algorithmus.
+  back: |+
+    Bei der Belegung wird der Speicher in gleich große Bereiche aufgeteilt, bis
+    der kleinste passende Block gefunden ist. Bei der Freigabe werden freie
+    Buddies verschmolzen, um größere Blöcke zu bilden. Dies wird rekursiv
+    fortgesetzt, bis keine Buddies mehr verschmolzen werden können.
+- type: basic
+  format: md
+  front: Welche Vorteile bietet der Buddy-Algorithmus und wo wird eine Variante davon verwendet?
+  back: |+
+    - einfach zu implementieren
+    - effizientes Suchen nach freien Speicherbereichen-maximalen Verschnitt von einem halben Block
+    
+    Eine Variante des Buddy-Algorithmus wird in der Speicherverwaltung von Linux verwendet.
