@@ -182,7 +182,7 @@ cards:
   format: md
   front: 'Wahr oder Falsch: Worst-Fit belegt in der Speicherzuweisung immer den kleinsten verfügbaren Freibereich'
   back: |+
-  Falsch. Worst-Fit belegt den Freibereich mit dem größten Verschnitt.
+    Falsch. Worst-Fit belegt den Freibereich mit dem größten Verschnitt.
 - type: basic
   format: md
   front: Was könnte ein Problem bei der Anwendung der First-Fit Strategie sein?
@@ -193,15 +193,15 @@ cards:
   format: md
   front: Was ist die interne Fragmentierung?
   back: |+
-  Beim blockweisen Allokieren von Speicher wird meist **mehr** Speicher vergeben als benötigt.
-  Die interne Fragmentierung beschreibt diesen Verschnitt.
+    Beim blockweisen Allokieren von Speicher wird meist **mehr** Speicher vergeben als benötigt.
+    Die interne Fragmentierung beschreibt diesen Verschnitt.
 - type: basic
   format: md
   front: Was ist die externe Fragmentierung?
   back: |+
-  Anders als bei der internen Fragmentierung, bezeichnet die externe
-  Fragmentierung die "Löcher" im Hauptspeicher, die bei der Vergabe und Freigabe
-  von Speicherblöcken unterschiedlicher Größe entstehen können.
+    Anders als bei der internen Fragmentierung, bezeichnet die externe
+    Fragmentierung die "Löcher" im Hauptspeicher, die bei der Vergabe und Freigabe
+    von Speicherblöcken unterschiedlicher Größe entstehen können.
 - type: basic
   format: md
   front: Was ist das Ziel des Buddy-Algorithmus und wie wird der Speicher verwaltet?
@@ -224,3 +224,285 @@ cards:
     - effizientes Suchen nach freien Speicherbereichen-maximalen Verschnitt von einem halben Block
     
     Eine Variante des Buddy-Algorithmus wird in der Speicherverwaltung von Linux verwendet.
+- type: basic
+  format: md
+  front: Was ist das Problem mit dem virtuellen Prozess-Adressraum eines Prozesses und wie begegnet das Betriebssystem diesem Problem?
+  back: |+
+    Der virtuelle Prozess-Adressraum kann größer sein als der physische
+    Hauptspeicher. Das Betriebssystem löst dieses Problem durch automatisierte
+    virtuelle Speicherverwaltung, häufig durch das Konzept des Paging.
+- type: basic
+  format: md
+  front: Was ist Paging in der Speicherverwaltung und wie funktioniert es?
+  back: |+
+    Virtuelle Adressräume werden in Seiten (Pages) und der Hauptspeicher werden in physische
+    Kacheln (Frames) aufgeteilt. Seiten und Kacheln haben in der Regel die
+    gleiche Größe (oder die Seitengröße ist ein **Vielfaches** der Kachelgröße).
+- type: basic
+  format: md
+  front: Was sind typische Seiten-/Kachelgrößen auf x86?
+  back: 4KB / 2 MB / 1 GB
+- type: basic
+  format: md
+  front: Was ist die Rolle der Memory Management Unit (MMU) im Kontext des Paging?
+  back: Die MMU bildet Seiten-Adressen auf physische Adressen in einer Kachel ab.
+- type: basic
+  format: md
+  front: Warum ist eine manuelle Aufteilung des virtuellen Adressraums durch den Programmierer problematisch?
+  back: |+
+    Eine manuelle Aufteilung des virtuellen Adressraums durch den Programmierer
+    ist aufwendig und fehleranfällig, da sie manuelles Ein- und Auslagern von
+    Adressbereichen in den Hauptspeicher erfordert.
+- type: basic
+  format: md
+  front: Was macht eine Page Table?
+  back: |+
+    - Verwaltung der Zuordnung von Seiten zu Kacheln
+    - BS verwaltet eine Page Table pro Prozess
+- type: basic
+  format: md
+  front: Was passiert bei einem Prozesswechsel mit dem Seitentabellenregister?
+  back: |+
+    Bei einem Prozesswechsel wird die Anfangsadresse der neuen
+    Prozess-Page-Table in das Seitentabellenregister der CPU geladen
+- type: basic
+  format: md
+  front: Wann und wie entsteht ein **Seitenfehler** (page fault)
+  back: |+
+    - Bei Zugriff auf eine virtuelle Adresse einer Seite, die in keiner Kachel eingelagert ist.
+    - Die Hardware löst einen Interrupt, einen page fault, aus
+- type: basic
+  format: md
+  front: Wie kann ein Seitenfehler (page fault) behoben werden?
+  back: Das Betriebsystem lagert die erforderliche Seite ein
+- type: basic
+  format: md
+  front: Was versteht man unter der **Seiteneinlagerung?**
+  back: |+
+    Wenn fast alle Kacheln belegt sind, müssen Seiten ersetzt werden. Die
+    Seiteneinlagerung ist somit die Auslagerung von Seiten auf die Festplatte.
+- type: basic
+  format: md
+  front: Was ist Seitenflattern (Thrashing)
+  back: |+
+    Zeit für das Laden und Auslagern von Seiten (Page Swapping) im virtuellen
+    Speicher nimmt den größten Teil der Prozessorzeit in Anspruch.
+- type: basic
+  format: md
+  front: Was ist der Unterschied zwischen Paging vs. Swapping?
+  back: |+
+    ## Paging
+      - Seitenweise Auslagern
+      - Feinere Granularität
+    ## Swapping
+      - Gesamter Speicher des Prozesses wird ausgelagert
+- type: basic
+  format: md
+  front: Was ist der Ablauf der Memory Address Translation in einer MMU?
+  back: |+
+    1. Prozessor sendet eine virtuelle Adresse an die MMU
+    2. Anfrage mit Page Table Entry Address (PTEA) zum Cache/Speicher
+    3. MMU bekommt Page Table Entry (PTE) aus Cache/Speicher
+    4. MMU sendet die physische Adresse an Cache/Speicher
+    5. Cache/Speicher sendet die Daten zum Prozessor
+- type: basic
+  format: md
+  front: Was ist das Hauptproblem bei der Adressabbildung?
+  back: Der hohe Zeitaufwand
+- type: basic
+  format: md
+  front: Was ist der Translation Lookaside Buffer (TLB)?
+  back: |+
+    - Cache für die Abbildung von Seiten auf Kacheln
+    - Klein: **wenige Einträge**, typisch: 256
+    - Oft mehrstufig
+
+    ## Mögliche Spalten
+    Valid, Virtual Page No., Modified, Protection, Page Frame
+- type: basic
+  format: md
+  front: Wie ist eine **virtuelle Adresse** *v* aufgebaut?
+  back: |+
+    [$]v = (s, w)[/$]
+
+    Die höherwertigen Bits werden als **Seitennummer** s und die niedrigwertigen
+    Bits als **Offset** w interpretiert.
+
+
+    Die Seitennummer definiert den Index in die Seiten-Tabelle des BS mit dem Eintrag für die Seite
+
+    Der Offset definiert den Offset *in* einer Seite bzw. Kachel und muss bei gleicher Seiten-/Kachelgröße
+    nicht verändert werden.
+
+    ## Schema
+    [$$]\[ \overbrace{\texttt{Seitennummer s}}^{\text{higher order bits}} \quad \underbrace{\texttt{Offset w}}_{\text{lower order bits}} \][/$$]
+- type: basic
+  format: md
+  front: Wie ist eine **Page Table** strukturiert?
+  back: |+
+    Ein Eintrag enthält die Seitennummer und die korrespondierende Framenummer
+- type: basic
+  format: md
+  front: Was sind die fünf vorgestellten Informationen (Bits) bei einen Page Table Eintrag?
+  back: |+
+    - **P** (present): Physische Adresse ist vorhanden und valide
+    - **U/S** (user/supervisor)
+    - **R** (referenced): Wurde auf die Seite **zugegriffen**?
+    - **M** (modify): Wurde auf der Inhalt der Seite modifiziert?
+    - **XD** (execute-disable): Darf der Inhalt der Seite auch ausgeführt werden?
+- type: basic
+  format: md
+  front: |+
+    Wann sind mehrstufige Seitentabellen vom Vorteil?
+    - Große virtuelle Adressräume -> Seitentabelle ist ebenfalls **sehr groß**
+    - Die Speicherung der Tabelle belegt viel Hauptspeicher
+    
+    ## Folge?
+    Nur ein Teil der Page Table muss zur Prozessausführung im Hauptspeicher eingelagert sein
+
+  back: |+
+- type: basic
+  format: md
+  front: Wie werden mehrstufige Seitentabellen umgesetzt?
+  back: |+
+    Höhererwertige Bits (Seitennummer) werden aufgeteilt, um weitere hierarchisch angeordnete Tabellen zu indexen.
+
+    [$$]\[\text{Virtual Address} = \left( \overbrace{\text{PDN}}^{\text{Page Directory Number}},
+    \overbrace{\text{PTN}}^{\text{Page Table Number}},
+    \overbrace{\text{Offset}}^{\text{Offset within Page}} \right) \][/$$]
+- type: basic
+  format: md
+  front: Beschreibe den Ablauf der Seitenfehlerbehandlung (durch BS)
+  back: |+
+    1. HW löst **Interrupt aus**
+    2. Ausführung des **Page-Fault-Handlers**
+    3. BS behandelt Seitenfehler
+      a) Seite ist **ausgelagert**: einlagern
+      b) Seite ist **nicht ausgelagert**: Löse Speicherschutz-Fehler aus
+    4. Aktualisieren des Page-Table-Eintrags (Setzen von **P**, Löschen von **R** und **M** Bits)
+    5. Wiederherstellen des Programmzustands, reaktivieren der Interrupts
+    6. Interrupt-Kontext verlassen
+- type: basic
+  format: md
+  front: Welche drei strategischen Aufgaben gibt es beim Paging?
+  back: |+
+    - **Wann**? On-Demand, und/oder Prefetching
+    - **Wohin**? Platzierungsstrategie
+    - **Welche Seite** wird u.u. ausgelagert?
+- type: basic
+  format: md
+  front: Nenne die 6 vorgestellten Seitenersetzungstrategien.
+  back: |+
+    - FIFO
+    - Second-Chance
+    - Clock
+    - Least Recently Used (LRU), Aging
+    - Working Set
+    - Working Set with Clock
+- type: basic
+  format: md
+  front: Was beschreibt die FIFO-Strategie (First-in-First-Out)?
+  back: |+
+    - Verwalten einer Liste aller im Speicher geladenen Seiten, sortiert nach Ankunftszeit
+    - Die am längsten im Speicher befindliche Seite (an der Spitze der Liste) wird für das Page-out ausgewählt.
+- type: basic
+  format: md
+  front: Was ist ein großes Problem bei der FIFO Seitenersetzungsstrategie?
+  back: |+
+    Möglicherweise häufig genutzte Seiten können ersetzt werden, was zu einer Erhöhung der Seitenfehler führen kann
+    (bekannt als Béládys Anomalie).
+- type: basic
+  format: md
+  front: Wie modifiziert der Second-Chance-Algorithmus die FIFO-Strategie im Seitenersatz?
+  back: |+
+    Seiten, die ihr R-Bit gesetzt haben, erhalten eine zweite Chance.
+    Diese Seiten werden ans Ende der Liste verschoben und ihre Ankunftszeit wird aktualisiert.
+    
+    Sind alle R-Bits gesetzt, fällt der Algorithmus auf FIFO zurück.
+- type: basic
+  format: md
+  front: Was ist die Motivation für den Second-Chance-Algorithmus im Seitenersatz?
+  back: |+
+    Der Ansatz zielt darauf ab, unnötige Seitenersetzungen zu reduzieren, kann
+    aber zu häufigen Verschiebungen in der Liste führen.
+- type: basic
+  format: md
+  front: Was ist der Clock-Algorithmus im Seitenersatz und wie funktioniert er?
+  back: |+
+    - Anordnung von Seiten in einer kreisförmigen Liste an (ähnlich einer Uhr)
+    - Verwendet einen Zeiger, um die älteste Seite zu identifizieren
+
+    ## Ablauf bei Seitenfehler
+    1. Ist das R-Bit der angezeigten Seite nicht gesetzt -> Ersetzung. Zeiger rückt vor.
+    2. Ist das R-Bit gesetzt, rückt der Zeiger ohne Ersatz vor und das R-Bit wird gelöscht. (Loop bis Seite mit R=0 gefunden wurde)
+
+    Das M-Bit entscheidet, ob der Seiteninhalt vorher zurück auf den Speicher geschrieben oder die Seite einfach verworfen wird.
+- type: basic
+  format: md
+  front: Was beschreibt die LRU (Least Recently Used) Seitenersetzungsstrategie?
+  back: |+
+    - Nutzt die Lokalitätseigenschaft von Programmen aus und ersetzt bei einem
+    Seitenfehler diejenige Seite, die am längsten nicht verwendet wurde
+    - Gute Approximation des optimalen Seitenersetzungsalgorithmus
+- type: basic
+  format: md
+  front: Was ist das Hauptproblem bei der Implementierung der LRU Seitenersetzungsstrategie?
+  back: |+
+    Eine exakte Implementierung erfordert spezielle Hardware oder komplizierte
+    Software-Lösungen wie NFU oder Aging.
+- type: basic
+  format: md
+  front: Wie funktioniert das NFU und Aging Verfahren in der Seitenverwaltung?
+  back: |+
+    - Für jede Seite wird ein Software-Counter geführt, der bei jedem Timer-Interrupt erhöht wird, wenn das R-Bit gesetzt ist
+    - Die Seite mit dem niedrigsten Zählerstand wird ausgelagert
+    
+    ## Erfassung der Alterung von Zugriffen
+    Aging verbessert NFU, indem der Zähler auch das Alter der Zugriffe
+    berücksichtigt, wodurch Seiten, die frisch oder lange nicht referenziert
+    wurden, unterschieden werden können.
+- type: basic
+  format: md
+  front: Wie kann bei dem Aging Verfahren (Seitenverwaltung) die Alterung von Zugriffen erfasst werden?
+  back: |+
+    Es wird ein Zeit-Intervall t festgelegt in dem Zugriffe erfasst werden (z.B. 20 ms)
+    
+    ## Ablauf nach Timer-Interrupt
+    1. Neuberechnung des Zählerstands
+    2. Shift des Zählers um eine Stelle nach Rechts
+    3. Addition des R-Wertes zum am weitesten links stehenden bit des Zählers
+- type: basic
+  format: md
+  front: Was ist das Working-Set eines Prozesses (Seitenverwaltung)?
+  back: Die Menge der Seiten die ein Prozess **aktuell** benötigt.
+- type: basic
+  format: md
+  front: Was ist das Working-Set-Modell in der Seitenverwaltung?
+  back: |+
+    - Prozesse arbeiten eine **zeitlang** mit dem gleichen Working-Set
+    - **Optimalfall**: Das Working-Set ist (zu einem großen Teil) im Hauptspeicher eingelagert
+    - Idee: Ersetzungs-Strategie **auf der Basis des Working-Set Modells**
+- type: basic
+  format: md
+  front: Wie funktioniert das Working-Set-Model in der Seitenverwaltung?
+  back: |+
+    Festlegung eines **Zeit-Intervalls** I. Timer-Interrupt nach Ablauf von I (Clock-Tick)
+
+    ## Ablauf bei Timer-Interrupt
+    1. Neuberechnung des Working-Sets
+    2. Löschen aller R-Bits **aller** Seiten. Typischerweise ist [$]i \lt \tau[/$] (Tau ist ein Interval in der **Rechenzeit** (nicht Echtzeit))
+- type: basic
+  format: md
+  front: Wie funktioniert die **Seitenfehlerbehandlung** bei dem Working-Set Verfahren?
+  back: |+
+    BS inspiziert R-Bits aller Seiten. Sei [$]Z[/$] der (monoton steigender) Zähler und [$]Z_p[/$] der Zähler für die Seite [$]p[/$].
+
+    1. **R = 1** Seite gehört zum Working-Set und wird **nicht** entfernt (Aktualisiere Zähler)
+    2. **R = 0**
+      - [$]Z - Z_p \gt \tau[/$]: p wird ersetzt (nicht Teil des WS)
+      - [$]Z - Z_p \le \tau[/$]: Wurde nicht verwendet, abr Teil des WS
+    3. Wenn keine Seite gefunden wurde, ersetze die älteste Seite
+- type: basic
+  format: md
+  front: Was ist die WSClock Seitenersetzungstrategie?
+  back: Kombiniert Clock und Working-Set Strategie.
