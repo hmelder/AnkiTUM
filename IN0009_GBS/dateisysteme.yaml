@@ -1,0 +1,179 @@
+title: 'GBS: Kapitel 7: Dateisysteme'
+author: HHuebner
+cards:
+- type: basic
+  format: md
+  front: Welche Aufgaben hat das Dateisystem?
+  back: |+
+    - Virtualisierung der Disk
+    - Implementierung von Dateien / Ordnern
+    - Organisation von Dateien
+    - Verwaltung von Zugriffsrechten
+
+- type: basic
+  format: md
+  front: Nenne drei Dateisysteme
+  back: |+
+    - ext2, 3 , 4 (Unix)
+    - fat16, fat32 (DOS)
+    - NTFS (Windows)
+    - hfs (macOS)
+- type: basic
+  format: md
+  front: Welche aufgabe hat die Dateiendung?
+  back: |+
+    - An sich wird die Dateiendung nicht vom Betriebsystem interpretiert.
+    - Meistens wird für jede Endung ein default Programm zum öffnen festgelegt.
+
+- type: basic
+  format: md
+  front: Auf welche drei arten können Dateien strukturiert werden?
+  back: |+
+      1. Unstrukturiert als folge von bytes
+      2. Sequenz von Records / feste Blöcke (heute unüblich)
+      3. Baumstruktur mit Blöcken unterschiedlicher Größe (Bei Großrechnern manchmal verwendet)
+
+- type: basic
+  format: md
+  front: Welche 6 Arten von Dateien gibt es unter Unix?
+  back: |+
+    1. Reguläre Dateien
+    2. Ordner
+    3. Character special files (z.b. IO geräte)
+    4. Block special files (Massenspeicher, z.b. disk)
+    5. FIFO special (pipes)
+    6. symbolic link (Verweise auf andere Dateien)
+
+- type: basic
+  format: md
+  front: Welche zwei Arten von Dateizugriff wurden besprochen?
+  back: |+
+    1. Sequential access (in älteren Systemen)
+    2. Random Access
+
+- type: basic
+  format: md
+  front: Welche Dateiattribute wurden besprochen?
+  back: |+
+    - Zugriffsrechte
+    - Flags (z.b. Wann die Datei zuletzt verändert wurde)
+    - Dateigröße
+
+- type: basic
+  format: md
+  front: Wie sind Unix Zugriffrechte Aufgebaut?
+  back: |+
+    - r (read), w (write), x (execute) bits
+    - Drei Gruppen: Owner, Group, All
+    
+    Beispiel: rwxr-x--- = Nur owner und gruppe können datei lesen und Ausführen. User kann die Datei schreiben
+
+- type: basic
+  format: md
+  front: Was macht der syscall unlink()?
+  back: |+
+    Löscht die Datei
+
+- type: basic
+  format: md
+  front: Was machen die Dateien . und .. bei Unix Systemen
+  back: |+
+    - "." Verweist auf den momentanen Ordner
+    - ".." Verweist auf den übergeordneten Ordner
+
+- type: basic
+  format: md
+  front: Was ist der MBR?
+  back: |+
+    - Master Boot Record
+    - In Sektor 0 der Platte gespeichert
+    - Enthält Bootloader, wird beim starten des Geräts ausgeführt
+    - Enthält Partitionstabelle mit max. 16 Einträgen (moderne alternative: GUID partition table)
+
+- type: basic
+  format: md
+  front: Was ist eine primäre Partition?
+  back: |+
+    - Die Partition auf der das Betriebssystem installiert ist.
+
+
+- type: basic
+  format: md
+  front: Was ist eine extended partition?
+  back: |+
+    - Eine Partition im MBR welche weitere Partitionen enthält. 
+    - Referenzen zu weitere Partitionen (sog. logische Partitionen) werden als linked list gepspeichert
+
+- type: basic
+  format: md
+  front: Vorteile GUID Partition Table (GPT) vs MBR?
+  back: |+
+    - GPT ist moderner
+    - GPT erlaubt mehr Partitionen gleichzeitig
+    - GPT erlaubt größere Partitionen
+    - GPT hat backup partition table
+
+- type: basic
+  format: md
+  front: Was ist ein superblock?
+  back: |+
+    - Speichert Metadaten über das File system der Partition (z.b. FS type)
+
+- type: basic
+  format: md
+  front: Was ist eine i-node?
+  back: |+
+    - Speichert Metadaten über eine Datei im FS (z.b. permissions)
+
+- type: basic
+  format: md
+  front: Wie werden i-nodes organisiert?
+  back: |+
+    - Sequenziell in der i-node table
+    - Jede i-node besitzt eine ID
+    
+
+- type: basic
+  format: md
+  front: Wie sind Verzeichnisse implementiert?
+  back: |+
+    - Verzeichnisse sind Dateien
+    - Enthalten eine Liste von verweisen auf i-nodes IDs der Inhalte und die Pfade
+
+- type: basic
+  format: md
+  front: Was ist ein Block bei Unix?
+  back: |+
+    - Kleinste Speichereinheit auf der Disk
+
+- type: basic
+  format: md
+  front: Was sind direct und indirect blocks bei Unix systemen?
+  back: |+
+    - Teile von i-nodes
+    - Speichern Verweise auf die Blöcke die ein FIle ausmachen
+    - Indirect blocks sind Verweise auf Verweise in Baumstruktur (singe = tiefe 1, double = tiefe 2...)
+
+- type: basic
+  format: md
+  front: Wie werden i-nodes organisiert?
+  back: |+
+    - Sequenziell in der i-node table
+    - Jede i-node besitzt eine ID
+
+- type: basic
+  format: md
+  front: Was ist eine File Allocation Table?
+  back: |+
+    - Eine möglichkeit Dateien zu implementieren
+    - Liste von Blöcken die zu einer Datei gehören
+    - FAT muss vollständig im Hauptspeicher liegen -> Sehr großer Verschnitt
+    - Moderne Alternative: i-nodes
+
+- type: basic
+  format: md
+  front: Wie können variable Längen bei Dateien implementiert werden?
+  back: |+
+    - Zeichenlimitierung
+    - Pointer auf den Heap -> Speichern als Hashmap, da die Dateisuche in einem Ordner sosnt lanmgsam wird
+    
