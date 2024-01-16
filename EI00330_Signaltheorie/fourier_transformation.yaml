@@ -1,0 +1,17 @@
+title: 'Signaltheorie: Zeitkontinuierliche Fourier-Transformation'
+author: Hugo Melder
+cards:
+- type: basic
+  front: 'FT für die Zeitverschiebung: [$]x(t - \tau)[/$]'
+  back: '[$]e^{j \omega_0 t}x(t)[/$]'
+- type: basic
+  front: 'FT für Frequenzänderung: [$]e^{j \omega_0 t}x(t)[/$]'
+  back: '[$]X(\omega + \omega_0)[/$]'
+- type: basic
+  front: 'FT für Maßstabänderung: [$]x(at)[/$]'
+  back: '[$]\frac{1}{|a|}*X(\frac{\omega}{a})[/$]'
+- type: basic
+  front: 'FT für Differentiation (Zeit) [$]\frac{d^n}{dt^n}x(t)[/$]'
+  back: '[$](j \omega)^n * X(\omega)[/$]'
+- type: basic
+  front: 'FT für Integration (Zeit): [$]\int_[/$]'
