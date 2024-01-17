@@ -1,0 +1,2 @@
+click~=8.1.7
+ruamel.yaml~=0.18.5
