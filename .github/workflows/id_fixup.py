@@ -23,8 +23,8 @@ def collect_existingIDs(cards):
     return found_ids
 
 
-# @click.command()
-# @click.argument("file_path", type=click.Path(exists=True))
+@click.command()
+@click.argument("file_path", type=click.Path(exists=True))
 def insert_ids(file_path, verbose=True):
     """
     Inserts missing IDs into yaml file. If duplicate IDs exist, returns exit code 1
@@ -75,4 +75,4 @@ def insert_ids(file_path, verbose=True):
 
 
 if __name__ == "__main__":
-    insert_ids("./../../example/penguins2.yaml")
+    insert_ids()
