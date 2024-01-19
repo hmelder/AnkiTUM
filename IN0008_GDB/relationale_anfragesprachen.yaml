@@ -10,7 +10,7 @@ cards:
   back: |
     - Zeichenketten vom Typ `character` immer Größe n
     - Abgespeicherte Größe kann bei `char varying` oder `varchar`variieren
-    
+
 
 - type: md_basic
   id: 1  # (generated)
@@ -18,28 +18,28 @@ cards:
   back: |
     - p: Die Gesamtzahl der gespeicherten Stellen
     - s: Nachkommerstellen
-    
+
 
 - type: md_basic
   id: 2  # (generated)
   front: Was ist der Datentyp für Fixkommazahlen in SQL?
   back: |
     `numeric(p, s)`
-    
+
 
 - type: md_basic
   id: 3  # (generated)
   front: Was ist der Datentyp für Gleitkommazahlen in SQL?
   back: |
     `float`
-    
+
 
 - type: md_basic
   id: 4  # (generated)
   front: Was ist der Datentyp für Integers in SQL?
   back: |
     `int` oder `integer`
-    
+
 
 - type: md_basic
   id: 5  # (generated)
@@ -59,7 +59,7 @@ cards:
     ```
 
     Dabei `+` für ein, oder mehrere Attribute in der Liste.
-    
+
 
 - type: md_basic
   id: 7  # (generated)
@@ -77,7 +77,7 @@ cards:
       alter table Professoren
         add column (Raum integer);
     ```
-    
+
 
 - type: md_basic
   id: 8  # (generated)
@@ -93,7 +93,7 @@ cards:
       alter table <NAME>
         alter column (<ATTRIBUTE> <TYPE>);
     ```
-    
+
 
 - type: md_basic
   id: 9  # (generated)
