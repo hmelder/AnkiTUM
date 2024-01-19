@@ -12,7 +12,7 @@ cards:
     - Vereinigung
     - Schnitt
     - Kreuzprodukt
-    
+
 
 - type: md_basic
   id: 1  # (generated)
@@ -44,7 +44,7 @@ cards:
     [$$]R_1 \cup (R_2 \cup R_3) = (R_1 \cup R_2) \cup R_3[/$$]
 
     [$$]R_1 \Join (R_2 \Join R_3) = (R_1 \Join R_2) \Join R_3[/$$]
-    
+
 
 - type: md_basic
   id: 4  # (generated)
@@ -54,7 +54,7 @@ cards:
 
     [$$]\sigma_{p_1 \land p_2 \land \dots \land p_n}(R)
     = \sigma_{p_1}(\sigma_{p_2}(\dots \sigma_{p_n}(R) \dots))[/$$]
-    
+
 
 - type: md_basic
   id: 5  # (generated)
@@ -66,7 +66,7 @@ cards:
     [$$]\Pi_l(\sigma_p(R)) = \sigma_p(\Pi_l(R)), attr(p) \subseteq l[/$$]
 
     Wobei [$]attr(p)[/$] die Menge aller in [$]p[/$] enthaltenden Attribute ist.
-    
+
 
 - type: md_basic
   id: 6  # (generated)
@@ -75,7 +75,7 @@ cards:
     Durch Eliminierung:
 
     [$$]\Pi_{l_1}(\Pi_{l_2}(\dots (\Pi_{l_n}) \dots)) = \Pi_{l_1}(R)[/$$]
-    
+
 
 - type: md_basic
   id: 7  # (generated)
@@ -84,7 +84,7 @@ cards:
     Ja. Es gilt:
 
     [$$]\sigma_p(\sigma_q(R)) = \sigma_q(\sigma_p(R))[/$$]
-    
+
 
 - type: md_basic
   id: 8  # (generated)
@@ -99,7 +99,7 @@ cards:
     [$$]\sigma_p(R_1 \Join R_2) = \sigma_p(R_1) \Join R_2[/$$]
 
     [$$]\sigma_p(R_1 \times R_2) = \sigma_p(R_1) \times R_2[/$$]
-    
+
 
 - type: md_basic
   id: 9  # (generated)
@@ -112,7 +112,7 @@ cards:
     Wobei (Bei Attributmenge [$]l_2[/$] Analog):
 
     [$$]l_1 = {A \vert A \in \mathcal{R}_1 \cap l} \cup {A \vert A \in \mathcal{R}_1 \cap attr(p)}[/$$]
-    
+
 
 - type: md_basic
   id: 10  # (generated)
@@ -122,7 +122,7 @@ cards:
     Ja. Es gilt (für Schnitt und Differenz analog):
 
     [$$]\sigma_p(R \cup S) = \sigma_p(R) \cup \sigma_p(S)[/$$]
-    
+
 
 - type: md_basic
   id: 11  # (generated)
@@ -137,7 +137,7 @@ cards:
     Sei [$]sch(R_1) == sch(R_2)[/$], dann gilt:
 
     [$$]\Pi_l(R_1 \cup R_2) = \Pi_l(R_1) \cup \Pi_l(R_2)[/$$]
-    
+
 
 - type: md_basic
   id: 13  # (generated)
@@ -146,7 +146,7 @@ cards:
     Ein Beispiel:
 
     [$$]\neg(p_1 \lor p_2) = \neg p_1 \land \neg p_2[/$$]
-    
+
 
 - type: md_basic
   id: 14  # (generated)

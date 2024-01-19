@@ -29,4 +29,4 @@ cards:
 - type: basic
   id: 4  # (generated)
   front: 'FT für Integration (Zeit): [$]\int_[/$]'
-  back: ""
+  back: ''

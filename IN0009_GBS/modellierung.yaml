@@ -136,6 +136,6 @@ cards:
 - type: md_basic
   id: 16  # (generated)
   front: Nenne zwei Wege Semaphoren in Petri-Netzen zu modellieren.
-  back: |+
+  back: |
     1. Kapazitätseinschränkung
     2. Initialbelegung der Stelle (Semaphore)

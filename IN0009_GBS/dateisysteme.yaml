@@ -19,7 +19,7 @@ cards:
     - fat16, fat32 (DOS)
     - NTFS (Windows)
     - hfs (macOS)
-    
+
 
 - type: md_basic
   id: 2  # (generated)
@@ -194,6 +194,6 @@ cards:
 - type: md_basic
   id: 22  # (generated)
   front: Wie können variable Längen bei Dateien implementiert werden?
-  back: |+
+  back: |
     - Zeichenlimitierung
     - Pointer auf den Heap -> Speichern als Hashmap, da die Dateisuche in einem Ordner sosnt lanmgsam wird
