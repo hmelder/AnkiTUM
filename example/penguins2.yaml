@@ -9,14 +9,14 @@ cards:
 
   - type: basic
     front: test
-    back: test2
+    back: test 123
 
   - type: cloze
     front: The {{c1::Macaroni}} Penguin has the worlds most epic hairstyle
     chapter: Penguins 101
 
   - type: reverse
-    front: I'm the front side!
+    front: I'm the front side! <3
     back: I'm the back side!
     chapter: reverse types
 
