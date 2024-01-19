@@ -9,7 +9,7 @@ for dir in "${dirs[@]}"; do
     echo "Building $dir"
 
     # make deck
-    ankitum "./$dir" -o ./build/"$dir"/"${dir%.yaml}".apkg --debug
+    echo $(ankitum "./$dir" -o ./build/"$dir"/"${dir%.yaml}".apkg --debug)
     zip ./build/"$dir".zip ./build/"$dir"/*.apkg
 
 done
