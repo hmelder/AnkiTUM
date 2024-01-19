@@ -10,6 +10,7 @@ on:
 
 jobs:
   build:
+    if: github.actor != 'AnkiTUM-Bot'
     runs-on: ubuntu-20.04
 
     steps:
@@ -42,8 +43,13 @@ jobs:
         pip install -r .github/workflows/requirements.txt --user
         python3 .github/workflows/id_fixup.py ./
         git add .
-        git commit -m "Auto-fixup IDs by GitHub Actions"
-        git push
+        # Check if there are any changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Auto-fixup IDs by GitHub Actions"
+          git push
+        fi
 
     - name: Install dependencies
       run: |
