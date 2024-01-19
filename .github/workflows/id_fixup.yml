@@ -1,6 +1,12 @@
 name: ID Fixup
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'README.md'
+      - 'LICENSE'
 
 jobs:
   build-and-push:
