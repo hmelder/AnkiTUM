@@ -2,6 +2,7 @@ title: 'GBS: Kapitel 5: Inter-Prozesskommunikation (IPC)'
 author: AnkiTUM
 cards:
 - type: basic
+  id: 0  # (generated)
   format: md
   front: Nenne drei Arten der Kommunikation zwischen Prozessen bzw. Threads.
   back: |+
@@ -11,6 +12,7 @@ cards:
     - **Gemeinsamer Speicher**
 
 - type: basic
+  id: 1  # (generated)
   format: md
   front: Sind Linux Signale ein schmal, oder breitbandiger Kanal?
   back: |+
@@ -19,12 +21,14 @@ cards:
     SIGKILL und SIGSTOP können nicht abgefangen werden.
 
 - type: basic
+  id: 2  # (generated)
   format: md
   front: Was passiert wenn der Prozess ein Linux Signal nicht abfängt?
   back: |+
     Er wird vom Betriebsystem **beendet**.
 
 - type: basic
+  id: 3  # (generated)
   format: md
   front: Was ist ein Vorteil und ein Nachteil der Impliziten Kommunikation mittels
     Shared Memory?
@@ -32,6 +36,7 @@ cards:
     Einfach und schnell, da kein Kopieren zwischen Adressräumen benötigt wird. Es werden aber Synchronisationsmechanismen benötigt, die u.u. eine weitere schmalbandige Kommunikation benötigt.
 
 - type: basic
+  id: 4  # (generated)
   format: md
   front: Wofür werden schmalbandige Kanäle u.a. genutzt?
   back: |+
@@ -40,6 +45,7 @@ cards:
     - Synchronisationskonzepte und Unterbrechungskonzepte erforderlich
 
 - type: basic
+  id: 5  # (generated)
   format: md
   front: Nenne zwei Methoden zur expliziten Übertrageung von größeren Datenmengen.
   back: |+
@@ -47,6 +53,7 @@ cards:
     - Sockets
 
 - type: basic
+  id: 6  # (generated)
   format: md
   front: Nenne eine Methode zur impliziten, aber schnellen Übertragung von größeren
     Datenmengen zwischen Prozessen.
@@ -54,6 +61,7 @@ cards:
     Shared Memory bzw. `mmap`.
 
 - type: basic
+  id: 7  # (generated)
   format: md
   front: Inwiefern beeinflusst Synchronität den **Kopplungsgrad** zwischen Prozessen
   back: |+
@@ -61,6 +69,7 @@ cards:
     - **asynchron**: Entkopplung von Sender und Empfänger nicht blockierend
 
 - type: basic
+  id: 8  # (generated)
   format: md
   front: Welche zwei primären **Muster** der Nachrichtenkommunikation gibt es?
   back: |+
@@ -68,6 +77,7 @@ cards:
     - Auftrag (Request - Response): Bidirektional
 
 - type: basic
+  id: 9  # (generated)
   format: md
   front: Wie läuft eine asynchrone Meldung zwischen Sender und Empfänger ab?
   back: |+
@@ -76,6 +86,7 @@ cards:
     3. **Empfänger** (E) kann Nachricht mittels `recv()` empfangen. Wenn keine Nachricht gepuffert ist, wird der Empfänger blockiert.
 
 - type: basic
+  id: 10  # (generated)
   format: md
   front: Wie läuft eine synchrone Meldung zwischen Sender und Empfänger ab?
   back: |+
@@ -84,6 +95,7 @@ cards:
     - Empfangsbestätigung enthält hier keine Daten sondern dient nur der Synchronisation
 
 - type: basic
+  id: 11  # (generated)
   format: md
   front: Beschreibe wie ein asynchroner Auftrag abläuft.
   back: |+
@@ -92,12 +104,14 @@ cards:
     - Aufträge können an den **gleichen** oder **andere Empfänger** gesendet werden
 
 - type: basic
+  id: 12  # (generated)
   format: md
   front: Beschreibe wie ein synchroner Auftrag abläuft.
   back: |+
     Sender wartet auf Antwort, während Empfänger antwort bearbeitet.
 
 - type: basic
+  id: 13  # (generated)
   format: md
   front: Nenne drei Vorteile von asynchronem Senden.
   back: |+
@@ -106,6 +120,7 @@ cards:
     - Anwendbar zum Signalisieren von Ereignissen
 
 - type: basic
+  id: 14  # (generated)
   format: md
   front: Was sind zwei Nachteile von asynchronem Senden?
   back: |+
@@ -113,12 +128,14 @@ cards:
     - **Behandlung von Fehlern** schwieriger
 
 - type: basic
+  id: 15  # (generated)
   format: md
   front: Beschreibe wie Message Passing funktioniert.
   back: |+
     Semaphoren werden durch `send()` und `recv()` Aufrufe ersetzt. Synchronisation auf BS Ebene.
 
 - type: basic
+  id: 16  # (generated)
   format: md
   front: Wie können Datenströme (Streams) übertragen werden?
   back: |+
@@ -128,6 +145,7 @@ cards:
     - **Dienste im Betriebsystem**: Verbindungsauf- und -abbau, lesen und schreiben in Strom
 
 - type: basic
+  id: 17  # (generated)
   format: md
   front: Eine Pipe ist ein bidirektionaler Strom. Ja oder Nein?
   back: |+
@@ -135,6 +153,7 @@ cards:
     Eine bidirektionale Kommunkation mit Paaren von Pipes.
 
 - type: basic
+  id: 18  # (generated)
   format: md
   front: Was ist der Unterschied zwischen anonymen und named Pipes?
   back: |+
@@ -143,24 +162,28 @@ cards:
     - Named pipes als "virtuelle Datei", da sie im Dateisystem verlinkt sind.
 
 - type: basic
+  id: 19  # (generated)
   format: md
   front: Warum werden Ports benötigt?
   back: |+
     Es wird eine System-unabhängige Addressierungsart für ein System benötigt, da PIDs nicht eindeutig identifizierend sind.
 
 - type: basic
+  id: 20  # (generated)
   format: md
   front: Warum gibt es eine Teilmenge an Ports die für die dynamische Nutzung bestimmt
     sind?
   back: "Einen festen Port haben nur Prozesse, die oftmals per Konvention über diesen
     Port erreichbar sind. Prozesse die diese Dienste kontaktieren können \n\n"
 - type: basic
+  id: 21  # (generated)
   format: md
   front: Beschreibe das Rendezvous-Problem.
   back: |+
     Sender und Empfänger stellen vor Austausch der Meldung die Sende- und Empfangsbereitschaft her
 
 - type: basic
+  id: 22  # (generated)
   format: md
   front: Welche System Calls können für das Lesen, Schreiben und Schließen von File-Deskriptoren
     verwendet werden?
@@ -168,6 +191,7 @@ cards:
     `read()`, `write()`, `close()`.
 
 - type: basic
+  id: 23  # (generated)
   format: md
   front: Was macht `connect()` auf einem Socket?
   back: |+
@@ -178,24 +202,28 @@ cards:
     angegeben werden.
 
 - type: basic
+  id: 24  # (generated)
   format: md
   front: Was macht `bind()` auf einem Socket?
   back: |+
     Weist dem Socket eine lokale Adresse (Interface) und Port zu
 
 - type: basic
+  id: 25  # (generated)
   format: md
   front: Was macht `listen()` auf einem Socket?
   back: |+
     Versetzt Socket in einen passiven Modus, wo er auf eingehende Verbindungsanfragen warten kann.
 
 - type: basic
+  id: 26  # (generated)
   format: md
   front: Wie können Sockets gesteuert werden?
   back: |+
     `setsockopt()`, `getsockopt()`, `ioctl()`.
 
 - type: basic
+  id: 27  # (generated)
   format: md
   front: Wie funktioniert Reference Counting und wo wird es u.a. im Kernel genutzt?
   back: |+
@@ -205,6 +233,7 @@ cards:
     Üblicherweise wird die Ressource dealloziert, wenn Zähler == 0.
 
 - type: basic
+  id: 28  # (generated)
   format: md
   front: Wie kann man zwei unterschiedliche Prozesse mit einer anonymen Pipe verbinden?
   back: |+
@@ -224,18 +253,21 @@ cards:
     5. **Pipe Schließen**: Schließen beider Enden der Pipe
 
 - type: basic
+  id: 29  # (generated)
   format: md
   front: Was ist das Client-Server-Modell?
   back: |+
     Client-Programme senden Anfragen an Server-Programme, die Ressourcen oder Dienste bereitstellen.
 
 - type: basic
+  id: 30  # (generated)
   format: md
   front: Beschreibe das Peer-to-Peer Modell (P2P).
   back: |+
     Teilnehmer (Peer) sowohl als Client als auch als Server fungiert. In einem P2P-Netzwerk kommunizieren Peers direkt miteinander, um Ressourcen wie Dateien oder Dienste ohne zentrale Koordination zu teilen und auszutauschen.
 
 - type: basic
+  id: 31  # (generated)
   format: md
   front: Was ist DBus?
   back: |+
@@ -243,12 +275,14 @@ cards:
     Es erspart eine teure 1:1 Verbindung zwischen Kommunikationspartnern und wird für schmalbandige Kommunikation eingesetzt.
 
 - type: basic
+  id: 32  # (generated)
   format: md
   front: Wie werden Dienste über DBus addressiert?
   back: |+
     Über Namen (Well-Known Names)
 
 - type: basic
+  id: 33  # (generated)
   format: md
   front: Beschreibe den Ablauf für den Socket Setup eines Servers (6 Schritte)
   back: |+
@@ -260,6 +294,7 @@ cards:
     6. `close()`: Schließen der Verbindung auf Serverseite
 
 - type: basic
+  id: 34  # (generated)
   format: md
   front: Beschreibe den Ablauf für den Socket Setup eines Servers (4 Schritte)
   back: |+
@@ -269,6 +304,7 @@ cards:
     4. `close()`: Schließen der Verbindung auf Clientseite
 
 - type: basic
+  id: 35  # (generated)
   format: md
   front: Was ist der Unterschied zwischen SOCK_STREAM und SOCK_DGRAM?
   back: |+
@@ -276,6 +312,7 @@ cards:
     - **SOCK_DGRAM**: UDP = nachrichtenbasierte Kommunikation
 
 - type: basic
+  id: 36  # (generated)
   format: md
   front: Inwiefern unterscheidet sich das Senden von Daten bei TCP und UDP in POSIX?
   back: |+
@@ -283,11 +320,13 @@ cards:
     - UDP: `sendto` und `sendmsg`
 
 - type: basic
+  id: 37  # (generated)
   format: md
   front: Mit welcher Funktion kann ein host long zu network byte-order konvertiert
     werden?
   back: "`htonl`, wobei long 32-bit groß ist. \n\n"
 - type: basic
+  id: 38  # (generated)
   format: md
   front: Wie setzt sich der Funktionsname `htonl` zusammen?
   back: |+
@@ -296,6 +335,7 @@ cards:
     Umgekehrt auch ntoh{s,l}.
 
 - type: basic
+  id: 39  # (generated)
   format: md
   front: Was sind Message Queues?
   back: |+
@@ -304,6 +344,7 @@ cards:
     - Erlaubt asynchronen Nachrichtenaustausch
 
 - type: basic
+  id: 40  # (generated)
   format: md
   front: Wie funktioniert `select` im Kontext von I/O Multiplexing?
   back: |+
@@ -312,6 +353,7 @@ cards:
     - `readset`, `writeset`, `extset` (error fd) als File Deskriptoren zur Überwachung
 
 - type: basic
+  id: 41  # (generated)
   format: md
   front: Beschreibe was die Funktion `poll` macht.
   back: |+
@@ -319,18 +361,21 @@ cards:
     - poll-Funktion **blockiert**, bis eines der folgenden Ereignisse eintritt:
 
 - type: basic
+  id: 42  # (generated)
   format: md
   front: 'Ja oder Nein: Die Funktion `poll` betreibt polling (= Busy waiting)'
   back: |+
     Nein. Die Funktion blockiert, bis eine Aktion eintritt.
 
 - type: basic
+  id: 43  # (generated)
   format: md
   front: In welcher Einheit erlaubt `poll` einen Timeout?
   back: |+
     Millisekunden
 
 - type: basic
+  id: 44  # (generated)
   format: md
   front: In welcher Einheit erlaubt `select` einen Timeout?
   back: |

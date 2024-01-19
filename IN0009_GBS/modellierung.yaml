@@ -2,30 +2,35 @@ title: 'GBS: Kapitel 4: Modellierung'
 author: AnkiTUM
 cards:
 - type: basic
+  id: 0  # (generated)
   format: md
   front: Wie werden Stellen in einem Petri-Netz repräsentiert?
   back: |+
     S ist die endliche Menge von Stellen. Sie werden graphisch als Kreise repräsentiert.
 
 - type: basic
+  id: 1  # (generated)
   format: md
   front: Wie werden Transitionen in einem Petri-Netz repräsentiert?
   back: |+
     T ist die endliche Menge von Transitionen. Sie werden Graphisch als Rechtecke repräsentiert.
 
 - type: basic
+  id: 2  # (generated)
   format: md
   front: Aus welcher Menge wird die Flussrelation eines Petri-Netzes konstruiert?
   back: |+
     (S x T) union (T x S)
 
 - type: basic
+  id: 3  # (generated)
   format: md
   front: Welche Kapazität hat eine Stelle die nicht explizit markiert wurde?
   back: |+
     Unendlich.
 
 - type: basic
+  id: 4  # (generated)
   format: md
   front: Wann kann eine Transition schalten?
   back: |+
@@ -39,12 +44,14 @@ cards:
     Generell kann eine Transition also nur schalten, wenn alle Belegungseinschränkungen vor und nach der Transition nicht verletzt werden.
 
 - type: basic
+  id: 5  # (generated)
   format: md
   front: Kann sich die Anzahl von Tokens im Laufe der Ausführung ändern?
   back: |+
     Ja, z.B kann eine Transition Token duplizieren. Dies geschieht, wenn eine Transition mehrere Ausgangskanten hat, die zur selben Stelle oder zu verschiedenen Stellen führen, wodurch die Anzahl der Token als Ergebnis des Auslösens der Transition effektiv erhöht wird.
 
 - type: basic
+  id: 6  # (generated)
   format: md
   front: Beschreibe wie die Nebenläufigkeit in einem Petri-Netz modelliert werden
     kann.
@@ -52,6 +59,7 @@ cards:
     Zwei Transitionen t0 und t1 sind nebenläufig, wenn sie unabhängig von einander schalten können, ohne sich gegenseitig zu beeinflussen.
 
 - type: basic
+  id: 7  # (generated)
   format: md
   front: Wie kann einen nichtdeterministische Auswahl modelliert werden?
   back: |+
@@ -66,48 +74,56 @@ cards:
     zuerst schaltet, wir gehen von einem nichtdeterminismus aus.
 
 - type: basic
+  id: 8  # (generated)
   format: md
   front: Wann ist die Belegung M' von M in einem Petri-Netz erreichbar?
   back: |+
     Wenn es eine endliche Sequenz an Transitionen (bzw. Schaltfolgen) gibt, die M in den Endzustand M' überführt.
 
 - type: basic
+  id: 9  # (generated)
   format: md
   front: Wie kann ein Deadlock mithilfe des Erreichbarkeitsgraphen erkannt werden?
   back: |+
     Ein Deadlock kann im Erreichbarkeitsgraphen identifiziert werden, indem man nach Knoten sucht, von denen aus keine ausgehenden Kanten (Transitionen) vorhanden sind.
 
 - type: basic
+  id: 10  # (generated)
   format: md
   front: Wann ist ein Petri-Netz lebendig?
   back: |+
     Ein Petri-Netz gilt als lebendig, wenn es aus jedem erreichbaren Zustand möglich ist, jede Transition des Netzes irgendwann in der Zukunft zu schalten. Lebendigkeit ist also eine Sicherstellung, dass keine Transition für immer blockiert oder deaktiviert wird.
 
 - type: basic
+  id: 11  # (generated)
   format: md
   front: Beschreibe was eine vollständige Verklemmung ist.
   back: |+
     Eine vollständige Verklemmung in einem Petri-Netz, auch als Deadlock bezeichnet, tritt auf, wenn das Netzwerk einen Zustand erreicht, in dem keine Transitionen mehr schalten können.
 
 - type: basic
+  id: 12  # (generated)
   format: md
   front: Wenn ein Petri-Netz lebendig ist, ist es dann auch verklemmungsfrei?
   back: |+
     Ja.
 
 - type: basic
+  id: 13  # (generated)
   format: md
   front: Wenn ein Petri-Netz verklemmungsfrei ist, ist es dann auch lebendig?
   back: |+
     Nein.
 
 - type: basic
+  id: 14  # (generated)
   format: md
   front: Wann verhungert eine Transition?
   back: |+
     Eine Transition t in T verhungert, wenn es eine unendliche Sequenz gibt, in der t **trotz** Transitionsbereitschaft endlich oft auftritt.
 
 - type: basic
+  id: 15  # (generated)
   format: md
   front: Definiere Fairness als Eigenschaft von Petri-Netzen.
   back: |+
@@ -118,6 +134,7 @@ cards:
     Es gibt also keine Transition, die verhungern kann.
 
 - type: basic
+  id: 16  # (generated)
   format: md
   front: Nenne zwei Wege Semaphoren in Petri-Netzen zu modellieren.
   back: |+

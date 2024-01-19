@@ -4,22 +4,30 @@ on:
   push:
     branches:
       - main
-      - parser-rewrite
     paths-ignore:
       - 'README.md'
       - 'LICENSE'
 
 jobs:
   build:
+    if: github.actor != 'AnkiTUM-Bot'
     runs-on: ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+      with:
+        token: ${{ secrets.BOT_GITHUB_TOKEN }}
+        fetch-depth: 0
 
     - name: Set up Python 3.x environment
       uses: actions/setup-python@v2
       with:
         python-version: '3.x'
+    
+    - name: Setup Git
+      run: |
+        git config --global user.name "AnkiTUM-Bot"
+        git config --global user.email ${{ secrets.BOT_GITHUB_EMAIL }}
 
     - name: Set up private key
       env:
@@ -29,6 +37,19 @@ jobs:
         echo "$SSH_PRIVATE_KEY" | base64 --decode > $HOME/.ssh/id_ed25519
         chmod 600 $HOME/.ssh/id_ed25519
         ssh-keyscan -H ${{ secrets.MIRROR_IP }} >> $HOME/.ssh/known_hosts
+    
+    - name: Run ID Fixup Script
+      run: |
+        pip install -r .github/workflows/requirements.txt --user
+        python3 .github/workflows/id_fixup.py ./
+        git add .
+        # Check if there are any changes
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Auto-fixup IDs by GitHub Actions"
+          git push
+        fi
 
     - name: Install dependencies
       run: |
