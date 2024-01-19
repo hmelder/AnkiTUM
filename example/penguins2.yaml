@@ -19,7 +19,7 @@ cards:
   chapter: Penguins 101
 
 - type: reverse
-  id: 0  # (generated)
+  id: 3  # (generated)
   front: I'm the front side!
   back: I'm the back side!
   chapter: reverse types

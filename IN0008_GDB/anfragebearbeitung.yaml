@@ -3,25 +3,29 @@ author: AnkiTUM
 id: 1704923416
 cards:
 - type: basic
+  id: 0  # (generated)
   format: md
   front: Nenne vier grundlegende relationale Operatoren die **kommutativ** sind.
-  back: |+
+  back: |
     - Join
     - Vereinigung
     - Schnitt
     - Kreuzprodukt
 - type: basic
+  id: 1  # (generated)
   format: md
   front: Ja oder Nein? [$]R_1 \Join R_2 = R_2 \Join R_1[/$]
   back: Ja. Die Join Operation ist kommutativ.
 - type: basic
+  id: 2  # (generated)
   format: md
   front: Ja oder Nein? [$]R_1 \times R_2 = R_2 \times R_1[/$]
   back: Ja. Das Kreuzprodukt ist kommutativ.
 - type: basic
+  id: 3  # (generated)
   format: md
   front: Nenne vier grundlegende relationale Operatioren die **assoziativ** sind.
-  back: |+
+  back: |
     - Kreuzprodukt
     - Vereinigung
     - Schnitt
@@ -36,17 +40,19 @@ cards:
 
     [$$]R_1 \Join (R_2 \Join R_3) = (R_1 \Join R_2) \Join R_3[/$$]
 - type: basic
+  id: 4  # (generated)
   format: md
   front: Welche Äquivalenz gilt bei einer Selektion mit Konjunktionen in der Bedingung?
-  back: |+
+  back: |
     Sie können in mehrere Selektionen aufgebrochen (und auch wieder zusammengefügt) werden.
 
     [$$]\sigma_{p_1 \land p_2 \land \dots \land p_n}(R)
     = \sigma_{p_1}(\sigma_{p_2}(\dots \sigma_{p_n}(R) \dots))[/$$]
 - type: basic
+  id: 5  # (generated)
   format: md
   front: Wann kann eine Selektion an einer Projektion "vorbeigeschoben" werden?
-  back: |+
+  back: |
     Falls die Projektion keine Attribute aus der Selektionsbedingung entfernt.
     Es gilt also:
 
@@ -54,25 +60,28 @@ cards:
 
     Wobei [$]attr(p)[/$] die Menge aller in [$]p[/$] enthaltenden Attribute ist.
 - type: basic
+  id: 6  # (generated)
   format: md
   front: Wie können geschachtelte Projektionen optimiert werden?
-  back: |+
+  back: |
     Durch Eliminierung:
 
     [$$]\Pi_{l_1}(\Pi_{l_2}(\dots (\Pi_{l_n}) \dots)) = \Pi_{l_1}(R)[/$$]
 - type: basic
+  id: 7  # (generated)
   format: md
   front: Sind Selektionen untereinander vertauschbar?
-  back: |+
+  back: |
     Ja. Es gilt:
 
     [$$]\sigma_p(\sigma_q(R)) = \sigma_q(\sigma_p(R))[/$$]
 - type: basic
+  id: 8  # (generated)
   format: md
-  front: |+
+  front: |
     Wann kann eine Selektion an einer Joinoperation (oder einem Kreuzprodukt)
     vorbeigeschoben werden?
-  back: |+
+  back: |
     Falls sie nur Attribute *eines* der beiden Join-Argumente verwendet.
     Enthält die Bedingung [$]p[/$] beispielsweise nur Attribute aus [$]\mathcal{R}_1[/$],
     dann gilt:
@@ -81,9 +90,10 @@ cards:
 
     [$$]\sigma_p(R_1 \times R_2) = \sigma_p(R_1) \times R_2[/$$]
 - type: basic
+  id: 9  # (generated)
   format: md
   front: Was muss beachtet werden, wenn Projektionen verschoben werden?
-  back: |+
+  back: |
     Joinattribute (Attribute in Joinpredikat) müssen bis zum Join erhalten bleiben.
 
     [$$]\Pi_l(R_1 \Join_p R_2) = \Pi_l(\Pi_{l_1}(R_1) \Join_p \Pi_{l_2}(R_2))[/$$]
@@ -92,38 +102,44 @@ cards:
 
     [$$]l_1 = {A \vert A \in \mathcal{R}_1 \cap l} \cup {A \vert A \in \mathcal{R}_1 \cap attr(p)}[/$$]
 - type: basic
+  id: 10  # (generated)
   format: md
-  front: |+
+  front: |
     Können Selektionen mit Mengenoperationen wie Vereinigung, Schnitt und Differenz vertauscht werden?
-  back: |+
+  back: |
     Ja. Es gilt (für Schnitt und Differenz analog):
 
     [$$]\sigma_p(R \cup S) = \sigma_p(R) \cup \sigma_p(S)[/$$]
 - type: basic
+  id: 11  # (generated)
   format: md
   front: Kann die Projektion mit Durchschnitt und Differenz getauscht werden?
   back: Nein.
 - type: basic
+  id: 12  # (generated)
   format: md
   front: Kann der Projektionsoperator mit der Vereinigung vertauscht werden?
-  back: |+
+  back: |
     Sei [$]sch(R_1) == sch(R_2)[/$], dann gilt:
 
     [$$]\Pi_l(R_1 \cup R_2) = \Pi_l(R_1) \cup \Pi_l(R_2)[/$$]
 - type: basic
+  id: 13  # (generated)
   format: md
   front: Bedingung können mit Hilfe von DeMorgans Gesetz umgeformt werden
-  back: |+
+  back: |
     Ein Beispiel:
 
     [$$]\neg(p_1 \lor p_2) = \neg p_1 \land \neg p_2[/$$]
 - type: basic
+  id: 14  # (generated)
   format: md
-  front: Wann können eine Selektion und ein Kreuzprodukt zu einem Join zusammengefasst werden?
-  back: |+
+  front: Wann können eine Selektion und ein Kreuzprodukt zu einem Join zusammengefasst
+    werden?
+  back: |-
     Wenn die Selektionsbedingung eine Joinbedingung ist, sie also Attribute einer Argumentrelation
     mit Attributen der anderen vergleicht.
 
     Beispiel Equijoin:
-    
+
     [$$]\sigma_{R_1.A_1 = R_2.A_2}(R_1 \times R_2) = R_1 \Join_{R_1.A_1 = R_2.A_2} R_2[/$$]

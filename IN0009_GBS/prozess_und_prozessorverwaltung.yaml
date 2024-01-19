@@ -2,6 +2,7 @@ title: 'GBS: Kapitel 2: Prozess und Prozessorverwaltung'
 author: AnkiTUM
 cards:
 - type: basic
+  id: 0  # (generated)
   format: md
   front: Was sind die 5 Stufen um C Quellcode zu einem ausführbaren Programm zu transformieren?
   back: |+
@@ -12,6 +13,7 @@ cards:
     5. Loader des Betriebsystems (Laden der gebundenen Objekte in den Speicher)
 
 - type: basic
+  id: 1  # (generated)
   format: md
   front: Was sind die IOPL Bits im Flag Register eines x86 Prozessors
   back: |+
@@ -22,6 +24,7 @@ cards:
     bis 3), wobei Ring 0 das höchste Privileg und Ring 3 das niedrigste darstellt.
 
 - type: basic
+  id: 2  # (generated)
   format: md
   front: Wie sieht ein Prozess im Speicher aus (x86)
   back: |+
@@ -33,6 +36,7 @@ cards:
     4. Code/Text - Befindet sich im unteren Teil des Adressraums; enthält ausführbaren Programmcode.
 
 - type: basic
+  id: 3  # (generated)
   format: md
   front: Was ist ein Prozesskontext?
   back: |+
@@ -40,6 +44,7 @@ cards:
     Prozess speichert, um dessen Ausführungszustand zu verwalten.
 
 - type: basic
+  id: 4  # (generated)
   format: md
   front: Was ist der virtuelle Addressraum?
   back: |+
@@ -49,6 +54,7 @@ cards:
 
 
 - type: basic
+  id: 5  # (generated)
   format: md
   front: 'Prozesskontext im Betriebssystem: Registerzustände'
   back: |+
@@ -58,6 +64,7 @@ cards:
     - Statusregister
 
 - type: basic
+  id: 6  # (generated)
   format: md
   front: 'Prozesskontext im Betriebssystem: Prozessidentifikation und -zustand'
   back: |+
@@ -68,6 +75,7 @@ cards:
     - Process Group ID (PGID)
 
 - type: basic
+  id: 7  # (generated)
   format: md
   front: 'Prozesskontext im Betriebssystem: Ressourcenverweise und Sicherheitskontext'
   back: |+
@@ -78,6 +86,7 @@ cards:
     - Group ID (GID)
 
 - type: basic
+  id: 8  # (generated)
   format: md
   front: Warum ist die Prozess-Verarbeitung oftmals nur quasi-parallel?
   back: |+
@@ -86,6 +95,7 @@ cards:
     Prozessen (Scheduling), wodurch der Eindruck simultaner Ausführung entsteht.
 
 - type: basic
+  id: 9  # (generated)
   format: md
   front: Wie beeinflusst der I/O-Warteanteil p die CPU-Auslastung bei n Prozessen?
   back: |+
@@ -93,6 +103,7 @@ cards:
     CPU-Auslastung bei n gleichzeitig laufenden Prozessen probabilistisch 1 - p^n.
 
 - type: basic
+  id: 10  # (generated)
   format: md
   front: Was sind die Zustände eines Prozesses?
   back: |+
@@ -103,18 +114,21 @@ cards:
     - **swapped in/eingelagert**: Ein ausgelagerter Prozess wird wieder in den Arbeitsspeicher geladen.
 
 - type: basic
+  id: 11  # (generated)
   format: md
   front: Was initiiert der Zustandsübergang 'add' bei einem Prozess?
   back: |+
     Der Zustandsübergang 'add' fügt einen neu erzeugten Prozess zur Menge der rechenwilligen (ready) Prozesse hinzu.
 
 - type: basic
+  id: 12  # (generated)
   format: md
   front: Welche Wirkung hat der Zustandsübergang 'assign' auf einen Prozess?
   back: |+
     Der Zustandsübergang 'assign' ordnet einem Prozess die CPU zu und ändert seinen Status auf 'running'.
 
 - type: basic
+  id: 13  # (generated)
   format: md
   front: Durch was wird der Zustandsübergang 'block' bei einem Prozess veranlasst?
   back: |+
@@ -123,6 +137,7 @@ cards:
     'blocked/waiting'.
 
 - type: basic
+  id: 14  # (generated)
   format: md
   front: Wann erfolgt der Zustandsübergang eines Prozesses zurück in 'ready'?
   back: |+
@@ -130,6 +145,7 @@ cards:
     Operation beendet ist oder die Blockade aufgehoben wurde.
 
 - type: basic
+  id: 15  # (generated)
   format: md
   front: Welcher Zustandsübergang wird mit 'resign' beschrieben?
   back: |+
@@ -137,6 +153,7 @@ cards:
     er in den Zustand 'ready' zurückkehrt.
 
 - type: basic
+  id: 16  # (generated)
   format: md
   front: Was kennzeichnet den Zustandsübergang 'retire' bei einem Prozess?
   back: |+
@@ -144,6 +161,7 @@ cards:
     beendet und aus dem System entfernt wird.
 
 - type: basic
+  id: 17  # (generated)
   format: md
   front: Was resultiert aus dem Zustandsübergang 'swap out' für einen Prozess?
   back: |+
@@ -151,6 +169,7 @@ cards:
     die Swap-Datei auf der Festplatte aus.
 
 - type: basic
+  id: 18  # (generated)
   format: md
   front: Welchen Zustand erreicht ein Prozess durch den Zustandsübergang 'swap in'?
   back: |+
@@ -158,6 +177,7 @@ cards:
     den Arbeitsspeicher geladen.
 
 - type: basic
+  id: 19  # (generated)
   format: md
   front: Prozess vs. Thread
   back: |+
@@ -165,12 +185,14 @@ cards:
     - **Thread**: Leichtgewichtiger Prozess innerhalb eines Prozesses, der einen eigenen Kontrollfluss hat, aber Ressourcen mit anderen Threads teilt.
 
 - type: basic
+  id: 20  # (generated)
   format: md
   front: Warum lässt sich ein Prozess und Thread konzeptuell trennen?
   back: |+
     Ressourcen und Kontrollfluss sind unabhängige Konzepte und lassen sich trennen.
 
 - type: basic
+  id: 21  # (generated)
   format: md
   front: Eigenschaften eines Threads
   back: |+
@@ -180,11 +202,13 @@ cards:
     - Eigener Befehlzähler
 
 - type: basic
+  id: 22  # (generated)
   format: md
   front: Thread-Kontext
   back: "Der Thread-Kontext umfasst u.a:\n- Programmzähler\n- Registerwerte \n- Stackpointer
     auf eigenem Stack\n\n"
 - type: basic
+  id: 23  # (generated)
   format: md
   front: Was sind die 5 möglichen Zustände eines Threads?
   back: |+
@@ -195,6 +219,7 @@ cards:
     - terminiert
 
 - type: basic
+  id: 24  # (generated)
   format: md
   front: Warum haben Threads generell einen geringeren Overhead als Prozesse?
   back: |+
@@ -203,6 +228,7 @@ cards:
     - Schneller Kontextwechsel
 
 - type: basic
+  id: 25  # (generated)
   format: md
   front: Was ist der Process Control Block (PCB)?
   back: |+
@@ -212,6 +238,7 @@ cards:
     - *Dateiverwaltung* (engl. file management)
 
 - type: basic
+  id: 26  # (generated)
   format: md
   front: Welche Informationen werden für die Speicherverwaltung eines Prozesses benötigt?
   back: |+
@@ -219,6 +246,7 @@ cards:
     Anfang und Größe der Segmente.
 
 - type: basic
+  id: 27  # (generated)
   format: md
   front: Welche Informationen werden für die Dateiverwaltung eines Prozesses benötigt?
   back: |+
@@ -227,12 +255,14 @@ cards:
     - UID und GID
 
 - type: basic
+  id: 28  # (generated)
   format: md
   front: Was ist eine Prozesstabelle
   back: |+
     Eine verkettete Liste von PCBs
 
 - type: basic
+  id: 29  # (generated)
   format: md
   front: BS Dienste zur Prozessverwaltung
   back: |+
@@ -242,6 +272,7 @@ cards:
     - Dienste zur Prozessor-Anbundung (Dispatching)
 
 - type: basic
+  id: 30  # (generated)
   format: md
   front: Auslöser einer Prozesserzeugung
   back: |+
@@ -251,11 +282,13 @@ cards:
     - Durch das BS (z.B. Batch-Systeme)
 
 - type: basic
+  id: 31  # (generated)
   format: md
   front: Was macht der POSIX-Systemcall `fork`?
-  back: "- Kindprozess mit gleichem Speicherabbild (Kopie)\n\t- Auch file descriptors\n-
-    Vergabe einer neuen PID\n- Prozesse laufen unabhängig voneinander\n\n"
+  back: "- Kindprozess mit gleichem Speicherabbild (Kopie)\n\t- Auch file descriptors\n
+    - Vergabe einer neuen PID\n- Prozesse laufen unabhängig voneinander\n\n"
 - type: basic
+  id: 32  # (generated)
   format: md
   front: Was ist die Besonderheit bei dem Rückgabewert von `fork`?
   back: |+
@@ -264,6 +297,7 @@ cards:
     z.B. das Speicherabbild des Kindes zu überschreiben.
 
 - type: basic
+  id: 33  # (generated)
   format: md
   front: Welche Arten der Prozessterminierung gibt es?
   back: |+
@@ -278,18 +312,21 @@ cards:
       - Durch senden eines Signals
 
 - type: basic
+  id: 34  # (generated)
   format: md
   front: Welche PID hat der Prozess init?
   back: |+
     PID=1. Init ist der erste Prozess der bei einem UNIX(-ähnlichen) System startet.
 
 - type: basic
+  id: 35  # (generated)
   format: md
   front: Wer started PID 1?
   back: |+
     Der Kernel.
 
 - type: basic
+  id: 36  # (generated)
   format: md
   front: (Extra) Was würde passieren, wenn PID 1 crashed?
   back: |+
@@ -298,6 +335,7 @@ cards:
     - PID 1 kann nicht neugestartet werden -> System Neustart notwendig
 
 - type: basic
+  id: 37  # (generated)
   format: md
   front: Was ist eine Prozessgruppe?
   back: |+
@@ -308,6 +346,7 @@ cards:
     Jeder Prozess inkl. seiner Kinder formen eine Prozessgruppe (Mit PPID identifiziert).
 
 - type: basic
+  id: 38  # (generated)
   format: md
   front: Warum sind Prozesshierarchien natürlich in UNIX(-ähnlichen) Systemen?
   back: |+
@@ -315,6 +354,7 @@ cards:
     Der erste Prozess (PID 1) wird allerdings vom BS gestartet.
 
 - type: basic
+  id: 39  # (generated)
   format: md
   front: Zombies in Prozesshierarchien
   back: |+
@@ -324,6 +364,7 @@ cards:
     - Führen keinen Code mehr aus
 
 - type: basic
+  id: 40  # (generated)
   format: md
   front: Umgang mit Zombie-Prozessen
   back: |+
@@ -333,6 +374,7 @@ cards:
     - Das Lesen des Exit-Status des Kindes entfernt den Zombie-Prozess.
 
 - type: basic
+  id: 41  # (generated)
   format: md
   front: Waisenprozesse
   back: |+
@@ -340,6 +382,7 @@ cards:
     - Der verwaiste Kind-Prozess wird vom Init-Prozess adoptiert (PPID = 1).
 
 - type: basic
+  id: 42  # (generated)
   format: md
   front: Was ist erforderlich, damit ein Waisenprozess zu einem Daemon wird?
   back: |+
@@ -347,6 +390,7 @@ cards:
     (stdin, stdout, stderr).
 
 - type: basic
+  id: 43  # (generated)
   format: md
   front: Prozesshierarchien in Windows
   back: |+
@@ -355,6 +399,7 @@ cards:
     - Handles können zwischen Prozessen übertragen werden.
 
 - type: basic
+  id: 44  # (generated)
   format: md
   front: Welche zwei Hauptaufgaben werden in der Prozessorverwaltung unterschieden?
   back: |+
@@ -363,6 +408,7 @@ cards:
     die Reihenfolge der Prozessausführung bestimmt.
 
 - type: basic
+  id: 45  # (generated)
   format: md
   front: Welche Rolle spielt der Scheduler in der Prozessorverwaltung?
   back: |+
@@ -372,6 +418,7 @@ cards:
     Ausführung aus
 
 - type: basic
+  id: 46  # (generated)
   format: md
   front: Was macht ein Dispatcher?
   back: |+
@@ -380,6 +427,7 @@ cards:
     anderen rechenbereitem Prozess/Thread zu
 
 - type: basic
+  id: 47  # (generated)
   format: md
   front: Abfolge von Dispatching
   back: |+
@@ -389,6 +437,7 @@ cards:
     4. **Ändert den Zustand** des rechenbereiten Prozesses zu rechnend
 
 - type: basic
+  id: 48  # (generated)
   format: md
   front: Strategische Entscheidungen des Schedulers
   back: |+
@@ -397,6 +446,7 @@ cards:
     entscheidet er auch, an welche CPU der Prozess gebunden wird.
 
 - type: basic
+  id: 49  # (generated)
   format: md
   front: Wie nutzt der Scheduler das typische Verhalten von Prozessen für das Scheduling?
   back: |+
@@ -405,6 +455,7 @@ cards:
     um eine effiziente CPU-Zuteilung zu erreichen.
 
 - type: basic
+  id: 50  # (generated)
   format: md
   front: Scheduler-Aktivierung
   back: |+
@@ -415,6 +466,7 @@ cards:
     - Interrupts, wie beispielsweise von einem I/O-Gerät
 
 - type: basic
+  id: 51  # (generated)
   format: md
   front: Welche Rolle spielt der Scheduler bei Prozessblockierungen und Interrupts?
   back: |+
@@ -425,6 +477,7 @@ cards:
     - Timer-Interrupts: Scheduling-Entscheidungen bei jedem Timer-Interrupt.
 
 - type: basic
+  id: 52  # (generated)
   format: md
   front: Thread Implementierungen
   back: |+
@@ -436,6 +489,7 @@ cards:
     - Hybride Implementierung (n:m Abbildung zwischen n Threads in User-Space und m Kernel Threads)
 
 - type: basic
+  id: 53  # (generated)
   format: md
   front: Vorteile von User-Level Threads
   back: |+
@@ -444,6 +498,7 @@ cards:
     - Anwendungsspezifisches Scheduling
 
 - type: basic
+  id: 54  # (generated)
   format: md
   front: Nachteile von User-Level Threads
   back: |+
@@ -452,6 +507,7 @@ cards:
     - Threads können die CPU monopolisieren
 
 - type: basic
+  id: 55  # (generated)
   format: md
   front: Vorteile von Kernel-Level Threads
   back: |+
@@ -464,6 +520,7 @@ cards:
        - Das Betriebssystem kann Kernel-Threads basierend auf Prioritäten planen, was für Echtzeitanwendungen entscheidend sein kann.
 
 - type: basic
+  id: 56  # (generated)
   format: md
   front: Nachteile von Kernel-Level Threads
   back: |+
@@ -478,15 +535,17 @@ cards:
        - Bei Kernel-Level-Threads ist das Scheduling meist fest im Kernel verankert, was die Anpassung an spezifische Anwendungsbedürfnisse erschwert.
 
 - type: basic
+  id: 57  # (generated)
   format: md
   front: Unix-Threads
   back: "- UNIX-Systeme unterstützen Kernel-Level Threads.\n- LinuxThreads: Erste
     Thread-Implementierung unter Linux.\n\t- Gemeinsame Ressourcen: Adressraum, Datei-Deskriptoren,
-    Signale etc.\n\t- Eigene IDs: Jeder Thread hat unterschiedliche PIDs und PPIDs.\n\t-
-    Manager-Thread: Benötigt für Erzeugung und Terminierung von Threads.\n\t- Thread-Erzeugung:
-    Verwendung des Systemcalls clone().\n- Java Threads (JVM Verwendet NPTL)\n\t-
-    Java Thread wird 1:1 auf einen Kernel-Level-Thread abgebildet\n\n"
+    Signale etc.\n\t- Eigene IDs: Jeder Thread hat unterschiedliche PIDs und PPIDs.\n
+    \t- Manager-Thread: Benötigt für Erzeugung und Terminierung von Threads.\n\t-
+    Thread-Erzeugung: Verwendung des Systemcalls clone().\n- Java Threads (JVM Verwendet
+    NPTL)\n\t- Java Thread wird 1:1 auf einen Kernel-Level-Thread abgebildet\n\n"
 - type: basic
+  id: 58  # (generated)
   format: md
   front: Wichtige POSIX Threads Funktionen
   back: |+
@@ -495,6 +554,7 @@ cards:
     - pthread_join (Warten auf die Terminierung und Rückgabewert des Threads)
 
 - type: basic
+  id: 59  # (generated)
   format: md
   front: Was sind Scheduling Ziele für alle Systeme?
   back: |+
@@ -502,6 +562,7 @@ cards:
     - **Balance**: Alle Teile des Systems (CPU, I/O) möglichst effektiv auslasten
 
 - type: basic
+  id: 60  # (generated)
   format: md
   front: Was sind Scheduling Ziele für Batch-Systeme?
   back: |+
@@ -510,6 +571,7 @@ cards:
     - **CPU Belegung**: Konstante Belegung der CPU
 
 - type: basic
+  id: 61  # (generated)
   format: md
   front: Was sind Scheduling Ziele für Interaktive-Systeme?
   back: |+
@@ -517,6 +579,7 @@ cards:
     - **Proportionalität**: Berücksichtige die Erwartungshaltung der Benutzer
 
 - type: basic
+  id: 62  # (generated)
   format: md
   front: Was sind Scheduling Ziele für Echtzeit-Systeme?
   back: |+
@@ -524,6 +587,7 @@ cards:
     - **Vorhersagbarkeit**: Vermeide Qualitätsverlust z.B. in Multimediasystemen
 
 - type: basic
+  id: 63  # (generated)
   format: md
   front: Was sind Kriterien zur Auswahl von Prozessen
   back: |+
@@ -533,6 +597,7 @@ cards:
     - CPU-Belegung vs. Durchsatz
 
 - type: basic
+  id: 64  # (generated)
   format: md
   front: Welche prinzipiellen Scheduling-Klassen gibt es?
   back: |+
@@ -540,6 +605,7 @@ cards:
     - **Unterbrechend** (preemptive)
 
 - type: basic
+  id: 65  # (generated)
   format: md
   front: Was zeichnet nicht-unterbrechendes Scheduling aus?
   back: |+
@@ -547,6 +613,7 @@ cards:
     die CPU abgeben.
 
 - type: basic
+  id: 66  # (generated)
   format: md
   front: Was zeichnet unterbrechendes Scheduling aus?
   back: |+
@@ -554,6 +621,7 @@ cards:
     Timer-Interrupt) unterbrochen.
 
 - type: basic
+  id: 67  # (generated)
   format: md
   front: Welche drei Scheduling Strategien können für Batch-Systeme genutzt werden?
     Sind sie unterbrechend?
@@ -563,6 +631,7 @@ cards:
     - **Shortest Remaining Time Next** (SRTN) unterbrechend
 
 - type: basic
+  id: 68  # (generated)
   format: md
   front: Wie ist FCFS aufgebaut?
   back: |+
@@ -571,6 +640,7 @@ cards:
     - Bei Abgabe wird der nächste Prozess aus der FIFO Queue aktiv
 
 - type: basic
+  id: 69  # (generated)
   format: md
   front: Welchen Nachteil hat die FCFS Scheduling Strategie?
   back: |+
@@ -579,6 +649,7 @@ cards:
     ineffizienter CPU-Nutzung und längeren Wartezeiten führt.
 
 - type: basic
+  id: 70  # (generated)
   format: md
   front: Warum sind "Shortest Job First" und "Shortest Remaining Time Next" ungeeignet
     für Scheduling in interaktiven Systemen?
@@ -586,24 +657,28 @@ cards:
     Die Ausführungszeiten müssen vorab bekannt sein.
 
 - type: basic
+  id: 71  # (generated)
   format: md
   front: Wann wird ein Prozess bei "Shortest Remaining Time Next" unterbrochen?
   back: |+
     Bei Ankunft neuer Prozesse.
 
 - type: basic
+  id: 72  # (generated)
   format: md
   front: Wie funktioniert die SJF Scheduling Strategie?
   back: |+
     - CPU wird einem Prozess mit der kürzesten Rechenzeit zugewiesen
 
 - type: basic
+  id: 73  # (generated)
   format: md
   front: Wann ist die SJF Scheduling Strategie optimal?
   back: |+
     Wenn alle Jobs am Anfang vorliegen und alle Rechenzeiten bekannt sind.
 
 - type: basic
+  id: 74  # (generated)
   format: md
   front: Wie können auch Prozesse mit unbekannter Rechenzeit mit der SJF Scheduling
     Strategie verarbeitet werden?
@@ -614,6 +689,7 @@ cards:
     TODO: Formel
 
 - type: basic
+  id: 75  # (generated)
   format: md
   front: Beschreibe wie die SRTN Scheduling Strategie funktioniert.
   back: |+
@@ -624,6 +700,7 @@ cards:
     2. Ist die Rechenzeit des neuen Prozesses kürzer, wird der aktive Prozess unterbrochen.
 
 - type: basic
+  id: 76  # (generated)
   format: md
   front: Nenne zwei Scheduling Strategien für interaktive Systeme.
   back: |+
@@ -631,6 +708,7 @@ cards:
     - **Priority Scheduling**
 
 - type: basic
+  id: 77  # (generated)
   format: md
   front: Was passiert, wenn das Zeitquantum bei m Round-Robin Scheduling Algorithmus
     zu kurz gewählt wird?
@@ -638,6 +716,7 @@ cards:
     Es werden zu viele teure Kontextwechsel erzeugt.
 
 - type: basic
+  id: 78  # (generated)
   format: md
   front: Was passiert, wenn das Zeitquantum bei m Round-Robin Scheduling Algorithmus
     zu lang gewählt wird?
@@ -646,6 +725,7 @@ cards:
     Wartezeiten für andere Prozesse und einer verringerten Systemreaktivität führt.
 
 - type: basic
+  id: 79  # (generated)
   format: md
   front: Wie heißen die zwei vorgestellten Scheduling-Strategien für Echtzeit-Systeme?
   back: |+
@@ -653,6 +733,7 @@ cards:
     - **Rate-Monotonic Scheduling** (RMS)
 
 - type: basic
+  id: 80  # (generated)
   format: md
   front: Beschreibe wie Priority Scheduling für interaktive Systeme funktioniert
   back: |+
@@ -662,6 +743,7 @@ cards:
     - **Kontextwechsel**: Sobald *höher-prioritisierter*, *rechenwilliger* Prozess bereit ist
 
 - type: basic
+  id: 81  # (generated)
   format: md
   front: Welche Probleme entstehen wenn beim Priority Scheduling die Prioritäten nur
     statisch gewählt werden?
@@ -671,6 +753,7 @@ cards:
     3. **Vorausplanen** der Priorität schwierig bei interaktiven Systemen
 
 - type: basic
+  id: 82  # (generated)
   format: md
   front: Wie könnte eine Dynamische Prioritisierung (z.B. nach einem Timer-Interrupt)
     ablaufen?
@@ -680,12 +763,14 @@ cards:
     - **I/O-Boost**: Kurzzeitige Bervorzugung von I/O-Bound Prozessen
 
 - type: basic
+  id: 83  # (generated)
   format: md
   front: Welche Datenstruktur kann für die Dynamische Prioritisierung genutzt werden?
   back: |+
     Multilevel-Feedback-Warteschlange
 
 - type: basic
+  id: 84  # (generated)
   format: md
   front: Was ist ein weiches Echtzeit System?
   back: |+
@@ -693,6 +778,7 @@ cards:
     - Beispiel: Verlieren von (Netzwerk-)Paketen während einer Videokonferenz
 
 - type: basic
+  id: 85  # (generated)
   format: md
   front: Was ist ein hartes Echtzeit System?
   back: |+
@@ -700,6 +786,7 @@ cards:
     - Bsp. Sicherheitskritische Anwendungen, oder Prozessabläufe
 
 - type: basic
+  id: 86  # (generated)
   format: md
   front: Earliest Deadline First (EDF)
   back: |+
@@ -708,6 +795,7 @@ cards:
     - Non-preemptive (Prozess muss kooperieren. Kontextwechsel nach Beendigung, oder Yield)
 
 - type: basic
+  id: 87  # (generated)
   format: md
   front: Rate-Monotonic Scheduling (RMS)
   back: "- Für **periodische Prozesse**\n- Prozess-Priorität in Abhängigkeit von der
@@ -715,54 +803,63 @@ cards:
     der höchsten Frequenz (kleinste Periode) -> Höchste Priorität\n- Periode wird
     statisch vergeben\n\n"
 - type: basic
+  id: 88  # (generated)
   format: md
   front: Was ist das Hauptziel des Mehrschichtigen Schedulings?
   back: |+
     Das Hauptziel des Mehrschichtigen Schedulings ist es, nicht alle rechenwilligen Prozesse sofort im Speicher zu lagern, sondern dies vorab effizient zu organisieren.
 
 - type: basic
+  id: 89  # (generated)
   format: md
   front: Wie unterscheidet sich preemptive von non-preemptive Scheduling?
   back: |+
     Preemptive Scheduling erlaubt die Unterbrechung eines laufenden Prozesses, während non-preemptive Scheduling den Prozess bis zu seinem Ende ohne Unterbrechung laufen lässt.
 
 - type: basic
+  id: 90  # (generated)
   format: md
   front: Was ist die Aufgabe des Short-Term-Schedulers (STS)?
   back: |+
     Der Short-Term-Scheduler (STS) wählt geeignete Prozesse aus der Run-Queue (Ready-Queue) für die Ausführung aus und verwendet dabei verschiedene vorgestellte Verfahren.
 
 - type: basic
+  id: 91  # (generated)
   format: md
   front: 'Wahr oder Falsch: Der Dispatcher ist immer Teil des Short-Term-Schedulers.'
   back: |+
     Wahr. Der Dispatcher ist in der Regel ein Bestandteil des Short-Term-Schedulers und wird sehr häufig aufgerufen.
 
 - type: basic
+  id: 92  # (generated)
   format: md
   front: Was ist die Funktion des Medium-Term-Schedulers (MTS)?
   back: |+
     Der Medium-Term-Scheduler (MTS) entscheidet, ob ein Prozess in den Speicher eingelagert werden soll und ist ein Teil des Swapping-Mechanismus.
 
 - type: basic
+  id: 93  # (generated)
   format: md
   front: Erkläre die Rolle des Long-Term-Schedulers (LTS).
   back: |+
     Der Long-Term-Scheduler (LTS) zielt darauf ab, einen guten Mix aus I/O-intensiven und rechenintensiven Prozessen zu erreichen und entscheidet über die Einlagerung neuer Aufträge in den Arbeitsspeicher.
 
 - type: basic
+  id: 94  # (generated)
   format: md
   front: Wie beeinflusst der Long-Term-Scheduler den Grad des Multiprogrammings?
   back: |+
     Der Long-Term-Scheduler steuert, wie viele Prozesse gleichzeitig im Arbeitsspeicher liegen, und beeinflusst somit den Grad des Multiprogrammings.
 
 - type: basic
+  id: 95  # (generated)
   format: md
   front: Wann wird der Long-Term-Scheduler typischerweise aufgerufen?
   back: |+
     Der Long-Term-Scheduler wird aufgerufen, sobald ein neuer Prozess erzeugt wird, und entscheidet, ob dieser zur Ready-Queue hinzugefügt werden soll.
 
 - type: basic
+  id: 96  # (generated)
   format: md
   front: 'Wahr oder Falsch: Der Long-Term-Scheduler ist immer in Betriebssystemen
     vorhanden.'
@@ -770,30 +867,35 @@ cards:
     Falsch. Der Long-Term-Scheduler ist nicht immer vorhanden, zum Beispiel nicht unter Linux.
 
 - type: basic
+  id: 97  # (generated)
   format: md
   front: Was ist der Unterschied zwischen Short-Term- und Long-Term-Scheduling?
   back: |+
     Short-Term-Scheduling befasst sich mit der Auswahl von Prozessen zur Ausführung aus der Ready-Queue, während Long-Term-Scheduling entscheidet, welche Prozesse in den Speicher gelangen und den Multiprogramming-Grad beeinflusst.
 
 - type: basic
+  id: 98  # (generated)
   format: md
   front: Wie werden Threads unter Linux für das Scheduling behandelt?
   back: |+
     Unter Linux werden Threads 1:1 auf Kernel-Level-Threads abgebildet, was zu einem thread-basierten Scheduling führt.
 
 - type: basic
+  id: 99  # (generated)
   format: md
   front: Welche drei Thread-Klassen unterscheidet Linux beim Scheduling?
   back: |+
     Linux unterscheidet zwischen Echtzeit-FIFO, Echtzeit-Round-Robin und Timesharing-Threads.
 
 - type: basic
+  id: 100  # (generated)
   format: md
   front: Was war die Besonderheit des Linux-Schedulers bis zur Kernelversion 2.6?
   back: |+
     Bis zur Kernelversion 2.6 verwendete Linux den O(1)-Scheduler, der auf Priority Scheduling mit 140 Prioritäten basierte.
 
 - type: basic
+  id: 101  # (generated)
   format: md
   front: Was ist der Completely-Fair-Scheduler (CFS) und wie unterscheidet er sich
     vom O(1)-Scheduler?
@@ -801,12 +903,14 @@ cards:
     Der Completely-Fair-Scheduler (CFS), eingeführt ab Kernelversion 2.6, verwendet eine Red-Black Tree basierte Run-Queue und ordnet Prozesse nach ihrer bereits verbrauchten CPU-Rechenzeit an, im Gegensatz zum O(1)-Scheduler.
 
 - type: basic
+  id: 102  # (generated)
   format: md
   front: Wie sind die 140 Prioritäten im Linux-Scheduling verteilt?
   back: |+
     Von den 140 Prioritäten unter Linux sind 0-99 für Echtzeit-Threads und 100-139 für Timesharing-Threads reserviert.
 
 - type: basic
+  id: 103  # (generated)
   format: md
   front: 'Wahr oder Falsch: Echtzeit-Threads unter dem Standard-Linux-Kernel können
     für Echtzeitanwendungen genutzt werden.'
@@ -814,12 +918,14 @@ cards:
     Falsch. Echtzeit-Threads können mit dem Standard-Linux-Kernel nicht für Echtzeitanwendungen genutzt werden.
 
 - type: basic
+  id: 104  # (generated)
   format: md
   front: Welche Herausforderungen ergeben sich beim Multicore-/Multiprozessorscheduling?
   back: |+
     Zu den Herausforderungen gehören die Zuordnung von Prozessen zu einzelnen Kernen/Prozessoren, unterschiedliche Charakteristika der Recheneinheiten und die Balance zwischen Scheduling-Qualität und -geschwindigkeit.
 
 - type: basic
+  id: 105  # (generated)
   format: md
   front: Was ist das Ziel beim Scheduling von N Prozessen auf M Prozessoren und warum
     ist es komplex?
@@ -827,6 +933,7 @@ cards:
     Ziel ist es, einen Schedule zu finden, der die Gesamtausführungszeit minimiert. Für M>1 ist dies äquivalent zum multiway number partitioning und somit NP-hard, was es komplex macht.
 
 - type: basic
+  id: 106  # (generated)
   format: md
   front: Was sind die Unterschiede zwischen Time Sharing und Space Sharing im Kontext
     des Schedulings?
@@ -834,12 +941,14 @@ cards:
     Time Sharing ermöglicht die abwechselnde Nutzung von Ressourcen, während Space Sharing abhängigen Prozessen den direkten Austausch und gemeinsame Ressourcennutzung erlaubt.
 
 - type: basic
+  id: 107  # (generated)
   format: md
   front: Was versteht man unter Gang Scheduling?
   back: |+
     Gang Scheduling ist eine Kombination von Time und Space Sharing, bei der abhängige Prozesse als eine Einheit behandelt werden und gemeinsame Zeitscheiben für die Ausführung erhalten.
 
 - type: basic
+  id: 108  # (generated)
   format: md
   front: Erkläre das Konzept der "Globalen Warteschlange" im Kontext von CPU-Management
     und Multi-CPU Scheduling.
@@ -849,6 +958,7 @@ cards:
     - Schlechte Skalierbarkeit durch lock contention und schlechte Cache Lokalität
 
 - type: basic
+  id: 109  # (generated)
   format: md
   front: Was sind die Vorteile einer Warteschlange für jede CPU bei Multi-CPU Scheduling?
   back: |+
@@ -856,12 +966,14 @@ cards:
     bessere Cache Lokalität.
 
 - type: basic
+  id: 110  # (generated)
   format: md
   front: Nenne einen Nachteil der Verwendung einer Warteschlange für jede CPU.
   back: |+
     Ungleiche Auslastung der CPUs, was zu Unfairness gegenüber Prozessen führen kann.
 
 - type: basic
+  id: 111  # (generated)
   format: md
   front: Was ist die hybridge Implementierung von CPU und Prozess Warteschlangen?
   back: |+
@@ -871,6 +983,7 @@ cards:
        - Wiederverwendung von Daten im Cache
 
 - type: basic
+  id: 112  # (generated)
   format: md
   front: Was versteht man unter der Heterogenität von Prozessen?
   back: |+
@@ -879,6 +992,7 @@ cards:
     - **Hitze**: Beispiel: Perfomance vs. Efficiency Cores
 
 - type: basic
+  id: 113  # (generated)
   format: md
   front: Was ist NUMA (Non-Uniform Memory Access)
   back: |+
@@ -886,6 +1000,7 @@ cards:
     Prozesse sollten möglichst nahe an dem von ihnen benötigten Speicher ausgeführt werden.
 
 - type: basic
+  id: 114  # (generated)
   format: md
   front: Nenne eine alternative Architektur, die den Kernel parallelisiert
   back: |+
@@ -897,6 +1012,7 @@ cards:
     - Zustandsreplizierung zwischen verschiedenen Kernen
 
 - type: basic
+  id: 115  # (generated)
   format: md
   front: Datenzentrischer Kernel
   back: |+
@@ -905,6 +1021,7 @@ cards:
     - Bisher nur ein Konzept
 
 - type: basic
+  id: 116  # (generated)
   format: md
   front: Welcher der folgenden Systemcalls wird unter Unix für die Behandlung von
     Signalen verwendet? pause, alarm, kill, sigaction, wait, pthread_kill?
@@ -912,6 +1029,7 @@ cards:
     Unter Unix wird der Systemaufruf `sigaction` verwendet, um die Behandlung von Signalen zu steuern.
 
 - type: basic
+  id: 117  # (generated)
   format: md
   front: Welche der folgenden Systemcalls werden unter Unix für die Prozessverwaltung
     verwendet? wait, select, pthread_create, creat, getcpu, fork
@@ -919,6 +1037,7 @@ cards:
     wait, fork
 
 - type: basic
+  id: 118  # (generated)
   format: md
   front: Was sind notwendige Bedingungen für das Auftreten eines Deadlocks nach Coffman
     et al. (1971)? mutual exclusion, hold-and-wait, circular preemption, no-preemption,
@@ -927,6 +1046,7 @@ cards:
     Mutual exclusion, hold-and-wait, no-preemption, circular wait
 
 - type: basic
+  id: 119  # (generated)
   format: md
   front: Die Größe welcher der folgenden Segmente sind dem Betriebssystem bereits
     unmittelbar nach dem Programmstart bekannt? .heap, .rodata, .text, .data
@@ -934,6 +1054,7 @@ cards:
     .rodata, .text, .data
 
 - type: basic
+  id: 120  # (generated)
   format: md
   front: Nenne die 4 Betriebsarten eines Betriebsystems.
   back: |+
