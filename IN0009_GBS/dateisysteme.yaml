@@ -14,7 +14,7 @@ cards:
   format: md
   front: Nenne drei Dateisysteme
   back: |+
-    - ext2, 3 , 4 (Unix)
+    - ext2, 3, 4 (Unix)
     - fat16, fat32 (DOS)
     - NTFS (Windows)
     - hfs (macOS)
