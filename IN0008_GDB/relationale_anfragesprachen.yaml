@@ -2,74 +2,84 @@ title: 'GDB: Kapitel 4: Relationale Anfragesprachen'
 author: AnkiTUM
 cards:
   # Fragen zu Datentypen
-  - type: md
-    front: Was ist der Unterschied zwischen `character(n)` und `char varying(n)`
-    back: |+
-      - Zeichenketten vom Typ `character` immer Größe n
-      - Abgespeicherte Größe kann bei `char varying` oder `varchar`variieren
-  - type: md
-    front: Was ist die Bedeutung der Argumente von `numeric(p, s)`?
-    back: |+
-      - p: Die Gesamtzahl der gespeicherten Stellen
-      - s: Nachkommerstellen
-  - type: md
-    front: Was ist der Datentyp für Fixkommazahlen in SQL?
-    back: |+
-      `numeric(p, s)`
-  - type: md
-    front: Was ist der Datentyp für Gleitkommazahlen in SQL?
-    back: |+
-      `float`
-  - type: md
-    front: Was ist der Datentyp für Integers in SQL?
-    back: |+
-      `int` oder `integer`
-  - type: md
-    front: Nenne einen Datentyp für die Abspeicherung von (großen) binären Daten
-    back: |+
-      `blob` oder `raw`
+- type: md
+  id: 0  # (generated)
+  front: Was ist der Unterschied zwischen `character(n)` und `char varying(n)`
+  back: |
+    - Zeichenketten vom Typ `character` immer Größe n
+    - Abgespeicherte Größe kann bei `char varying` oder `varchar`variieren
+- type: md
+  id: 1  # (generated)
+  front: Was ist die Bedeutung der Argumente von `numeric(p, s)`?
+  back: |
+    - p: Die Gesamtzahl der gespeicherten Stellen
+    - s: Nachkommerstellen
+- type: md
+  id: 2  # (generated)
+  front: Was ist der Datentyp für Fixkommazahlen in SQL?
+  back: |
+    `numeric(p, s)`
+- type: md
+  id: 3  # (generated)
+  front: Was ist der Datentyp für Gleitkommazahlen in SQL?
+  back: |
+    `float`
+- type: md
+  id: 4  # (generated)
+  front: Was ist der Datentyp für Integers in SQL?
+  back: |
+    `int` oder `integer`
+- type: md
+  id: 5  # (generated)
+  front: Nenne einen Datentyp für die Abspeicherung von (großen) binären Daten
+  back: |
+    `blob` oder `raw`
   # Fragen zu DML (Data Manipulation Language)
-  - type: md
-    front: Wie kann eine neue Relation in SQL erstellt werden?
-    back: |+
-      ```
-        create table <NAME>
-        ( (<ATTRIBUTE> <TYPE> <INTEGRITY_CONSTRAINT>)+ );
-      ```
+- type: md
+  id: 6  # (generated)
+  front: Wie kann eine neue Relation in SQL erstellt werden?
+  back: |
+    ```
+      create table <NAME>
+      ( (<ATTRIBUTE> <TYPE> <INTEGRITY_CONSTRAINT>)+ );
+    ```
 
-      Dabei `+` für ein, oder mehrere Attribute in der Liste.
-  - type: md
-    front: |+
-      Wir wollen zu der Relation `Professoren` das Attribut `Raum`, wobei die
-      Raumnummer eine ganze Zahl ist, hinzufügen.
-    back: |+
-      ```
-        alter table Professoren
-          add (Raum integer);
-      ```
+    Dabei `+` für ein, oder mehrere Attribute in der Liste.
+- type: md
+  id: 7  # (generated)
+  front: |
+    Wir wollen zu der Relation `Professoren` das Attribut `Raum`, wobei die
+    Raumnummer eine ganze Zahl ist, hinzufügen.
+  back: |
+    ```
+      alter table Professoren
+        add (Raum integer);
+    ```
 
-      Und in SQL-92:
-      ```
-        alter table Professoren
-          add column (Raum integer);
-      ```
-  - type: md
-    front: Wie kann der Datentyp eines Attributs einer Relation geändert werden?
-    back: |+
-      ```
-        alter table <NAME>
-          modify (<ATTRIBUTE> <TYPE>);
-      ```
+    Und in SQL-92:
+    ```
+      alter table Professoren
+        add column (Raum integer);
+    ```
+- type: md
+  id: 8  # (generated)
+  front: Wie kann der Datentyp eines Attributs einer Relation geändert werden?
+  back: |
+    ```
+      alter table <NAME>
+        modify (<ATTRIBUTE> <TYPE>);
+    ```
 
-      Und in SQL-92:
-      ```
-        alter table <NAME>
-          alter column (<ATTRIBUTE> <TYPE>);
-      ```
-  - type: md
-    front: Welche (in der Vorlesung vorgestellte) Aggregatfunkitonen gibt es in SQL?
-    back: |+
-      - `avg`: Bestimmung des Durchschnitts einer Menge von Zahlen
-      - `max` und `min`: Zur Bestimmung des größten bzw. kleinsten Elementes
-      - `sum`: Bildung der Summe
-      - `count`: Anzahl der Zeilen in einer Tabelle
+    Und in SQL-92:
+    ```
+      alter table <NAME>
+        alter column (<ATTRIBUTE> <TYPE>);
+    ```
+- type: md
+  id: 9  # (generated)
+  front: Welche (in der Vorlesung vorgestellte) Aggregatfunkitonen gibt es in SQL?
+  back: |
+    - `avg`: Bestimmung des Durchschnitts einer Menge von Zahlen
+    - `max` und `min`: Zur Bestimmung des größten bzw. kleinsten Elementes
+    - `sum`: Bildung der Summe
+    - `count`: Anzahl der Zeilen in einer Tabelle

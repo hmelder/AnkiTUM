@@ -3,27 +3,33 @@ author: AnkiTUM
 id: 1704901450
 cards:
 - type: basic
+  id: 0  # (generated)
   format: md
-  front: Welche Probleme entstehen, wenn alle Programme vollen Zugriff auf den **kompleten** physischen Hauptspeicher haben?
-  back: |+
+  front: Welche Probleme entstehen, wenn alle Programme vollen Zugriff auf den **kompleten**
+    physischen Hauptspeicher haben?
+  back: |
     - Programme können das im Hauptspeicher befindliche Betriebsystem und andere Programme **ändern**
     - Programme können sich gegenseitig stören
     - Jedes Programm belegt potentiell den **gesamten** Hauptspeicher
 - type: basic
+  id: 1  # (generated)
   format: md
-  front: Wie kann vom physischen Speicher abstrahiert werden, um Störungen zwischen mehreren Programmen zu vermeiden?
-  back: |+
+  front: Wie kann vom physischen Speicher abstrahiert werden, um Störungen zwischen
+    mehreren Programmen zu vermeiden?
+  back: |
     - Einführung einer Speicherabstraktion in Form von **Adressräumen**
     - (Abstrakte) Menge von Speicherzellen, die ein Prozess adressieren kann. z.B. 4GByte
     - Jeder Prozess erhält seinen *eigenen*, *isolierten* Adressraum
 - type: basic
+  id: 2  # (generated)
   format: md
   front: Direkte Adressierung
   back: Jede logische (virtuelle) Adresse entspricht ihrer physischen Adresse
 - type: basic
+  id: 3  # (generated)
   format: md
   front: Wie können mehrere Programme bei direkter Adressierung gleichzeitig laufen?
-  back: |+
+  back: |
     ## Option 1: Extensives Swapping
     - Immer nur das ausführende Programm im Speicher
     - Beim Wechsel wird der Speicherinhalt gewechselt (swapping)
@@ -31,82 +37,103 @@ cards:
     - Programme weren an unterschiedliche Stellen im Speicher geladen
     - Beim Laden müssen dann die Adressen in den Programmen umgeschrieben warden, damit sie zur Stelle im Speicher passen
 - type: basic
+  id: 4  # (generated)
   format: md
   front: Können sich Programme bei direkter Adressierung und Relokation stören?
   back: Ja. Programme können auf den gesamten Speicher zugreifen.
 - type: basic
+  id: 5  # (generated)
   format: md
   front: Beschreibe die Basis-Adressierung
-  back: |+
+  back: |
     - Das BS legt für jeden *logischen* Adressraum eines Prozesses eine Basisadresse b_x fest
     - Bei Prozess-Start wird die Basisadresse bx in das Basisregister der CPU geladen
 - type: basic
+  id: 6  # (generated)
   format: md
   front: Wie funktioniert die Adressberechnung bei der Basis-Adressierung
-  back: |+
+  back: |
     - physische Adresse = logische Adresse + Basisadresse
     - Berechnung erfolgt durch die CPU, bevor eine Adresse auf den Speicherbus gelegt wird
 - type: basic
+  id: 7  # (generated)
   format: md
   front: Vorteile und Nachteile der Basis-Adressierung
-  back: |+
+  back: |
     ## Vorteile
       - Das BS kann Programme im Hauptspeicher verschieben (relocation)
       - Das BS kann mehrere Prozesse zu einem Zeitpunkt in den Hauptspeicher laden
     ## Nachteile
       - Aufwendige Additionsoperation
 - type: basic
-  front: Ja oder Nein? Jedes Programm belegt bei direkter Adressierung potentiell den gesamten Hauptspeicher des Rechners.
+  id: 8  # (generated)
+  front: Ja oder Nein? Jedes Programm belegt bei direkter Adressierung potentiell
+    den gesamten Hauptspeicher des Rechners.
   back: Nein
 - type: basic
-  front: Ja oder Nein? Prozesse benötigen bei direkter Adressierung Kenntnis über Struktur des Hauptspeichers.
+  id: 9  # (generated)
+  front: Ja oder Nein? Prozesse benötigen bei direkter Adressierung Kenntnis über
+    Struktur des Hauptspeichers.
   back: Nein
 - type: basic
-  front: Ja oder Nein? Programme können bei direkter Adressierung das ebenfalls im Hauptspeicher befindliche Betriebssystem korrumpieren.
+  id: 10  # (generated)
+  front: Ja oder Nein? Programme können bei direkter Adressierung das ebenfalls im
+    Hauptspeicher befindliche Betriebssystem korrumpieren.
   back: Nein
 - type: basic
-  front: Ja oder Nein? Bei der Basisadressierung belegt jedes Programm potentiell den gesamten Hauptspeicher des Rechners.
+  id: 11  # (generated)
+  front: Ja oder Nein? Bei der Basisadressierung belegt jedes Programm potentiell
+    den gesamten Hauptspeicher des Rechners.
   back: Ja
 - type: basic
-  front: Ja oder Nein? Bei der Basisadressierung benötigen Prozesse Kenntnis über Struktur des Hauptspeichers.
+  id: 12  # (generated)
+  front: Ja oder Nein? Bei der Basisadressierung benötigen Prozesse Kenntnis über
+    Struktur des Hauptspeichers.
   back: Ja
 - type: basic
-  front: Ja oder Nein? Bei der Basisadressierung können Programme das ebenfalls im Hauptspeicher befindliche Betriebsystem korrumpieren
+  id: 13  # (generated)
+  front: Ja oder Nein? Bei der Basisadressierung können Programme das ebenfalls im
+    Hauptspeicher befindliche Betriebsystem korrumpieren
   back: Ja
 - type: basic
+  id: 14  # (generated)
   format: md
   front: Beschreibe die Segmentadressierung
-  back: |+
+  back: |
     - Unterteilung des Adressraums in logische Segmente, unterschiedlicher Länge
       - Beispiel: Stack-, Daten-, Code-Segment
     - Mögliche Zugriffsberechtigungen
     - Adressierung pro Segment erforderlich
 - type: basic
+  id: 15  # (generated)
   format: md
   front: Wie funktioniert die Segmentadressierung beim Intel x86 Prozessor
-  back: |+
+  back: |
     - Verwaltung einer Tabelle: **Global Descriptor Table** (GDT)
     - Eintrag in der Tabelle enthält für jedes Segment:
       - Basisadresse und Länge des Segments
       - Flags (Zugriffsbeschränkungen, etc.)
     - Segmentregister: Index in die Global Descriptor Table
 - type: basic
+  id: 16  # (generated)
   format: md
   front: Welche Datenstrukturen bieten sich zur Freispeicherverwaltung an?
-  back: |+
+  back: |
     1. Bitmap
     2. Verkettete Liste von Frei-Speicherbereichen
 - type: basic
+  id: 17  # (generated)
   format: md
   front: Beschreibe die Bitmap Datenstruktur zur Freispeicherverwaltung
-  back: |+
+  back: |
     - Aufteilung des Speichers in **Blöcke gleicher Größe**
     - Bitmap zur Indexierung des Speichers
     - Pro Block 1 Bit zur Repräsentation in der Map (1 belegt, 0 frei)
 - type: basic
+  id: 18  # (generated)
   format: md
   front: Nenne Vor- und Nachteile von einer Bitmap zur Freispeicherverwaltung
-  back: |+
+  back: |
     # Vorteile
       - Einfacher und schneller Zugriff
     # Nachteile
@@ -114,205 +141,244 @@ cards:
       - Bei zu *kleinen* Blöcken wird eine große Bitmap zur Verwaltung benötigt
       - Bei zu *großen* Blöcken ist der Verschnitt ggf. hoch.
 - type: basic
+  id: 19  # (generated)
   format: md
   front: Wie kann eine Freispeicherverwaltung mittels einer verketteten Liste erfolgen?
-  back: |+
+  back: |
     # Aufbau
     - BS verwaltet Liste mit Bereichen bestehend aus zusammenhängenden Hauptspeicherblöcken
     - Bereiche sind einem Prozess zugeordnet, oder frei
 - type: basic
+  id: 20  # (generated)
   format: md
   front: Welche Informationen enthält typischerweise ein Listeneintrag bei einer Freispeicherverwaltung?
-  back: |+
+  back: |
     - Anfangsadresse des Bereichs
     - Die Länge des Bereichs (in Blöcken)
     - Einen Zeiger auf den nächsten Eintrag (oder NULL Terminator)
 - type: basic
+  id: 21  # (generated)
   format: md
-  front: Was sind Vor- und Nachteile bei der Freispeicherverwaltung mittels einer verketteten Liste?
-  back: |+
+  front: Was sind Vor- und Nachteile bei der Freispeicherverwaltung mittels einer
+    verketteten Liste?
+  back: |
     # Vorteile
       - Flexible Speicheraufteilung
     # Nachteile
       - Lineare Suche
       - Keine feste Verwaltungsstruktur (dynamischer Größenänderung)
 - type: basic
+  id: 22  # (generated)
   format: md
-  front: Was sind Optimierungsmöglichkeiten bei der Freispeicherverwaltung mittels einer verketteten Liste?
-  back: |+
+  front: Was sind Optimierungsmöglichkeiten bei der Freispeicherverwaltung mittels
+    einer verketteten Liste?
+  back: |
     - Getrennte listen für belegten und freien Speicher
     - Sortierung nach Speichergröße
     - Verwaltung in (balancierter) Baumstruktur
 - type: basic
+  id: 23  # (generated)
   format: md
   front: Was ist ein Vorteil bei der Sortierung der Freibereichsliste?
-  back: |+
+  back: |
     Es können leicher freie Speicherbereiche zusammengeführt werden.
 - type: basic
+  id: 24  # (generated)
   format: md
   front: Welche Belegungsstrategien gibt es bei der Freispeicherverwaltung?
-  back: |+
+  back: |
     - First-Fit
     - Next-Fit
     - Best-Fit
     - Worst-Fit
 - type: basic
+  id: 25  # (generated)
   format: md
-  front: Was ist die Strategie des First-Fit in der Speicherzuweisung und was ist ihr Hauptvorteil?
-  back: |+
+  front: Was ist die Strategie des First-Fit in der Speicherzuweisung und was ist
+    ihr Hauptvorteil?
+  back: |
     First-Fit durchsucht die Liste der Freibereiche vom Anfang und belegt den
     ersten ausreichend großen Freibereich. Hauptvorteil ist die Einfachheit und
     schnelle Auffindung eines passenden Freibereichs.
 - type: basic
+  id: 26  # (generated)
   format: md
   front: Erkläre den Unterschied zwischen First-Fit und Next-Fit in der Speicherzuweisung
-  back: |+
+  back: |
     Next-Fit ist eine Variante von First-Fit, beginnt aber die Suche im Speicher
     beim zuletzt belegten Bereich, nicht am Anfang der Liste.
 - type: basic
+  id: 27  # (generated)
   format: md
-  front: Was bedeutet Best-Fit in der Speicherzuweisung und was könnte ein Nachteil dieser Strategie sein?
-  back: |+
+  front: Was bedeutet Best-Fit in der Speicherzuweisung und was könnte ein Nachteil
+    dieser Strategie sein?
+  back: |
     Best-Fit durchsucht die Liste der Freibereiche vollständig und wählt den
     Bereich mit dem geringsten Verschnitt.
-    
+
     # Nachteil
     Erhöhter Suchaufwand.
 - type: basic
+  id: 28  # (generated)
   format: md
-  front: 'Wahr oder Falsch: Worst-Fit belegt in der Speicherzuweisung immer den kleinsten verfügbaren Freibereich'
-  back: |+
+  front: 'Wahr oder Falsch: Worst-Fit belegt in der Speicherzuweisung immer den kleinsten
+    verfügbaren Freibereich'
+  back: |
     Falsch. Worst-Fit belegt den Freibereich mit dem größten Verschnitt.
 - type: basic
+  id: 29  # (generated)
   format: md
   front: Was könnte ein Problem bei der Anwendung der First-Fit Strategie sein?
-  back: |+
+  back: |
     Ein mögliches Problem bei First-Fit könnte die zunehmende Fragmentierung des
     Speichers sein, da immer der erste passende Freibereich genutzt wird.
 - type: basic
+  id: 30  # (generated)
   format: md
   front: Was ist die interne Fragmentierung?
-  back: |+
+  back: |
     Beim blockweisen Allokieren von Speicher wird meist **mehr** Speicher vergeben als benötigt.
     Die interne Fragmentierung beschreibt diesen Verschnitt.
 - type: basic
+  id: 31  # (generated)
   format: md
   front: Was ist die externe Fragmentierung?
-  back: |+
+  back: |
     Anders als bei der internen Fragmentierung, bezeichnet die externe
     Fragmentierung die "Löcher" im Hauptspeicher, die bei der Vergabe und Freigabe
     von Speicherblöcken unterschiedlicher Größe entstehen können.
 - type: basic
+  id: 32  # (generated)
   format: md
   front: Was ist das Ziel des Buddy-Algorithmus und wie wird der Speicher verwaltet?
-  back: |+
+  back: |
     - Kompromiss zwischen der Verwaltung von Speicherblöcken fester und dynamischer Größe ab.
     - Speicher wird in Blöcken der Größe 2^k verwaltet
 - type: basic
+  id: 33  # (generated)
   format: md
   front: Beschreibe den Prozess der Speicherbelegung und -freigabe im Buddy-Algorithmus.
-  back: |+
+  back: |
     Bei der Belegung wird der Speicher in gleich große Bereiche aufgeteilt, bis
     der kleinste passende Block gefunden ist. Bei der Freigabe werden freie
     Buddies verschmolzen, um größere Blöcke zu bilden. Dies wird rekursiv
     fortgesetzt, bis keine Buddies mehr verschmolzen werden können.
 - type: basic
+  id: 34  # (generated)
   format: md
-  front: Welche Vorteile bietet der Buddy-Algorithmus und wo wird eine Variante davon verwendet?
-  back: |+
+  front: Welche Vorteile bietet der Buddy-Algorithmus und wo wird eine Variante davon
+    verwendet?
+  back: |
     - einfach zu implementieren
     - effizientes Suchen nach freien Speicherbereichen-maximalen Verschnitt von einem halben Block
-    
+
     Eine Variante des Buddy-Algorithmus wird in der Speicherverwaltung von Linux verwendet.
 - type: basic
+  id: 35  # (generated)
   format: md
-  front: Was ist das Problem mit dem virtuellen Prozess-Adressraum eines Prozesses und wie begegnet das Betriebssystem diesem Problem?
-  back: |+
+  front: Was ist das Problem mit dem virtuellen Prozess-Adressraum eines Prozesses
+    und wie begegnet das Betriebssystem diesem Problem?
+  back: |
     Der virtuelle Prozess-Adressraum kann größer sein als der physische
     Hauptspeicher. Das Betriebssystem löst dieses Problem durch automatisierte
     virtuelle Speicherverwaltung, häufig durch das Konzept des Paging.
 - type: basic
+  id: 36  # (generated)
   format: md
   front: Was ist Paging in der Speicherverwaltung und wie funktioniert es?
-  back: |+
+  back: |
     Virtuelle Adressräume werden in Seiten (Pages) und der Hauptspeicher werden in physische
     Kacheln (Frames) aufgeteilt. Seiten und Kacheln haben in der Regel die
     gleiche Größe (oder die Seitengröße ist ein **Vielfaches** der Kachelgröße).
 - type: basic
+  id: 37  # (generated)
   format: md
   front: Was sind typische Seiten-/Kachelgrößen auf x86?
   back: 4KB / 2 MB / 1 GB
 - type: basic
+  id: 38  # (generated)
   format: md
   front: Was ist die Rolle der Memory Management Unit (MMU) im Kontext des Paging?
   back: Die MMU bildet Seiten-Adressen auf physische Adressen in einer Kachel ab.
 - type: basic
+  id: 39  # (generated)
   format: md
-  front: Warum ist eine manuelle Aufteilung des virtuellen Adressraums durch den Programmierer problematisch?
-  back: |+
+  front: Warum ist eine manuelle Aufteilung des virtuellen Adressraums durch den Programmierer
+    problematisch?
+  back: |
     Eine manuelle Aufteilung des virtuellen Adressraums durch den Programmierer
     ist aufwendig und fehleranfällig, da sie manuelles Ein- und Auslagern von
     Adressbereichen in den Hauptspeicher erfordert.
 - type: basic
+  id: 40  # (generated)
   format: md
   front: Was macht eine Page Table?
-  back: |+
+  back: |
     - Verwaltung der Zuordnung von Seiten zu Kacheln
     - BS verwaltet eine Page Table pro Prozess
 - type: basic
+  id: 41  # (generated)
   format: md
   front: Was passiert bei einem Prozesswechsel mit dem Seitentabellenregister?
-  back: |+
+  back: |
     Bei einem Prozesswechsel wird die Anfangsadresse der neuen
     Prozess-Page-Table in das Seitentabellenregister der CPU geladen
 - type: basic
+  id: 42  # (generated)
   format: md
   front: Wann und wie entsteht ein **Seitenfehler** (page fault)
-  back: |+
+  back: |
     - Bei Zugriff auf eine virtuelle Adresse einer Seite, die in keiner Kachel eingelagert ist.
     - Die Hardware löst einen Interrupt, einen page fault, aus
 - type: basic
+  id: 43  # (generated)
   format: md
   front: Wie kann ein Seitenfehler (page fault) behoben werden?
   back: Das Betriebsystem lagert die erforderliche Seite ein
 - type: basic
+  id: 44  # (generated)
   format: md
   front: Was versteht man unter der **Seiteneinlagerung?**
-  back: |+
+  back: |
     Wenn fast alle Kacheln belegt sind, müssen Seiten ersetzt werden. Die
     Seiteneinlagerung ist somit die Auslagerung von Seiten auf die Festplatte.
 - type: basic
+  id: 45  # (generated)
   format: md
   front: Was ist Seitenflattern (Thrashing)
-  back: |+
+  back: |
     Zeit für das Laden und Auslagern von Seiten (Page Swapping) im virtuellen
     Speicher nimmt den größten Teil der Prozessorzeit in Anspruch.
 - type: basic
+  id: 46  # (generated)
   format: md
   front: Was ist der Unterschied zwischen Paging vs. Swapping?
-  back: |+
+  back: |
     ## Paging
       - Seitenweise Auslagern
       - Feinere Granularität
     ## Swapping
       - Gesamter Speicher des Prozesses wird ausgelagert
 - type: basic
+  id: 47  # (generated)
   format: md
   front: Was ist der Ablauf der Memory Address Translation in einer MMU?
-  back: |+
+  back: |
     1. Prozessor sendet eine virtuelle Adresse an die MMU
     2. Anfrage mit Page Table Entry Address (PTEA) zum Cache/Speicher
     3. MMU bekommt Page Table Entry (PTE) aus Cache/Speicher
     4. MMU sendet die physische Adresse an Cache/Speicher
     5. Cache/Speicher sendet die Daten zum Prozessor
 - type: basic
+  id: 48  # (generated)
   format: md
   front: Was ist das Hauptproblem bei der Adressabbildung?
   back: Der hohe Zeitaufwand
 - type: basic
+  id: 49  # (generated)
   format: md
   front: Was ist der Translation Lookaside Buffer (TLB)?
-  back: |+
+  back: |
     - Cache für die Abbildung von Seiten auf Kacheln
     - Klein: **wenige Einträge**, typisch: 256
     - Oft mehrstufig
@@ -320,9 +386,10 @@ cards:
     ## Mögliche Spalten
     Valid, Virtual Page No., Modified, Protection, Page Frame
 - type: basic
+  id: 50  # (generated)
   format: md
   front: Wie ist eine **virtuelle Adresse** *v* aufgebaut?
-  back: |+
+  back: |
     [$]v = (s, w)[/$]
 
     Die höherwertigen Bits werden als **Seitennummer** s und die niedrigwertigen
@@ -337,43 +404,49 @@ cards:
     ## Schema
     [$$]\[ \overbrace{\texttt{Seitennummer s}}^{\text{higher order bits}} \quad \underbrace{\texttt{Offset w}}_{\text{lower order bits}} \][/$$]
 - type: basic
+  id: 51  # (generated)
   format: md
   front: Wie ist eine **Page Table** strukturiert?
-  back: |+
+  back: |
     Ein Eintrag enthält die Seitennummer und die korrespondierende Framenummer
 - type: basic
+  id: 52  # (generated)
   format: md
-  front: Was sind die fünf vorgestellten Informationen (Bits) bei einen Page Table Eintrag?
-  back: |+
+  front: Was sind die fünf vorgestellten Informationen (Bits) bei einen Page Table
+    Eintrag?
+  back: |
     - **P** (present): Physische Adresse ist vorhanden und valide
     - **U/S** (user/supervisor)
     - **R** (referenced): Wurde auf die Seite **zugegriffen**?
     - **M** (modify): Wurde auf der Inhalt der Seite modifiziert?
     - **XD** (execute-disable): Darf der Inhalt der Seite auch ausgeführt werden?
 - type: basic
+  id: 53  # (generated)
   format: md
   front: |+
     Wann sind mehrstufige Seitentabellen vom Vorteil?
     - Große virtuelle Adressräume -> Seitentabelle ist ebenfalls **sehr groß**
     - Die Speicherung der Tabelle belegt viel Hauptspeicher
-    
+
     ## Folge?
     Nur ein Teil der Page Table muss zur Prozessausführung im Hauptspeicher eingelagert sein
 
-  back: |+
+  back: |
 - type: basic
+  id: 54  # (generated)
   format: md
   front: Wie werden mehrstufige Seitentabellen umgesetzt?
-  back: |+
+  back: |
     Höhererwertige Bits (Seitennummer) werden aufgeteilt, um weitere hierarchisch angeordnete Tabellen zu indexen.
 
     [$$]\[\text{Virtual Address} = \left( \overbrace{\text{PDN}}^{\text{Page Directory Number}},
     \overbrace{\text{PTN}}^{\text{Page Table Number}},
     \overbrace{\text{Offset}}^{\text{Offset within Page}} \right) \][/$$]
 - type: basic
+  id: 55  # (generated)
   format: md
   front: Beschreibe den Ablauf der Seitenfehlerbehandlung (durch BS)
-  back: |+
+  back: |
     1. HW löst **Interrupt aus**
     2. Ausführung des **Page-Fault-Handlers**
     3. BS behandelt Seitenfehler
@@ -383,16 +456,18 @@ cards:
     5. Wiederherstellen des Programmzustands, reaktivieren der Interrupts
     6. Interrupt-Kontext verlassen
 - type: basic
+  id: 56  # (generated)
   format: md
   front: Welche drei strategischen Aufgaben gibt es beim Paging?
-  back: |+
+  back: |
     - **Wann**? On-Demand, und/oder Prefetching
     - **Wohin**? Platzierungsstrategie
     - **Welche Seite** wird u.u. ausgelagert?
 - type: basic
+  id: 57  # (generated)
   format: md
   front: Nenne die 6 vorgestellten Seitenersetzungstrategien.
-  back: |+
+  back: |
     - FIFO
     - Second-Chance
     - Clock
@@ -400,35 +475,40 @@ cards:
     - Working Set
     - Working Set with Clock
 - type: basic
+  id: 58  # (generated)
   format: md
   front: Was beschreibt die FIFO-Strategie (First-in-First-Out)?
-  back: |+
+  back: |
     - Verwalten einer Liste aller im Speicher geladenen Seiten, sortiert nach Ankunftszeit
     - Die am längsten im Speicher befindliche Seite (an der Spitze der Liste) wird für das Page-out ausgewählt.
 - type: basic
+  id: 59  # (generated)
   format: md
   front: Was ist ein großes Problem bei der FIFO Seitenersetzungsstrategie?
-  back: |+
+  back: |
     Möglicherweise häufig genutzte Seiten können ersetzt werden, was zu einer Erhöhung der Seitenfehler führen kann
     (bekannt als Béládys Anomalie).
 - type: basic
+  id: 60  # (generated)
   format: md
   front: Wie modifiziert der Second-Chance-Algorithmus die FIFO-Strategie im Seitenersatz?
-  back: |+
+  back: |
     Seiten, die ihr R-Bit gesetzt haben, erhalten eine zweite Chance.
     Diese Seiten werden ans Ende der Liste verschoben und ihre Ankunftszeit wird aktualisiert.
-    
+
     Sind alle R-Bits gesetzt, fällt der Algorithmus auf FIFO zurück.
 - type: basic
+  id: 61  # (generated)
   format: md
   front: Was ist die Motivation für den Second-Chance-Algorithmus im Seitenersatz?
-  back: |+
+  back: |
     Der Ansatz zielt darauf ab, unnötige Seitenersetzungen zu reduzieren, kann
     aber zu häufigen Verschiebungen in der Liste führen.
 - type: basic
+  id: 62  # (generated)
   format: md
   front: Was ist der Clock-Algorithmus im Seitenersatz und wie funktioniert er?
-  back: |+
+  back: |
     - Anordnung von Seiten in einer kreisförmigen Liste an (ähnlich einer Uhr)
     - Verwendet einen Zeiger, um die älteste Seite zu identifizieren
 
@@ -438,63 +518,72 @@ cards:
 
     Das M-Bit entscheidet, ob der Seiteninhalt vorher zurück auf den Speicher geschrieben oder die Seite einfach verworfen wird.
 - type: basic
+  id: 63  # (generated)
   format: md
   front: Was beschreibt die LRU (Least Recently Used) Seitenersetzungsstrategie?
-  back: |+
+  back: |
     - Nutzt die Lokalitätseigenschaft von Programmen aus und ersetzt bei einem
     Seitenfehler diejenige Seite, die am längsten nicht verwendet wurde
     - Gute Approximation des optimalen Seitenersetzungsalgorithmus
 - type: basic
+  id: 64  # (generated)
   format: md
   front: Was ist das Hauptproblem bei der Implementierung der LRU Seitenersetzungsstrategie?
-  back: |+
+  back: |
     Eine exakte Implementierung erfordert spezielle Hardware oder komplizierte
     Software-Lösungen wie NFU oder Aging.
 - type: basic
+  id: 65  # (generated)
   format: md
   front: Wie funktioniert das NFU und Aging Verfahren in der Seitenverwaltung?
-  back: |+
+  back: |
     - Für jede Seite wird ein Software-Counter geführt, der bei jedem Timer-Interrupt erhöht wird, wenn das R-Bit gesetzt ist
     - Die Seite mit dem niedrigsten Zählerstand wird ausgelagert
-    
+
     ## Erfassung der Alterung von Zugriffen
     Aging verbessert NFU, indem der Zähler auch das Alter der Zugriffe
     berücksichtigt, wodurch Seiten, die frisch oder lange nicht referenziert
     wurden, unterschieden werden können.
 - type: basic
+  id: 66  # (generated)
   format: md
-  front: Wie kann bei dem Aging Verfahren (Seitenverwaltung) die Alterung von Zugriffen erfasst werden?
-  back: |+
+  front: Wie kann bei dem Aging Verfahren (Seitenverwaltung) die Alterung von Zugriffen
+    erfasst werden?
+  back: |
     Es wird ein Zeit-Intervall t festgelegt in dem Zugriffe erfasst werden (z.B. 20 ms)
-    
+
     ## Ablauf nach Timer-Interrupt
     1. Neuberechnung des Zählerstands
     2. Shift des Zählers um eine Stelle nach Rechts
     3. Addition des R-Wertes zum am weitesten links stehenden bit des Zählers
 - type: basic
+  id: 67  # (generated)
   format: md
   front: Was ist das Working-Set eines Prozesses (Seitenverwaltung)?
   back: Die Menge der Seiten die ein Prozess **aktuell** benötigt.
 - type: basic
+  id: 68  # (generated)
   format: md
   front: Was ist das Working-Set-Modell in der Seitenverwaltung?
-  back: |+
+  back: |
     - Prozesse arbeiten eine **zeitlang** mit dem gleichen Working-Set
     - **Optimalfall**: Das Working-Set ist (zu einem großen Teil) im Hauptspeicher eingelagert
     - Idee: Ersetzungs-Strategie **auf der Basis des Working-Set Modells**
 - type: basic
+  id: 69  # (generated)
   format: md
   front: Wie funktioniert das Working-Set-Model in der Seitenverwaltung?
-  back: |+
+  back: |
     Festlegung eines **Zeit-Intervalls** I. Timer-Interrupt nach Ablauf von I (Clock-Tick)
 
     ## Ablauf bei Timer-Interrupt
     1. Neuberechnung des Working-Sets
     2. Löschen aller R-Bits **aller** Seiten. Typischerweise ist [$]i \lt \tau[/$] (Tau ist ein Interval in der **Rechenzeit** (nicht Echtzeit))
 - type: basic
+  id: 70  # (generated)
   format: md
   front: Wie funktioniert die **Seitenfehlerbehandlung** bei dem Working-Set Verfahren?
-  back: |+
+  back: |
     BS inspiziert R-Bits aller Seiten. Sei [$]Z[/$] der (monoton steigender) Zähler und [$]Z_p[/$] der Zähler für die Seite [$]p[/$].
 
     1. **R = 1** Seite gehört zum Working-Set und wird **nicht** entfernt (Aktualisiere Zähler)
@@ -503,6 +592,7 @@ cards:
       - [$]Z - Z_p \le \tau[/$]: Wurde nicht verwendet, abr Teil des WS
     3. Wenn keine Seite gefunden wurde, ersetze die älteste Seite
 - type: basic
+  id: 71  # (generated)
   format: md
   front: Was ist die WSClock Seitenersetzungstrategie?
   back: Kombiniert Clock und Working-Set Strategie.
