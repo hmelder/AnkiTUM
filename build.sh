@@ -5,22 +5,11 @@ dirs=("IN0009_GBS" "IN0008_GDB" "EI00330_Signaltheorie")
 mkdir -p build
 
 for dir in "${dirs[@]}"; do
-    mkdir -p build/$dir
+    mkdir -p build/"$dir"
     echo "Building $dir"
-    (
-        shopt -s nullglob
-        for deck in "$dir"/*.yaml; do
-            echo $deck
-            if [ -f "./$deck" ]; then
-                echo "Building Deck $dir/$deck"
 
-                # make deck
-                deckname=$(basename "$deck")
-                ankitum "$deck" -l ./tum_logo.png -o ./build/$dir/"${deckname%.yaml}".apkg --debug
-            fi
-        done
-        shopt -u nullglob
+    # make deck
+    ankitum "./$dir" -o ./build/"$dir"/"${dir%.yaml}".apkg --debug
+    zip ./build/"$dir".zip ./build/"$dir"/*.apkg
 
-        zip ./build/$dir.zip ./build/$dir/*.apkg
-    )
 done
