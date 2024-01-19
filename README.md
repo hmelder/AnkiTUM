@@ -25,6 +25,8 @@ package.
 
 ## Contributing
 
+### !! Anki deck to YAML reverse parser coming soon !!
+
 ### Guidelines
 We welcome contributions from TUM students to enhance and expand the AnkiTUM
 flashcard collection. To contribute, follow these guidelines:
