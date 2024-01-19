@@ -25,6 +25,7 @@ jobs:
 
     - name: Run ID Fixup Script
       run: |
+        pip install -r .github/workflows/requirements.txt --user
         python3 .github/workflows/id_fixup.py
 
     - name: Commit and Push Changes
