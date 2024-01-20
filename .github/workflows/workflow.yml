@@ -47,7 +47,7 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Auto-fixup IDs by GitHub Actions"
+          git commit -m "AnkiBot: Automatically added missing IDs"
           git push
         fi
 
