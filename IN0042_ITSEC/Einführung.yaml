@@ -19,5 +19,5 @@ cards:
 
 - type: markdown
   id: 2  # (generated)
-  front: 'Was ist ein Virus?'
+  front: Was ist ein Virus?
   back: Ein Nicht selbständiges Programm welches sich dupliziert
