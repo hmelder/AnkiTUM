@@ -25,6 +25,8 @@ package.
 
 ## Contributing
 
+### !! Anki deck to YAML reverse parser coming soon !!
+
 ### Guidelines
 We welcome contributions from TUM students to enhance and expand the AnkiTUM
 flashcard collection. To contribute, follow these guidelines:
@@ -41,6 +43,7 @@ flashcard collection. To contribute, follow these guidelines:
 - Ensure your flashcards are accurate and relevant to the CS modules.
 - Check for duplicates to avoid redundant content.
 - Keep your yaml files organized by module and topic.
+- Leave two lines between each "card" declaration, so the yaml is easier to read
 
 By following these guidelines, you'll help maintain the quality and usefulness
 of the AnkiTUM flashcard repository for all students. Your contributions are
@@ -52,28 +55,30 @@ We use [YAML](https://yaml.org/) to write decks which are then converted to Anki
 
 Take a look at the YAML files inside this project to get a feel for it!
 
-Anki supports various kinds of cards, including the **basic**, and **cloze**
-cards. Basic cards have a front and a back just like classic flash cards. Cloze
-types do not have a back. They contain "clozes" which are words or phrases
+Anki supports various kinds of cards, including the **basic**, **markdown** and **cloze**
+cards. Basic cards have a front and a back just like classic flash cards. Markdown/md_basic cards allow markdown styling. 
+Cloze types do not have a back. They contain "clozes" which are words or phrases
 inside a sentence that are blacked out and get revealed when the user turns the
 card around.
 
 Our converter supports plaintext, markdown, and latex. You can also include images in your flashcards.
+Additionally, Card and Deck IDs must be set in ordner for anki to merge old versions of the decks with new versions-
+Thankfully, we have a script which automatically adds missing IDs to cards, so you dont have to worry about them at all.
+AnkiTum Bot will add the IDs for you.
 
 Here is an example of a basic card with markdown:
 
 ```yaml
 # The unique ID of the deck
-id: 123
+id: 123 # this is optional, you can let the bot add the ID
 # Deck Title
 title: IPC
 authors: Joe
 
 # A list of cards 
 cards:
-- type: basic
+- type: markdown
   # Front and Back are formatted in Markdown
-  format: md
   front: Welche Interaktionen zwischen Prozessen sind möglich?
   back: |+
     - **Kausale Beziehungen**
