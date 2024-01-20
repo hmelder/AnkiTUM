@@ -1,0 +1,14 @@
+title: 'Kapitel 1: Einführung'
+author: HHuebner
+cards:
+- type: markdown
+  front: Def. Angriffsvektor
+  back: Eine Liste von schritten in einem Angriff
+
+
+- type: markdown
+  front: "Was ist der unterschied zwischen: Angriff, Bedrohung und Schwachstelle?"
+  back: |+
+    Schwachstelle = Ermöglicht das Umgehen von Sicherheitskontrollen
+    Bedrohung = Ein Bösartiges Ereignis welches die Sicherheit von Assets gefährdet
+    Angriff = Konkretes ausnutzen einer Schwachstelle
