@@ -326,7 +326,6 @@ cards:
   front: Was sind typische Seiten-/Kachelgrößen auf x86?
   back: 4KB / 2 MB / 1 GB
 
-
 - type: md_basic
   id: 38  # (generated)
   front: Was ist die Rolle der Memory Management Unit (MMU) im Kontext des Paging?
