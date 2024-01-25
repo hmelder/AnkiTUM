@@ -11,7 +11,7 @@ cards:
 - type: basic
   id: 1  # (generated)
   front: test
-  back: test2
+  back: test 123
 
 - type: cloze
   id: 2  # (generated)
@@ -21,8 +21,5 @@ cards:
 - type: reverse
   id: 3  # (generated)
   front: I'm the front side!
-  back: I'm the back side!
+  back: I'm the back side! <3
   chapter: reverse types
-
-id: 31824545
-

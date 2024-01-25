@@ -1,41 +1,55 @@
 title: 'GDB: Kapitel 4: Relationale Anfragesprachen'
 author: AnkiTUM
+
 cards:
   # Fragen zu Datentypen
-- type: md
+
+- type: md_basic
   id: 0  # (generated)
   front: Was ist der Unterschied zwischen `character(n)` und `char varying(n)`
   back: |
     - Zeichenketten vom Typ `character` immer Größe n
     - Abgespeicherte Größe kann bei `char varying` oder `varchar`variieren
-- type: md
+
+
+- type: md_basic
   id: 1  # (generated)
   front: Was ist die Bedeutung der Argumente von `numeric(p, s)`?
   back: |
     - p: Die Gesamtzahl der gespeicherten Stellen
     - s: Nachkommerstellen
-- type: md
+
+
+- type: md_basic
   id: 2  # (generated)
   front: Was ist der Datentyp für Fixkommazahlen in SQL?
   back: |
     `numeric(p, s)`
-- type: md
+
+
+- type: md_basic
   id: 3  # (generated)
   front: Was ist der Datentyp für Gleitkommazahlen in SQL?
   back: |
     `float`
-- type: md
+
+
+- type: md_basic
   id: 4  # (generated)
   front: Was ist der Datentyp für Integers in SQL?
   back: |
     `int` oder `integer`
-- type: md
+
+
+- type: md_basic
   id: 5  # (generated)
   front: Nenne einen Datentyp für die Abspeicherung von (großen) binären Daten
   back: |
     `blob` oder `raw`
   # Fragen zu DML (Data Manipulation Language)
-- type: md
+
+
+- type: md_basic
   id: 6  # (generated)
   front: Wie kann eine neue Relation in SQL erstellt werden?
   back: |
@@ -45,7 +59,9 @@ cards:
     ```
 
     Dabei `+` für ein, oder mehrere Attribute in der Liste.
-- type: md
+
+
+- type: md_basic
   id: 7  # (generated)
   front: |
     Wir wollen zu der Relation `Professoren` das Attribut `Raum`, wobei die
@@ -61,7 +77,9 @@ cards:
       alter table Professoren
         add column (Raum integer);
     ```
-- type: md
+
+
+- type: md_basic
   id: 8  # (generated)
   front: Wie kann der Datentyp eines Attributs einer Relation geändert werden?
   back: |
@@ -75,7 +93,9 @@ cards:
       alter table <NAME>
         alter column (<ATTRIBUTE> <TYPE>);
     ```
-- type: md
+
+
+- type: md_basic
   id: 9  # (generated)
   front: Welche (in der Vorlesung vorgestellte) Aggregatfunkitonen gibt es in SQL?
   back: |
