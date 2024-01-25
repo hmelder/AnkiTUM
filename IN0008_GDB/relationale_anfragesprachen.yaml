@@ -83,3 +83,36 @@ cards:
     - `max` und `min`: Zur Bestimmung des größten bzw. kleinsten Elementes
     - `sum`: Bildung der Summe
     - `count`: Anzahl der Zeilen in einer Tabelle
+- type: md
+  front: Was ist bei Verwendung von `GROUP BY` in der `SELECT` Klausel zu beachten?
+  back: |
+    Da in der Ausgaberelation jede Gruppe nur durch ein einzelnes Tupel repräsentiert
+    wird, können in der `SELECT`-Klausel **nur Aggregatfunktionen vorkommen, oder Attribute
+    nach denen gruppiert wurde**. Also Attribute, die auch in der `GROUP BY` Klausel verwendet
+    wurden.
+- type: md
+  front: Was ist das Ergebnis von `NULL + 1`?
+  back: "NULL"
+- type: md
+  front: Was ist das Ergebnis von `NULL*0`?
+  back: "NULL"
+- type: md
+  front: SQL hat eine dreiwertige Logik. Nenne alle drei Werte.
+  back: "true, false, unknown"
+- type: md
+  front: Was passiert, wenn in einem arithmetischen Ausdruck ein NULL-Wert vorkommt?
+  back: |
+    Der NULL-Wert wird propagiert, d.h sobald ein Operand NULL ist, wird auch das
+    Ergebnis NULL.
+- type: md
+  front: Ergebnis von `unknown AND true`
+  back: |
+    `unknown`
+- type: md
+  front: Ergebnis von `false OR unknown`
+  back: |
+    `unknown`
+- type: md
+  front: Ergebnis von `true OR unknown`
+  back: |
+    `true`
