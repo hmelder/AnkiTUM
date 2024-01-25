@@ -69,32 +69,32 @@ cards:
   id: 8  # (generated)
   front: Ja oder Nein? Jedes Programm belegt bei direkter Adressierung potentiell
     den gesamten Hauptspeicher des Rechners.
-  back: Nein
+  back: Ja
 - type: basic
   id: 9  # (generated)
   front: Ja oder Nein? Prozesse benötigen bei direkter Adressierung Kenntnis über
     Struktur des Hauptspeichers.
-  back: Nein
+  back: Ja
 - type: basic
   id: 10  # (generated)
   front: Ja oder Nein? Programme können bei direkter Adressierung das ebenfalls im
     Hauptspeicher befindliche Betriebssystem korrumpieren.
-  back: Nein
+  back: Ja
 - type: basic
   id: 11  # (generated)
   front: Ja oder Nein? Bei der Basisadressierung belegt jedes Programm potentiell
     den gesamten Hauptspeicher des Rechners.
-  back: Ja
+  back: Nein
 - type: basic
   id: 12  # (generated)
   front: Ja oder Nein? Bei der Basisadressierung benötigen Prozesse Kenntnis über
     Struktur des Hauptspeichers.
-  back: Ja
+  back: Nein
 - type: basic
   id: 13  # (generated)
   front: Ja oder Nein? Bei der Basisadressierung können Programme das ebenfalls im
     Hauptspeicher befindliche Betriebsystem korrumpieren
-  back: Ja
+  back: Nein
 - type: basic
   id: 14  # (generated)
   format: md
