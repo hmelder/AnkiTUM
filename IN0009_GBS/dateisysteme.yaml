@@ -197,3 +197,42 @@ cards:
   back: |
     - Zeichenlimitierung
     - Pointer auf den Heap -> Speichern als Hashmap, da die Dateisuche in einem Ordner sosnt lanmgsam wird
+
+- type: md_basic
+  front: Was ist der Unterscheid zwischen Hard links und symbolic links?
+  back: |+
+    Hard Links:
+    - Verzeichnis verweist direkt auf die i-node der gelinkten Datei
+    - Gelinkte Datei hat einen reference counter in der i-node
+    - mit dem syscall unlink() wird der link entfernt -> Dateien ohne links werden gelöscht
+    Symbolic links:
+    - Eine Datei vom Typ "symbolic link" wird erstellt welche auf die verlinkte Datei verweist
+
+- type: md_basic
+  front: Was sind Journaling Dateisysteme?
+  back: |+
+    - Erstellen log Einträge über alle Operationen 
+    - Abschluss der Informationen wird auf Platte vermerkt
+
+- type: md_basic
+  front: Welchen Vorteil haben Journaling Dateisysteme?
+  back: Robuster gegen crashes, da Veränderungen wieder hergestellt werden falls Hauptspeicher gelöscht
+
+- type: md_basic
+  front: Was ist eine Idempotente Operation?
+  back: Wiederholtes ausführen der Operation führt zum selben ergebnis
+
+- type: md_basic
+  front: Was ist das VFS?
+  back: |+
+    - Virtual File System
+    - Abstrahiert verschiedene Dateisysteme
+    - stellt für Anwendungen ein Homogenes Interface dar
+    - Transparent für Anwendungen
+    - Implementiert standard Unix syscalls (open, write...)
+
+- type: md_basic
+  front: Was ist das Buffer Cache bei Dateisystemen?
+  back: |+
+    - Puffer für Datenblöcke
+    - 
