@@ -1,0 +1,66 @@
+title: 'GDB: Kapitel 3: Relationales Datenmodell'
+author: AnkiTUM
+id: 234509043
+
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: Wie setzt sich der Schlüssel für eine Schwaceh Entität zusammen?
+  back: Besteht aus einem Fremdschlüssel und einem oder mehreren Attributen
+
+- type: html
+  front: Was macht die Selektion &sigma?
+  back: filtert Reihen der Relation nach einen Prädikat
+
+- type: html
+  front: Was macht die Projektion &Pi?
+  back: filtert Spalten der Relation
+
+- type: html
+  front: Was macht das Kreuzprodukt R&times;S?
+  back: Bildet alle tupel aus Reihen von R und S
+
+- type: html
+  front: Was macht der natural join &bowtie;?
+  back: Kreuzprodukt aber filtert Tupel bei denen für alle gleichen spalten unterschiedliche Werte existieren.
+
+- type: markdown
+  front: "[[image: r_outer_join_q.png]]"
+  back: "[[image: r_outer_join_a.png]]"
+
+- type: markdown
+  front: "[[image: f_outer_join_q.png]]"
+  back: "[[image: f_outer_join_a.png]]"
+
+- type: markdown
+  front: "[[image: semijoin_q.png]]"
+  back: "[[image: semijoin_a.png]]"
+
+- type: markdown
+  front: "[[image: antijoin_q.png]]"
+  back: "[[image: antijoin_a.png]]"
+
+- type: markdown
+  front: "[[image: div_q.png]]"
+  back: "[[image: div_a.png]]"
+
+- type: html
+  front: Was macht der Operator &gamma;<sub>A;B,C<\sub>
+  back: |+
+    <ul>
+    <li> Aggregationsoperator
+    <li> A ist die Spalte nach der Gruppiert wird
+    <li> B,C etc sind aggregatfunktionen
+    <\ul>
+
+- type: markdown
+  front: Welche Aggregatfunktionen haben wir Kennengelernt?
+  back: count, sum, max, min, avg, median
+
+
+- type: markdown
+  front: Welche Form hat eine Anfage im Relationskalkül
+  back: |+
+    {t | P(t)} z.b. [latex]\{p \mid p \in \text{Professoren} \land p.\text{Rang} = 'C4'\}[\latex]
+
+
