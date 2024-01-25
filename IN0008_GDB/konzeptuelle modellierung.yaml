@@ -17,10 +17,12 @@ cards:
   back: |+
     - Generalisierung: "is-a" Sechseck mit Pfeil (gibt an dass ein Entity subklasse eines anderen ist)
     - Aggregation: "teil von" Raute (gibt an dass ein Entity teil eines anderen ist)
-    
+
 
 - type: markdown
+  id: 2  # (generated)
   front: Was ist eine Schwache Entität?
   back: |+
     - Entität welche von anderen Entitäten Abhängt
-    
+
+...

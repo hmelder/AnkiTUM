@@ -9,42 +9,53 @@ cards:
   back: Besteht aus einem Fremdschlüssel und einem oder mehreren Attributen
 
 - type: html
+  id: 1  # (generated)
   front: Was macht die Selektion &sigma?
   back: filtert Reihen der Relation nach einen Prädikat
 
 - type: html
+  id: 2  # (generated)
   front: Was macht die Projektion &Pi?
   back: filtert Spalten der Relation
 
 - type: html
+  id: 3  # (generated)
   front: Was macht das Kreuzprodukt R&times;S?
   back: Bildet alle tupel aus Reihen von R und S
 
 - type: html
+  id: 4  # (generated)
   front: Was macht der natural join &bowtie;?
-  back: Kreuzprodukt aber filtert Tupel bei denen für alle gleichen spalten unterschiedliche Werte existieren.
+  back: Kreuzprodukt aber filtert Tupel bei denen für alle gleichen spalten unterschiedliche
+    Werte existieren.
 
 - type: markdown
-  front: "[[image: r_outer_join_q.png]]"
-  back: "[[image: r_outer_join_a.png]]"
+  id: 5  # (generated)
+  front: '[[image: r_outer_join_q.png]]'
+  back: '[[image: r_outer_join_a.png]]'
 
 - type: markdown
-  front: "[[image: f_outer_join_q.png]]"
-  back: "[[image: f_outer_join_a.png]]"
+  id: 6  # (generated)
+  front: '[[image: f_outer_join_q.png]]'
+  back: '[[image: f_outer_join_a.png]]'
 
 - type: markdown
-  front: "[[image: semijoin_q.png]]"
-  back: "[[image: semijoin_a.png]]"
+  id: 7  # (generated)
+  front: '[[image: semijoin_q.png]]'
+  back: '[[image: semijoin_a.png]]'
 
 - type: markdown
-  front: "[[image: antijoin_q.png]]"
-  back: "[[image: antijoin_a.png]]"
+  id: 8  # (generated)
+  front: '[[image: antijoin_q.png]]'
+  back: '[[image: antijoin_a.png]]'
 
 - type: markdown
-  front: "[[image: div_q.png]]"
-  back: "[[image: div_a.png]]"
+  id: 9  # (generated)
+  front: '[[image: div_q.png]]'
+  back: '[[image: div_a.png]]'
 
 - type: html
+  id: 10  # (generated)
   front: Was macht der Operator &gamma;<sub>A;B,C<\sub>
   back: |+
     <ul>
@@ -54,13 +65,16 @@ cards:
     <\ul>
 
 - type: markdown
+  id: 11  # (generated)
   front: Welche Aggregatfunktionen haben wir Kennengelernt?
   back: count, sum, max, min, avg, median
 
 
 - type: markdown
+  id: 12  # (generated)
   front: Welche Form hat eine Anfage im Relationskalkül
   back: |+
     {t | P(t)} z.b. [latex]\{p \mid p \in \text{Professoren} \land p.\text{Rang} = 'C4'\}[\latex]
 
 
+...
