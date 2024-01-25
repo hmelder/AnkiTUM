@@ -199,6 +199,7 @@ cards:
     - Pointer auf den Heap -> Speichern als Hashmap, da die Dateisuche in einem Ordner sosnt lanmgsam wird
 
 - type: md_basic
+  id: 23  # (generated)
   front: Was ist der Unterscheid zwischen Hard links und symbolic links?
   back: |+
     Hard Links:
@@ -209,20 +210,25 @@ cards:
     - Eine Datei vom Typ "symbolic link" wird erstellt welche auf die verlinkte Datei verweist
 
 - type: md_basic
+  id: 24  # (generated)
   front: Was sind Journaling Dateisysteme?
   back: |+
     - Erstellen log Einträge über alle Operationen 
     - Abschluss der Informationen wird auf Platte vermerkt
 
 - type: md_basic
+  id: 25  # (generated)
   front: Welchen Vorteil haben Journaling Dateisysteme?
-  back: Robuster gegen crashes, da Veränderungen wieder hergestellt werden falls Hauptspeicher gelöscht
+  back: Robuster gegen crashes, da Veränderungen wieder hergestellt werden falls Hauptspeicher
+    gelöscht
 
 - type: md_basic
+  id: 26  # (generated)
   front: Was ist eine Idempotente Operation?
   back: Wiederholtes ausführen der Operation führt zum selben ergebnis
 
 - type: md_basic
+  id: 27  # (generated)
   front: Was ist das VFS?
   back: |+
     - Virtual File System
@@ -232,7 +238,8 @@ cards:
     - Implementiert standard Unix syscalls (open, write...)
 
 - type: md_basic
+  id: 28  # (generated)
   front: Was ist das Buffer Cache bei Dateisystemen?
-  back: |+
+  back: |
     - Puffer für Datenblöcke
     - 
