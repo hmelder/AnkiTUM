@@ -10,6 +10,10 @@ for dir in "${dirs[@]}"; do
 
     # make deck
     ankitum "./$dir" -o ./build/"$dir"/"${dir%.yaml}".apkg --debug
-    zip ./build/"$dir".zip ./build/"$dir"/*.apkg
 
+    if [ -n "$(ls -A ./build/"$dir"/*.apkg 2>/dev/null)" ]; then
+        zip "./build/$dir.zip" "./build/$dir"/*.apkg
+    else
+        echo "Nothing to zip, skipping..."
+    fi
 done
