@@ -1,0 +1,494 @@
+title: ITSec
+author: Hendrik Hübner
+cards:
+
+
+- type: html
+  front: Def. Angriffsvektor
+  back: Eine Liste von schritten in einem Angriff
+
+
+- type: html
+  front: 'Was ist der unterschied zwischen: Angriff, Bedrohung und Schwachstelle?'
+  back: Schwachstelle = Ermöglicht das Umgehen von Sicherheitskontrollen<br>Bedrohung
+    = Ein Bösartiges Ereignis welches die Sicherheit von Assets gefährdet<br>Angriff
+    = Konkretes ausnutzen einer Schwachstelle
+
+
+- type: html
+  front: Was ist ein Virus?
+  back: Nicht selbständiges Programm welches sich dupliziert
+
+
+- type: html
+  front: Was ist ein Trojaner?
+  back: Ein Nützliches Programm welches versteckte schadsoftware enthält
+
+
+- type: html
+  front: Was ist Ransomware?
+  back: Scahdsoftware welche einen Opfer Rechner unbenutzbar macht bis z.b. ein Lösegeld
+    bezahlt wurde
+
+
+- type: html
+  front: Was sind die CIA Basisziele + Erweiterten Ziele?
+  back: Confidenciality, Integrity, Availability<br><br>Authenticity,
+    Accountability, Privacy
+
+
+- type: html
+  front: Was ist Integrity? (CIA)
+  back: Schutz vor unbemerkter / unauthorisierter Modifikation von Daten
+
+
+- type: html
+  front: Was ist Availability? (CIA)
+  back: Schutz vor Beienträchtigung der Funktionalität
+
+
+- type: html
+  front: Was ist Authenticity? (CIA)
+  back: Nachweis der Glaubwürdigkeit der Identität einer Entität (Person, Computer,
+    Dienst...)
+
+
+- type: html
+  front: Was ist Confidentiality? (CIA)
+  back: Geheimhaltung sensitiver Daten
+
+
+- type: html
+  front: Was ist accountability? (CIA)
+  back: Schutz vor unzulässigem abstreiten einer Handlung
+
+
+- type: html
+  front: Was ist Privacy? (CIA)
+  back: Die fähigkeit einer Person die Weitergabe ihrer Daten zu Kontrollieren
+
+
+- type: html
+  front: Was ist symmtrische verschlüsseliung vs asymmetrische verschlüsselung
+  back: 'Symmetrisch: Geteilter (gleicher) schlüssel zwischen beiden Kommunikationspartnern
+    welcher die nachrichten verschlüsselt bzw entschlüsselt<br><br>Asymmetrisch:
+    Public / Private key verfahren'
+
+
+- type: html_cloze
+  front: '"<p>{{c1::Asymmetrische}} Verschlüsselung ist viel aufwändiger als&amp;lt;br&amp;gt;{{c1::symmetrische}}.
+    Es werden deshalb idR nur kleine Datenvolumen&amp;lt;br&amp;gt;verschlüsselt.</p>
+
+    "'
+
+
+- type: html
+  front: Was sollte für eine (trapdoor) Einweg Funktion f(x) gelten?
+  back: f(x) effizient berechenbar<br>f&lt;sup&gt;-1 &lt;/sup&gt;(y) nicht effizient
+    berechenbar&nbsp;<br><br>Mit einer weiteren information (schlüssel)
+    ist die Umkehrfunktion allerdings doch effizient berechenbar
+
+
+- type: html
+  front: Auf welcher Einwegfunktion basiert RSA?
+  back: Primzahlen Faktoriesierung f(p, q) = p * q
+
+
+- type: html
+  front: Auf welcher Einwegfunktion basiert DH?
+  back: Diskretes Logarithmus Problem<br>f(x) = g&lt;sup&gt;x &lt;/sup&gt;(mod
+    p)
+
+
+- type: html
+  front: Wie berechnet sich ein RSA SChlüsselpaar?
+  back: 1. wähle 2 große, geheime Primzahlen p, q (&gt; 1024 bit),<br>2. Berechne
+    RSA-Modul n = pq, n ist öffentlich. P, q sind geheim<br>3. Berechne phi(n)
+    = (p -1)(q -1), Eulersche Phi-Funktion<br>effizient zu berechnen, wenn p,
+    q Primzahlen sind.<br>3. Wähle e aus {1, 2, …, phi(n)-1} so, dass gilt<br>ggT(phi(n),
+    e) = 1, (e, n) ist der öffentliche Schlüssel.<br><br>4. Berechne den
+    privaten Schlüssel d, so dass gilt:<br>ed = 1 mod phi(n).
+
+
+- type: html
+  front: Was ist der public key bei RSA?&nbsp;
+  back: (e, n)
+
+
+- type: html
+  front: Wie wird bei RSA Verschlüsselt?
+  back: RSA(x) = x&lt;sup&gt;e&lt;/sup&gt;&nbsp;mod n<br><br>wobei e der
+    exponent ist
+
+
+- type: html
+  front: Wie wird bei RSA entschlüsselt?
+  back: RSA&lt;sup&gt;-1&lt;/sup&gt;(y) = y&lt;sup&gt;d&lt;/sup&gt;&nbsp;mod n<br><br>wobei
+    d der private key ist&nbsp;
+
+
+- type: html
+  front: Welches Problem gibt es bei Textbook RSA? Lösung?
+  back: Deterministisch, d.h. die gleiche Nachricht erzeugt den Gleichen Kryptotext.
+    Lösung durch Zufälliges Padding
+
+
+- type: html
+  front: Was ist Kerckhoffs Prinzip?
+  back: Stärke des Verfahren sollte nur von der Güte des geheimen<br>Schlüssels
+    abhängen!<br><br>Sicherheit darf nicht von Geheimhaltung der Verfahren<br>abhängen,
+    Keine Security by Obscurity!
+
+
+- type: html
+  front: Welchen Vorteil hat elliptic curve cryptography gegenüber RSA?
+  back: Deutlich kürzere Schlüssel
+
+
+- type: html
+  front: Was ist eine Blockchiffre?
+  back: Symmetrisches verfahren. Klartext wird blockweise verschlüsselt
+
+
+- type: html
+  front: '"""Welches Problem haben """"reine"""" blockchriffren?"""'
+  back: Determinismus, gleiche Blöcke haben gleichen Kryptotext.
+
+
+- type: html
+  front: Warum benötigen Blockchiffren Padding?
+  back: Letzter Block muss evtl aufgefüllt werden<br><br>letzten block
+    mit bytes mit dem gleichen wert wie die Anzahl der freien bytes auffpllen.
+
+
+- type: html
+  front: 'Blockchiffren: Diffusion vs Konfusion?'
+  back: 'Diffusion: Jedes Klartextbit beeinflusst jedes Ciphertextbit<br>Konfusion:
+    Zusammenhang zwischen Key und Ciphertext verschleiern'
+
+
+- type: html
+  front: Was ist eine Stromchiffre?
+  back: Ein symmetrisches Verschlüsselungsverfahren wo der Klartext mit einem Strom
+    aus schlüsseln kombiniert wird (durch XOR)<br>
+
+
+- type: html
+  front: Welche Schwachstelle gibt es bei Stromchiffren mit der gleichen Schlüsselfolge?
+  back: wenn der Angreifer beide Kryptotexte und einen der Klartexte kennt, Kann der
+    andere Klartext durch XOR operationen entschlüsselt werden
+
+
+- type: html
+  front: Was macht der ECB modus von AES? ISt er sicher?
+  back: Verschlüsselt jeden Block separat. Sehr unsicher
+
+
+- type: html
+  front: Was macht der CBC modus von AES? Ist er sicher?
+  back: Der Klartext wird vor der AES Operation mit dem Kryptotext des vorherigen
+    Blocks XOR genommen. Für den ersten Block wird der Initialisierungsvektor IV verwendet.<br><br>Nicht
+    sicher.
+
+
+- type: html
+  front: Was macht der CTR modus von AES? Ist er sicher?
+  back: Der Klartext jedes Blocks wird mit einer Nonce und einem Counter wert XOR
+    genommen. Der Counter wert ist der n-te Block index<br><br>Sicher.
+
+
+- type: html
+  front: Was macht der GCM modus von AES? Ist er sicher?
+  back: Ähnlich zum CTR Modus, bindet allerdings noch weitere informationen zur Authenzität
+    in den Cryptotext ein. Sicher.
+
+
+- type: html
+  front: Welche Schutzziele verfolgen Hashfunktionen?
+  back: Integrietät und Vertraulichkeit
+
+
+- type: html
+  front: Was ist das Merkle-Damgard Verfahren?
+  back: Wird in vielen veralteten Hashfunktionen verwendet. Zerlegung des Klartexts
+    in Blöcke, und Blockweises Hashen mit dem vorherigen Block.
+
+
+- type: html
+  front: Welche Anforderungen an Hashfunktionen gibt es?
+  back: 'Einwegeigenschaft: h = H(m) effizient berechenbar, umkehrfunktion nicht effizient
+    berechenbar<br><br>Schwache Kollisionsresitenz: es ist nicht Möglich
+    zu einem m ein m'' zu finden sodass H(m) = H(m'')<br><br>Starke Kollisionsresitenz:
+    es ist nicht möglich, effizient zwei verschiedene Texte mit gleichem Hash zu finden<br><br>'
+
+
+- type: html
+  front: Was ist das Geburtstagsparadoxon im Bezug auf Hashing?
+  back: Hashkollisionen passieren deutlich Häufiger als oft intuitiv angenommen wird.
+
+
+- type: html
+  front: Was sind die unterschiede zwischen SHA1,2,3?
+  back: 'SHA1: basiert auf MD Veraltet und unsicher (160bit)<br>SHA2: basiert
+    auf MD Teilweise unsicher (256bit - 512bit)<br>SHA3: basiert auf Sponge
+    Prinzip, heutiger standard'
+
+
+- type: html
+  front: Was ist der Sinn an passworthashing?
+  back: '"""Falls Passwortlisten """"geleaked"""" werden, können diese nicht entschlüsselt
+    werden"""'
+
+
+- type: html
+  front: Welchen Vorteil hat BCrypt gegenüber anderen Hashfunktionen?
+  back: Langsam zu berechnen, es ist also schwerer passwort BCrypt Hashes zu brute
+    forcen
+
+
+- type: html
+  front: '"""Was ist """"salting"""" im Bezug auf Passwort hashing?"""'
+  back: Ein Zufälliger Wert wird im Passwort verhasht. Macht es deutlich schwerer
+    Passwort Tabellen zu verwenden und gleiche Passwörter können nicht anhand ihrer
+    hashes erkannt werden
+
+
+- type: html
+  front: Def. MAC?
+  back: Message Authentication Code<br><br>Eine Digitale Signatur&nbsp;
+
+
+- type: html
+  front: Welche Schutzziele haben MACs?
+  back: Vertraulichkeit, Integrität, Authentizität
+
+
+- type: html
+  front: Was ist ein length extension Angriff? Welche SHA versionen sind anfällig?
+  back: 'Merkle-Damgård: Gibt internen Zustand als Hashwert h aus.<br><br>Ein
+    Angreifer kann deshalb einfach weiterhashen: SHA-1(h||fake)<br><br>SHA1,
+    SHA2'
+
+
+- type: html
+  front: welches Verfahren härtet alte SHA Versionen gegen Length extension Attacks?
+  back: HMAC-Verfahren
+
+
+- type: html
+  front: Def. AE
+  back: '"""Authenticated Encryption<br><br>Eine Verschlüsselte Nachricht
+    mit einem """"Authentication Tag"""" welches die authenzität der Nachricht garantiert"""'
+
+
+- type: html
+  front: Def. AEAD
+  back: AE aber ein Teil der Nachricht ist als Klartext Lesbar.&nbsp;
+
+
+- type: html
+  front: Wie berechnet sich der Informationsgehalt eines Zeichens welches mit Wahrscheinlichkeit
+    p vorkommt?
+  back: -log<sub>2</sub>(p)
+
+
+- type: html
+  front: Wie berechnet sich die&nbsp;Entropie einer Zeichenquelle?
+  back: Erwartungswert der Informationsgehalte.&nbsp;
+
+
+- type: html
+  front: Wann ist der Informationsgehalt einer Zeichenquelle maximal?
+  back: Wenn alle Zeichen gleich wahscheinlich sind
+
+
+- type: html
+  front: Unterschied TRNG, PRNG, CSPRNG?
+  back: TRNG = Echte Zufallszahlen<br>PRNG = Pseudozufallszahlen<br>CSPRNG
+    = Pseudozufallszaheln welche nicht vorhersagbar sind
+
+
+- type: html
+  front: Welche zwei Eigenschaften sollte ein CSPRNG haben?
+  back: Unvorhersagbarkeit (-&gt; Dürfen keinen Hinweis auf internen Zustand oder
+    Nachfolger/Vorgänger haben)<br>Gleichverteiltheit<br>
+
+
+- type: html
+  front: Um Schlüssel zwischen Mehr als zwei Kommunikationspartnern auszutauschen,
+    kann ein&nbsp;{{c1::Schlüsselverteilungs-Server}}, auch&nbsp;{{c1::Key Distribution
+    Center genannt}} verwendet werden. Man bezeichnet diesen als&nbsp;{{c1::Trusted
+    Third Party (TTP)}}
+  back: ''
+
+
+- type: html
+  front: Was ist die PFS Eigenschaft eines Schlüsselmanagement systems?
+  back: Perfect Forward Secrecy<br><br>Wird ein schlüssel unsicher, dürfen
+    vorherige schlüssel nicht auch unsicher gemacht werden. D.h. Ein schlüssel darf
+    nicht von seinen vorgängern abhängen
+
+
+- type: html
+  front: Was ist das Ziel des DH Verfahren?
+  back: Sicherer Schlüsselaustausch eines symmetrischen Schlüssels.<br>
+
+
+- type: html
+  front: Wie funktioniert das DH Protokoll?
+  back: Es wird eine große Primzahl p und ein Generator Element festgelegt.<br><br>Wähle
+    private key a aus {2, ... , p - 2}<br>Berechne public key als A = g&lt;sup&gt;a&nbsp;&lt;/sup&gt;mod
+    p<br>Berechne shared key aus k = B&lt;sup&gt;a&lt;/sup&gt;&nbsp;mod p =
+    g&lt;sup&gt;ab&lt;/sup&gt;&nbsp;mod p
+
+
+- type: html
+  front: Was ist eine Key Derivation Function (KDF)? Welchen nutzen hat sie?
+  back: Berechnet einen Schlüssel mit länge n aus einem beliebigen secret.
+
+
+- type: html
+  front: Wie kann ein Man in the middle angriff bei DH verhindert werden?
+  back: Durch signatur der ausgetauschten public keys
+
+
+- type: html
+  front: Was ist ECDH?
+  back: DH verfahren auf elliptischen kurven
+
+
+- type: html
+  front: Welche Schutzziele verfolgt authentisierung?
+  back: authentzität (wer hätte das gedacht?)
+
+
+- type: html
+  front: was ist der unterschied zwischen authentisierung und authorisierung?
+  back: 'Authentisierung: Nachweis der Identität<br>Authorisierung: Nachweis
+    der Berechtigungen einer Entität'
+
+
+- type: html
+  front: Was ist der Unterschied zwischen Pseudonymisierung und Anonymisierung?
+  back: '"""Anonymisierung hat das Ziel die Identität vollkommen zu verschleiern<br><br>Pseudonymisierung
+    verschleiert ebenfalls die wahre Identität, allerdings kann ein Nutzer über das
+    Pseudonym eine """"alternative"""" Identität besitzen"""'
+
+
+- type: html
+  front: Welche drei Klassen von Faktoren zur Authentisierung gibt es?
+  back: Wissen, Besitz, Biometrie
+
+
+- type: html
+  front: Sollten Passwörter auslaufen? (D.h. regelmäßig geändert werden)
+  back: Nein, laut NIST Guidelines. Grund ist das Nutzer passwörter sonst sehr einfach
+    wählen um sie sich merken zu können
+
+
+- type: html
+  front: welche klassen von OTP Verfahren gibt es?
+  back: Hardware vs Software token<br>Zeitsynkronisiert, CR basiert
+
+
+- type: html
+  front: Wie funktioniert das zeitsynkronisierte, softwarebasierte OTP Verfahren TOTP?
+  back: 1. Der Authenticator und Authenticatee gehen eine Verbindung ein<br>2.
+    Die start Zeit wird ausgetauscht<br>3. Ein pre shared secret k wird ausgetauscht<br>4.
+    Alle (z.b.) 30 sekunden generierten Authenticator und Authenticatee ein Passwort
+    aus HMAC(k, current_time)
+
+
+- type: html
+  front: Welche sieben Anforderungen haben wir an Biometrische Autehntifikationsverfahren?
+  back: '<ul><li>Universalität: Jede Person besitzt das Merkmal</li><li>Eindeutigkeit:
+    Merkmal ist für jede Person verschieden</li><li>Beständigkeit: Merkmal ist unveränderlich</li><li>Quantitative
+    Erfassbarkeit mittels Sensoren</li><li>Performance: Genauigkeit und Geschwindigkeit</li><li>Akzeptanz
+    des Merkmals beim Benutzer</li><li>Fälschungssicherheit</li></ul>'
+
+
+- type: html
+  front: Welche Klassen biometrischer Merkmale gibt es?
+  back: physiologisch (statisch) z.b. fingerabdruck, gesicht<br>verhaltensmerkmale
+    (dynamisch) z.b. Stimme
+
+
+- type: html
+  front: Unterschied FAR vs FRR?
+  back: 'False Acceptance rate: Mit welcher wschlk. tritt ein False Negative auf?<br><br>False
+    Rejection rate: Mit welcher wschlk. triff ein False Positive auf?'
+
+
+- type: html
+  front: Was ist die Equal Error Rate ERR?
+  back: Wenn FAR == FRR
+
+
+- type: html
+  front: Bei biometrischer Authentisierung sollte die {{c1::False Acceptance Rate}}
+    möglichst niedrig sein. Je niedriger die {{c1::False Acceptance Rate}}, desto
+    höher allerdings die {{c1::False Rejection Rate}}.
+  back: ''
+
+
+- type: html
+  front: Welche Probleme hat biometrische Authentifizierung?
+  back: Zunehmende Gefahr durch deepfakes<br>Problem der öffentlichen Daten
+    und rechtliche Aspekte<br>Häufig leicht zu überlisten
+
+
+- type: html
+  front: Was ist ein CR Verfahren?
+  back: Challenge / Response<br><br>A gibt identität an<br>B sendet
+    challenge<br>A sendet response<br>B prüft response
+
+
+- type: html
+  front: Welches problem haben wir bei public key exchanges? (Im bezug auf MitM attacks)
+  back: 'Man kann nie wissen ob man wirklich mit der Entität kommuniziert mit der
+    man glaubt zu kommunizieren. Lösung: Zertifikate'
+
+
+- type: html
+  front: Was macht ein X.509 Cert?
+  back: Bescheinigt bindung eines public keys an die Identität einer Entität
+
+
+- type: html
+  front: Was ist eine CA?
+  back: Certificate Authority<br><br>Aussteller eines Zertifikats
+
+
+- type: html
+  front: Was ist eine PKI?
+  back: Ein system, digitale Zertifikate auszustellen und zu prüfen
+
+
+- type: html
+  front: Was ist eine RA?
+  back: Organisation bei der Zertifikate beantragt werden können und welche prüft,
+    ob ein Zertifikat von der CA auszustellen ist
+
+
+- type: html
+  front: Wie kann ein Zertifikat validiert werden?
+  back: Die signatur und u.a. gültigkeitszeitraum werden überprüft. Danach wird das
+    Zertifikat des owners validiert. Dies setzt sich rekursiv bis zu einer root CA
+    fort der vertraut wird.
+
+
+- type: html
+  front: Woher weiß man, dass man einer root-CA vertrauen kann?
+  back: Betriebssysteme / browser haben listen von vertrauenswürdigen CA's gespeichert
+
+
+- type: html
+  front: Wie können Zertifikate zurückgerifen werden?
+  back: nline Certificate Status Protocol (OCSP) Stapling<br><br>Regelmäßiges
+    erfragen von Gültigkeitsbestätigungen
+
+
+- type: html
+  front: Was ist SSO?
+  back: Single sign on<br><br>Authentisieren bei mehreren Diensten mit
+    einem login
