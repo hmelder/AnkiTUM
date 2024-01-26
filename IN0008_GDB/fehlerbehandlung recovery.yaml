@@ -3,11 +3,13 @@ author: HHuebner
 id: 40272555874
 
 cards:
-  - type: basic
-    front: Welche arten von Fehlern gibt es?
-    back: |+
-      - R1: Lokaler fehler einer transaktion
-      - R2: Verlust des Hauptspeichers, abgeschlossene TA muss erhalten bleiben
-      - R3: Verlust des Hauptspeichers, unabgeschlossene TA muss zurückgesetzt werden
-      - R4: Verlust des Hintergrundspeichers
-      
+- type: basic
+  id: 0  # (generated)
+  front: Welche arten von Fehlern gibt es?
+  back: |+
+    - R1: Lokaler fehler einer transaktion
+    - R2: Verlust des Hauptspeichers, abgeschlossene TA muss erhalten bleiben
+    - R3: Verlust des Hauptspeichers, unabgeschlossene TA muss zurückgesetzt werden
+    - R4: Verlust des Hintergrundspeichers
+
+...
