@@ -25,4 +25,6 @@ cards:
   back: |+
     - Entität welche von anderen Entitäten Abhängt
 
-...
+- type: basic
+  front: Wofür steht SQL?
+  back: Structured Query Language

@@ -1,0 +1,75 @@
+title: 'GDB: Kapitel 7: Physische Datenorganisation'
+author: HHuebner
+id: 402722605
+
+cards:
+  - type: markdown
+    front: Unterschied random vs chained IO?
+    back: Bei HDD disks werden Daten sequestiell von der Platte gelesen, daher ist sind Zugriffe an "zufalls" Positionen sehr langsam
+
+
+  - type: markdown
+    front: Was ist die MTTF, MTTR, MTTDL?
+    back: |+
+      mean time to ...
+      - failure
+      - repair
+      - data loss
+      
+      Bei einer Platte
+
+
+  - type: markdown
+    front: RAID 0?
+    back: |+
+      - striping
+      - Verteilt Daten auf mehrere Platten um Performance zu erhöhen
+      - Fällt eine Platte aus sind nicht alle betroffen
+      
+
+  - type: markdown
+    front: RAID 1?
+    back: |+
+      - Spiegelt Daten, sodass alle Daten zwei mal auf unterschiedlichen Platten vorhanden sind
+
+  - type: markdown
+    front: RAID 2?
+    back: |+
+      - Zusätzliches speichern von Fehlererkennungs-/Korrekturcodes 
+
+  - type: markdown
+    front: RAID 3?
+    back: |+
+      - Zusätzliche Paritätplatte P mit XOR aller platten
+      - **Eine** ausgefallene Platte kann wiederhergestellt werden
+    
+
+  - type: markdown
+    front: RAID 4, 5?
+    back: |+
+      - Aufteilen der Platten in kleinere Blöcke
+      - Kleine Paritätsblöcke
+      - bessere Lastenbalancierung
+        
+
+  - type: cloze
+    front: |
+      B-Bäume sind für den {{c1::Hintegrundspeicher}} Konzipiert. 
+      Daher zeigen die Knoten typischerweise auf ganze {{c1::Seiten}}
+      
+
+  - type: markdown
+    front: Wofür wird indexing verwendet?
+    back: |+
+      - Anlegen der Daten in einer Relation in Suchbaum
+      - Es wird nach einer oder mehreren Spalten geindext
+      - elemente aus geindexer spalte können schnell gefunden werden
+      
+
+  - type: markdown
+    front: Welche Vorteile haben B trees gegenüber anderen Bäumen?
+    back: |+
+      - Selbstbalancierend
+      - Geringere Tiefe, da mehrere Kindknoten erlaubt sind
+      - Gutes Cacheverhalten / Räumliche lokalität
+      - Flexibele Knotengröße

@@ -17,7 +17,7 @@ cards:
   front: Was ist die Bedeutung der Argumente von `numeric(p, s)`?
   back: |
     - p: Die Gesamtzahl der gespeicherten Stellen
-    - s: Nachkommerstellen
+    - s: Nachkommastellen
 
 
 - type: markdown
@@ -97,12 +97,14 @@ cards:
 
 - type: markdown
   id: 9  # (generated)
-  front: Welche (in der Vorlesung vorgestellte) Aggregatfunkitonen gibt es in SQL?
+  front: Welche (in der Vorlesung vorgestellte) Aggregatfunktionen gibt es in SQL?
   back: |
     - `avg`: Bestimmung des Durchschnitts einer Menge von Zahlen
     - `max` und `min`: Zur Bestimmung des größten bzw. kleinsten Elementes
     - `sum`: Bildung der Summe
     - `count`: Anzahl der Zeilen in einer Tabelle
+    
+
 - type: markdown
   id: 10  # (generated)
   front: Was ist bei Verwendung von `GROUP BY` in der `SELECT` Klausel zu beachten?
@@ -111,36 +113,122 @@ cards:
     wird, können in der `SELECT`-Klausel **nur Aggregatfunktionen vorkommen, oder Attribute
     nach denen gruppiert wurde**. Also Attribute, die auch in der `GROUP BY` Klausel verwendet
     wurden.
+    
+
 - type: markdown
   id: 11  # (generated)
   front: Was ist das Ergebnis von `NULL + 1`?
   back: 'NULL'
+
+
 - type: markdown
   id: 12  # (generated)
   front: Was ist das Ergebnis von `NULL*0`?
   back: 'NULL'
+
+
 - type: markdown
   id: 13  # (generated)
   front: SQL hat eine dreiwertige Logik. Nenne alle drei Werte.
   back: true, false, unknown
+
+
 - type: markdown
   id: 14  # (generated)
   front: Was passiert, wenn in einem arithmetischen Ausdruck ein NULL-Wert vorkommt?
   back: |
     Der NULL-Wert wird propagiert, d.h sobald ein Operand NULL ist, wird auch das
     Ergebnis NULL.
+    
+
 - type: markdown
   id: 15  # (generated)
   front: Ergebnis von `unknown AND true`
-  back: |
-    `unknown`
+  back: unknown
+
+
 - type: markdown
   id: 16  # (generated)
   front: Ergebnis von `false OR unknown`
   back: |
     `unknown`
+    
+
 - type: markdown
   id: 17  # (generated)
   front: Ergebnis von `true OR unknown`
   back: |-
     `true`
+
+- type: markdown
+  front: Wie verändert / löscht man Tupel?
+  back: |+
+    - update [COLUMN] set [VALUE]
+    - delete [COLUMN]
+    
+
+- type: markdown
+  front: Wie kann bei einer SELECT anfrage die sortierung bestimmt werden?
+  back: |+
+    - order by [COLUMN]
+    - mit asc/desc kann die Reihenfolge bestimmt werden
+    - es können mehrere mit komma getrennte Spalten und Reihenfolgen angegeben werden
+
+
+- type: markdown
+  front: Wie können doppelte elemente bei einer Select anfrage ignoriert werden?
+  back: mit distinct [COLUMN]
+
+
+- type: markdown
+  front: Wie kann eine Tabelle umbenannt werden?
+  back: mit "as", z.b. select a, b as AB from C
+
+
+- type: markdown
+  front: Was ist die Syntax für eine rekursive Anfrage (rekursive CTE)?
+  back: |+
+    ```
+    WITH RECURSIVE cte_name (column1, column2, ...) AS (
+      -- Nicht rekursiver "seed"
+      SELECT column1, column2, ...
+      FROM your_table
+      WHERE condition
+    
+      UNION ALL
+    
+      -- Recursives select
+      SELECT column1, column2, ...
+      FROM cte_name
+      WHERE condition
+    )
+    ```
+    
+
+- type: markdown
+  front: Wann terminieren rekursive queries?
+  back: Wenn das rekursive Select statement eine leere Tabelle zurückgibt
+
+
+- type: markdown
+  front: Wie lassen sich generalisierungen in SQL modellieren?
+  back: |+
+    Mit views. Man erstellt eine View welche mehrere Tabellen Zusammenfasst.
+    Z.b. Professoren -> Angestellte. Professoren erweitern Angestellte und haben einen Fremdschlüssel PersNr.
+    
+- type: markdown
+  front: Was sind CTEs?
+  back: Common Table Expressions. Temporäre Tabellen die mit WITH erstellt werden
+
+- type: markdown
+  front: Welchen Vorteil haben views verglichen mit CTEs?
+  back: |+
+    - Views werden persisted und geindexed -> bessere Performace und Reusability
+    - Views können updatebar sein
+
+- type: markdown
+  front: Welchen Sicherheitsvorteil haben views?
+  back: Abkapselung von Daten. Die view kann nur Daten enthalten welche für den user relevant sind. Alle anderen sind für den user unsichtbar
+
+- type: markdown
+  front:
