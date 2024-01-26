@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dirs=("IN0009_GBS" "IN0008_GDB" "EI00330_Signaltheorie" "IN0042_ITSEC")
+dirs=("IN0009_GBS" "IN0008_GDB" "EI00330_Signaltheorie" "IN0042_ITSEC" "MA0902_Analysis_Informatik" "IN0019_Numprog")
 
 mkdir -p build
 
