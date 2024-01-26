@@ -1,0 +1,28 @@
+title: 'GDB: Kapitel 2; Konzeptuelle Modellierung'
+author: AnkiTUM
+id: 234509043
+
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: Welche Grundtypen gibt es in einem ER Diagramm?
+  back: |+
+    - Entity (Rechteck)
+    - Relation (Raute)
+    - Attribut (Ellipse)
+
+- type: markdown
+  id: 1  # (generated)
+  front: Was sind Aggregation und Generalisierung bei ER Diagrammen?
+  back: |+
+    - Generalisierung: "is-a" Sechseck mit Pfeil (gibt an dass ein Entity subklasse eines anderen ist)
+    - Aggregation: "teil von" Raute (gibt an dass ein Entity teil eines anderen ist)
+
+
+- type: markdown
+  id: 2  # (generated)
+  front: Was ist eine Schwache Entität?
+  back: |+
+    - Entität welche von anderen Entitäten Abhängt
+
+...

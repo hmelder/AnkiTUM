@@ -4,7 +4,7 @@ author: AnkiTUM
 cards:
   # Fragen zu Datentypen
 
-- type: md_basic
+- type: markdown
   id: 0  # (generated)
   front: Was ist der Unterschied zwischen `character(n)` und `char varying(n)`
   back: |
@@ -12,7 +12,7 @@ cards:
     - Abgespeicherte Größe kann bei `char varying` oder `varchar`variieren
 
 
-- type: md_basic
+- type: markdown
   id: 1  # (generated)
   front: Was ist die Bedeutung der Argumente von `numeric(p, s)`?
   back: |
@@ -20,28 +20,28 @@ cards:
     - s: Nachkommerstellen
 
 
-- type: md_basic
+- type: markdown
   id: 2  # (generated)
   front: Was ist der Datentyp für Fixkommazahlen in SQL?
   back: |
     `numeric(p, s)`
 
 
-- type: md_basic
+- type: markdown
   id: 3  # (generated)
   front: Was ist der Datentyp für Gleitkommazahlen in SQL?
   back: |
     `float`
 
 
-- type: md_basic
+- type: markdown
   id: 4  # (generated)
   front: Was ist der Datentyp für Integers in SQL?
   back: |
     `int` oder `integer`
 
 
-- type: md_basic
+- type: markdown
   id: 5  # (generated)
   front: Nenne einen Datentyp für die Abspeicherung von (großen) binären Daten
   back: |
@@ -49,7 +49,7 @@ cards:
   # Fragen zu DML (Data Manipulation Language)
 
 
-- type: md_basic
+- type: markdown
   id: 6  # (generated)
   front: Wie kann eine neue Relation in SQL erstellt werden?
   back: |
@@ -61,7 +61,7 @@ cards:
     Dabei `+` für ein, oder mehrere Attribute in der Liste.
 
 
-- type: md_basic
+- type: markdown
   id: 7  # (generated)
   front: |
     Wir wollen zu der Relation `Professoren` das Attribut `Raum`, wobei die
@@ -79,7 +79,7 @@ cards:
     ```
 
 
-- type: md_basic
+- type: markdown
   id: 8  # (generated)
   front: Wie kann der Datentyp eines Attributs einer Relation geändert werden?
   back: |
@@ -95,7 +95,7 @@ cards:
     ```
 
 
-- type: md_basic
+- type: markdown
   id: 9  # (generated)
   front: Welche (in der Vorlesung vorgestellte) Aggregatfunkitonen gibt es in SQL?
   back: |
@@ -103,3 +103,44 @@ cards:
     - `max` und `min`: Zur Bestimmung des größten bzw. kleinsten Elementes
     - `sum`: Bildung der Summe
     - `count`: Anzahl der Zeilen in einer Tabelle
+- type: markdown
+  id: 10  # (generated)
+  front: Was ist bei Verwendung von `GROUP BY` in der `SELECT` Klausel zu beachten?
+  back: |
+    Da in der Ausgaberelation jede Gruppe nur durch ein einzelnes Tupel repräsentiert
+    wird, können in der `SELECT`-Klausel **nur Aggregatfunktionen vorkommen, oder Attribute
+    nach denen gruppiert wurde**. Also Attribute, die auch in der `GROUP BY` Klausel verwendet
+    wurden.
+- type: markdown
+  id: 11  # (generated)
+  front: Was ist das Ergebnis von `NULL + 1`?
+  back: 'NULL'
+- type: markdown
+  id: 12  # (generated)
+  front: Was ist das Ergebnis von `NULL*0`?
+  back: 'NULL'
+- type: markdown
+  id: 13  # (generated)
+  front: SQL hat eine dreiwertige Logik. Nenne alle drei Werte.
+  back: true, false, unknown
+- type: markdown
+  id: 14  # (generated)
+  front: Was passiert, wenn in einem arithmetischen Ausdruck ein NULL-Wert vorkommt?
+  back: |
+    Der NULL-Wert wird propagiert, d.h sobald ein Operand NULL ist, wird auch das
+    Ergebnis NULL.
+- type: markdown
+  id: 15  # (generated)
+  front: Ergebnis von `unknown AND true`
+  back: |
+    `unknown`
+- type: markdown
+  id: 16  # (generated)
+  front: Ergebnis von `false OR unknown`
+  back: |
+    `unknown`
+- type: markdown
+  id: 17  # (generated)
+  front: Ergebnis von `true OR unknown`
+  back: |-
+    `true`

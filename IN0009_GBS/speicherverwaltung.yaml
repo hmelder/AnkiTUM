@@ -77,45 +77,33 @@ cards:
   id: 8  # (generated)
   front: Ja oder Nein? Jedes Programm belegt bei direkter Adressierung potentiell
     den gesamten Hauptspeicher des Rechners.
-  back: Nein
-
-
-- type: md_basic
+  back: Ja
+- type: basic
   id: 9  # (generated)
   front: Ja oder Nein? Prozesse benötigen bei direkter Adressierung Kenntnis über
     Struktur des Hauptspeichers.
-  back: Nein
-
-
-- type: md_basic
+  back: Ja
+- type: basic
   id: 10  # (generated)
   front: Ja oder Nein? Programme können bei direkter Adressierung das ebenfalls im
     Hauptspeicher befindliche Betriebssystem korrumpieren.
-  back: Nein
-
-
-- type: md_basic
+  back: Ja
+- type: basic
   id: 11  # (generated)
   front: Ja oder Nein? Bei der Basisadressierung belegt jedes Programm potentiell
     den gesamten Hauptspeicher des Rechners.
-  back: Ja
-
-
-- type: md_basic
+  back: Nein
+- type: basic
   id: 12  # (generated)
   front: Ja oder Nein? Bei der Basisadressierung benötigen Prozesse Kenntnis über
     Struktur des Hauptspeichers.
-  back: Ja
-
-
-- type: md_basic
+  back: Nein
+- type: basic
   id: 13  # (generated)
   front: Ja oder Nein? Bei der Basisadressierung können Programme das ebenfalls im
     Hauptspeicher befindliche Betriebsystem korrumpieren
-  back: Ja
-
-
-- type: md_basic
+  back: Nein
+- type: basic
   id: 14  # (generated)
   front: Beschreibe die Segmentadressierung
   back: |
@@ -337,7 +325,6 @@ cards:
   id: 37  # (generated)
   front: Was sind typische Seiten-/Kachelgrößen auf x86?
   back: 4KB / 2 MB / 1 GB
-
 
 - type: md_basic
   id: 38  # (generated)
