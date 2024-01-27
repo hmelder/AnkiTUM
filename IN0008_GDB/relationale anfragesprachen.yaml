@@ -64,7 +64,7 @@ cards:
 
 - type: markdown
   id: 7  # (generated)
-  front: |+
+  front: |
     Wir wollen zu der Relation `Professoren` das Attribut `Raum`, wobei die
     Raumnummer eine ganze Zahl ist, hinzufügen.
   back: |+
