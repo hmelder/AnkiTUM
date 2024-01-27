@@ -12,7 +12,7 @@ cards:
   front: Was ist volle funktionale Abhängigkeit?
   back: |+
     - [$] a \rightarrow b [/$]
-    - [$] \all A \in a : \not (a - {A} \to b)
+    - [$] \forall A \in a : \neg (a - {A} \to b) [/$]
 
 
 - type: markdown
