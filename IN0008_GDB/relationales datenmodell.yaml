@@ -10,12 +10,12 @@ cards:
 
 - type: html
   id: 1  # (generated)
-  front: Was macht die Selektion &sigma?
+  front: Was macht die Selektion &sigma;?
   back: filtert Reihen der Relation nach einen Prädikat
 
 - type: html
   id: 2  # (generated)
-  front: Was macht die Projektion &Pi?
+  front: Was macht die Projektion &Pi;?
   back: filtert Spalten der Relation
 
 - type: html
@@ -56,13 +56,13 @@ cards:
 
 - type: html
   id: 10  # (generated)
-  front: Was macht der Operator &gamma;<sub>A;B,C<\sub>
+  front: Was macht der Operator &gamma;<sub>A;B,C</sub>
   back: |+
     <ul>
     <li> Aggregationsoperator
     <li> A ist die Spalte nach der Gruppiert wird
     <li> B,C etc sind aggregatfunktionen
-    <\ul>
+    </ul>
 
 - type: markdown
   id: 11  # (generated)
@@ -76,5 +76,3 @@ cards:
   back: |+
     {t | P(t)} z.b. [latex]\{p \mid p \in \text{Professoren} \land p.\text{Rang} = 'C4'\}[\latex]
 
-
-...
