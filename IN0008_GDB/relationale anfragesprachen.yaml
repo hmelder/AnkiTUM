@@ -53,7 +53,7 @@ cards:
 - type: markdown
   id: 6  # (generated)
   front: Wie kann eine neue Relation in SQL erstellt werden?
-  back: |
+  back: |+
     ```
       create table <NAME>
       ( (<ATTRIBUTE> <TYPE> <INTEGRITY_CONSTRAINT>)+ );
@@ -64,10 +64,10 @@ cards:
 
 - type: markdown
   id: 7  # (generated)
-  front: |
+  front: |+
     Wir wollen zu der Relation `Professoren` das Attribut `Raum`, wobei die
     Raumnummer eine ganze Zahl ist, hinzufügen.
-  back: |
+  back: |+
     ```
       alter table Professoren
         add (Raum integer);
@@ -83,7 +83,7 @@ cards:
 - type: markdown
   id: 8  # (generated)
   front: Wie kann der Datentyp eines Attributs einer Relation geändert werden?
-  back: |
+  back: |+
     ```
       alter table <NAME>
         modify (<ATTRIBUTE> <TYPE>);
@@ -99,7 +99,7 @@ cards:
 - type: markdown
   id: 9  # (generated)
   front: Welche (in der Vorlesung vorgestellte) Aggregatfunktionen gibt es in SQL?
-  back: |
+  back: |+
     - `avg`: Bestimmung des Durchschnitts einer Menge von Zahlen
     - `max` und `min`: Zur Bestimmung des größten bzw. kleinsten Elementes
     - `sum`: Bildung der Summe
@@ -109,7 +109,7 @@ cards:
 - type: markdown
   id: 10  # (generated)
   front: Was ist bei Verwendung von `GROUP BY` in der `SELECT` Klausel zu beachten?
-  back: |
+  back: |+
     Da in der Ausgaberelation jede Gruppe nur durch ein einzelnes Tupel repräsentiert
     wird, können in der `SELECT`-Klausel **nur Aggregatfunktionen vorkommen, oder Attribute
     nach denen gruppiert wurde**. Also Attribute, die auch in der `GROUP BY` Klausel verwendet
@@ -137,7 +137,7 @@ cards:
 - type: markdown
   id: 14  # (generated)
   front: Was passiert, wenn in einem arithmetischen Ausdruck ein NULL-Wert vorkommt?
-  back: |
+  back: |+
     Der NULL-Wert wird propagiert, d.h sobald ein Operand NULL ist, wird auch das
     Ergebnis NULL.
 
@@ -151,7 +151,7 @@ cards:
 - type: markdown
   id: 16  # (generated)
   front: Ergebnis von `false OR unknown`
-  back: |
+  back: |+
     `unknown`
 
 
