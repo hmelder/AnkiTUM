@@ -1,5 +1,6 @@
 title: 'GBS: Kapitel 3: Parallele Systeme und Synchronisation'
 author: AnkiTUM
+id: 5909609343
 cards:
 
 - type: md_basic
@@ -378,4 +379,3 @@ cards:
   back: |
     - Vorteil: Interaktive Reaktion
     - Nachteil: Verlust durch Abbruch
-id: 1210814131583567964

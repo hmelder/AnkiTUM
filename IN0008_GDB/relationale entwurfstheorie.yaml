@@ -82,13 +82,6 @@ cards:
 
 
 - type: markdown
-  id: 12  # (generated)
-  front: Was ist eine Updateanomalie?
-  back: Wenn ein Wert geändert wird, dieser Wert allerdings duplikate hat, kann es
-    sein dass diese Duplikate nicht mitgeupdated werden
-
-
-- type: markdown
   id: 13  # (generated)
   front: Was ist eine Löschanomalie?
   back: Wenn zwei Entities miteinander verknüpft sind und eines gelöscht wird, kann

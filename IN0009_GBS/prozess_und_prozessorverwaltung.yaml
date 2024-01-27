@@ -1,5 +1,6 @@
 title: 'GBS: Kapitel 2: Prozess und Prozessorverwaltung'
 author: AnkiTUM
+id: 311133220
 cards:
 - type: md_basic
   id: 0  # (generated)
@@ -944,5 +945,3 @@ cards:
       In dieser Betriebsart werden Transaktionen, oft in Datenbanken, verarbeitet,
       wobei die Integrität der Daten trotz gleichzeitiger Zugriffe mehrerer Benutzer
       oder Systeme gewährleistet werden muss.
-
-id: 485008760253481638
