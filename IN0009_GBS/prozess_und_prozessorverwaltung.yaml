@@ -937,7 +937,7 @@ cards:
 - type: md_basic
   id: 120  # (generated)
   front: Nenne die 4 Betriebsarten eines Betriebsystems.
-  back: |+
+  back: |
     - Echtzeitbetrieb (Real-time mode)
     - Dialogbetrieb (Interactive mode)
     - Stapelverarbeitung (Batch processing):
