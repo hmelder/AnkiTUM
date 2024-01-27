@@ -10,7 +10,11 @@ for dir in "${dirs[@]}"; do
 
     # make deck
     ankitum "./$dir" -o ./build/"$dir"/"${dir%.yaml}".apkg --debug
-
+    if [ $? -ne 0 ]; then
+        echo "Ankitum returned non zero exit code. Aborting..."
+        exit 1
+    fi
+    
     if [ -n "$(ls -A ./build/"$dir"/*.apkg 2>/dev/null)" ]; then
         zip "./build/$dir.zip" "./build/$dir"/*.apkg
     else
