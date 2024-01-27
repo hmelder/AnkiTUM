@@ -174,13 +174,15 @@ cards:
 
 
 - type: markdown
+  id: 23  # (generated)
   front: Was sind fuzzy sicherungspunkte?
-  back: |+ 
+  back: |+
     - Verwendung bei modernen DBMS mit sehr großen Puffern
     - DB merkt sich nur, welche Seiten modifiziert sind und die minimalen LSN in der Historie
-    
+
 
 - type: markdown
+  id: 24  # (generated)
   front: Wie kann R4 Recovery durchgeführt werden?
   back: Durch laden von Backups, z.b. aus tertiärem Speicher
 

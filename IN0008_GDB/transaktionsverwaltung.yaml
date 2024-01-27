@@ -13,21 +13,24 @@ cards:
     - ACID
 
 - type: markdown
+  id: 1  # (generated)
   front: Was macht der Befehlt "backup transaction"?
   back: Setzt die aktive Transaktion auf den jüngsten Sicherungspunkt zurück
 
 
 - type: markdown
+  id: 2  # (generated)
   front: Was sind die ACID Eigenschaften
   back: |+
     - Atomicity (Operation passiert ganz oder gar nicht)
     - Consistency
     - Isolation
     - Durability (Änderungen durch TA dürfen nicht "verloren" gehen)
-  
+
 
 - type: markdown
+  id: 3  # (generated)
   front: Was ist der unterschied zwischen "define savepoint" und "backup transaction"
-  back: |+
+  back: |
     - Define Savepoint erstellt einen Sicherungspunkt vor der aktien TA
     - Backup transaction rollt die aktive TA auf den jüngesten savepoint zurück
