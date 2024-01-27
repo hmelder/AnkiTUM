@@ -13,93 +13,107 @@ cards:
     - R4: Verlust des Hintergrundspeichers
 
 - type: markdown
+  id: 1  # (generated)
   front: Was ist der DBMS Puffer?
   back: |+
     - Puffer im Hauptspeicher
     - Wenn Seite benötigt wird, wird zuerst im Puffer nachgeschaut
     - Oft benötigte Seiten sollten im Puffer liegen
     - Deutlich schnellerer Zugriff
-    
+
 
 - type: markdown
+  id: 2  # (generated)
   front: Was passiert wenn der DBMS Puffer voll ist?
   back: |+
     - Um eine neue Seite zu puffern muss eine alte Seite entfernt werden
     - Verschiedene Ersetzungstrategien (steal, force, Least recently used, Least frequently used...)
-    
+
 
 - type: markdown
+  id: 3  # (generated)
   front: Was sind "steal" strategien bei der ersetzung von DBMS Pufferseiten
   back: |+
     - steal: Alle Seiten können ersetzt werden
     - no steal: Seiten die von einer aktiven Transaktion modifiziert werden könne nicht ersetzt werden
 
 - type: markdown
+  id: 4  # (generated)
   front: Was sind "force" strategien bei der ersetzung von DBMS Pufferseiten
   back: |+
     - force: Änderungen im Puffer werden sofort auf die Disk geschrieben
     - no force: geänderte Seiten können im Puffer bleiben
-    
+
 
 - type: markdown
+  id: 5  # (generated)
   front: Was sind "steal" strategien bei der ersetzung von DBMS Pufferseiten
   back: |+
     - steal: Alle Seiten können ersetzt werden
     - no steal: Seiten die von einer aktiven Transaktion modifiziert werden könne nicht ersetzt werden
-    
+
 
 - type: markdown
+  id: 6  # (generated)
   front: Was ist das problem bei force strategien?
   back: Sehr langsam, da random access auf die disk
 
 
 - type: markdown
+  id: 7  # (generated)
   front: Was sind Einbringungsstrategien?
   back: Strategie, Seiten im Puffer in den Hintergrundspeicher zu synchronisieren
 
 
 - type: markdown
-  front:  Wie funktioniert das Twin Block Verfahren?
+  id: 8  # (generated)
+  front: Wie funktioniert das Twin Block Verfahren?
   back: |+
     - Jede Seite wird in zwei Blöcke dupliziert
     - parity bit gibt an, welcher Block aktuell ist
     - anderer Block wird modifiziert
     - Bei Fehler kann der aktuelle Block auf den modifizierten Block kopiert werden
-    
+
 
 - type: markdown
+  id: 9  # (generated)
   front: Was bedeutet "update in place"?
   back: Jede Seite hat eine fixe Position auf der Disk
 
 
 
 - type: markdown
+  id: 10  # (generated)
   front: Wozu dient logging?
   back: |+
     - Jede Änderung wird protokolliert
     - Bei Fehler / Crash kann über die Logs der Zustand recovered werden
-    
+
 
 - type: markdown
+  id: 11  # (generated)
   front: Was ist die LSN in einem Logeintrag?
   back: |+
     - Log Sequence Number
     - ID des Log eintrags
 
 - type: markdown
+  id: 12  # (generated)
   front: Welche Komponenten hat ein Logeintrag (in der Vorlesung)?
   back:
-    - Log Sequence Number, LSN
-    - Transaktionskennung, TA
-    - PageID (ID der modifizierten Seite)
-    - prevLSN (Vorgängerlogeintrag)
+  - Log Sequence Number, LSN
+  - Transaktionskennung, TA
+  - PageID (ID der modifizierten Seite)
+  - prevLSN (Vorgängerlogeintrag)
 
 - type: markdown
+  id: 13  # (generated)
   front: Was ist der BOT Eintrag?
   back: Begin of Transaction
 
 
 - type: markdown
+  id: 14  # (generated)
   front: Was besagt das WAL Prinzip?
   back: |+
     - TA Logs müssen zu Disk geschrieben werden bevor die TA committed wird
@@ -107,27 +121,32 @@ cards:
 
 
 - type: markdown
+  id: 15  # (generated)
   front: In welche richtung wandern die Zeiger im Log ringpuffer?
   back: Gegen den Uhrzeigersinn
 
 
 - type: markdown
+  id: 16  # (generated)
   front: Was passiert wenn der Log Puffer voll is?
   back: Er wird zur Disk geschrieben
 
 
 - type: markdown
+  id: 17  # (generated)
   front: Welche zwei wichtigen Operationen zur recovery gibt es?
   back: undo und redo von Transaktionen
 
 
 - type: cloze
+  id: 18 # (generated)
   front: |
     Eine TA welche abgeschlossen ist und vollständig nachvollzogen werden kann nennt man {{c1::Winner}}
     Eine TA fehlerhaft ist nennt man {{c1::Loser}}. Sie muss {{c1::Rückgängig}} gemacht werden
-    
+
 
 - type: markdown
+  id: 19  # (generated)
   front: Welche Phasen des Wiederanlaufs gibt es?
   back: |+
     - Analyse: Log Datei wird gescannt, winner und loser werden ermittelt
@@ -135,19 +154,24 @@ cards:
     - Undo der Loser
 
 - type: markdown
+  id: 20  # (generated)
   front: Was sind Sicherungspunkte?
-  back: Punkte in der Loghistory ab denen alle vorherigen Logenträge zur recovery **nicht** mehr betrachtet werden müssen.
+  back: Punkte in der Loghistory ab denen alle vorherigen Logenträge zur recovery
+    **nicht** mehr betrachtet werden müssen.
 
 
 - type: markdown
+  id: 21  # (generated)
   front: Was sind TA konsistente sicherungspunkte?
   back: Sicherungspunkte welche nur abgeschlossene Transaktionen sichern
-    
+
 
 - type: markdown
+  id: 22  # (generated)
   front: Was sind Aktionskonsistente sicherungspunkte?
-  back: Sicherungspunkte welche auch zwischen Teilaktionen von Transaktionen sichern können
-    
+  back: Sicherungspunkte welche auch zwischen Teilaktionen von Transaktionen sichern
+    können
+
 
 - type: markdown
   front: Was sind fuzzy sicherungspunkte?
@@ -159,4 +183,4 @@ cards:
 - type: markdown
   front: Wie kann R4 Recovery durchgeführt werden?
   back: Durch laden von Backups, z.b. aus tertiärem Speicher
-    
+
