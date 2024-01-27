@@ -76,3 +76,4 @@ cards:
   back: |+
     {t | P(t)} z.b. [latex]\{p \mid p \in \text{Professoren} \land p.\text{Rang} = 'C4'\}[\latex]
 
+...

@@ -6,7 +6,7 @@ cards:
 - type: markdown
   id: 0  # (generated)
   front: Was ist eine Transaktion?
-  back: |+
+  back: |
     - atomische, fehlertolerante operation
     - Tritt während der Transaktion ein fehler auf, wird der korrekte zustand recovered
     - isolation von parallelen zugriffen -> vermeidung von race conditions
