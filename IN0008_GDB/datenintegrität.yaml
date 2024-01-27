@@ -4,26 +4,31 @@ id: 402722603
 
 cards:
 - type: markdown
+  id: 0  # (generated)
   front: Was ist mit Datenintegrität gemeint?
   back: |+
     - Vermeiden von Redundanz und inkonsistenz
     - Vermeidung von Fehlern in den Daten
 
 - type: markdown
+  id: 1  # (generated)
   front: Was sind inkonsistenzen und Redundanz?
   back: |+
     - Inkonsistenz: Wiedersprüche in den Daten, typischerweise durch Fehler oder schlechte modellierung
     - Redundanz: Vermeidbare wiederholungen / duplikate gleicher Daten
 
 - type: markdown
+  id: 2  # (generated)
   front: Was macht das cascade keyword bei update?
   back: modifikationen von primary keys updated foreign keys of die Relation
 
 - type: markdown
+  id: 3  # (generated)
   front: Was macht das cascade keyword bei delete?
   back: Löschen von primary keys löscht einträge mit foreign keys of die Relation
 
 - type: markdown
+  id: 4  # (generated)
   front: Welche statischen Integritätsbedingungen haben wir kennengelernt?
   back: |+
     - not null
@@ -31,16 +36,19 @@ cards:
     - unique
 
 - type: markdown
+  id: 5  # (generated)
   front: Was sind Datenbank trigger?
-  back: | 
+  back: |
     - Bei bestimmten Ereignissen, z.b. vor/nach einfügen wird ein trigger ausgelöst 
     - Trigger verändern oft Einträge in der Relation
 
 - type: markdown
+  id: 6  # (generated)
   front: Was macht das cascade keyword bei update?
   back: modifikationen von primary keys updated foreign keys of die Relation
 
 - type: markdown
+  id: 7  # (generated)
   front: Wie können Zeitpunkte oder Daten verglichen werden? (vor / nach)
   back: mit den standard vergleichsoperatoren < >
 

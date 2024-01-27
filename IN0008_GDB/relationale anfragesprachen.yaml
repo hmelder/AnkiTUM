@@ -103,7 +103,7 @@ cards:
     - `max` und `min`: Zur Bestimmung des größten bzw. kleinsten Elementes
     - `sum`: Bildung der Summe
     - `count`: Anzahl der Zeilen in einer Tabelle
-    
+
 
 - type: markdown
   id: 10  # (generated)
@@ -113,7 +113,7 @@ cards:
     wird, können in der `SELECT`-Klausel **nur Aggregatfunktionen vorkommen, oder Attribute
     nach denen gruppiert wurde**. Also Attribute, die auch in der `GROUP BY` Klausel verwendet
     wurden.
-    
+
 
 - type: markdown
   id: 11  # (generated)
@@ -139,7 +139,7 @@ cards:
   back: |
     Der NULL-Wert wird propagiert, d.h sobald ein Operand NULL ist, wird auch das
     Ergebnis NULL.
-    
+
 
 - type: markdown
   id: 15  # (generated)
@@ -152,7 +152,7 @@ cards:
   front: Ergebnis von `false OR unknown`
   back: |
     `unknown`
-    
+
 
 - type: markdown
   id: 17  # (generated)
@@ -161,13 +161,15 @@ cards:
     `true`
 
 - type: markdown
+  id: 18  # (generated)
   front: Wie verändert / löscht man Tupel?
   back: |+
     - update [COLUMN] set [VALUE]
     - delete [COLUMN]
-    
+
 
 - type: markdown
+  id: 19  # (generated)
   front: Wie kann bei einer SELECT anfrage die sortierung bestimmt werden?
   back: |+
     - order by [COLUMN]
@@ -176,16 +178,19 @@ cards:
 
 
 - type: markdown
+  id: 20  # (generated)
   front: Wie können doppelte elemente bei einer Select anfrage ignoriert werden?
   back: mit distinct [COLUMN]
 
 
 - type: markdown
+  id: 21  # (generated)
   front: Wie kann eine Tabelle umbenannt werden?
   back: mit "as", z.b. select a, b as AB from C
 
 
 - type: markdown
+  id: 22  # (generated)
   front: Was ist die Syntax für eine rekursive Anfrage (rekursive CTE)?
   back: |+
     ```
@@ -194,41 +199,48 @@ cards:
       SELECT column1, column2, ...
       FROM your_table
       WHERE condition
-    
+
       UNION ALL
-    
+
       -- Recursives select
       SELECT column1, column2, ...
       FROM cte_name
       WHERE condition
     )
     ```
-    
+
 
 - type: markdown
+  id: 23  # (generated)
   front: Wann terminieren rekursive queries?
   back: Wenn das rekursive Select statement eine leere Tabelle zurückgibt
 
 
 - type: markdown
+  id: 24  # (generated)
   front: Wie lassen sich generalisierungen in SQL modellieren?
   back: |+
     Mit views. Man erstellt eine View welche mehrere Tabellen Zusammenfasst.
     Z.b. Professoren -> Angestellte. Professoren erweitern Angestellte und haben einen Fremdschlüssel PersNr.
-    
+
 - type: markdown
+  id: 25  # (generated)
   front: Was sind CTEs?
   back: Common Table Expressions. Temporäre Tabellen die mit WITH erstellt werden
 
 - type: markdown
+  id: 26  # (generated)
   front: Welchen Vorteil haben views verglichen mit CTEs?
   back: |+
     - Views werden persisted und geindexed -> bessere Performace und Reusability
     - Views können updatebar sein
 
 - type: markdown
+  id: 27  # (generated)
   front: Welchen Sicherheitsvorteil haben views?
-  back: Abkapselung von Daten. Die view kann nur Daten enthalten welche für den user relevant sind. Alle anderen sind für den user unsichtbar
+  back: Abkapselung von Daten. Die view kann nur Daten enthalten welche für den user
+    relevant sind. Alle anderen sind für den user unsichtbar
 
 - type: markdown
+  id: 28  # (generated)
   front:

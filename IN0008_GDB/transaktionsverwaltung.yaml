@@ -3,9 +3,10 @@ author: HHuebner
 id: 54858775
 
 cards:
-  - type: basic
-    front: Was ist eine Transaktion?
-    back: |+
-      - atomische, fehlertolerante operation
-      - Tritt während der Transaktion ein fehler auf, wird der korrekte zustand recovered
-      - isolation von parallelen zugriffen -> vermeidung von race conditions
+- type: basic
+  id: 0  # (generated)
+  front: Was ist eine Transaktion?
+  back: |
+    - atomische, fehlertolerante operation
+    - Tritt während der Transaktion ein fehler auf, wird der korrekte zustand recovered
+    - isolation von parallelen zugriffen -> vermeidung von race conditions

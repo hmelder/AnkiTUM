@@ -26,5 +26,6 @@ cards:
     - Entität welche von anderen Entitäten Abhängt
 
 - type: basic
+  id: 3  # (generated)
   front: Wofür steht SQL?
   back: Structured Query Language
