@@ -4,11 +4,14 @@ id: 402722604
 
 cards:
 - type: markdown
+  id: 0  # (generated)
   front: Was sind Funktionale Abhängigkeiten?
-  back: Wenn die Werte in einer Menge von Spalten von den Werten in einer anderen Menge von Spalten sinngemäß abhängen nennt man sie funktional Abhängig
+  back: Wenn die Werte in einer Menge von Spalten von den Werten in einer anderen
+    Menge von Spalten sinngemäß abhängen nennt man sie funktional Abhängig
 
 
 - type: markdown
+  id: 1  # (generated)
   front: Was ist volle funktionale Abhängigkeit?
   back: |+
     - [$] a \rightarrow b [/$]
@@ -16,80 +19,106 @@ cards:
 
 
 - type: markdown
-  front: Wenn FD [$]a \rightarrow b[/$] gilt, was sollte für alle Möglichen Werte c aus a gelten?
+  id: 2  # (generated)
+  front: Wenn FD [$]a \rightarrow b[/$] gilt, was sollte für alle Möglichen Werte
+    c aus a gelten?
   back: |
     [$] \Pi_{b}(\sigma_{a=c}(R)) [/$] hat höchstens ein Element
 
 
 - type: markdown
-  front: Wenn FD [$]a \rightarrow b[/$] gilt, was sollte für alle Möglichen Werte c aus a gelten?
+  id: 3  # (generated)
+  front: Wenn FD [$]a \rightarrow b[/$] gilt, was sollte für alle Möglichen Werte
+    c aus a gelten?
   back: |
     [$] \Pi_{b}(\sigma_{a=c}(R)) [/$] hat höchstens ein Element
 
 
 - type: markdown
+  id: 4  # (generated)
   front: Was ist ein Superschlüssel?
-  back: Eine Menge an Spalten von der zusammengenommen alle Spalten der Relation funktional abhängig sind. Z.b. auch die Menge aller Spalten
+  back: Eine Menge an Spalten von der zusammengenommen alle Spalten der Relation funktional
+    abhängig sind. Z.b. auch die Menge aller Spalten
 
 
 - type: markdown
+  id: 5  # (generated)
   front: Was ist ein Kandidatenschlüssel?
   back: Ein kleinstmöglicher Superschlüssel und potentieller Primärschlüssel
 
 - type: markdown
+  id: 6  # (generated)
   front: Wie berechnet man die Attributhülle?
-  back: "[[image: attrHülle.png]]"
+  back: '[[image: attrHülle.png]]'
 
 - type: markdown
+  id: 7  # (generated)
   front: Wann heißen zwei Mengen von FDs gleich?
   back: Wenn ihre Attributhüllen gleich sind
 
 - type: markdown
+  id: 8  # (generated)
   front: Wie berechnet man die kanonische Überdeckung?
-  back: "[[image: kanonischeÜberdeckung.png]]"
+  back: '[[image: kanonischeÜberdeckung.png]]'
 
 
 - type: markdown
+  id: 9  # (generated)
   front: Wozu dient die kanonische Überdeckung?
-  back: Berechnet eine kleinstmögliche Menge an FDs die gleich der Ursprungsmenge ist. Vereinfacht das berechnen von Normalformen
+  back: Berechnet eine kleinstmögliche Menge an FDs die gleich der Ursprungsmenge
+    ist. Vereinfacht das berechnen von Normalformen
 
 - type: markdown
+  id: 10  # (generated)
   front: Wann ist eine Relation in 1. NF?
   back: Wenn alle Attribute atomar sind, d.h. nicht aufgeteilt werden können
 
 
 - type: markdown
+  id: 11  # (generated)
   front: Was ist eine Updateanomalie?
-  back: Wenn ein Wert geändert wird, dieser Wert allerdings duplikate hat, kann es sein dass diese Duplikate nicht mitgeupdated werden
+  back: Wenn ein Wert geändert wird, dieser Wert allerdings duplikate hat, kann es
+    sein dass diese Duplikate nicht mitgeupdated werden
 
 
 - type: markdown
+  id: 12  # (generated)
   front: Was ist eine Updateanomalie?
-  back: Wenn ein Wert geändert wird, dieser Wert allerdings duplikate hat, kann es sein dass diese Duplikate nicht mitgeupdated werden
+  back: Wenn ein Wert geändert wird, dieser Wert allerdings duplikate hat, kann es
+    sein dass diese Duplikate nicht mitgeupdated werden
 
 
 - type: markdown
+  id: 13  # (generated)
   front: Was ist eine Löschanomalie?
-  back: Wenn zwei Entities miteinander verknüpft sind und eines gelöscht wird, kann es sein, dass der foreign key der anderen nicht mehr gültig ist
+  back: Wenn zwei Entities miteinander verknüpft sind und eines gelöscht wird, kann
+    es sein, dass der foreign key der anderen nicht mehr gültig ist
 
 
 - type: markdown
+  id: 14  # (generated)
   front: Was ist eine Einfügeanomalie?
-  back: Wenn man Informationen einfügen will, allerdings felder in der Relation auf NULL setzen muss weil diese noch nicht feststehen
+  back: Wenn man Informationen einfügen will, allerdings felder in der Relation auf
+    NULL setzen muss weil diese noch nicht feststehen
 
 
 - type: markdown
+  id: 15  # (generated)
   front: Was ist eine (Verlustlose) Zerlegung?
-  back: Eine Relation is zwei Teilrelationen zu zerlegen sodass sie gejoint genau die Ursprüngliche Relation bilden
+  back: Eine Relation is zwei Teilrelationen zu zerlegen sodass sie gejoint genau
+    die Ursprüngliche Relation bilden
 
 
 - type: markdown
-  front: Welches Notwendige Kriterium muss gelten damit eine Zerlegung verlustfrei ist?
+  id: 16  # (generated)
+  front: Welches Notwendige Kriterium muss gelten damit eine Zerlegung verlustfrei
+    ist?
   back: |
     [$] R_1 \difference R_2 \rightarrow R_1, R_2 [/$]
 
 
 - type: markdown
+  id: 17  # (generated)
   front: Wann ist eine Relation in 2. NF?
   back: |+
     - Wenn sie nur ein Konzept modelliert
@@ -97,27 +126,32 @@ cards:
 
 
 - type: markdown
+  id: 18  # (generated)
   front: Wann ist eine Relation in 3. NF?
   back: |+
     - 2NF + kein Nichtschlüssel-Attribut hängt transitiv von einem Kandidatenschlüssel ab
 
 
 - type: markdown
+  id: 19  # (generated)
   front: Wie überführt man eine Relation in die 3NF?
-  back: "[[image: synthesealgorithmus.png]]"
+  back: '[[image: synthesealgorithmus.png]]'
 
 
 - type: markdown
+  id: 20  # (generated)
   front: Wie überführt man eine Relation in die BCNF?
-  back: "[[image: bcnfalgo.png]]"
+  back: '[[image: bcnfalgo.png]]'
 
 
 - type: markdown
+  id: 21  # (generated)
   front: Wie überführt man eine Relation in die 4NF?
-  back: "[[image: dekomposition.png]]"
+  back: '[[image: dekomposition.png]]'
 
 
 - type: markdown
+  id: 22  # (generated)
   front: Wann ist eine Relation in Boyce-Codd Normalform?
   back: |+
     Ein Relationenschema R mit FDs F ist in Boyce-Codd Normalform, falls für jede funktionale Abhängigkeit α Ñ β mindestens eine der folgenden zwei Bedingungen gilt:
@@ -126,8 +160,9 @@ cards:
 
 
 - type: markdown
+  id: 23  # (generated)
   front: Was ist eine Mehrwertige FD (MVD)?
-  back: |+
+  back: |
     Seien a, b und c eine Partition von R, es gilt [$] a \twoheadrightarrow b [/$] gdw: 
     für alle Tupel [$] t_1, t_2 [/$] mit [$] t_1.a = t_2.a [/$] gibt es [$] t_4, t_4 [/$] sodass:
     [$] t_1.a = t_2.a = t_3.a = t_4.a [/$]
