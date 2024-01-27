@@ -17,12 +17,14 @@ cards:
 
 - type: markdown
   front: Wenn FD [$]a \rightarrow b[/$] gilt, was sollte für alle Möglichen Werte c aus a gelten?
-  back: [$] \Pi_{b}(\sigma_{a=c}(R)) [/$] hat höchstens ein Element
+  back: |
+    [$] \Pi_{b}(\sigma_{a=c}(R)) [/$] hat höchstens ein Element
 
 
 - type: markdown
   front: Wenn FD [$]a \rightarrow b[/$] gilt, was sollte für alle Möglichen Werte c aus a gelten?
-  back: [$] \Pi_{b}(\sigma_{a=c}(R)) [/$] hat höchstens ein Element
+  back: |
+    [$] \Pi_{b}(\sigma_{a=c}(R)) [/$] hat höchstens ein Element
 
 
 - type: markdown
@@ -83,7 +85,8 @@ cards:
 
 - type: markdown
   front: Welches Notwendige Kriterium muss gelten damit eine Zerlegung verlustfrei ist?
-  back: [$] R_1 \difference R_2 \rightarrow R_1, R_2 [/$]
+  back: |
+    [$] R_1 \difference R_2 \rightarrow R_1, R_2 [/$]
 
 
 - type: markdown
