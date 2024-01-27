@@ -10,3 +10,24 @@ cards:
     - atomische, fehlertolerante operation
     - Tritt während der Transaktion ein fehler auf, wird der korrekte zustand recovered
     - isolation von parallelen zugriffen -> vermeidung von race conditions
+    - ACID
+
+- type: markdown
+  front: Was macht der Befehlt "backup transaction"?
+  back: Setzt die aktive Transaktion auf den jüngsten Sicherungspunkt zurück
+
+
+- type: markdown
+  front: Was sind die ACID Eigenschaften
+  back: |+
+    - Atomicity (Operation passiert ganz oder gar nicht)
+    - Consistency
+    - Isolation
+    - Durability (Änderungen durch TA dürfen nicht "verloren" gehen)
+  
+
+- type: markdown
+  front: Was ist der unterschied zwischen "define savepoint" und "backup transaction"
+  back: |+
+    - Define Savepoint erstellt einen Sicherungspunkt vor der aktien TA
+    - Backup transaction rollt die aktive TA auf den jüngesten savepoint zurück
