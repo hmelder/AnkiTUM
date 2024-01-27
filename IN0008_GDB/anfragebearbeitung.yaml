@@ -88,7 +88,7 @@ cards:
 
 - type: markdown
   id: 8  # (generated)
-  front: |+
+  front: |
     Wann kann eine Selektion an einer Joinoperation (oder einem Kreuzprodukt)
     vorbeigeschoben werden?
   back: |+
@@ -116,7 +116,7 @@ cards:
 
 - type: markdown
   id: 10  # (generated)
-  front: |+
+  front: |
     Können Selektionen mit Mengenoperationen wie Vereinigung, Schnitt und Differenz vertauscht werden?
   back: |+
     Ja. Es gilt (für Schnitt und Differenz analog):
@@ -152,7 +152,7 @@ cards:
   id: 14  # (generated)
   front: Wann können eine Selektion und ein Kreuzprodukt zu einem Join zusammengefasst
     werden?
-  back: |+
+  back: |
     Wenn die Selektionsbedingung eine Joinbedingung ist, sie also Attribute einer Argumentrelation
     mit Attributen der anderen vergleicht.
 
