@@ -162,22 +162,25 @@ cards:
 
 
 - type: markdown
+  id: 15  # (generated)
   front: Wie funktioniert der Nested Loop join?
   back: |+
     - Trivialer brute force anstatz
     - Zwei schleifen vergleichen alle Paare aus Elementen
     - O(n²)
-    
+
 
 - type: markdown
+  id: 16  # (generated)
   front: Wie funktioniert der Index Join?
   back: |+
     - Unter umständen kann die Indexstruktur ausgenutzt werden
     - z.B. bei Equijoins
     - Index kann in O(log(n)) nachgeschlagen werden
-    
+
 
 - type: markdown
+  id: 17  # (generated)
   front: Wie funktioniert der Merge Join? (Bei einem Equijoin)
   back: |+
     - Ausnutzen von Sortierung: Beide Relationen müssen sortiert sein
@@ -188,36 +191,43 @@ cards:
 
 
 - type: markdown
+  id: 18  # (generated)
   front: Wie funktioniert der Hash Join? (Bei einem Equijoin)
   back: |+
     - Der Build input wird mit hashfunktionen Partitioniert und auf Hashtabellen verteilt
     - Der Probe input wird mit hashfunktionen partitioniert, und jeweils eine einzelne Seite mit der korrespondierenden Hashtabelle des build inputs gejoint
-    
-    
+
+
 
 
 - type: markdown
-  front: Wenn m Hauptspeicherseiten zur Verfügung stehen, wie werden diese Bei einem Hashjoin aufgeteilt?
+  id: 19  # (generated)
+  front: Wenn m Hauptspeicherseiten zur Verfügung stehen, wie werden diese Bei einem
+    Hashjoin aufgeteilt?
   back: |+
     - m - 1 Seiten für das Partitionieren des build inputs
     - eine Seite zum Vergleichen mit elementen aus dem Probe inputs
-    
-    
+
+
 
 - type: markdown
+  id: 20  # (generated)
   front: Was ist der "Build input" und "Probe input" bei einem Hashjoin?
   back: |+
     - Build input: Die kleinere Tabelle, welche den großteil des verfügbaren Hauptspeichers bekommt, Partitioniert und in hashtabellen verteilt wird.
     - Probe input: Die größere Tabelle, welche ebenfalls partitioniert wird, und mit den Hashtabellen des build inputs verglichen wird
-    
+
 
 - type: markdown
+  id: 21  # (generated)
   front: Was ist das Problem bei der Sortierung / Bearbeitung von großen Datenmengen?
   back: Die Daten passen oft nicht mehr in den Hauptspeicher
 
 
 
 - type: markdown
+  id: 22  # (generated)
   front: Was ist ein "Run"/"Lauf" bei Mergesort?
-  back: Ein Teil der Daten, welcher sortiert wird und dann mit anderen Teilen "gemerged" wird
+  back: Ein Teil der Daten, welcher sortiert wird und dann mit anderen Teilen "gemerged"
+    wird
 
