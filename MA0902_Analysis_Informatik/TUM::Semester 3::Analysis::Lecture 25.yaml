@@ -1,36 +1,22 @@
-title: 'Analysis für Informatik - Vorlesung 25'
+title: Analysis für Informatik - Vorlesung 25
 id: 991531809
 author: Sebastian Pfister
 cards:
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Der Konvergenzradius einer Potenzreihe [HMiR]<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Zu jeder Potenzreihe $f(x)=\sum_{k=0}^\infty(x-a)^k$
-    gibt es ein $R\in\mathbb{R}_{\geq 0}\cup\{\infty\}$ mit<br>
-        \[f(x)\begin{cases*}<br>
-            \text{konvergiert absolut} &amp; $\forall x$ mit $|x-a|&lt;R$ \\<br>
-            \text{divergiert}
-    &amp;  $\forall x$ mit $|x-a|&gt;R$ \\<br>
-            \text{keine allgemeine Aussage möglich} &amp;  $\forall x$ mit $|x-a|=R$ \\<br>
-        \end{cases*}\]<br>
-        Dabei treffen wir die folgenden Vereinbarungen:<br>
-        \begin{itemize}<br>
-            \item
-    Im Fall $R=0$ gilt $K(f)=\{a\}$, und<br>
-            \item im Fall $R=\infty$ gilt
-    $K(f)=\mathbb{R}$.<br>
-        \end{itemize}<br>
-        Man nennt $R$ den \emph{Konvergenzradius}.
+  id: 0  # (generated)
+  front: '[latex]%<br> Der Konvergenzradius einer Potenzreihe [HMiR]<br> [/latex]'
+  back: '[latex]%<br> Zu jeder Potenzreihe $f(x)=\sum_{k=0}^\infty(x-a)^k$ gibt es
+    ein $R\in\mathbb{R}_{\geq 0}\cup\{\infty\}$ mit<br> \[f(x)\begin{cases*}<br> \text{konvergiert
+    absolut} &amp; $\forall x$ mit $|x-a|&lt;R$ \\<br> \text{divergiert} &amp;  $\forall
+    x$ mit $|x-a|&gt;R$ \\<br> \text{keine allgemeine Aussage möglich} &amp;  $\forall
+    x$ mit $|x-a|=R$ \\<br> \end{cases*}\]<br> Dabei treffen wir die folgenden Vereinbarungen:<br>
+    \begin{itemize}<br> \item Im Fall $R=0$ gilt $K(f)=\{a\}$, und<br> \item im Fall
+    $R=\infty$ gilt $K(f)=\mathbb{R}$.<br> \end{itemize}<br> Man nennt $R$ den \emph{Konvergenzradius}.
     Die zwei wichtigsten Formeln zur Berechnung von $R$ für eine Potenzreihe $f(x)=\sum_{k=0}^\infty
-    a_k(x-a)^k$ lauten:<br>
-        \[R=\lim_{k\to\infty}\left|\frac{a_k}{a_{k+1}}\right|\quad\text{bzw.}\quad
+    a_k(x-a)^k$ lauten:<br> \[R=\lim_{k\to\infty}\left|\frac{a_k}{a_{k+1}}\right|\quad\text{bzw.}\quad
     R=\lim_{k\to\infty}\frac{1}{\sqrt[k]{|a_k|}},\marginnote{In der VL wurde nur die
-    linke Formel erwähnt.}\]<br>
-        falls $\lim_{k\to\infty}\left|\frac{a_k}{a_{k+1}}\right|\in\mathbb{R}_{\geq
+    linke Formel erwähnt.}\]<br> falls $\lim_{k\to\infty}\left|\frac{a_k}{a_{k+1}}\right|\in\mathbb{R}_{\geq
     0}\cup\{\infty\}$ bzw. $\lim_{k\to\infty}\frac{1}{\sqrt[k]{|a_k|}}\in\mathbb{R}_{\geq
-    0}\cup\{\infty\}$.<br>
-    [/latex]'
+    0}\cup\{\infty\}$.<br> [/latex]'

@@ -1,66 +1,44 @@
-title: 'Analysis für Informatik - Vorlesung 21'
+title: Analysis für Informatik - Vorlesung 21
 id: 353956595
 author: Sebastian Pfister
 cards:
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Die Existenz des Integrals<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Sei $f:[a,b]\to\mathbb{R}$ beschränkt. $f$ ist genau
-    dann integrierbar, wenn für jeden $\epsilon&gt;0$ eine Zerlegung $Z$ existiert,
-    so dass<br>
-        \[|O_Z(xf)-U_Z(f)|&lt;\epsilon.\]<br>
+  id: 0  # (generated)
+  front: '[latex]%<br> Die Existenz des Integrals<br> [/latex]'
+  back: '[latex]%<br> Sei $f:[a,b]\to\mathbb{R}$ beschränkt. $f$ ist genau dann integrierbar,
+    wenn für jeden $\epsilon&gt;0$ eine Zerlegung $Z$ existiert, so dass<br> \[|O_Z(xf)-U_Z(f)|&lt;\epsilon.\]<br>
     [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Def.: Gleichmäßig stetige Funktionen [Wiki]<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Eine Abbildung $f:D\to\mathbb{R}$ heißt \emph{gleichmäßig
-    stetig} genau dann, wenn<br>
-        \[\forall\epsilon&gt;0\,\exists\delta&gt;0\,\forall
-    x,x_0\in D:|x-x_0|&lt;\delta\implies|f(x)-f(x_0)|&lt;\epsilon.\]<br>
-    [/latex]'
+  id: 1  # (generated)
+  front: '[latex]%<br> Def.: Gleichmäßig stetige Funktionen [Wiki]<br> [/latex]'
+  back: '[latex]%<br> Eine Abbildung $f:D\to\mathbb{R}$ heißt \emph{gleichmäßig stetig}
+    genau dann, wenn<br> \[\forall\epsilon&gt;0\,\exists\delta&gt;0\,\forall x,x_0\in
+    D:|x-x_0|&lt;\delta\implies|f(x)-f(x_0)|&lt;\epsilon.\]<br> [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Der Hauptsatz der Differential- und Integralrechnung
-    [HMiR]<br>
+  id: 2  # (generated)
+  front: '[latex]%<br> Der Hauptsatz der Differential- und Integralrechnung [HMiR]<br>
     [/latex]'
-  back: '[latex]%<br>
-        \begin{itemize}<br>
-            \item Ist $f:[a,b]\to\mathbb{R}$
-    eine stetige Funktion, so ist \marginnote{Der HS besteht aus zwei Teilen. In der
-    VL wurde nur des erste Teil als HS bezeichnet, der zweite Teil folgte als eigenständiger
-    Satz.}<br>
-                  \[F:[a,b]\to\mathbb{R},\quad F(x)=\int_a^xf(t)\,dt\]<br>
-                  differenzierbar
-    und eine Stammfunktion zu $f$, d.h. für alle $x\in[a,b]$ gilt $F''(x)=f(x)$.<br>
-            \item
-    Ist $f:[a,b]\to\mathbb{R}$ eine stetige Funktion und $F:[a,b]\to\mathbb{R}$ eine
-    Stammfunktion zu $f$, so gilt:<br>
-                  \[\int_a^bf(x)\,dx=F(b)-F(a).\]<br>
-        \end{itemize}<br>
-    [/latex]'
+  back: "[latex]%<br> \\begin{itemize}<br> \\item Ist $f:[a,b]\\to\\mathbb{R}$ eine
+    stetige Funktion, so ist \\marginnote{Der HS besteht aus zwei Teilen. In der VL
+    wurde nur des erste Teil als HS bezeichnet, der zweite Teil folgte als eigenständiger
+    Satz.}<br> \\[F:[a,b]\\to\\mathbb{R},\\quad F(x)=\\int_a^xf(t)\\,dt\\]<br> differenzierbar
+    und eine Stammfunktion zu $f$, d.h. für alle $x\\in[a,b]$ gilt $F'(x)=f(x)$.<br>
+    \\item Ist $f:[a,b]\\to\\mathbb{R}$ eine stetige Funktion und $F:[a,b]\\to\\mathbb{R}$
+    eine Stammfunktion zu $f$, so gilt:<br> \\[\\int_a^bf(x)\\,dx=F(b)-F(a).\\]<br>
+    \\end{itemize}<br> [/latex]"
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Def.: Stammfunktion<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Sei $f,F:[a,b]\to\mathbb{R}$ und $F$ stetig auf $[a,b]$
-    und differenzierbar in $(a,b)$. $F$ heißt \emph{Stammfunktion} von $f$, wenn gilt<br>
-        \[F''(x)=f(x)\,\forall
-    x\in(a,b).\]<br>
-<br>
-        Ist $F$ eine Stammfunktion von $f$ und $c\in\mathbb{R}$,
-    so ist auch $F+c$ eine Stammfunktion von $f$. Stammfunktionen sind bis auf eine
-    additive Konstante eindeutig.<br>
-    [/latex]'
+  id: 3  # (generated)
+  front: '[latex]%<br> Def.: Stammfunktion<br> [/latex]'
+  back: "[latex]%<br> Sei $f,F:[a,b]\\to\\mathbb{R}$ und $F$ stetig auf $[a,b]$ und
+    differenzierbar in $(a,b)$. $F$ heißt \\emph{Stammfunktion} von $f$, wenn gilt<br>
+    \\[F'(x)=f(x)\\,\\forall x\\in(a,b).\\]<br> <br> Ist $F$ eine Stammfunktion von
+    $f$ und $c\\in\\mathbb{R}$, so ist auch $F+c$ eine Stammfunktion von $f$. Stammfunktionen
+    sind bis auf eine additive Konstante eindeutig.<br> [/latex]"

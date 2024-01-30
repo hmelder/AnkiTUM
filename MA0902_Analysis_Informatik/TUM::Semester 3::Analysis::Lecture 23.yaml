@@ -1,95 +1,60 @@
-title: 'Analysis für Informatik - Vorlesung 23'
+title: Analysis für Informatik - Vorlesung 23
 id: 962190304
 author: Sebastian Pfister
 cards:
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Uneigentliche Integrale [HMiR]<br>
-    [/latex]'
-  back: '[latex]%<br>
-        \begin{itemize}<br>
-            \item \textbf{Unbeschränkte
-    Intervalle:} Für $a,b\in\mathbb{R}$ und $f:[a,\infty)\to\mathbb{R}$ bzw. $f:(-\infty,b]\to\mathbb{R}$
+  id: 0  # (generated)
+  front: '[latex]%<br> Uneigentliche Integrale [HMiR]<br> [/latex]'
+  back: '[latex]%<br> \begin{itemize}<br> \item \textbf{Unbeschränkte Intervalle:}
+    Für $a,b\in\mathbb{R}$ und $f:[a,\infty)\to\mathbb{R}$ bzw. $f:(-\infty,b]\to\mathbb{R}$
     bzw. $f:(-\infty,\infty)\to\mathbb{R}$ setze (falls die jeweiligen Grenzwerte
-    existieren):<br>
-                  \begin{itemize}<br>
-                      \item
-    $\displaystyle\int_a^\infty f(x)\,dx=\lim_{b\to\infty}\int_a^bf(x)\,dx$,<br>
-                      \item
-    $\displaystyle\int_{-\infty}^bf(x)=\lim_{a\to-\infty}\int_a^bf(x)\,dx$,<br>
-                      \item
-    $\displaystyle\int_{-\infty}^\infty f(x)\,dx=\int_{-\infty}^cf(x)\,dx+\int_c^\infty
-    f(x)\,dx$ mit $c\in\mathbb{R}$.<br>
-                      \item $\displaystyle\text{CHW}\int_{-\infty}^\infty
+    existieren):<br> \begin{itemize}<br> \item $\displaystyle\int_a^\infty f(x)\,dx=\lim_{b\to\infty}\int_a^bf(x)\,dx$,<br>
+    \item $\displaystyle\int_{-\infty}^bf(x)=\lim_{a\to-\infty}\int_a^bf(x)\,dx$,<br>
+    \item $\displaystyle\int_{-\infty}^\infty f(x)\,dx=\int_{-\infty}^cf(x)\,dx+\int_c^\infty
+    f(x)\,dx$ mit $c\in\mathbb{R}$.<br> \item $\displaystyle\text{CHW}\int_{-\infty}^\infty
     f(x)\,dx=\lim_{a\to\infty}\int_{-a}^af(x)\,dx$ nennt man den \emph{Cauchyhauptwert}
-    von $f$, falls dieser Grenzwert existiert.<br>
-                  \end{itemize}<br>
-            \item
-    \textbf{Unbeschränkte Funktion:} Für $a,b\in\mathbb{R}$ und $f:[a,c)\to\mathbb{R}$
-    bzw. $f:(c,b]\to\mathbb{R}$ setze (falls die jeweiligen Grenzwerte existieren):<br>
-                  \begin{itemize}<br>
-                      \item
-    $\displaystyle\int_a^cf(x)\,dx=\lim_{b\to c^-}\int_a^bf(x)\,dx$,<br>
-                      \item
-    $\displaystyle\int_c^bf(x)\,dx=\lim_{a\to c^+}\int_a^bf(x)\,dx$.<br>
-                  \end{itemize}<br>
-        \end{itemize}<br>
-        Falls
-    der jeweilige Grenzwert existiert und endlich ist, so sagt man, dass das uneigentliche
-    Integral existiert bzw. konvergiert, ansonsten nennt man es nicht existent oder
-    divergent.<br>
+    von $f$, falls dieser Grenzwert existiert.<br> \end{itemize}<br> \item \textbf{Unbeschränkte
+    Funktion:} Für $a,b\in\mathbb{R}$ und $f:[a,c)\to\mathbb{R}$ bzw. $f:(c,b]\to\mathbb{R}$
+    setze (falls die jeweiligen Grenzwerte existieren):<br> \begin{itemize}<br> \item
+    $\displaystyle\int_a^cf(x)\,dx=\lim_{b\to c^-}\int_a^bf(x)\,dx$,<br> \item $\displaystyle\int_c^bf(x)\,dx=\lim_{a\to
+    c^+}\int_a^bf(x)\,dx$.<br> \end{itemize}<br> \end{itemize}<br> Falls der jeweilige
+    Grenzwert existiert und endlich ist, so sagt man, dass das uneigentliche Integral
+    existiert bzw. konvergiert, ansonsten nennt man es nicht existent oder divergent.<br>
     [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Integrierbarkeit von Funktionsgrenzwerten<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Sei $(f_n)$ eine Funktionsfolge, die gleichmäßig gegen
-    $f:[a,b]\to\mathbb{R}$ konvergiert und deren Glieder $f_n$ auf $[a,b]$ integierbar
-    sind. Dann ist auch $f$ integrierbar und es gilt:<br>
-        \[\lim_{n\to\infty}\int_a^bf_n(x)\,dx=\int_a^bf(x),\,dx.\]<br>
-<br>
-        \textit{Uneigentliche
-    Integrale müssen gesondert behandelt werden.}<br>
-    [/latex]'
+  id: 1  # (generated)
+  front: '[latex]%<br> Integrierbarkeit von Funktionsgrenzwerten<br> [/latex]'
+  back: '[latex]%<br> Sei $(f_n)$ eine Funktionsfolge, die gleichmäßig gegen $f:[a,b]\to\mathbb{R}$
+    konvergiert und deren Glieder $f_n$ auf $[a,b]$ integierbar sind. Dann ist auch
+    $f$ integrierbar und es gilt:<br> \[\lim_{n\to\infty}\int_a^bf_n(x)\,dx=\int_a^bf(x),\,dx.\]<br>
+    <br> \textit{Uneigentliche Integrale müssen gesondert behandelt werden.}<br> [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Bsp. Punktweise Konvergenz von Funktionsfolgen ist nicht
-    ausreichen für Integrierbarkeit<br>
-    [/latex]'
-  back: '"[latex]%<br>
-        Für eine Funktionsfolge $(f_n)$ ist ein Glied $f_n:[0,1]\to\mathbb{R}$
-    definiert durch<br>
-        \[f_n(x)=\begin{cases}\marginnote{Bei der Definition
-    von den Gliedern $f_n$ wurde ein Abschnitt weggelassen.}                2n^2x
-    &amp; 0&lt;x\leq\frac{1}{n} \\                0     &amp; x &gt;\frac{1}{n}.            \end{cases}\]<br>
-        Dann
-    sind alle $f_n$ stetig und $\forall x:\lim_{n\to\infty}f_n(x)=0$ d.h. $(f_n)$
-    konvergiert punktweise gegen $f(x)=0\,\forall x\in[0,1]$. Jedoch gilt<br>
-        \[\forall
-    n:\int_0^1f_n(x)\,dx=1\quad\text{und}\quad\int_0^1f(x)\,dx=0.\]<br>
-    [/latex]"'
+  id: 2  # (generated)
+  front: '[latex]%<br> Bsp. Punktweise Konvergenz von Funktionsfolgen ist nicht ausreichen
+    für Integrierbarkeit<br> [/latex]'
+  back: '"[latex]%<br> Für eine Funktionsfolge $(f_n)$ ist ein Glied $f_n:[0,1]\to\mathbb{R}$
+    definiert durch<br> \[f_n(x)=\begin{cases}\marginnote{Bei der Definition von den
+    Gliedern $f_n$ wurde ein Abschnitt weggelassen.}                2n^2x &amp; 0&lt;x\leq\frac{1}{n}
+    \\                0     &amp; x &gt;\frac{1}{n}.            \end{cases}\]<br>
+    Dann sind alle $f_n$ stetig und $\forall x:\lim_{n\to\infty}f_n(x)=0$ d.h. $(f_n)$
+    konvergiert punktweise gegen $f(x)=0\,\forall x\in[0,1]$. Jedoch gilt<br> \[\forall
+    n:\int_0^1f_n(x)\,dx=1\quad\text{und}\quad\int_0^1f(x)\,dx=0.\]<br> [/latex]"'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Das Majorantenkriterium für uneigentliche Integrale
-    [HMiR]\marginnote{Nicht explizit in der VL erwähnt, jedoch in folgender Form thematisiert:
-    Ist eine Funktionsfolge $(f_n)$ punktweise konvergent gegen $f$ und es gilt das
-    Majorantenkriterium, so ist gilt \[\int_Df\,dx=\lim_{n\to\infty}\int_Df_n\,dx.\]}<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Sind $f,g:[a,\infty)\to\mathbb{R}$ Funktionen, die auf
-    jedem beschränkten Intervall $[a,b]$ integrierbar sind, so gilt: Ist $|f(x)|\leq
-    |g(x)|$ für alle $x\in[a,\infty)$ und existiert $\int_a^\infty g(x)\,dx$, so existiert
-    auch das uneigentliche Integral<br>
-        \[\int_a^\infty f(x)\,dx.\]<br>
-        Das
-    Kriterium gilt analog für Funktionen $f,g:(-\infty,b]\to\mathbb{R}$.<br>
-    [/latex]'
+  id: 3  # (generated)
+  front: '[latex]%<br> Das Majorantenkriterium für uneigentliche Integrale [HMiR]\marginnote{Nicht
+    explizit in der VL erwähnt, jedoch in folgender Form thematisiert: Ist eine Funktionsfolge
+    $(f_n)$ punktweise konvergent gegen $f$ und es gilt das Majorantenkriterium, so
+    ist gilt \[\int_Df\,dx=\lim_{n\to\infty}\int_Df_n\,dx.\]}<br> [/latex]'
+  back: '[latex]%<br> Sind $f,g:[a,\infty)\to\mathbb{R}$ Funktionen, die auf jedem
+    beschränkten Intervall $[a,b]$ integrierbar sind, so gilt: Ist $|f(x)|\leq |g(x)|$
+    für alle $x\in[a,\infty)$ und existiert $\int_a^\infty g(x)\,dx$, so existiert
+    auch das uneigentliche Integral<br> \[\int_a^\infty f(x)\,dx.\]<br> Das Kriterium
+    gilt analog für Funktionen $f,g:(-\infty,b]\to\mathbb{R}$.<br> [/latex]'
