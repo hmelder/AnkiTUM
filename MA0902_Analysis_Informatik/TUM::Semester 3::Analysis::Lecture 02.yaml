@@ -1,0 +1,109 @@
+title: 'Analysis für Informatik - Vorlesung 02'
+id: 159497506
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: (An)geordnete Körper<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Ein Körper $(F,+,\cdot)$ ist eine Menge $F$ mit zwei
+    Operationen $+$ und $\cdot$, sodass<br>
+        \begin{enumerate}<br>
+            \item
+    $\forall_{x,y,z\in F}\,(x+y)+z=x+(y+z)$,<br>
+            \item $\forall_{x,y\in
+    F}\,x+y=y+x$,<br>
+            \item $\exists_{0\in F}\,x+0=x$,<br>
+            \item
+    $\forall_{x\in F}\,\exists_{y\in F}x+y=0$<br>
+            \item $\forall_{x,y,z\in
+    F}\,(x\cdot y)\cdot z=x\cdot(y\cdot z)$,<br>
+            \item $\forall_{x,y\in
+    F}\,x\cdot y=y\cdot x$,<br>
+            \item $\exists_{1\in F}\forall_{x\in F}\,x\cdot
+    1=x$,<br>
+            \item $\forall_{0\neq x\in F}\exists_{y\in F}\,x\cdot y=1$
+    und<br>
+            \item $\forall_{x,y,z\in F}\,x\cdot(y+z)=x\cdot y+x\cdot z$.<br>
+        \end{enumerate}<br>
+<br>
+        Ein
+    Körper heißt (an)geordnet, falls es eine Relation $&lt;$ gibt, sodass<br>
+        \begin{enumerate}<br>
+            \item
+    für jedes $x\in F$ genau eins von folgenden gilt:<br>
+            \begin{itemize}<br>
+                \item
+    $x&gt;0$,<br>
+                \item $x&lt;0$ oder<br>
+                \item $x=0$;<br>
+            \end{itemize}<br>
+            \item
+    $\forall_{x,y\in F}\,x,y&gt;0\implies x+y,x\cdot y&gt;0$ und<br>
+            \item
+    $\forall_{x,y\in F}\,x&gt;y\iff x-y&gt;0$.<br>
+        \end{enumerate}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Folgen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $M$ eine Menge (z.B. $M=\mathbb{R}$ oder $\mathbb{R}^n$).
+    Eine \emph{Folge} mit Werten in $M$ ist eine Abbildung $\mathbb{N}\to M$ (oder
+    $\mathbb{N}\to M$). Wir schreiben $x_1,x_2,x_3\dots$ oder $x_0,x_1,x_2\dots$.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.:  Abzählbarkeit<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine Menge $M$ is abzählbar, wenn eine surjektive Abbildung
+    $\mathbb{N}\to M$ existiert.<br>
+<br>
+        % TODO Die Ganzen Zahlen sind abzählbar<br>
+        %
+    TODO Die Rationalen Zahlen sind abzählbar<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Bsp.: Kantors Diagonale<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Es soll gezeigt werden, dass $\mathbb{R}$ überabzählbar
+    ist, also $|\mathbb{R}| &gt; \aleph_0$.<br>
+<br>
+        \textbf{Beweis}. Wir nehmen
+    an, es gibt eine Abzählung der Zahlen in $[0;1]$ als Folge $x_1,x_2,x_3,\dots$
+    mit<br>
+        \begin{align*}<br>
+            x_1 &amp; = 0.d_{11}d_{12}d_{13}\dots
+    \\<br>
+            x_2 &amp; = 0.d_{21}d_{22}d_{23}\dots \\<br>
+            x_3
+    &amp; = 0.d_{31}d_{32}d_{33}\dots<br>
+        \end{align*}<br>
+        und definieren
+    eine reelle Zahl<br>
+        \[x = 0.d_{1}d_{2}d_{3}\dots\]<br>
+        in dem wir
+    $d_k$ auf $2$ setzen falls $d_{kk} = 1$, und andernfalls auf $1$.<br>
+        Das
+    führt zu dem Widerspruch $x \neq x_k$ $\forall k$.<br>
+        %TODO Automatically
+    generated<br>
+        % \begin{figure}[H]<br>
+        %     \centering<br>
+        %     \includegraphics[width=0.8\textwidth]{lec_02_1697720358}<br>
+        %
+    \end{figure}<br>
+    [/latex]'

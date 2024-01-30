@@ -1,0 +1,73 @@
+title: 'Analysis für Informatik - Vorlesung 07'
+id: 174679728
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Konvergenz- und Divergenzkriterien [HMiR]<br>
+    [/latex]'
+  back: '"[latex]%<br>
+        Gegeben ist eine Reihe $\sum_{k=0}^\infty$.<br>
+        \begin{itemize}<br>
+            \item
+    Das \emph{Nullfolgenkriterium}: Die Reihe $\sum_{k=0}^\infty a_k$ divergiert,
+    falls $(a_k)_k$ keine Nullfolge ist.<br>
+            \item Das \emph{Leibnitzkriterium}:
+    Die alternierende Reihe $\sum_{k=0}^\infty(-a)^ka_k$ konvergiert, falls $(a_k)_k$
+    eine monoton fallende Nullfolge ist (das impliziert $a_k\geq 0$). Für den Wert
+    $S$ der Reihe gilt die Abschätzung<br>
+                  \[\left|S-\sum_{k=0}^n(-1)^ka_k\right|\leq
+    a_{n+1}.\]<br>
+            \item Das \emph{Majorantenkriterium}: Die Reihe $\sum_{k=0}^\infty
+    a_k$ konvergiert absolut, falls es eine \emph{konvergente Majorante} gibt, d.h.<br>
+                  \[\exists\text{konvergente
+    Reihe $\sum_{k=0}^\infty b_k$}:|a_k|\leq b_k\;\forall k\geq N\in\mathbb{N}.\]<br>
+            \item
+    Das \emph{Minorantenkritierum}: Die Reihe $\sum_{k=0}^\infty a_k$ divergiert,
+    falls es eine \emph{divergente Minorante} gibt, d.h.<br>
+                  \[\exists\text{divergente
+    Reihe $\sum_{k=0}^\infty b_k$}:0\leq b_k\leq a_k\;\forall k\geq N\in\mathbb{N}.\]<br>
+            \item
+    Das \emph{Quotientenkriterium}: Existiert $r=\lim_{k\to\infty}\left|\frac{a_{k+1}}{a_k}\right|$,
+    so gilt:<br>
+                  \[\text{Im Fall}\begin{cases*}                          r&lt;1
+    &amp; konvergiert die Reihe absolut. \\                          r&gt;1 &amp;
+    divergiert die Reihe.          \\                          r=1 &amp; ist alles
+    möglich.                      \end{cases*}\]<br>
+            \item Das \emph{Wurzelkriterium}:
+    Existiert $r=\lim_{k\to\infty}\sqrt[k]{|a_k|}$, so gilt wiederrum:<br>
+                  \[\text{Im
+    Fall}\begin{cases*}                          r&lt;1 &amp; konvergiert die Reihe
+    absolut. \\                          r&gt;1 &amp; divergiert die Reihe.          \\                          r=1
+    &amp; ist alles möglich.                      \end{cases*}\]<br>
+        \end{itemize}<br>
+    [/latex]"'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Bsp.: Majorantenkriterium<br>
+    [/latex]'
+  back: '[latex]%<br>
+        $\sum_{k=1}^\infty\frac{1}{k^2}\leq 2$, denn<br>
+        \begin{align*}<br>
+            \sum_{k=1}^\infty\frac{1}{k^2}
+    &amp; =1+\frac{1}{2^2}+\frac{1}{3^2}+\frac{1}{4^2}\dots                   \\<br>
+                                           &amp;
+    \leq 1+\frac{1}{1\cdot2}+\frac{1}{2\cdot 3}+\frac{1}{3\cdot 4}\dots \\<br>
+                                           &amp;
+    =1+\sum_{k=1}^\infty\frac{1}{k\cdot(k+1)}                           \\<br>
+                                           &amp;
+    =1+\sum_{k=1}^\infty\left[\frac{1}{k}-\frac{1}{k+1}\right]=2<br>
+        \end{align*}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+<div><div>Cauchy-Kriterium für Reihen</div></div>[/latex]'
+  back: '[latex]%<br>
+<div><div>Die Reihe $\sum a_n$ konvergiert genau dann, wenn für
+    jedes $\epsilon$ ein $N$ existiert, so dass für alle $m,n$ mit $m&gt;n&gt;N$ gilt:</div><div>\[\left|\sum_{k=n+1}^{m}a_k\right|&lt;\epsilon.\]</div></div>[/latex]'

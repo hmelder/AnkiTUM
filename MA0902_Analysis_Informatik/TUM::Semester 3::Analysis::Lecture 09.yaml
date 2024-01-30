@@ -1,0 +1,29 @@
+title: 'Analysis für Informatik - Vorlesung 09'
+id: 180184019
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Umordnungssatz<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine $\sum_{k=1}^na_k$ konvergiert genau dann absolut,
+    wenn für jede Permutation $\sigma$ von $\mathbb{N}$ die umgeordnete Reihe gegen
+    denselben Wert konvergiert:<br>
+        \[\sum_{k=1}^\infty a_{\sigma(k)}=\sum_{k=1}^\infty
+    a_k\]<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Doppelreihensatz<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Falls $\sum_{k=1}^\infty\sum_{j=1}^\infty|a_{k,j}|&lt;\infty$
+    (absolut konvergiert) so gilt:<br>
+        \[\sum_{k=1}^\infty\sum_{j=1}^\infty
+    a_{k,j}=\sum_{j=1}^\infty\sum_{k=1}^\infty a_{k,j}\]<br>
+    [/latex]'

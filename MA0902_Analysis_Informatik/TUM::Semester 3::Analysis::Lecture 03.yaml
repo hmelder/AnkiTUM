@@ -1,0 +1,133 @@
+title: 'Analysis für Informatik - Vorlesung 03'
+id: 967013059
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Beschränkte und unbeschränkte Mengen [HMiR]<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine Teilmenge $M\subseteq\mathbb{R}$ heißt \emph{nach
+    unten beschränkt}, falls es ein $a\in\mathbb{R}$ gibt mit $a\leq x$ für alle $x\in
+    M$, und \emph{nach oben beschränkt}, falls es ein $b\in\mathbb{R}$ gibt mit $x\leq
+    b$ für alle $x\in M$. Die Menge $M$ heißt \emph{beschränkt}, falls sie nach unten
+    und nach oben beschränkt ist.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Supremum und Infimum [HMiR]<br>
+    [/latex]'
+  back: '[latex]%<br>
+        \begin{itemize}<br>
+            \item Jede nach oben beschränkte
+    nichtleere Menge $M\subseteq\mathbb{R}$ hat eine kleinste obere Schranke<br>
+                  \[\sup(M)\quad\text{--
+    das \emph{Supremum} von $M$.}\]<br>
+            \item Jede nach unten beschränkte
+    nichtleere Menge $M\subseteq\mathbb{R}$ hat eine größte untere Schranke<br>
+                  \[\inf(M)\quad\text{--
+    das \emph{Infimum} von $M$.}\]<br>
+        \end{itemize}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Rechenregeln für das Supremum<br>
+    [/latex]'
+  back: '[latex]%<br>
+        \begin{enumerate}<br>
+            \item $\sup(A+B)=\sup(A)+\sup(B)$
+    für $A+B=\{a+b\mid a\in A,b\in B\}$.<br>
+            \item Falls $\lambda\geq 0$,
+    so gilt $\sup(\lambda A)=\lambda\sup(A)$ für $\lambda A=\{\lambda\cdot a\mid a\in
+    A\}$.<br>
+            \item Sind $A,B\subseteq[0,\infty)$, so gilt $\sup(A\cdot
+    B)=\sup(A)\cdot\sup(B)$ für $A\cdot                B=\{a\cdot b\mid a\in A,b\in
+    B\}$.<br>
+            \item Falls $A\subseteq B$, so gilt $\sup(A)\leq\sup(B)$.<br>
+        \end{enumerate}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Vollständige Körper<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Ein (an)geordneter Körper heißt \emph{vollständig}, falls
+    jede nicht leere, nach oben beschränkte Teilmenge ein Supremum besitzt.<br>
+<br>
+        \textit{Die
+    Menge $\mathbb{R}$ ist vollständig.}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Offene und abgeschlossene Mengen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine Menge $A\subset\mathbb{R}$ heißt \emph{offen}, falls
+    für jedes $x\in A$ eine Umgebung\marginnote{Ein offenes Interval $(a,b)$ heißt
+    \emph{Umgebung} von $x\in\mathbb{R}$, falls $x\in(a,b)$.<br>
+        } $I_x$ von
+    $x$ existiert, sodass $I_x\subseteq A$.<br>
+<br>
+        Eine Menge heißt \emph{abgeschlossen},
+    falls $\mathbb{R}\setminus A$ offen ist.<br>
+<br>
+        \textit{Eine Menge kann
+    weder offen noch abgeschlossen sein, z.B. $[a,b)$.}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Offen- und Abgeschlossenheit<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Falls $A$ gleichzeitig offen und abgeschlossen ist, dann
+    ist $A=\emptyset$ oder $A=\mathbb{R}$.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Zerlegbarkeit offener Mengen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Jede offene Menge ist die abzählbare Vereinigung disjunkter
+    offener Intervalle. Für abgeschlossene Mengen gilt dies nicht.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Vektorraum $\mathbb{R}^n$<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Wir definieren<br>
+        \[\mathbb{R}^n := \{(x_1, \dots,
+    x_n) : x_1, \dots, x_n \in \mathbb{R}\},\]<br>
+        mit den Operationen<br>
+        \[(x_1,\dots,x_n)+(y_1,\dots,y_n)\coloneq
+    (x_1+y_1,\dots,x_n+y_n),\]<br>
+        und für $\gamma \in \mathbb{R}$<br>
+        \[\gamma
+    \cdot (x_1, \dots, x_n) = (\gamma \cdot x_1, \dots, \gamma \cdot x_n),\]<br>
+        und
+    dem Skalarprodukt<br>
+        \[(x_1,\dots,x_n)\cdot (y_1,\dots,y_n)=\sum_{k=1}^{n}x_ky_k.\]<br>
+        Das
+    Skalarprodukt wird auch $\langle x, y \rangle$ geschrieben.<br>
+<br>
+        Wir
+    definieren die Euklidische Norm<br>
+        \[\|(x_1, \dots, x_n)\|\coloneqq\sqrt{(x_1,\dots,x_n)\cdot
+    (x_1,\dots,x_n)}=\sqrt{\sum_{k=1}^{n}x_k^2}.\]<br>
+    [/latex]'

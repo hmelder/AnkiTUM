@@ -1,0 +1,78 @@
+title: 'Analysis für Informatik - Vorlesung 10'
+id: 947452545
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Regeln für absolute konvergente Reihen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Es seien $\sum_{k=0}^\infty a_k$ und $\sum_{k=0}^\infty
+    b_k$ absolut konvergente Reihen.<br>
+        \begin{itemize}<br>
+            \item
+    Es gilt die Dreiecksungleichung:<br>
+            \[\left|\sum_{k=0}^\infty a_k\right|\leq\sum_{k=0}^\infty|a_k|.\]<br>
+            \item
+    Beliebige Umordnungen der Summation liefern denselben Reihenwert.<br>
+            \item
+    Das \emph{Cauchyprodukt}: Wir definieren das Cauchyprodukt<br>
+            \[\sum_{k=0}^\infty
+    c_k\quad\text{mit}\quad c_k=\sum_{l=0}^ka_lb_{k-l}\]<br>
+            der Reihen
+    $\sum_{k=0}^\infty$ und $\sum_{k=0}^\infty b_k$. Sind diese absolut konvergent,
+    so konvergiert ihr Cauchyprodukt $\sum_{k=0}^\infty c_k$, und es gilt<br>
+            \[\sum_{k=0}^\infty
+    c_k=\sum_{k=0}^\infty a_k\sum_{k=0}^\infty b_k.\]<br>
+        \end{itemize}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Isolierte Punkte<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $D\subseteq\mathbb{R}$ und $x_0\in D$. $x_0$ heißt
+    isoliert in $D$, falls es keine Folge $(a_n)$ gibt, sodass $\lim_{n\to\infty}
+    a_n=x_0$ und für jedes $n$, $a_n\in D\setminus\{x_0\}$.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Grenzwert einer Funktion<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Gegeben sei die Funktion $f:D\to\mathbb{R}$ und $x_0\in
+    D$. Der Wert $a$ heißt \emph{Grenzwert von $f$} in $x_0$, falls $x_0$ nicht isoliert
+    ist und jede gegen $x_0$ konvergierende Folge $(a_n)$ in $D\setminus\{x_0\}$ den
+    Grenzwert $\lim_{n\to\infty}f(a_n)=a$ erfüllt. <br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Grenzwerts einer Funktion (Alternative Definition)<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Gegeben sei die Funktion $f:D\to\mathbb{R}$ und $x_0\in
+    D$. Der Wert $a$ heißt Grenzwert von $f$ in $x_0$, falls $x_0$ nicht isoliert
+    ist und für jedes $\epsilon&gt;0$ ein $\delta&gt;0$ existiert, sodass für jedes
+    $x\in(x_0-\delta,x_0+\delta)\cap(D\setminus\{x_0\})$ gilt:<br>
+        \[|f(x)-a|&lt;\epsilon.\]<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Stetige Funktionen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine Funktion $f:D\to\mathbb{R}$ heißt stetig in einem
+    Punkt $x_0\in D$, falls $\lim_{x\to x_0}f(x)=f(x_0)$ oder $x_0$ isoliert ist.
+    Die Funktion $f$ heißt stetig in $D$, falls $f$ stetig in $x\,\forall x\in D$
+    ist.<br>
+    [/latex]'

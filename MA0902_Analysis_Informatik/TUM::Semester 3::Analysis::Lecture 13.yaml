@@ -1,0 +1,95 @@
+title: 'Analysis für Informatik - Vorlesung 13'
+id: 785157165
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Konvergenz von Folgen und Stetigkeit von Funktionen
+    ($d\geq 2$)<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine Folge $(x_n)$ in $\mathbb{R}^d$ \emph{konvergiert}
+    gegen ein $x\in\mathbb{R}^d$ falls $\lim_{n\to\infty}\lVert x_n-x\rVert=0$. Wir
+    schreiben $x_n\overset{n\to\infty}{\longrightarrow}x$ oder $\lim_{n\to\infty}x_n=x$.<br>
+        <br>
+        %
+    Stetigkeit wenn isoliert oder Folgen konvergent?<br>
+        Für $D\subseteq\mathbb{R}^d$
+    und $x\in D$ heißt $f:D\to\mathbb{R}$ in $x$ \emph{stetig} falls entweder $x$
+    isoliert ist oder für jede Folge $(x_n)$ in $D$ mit Grenzwert $x$ gilt:<br>
+        \[f(x)=\lim_{n\to\infty}f(x_n).\]<br>
+        $f$
+    heißt stetig falls $f$ in allen $x\in D$ stetig ist.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Beschränkte Mengen und beschränkte Folgen ($d
+    \geq 2$)<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine Menge $D\subseteq\mathbb{R}^d$ heißt \emph{beschränkt},
+    falls es ein $K\in\mathbb{R}$ gibt, so dass $\lVert x\rVert\leq K\,\forall x\in
+    D$.<br>
+        <br>
+        Eine Folge $(x_n)\in\mathbb{R}^d$ heißt \emph{beschränkt}
+    falls $\{x_n:n\in\mathbb{N}\}$ beschränkt ist. %Für jedes $n$ schreiben wir $x_n=(x_{n,1},\dots,x_{n,d})$
+    wobei $x_{n,k}\in\mathbb{R}$, $1\leq k\leq d$.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Kompakte Mengen ($d \geq 2$)<br>
+    [/latex]'
+  back: '[latex]%<br>
+        % TODO was ist I<br>
+        Eine Menge $A$ in $\mathbb{R}$,
+    $\mathbb{R}^n$, $\mathbb{C}$ oder $\mathbb{C}^n$ heißt \emph{kompakt}, falls jede
+    Folge $I=[a,b]$\marginnote{Was zur Hölle ist eine Folge definiert in Intervall-Schreibweise?
+    $\to$~offenstehender Forum-Post} eine konvergente Teilfolge mit Grenzwert in $A$
+    hat (Häufungspunkt).<br>
+<br>
+        \textbf{Äquivalente Definition.} Eine Teilmenge
+    von $\mathbb{R}^d$ ist genau dann kompakt, wenn sie abgeschlossen und beschränkt
+    ist.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Eig.: Maximum/Minimum aufgrund Kompaktheit ($d \geq
+    2$)<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $A$ kompakt und sei $f:A\to\mathbb{R}$ stetig. Dann
+    hat $f$ ein Maximum und ein Minimum.<br>
+<br>
+        \textbf{Beweis.} Analog zum
+    eindimensionalen Fall.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Eig.: Kompaktheit unter stetigen Abbildungen ($d \geq
+    2$)<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $D\subseteq\mathbb{R}^d$ kompakt und $f:\mathbb{R}^d\to\mathbb{R}^m$
+    stetig. Dann ist $f(D)$ kompakt.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Eig.: Umkehrung von stetigen, streng monotonen Abbildungen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $I\subseteq\mathbb{R}$ und $f:I\to\mathbb{R}$ stetig
+    und streng monoton wachsend. Dann ist $f:I\to f(I)$ bijektiv und die Umkehrfunktion
+    $f^{-1}:f(I)\to I$ ist ebenfalls stetig und streng monoton wachsend.<br>
+    [/latex]'

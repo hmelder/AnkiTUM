@@ -1,0 +1,15 @@
+title: 'Analysis für Informatik - Vorlesung 12'
+id: 609165785
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Definition der trigonometrischen Funktionen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        \[\sin x\coloneqq\frac{\exp(ix)-\exp(-ix)}{2i}=\sum_{n=0}^\infty\frac{(-1)^nx^{2n+1}}{(2n+1)!}\]<br>
+        \[\cos
+    x\coloneqq\frac{\exp(ix)+\exp(-ix)}{2}=\sum_{n=0}^\infty\frac{(-1)^nx^{2n}}{(2n)!}\]<br>
+    [/latex]'

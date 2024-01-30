@@ -1,0 +1,68 @@
+title: 'Analysis für Informatik - Vorlesung 17'
+id: 765749560
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Konvergenz von Funktionsfolgen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine Funktionsfolge\marginnote{In der VL wurde die Konvergenz
+    für Reihen von Funktionsfolgen definiert. Eine Reihe ist jedoch auch eine Folge
+    von Partialsummen.} $(f_n:I\to\mathbb{R})_{n\in\mathbb{N}}$ \emph{konvergiert
+    punktweise} gegen $f:I\to\mathbb{R}$, falls gilt<br>
+        \[\forall_{x\in I}\,\lim_{n\to\infty}f_n(x)=f.\]<br>
+<br>
+        Man
+    spricht von \emph{gleichmäßiger Konvergenz}, falls gilt<br>
+        \[\lim_{n\to\infty}\sup_{x\in
+    I}|f_n(x)-f(x)|\overset{n\to\infty}{\longrightarrow}0.\]<br>
+<br>
+        Gleichmäßige
+    Konvergenz schließt punktweise Konvergenz ein.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Bsp.: Punkteweise konvergente aber nicht gleichmäßig
+    konvergente Funktion<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $D=(1,0)$, $f_n(x)=x^n$ und $f(x)=0$. Dann konvergiert
+    $f_n$ punktweise gegen $f$, weil $\forall x\in D:f_n(x)=x^n\to 0=f(x)$.<br>
+        <br>
+        Allerdings
+    konvergiert $f_n$ nicht gleichmäßig gegen $f$: Sei $\epsilon=0.5$, dann muss gezeigt
+    werden, dass es für alle $N$ ein $x\in D$ gibt, sodass $|f_n(x)-f(x)|&gt;\epsilon$.
+    Ein solches $x$ ist $x=0.5^{1/(n+1)}$, denn<br>
+        \[|f_N(x)-f(x)|=x^N-0=x^N=\left(0.5^\frac{1}{N+1}\right)^N=0.5^\frac{N}{N+1}&gt;0.5=\epsilon.\]<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Differenzierbarkeit von Funktionsreihen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $I\in\mathbb{R}$ und $I$ offen. Wenn für die differenzierbaren
+    Funktionen $f_k:I\to\mathbb{R}$ die Reihe $\sum_{k=0}^\infty f_k(x)$ punktweise
+    und die Reihe $\sum_{k=0}^\infty f_k''(x)$ gleichmäßig konvergiert, so ist $f$
+    in $I$ differenzierbar und es gilt<br>
+        \[\forall_{x\in I}\,f''(x)=\sum_{k=0}^\infty
+    f_k''(x).\]<br>
+<br>
+        % Beweis benötigt Integration<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Satz von Rolle<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $f:[a,b]\to\mathbb{R}$ stetig auf $[a,b]$ und differenzierbar
+    in $(a,b)$. Falls $f(a)=f(b)$, so gibt es ein $z\in(a,b)$ mit $f''(z)=0$.<br>
+    [/latex]'

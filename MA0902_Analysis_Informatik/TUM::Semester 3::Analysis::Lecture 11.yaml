@@ -1,0 +1,72 @@
+title: 'Analysis für Informatik - Vorlesung 11'
+id: 246447963
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Rechenregeln für Stetigkeit [HMiR]<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sind $f,g:D\subseteq\mathbb{R}\to\mathbb{R}$ stetige
+    Funktionen, so auch<br>
+        \[\lambda f+\mu g,\quad f g,\quad f/g,\quad f\circ
+    g,\]<br>
+        wobei, $\lambda,\mu\in\mathbb{R}$ reelle Zahlen sind und beim
+    Quotienten $f/g$ vorausgesetzt wird, dass $g(x)\neq 0$ ist für alle $x\in D$.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Sätze zu stetigen Funktionen [HMiR]<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Gegeben sind ein beschränktes und abgeschlossenes Intervall
+    $D=[a,b]\subseteq\mathbb{R}$ und eine stetige Funktion $f:[a,b]\to\mathbb{R}$.
+    Dann ist auch $f([a,b])$ ein beschränktes und abgeschlossenes Intervall, und es
+    gilt:<br>
+        \begin{enumerate}<br>
+            \item \emph{Satz vom Maximum
+    und Minimum}: Es gibt Stellen $x_\text{max},x_\text{min}\in[a,b]$ mit<br>
+            \[f_\text{min}=f(x_\text{min})\leq
+    f(x)\leq f(x_\text{max})=f_\text{max}\forall x\in[a,b].\]<br>
+            Man nennt
+    $x_\text{min}$ \emph{Minimalstelle} und $x_\text{max}$ \emph{Maximalstelle}.<br>
+            \item
+    \emph{Zwischenwertsatz}: Zu jedem $y\in[f_\text{min},f_\text{max}]$ gibt es ein
+    $x^\ast\in[a,b]$ mit $f(x^\ast)=y$.<br>
+            \item \emph{Nullstellensatz}:
+    Ist $f(a)&lt;0$ und $f(b)&gt;0$ (oder umgekehrt), so gibt es ein $x^\ast\in[a,b]$
+    mit $f(x^\ast)=0$.<br>
+            \item \emph{Fixpunktsatz}: Ist $f:[a,b]\to[a,b]$
+    stetig, so existiert ein $x^\ast\in[a,b]$ mit $f(x^\ast)=x^\ast$.<br>
+        \end{enumerate}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Bsp.: Stetigkeit der Exponentialfunktion<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Die Exponentialfunktion ist stetig auf $\mathbb{C}$.
+    Das heißt für jede Folge $(z_n)$ mit Werten in $\mathbb{C}$ und $|z_n-z|\overset{n\to\infty}{\longrightarrow}0$
+    gilt:<br>
+        \[|\exp z_n-\exp z|\overset{n\to\infty}{\longrightarrow}0.\]<br>
+<br>
+        \textbf{Beweis.}
+    Betrachten wir zuerst $z=0$. Für $w\in\mathbb{C}$ mit $|w|\leq 1$ gilt:<br>
+        \begin{multline*}<br>
+            0\leq|\exp
+    w-1|=\left|\sum_{k=1}^{\infty}\frac{w^k}{k!}\right|\leq\sum_{k=1}^\infty\frac{|w|^k}{k!}\leq|w|\sum_{k=1}^\infty\frac{|w|^{k-1}}{(k-1)!}\\<br>
+            =|w|\sum_{k=0}^\infty\frac{|w|^k}{k!}=|w|\exp|w|\leq|w|\exp
+    1<br>
+        \end{multline*}<br>
+        Falls also $z_n\to 0$ so folgt $\exp z_n\to
+    1$ d.h. $\exp$ ist stetig in $z=0$. Sei nun $z\in\mathbb{C}$ beliebig und $(z_n)$
+    eine Folge mit $z_n\overset{n\to\infty}{\longrightarrow}z$. Es gilt $|\exp z_n-\exp
+    z|=|\exp(z_n-z+z)-\exp z|=|\exp(z_n-z)-1|\cdot|\exp z|\overset{n\to\infty}{\longrightarrow}0$,
+    d.h. $\exp$ ist stetig in $z$.<br>
+    [/latex]'

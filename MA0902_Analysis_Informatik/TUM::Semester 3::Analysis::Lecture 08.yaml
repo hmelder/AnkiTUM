@@ -1,0 +1,30 @@
+title: 'Analysis für Informatik - Vorlesung 08'
+id: 213089502
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Alternierende Reihen<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Eine Reihe $\sum_{k=0}^na_k$ heißt \emph{alternierend},
+    wenn die Glieder abwechselnd positives und negatives Vorzeichen haben. Wir schreiben
+    $a_0-a_1+a_2-a_3+a_4\dots$ und nehmen an $a_k\geq 0$. % TODO a_0 oder a_k?<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Cauchysches Verdichtungskriterium<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $(a_n)_{n\in\mathbb{N}}$ eine monoton fallende Folge
+    nicht-negativer reeller Zahlen. Dann hat die unendliche Reihe<br>
+        \[S=\sum_{n=1}^\infty
+    a_n\]<br>
+        das gleiche Konvergenzverhalten wie die \emph{verdichtete} Reihe<br>
+        \[T=\sum_{k=0}^\infty
+    2^ka_{2^k}.\]<br>
+    [/latex]'

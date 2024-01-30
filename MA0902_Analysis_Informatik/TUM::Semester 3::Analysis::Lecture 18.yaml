@@ -1,0 +1,91 @@
+title: 'Analysis für Informatik - Vorlesung 18'
+id: 61535578418Z
+author: Sebastian Pfister
+cards:
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Def.: Extrema und Extremalstellen [HMiR]<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Wir betrachten eine Funktion $f:D\subseteq\mathbb{R}\to\mathbb{R}$.
+    Man nennt ein $x_0\in D$ \emph{Stelle eines}<br>
+        \begin{itemize}<br>
+            \item
+    \emph{globalen Maximums}, falls $f(x_0)\geq f(x)\,\forall x\in D$.\\<br>
+                  Man
+    nennt dann $f(x_0)$ das \emph{globale Maximum}.<br>
+            \item \emph{globalen
+    Minimums}, falls $f(x_0)\leq f(x)\,\forall x\in D$.\\<br>
+                  Man
+    nennt dann $f(x_0)$ das \emph{globale Minimum}.<br>
+            \item \emph{lokalen
+    Maximums}, falls $\exists\epsilon&gt;0:f(x_0)\geq f(x)\,\forall x\in (x_0-\epsilon,x_0+\epsilon)$.\\<br>
+                  Man
+    nennt dann $f(x_0)$ ein \emph{lokales Maximum}.<br>
+            \item \emph{lokalen
+    Minimums}, falls $\exists\epsilon&gt;0:f(x_0)\leq f(x)\,\forall x\in (x_0-\epsilon,x_0+\epsilon)$.\\<br>
+                  Man
+    nennt dann $f(x_0)$ ein \emph{lokales Minimum}.<br>
+        \end{itemize}<br>
+<br>
+        Gilt
+    sogar $&gt;$ anstelle $\geq$ bzw. $&lt;$ anstelle $\leq$, so spricht man von \emph{strengen}
+    oder \emph{strikten} lokalen oder globalen Extrema.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Ableitung an Extrema<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Die Funktion $f:[a,b]\to\mathbb{R}$ sei im Punkt $x_0\in(a,b)$
+    differenzierbar. Wenn $f$ in $x_0$ ein lokales Extremum besitzt, dann ist $f''(x_0)=0$.<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Thm.: Der Mittelwertsatz der Differentialrechnung und
+    erste Konsequenzen [HMiR]<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Ist $f:[a,b]\subseteq\mathbb{R}\to\mathbb{R}$ eine stetige
+    und auf $(a,b)$ differenzierbare Funktion, so gibt es ein $x_0\in(a,b)$ mit<br>
+        \[f''(x_0)=\frac{f(b)-f(a)}{b-a}.\]<br>
+        Es
+    folgt:<br>
+        \begin{itemize}<br>
+            \item Ist $f''(x)=0$ für alle
+    $x$ eines Intervalls $D$, so ist $f:D\to\mathbb{R}$ konstant, also $f(x)=c$ für
+    ein $c\in\mathbb{R}$.<br>
+            \item Ist $f''(x)=g''(x)$ für alle $x$ eines
+    Intervalls $D$ für zwei Funktionen $f,g:D\to\mathbb{R}$, so ist $f-g:D\to\mathbb{R}$
+    konstant, also $f(x)=g(x)+c$ für ein $c\in\mathbb{R}$.<br>
+        \end{itemize}<br>
+    [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br>
+        Eig.: Monotonie und Ableitung<br>
+    [/latex]'
+  back: '[latex]%<br>
+        Sei $f:[a,b]\to\mathbb{R}$ differenzierbar in $(a,b)$.
+    Dann gilt<br>
+        \begin{enumerate}<br>
+            \item $f''&gt;0$ in $(a,b)$
+    $\implies$ $f$ in $(a,b)$ streng monoton wachsen.<br>
+            \item $f''&lt;0$
+    in $(a,b)$ $\implies$ $f$ in $(a,b)$ streng monoton fallend.<br>
+            \item
+    $f''\geq 0$ in $(a,b)$ $\implies$ $f$ in $(a,b)$ monoton wachsen.<br>
+            \item
+    $f''\leq 0$ in $(a,b)$ $\implies$ $f$ in $(a,b)$ monoton wachsen.<br>
+        \end{enumerate}<br>
+<br>
+        \textbf{Beweis.}
+    Folgt aus dem Mittelwertsatz.<br>
+    [/latex]'
