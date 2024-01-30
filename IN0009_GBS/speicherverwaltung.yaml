@@ -659,3 +659,11 @@ cards:
   id: 71  # (generated)
   front: Was ist die WSClock Seitenersetzungstrategie?
   back: Kombiniert Clock und Working-Set Strategie.
+
+
+- type: md_basic
+  front:  Was versteht man unter "higher half kernel"?
+  back: |+
+    - Der obere Teil des viruellen Addressraums gehört dem kernel
+    - Kein Kontextwechsel für jeden Syscall und Interrupt nötig
+    

@@ -142,6 +142,34 @@ cards:
     - Speichert Metadaten über eine Datei im FS (z.b. permissions)
 
 
+- type: markdown
+  front: In welcher Reihenfolge befinden sich die File permission bits?
+  back: |+
+    - user, group all
+    - read, write, execute
+    
+
+- type: markdown
+  front: Was ist die SUID bei einem File?
+  back: |+
+    - Eine Datei mit SUID flag wird mit den permissions des owners ausgeführt
+    
+
+- type: markdown
+  front: Was ist die SGID bei einem File?
+  back: |+
+    - Eine Datei mit SGID flag wird mit den permissions der gruppe des owners ausgeführt
+    
+    
+
+- type: markdown
+  front: Was ist das sticky bit bei einem File?
+  back: |+
+    - Wird bei Verzeichnissen angewendet
+    - Nur der owner einer Datei im Verzeichnis darf diese löschen/umbenennen
+    - Beispiel /tmp
+    
+
 - type: md_basic
   id: 16  # (generated)
   front: Wie werden i-nodes organisiert?
@@ -240,7 +268,7 @@ cards:
 
 - type: md_basic
   id: 28  # (generated)
-  front: Was ist das Buffer Cache bei Dateisystemen?
+  front: Was ist das File Cache bei Dateisystemen?
   back: |
     - Puffer für Datenblöcke
     - 
