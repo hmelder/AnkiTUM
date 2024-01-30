@@ -662,8 +662,10 @@ cards:
 
 
 - type: md_basic
-  front:  Was versteht man unter "higher half kernel"?
+  id: 72  # (generated)
+  front: Was versteht man unter "higher half kernel"?
   back: |+
     - Der obere Teil des viruellen Addressraums gehört dem kernel
     - Kein Kontextwechsel für jeden Syscall und Interrupt nötig
-    
+
+...

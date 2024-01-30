@@ -143,32 +143,36 @@ cards:
 
 
 - type: markdown
+  id: 29  # (generated)
   front: In welcher Reihenfolge befinden sich die File permission bits?
   back: |+
     - user, group all
     - read, write, execute
-    
+
 
 - type: markdown
+  id: 30  # (generated)
   front: Was ist die SUID bei einem File?
   back: |+
     - Eine Datei mit SUID flag wird mit den permissions des owners ausgeführt
-    
+
 
 - type: markdown
+  id: 31  # (generated)
   front: Was ist die SGID bei einem File?
   back: |+
     - Eine Datei mit SGID flag wird mit den permissions der gruppe des owners ausgeführt
-    
-    
+
+
 
 - type: markdown
+  id: 32  # (generated)
   front: Was ist das sticky bit bei einem File?
   back: |+
     - Wird bei Verzeichnissen angewendet
     - Nur der owner einer Datei im Verzeichnis darf diese löschen/umbenennen
     - Beispiel /tmp
-    
+
 
 - type: md_basic
   id: 16  # (generated)
