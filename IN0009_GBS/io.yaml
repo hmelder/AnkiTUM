@@ -4,43 +4,52 @@ id: 390550432230
 
 cards:
 - type: md_basic
+  id: 0  # (generated)
   front: Welche zwei Klassen von IO Geräten gibt es?
   back: Blockorientiert, Zeichenorientiert
 
 
 - type: md_basic
+  id: 1  # (generated)
   front: Was ist ein Geräte Controller?
-  back: Hardwareschnitstelle zu Gerät welche mit der CPU Kommuniziert (über register oder bitströme)
+  back: Hardwareschnitstelle zu Gerät welche mit der CPU Kommuniziert (über register
+    oder bitströme)
 
 
 - type: md_basic
+  id: 2  # (generated)
   front: Was ist memory mapped IO?
-  back: IO Controllern wird eine bestimmter Adressraum zugewiesen. Können über die MMU erreicht werden
+  back: IO Controllern wird eine bestimmter Adressraum zugewiesen. Können über die
+    MMU erreicht werden
 
 
 - type: md_basic
+  id: 3  # (generated)
   front: Was ist DMA?
-  back: |+
-    
+  back: |2+
+
 
 - type: md_basic
+  id: 4  # (generated)
   front: Welche arten interrupts gibt es?
   back: |+
     - Durch hardware, z.B. IO Gerät oder Timer
     - Durch software (Interrupt instructions)
     - Durch exceptions
-    
+
 
 - type: md_basic
+  id: 5  # (generated)
   front: Welche art von exceptions gibt es?
   back: |+
     - Fault, der Fehler wird behandelt und es wird **mit** der Instruktion fortgefahren (z.b. Pagefault)
     - Trap, der Fehler wird behandelt und es wird **nach** der Instruktion fortgefahren (z.b. breakpoint instruction)
     - abort, der fehler kann nicht behandelt werden. (z.b. unbekannte instruktion)
 
-    
+
 - type: md_basic
+  id: 6  # (generated)
   front: Was ist die Interrupt descriptor table (IDT)?
-  back: |+
+  back: |-
     - Implementiert die Interrupt vector table
     - Speichert Verweise auf Interrupt handler
