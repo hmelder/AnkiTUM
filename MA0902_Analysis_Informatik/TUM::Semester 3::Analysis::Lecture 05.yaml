@@ -18,10 +18,9 @@ cards:
     ($|a_n|$) konvergiert gegen $|a|$.<br> \item Gibt es $N\in\mathbb{N}$, sodass
     $a_n\leq b_n$ für $n\geq N$, so gilt: $a\leq b$.<br> \item \emph{Einschnürungskriterium}:
     Gilt $a=b$ und erfüllt die Folge $(c_n)$ die Ungleichung<br> \[a_n\leq c_n\leq
-    b_n,\]<br> so konvergiert $(c_n)$ gegen $a=b$.<br> 
-    \end{enumerate}<br>
-    [/latex]'
+    b_n,\]<br> so konvergiert $(c_n)$ gegen $a=b$.<br> \end{enumerate}<br> [/latex]'
 
 - type: cloze
+  id: 1  # (generated)
   front: |
     [$$] \item Sind $(a_n)$ eine Nullfolge und $(b_n)$ eine [/$$] {{c1::[$$] beschränkte Folge [/$$]}} [$$], so konvergiert $(a_nb_n)$ gegen [/$$] {{c1::[$$] 0 [/$$]}}

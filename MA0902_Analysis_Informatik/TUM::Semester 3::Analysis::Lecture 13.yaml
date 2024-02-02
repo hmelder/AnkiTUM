@@ -6,8 +6,7 @@ cards:
 
 - type: latex_plus
   id: 0  # (generated)
-  front: '[latex]%<br> Def.: Konvergenz von Folgen ($d\geq
-    2$)<br> [/latex]'
+  front: '[latex]%<br> Def.: Konvergenz von Folgen ($d\geq 2$)<br> [/latex]'
   back: '[latex]%<br> Eine Folge $(x_n)$ in $\mathbb{R}^d$ \emph{konvergiert} gegen
     ein $x\in\mathbb{R}^d$ falls $\lim_{n\to\infty}\lVert x_n-x\rVert=0$. Wir schreiben
     $x_n\overset{n\to\infty}{\longrightarrow}x$ oder $\lim_{n\to\infty}x_n=x$.<br>
