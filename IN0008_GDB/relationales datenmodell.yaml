@@ -74,6 +74,19 @@ cards:
   id: 12  # (generated)
   front: Welche Form hat eine Anfage im Relationskalkül
   back: |+
-    {t | P(t)} z.b. [latex]\{p \mid p \in \text{Professoren} \land p.\text{Rang} = 'C4'\}[\latex]
+    {t | P(t)} z.b. [$$] \{p \mid p \in \text{Professoren} \land p.\text{Rang} = 'C4'\} [/$$]
 
-...
+
+- type: cloze
+  front: |+
+    Bei RelationsKalkül dürfen Quantoren verwendet werden. [$$] Qx \in X [/$$]
+    Die Operation "sodass" wird ausgedrückt, indem {{c1::in runden Klammern hinter dem Quantor ein Prädikat steht}}
+    
+
+- type: markdown
+  front: Wie funktioniert das Domänenkalkül?
+  back: |+
+    - Relationen werden durch eckige Klammern [a, b, c ...] dargestellt
+    - Man definiert eine Relation und ein Prädikat: [$$] \{\[a_1, ... a_n\] | P(a_1, ... a_n)\}
+    
+

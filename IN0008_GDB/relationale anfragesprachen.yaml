@@ -8,7 +8,7 @@ cards:
 - type: markdown
   id: 0  # (generated)
   front: Was ist der Unterschied zwischen `character(n)` und `char varying(n)`
-  back: |
+  back: |+
     - Zeichenketten vom Typ `character` immer Größe n
     - Abgespeicherte Größe kann bei `char varying` oder `varchar`variieren
 
@@ -16,7 +16,7 @@ cards:
 - type: markdown
   id: 1  # (generated)
   front: Was ist die Bedeutung der Argumente von `numeric(p, s)`?
-  back: |
+  back: |+
     - p: Die Gesamtzahl der gespeicherten Stellen
     - s: Nachkommastellen
 
@@ -242,6 +242,3 @@ cards:
   back: Abkapselung von Daten. Die view kann nur Daten enthalten welche für den user
     relevant sind. Alle anderen sind für den user unsichtbar
 
-- type: markdown
-  id: 28  # (generated)
-  front:

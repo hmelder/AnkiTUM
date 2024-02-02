@@ -3,7 +3,7 @@ author: HHuebner
 id: 40272555874
 
 cards:
-- type: basic
+- type: markdown
   id: 0  # (generated)
   front: Welche arten von Fehlern gibt es?
   back: |+
@@ -78,7 +78,9 @@ cards:
 - type: markdown
   id: 9  # (generated)
   front: Was bedeutet "update in place"?
-  back: Jede Seite hat eine fixe Position auf der Disk
+  back: |+
+    - Jede Seite hat eine "fixe" Position auf der Disk
+    - D.h. Es wird ein Teil der Datei in den hauptspeicher gemappt (mmap)
 
 
 
@@ -137,7 +139,7 @@ cards:
 
 
 - type: markdown
-  front: Was ist der Unterschied zwoschen logischer Protokollierung und physischer Protokollierung?
+  front: Was ist der Unterschied zwischen logischer Protokollierung und physischer Protokollierung?
   back: |+
     - Logisch: Beim Log eintrag werden die Operationen welche die Operation ausführt geloggt: z.b. += 10
     - Physisch: Es werden die Vorher / Nachher Zustände geloggt: z.b. 100, 110
@@ -165,7 +167,7 @@ cards:
   id: 18 # (generated)
   front: |
     Eine TA welche abgeschlossen ist und vollständig nachvollzogen werden kann nennt man {{c1::Winner}}
-    Eine TA fehlerhaft ist nennt man {{c1::Loser}}. Sie muss {{c1::Rückgängig}} gemacht werden
+    Eine TA welche fehlerhaft ist nennt man {{c1::Loser}}. Sie muss {{c1::Rückgängig}} gemacht werden
 
 
 - type: markdown
@@ -208,4 +210,6 @@ cards:
   id: 24  # (generated)
   front: Wie kann R4 Recovery durchgeführt werden?
   back: Durch laden von Backups, z.b. aus tertiärem Speicher
+
+
 
