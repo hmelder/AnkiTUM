@@ -100,11 +100,27 @@ cards:
 - type: markdown
   id: 12  # (generated)
   front: Welche Komponenten hat ein Logeintrag (in der Vorlesung)?
-  back:
-  - Log Sequence Number, LSN
-  - Transaktionskennung, TA
-  - PageID (ID der modifizierten Seite)
-  - prevLSN (Vorgängerlogeintrag)
+  back: |+
+    - Log Sequence Number, LSN
+    - Transaktionskennung, TA
+    - PageID (ID der modifizierten Seite)
+    - Redo
+    - Undo
+    - prevLSN (Vorgängerlogeintrag)
+  
+
+- type: markdown
+  front: Welche Komponenten hat ein Recovery Logeintrag (in der Vorlesung)?
+  back: |+
+    - Log Sequence Number, LSN
+    - Transaktionskennung, TA
+    - PageID (ID der modifizierten Seite)
+    - Redo
+    - Undo
+    - prevLSN (Vorgängerlogeintrag)
+    - UndoNextLSN
+    - Wichtig: Dreiecksklammern 
+
 
 - type: markdown
   id: 13  # (generated)
@@ -119,6 +135,13 @@ cards:
     - TA Logs müssen zu Disk geschrieben werden bevor die TA committed wird
     - Bevor modifizierte Seiten ausgelagert werden, müssen die Modifikationen geloggt werden
 
+
+- type: markdown
+  front: Was ist der Unterschied zwoschen logischer Protokollierung und physischer Protokollierung?
+  back: |+
+    - Logisch: Beim Log eintrag werden die Operationen welche die Operation ausführt geloggt: z.b. += 10
+    - Physisch: Es werden die Vorher / Nachher Zustände geloggt: z.b. 100, 110
+    
 
 - type: markdown
   id: 15  # (generated)
