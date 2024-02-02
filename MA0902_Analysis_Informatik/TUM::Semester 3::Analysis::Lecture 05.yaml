@@ -6,8 +6,7 @@ cards:
 
 - type: latex_plus
   id: 0  # (generated)
-  front: '[latex]%<br> Rzp.: Hilfsmittel zum Berechnen von Grenzwerten von Folgen
-    [HMiR]<br> [/latex]'
+  front: '[latex]%<br> Rechenregeln Grenzwerte von konvergenten Folgen[/latex]'
   back: '[latex]%<br> Sind $(a_n)$ und $(b_n)$ konvergente Folgen mit dem Grenzwert
     $a$ und $b$, also $a_n\to a$ und $b_n\to b$, so gilt:<br> \begin{enumerate}<br>
     \item Die Summenfolge $(a_n+b_n)$ konvergiert gegen $a+b$.<br> \item Die Produktfolge
@@ -19,6 +18,10 @@ cards:
     ($|a_n|$) konvergiert gegen $|a|$.<br> \item Gibt es $N\in\mathbb{N}$, sodass
     $a_n\leq b_n$ für $n\geq N$, so gilt: $a\leq b$.<br> \item \emph{Einschnürungskriterium}:
     Gilt $a=b$ und erfüllt die Folge $(c_n)$ die Ungleichung<br> \[a_n\leq c_n\leq
-    b_n,\]<br> so konvergiert $(c_n)$ gegen $a=b$.<br> \item Sind $(a_n)$ eine Nullfolge
-    und $(b_n)$ eine beschränkte Folge, so konvergiert $(a_nb_n)$ gegen $0$.<br> \end{enumerate}<br>
+    b_n,\]<br> so konvergiert $(c_n)$ gegen $a=b$.<br> 
+    \end{enumerate}<br>
     [/latex]'
+
+- type: cloze
+  front: |
+    [$$] \item Sind $(a_n)$ eine Nullfolge und $(b_n)$ eine [/$$] {{c1::[$$] beschränkte Folge [/$$]}} [$$], so konvergiert $(a_nb_n)$ gegen [/$$] {{c1::[$$] 0 [/$$]}}

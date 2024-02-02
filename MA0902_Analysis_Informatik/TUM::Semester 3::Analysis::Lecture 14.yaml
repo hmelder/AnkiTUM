@@ -5,13 +5,6 @@ cards:
 
 
 - type: latex_plus
-  id: 0  # (generated)
-  front: '[latex]%<br> Def.: Potenzen mit reellem Exponenten<br> [/latex]'
-  back: '[latex]%<br> Die Potenz $x^a$ für $a\in\mathbb{R}$ und $x&gt;0$ ist definiert
-    als:<br> \[x^a\coloneq\exp(a\cdot\ln(x)).\]<br> [/latex]'
-
-
-- type: latex_plus
   id: 1  # (generated)
   front: '[latex]%<br> Def.: Innere Punkte<br> [/latex]'
   back: '[latex]%<br> Sei $D\subseteq\mathbb{R}$ ($D\subseteq\mathbb{R}^n$). $x_0\in
@@ -31,11 +24,3 @@ cards:
     ist. In diesem Fall ist<br> \\[f':D\\to\\mathbb{R},x\\mapsto f'(x)\\]<br> eine
     (neue) Funktion. Man nennt sie die \\emph{Ableitungsfunktion} zu $f$.<br> \\end{itemize}<br>
     [/latex]"
-
-
-- type: latex_plus
-  id: 3  # (generated)
-  front: '[latex]%<br> Def.: Differenzierbarkeit (Alternative Definition ohne Division)<br>
-    [/latex]'
-  back: "[latex]%<br> Die Funktion $f$ heißt in $x_0$ \\emph{differenzierbar} mit
-    $a=f'(x_0)$ falls<br> \\[f(x)-f(x_0)-a(x-x_0)=o(x-x_0).\\]<br> [/latex]"

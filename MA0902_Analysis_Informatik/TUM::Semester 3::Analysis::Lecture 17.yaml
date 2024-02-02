@@ -6,14 +6,20 @@ cards:
 
 - type: latex_plus
   id: 0  # (generated)
-  front: '[latex]%<br> Def.: Konvergenz von Funktionsfolgen<br> [/latex]'
+  front: '[latex]%<br> Def.: punktweise Konvergenz von Funktionsfolgen<br> [/latex]'
   back: '[latex]%<br> Eine Funktionsfolge\marginnote{In der VL wurde die Konvergenz
     für Reihen von Funktionsfolgen definiert. Eine Reihe ist jedoch auch eine Folge
     von Partialsummen.} $(f_n:I\to\mathbb{R})_{n\in\mathbb{N}}$ \emph{konvergiert
     punktweise} gegen $f:I\to\mathbb{R}$, falls gilt<br> \[\forall_{x\in I}\,\lim_{n\to\infty}f_n(x)=f.\]<br>
-    <br> Man spricht von \emph{gleichmäßiger Konvergenz}, falls gilt<br> \[\lim_{n\to\infty}\sup_{x\in
+    <br> [/latex]'
+
+
+- type: latex_plus
+  front: '[latex]%<br> Def.: gleichmäßige Konvergenz von Funktionsfolgen<br> [/latex]'
+  back: '[latex]%<br> Man spricht von \emph{gleichmäßiger Konvergenz}, falls gilt<br> \[\lim_{n\to\infty}\sup_{x\in
     I}|f_n(x)-f(x)|\overset{n\to\infty}{\longrightarrow}0.\]<br> <br> Gleichmäßige
     Konvergenz schließt punktweise Konvergenz ein.<br> [/latex]'
+
 
 
 - type: latex_plus
@@ -32,10 +38,11 @@ cards:
   id: 2  # (generated)
   front: '[latex]%<br> Thm.: Differenzierbarkeit von Funktionsreihen<br> [/latex]'
   back: "[latex]%<br> Sei $I\\in\\mathbb{R}$ und $I$ offen. Wenn für die differenzierbaren
-    Funktionen $f_k:I\\to\\mathbb{R}$ die Reihe $\\sum_{k=0}^\\infty f_k(x)$ punktweise
+    Funktionen $f_k\\in I \\to\\mathbb{R}$ die Reihe $\\sum_{k=0}^\\infty f_k(x)$ punktweise
     und die Reihe $\\sum_{k=0}^\\infty f_k'(x)$ gleichmäßig konvergiert, so ist $f$
-    in $I$ differenzierbar und es gilt<br> \\[\\forall_{x\\in I}\\,f'(x)=\\sum_{k=0}^\\
-    infty f_k'(x).\\]<br> <br> % Beweis benötigt Integration<br> [/latex]"
+    in $I$ differenzierbar und es gilt<br> \\[\\forall_{x\\in I}\\,f'(x)=\\sum_{k=0}^\\infty f_k'(x)\\]
+    
+    <br> [/latex]"
 
 
 - type: latex_plus

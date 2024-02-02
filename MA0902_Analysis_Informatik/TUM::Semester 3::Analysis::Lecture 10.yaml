@@ -47,7 +47,7 @@ cards:
 
 - type: latex_plus
   id: 4  # (generated)
-  front: '[latex]%<br> Stetige Funktionen<br> [/latex]'
+  front: '[latex]%<br> Def. Stetige Funktionen (folge)<br> [/latex]'
   back: '[latex]%<br> Eine Funktion $f:D\to\mathbb{R}$ heißt stetig in einem Punkt
     $x_0\in D$, falls $\lim_{x\to x_0}f(x)=f(x_0)$ oder $x_0$ isoliert ist. Die Funktion
     $f$ heißt stetig in $D$, falls $f$ stetig in $x\,\forall x\in D$ ist.<br> [/latex]'

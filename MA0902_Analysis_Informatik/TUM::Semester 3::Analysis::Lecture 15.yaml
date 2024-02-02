@@ -4,11 +4,10 @@ author: Sebastian Pfister
 cards:
 
 
-- type: latex_plus
+- type: cloze
   id: 0  # (generated)
-  front: '[latex]%<br> Differenzierbarkeit impliziert Stetigkeit<br> [/latex]'
-  back: '[latex]%<br> Sei $f:D\to\mathbb{R}$ differenzierbar in $x_o\in D$. Dann ist
-    $f$ stetig in $x_0$.<br> [/latex]'
+  front: '[$$]%<br> Sei $f:D\to\mathbb{R}$ differenzierbar in $x_o\in D$. Dann ist
+    $f$ [/$$] {{c1::[$$]stetig[/$$]}} [$$] in $x_0$.<br> [/$$]'
 
 
 - type: latex_plus

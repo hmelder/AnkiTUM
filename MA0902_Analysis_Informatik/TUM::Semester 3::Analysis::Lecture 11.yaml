@@ -29,17 +29,3 @@ cards:
     Ist $f:[a,b]\to[a,b]$ stetig, so existiert ein $x^\ast\in[a,b]$ mit $f(x^\ast)=x^\ast$.<br>
     \end{enumerate}<br> [/latex]'
 
-
-- type: latex_plus
-  id: 2  # (generated)
-  front: '[latex]%<br> Bsp.: Stetigkeit der Exponentialfunktion<br> [/latex]'
-  back: '[latex]%<br> Die Exponentialfunktion ist stetig auf $\mathbb{C}$. Das heißt
-    für jede Folge $(z_n)$ mit Werten in $\mathbb{C}$ und $|z_n-z|\overset{n\to\infty}{\longrightarrow}0$
-    gilt:<br> \[|\exp z_n-\exp z|\overset{n\to\infty}{\longrightarrow}0.\]<br> <br>
-    \textbf{Beweis.} Betrachten wir zuerst $z=0$. Für $w\in\mathbb{C}$ mit $|w|\leq
-    1$ gilt:<br> \begin{multline*}<br> 0\leq|\exp w-1|=\left|\sum_{k=1}^{\infty}\frac{w^k}{k!}\right|\leq\sum_{k=1}^\infty\frac{|w|^k}{k!}\leq|w|\sum_{k=1}^\infty\frac{|w|^{k-1}}{(k-1)!}\\<br>
-    =|w|\sum_{k=0}^\infty\frac{|w|^k}{k!}=|w|\exp|w|\leq|w|\exp 1<br> \end{multline*}<br>
-    Falls also $z_n\to 0$ so folgt $\exp z_n\to 1$ d.h. $\exp$ ist stetig in $z=0$.
-    Sei nun $z\in\mathbb{C}$ beliebig und $(z_n)$ eine Folge mit $z_n\overset{n\to\infty}{\longrightarrow}z$.
-    Es gilt $|\exp z_n-\exp z|=|\exp(z_n-z+z)-\exp z|=|\exp(z_n-z)-1|\cdot|\exp z|\overset{n\to\infty}{\longrightarrow}0$,
-    d.h. $\exp$ ist stetig in $z$.<br> [/latex]'

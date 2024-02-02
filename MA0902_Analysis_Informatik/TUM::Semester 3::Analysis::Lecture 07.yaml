@@ -23,27 +23,12 @@ cards:
     so gilt:<br> \[\text{Im Fall}\begin{cases*}                          r&lt;1 &amp;
     konvergiert die Reihe absolut. \\                          r&gt;1 &amp; divergiert
     die Reihe.          \\                          r=1 &amp; ist alles möglich.                      \end{cases*}\]<br>
-    \item Das \emph{Wurzelkriterium}: Existiert $r=\lim_{k\to\infty}\sqrt[k]{|a_k|}$,
-    so gilt wiederrum:<br> \[\text{Im Fall}\begin{cases*}                          r&lt;1
-    &amp; konvergiert die Reihe absolut. \\                          r&gt;1 &amp;
-    divergiert die Reihe.          \\                          r=1 &amp; ist alles
-    möglich.                      \end{cases*}\]<br> \end{itemize}<br> [/latex]"'
-
-
-- type: latex_plus
-  id: 1  # (generated)
-  front: '[latex]%<br> Bsp.: Majorantenkriterium<br> [/latex]'
-  back: '[latex]%<br> $\sum_{k=1}^\infty\frac{1}{k^2}\leq 2$, denn<br> \begin{align*}<br>
-    \sum_{k=1}^\infty\frac{1}{k^2} &amp; =1+\frac{1}{2^2}+\frac{1}{3^2}+\frac{1}{4^2}\dots                   \\<br>
-    &amp; \leq 1+\frac{1}{1\cdot2}+\frac{1}{2\cdot 3}+\frac{1}{3\cdot 4}\dots \\<br>
-    &amp; =1+\sum_{k=1}^\infty\frac{1}{k\cdot(k+1)}                           \\<br>
-    &amp; =1+\sum_{k=1}^\infty\left[\frac{1}{k}-\frac{1}{k+1}\right]=2<br> \end{align*}<br>
-    [/latex]'
+    \end{cases*}\]<br> \end{itemize}<br> [/latex]"'
 
 
 - type: latex_plus
   id: 2  # (generated)
-  front: '[latex]%<br> <div><div>Cauchy-Kriterium für Reihen</div></div>[/latex]'
-  back: '[latex]%<br> <div><div>Die Reihe $\sum a_n$ konvergiert genau dann, wenn
+  front: '[latex]%<br> Cauchy-Kriterium für Reihen [/latex]'
+  back: '[latex]%<br> Die Reihe $\sum a_n$ konvergiert genau dann, wenn
     für jedes $\epsilon$ ein $N$ existiert, so dass für alle $m,n$ mit $m&gt;n&gt;N$
-    gilt:</div><div>\[\left|\sum_{k=n+1}^{m}a_k\right|&lt;\epsilon.\]</div></div>[/latex]'
+    gilt: \[\left|\sum_{k=n+1}^{m}a_k\right|&lt;\epsilon.\] [/latex]'
