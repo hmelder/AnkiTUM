@@ -141,7 +141,8 @@ cards:
 
 - type: markdown
   id: 26  # (generated)
-  front: Was ist der Unterschied zwischen logischer Protokollierung und physischer Protokollierung?
+  front: Was ist der Unterschied zwischen logischer Protokollierung und physischer
+    Protokollierung?
   back: |+
     - Logisch: Beim Log eintrag werden die Operationen welche die Operation ausführt geloggt: z.b. += 10
     - Physisch: Es werden die Vorher / Nachher Zustände geloggt: z.b. 100, 110
