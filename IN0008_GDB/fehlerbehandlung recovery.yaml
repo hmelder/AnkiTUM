@@ -107,9 +107,10 @@ cards:
     - Redo
     - Undo
     - prevLSN (Vorgängerlogeintrag)
-  
+
 
 - type: markdown
+  id: 25  # (generated)
   front: Welche Komponenten hat ein Recovery Logeintrag (in der Vorlesung)?
   back: |+
     - Log Sequence Number, LSN
@@ -137,11 +138,13 @@ cards:
 
 
 - type: markdown
-  front: Was ist der Unterschied zwoschen logischer Protokollierung und physischer Protokollierung?
+  id: 26  # (generated)
+  front: Was ist der Unterschied zwoschen logischer Protokollierung und physischer
+    Protokollierung?
   back: |+
     - Logisch: Beim Log eintrag werden die Operationen welche die Operation ausführt geloggt: z.b. += 10
     - Physisch: Es werden die Vorher / Nachher Zustände geloggt: z.b. 100, 110
-    
+
 
 - type: markdown
   id: 15  # (generated)
