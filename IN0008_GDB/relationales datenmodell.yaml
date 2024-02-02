@@ -78,15 +78,18 @@ cards:
 
 
 - type: cloze
+  id: 13  # (generated)
   front: |+
     Bei RelationsKalkül dürfen Quantoren verwendet werden. [$$] Qx \in X [/$$]
     Die Operation "sodass" wird ausgedrückt, indem {{c1::in runden Klammern hinter dem Quantor ein Prädikat steht}}
-    
+
 
 - type: markdown
+  id: 14  # (generated)
   front: Wie funktioniert das Domänenkalkül?
   back: |+
     - Relationen werden durch eckige Klammern [a, b, c ...] dargestellt
     - Man definiert eine Relation und ein Prädikat: [$$] \{\[a_1, ... a_n\] | P(a_1, ... a_n)\}
-    
 
+
+...
