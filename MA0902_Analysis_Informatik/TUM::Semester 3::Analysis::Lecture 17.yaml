@@ -15,10 +15,11 @@ cards:
 
 
 - type: latex_plus
+  id: 4  # (generated)
   front: '[latex]%<br> Def.: gleichmäßige Konvergenz von Funktionsfolgen<br> [/latex]'
-  back: '[latex]%<br> Man spricht von \emph{gleichmäßiger Konvergenz}, falls gilt<br> \[\lim_{n\to\infty}\sup_{x\in
-    I}|f_n(x)-f(x)|\overset{n\to\infty}{\longrightarrow}0.\]<br> <br> Gleichmäßige
-    Konvergenz schließt punktweise Konvergenz ein.<br> [/latex]'
+  back: '[latex]%<br> Man spricht von \emph{gleichmäßiger Konvergenz}, falls gilt<br>
+    \[\lim_{n\to\infty}\sup_{x\in I}|f_n(x)-f(x)|\overset{n\to\infty}{\longrightarrow}0.\]<br>
+    <br> Gleichmäßige Konvergenz schließt punktweise Konvergenz ein.<br> [/latex]'
 
 
 
@@ -38,11 +39,10 @@ cards:
   id: 2  # (generated)
   front: '[latex]%<br> Thm.: Differenzierbarkeit von Funktionsreihen<br> [/latex]'
   back: "[latex]%<br> Sei $I\\in\\mathbb{R}$ und $I$ offen. Wenn für die differenzierbaren
-    Funktionen $f_k\\in I \\to\\mathbb{R}$ die Reihe $\\sum_{k=0}^\\infty f_k(x)$ punktweise
-    und die Reihe $\\sum_{k=0}^\\infty f_k'(x)$ gleichmäßig konvergiert, so ist $f$
-    in $I$ differenzierbar und es gilt<br> \\[\\forall_{x\\in I}\\,f'(x)=\\sum_{k=0}^\\infty f_k'(x)\\]
-    
-    <br> [/latex]"
+    Funktionen $f_k\\in I \\to\\mathbb{R}$ die Reihe $\\sum_{k=0}^\\infty f_k(x)$
+    punktweise und die Reihe $\\sum_{k=0}^\\infty f_k'(x)$ gleichmäßig konvergiert,
+    so ist $f$ in $I$ differenzierbar und es gilt<br> \\[\\forall_{x\\in I}\\,f'(x)=\\
+    sum_{k=0}^\\infty f_k'(x)\\]\n<br> [/latex]"
 
 
 - type: latex_plus

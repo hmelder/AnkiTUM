@@ -29,6 +29,6 @@ cards:
 - type: latex_plus
   id: 2  # (generated)
   front: '[latex]%<br> Cauchy-Kriterium für Reihen [/latex]'
-  back: '[latex]%<br> Die Reihe $\sum a_n$ konvergiert genau dann, wenn
-    für jedes $\epsilon$ ein $N$ existiert, so dass für alle $m,n$ mit $m&gt;n&gt;N$
-    gilt: \[\left|\sum_{k=n+1}^{m}a_k\right|&lt;\epsilon.\] [/latex]'
+  back: '[latex]%<br> Die Reihe $\sum a_n$ konvergiert genau dann, wenn für jedes
+    $\epsilon$ ein $N$ existiert, so dass für alle $m,n$ mit $m&gt;n&gt;N$ gilt: \[\left|\sum_{k=n+1}^{m}a_k\right|&lt;\epsilon.\]
+    [/latex]'
