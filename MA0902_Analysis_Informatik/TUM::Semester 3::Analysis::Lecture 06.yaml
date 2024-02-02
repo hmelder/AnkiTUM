@@ -1,92 +1,62 @@
-title: 'Analysis für Informatik - Vorlesung 06'
+title: Analysis für Informatik - Vorlesung 06
 id: 916920228
 author: Sebastian Pfister
 cards:
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Def.: Limes Superior und Limes Inferior<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Sei $(x_n)$ eine beschränkte Folge reeller Zahlen. Sei
-    $\overline{x_n}=\sup_{k\geq n}x_k$ und $\underline{x_n}=\inf_{k\geq n}x_k$. Da
-    $(\overline{x_n})$ monoton fallend bzw. $(\underline{x_n})$ monoton wachsend ist,
-    existiert der Grenzwert $\limsup_{n\to\infty}x_n\coloneq\lim_{x\to\infty}\overline{x_n}$
-    bzw. $\liminf_{n\to\infty}x_n\coloneq\lim_{x\to\infty}\underline{x_n}$ (siehe
-    Kriterium für Konvergenz), den wir als \emph{Limes superior} bzw. \emph{Limes
+  id: 0  # (generated)
+  front: '[latex]%<br> Def.: Limes Superior und Limes Inferior<br> [/latex]'
+  back: '[latex]%<br> Sei $(x_n)$ eine beschränkte Folge reeller Zahlen. Sei $\overline{x_n}=\sup_{k\geq
+    n}x_k$ und $\underline{x_n}=\inf_{k\geq n}x_k$. Da $(\overline{x_n})$ monoton
+    fallend bzw. $(\underline{x_n})$ monoton wachsend ist, existiert der Grenzwert
+    $\limsup_{n\to\infty}x_n\coloneq\lim_{x\to\infty}\overline{x_n}$ bzw. $\liminf_{n\to\infty}x_n\coloneq\lim_{x\to\infty}\underline{x_n}$
+    (siehe Kriterium für Konvergenz), den wir als \emph{Limes superior} bzw. \emph{Limes
     inferior} von $(x_n)$ bezeichnen. Aus $\underline{x_n}\leq\overline{x_n}$ folgt:<br>
-        \[\liminf_{n\to\infty}x_n\leq\limsup_{n\to\infty}x_n.\]<br>
-    [/latex]'
+    \[\liminf_{n\to\infty}x_n\leq\limsup_{n\to\infty}x_n.\]<br> [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Def.: Häufungspunkte von Folgen<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Ist $(x_n)$ eine reellwertige Folge und $\forall k:n_1&lt;n_2&lt;n_3&lt;n_4\dots,n_k\in\mathbb{N}$,
+  id: 1  # (generated)
+  front: '[latex]%<br> Def.: Häufungspunkte von Folgen<br> [/latex]'
+  back: '[latex]%<br> Ist $(x_n)$ eine reellwertige Folge und $\forall k:n_1&lt;n_2&lt;n_3&lt;n_4\dots,n_k\in\mathbb{N}$,
     so heißt $(x_{n_k})$ \emph{Teilfolge} von $(x_n)$. $x$ heißt \emph{Häufungspunkt}
     von $(x_n)$, falls es eine Teilfolge $(x_{n_k})$ gibt mit $\lim_{k\to\infty}x_{n_k}=x$.<br>
     [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Thm.: Satz von Bolzano-Weierstrass<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Gegeben sei eine beschränkte reellwertige Folge $(x_n)$.
-    Dann sind Limes superior und Limes inferior maximaler bzw. minimaler Häufungspunkt
-    der Folge $(x_n)$. Weiter gilt:<br>
-        \[x_n\overset{n\to\infty}{\longrightarrow}x\iff\liminf_{n\to\infty}x_n=\limsup_{n\to\infty}x_n=x\]<br>
+  id: 2  # (generated)
+  front: '[latex]%<br> Thm.: Satz von Bolzano-Weierstrass<br> [/latex]'
+  back: '[latex]%<br> Gegeben sei eine beschränkte reellwertige Folge $(x_n)$. Dann
+    sind Limes superior und Limes inferior maximaler bzw. minimaler Häufungspunkt
+    der Folge $(x_n)$. Weiter gilt:<br> \[x_n\overset{n\to\infty}{\longrightarrow}x\iff\liminf_{n\to\infty}x_n=\limsup_{n\to\infty}x_n=x\]<br>
     [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Def.: Reihen<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Einer Folge $(a_n)$ komplexer Zahlen ordnen wir die Folge<br>
-        \[s_n=a_0+a_1+\dots+a_n=\sum_{k=0}^na_k\]<br>
-        zu
-    und bezeichnen sie als \emph{unendliche Reihe}, kurz \emph{Reihe}, mit den Gliedern
-    $a_n$ und den Partialsummen $s_n$.<br>
-<br>
-        % Falls die Partialsummen $s_n$
-    konvergieren, d.h. $s_n\overset{n\to\infty}{\longrightarrow}s$, so heißt die Reihe
-    konvergent und der Grenzwert $s$ heißt \emph{Summe} oder \emph{Wert} der Reihe.
-    Wir schreiben $s=\lim_{n\to\infty}s_n\coloneq\sum_{k=0}^\infty a_k$. Sind die
-    Glieder reell und geht die Folge $(s_n)$ gegen $+\infty$ (bzw. $-\infty$) so schreiben
-    wir $\sum_{k=0}^\infty a_k=+\infty$ (bzw. $\sum_{k=0}^\infty a_k=-\infty$).<br>
-<br>
-        %
-    Eine nicht konvergierende Reihe heißt \emph{divergent}.<br>
-    [/latex]'
+  id: 3  # (generated)
+  front: '[latex]%<br> Def.: Reihen<br> [/latex]'
+  back: '[latex]%<br> Einer Folge $(a_n)$ komplexer Zahlen ordnen wir die Folge<br>
+    \[s_n=a_0+a_1+\dots+a_n=\sum_{k=0}^na_k\]<br> zu und bezeichnen sie als \emph{unendliche
+    Reihe}, kurz \emph{Reihe}, mit den Gliedern $a_n$ und den Partialsummen $s_n$.<br>
+    <br> % Falls die Partialsummen $s_n$ konvergieren, d.h. $s_n\overset{n\to\infty}{\longrightarrow}s$,
+    so heißt die Reihe konvergent und der Grenzwert $s$ heißt \emph{Summe} oder \emph{Wert}
+    der Reihe. Wir schreiben $s=\lim_{n\to\infty}s_n\coloneq\sum_{k=0}^\infty a_k$.
+    Sind die Glieder reell und geht die Folge $(s_n)$ gegen $+\infty$ (bzw. $-\infty$)
+    so schreiben wir $\sum_{k=0}^\infty a_k=+\infty$ (bzw. $\sum_{k=0}^\infty a_k=-\infty$).<br>
+    <br> % Eine nicht konvergierende Reihe heißt \emph{divergent}.<br> [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Def.: Konvergenz und absolute Konvergenz von Reihen
-    [HMiR]<br>
+  id: 4  # (generated)
+  front: '[latex]%<br> Def.: Konvergenz und absolute Konvergenz von Reihen [HMiR]<br>
     [/latex]'
-  back: '[latex]%<br>
-        Gegeben ist eine Reihe $\sum_{k=0}^\infty a_k$. Man sagt,
-    die Reihe<br>
-        \begin{itemize}<br>
-            \item \emph{konvergiert gegen
-    ein $a\in\mathbb{R}$}, wenn die Folge $(s_n)_{n\in\mathbb{N}}=\left(\sum_{k=0}^na_k\right)_{n\in\mathbb{N}}$
-    der Partialsummen gegen $a$ konvergiert.<br>
-            <br>
-            Man nennt
-    $a$ in diesem Fall den \emph{Wert der Reihe} und bezeichnet diesen ebenfalls mit
-    $\sum_{k=0}^\infty a_k$.<br>
-            \item \emph{konvergiert absolut}, wenn
-    die Folge $(t_n)_{n\in\mathbb{N}}=\left(\sum_{k=0}^n|a_k|\right)_{n\in\mathbb{N}}$
-    der Beträge der Reihenglieder konvergiert.<br>
-        \end{itemize}<br>
-<br>
-        Jede
-    absolut konvergente Reihe konvergiert auch.<br>
-    [/latex]'
+  back: '[latex]%<br> Gegeben ist eine Reihe $\sum_{k=0}^\infty a_k$. Man sagt, die
+    Reihe<br> \begin{itemize}<br> \item \emph{konvergiert gegen ein $a\in\mathbb{R}$},
+    wenn die Folge $(s_n)_{n\in\mathbb{N}}=\left(\sum_{k=0}^na_k\right)_{n\in\mathbb{N}}$
+    der Partialsummen gegen $a$ konvergiert.<br> <br> Man nennt $a$ in diesem Fall
+    den \emph{Wert der Reihe} und bezeichnet diesen ebenfalls mit $\sum_{k=0}^\infty
+    a_k$.<br> \item \emph{konvergiert absolut}, wenn die Folge $(t_n)_{n\in\mathbb{N}}=\left(\sum_{k=0}^n|a_k|\right)_{n\in\mathbb{N}}$
+    der Beträge der Reihenglieder konvergiert.<br> \end{itemize}<br> <br> Jede absolut
+    konvergente Reihe konvergiert auch.<br> [/latex]'

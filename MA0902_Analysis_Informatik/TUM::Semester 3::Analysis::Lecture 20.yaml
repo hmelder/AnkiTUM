@@ -1,80 +1,45 @@
-title: 'Analysis für Informatik - Vorlesung 20'
+title: Analysis für Informatik - Vorlesung 20
 id: 801393356
 author: Sebastian Pfister
 cards:
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Def.: Integral (nach Darboux)<br>
-    [/latex]'
-  back: '[latex]%<br>
-        Wir definieren das \emph{Unter-} und \emph{Oberintegral}
-    von $f$ durch:<br>
-\begin{align*}<br>
-U(f) &amp; =\sup\{U_Z(f): \text{$Z$ ist eine
+  id: 0  # (generated)
+  front: '[latex]%<br> Def.: Integral (nach Darboux)<br> [/latex]'
+  back: '[latex]%<br> Wir definieren das \emph{Unter-} und \emph{Oberintegral} von
+    $f$ durch:<br> \begin{align*}<br> U(f) &amp; =\sup\{U_Z(f): \text{$Z$ ist eine
     Zerlegung von $[a,b]$}\}\marginnote{$U_Z(f)$ und $O_Z(f)$ ist die Ober- bzw. Untersumme
-    für die Zerlegung $Z$.}, \\<br>
-O(f) &amp; =\inf\{O_Z(f): \text{$Z$ ist eine Zerlegung
-    von $[a,b]$}\}.<br>
-\end{align*}<br>
-<br>
-        \textbf{Integral.} Es sei $f:[a,b]\to\mathbb{R}$
+    für die Zerlegung $Z$.}, \\<br> O(f) &amp; =\inf\{O_Z(f): \text{$Z$ ist eine Zerlegung
+    von $[a,b]$}\}.<br> \end{align*}<br> <br> \textbf{Integral.} Es sei $f:[a,b]\to\mathbb{R}$
     beschränkt. Falls $U(f)=O(f)$, so heißt $f$ \emph{integrierbar} und das Integral
-    von $f$ ist definiert durch<br>
-        \[\int_a^bf(x)\,dx=U(f)=O(f).\]<br>
-<br>
-        \textbf{Bemerkung.}
+    von $f$ ist definiert durch<br> \[\int_a^bf(x)\,dx=U(f)=O(f).\]<br> <br> \textbf{Bemerkung.}
     Ist $f$ integrierbar und $(Z^n)$ eine Folge von Zerlegungen $Z^n=\{x_0^n,\dots,x_n^n\}$
     mit $\max_{1\leq i\leq n}|x_i^n-x_{i-1}^n|\overset{n\to\infty}{\longrightarrow}0$,
-    so gilt<br>
-        \[\int_a^bf(x)\,dx=\lim_{n\to\infty}U_{Z^n}(f)=\lim_{n\to\infty}O_{Z^n}(f).\]<br>
+    so gilt<br> \[\int_a^bf(x)\,dx=\lim_{n\to\infty}U_{Z^n}(f)=\lim_{n\to\infty}O_{Z^n}(f).\]<br>
     [/latex]'
 
 
 - type: latex_plus
-  front: '[latex]%<br>
-        Wichtige Eigenschaften zu integrierbaren Funktionen
-    [HMiR]<br>
+  id: 1  # (generated)
+  front: '[latex]%<br> Wichtige Eigenschaften zu integrierbaren Funktionen [HMiR]<br>
     [/latex]'
-  back: '"[latex]%<br>
-        Für Funktionen $f,g:[a,b]\to\mathbb{R}$ gilt:<br>
-        \begin{itemize}<br>
-            \item
-    Ist $f$ stetig oder monoton, so ist $f$ integrierbar.<br>
-            \item Ist
-    $f$ integrierbar, so auch ihr Betrag $|f|:[a,b]\to\mathbb{R}$, $|f|(x)=|f(x)|$.<br>
-            \item
-    Ist $f$ integrierbar, so gilt:\marginnote{An dieser Stelle noch nicht in der VL
-    behandelt}<br>
-                  \[\left|\int_a^bf(x)\,dx\right|\leq\int_a^b|f(x)|\,dx.\]<br>
-            \item
-    Sind $f$ und $g$ integrierbar, so auch $\lambda f+g,\lambda\in\mathbb{R}$, und
-    es gilt:<br>
-                  \[\int_a^b\left(\lambda f(x)+g(x)\right)\,dx=\lambda\int_a^bf(x)\,dx+\int_a^bg(x)\,dx.\]<br>
-            \item
-    Sind $f$ und $g$ integrierbar und gilt $f(x)\leq g(x)$ für alle $x\in[a,b]$, so
-    gilt:<br>
-                  \[\int_a^bf(x)\,dx\leq\int_a^bg(x)\,dx.\]<br>
-            \item
-    Ist $f$ integrierbar, so setzt man<br>
-                  \[\int_a^bf(x)\,dx=-\int_b^a\,dx,\quad\text{also
-    gilt}\quad\int_a^af(x)\,dx=0.\]<br>
-            \item Ist $f$ integrierbar, so
-    gilt für jedes $c\in[a,b]$:<br>
-                  \[\int_a^bf(x)\,dx=\int_a^cf(x)\,dx+\int_c^bf(x)\,dx.\]<br>
-            \item
-    Ist $f$ integrierbar, so gilt für die Funktion\marginnote{An dieser Stelle noch
-    nicht in der VL behandelt}<br>
-                  \[\tilde{f}:[a,b]\to\mathbb{R},\quad\tilde{f}(x)=\begin{cases}                          f(x)   &amp;
+  back: '"[latex]%<br> Für Funktionen $f,g:[a,b]\to\mathbb{R}$ gilt:<br> \begin{itemize}<br>
+    \item Ist $f$ stetig oder monoton, so ist $f$ integrierbar.<br> \item Ist $f$
+    integrierbar, so auch ihr Betrag $|f|:[a,b]\to\mathbb{R}$, $|f|(x)=|f(x)|$.<br>
+    \item Ist $f$ integrierbar, so gilt:\marginnote{An dieser Stelle noch nicht in
+    der VL behandelt}<br> \[\left|\int_a^bf(x)\,dx\right|\leq\int_a^b|f(x)|\,dx.\]<br>
+    \item Sind $f$ und $g$ integrierbar, so auch $\lambda f+g,\lambda\in\mathbb{R}$,
+    und es gilt:<br> \[\int_a^b\left(\lambda f(x)+g(x)\right)\,dx=\lambda\int_a^bf(x)\,dx+\int_a^bg(x)\,dx.\]<br>
+    \item Sind $f$ und $g$ integrierbar und gilt $f(x)\leq g(x)$ für alle $x\in[a,b]$,
+    so gilt:<br> \[\int_a^bf(x)\,dx\leq\int_a^bg(x)\,dx.\]<br> \item Ist $f$ integrierbar,
+    so setzt man<br> \[\int_a^bf(x)\,dx=-\int_b^a\,dx,\quad\text{also gilt}\quad\int_a^af(x)\,dx=0.\]<br>
+    \item Ist $f$ integrierbar, so gilt für jedes $c\in[a,b]$:<br> \[\int_a^bf(x)\,dx=\int_a^cf(x)\,dx+\int_c^bf(x)\,dx.\]<br>
+    \item Ist $f$ integrierbar, so gilt für die Funktion\marginnote{An dieser Stelle
+    noch nicht in der VL behandelt}<br> \[\tilde{f}:[a,b]\to\mathbb{R},\quad\tilde{f}(x)=\begin{cases}                          f(x)   &amp;
     x\neq x_0, \\                          \omega &amp; x=x_0      \\                      \end{cases}\]<br>
-                      mit
-    $x_0\in[a,b]$ und $\omega\in\mathbb{R}$:<br>
-                      \[\int_a^bf(x)\,dx=\int_a^b\tilde{f}(x)\,dx.\]<br>
-            \item
-    Der \emph{Mittelwertsatz der Integralrechnung}\marginnote{An dieser Stelle noch
-    nicht in der VL behandelt}. Ist $f:[a,b]\to\mathbb{R}$ stetig, so gibt es ein
-    $\xi\in[a,b]$, sodass<br>
-            \[\int_a^bf(x)\,dx=f(\xi)(b-a).\]<br>
-        \end{itemize}<br>
+    mit $x_0\in[a,b]$ und $\omega\in\mathbb{R}$:<br> \[\int_a^bf(x)\,dx=\int_a^b\tilde{f}(x)\,dx.\]<br>
+    \item Der \emph{Mittelwertsatz der Integralrechnung}\marginnote{An dieser Stelle
+    noch nicht in der VL behandelt}. Ist $f:[a,b]\to\mathbb{R}$ stetig, so gibt es
+    ein $\xi\in[a,b]$, sodass<br> \[\int_a^bf(x)\,dx=f(\xi)(b-a).\]<br> \end{itemize}<br>
     [/latex]"'
