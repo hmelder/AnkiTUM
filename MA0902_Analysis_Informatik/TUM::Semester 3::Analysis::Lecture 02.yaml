@@ -58,12 +58,12 @@ cards:
   id: 4  # (generated)
   front: 'Def.: injektiv, surjektiv, bijektiv'
   back: |-
-    [latex] Eine Funktion $ f: A \to B $ ist injektiv, wenn für alle $ x_1, x_2 $ in der Definitionsmenge $ A $ gilt:
-    $ f(x_1) = f(x_2) \implies x_1 = x_2 $ 
+    [latex] Eine Funktion $ f: A \\to B $ ist injektiv, wenn für alle $ x_1, x_2 $ in der Definitionsmenge $ A $ gilt:
+    $ f(x_1) = f(x_2) \\implies x_1 = x_2 $ 
 
     <br>
 
-    Eine Funktion $ f: A \to B $ ist surjektiv, wenn für jedes Element $y$ in der Zielmenge $B$ mindestens ein Element $x$ in der Definitionsmenge $A$ existiert, so dass $f(x) = y$
+    Eine Funktion $ f: A \\to B $ ist surjektiv, wenn für jedes Element $y$ in der Zielmenge $B$ mindestens ein Element $x$ in der Definitionsmenge $A$ existiert, so dass $f(x) = y$
 
     <br>
 

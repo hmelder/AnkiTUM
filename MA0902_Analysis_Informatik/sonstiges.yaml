@@ -3,7 +3,7 @@ id: 1594111406
 author: Hendrik Hübner
 cards:
 - type: latex_plus
-  front: "[latex]Wann konvergiert $\int_0^1 frac{1}{x^a}dx$?[/latex]"
+  front: "[latex]Wann konvergiert $\\int_0^1 frac{1}{x^a}dx$?[/latex]"
   back: |+
     [latex]Wenn $a < 1$ ergibt sich $frac{1}{1 - a}$ [/latex]
     
@@ -11,5 +11,5 @@ cards:
 - type: latex_plus
   front: "[latex]Wie ist die eulersche Zahl definiert? (Grenzwert)[/latex]"
   back: |+
-    [latex]$ e = \lim_{{n \to \infty}} \left(1 + \frac{1}{n}\right)^n $[/latex]
+    [latex]$ e = \\lim_{{n \\to \\infty}} \\left(1 + \\frac{1}{n}\\right)^n $[/latex]
     
