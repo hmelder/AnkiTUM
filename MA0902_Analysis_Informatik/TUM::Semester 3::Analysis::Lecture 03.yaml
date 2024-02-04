@@ -84,4 +84,5 @@ cards:
 - type: latex_plus
   id: 8  # (generated)
   front: '[latex]Satz von Cantor Bernstein? [/latex]'
-  back: '[latex]% Falls Injektionen von A nach B und von B nach A existieren, dann existiert auch eine Bijektion zwischen A und B[/latex]'
+  back: '[latex]% Falls Injektionen von A nach B und von B nach A existieren, dann
+    existiert auch eine Bijektion zwischen A und B[/latex]'

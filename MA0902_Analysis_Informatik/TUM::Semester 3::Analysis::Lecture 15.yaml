@@ -6,7 +6,8 @@ cards:
 
 - type: cloze
   id: 0  # (generated)
-  front: '[latex] Sei $f\in D\to\mathbb{R}$ differenzierbar in $x_o\in D$. Dann ist $f$ {{c1::stetig}} in $x_0$ [/latex]'
+  front: '[latex] Sei $f\in D\to\mathbb{R}$ differenzierbar in $x_o\in D$. Dann ist
+    $f$ {{c1::stetig}} in $x_0$ [/latex]'
 
 
 - type: latex_plus
