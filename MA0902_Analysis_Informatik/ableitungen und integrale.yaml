@@ -3,27 +3,33 @@ id: 159423406
 author: Hendrik Hübner
 cards:
 - type: markdown
-  front: "[$$]\\frac{d}{dx}\\sin(x)[/$$]"
-  back:  "[$$]\\cos(x)[/$$]"
+  id: 0  # (generated)
+  front: '[$$]\frac{d}{dx}\sin(x)[/$$]'
+  back: '[$$]\cos(x)[/$$]'
 
 - type: markdown
-  front: "[$$]\\frac{d}{dx}\\cos(x)[/$$]"
-  back: "[$$]-\\sin(x)[/$$]"
+  id: 1  # (generated)
+  front: '[$$]\frac{d}{dx}\cos(x)[/$$]'
+  back: '[$$]-\sin(x)[/$$]'
 
 
 - type: markdown
-  front: "[$$]\\frac{d}{dx}a^x[/$$]"
-  back: "[$$]a^x \\cdot \\ln(a)[/$$]"
+  id: 2  # (generated)
+  front: '[$$]\frac{d}{dx}a^x[/$$]'
+  back: '[$$]a^x \cdot \ln(a)[/$$]'
 
 - type: markdown
-  front: "[$$]\\frac{d}{dx}\\log_b(x)[/$$]"
-  Back: "[$$]\\frac{1}{x \\cdot \\ln(b)}[/$$]"
+  id: 3  # (generated)
+  front: '[$$]\frac{d}{dx}\log_b(x)[/$$]'
+  Back: '[$$]\frac{1}{x \cdot \ln(b)}[/$$]'
 
 - type: markdown
-  front: "[$$]\\frac{d}{dx}\\left(\\frac{f(x)}{g(x)}\\right)[/$$]"
-  back:  "[$$]\\frac{f'(x) \\cdot g(x) - f(x) \\cdot g'(x)}{(g(x))^2}[/$$]"
+  id: 4  # (generated)
+  front: '[$$]\frac{d}{dx}\left(\frac{f(x)}{g(x)}\right)[/$$]'
+  back: "[$$]\\frac{f'(x) \\cdot g(x) - f(x) \\cdot g'(x)}{(g(x))^2}[/$$]"
 
 - type: markdown
+  id: 5  # (generated)
   front: Nenne vier Grundlegende nicht elementare Integrale
   back: |+
     - [$$]\\int e^{-x^2} \\, dx[/$$]
@@ -32,21 +38,26 @@ cards:
     - [$$]\\int \\frac {sin(x), x} \\, dx [/$$]
 
 - type: basic
-  front:  "[$$]\\int \\sin(x) \\, dx[/$$]"
-  back:  "[$$]-\\cos(x) + C[/$$]"
+  id: 6  # (generated)
+  front: '[$$]\int \sin(x) \, dx[/$$]'
+  back: '[$$]-\cos(x) + C[/$$]'
 
 - type: basic
-  front:  "[$$]\\int \\cos(x) \\, dx[/$$]"
-  back:  "[$$]\\sin(x) + C[/$$]"
+  id: 7  # (generated)
+  front: '[$$]\int \cos(x) \, dx[/$$]'
+  back: '[$$]\sin(x) + C[/$$]'
 
 - type: basic
-  front:  "[$$]\\int a^x \\, dx[/$$]"
-  back:  "[$$]\\frac{a^x}{\\ln(a)} + C[/$$]"
+  id: 8  # (generated)
+  front: '[$$]\int a^x \, dx[/$$]'
+  back: '[$$]\frac{a^x}{\ln(a)} + C[/$$]'
 
 - type: basic
-  front:  "[$$]\\int \\ln(x) \\, dx[/$$]"
-  0back:  "[$$]x \\ln(x) - x + C[/$$]"
+  id: 9  # (generated)
+  front: '[$$]\int \ln(x) \, dx[/$$]'
+  0back: '[$$]x \ln(x) - x + C[/$$]'
 
 - type: basic
-  front:  "[$$]\\int \\sqrt{x} \\, dx[/$$]"
-  back:  "[$$]\\frac{2}{3}x^{3/2} + C[/$$]"
+  id: 10  # (generated)
+  front: '[$$]\int \sqrt{x} \, dx[/$$]'
+  back: '[$$]\frac{2}{3}x^{3/2} + C[/$$]'
