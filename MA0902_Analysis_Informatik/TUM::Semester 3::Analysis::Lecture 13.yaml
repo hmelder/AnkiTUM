@@ -52,6 +52,6 @@ cards:
 
 - type: latex_plus
   id: 6  # (generated)
-  front: '[latex]%<br> Def.: Kettenregel Grenzwerte? <br>
-    [/latex]'
-  back: '[latex]%<br> Sei $\lim_{x \to a} f(x) = b$ und $g(x)$ stetig in $b$, so gilt $\lim_{x \to a} g(f(x)) = g(b) $<br> [/latex]'
+  front: '[latex]%<br> Def.: Kettenregel Grenzwerte? <br> [/latex]'
+  back: '[latex]%<br> Sei $\lim_{x \to a} f(x) = b$ und $g(x)$ stetig in $b$, so gilt
+    $\lim_{x \to a} g(f(x)) = g(b) $<br> [/latex]'

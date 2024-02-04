@@ -54,7 +54,7 @@ cards:
     f \\                      \end{pmatrix}.\]<br> \item \emph{Laplaceoperator}: Der
     Laplaceoperator $\Delta$ ordnet einem Skalarfeld $f:D\subseteq\mathbb{R}^n\to\mathbb{R}$
     ein Skalarfeld $\Delta f$ zu:<br> \[\Delta f=\sum_{i=1}^n\partial_i^2f=\partial_1f+\dots+\partial_n^2f.\]<br>
-  \end{itemize}<br> [/latex]"'
+    \end{itemize}<br> [/latex]"'
 
 
 - type: latex_plus

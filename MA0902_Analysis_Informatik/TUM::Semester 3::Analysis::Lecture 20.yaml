@@ -25,14 +25,14 @@ cards:
   front: '[latex]%<br> Wichtige Ungleichungen zu integrierbaren Funktionen [HMiR]<br>
     [/latex]'
 
-  back: '"[latex]%<br> Für Funktionen $f,g:[a,b]\to\mathbb{R}$ gilt:<br> \begin{itemize}<br>
-    \item Ist $f$ integrierbar, so gilt:\marginnote{An dieser Stelle noch nicht in
-    der VL behandelt}<br> \[\left|\int_a^bf(x)\,dx\right|\leq\int_a^b|f(x)|\,dx.\]<br>
-    
-    \item Sind $f$ und $g$ integrierbar, so auch $\lambda f+g,\lambda\in\mathbb{R}$,
-    und es gilt:<br> \[\int_a^b\left(\lambda f(x)+g(x)\right)\,dx=\lambda\int_a^bf(x)\,dx+\int_a^bg(x)\,dx.\]<br>
-    [/latex]"'
+  back: "\"[latex]%<br> Für Funktionen $f,g:[a,b]\\to\\mathbb{R}$ gilt:<br> \\begin{itemize}<br>
+    \\item Ist $f$ integrierbar, so gilt:\\marginnote{An dieser Stelle noch nicht
+    in der VL behandelt}<br> \\[\\left|\\int_a^bf(x)\\,dx\\right|\\leq\\int_a^b|f(x)|\\
+    ,dx.\\]<br>\n\\item Sind $f$ und $g$ integrierbar, so auch $\\lambda f+g,\\lambda\\
+    in\\mathbb{R}$, und es gilt:<br> \\[\\int_a^b\\left(\\lambda f(x)+g(x)\\right)\\
+    ,dx=\\lambda\\int_a^bf(x)\\,dx+\\int_a^bg(x)\\,dx.\\]<br> [/latex]\""
 
 
 - type: cloze
+  id: 2  # (generated)
   front: Ist f {{c1::stetig}} oder {{c1::monoton}}, so ist f integrierbar.
