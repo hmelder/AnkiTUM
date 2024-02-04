@@ -79,3 +79,9 @@ cards:
     Das Skalarprodukt wird auch $\langle x, y \rangle$ geschrieben.<br> <br> Wir definieren
     die Euklidische Norm<br> \[\|(x_1, \dots, x_n)\|\coloneqq\sqrt{(x_1,\dots,x_n)\cdot
     (x_1,\dots,x_n)}=\sqrt{\sum_{k=1}^{n}x_k^2}.\]<br> [/latex]'
+
+
+- type: latex_plus
+  id: 8  # (generated)
+  front: '[latex]Satz von Cantor Bernstein? [/latex]'
+  back: '[latex]% Falls Injektionen von A nach B und von B nach A existieren, dann existiert auch eine Bijektion zwischen A und B[/latex]'

@@ -31,8 +31,7 @@ cards:
 
 - type: latex_plus
   id: 2  # (generated)
-  front: '[latex]%<br> Thm.: Der Mittelwertsatz der Differentialrechnung und erste
-    Konsequenzen [HMiR]<br> [/latex]'
+  front: '[latex]%<br> Thm.: Der Mittelwertsatz der Differentialrechnung <br> [/latex]'
   back: "[latex]%<br> Ist $f:[a,b]\\subseteq\\mathbb{R}\\to\\mathbb{R}$ eine stetige
     und auf $(a,b)$ differenzierbare Funktion, so gibt es ein $x_0\\in(a,b)$ mit<br>
     \\[f'(x_0)=\\frac{f(b)-f(a)}{b-a}.\\]<br> Es folgt:<br> \\begin{itemize}<br> \\

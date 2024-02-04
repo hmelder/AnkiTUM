@@ -22,24 +22,17 @@ cards:
 
 - type: latex_plus
   id: 1  # (generated)
-  front: '[latex]%<br> Wichtige Eigenschaften zu integrierbaren Funktionen [HMiR]<br>
+  front: '[latex]%<br> Wichtige Ungleichungen zu integrierbaren Funktionen [HMiR]<br>
     [/latex]'
+
   back: '"[latex]%<br> Für Funktionen $f,g:[a,b]\to\mathbb{R}$ gilt:<br> \begin{itemize}<br>
-    \item Ist $f$ stetig oder monoton, so ist $f$ integrierbar.<br> \item Ist $f$
-    integrierbar, so auch ihr Betrag $|f|:[a,b]\to\mathbb{R}$, $|f|(x)=|f(x)|$.<br>
     \item Ist $f$ integrierbar, so gilt:\marginnote{An dieser Stelle noch nicht in
     der VL behandelt}<br> \[\left|\int_a^bf(x)\,dx\right|\leq\int_a^b|f(x)|\,dx.\]<br>
+    
     \item Sind $f$ und $g$ integrierbar, so auch $\lambda f+g,\lambda\in\mathbb{R}$,
     und es gilt:<br> \[\int_a^b\left(\lambda f(x)+g(x)\right)\,dx=\lambda\int_a^bf(x)\,dx+\int_a^bg(x)\,dx.\]<br>
-    \item Sind $f$ und $g$ integrierbar und gilt $f(x)\leq g(x)$ für alle $x\in[a,b]$,
-    so gilt:<br> \[\int_a^bf(x)\,dx\leq\int_a^bg(x)\,dx.\]<br> \item Ist $f$ integrierbar,
-    so setzt man<br> \[\int_a^bf(x)\,dx=-\int_b^a\,dx,\quad\text{also gilt}\quad\int_a^af(x)\,dx=0.\]<br>
-    \item Ist $f$ integrierbar, so gilt für jedes $c\in[a,b]$:<br> \[\int_a^bf(x)\,dx=\int_a^cf(x)\,dx+\int_c^bf(x)\,dx.\]<br>
-    \item Ist $f$ integrierbar, so gilt für die Funktion\marginnote{An dieser Stelle
-    noch nicht in der VL behandelt}<br> \[\tilde{f}:[a,b]\to\mathbb{R},\quad\tilde{f}(x)=\begin{cases}                          f(x)   &amp;
-    x\neq x_0, \\                          \omega &amp; x=x_0      \\                      \end{cases}\]<br>
-    mit $x_0\in[a,b]$ und $\omega\in\mathbb{R}$:<br> \[\int_a^bf(x)\,dx=\int_a^b\tilde{f}(x)\,dx.\]<br>
-    \item Der \emph{Mittelwertsatz der Integralrechnung}\marginnote{An dieser Stelle
-    noch nicht in der VL behandelt}. Ist $f:[a,b]\to\mathbb{R}$ stetig, so gibt es
-    ein $\xi\in[a,b]$, sodass<br> \[\int_a^bf(x)\,dx=f(\xi)(b-a).\]<br> \end{itemize}<br>
     [/latex]"'
+
+
+- type: cloze
+  front: Ist f {{c1::stetig}} oder {{c1::monoton}}, so ist f integrierbar.

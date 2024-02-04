@@ -44,8 +44,9 @@ cards:
 - type: latex_plus
   id: 3  # (generated)
   front: "[latex]%<br> Thm: Die Jensen'sche Ungleichung<br> [/latex]"
-  back: "[latex]%<br> Sei $f:(a,b)\\to\\mathbb{R}$ konvex, $n\\geq 2$, $x_1,\\dots,x_n\\
-    in(a,b)$, $p_1,\\dots,p_n&gt;0$ und $\\sum_{i=1}^np_i=1$. Dann gilt<br> \\[f\\
-    left(\\sum_{k=1}^np_kx_k\\right)\\leq\\sum_{k=1}^np_kf(x_k).\\]<br> <br> \\textit{Die
+  back: "[latex]%
+      <br> Sei $f:(a,b)\\to\\mathbb{R}$ konvex, $n\\geq 2$, $x_1,\\dots,x_n\\in(a,b)$, $p_1,\\dots,p_n&gt;0$ und $\\sum_{i=1}^np_i=1$. Dann gilt<br>
+       \\[f\\left(\\sum_{k=1}^np_kx_k\\right)\\leq\\sum_{k=1}^np_kf(x_k)\\]<br>
+      <br> \\textit{Die
     AM-GM-Ungleichung kann aus dem Spezialfall der Jensen'schen Ungleichung mit $f(x)=ln(x)$
     hergeleitet werden.}<br> [/latex]"

@@ -8,13 +8,13 @@ cards:
   id: 0  # (generated)
   front: '[latex]%<br> Die Existenz des Integrals<br> [/latex]'
   back: '[latex]%<br> Sei $f:[a,b]\to\mathbb{R}$ beschränkt. $f$ ist genau dann integrierbar,
-    wenn für jeden $\epsilon&gt;0$ eine Zerlegung $Z$ existiert, so dass<br> \[|O_Z(xf)-U_Z(f)|&lt;\epsilon.\]<br>
+    wenn für jeden $\epsilon&gt;0$ eine Zerlegung $Z$ existiert, so dass<br> \[|O_Z(f)-U_Z(f)|&lt;\epsilon.\]<br>
     [/latex]'
 
 
 - type: latex_plus
   id: 1  # (generated)
-  front: '[latex]%<br> Def.: Gleichmäßig stetige Funktionen [Wiki]<br> [/latex]'
+  front: '[latex]%<br> Def.: Gleichmäßig stetige Funktionen (epsilon delta) <br> [/latex]'
   back: '[latex]%<br> Eine Abbildung $f:D\to\mathbb{R}$ heißt \emph{gleichmäßig stetig}
     genau dann, wenn<br> \[\forall\epsilon&gt;0\,\exists\delta&gt;0\,\forall x,x_0\in
     D:|x-x_0|&lt;\delta\implies|f(x)-f(x_0)|&lt;\epsilon.\]<br> [/latex]'

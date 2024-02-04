@@ -6,11 +6,12 @@ cards:
 
 - type: latex_plus
   id: 0  # (generated)
-  front: '[latex]%<br> Def.: Konvergenz von Folgen ($d\geq 2$)<br> [/latex]'
+  front: '[latex]%<br> Def.: Konvergenz von Folgen <br> [/latex]'
   back: '[latex]%<br> Eine Folge $(x_n)$ in $\mathbb{R}^d$ \emph{konvergiert} gegen
     ein $x\in\mathbb{R}^d$ falls $\lim_{n\to\infty}\lVert x_n-x\rVert=0$. Wir schreiben
     $x_n\overset{n\to\infty}{\longrightarrow}x$ oder $\lim_{n\to\infty}x_n=x$.<br>
     <br> [/latex]'
+
 
 
 - type: latex_plus
@@ -47,3 +48,10 @@ cards:
   back: '[latex]%<br> Sei $I\subseteq\mathbb{R}$ und $f:I\to\mathbb{R}$ stetig und
     streng monoton wachsend. Dann ist $f:I\to f(I)$ bijektiv und die Umkehrfunktion
     $f^{-1}:f(I)\to I$ ist ebenfalls stetig und streng monoton wachsend.<br> [/latex]'
+
+
+- type: latex_plus
+  id: 6  # (generated)
+  front: '[latex]%<br> Def.: Kettenregel Grenzwerte? <br>
+    [/latex]'
+  back: '[latex]%<br> Sei $\lim_{x \to a} f(x) = b$ und $g(x)$ stetig in $b$, so gilt $\lim_{x \to a} g(f(x)) = g(b) $<br> [/latex]'

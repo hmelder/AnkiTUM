@@ -9,6 +9,10 @@ cards:
   front: '[latex]%<br> Berechnen eines bestimmten Integrals mittels partieller Integration
     bzw. Substitution [HMiR]<br> [/latex]'
   back: "[latex]%<br> Man erhält das bestimmte Integral wie folgt:<br> \\[\\int_a^buv'=uv\\\
-    bigg\\rvert_a^b-\\int_a^bu'v\\quad\\text{bzw.}\\quad\\int_a^bf(g(x))g'(x)\\,dx=\\
-    int_{g(a)}^{g(b)}f(t)\\,dt.\\]<br> Auf dem Weg zur Bestimmung einer Stammfunktion
-    werden bereits die Ränder als Obergrenze bzw. Untergrenze eingesetzt.<br> [/latex]"
+    bigg\\rvert_a^b-\\int_a^bu'v<br> [/latex]"
+
+
+- type: latex_plus
+  id: 1  # (generated)
+  front: '[latex]%<br> Was erhält man wenn man $x = g(u)$ in einem integral substituiert?<br> [/latex]'
+  back: "[latex]%<br> \int_a^bf(x)\,dx=\int_{g(a)}^{g(b)}f(g(u))\cdot g'(u)\,du<br> [/latex]"

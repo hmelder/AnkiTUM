@@ -54,12 +54,7 @@ cards:
     f \\                      \end{pmatrix}.\]<br> \item \emph{Laplaceoperator}: Der
     Laplaceoperator $\Delta$ ordnet einem Skalarfeld $f:D\subseteq\mathbb{R}^n\to\mathbb{R}$
     ein Skalarfeld $\Delta f$ zu:<br> \[\Delta f=\sum_{i=1}^n\partial_i^2f=\partial_1f+\dots+\partial_n^2f.\]<br>
-    \item \emph{Divergenz}: Die Divergenz $\text{div}$ ordnet einem Vektorfeld $v=(v_1,\dots,v_n)^T:D\subseteq\mathbb{R}^n\to\mathbb{R}^n$
-    ein Skalarfeld $\text{div}(v)$ zu:<br> \[\text{div}(v)=\sum_{i=1}^n\partial_iv_i=\partial_1v_1+\dots+\partial_nv_n.\]<br>
-    \item \emph{Rotation}: Die Rotation $\text{rot}$ ordnet einem Vektorfeld $v=(,v_1,v_2,v_3)^T:D\subseteq\mathbb{R}^3\to\mathbb{R}^3$
-    ein Vektorfeld $\text{rot}(v)$ zu:<br> \[\text{rot}(v)=\begin{pmatrix}                          \partial_2v_3-\partial_3v_2
-    \\                          \partial_3v_1-\partial_1v_3 \\                          \partial_1v_2-\partial_2v_1
-    \\                      \end{pmatrix}.\]<br> \end{itemize}<br> [/latex]"'
+  \end{itemize}<br> [/latex]"'
 
 
 - type: latex_plus
@@ -69,11 +64,4 @@ cards:
     I$.<br> \begin{itemize}<br> \item Ist $f:I\to\mathbb{R}$ eine $m$-mal differenzierbare
     Funktion, so nennt man<br> \[T_{m,f,a}(x)=\sum_{k=0}^m\frac{f^{(k)}(a)}{k!}(x-a)^k\]<br>
     das \emph{$m$-te Taylorpolynom zu $f$} im \emph{Entwicklungspunkt $a$} mit dem
-    \emph{Restglied}<br> \[R_{m+1}(x)=f(x)-T_{m,f,a}(x).\]<br> \item Sind $f\in C^{m+1}(1)$
-    und $T_{m,f,a}(x)$ das $m$-te Taylorpolynom von $f$ in $a$, so hat das Restglied
-    $R_{m+1}(x)$ die zwei verschiedenen Darstellungen:<br> \[R_{m+1}(x)=\frac{f^{(m+1)}(\xi)}{(m+1)!}(x-a)^{m+1}=\frac{1}{m!}\int_a^x(x-t)^mf^{(m+1)}(t)\,dt\]<br>
-    mit einem $\xi$ zwischen $a$ und $x$.<br> \item Ist $f\in C^{\infty}(I)$, so nennt
-    man<br> \[T_{f,a}(x)=\sum_{k=0}^\infty\frac{f^{(k)}(a)}{k!}(x-a)^k\]<br> die \emph{Taylorreihe
-    von $f$ in $a$}.<br> \item Ist $f\in C^\infty(I)$ und $T_{f,a}(x)$ die Taylorreihe
-    von $f$ in $a$, so gilt mit dem Restglied $R_{m+1}(x)$<br> \[f(x)=T_{f,a}(x)\iff\lim_{m\to\infty}R_{m+1}(x)=0.\]<br>
-    \end{itemize}<br> [/latex]'
+    \emph{Restglied}<br> \[R_{m+1}(x)=f(x)-T_{m,f,a}(x).\]<br> [/latex]'

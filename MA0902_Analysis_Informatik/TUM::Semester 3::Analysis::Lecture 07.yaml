@@ -7,23 +7,27 @@ cards:
 - type: latex_plus
   id: 0  # (generated)
   front: '[latex]%<br> Konvergenz- und Divergenzkriterien [HMiR]<br> [/latex]'
-  back: '"[latex]%<br> Gegeben ist eine Reihe $\sum_{k=0}^\infty$.<br> \begin{itemize}<br>
-    \item Das \emph{Nullfolgenkriterium}: Die Reihe $\sum_{k=0}^\infty a_k$ divergiert,
-    falls $(a_k)_k$ keine Nullfolge ist.<br> \item Das \emph{Leibnitzkriterium}: Die
-    alternierende Reihe $\sum_{k=0}^\infty(-a)^ka_k$ konvergiert, falls $(a_k)_k$
-    eine monoton fallende Nullfolge ist (das impliziert $a_k\geq 0$). Für den Wert
-    $S$ der Reihe gilt die Abschätzung<br> \[\left|S-\sum_{k=0}^n(-1)^ka_k\right|\leq
-    a_{n+1}.\]<br> \item Das \emph{Majorantenkriterium}: Die Reihe $\sum_{k=0}^\infty
-    a_k$ konvergiert absolut, falls es eine \emph{konvergente Majorante} gibt, d.h.<br>
-    \[\exists\text{konvergente Reihe $\sum_{k=0}^\infty b_k$}:|a_k|\leq b_k\;\forall
-    k\geq N\in\mathbb{N}.\]<br> \item Das \emph{Minorantenkritierum}: Die Reihe $\sum_{k=0}^\infty
-    a_k$ divergiert, falls es eine \emph{divergente Minorante} gibt, d.h.<br> \[\exists\text{divergente
-    Reihe $\sum_{k=0}^\infty b_k$}:0\leq b_k\leq a_k\;\forall k\geq N\in\mathbb{N}.\]<br>
-    \item Das \emph{Quotientenkriterium}: Existiert $r=\lim_{k\to\infty}\left|\frac{a_{k+1}}{a_k}\right|$,
-    so gilt:<br> \[\text{Im Fall}\begin{cases*}                          r&lt;1 &amp;
-    konvergiert die Reihe absolut. \\                          r&gt;1 &amp; divergiert
-    die Reihe.          \\                          r=1 &amp; ist alles möglich.                      \end{cases*}\]<br>
-    \end{cases*}\]<br> \end{itemize}<br> [/latex]"'
+  back: '[latex]%<br> Gegeben ist eine Reihe $\sum_{k=0}^\infty$.<br> Das \emph{Nullfolgenkriterium}: Die Reihe $\sum_{k=0}^\infty a_k$ divergiert, falls $(a_k)_k$ keine Nullfolge ist.<br> 
+
+          Das \emph{Leibnitzkriterium}: Die alternierende Reihe $\sum_{k=0}^\infty(-a)^ka_k$ konvergiert, falls $(a_k)_k$ eine monoton fallende Nullfolge ist (das impliziert $a_k\geq 0$). Für den Wert $S$ der Reihe gilt die Abschätzung<br> $
+          \left|S-\sum_{k=0}^n(-1)^ka_k\right|\leq a_{n+1} $<br> 
+          
+          Das \emph{Majorantenkriterium}: Die Reihe $\sum_{k=0}^\infty a_k$ konvergiert absolut, falls es eine \emph{konvergente Majorante} gibt, d.h.<br> $\exists \text{konvergente Reihe $\sum_{k=0}^\infty b_k$}:$ <br>
+          
+          Das \emph{Minorantenkritierum}: Die Reihe $\sum_{k=0}^\infty a_k$ divergiert, falls es eine \emph{divergente Minorante} gibt, d.h.<br> $\exists\text{divergente Reihe $\sum_{k=0}^\infty b_k$}:0\leq b_k\leq a_k\;\forall k\geq N\in\mathbb{N}.$<br>
+          
+          Das \emph{Quotientenkriterium}: Existiert $r=\lim_{k\to\infty}\left|\frac{a_{k+1}}{a_k}\right|$, so gilt:<br> 
+          
+          $
+          \begin{cases*}                          
+          r&lt;1 &amp; konvergiert die Reihe absolut.  \\
+          r&gt;1 &amp; divergiert die Reihe.          \\  
+          r=1 &amp; ist alles möglich.                      
+          
+          \end{cases*}
+          $
+          
+          [/latex]'
 
 
 - type: latex_plus
