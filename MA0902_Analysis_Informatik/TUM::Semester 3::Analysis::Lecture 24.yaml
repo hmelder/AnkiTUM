@@ -35,14 +35,6 @@ cards:
 
 
 - type: latex_plus
-  id: 2  # (generated)
-  front: '[latex]%<br> Der Satz von Schwarz [HMiR]<br> [/latex]'
-  back: '[latex]%<br> Ist $f:D\subseteq\mathbb{R}^n\to\mathbb{R}$ ein Skalarfeld und
-    $f\in C^2(D)$, so gilt für alle $i,j=1,\dots,n$:<br> \[f_{x_ix_j}=f_{x_jx_i}.\]<br>
-    [/latex]'
-
-
-- type: latex_plus
   id: 3  # (generated)
   front: '[latex]%<br> Def.: Differentialoperatoren -- Gradient, Laplace, Divergenz
     und Rotation [HMiR]<br> [/latex]'
