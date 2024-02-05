@@ -57,7 +57,7 @@ cards:
 - type: latex_plus
   id: 4  # (generated)
   front: 'Def.: injektiv, surjektiv, bijektiv'
-  back: |-
+  back: '
     [latex] Eine Funktion $ f: A \\to B $ ist injektiv, wenn für alle $ x_1, x_2 $ in der Definitionsmenge $ A $ gilt:
     $ f(x_1) = f(x_2) \\implies x_1 = x_2 $ 
 
@@ -68,4 +68,4 @@ cards:
     <br>
 
     Eine Funktion ist bijektiv wenn sie surjektiv und injektiv ist
-    [/latex]
+    [/latex] '

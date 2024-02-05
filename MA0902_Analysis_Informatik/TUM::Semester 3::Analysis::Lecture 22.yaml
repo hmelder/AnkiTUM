@@ -15,4 +15,4 @@ cards:
 - type: latex_plus
   id: 1  # (generated)
   front: '[latex]%<br> Was erhält man wenn man $x = g(u)$ in einem integral substituiert?<br> [/latex]'
-  back: "[latex]%<br> \int_a^bf(x)\,dx=\int_{g(a)}^{g(b)}f(g(u))\cdot g'(u)\,du<br> [/latex]"
+  back: "[latex]%<br> \\int_a^bf(x)\\,dx=\\int_{g(a)}^{g(b)}f(g(u))\\cdot g'(u)\\,du<br> [/latex]"
