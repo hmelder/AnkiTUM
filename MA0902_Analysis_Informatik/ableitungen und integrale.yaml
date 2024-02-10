@@ -55,7 +55,7 @@ cards:
 - type: basic
   id: 9  # (generated)
   front: '[$$]\int \ln(x) \, dx[/$$]'
-  0back: '[$$]x \ln(x) - x + C[/$$]'
+  back: '[$$]x \ln(x) - x + C[/$$]'
 
 - type: basic
   id: 10  # (generated)

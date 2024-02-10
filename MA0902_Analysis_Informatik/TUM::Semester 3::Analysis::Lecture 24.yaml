@@ -36,8 +36,7 @@ cards:
 
 - type: latex_plus
   id: 3  # (generated)
-  front: '[latex]%<br> Def.: Differentialoperatoren -- Gradient, Laplace, Divergenz
-    und Rotation [HMiR]<br> [/latex]'
+  front: '[latex]%<br> Def.: Differentialoperatoren -- Gradient, Laplace <br> [/latex]'
   back: '"[latex]%<br> In den folgenden Formeln sollen alle partiellen Ableitungen
     existieren und stetig sein:<br> \begin{itemize}<br> \item \emph{Gradient}: Der
     Gradient $\nabla$ ordnet einem Skalarfeld $f:D\subseteq\mathbb{R}^n\to\mathbb{R}$
