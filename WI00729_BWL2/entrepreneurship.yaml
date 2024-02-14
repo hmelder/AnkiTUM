@@ -1,5 +1,6 @@
 title: 'BWL2: Entrepreneurship (Teil 4)'
 author: nilsreichardt
+id: 1707938142
 
 cards:
 - type: markdown
@@ -18,19 +19,19 @@ cards:
   front: |
     Welcher höchste Abschluss ist am häufigsten bei U.S. unicorn founders vertreten?
 
-    a) Dropouts
-    b) Bachelor's
-    c) Master's (not MBA)
-    d) MBA
+    a) Dropouts\
+    b) Bachelor's\
+    c) Master's (not MBA)\
+    d) MBA\
     e) Doctoral
   back: |+
     Richtige Antwort: Bachelor's
 
     Sortiert nach Häufigkeit:
-    b) Bachelor's: 485
-    e) Doctoral: 286
-    c) Master's (not MBA): 259
-    d) MBA: 236
+    b) Bachelor's: 485\
+    e) Doctoral: 286\
+    c) Master's (not MBA): 259\
+    d) MBA: 236\
     a) Dropouts: 56
 
 - type: markdown
@@ -95,9 +96,9 @@ cards:
   front: |
     "In Zeiten guter wirtschaftlicher Entwicklung erwarten wir, dass es ____ Selbstständige gibt, weil ___
 
-    a) mehr; weil "necessity entrepreneurs" durch Wirtschaftswachstum aus ihren alten Job gedrängt werden
-    b) weniger; weil viele "opportunity entrepreneurs" die Chance nutzen, ihr Geschäft gewinnbringend zu verkaufen
-    c) weniger; viele "necessity entrepreneurs" wieder einen regulären Job eintreten
+    a) mehr; weil "necessity entrepreneurs" durch Wirtschaftswachstum aus ihren alten Job gedrängt werden\
+    b) weniger; weil viele "opportunity entrepreneurs" die Chance nutzen, ihr Geschäft gewinnbringend zu verkaufen\
+    c) weniger; viele "necessity entrepreneurs" wieder einen regulären Job eintreten\
     d) mehr; viele "opportunity entrepreneurs" die Zeit zum Gründen nutzen"
   back: |+
     c) is richtig.
@@ -109,10 +110,10 @@ cards:
   front: |
     "Eine Firma, die eine value proposition (Wertversprechen) einem customer segment (Kundensegment) erfolgreich vermarktet hat, hat nach Osterwalder was erreicht?
 
-    a) customer-value fit
-    b) product-market fit
-    c) problem-solution fit
-    d) value-proposition fit"
+    a) customer-value fit\
+    b) product-market fit\
+    c) problem-solution fit\
+    d) value-proposition fit\
   back: |+
     Richtige Antwort: b) product-market fit (auch PMF genannt)
 
@@ -123,10 +124,10 @@ cards:
   front: |
     Nach welchem der Prinzipien von Eric Ries' 'lean start-up' lässt sich laut Vorlesung ein business model canvas über Zeit aktualisieren und präzisieren?
 
-    a) design, build, test
-    b) perish, pivot, perservere
-    c) build, measure, learn
-    d) effectuate, communicate, update"
+    a) design, build, test\
+    b) perish, pivot, perservere\
+    c) build, measure, learn\
+    d) effectuate, communicate, update
   back: 'Richtige Antwort: c) build, measure, learn'
 
 - type: markdown
@@ -134,10 +135,10 @@ cards:
   front: |
     Laut dem Konzept 'effectuation' benutzen erfahrene Gründer*innen insbesondere was, um mit einem neuen Gründungsvorhaben zu beginnen?
 
-    a) Sie überlegen sich, wie viel Zeit sie maximal einsetzen wollen
-    b) Sie überlegen sich, wie viel sie maximal gewinnen können
-    c) Sie überlegen sich, wie viele Wettbewerber es schon gibt
-    d) Sie überlegen sich, wie viel sie maximal zu verlieren bereit sind"
+    a) Sie überlegen sich, wie viel Zeit sie maximal einsetzen wollen\
+    b) Sie überlegen sich, wie viel sie maximal gewinnen können\
+    c) Sie überlegen sich, wie viele Wettbewerber es schon gibt\
+    d) Sie überlegen sich, wie viel sie maximal zu verlieren bereit sind
   back: |+
     Richtige Antwort: d)
 
@@ -148,9 +149,9 @@ cards:
   front: |
     In den USA verdienen Gründer*innen und Selbständige im Schnitt _____ durchschnittliche Arbeitnehmer*innen
 
-    a) viel weniger (50%) als
-    b) ungefähr so viel wie
-    c) viel mehr (2x) als
+    a) viel weniger (50%) als\
+    b) ungefähr so viel wie\
+    c) viel mehr (2x) als\
     d) sehr viel mehr (10x) als
   back: 'Richtige Antwort: b) ungefähr so viel wie'
 
