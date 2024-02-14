@@ -3,17 +3,21 @@ author: nilsreichardt
 
 cards:
 - type: markdown
+  id: 0  # (generated)
   front: What is the definition of entrepreneurship according to Shane (2003)?
-  back: Activity involving the discovery, evaluation, and exploitation of opportunities to create something new by mobilizing resources.
+  back: Activity involving the discovery, evaluation, and exploitation of opportunities
+    to create something new by mobilizing resources.
 
 - type: markdown
+  id: 1  # (generated)
   front: What is essential for all employees in today's dynamic businesses?
   back: An entrepreneurial mindset
 
 - type: markdown
-  front: |+
+  id: 2  # (generated)
+  front: |
     Welcher höchste Abschluss ist am häufigsten bei U.S. unicorn founders vertreten?
-    
+
     a) Dropouts
     b) Bachelor's
     c) Master's (not MBA)
@@ -21,7 +25,7 @@ cards:
     e) Doctoral
   back: |+
     Richtige Antwort: Bachelor's
-    
+
     Sortiert nach Häufigkeit:
     b) Bachelor's: 485
     e) Doctoral: 286
@@ -30,82 +34,95 @@ cards:
     a) Dropouts: 56
 
 - type: markdown
+  id: 3  # (generated)
   front: What is the average age of people who founded the highest-growth startups?
   back: '45'
 
 - type: markdown
-  front: Bis zu welchem Alter steigt die Wahrscheinlichkeit ein extrem erfolgreiches Startup zu gründen?
-  back: Die Wahrscheinlichkeit ein extrem erfolgreiches Startup zu gründen, steigt mit dem Alter, jedoch nur bis zu den späten 50ern.
+  id: 4  # (generated)
+  front: Bis zu welchem Alter steigt die Wahrscheinlichkeit ein extrem erfolgreiches
+    Startup zu gründen?
+  back: Die Wahrscheinlichkeit ein extrem erfolgreiches Startup zu gründen, steigt
+    mit dem Alter, jedoch nur bis zu den späten 50ern.
 
 - type: markdown
+  id: 5  # (generated)
   front: Wie hoch die Failure Rate von Gründungen?
-  back: The latest number from the U.S. is 84% failure rate. Failures rates are faily similar across the industries.
+  back: The latest number from the U.S. is 84% failure rate. Failures rates are faily
+    similar across the industries.
 
 - type: markdown
-  front: "Nehmen Männer oder Frauen mehr 'dumme' Risiken?"
+  id: 6  # (generated)
+  front: Nehmen Männer oder Frauen mehr 'dumme' Risiken?
   back: Men are more likely to take stupid risk.
 
 - type: markdown
-  front: |+
+  id: 7  # (generated)
+  front: |
     - 'All you need is a good idea'
     - 'Entrepreneurs love risk'
     - 'You need/do not need a business plan'
-    
+
     Stimmen diese Aussagen?
   back: |+
     Nein.
-    
+
     - Stupid mistakes may be preventable
     - Often you only know by trying if a idea is good or not
-    
+
     Key conclusion:
     - Entrepreneurship should be managed as a discovery process
     - You cannot plan for the outcome, but you have control over inputs & process
 
 - type: markdown
-  front: |+
+  id: 8  # (generated)
+  front: |
     'Start-ups pay less, but entrepreneurs are richer'
-    
+
     Stimmt diese Aussage?"
   back: |+
     Mostly true.
-    
+
     Startup employees earn 17% less on average compared to employees in larger, successful companies (over a 10 years period).
 
 - type: markdown
+  id: 9  # (generated)
   front: "'Self-employed roughly make as much as the average employee' True oder False?"
   back: True.  US $48k average, $50k self-employed
 
 - type: markdown
-  front: |+
+  id: 10  # (generated)
+  front: |
     "In Zeiten guter wirtschaftlicher Entwicklung erwarten wir, dass es ____ Selbstständige gibt, weil ___
-    
+
     a) mehr; weil "necessity entrepreneurs" durch Wirtschaftswachstum aus ihren alten Job gedrängt werden
     b) weniger; weil viele "opportunity entrepreneurs" die Chance nutzen, ihr Geschäft gewinnbringend zu verkaufen
     c) weniger; viele "necessity entrepreneurs" wieder einen regulären Job eintreten
     d) mehr; viele "opportunity entrepreneurs" die Zeit zum Gründen nutzen"
   back: |+
     c) is richtig.
-    
+
     Necessity entrepreneurs wollten eigentlich nie selbständig sein und taten dies nur aus wirtschaftlichem Zwang. Bei Wirtschaftswachstum sehen wir normal mehr necessity entrepreneurs, die wieder eine reguläre Stelle antreten als opportunity entrepreneurs, die die neuen Chance ergreifen. Damit insgesamt: weniger entrepreneurship bei Wirtschaftswachstum.
 
 - type: markdown
-  front: |+
+  id: 11  # (generated)
+  front: |
     "Eine Firma, die eine value proposition (Wertversprechen) einem customer segment (Kundensegment) erfolgreich vermarktet hat, hat nach Osterwalder was erreicht?
-    
+
     a) customer-value fit
     b) product-market fit
     c) problem-solution fit
     d) value-proposition fit"
   back: |+
     Richtige Antwort: b) product-market fit (auch PMF genannt)
-    
+
     Problem-solution fit hieße, dass man auf dem Papier passende Kundensegmente und Wertversprechen gefundet hat. Das in der echten Welt validiert zu haben, ist product-market fit'
 
 - type: markdown
-  front: |+
+  id: 12  # (generated)
+  front: |
     Nach welchem der Prinzipien von Eric Ries' 'lean start-up' lässt sich laut Vorlesung ein business model canvas über Zeit aktualisieren und präzisieren?
-    
+
     a) design, build, test
     b) perish, pivot, perservere
     c) build, measure, learn
@@ -113,22 +130,24 @@ cards:
   back: 'Richtige Antwort: c) build, measure, learn'
 
 - type: markdown
-  front: |+
+  id: 13  # (generated)
+  front: |
     Laut dem Konzept 'effectuation' benutzen erfahrene Gründer*innen insbesondere was, um mit einem neuen Gründungsvorhaben zu beginnen?
-    
+
     a) Sie überlegen sich, wie viel Zeit sie maximal einsetzen wollen
     b) Sie überlegen sich, wie viel sie maximal gewinnen können
     c) Sie überlegen sich, wie viele Wettbewerber es schon gibt
     d) Sie überlegen sich, wie viel sie maximal zu verlieren bereit sind"
   back: |+
     Richtige Antwort: d)
-    
+
     Sie überlegen sich, wie viel sie maximal zu verlieren bereit sind  Begründung von ChatGPT:  Das Konzept "Effectuation" beschreibt einen Ansatz, den erfahrene Unternehmer*innen oft bei der Gründung neuer Unternehmen verfolgen. Nach diesem Ansatz wählen sie Strategien basierend auf den Ressourcen und Möglichkeiten, die ihnen aktuell zur Verfügung stehen, statt auf traditionellen Marktanalysen oder Prognosen zu basieren. Die richtige Antwort auf Ihre Frage im Kontext des Effectuation-Ansatzes ist:  d) Sie überlegen sich, wie viel sie maximal zu verlieren bereit sind.  Dieser Punkt ist zentral in der Effectuation-Logik und wird als "leistbares Verlustprinzip" bezeichnet. Es bedeutet, dass Entscheidungen auf der Basis getroffen werden, wie viel die Gründer*innen bereit sind zu verlieren oder zu riskieren, statt auf den potenziellen Gewinn zu fokussieren. Dieser Ansatz fördert ein risikobewusstes und flexibles Vorgehen, bei dem Unternehmer*innen ihre Ziele und Pläne anpassen, basierend darauf, was sie sich leisten können zu verlieren, und nicht darauf, was sie in einem best-case-Szenario gewinnen könnten.
 
 - type: markdown
-  front: |+
+  id: 14  # (generated)
+  front: |
     In den USA verdienen Gründer*innen und Selbständige im Schnitt _____ durchschnittliche Arbeitnehmer*innen
-    
+
     a) viel weniger (50%) als
     b) ungefähr so viel wie
     c) viel mehr (2x) als
@@ -136,14 +155,15 @@ cards:
   back: 'Richtige Antwort: b) ungefähr so viel wie'
 
 - type: markdown
-  front: |+
+  id: 15  # (generated)
+  front: |
     - "Entrepreneurs are smarter, more creative, etc."
     - "Entrepreneurs are “born” not “made”"
-    
+
     Stimmen diese Aussagen?"
   back: |
     Yes and no.
-    
+
     • They are more open to experience, but they are also more organized. Both effects, however, are rather small population-average effects
     • With respect to being “born” - 2nd generation entrepreneurs often cannot sustain the first generations success (in particular the sons).
     • But: entrepreneurship indeed seems to be genetic to some degree
@@ -151,50 +171,80 @@ cards:
       - Also: education/socialization impacts fear of failure
 
 - type: markdown
+  id: 16  # (generated)
   front: Werden mehr Startups von Teams oder Solo-Gründern gegründet?
   back: More than 2/3 of start-ups (in Germany) are founded by teams
 
 - type: markdown
+  id: 17  # (generated)
   front: "'Entrepreneurs are happier' True/False?"
-  back: Yes and no. While self-reported happiness goes up (lots of studies show this), both entrepreneurs and their spouses are more likely to get prescription medicines for sedatives or hypnotics, suggesting higher stress levels
+  back: Yes and no. While self-reported happiness goes up (lots of studies show this),
+    both entrepreneurs and their spouses are more likely to get prescription medicines
+    for sedatives or hypnotics, suggesting higher stress levels
 
 - type: markdown
+  id: 18  # (generated)
   front: "'Entrepreneurs are motivated by the money' True or False?"
-  back: So so - some certainly are. But key driver is often the sheer wish to be self-employed (independence + achievement)
+  back: So so - some certainly are. But key driver is often the sheer wish to be self-employed
+    (independence + achievement)
 
 - type: markdown
-  front: Welche Missverständnisse gibt es in Bezug auf Belastbarkeit und Ausdauer im Zusammenhang mit dem Erfolg von Unternehmensgründungen?
-  back: Misconceptions about resilience and perseverance may overlook the role of luck, timing, market conditions, and external support systems, attributing success solely to individual qualities, which can downplay the systemic challenges and external factors influencing start-up outcomes.
+  id: 19  # (generated)
+  front: Welche Missverständnisse gibt es in Bezug auf Belastbarkeit und Ausdauer
+    im Zusammenhang mit dem Erfolg von Unternehmensgründungen?
+  back: Misconceptions about resilience and perseverance may overlook the role of
+    luck, timing, market conditions, and external support systems, attributing success
+    solely to individual qualities, which can downplay the systemic challenges and
+    external factors influencing start-up outcomes.
 
 - type: markdown
+  id: 20  # (generated)
   front: How do personal backgrounds and experiences influence the culture of start-ups?
-  back: Personal backgrounds and experiences of founders influence the culture of start-ups through imprinting, where founders replicate familiar practices, values, and organizational structures, shaping the company's culture based on their individual histories and perspectives.
+  back: Personal backgrounds and experiences of founders influence the culture of
+    start-ups through imprinting, where founders replicate familiar practices, values,
+    and organizational structures, shaping the company's culture based on their individual
+    histories and perspectives.
 
 - type: markdown
+  id: 21  # (generated)
   front: How do large firms try to emulate start-ups in dealing with uncertainty?
-  back: Large firms try to emulate start-ups by using small units with agile and flat organization design approaches, and focusing more on action rather than planning.
+  back: Large firms try to emulate start-ups by using small units with agile and flat
+    organization design approaches, and focusing more on action rather than planning.
 
 - type: markdown
+  id: 22  # (generated)
   front: You need lots of money to become an entrepreneur. True or false?
   back: No. Most ventures start with less than $5k
 
 - type: markdown
+  id: 23  # (generated)
   front: "'You need someone with a business degree at the helm' True or false?"
-  back: No. What you need is a clear vision and good execution (Business degrees may but do not have to teach this disproportionally)
+  back: No. What you need is a clear vision and good execution (Business degrees may
+    but do not have to teach this disproportionally)
 
 - type: markdown
+  id: 24  # (generated)
   front: "'Investors are biased' True or false?"
-  back: "True and false. They discriminate against womenThey do not discriminate against prior failure if learning is apparentWhat seems 'biased' is their reputation: they are largely betting on luck and their reputation"
+  back: "True and false. They discriminate against womenThey do not discriminate against
+    prior failure if learning is apparentWhat seems 'biased' is their reputation:
+    they are largely betting on luck and their reputation"
 
 - type: markdown
+  id: 25  # (generated)
   front: "'Germany is bad for entrepreneurship' True or false?"
-  back: So-so. It is actually tremendous to start-up a company, in particular for university students Germany is not as good at scale up (VC funding, public procurement, etc.)
+  back: So-so. It is actually tremendous to start-up a company, in particular for
+    university students Germany is not as good at scale up (VC funding, public procurement,
+    etc.)
 
 - type: markdown
+  id: 26  # (generated)
   front: "'We all need to go to the Valley' True or False?"
-  back: Probably more false than true. Entrepreneurs survive longer and generate greater profits, cash flows, when located in regions in which the founders have lived longer
+  back: Probably more false than true. Entrepreneurs survive longer and generate greater
+    profits, cash flows, when located in regions in which the founders have lived
+    longer
 
 - type: markdown
+  id: 27  # (generated)
   front: Was sind die Broad personality factors - The "Big Five"?
   back: |+
     Openness (curious, creative, artistic)
@@ -204,32 +254,49 @@ cards:
     Neuroticism (even-tempered, hardy, self-satisfied)
 
 - type: markdown
+  id: 28  # (generated)
   front: Can you describe the purpose of a business plan?
-  back: A business plan serves as a comprehensive document outlining the internal and external elements of a new venture, integrating functional plans, detailing the venture's strategy, and acting as a roadmap for the next 3-5 years.
+  back: A business plan serves as a comprehensive document outlining the internal
+    and external elements of a new venture, integrating functional plans, detailing
+    the venture's strategy, and acting as a roadmap for the next 3-5 years.
 
 - type: markdown
+  id: 29  # (generated)
   front: What is a value proposition?
-  back: Is a unique statement about the value that a company consistently delivers to its customers
+  back: Is a unique statement about the value that a company consistently delivers
+    to its customers
 
 - type: markdown
+  id: 30  # (generated)
   front: Welche Bestandteile hat das Business Model Canvas?
-  back: Value proposition Customers segments Customer Relationship Key Channels Revenue Streams Cost Structure Key Resources Key Activities Key Partners
+  back: Value proposition Customers segments Customer Relationship Key Channels Revenue
+    Streams Cost Structure Key Resources Key Activities Key Partners
 
 - type: markdown
+  id: 31  # (generated)
   front: Was ist ein Business Model Canvas? Beschreibe in einem Satz.
-  back: Ein Business Model Canvas ist ein strategisches Management- und Lean-Startup-Template zur Entwicklung neuer oder Dokumentation bestehender Geschäftsmodelle auf einer visuellen Chart mit Elementen wie Wertangeboten, Kundenbeziehungen, Infrastruktur und Finanzströmen.
+  back: Ein Business Model Canvas ist ein strategisches Management- und Lean-Startup-Template
+    zur Entwicklung neuer oder Dokumentation bestehender Geschäftsmodelle auf einer
+    visuellen Chart mit Elementen wie Wertangeboten, Kundenbeziehungen, Infrastruktur
+    und Finanzströmen.
 
 - type: markdown
+  id: 32  # (generated)
   front: Mit welchen Teil aus dem Business Model Canvas sollte man anfangen?
   back: |+
     Aussage vom Prof: Value Proposition oder Customer Segments
     ChatGPT: Beim Erstellen eines Business Model Canvas beginnt man typischerweise mit dem Wertangebot (Value Proposition), da dies den Kern eines jeden Geschäftsmodells darstellt und beschreibt, welchen einzigartigen Wert das Unternehmen seinen Kunden bietet. Dieser Schritt hilft, die Bedürfnisse und Probleme der Zielkunden zu verstehen und zu definieren, wie das Produkt oder die Dienstleistung diese adressiert.
 
 - type: markdown
+  id: 33  # (generated)
   front: What is a Business model?
-  back: "A concise overview of how you will make money Value creation: who are your customers? What do they need? What do you need to create that offer?Value appropriation: why would they buy from you (and not others)? How do they buy from you?Business model as living document to direct hypothesis testing"
+  back: 'A concise overview of how you will make money Value creation: who are your
+    customers? What do they need? What do you need to create that offer?Value appropriation:
+    why would they buy from you (and not others)? How do they buy from you?Business
+    model as living document to direct hypothesis testing'
 
 - type: markdown
+  id: 34  # (generated)
   front: A business plan is ___ (name attributes from the slides)
   back: |+
     - The most important document the entrepreneur will create early in the life in the venture
@@ -239,50 +306,73 @@ cards:
     - NOT carved in stone
 
 - type: markdown
+  id: 35  # (generated)
   front: What is a MVP?
-  back: Minimum Viable Product  A core component of leaving Startup methodology is the Build-Measure-Learn feedback loop. The first step is figuring out the problem that needs to be sold and then, developing a Minimum Viable Product to begin the process of learning as quickly as possible.
+  back: Minimum Viable Product  A core component of leaving Startup methodology is
+    the Build-Measure-Learn feedback loop. The first step is figuring out the problem
+    that needs to be sold and then, developing a Minimum Viable Product to begin the
+    process of learning as quickly as possible.
 
 - type: markdown
+  id: 36  # (generated)
   front: In hypothesis-driven entrepreneurship, what is the goal of experimentation?
   back: To validate hypotheses, learn quickly, and adapt the business model.
 
 - type: markdown
+  id: 37  # (generated)
   front: When might a founder decide to leave the firm during its growth phase?
-  back: When the company requires different skills, leadership, or a new direction that the founder may not align with.
+  back: When the company requires different skills, leadership, or a new direction
+    that the founder may not align with.
 
 - type: markdown
-  front: What are some key principles involved in adapting and evolving a business idea?
+  id: 38  # (generated)
+  front: What are some key principles involved in adapting and evolving a business
+    idea?
   back: Persevere, Pivot, or Perish based on hypotheses and feedback.
 
 - type: markdown
+  id: 39  # (generated)
   front: When is pivoting a business strategy necessary?
-  back: When hypotheses are disproven or feedback indicates the need for strategic changes.
+  back: When hypotheses are disproven or feedback indicates the need for strategic
+    changes.
 
 - type: markdown
+  id: 40  # (generated)
   front: Was ist ein Pivot?
-  back: Ein Pivot ist eine strategische Änderung in der Geschäftsstrategie oder im Geschäftsmodell eines Startups oder etablierten Unternehmens, bei der signifikante Anpassungen vorgenommen werden, um auf Marktrückmeldungen zu reagieren, sich besser an Kundenbedürfnisse anzupassen oder von neuen Möglichkeiten zu profitieren. Dies kann Änderungen in Produktangeboten, Zielmärkten, Technologieplattformen oder Betriebsmodellen umfassen und wird oft durchgeführt, um das Wachstum zu beschleunigen, die Rentabilität zu verbessern oder das Überleben des Unternehmens zu sichern.
+  back: Ein Pivot ist eine strategische Änderung in der Geschäftsstrategie oder im
+    Geschäftsmodell eines Startups oder etablierten Unternehmens, bei der signifikante
+    Anpassungen vorgenommen werden, um auf Marktrückmeldungen zu reagieren, sich besser
+    an Kundenbedürfnisse anzupassen oder von neuen Möglichkeiten zu profitieren. Dies
+    kann Änderungen in Produktangeboten, Zielmärkten, Technologieplattformen oder
+    Betriebsmodellen umfassen und wird oft durchgeführt, um das Wachstum zu beschleunigen,
+    die Rentabilität zu verbessern oder das Überleben des Unternehmens zu sichern.
 
 - type: markdown
+  id: 41  # (generated)
   front: Why is it risky to build an entire business before testing hypotheses?
-  back: Because it can lead to significant resource wastage if the hypotheses turn out to be incorrect.
+  back: Because it can lead to significant resource wastage if the hypotheses turn
+    out to be incorrect.
 
 - type: markdown
+  id: 42  # (generated)
   front: How can failing fast be considered a form of success in entrepreneurship?
   back: It minimizes resource wastage and accelerates learning for future opportunities.
 
 - type: markdown
+  id: 43  # (generated)
   front: Was ist der Teil Customer Segments aus dem Business Model Canvas?
   back: |+
     Beschreibt die verschiedenen Gruppen von Personen oder Organisationen, die das Unternehmen zu erreichen und zu bedienen beabsichtigt.
-    
+
     Leitfragen:
     - For whom are we creating value?Who are our most important customers?
 
 - type: markdown
+  id: 44  # (generated)
   front: Was ist der Teil Value Proposition aus dem Business Model Canvas?
   back: |+
     Definiert das Problem oder Bedürfnis, das für die Kunden gelöst wird, und den einzigartigen Wert, den das Produkt oder die Dienstleistung bietet.
-    
+
     Leitfragen:
     - What value do we deliver to the customers?
     - Which one of our customer's problems are we helping to solve?
@@ -290,30 +380,33 @@ cards:
     - What bundles of products and services we are offering to each customer segment?
 
 - type: markdown
+  id: 45  # (generated)
   front: Was ist der Teil Channels aus dem Business Model Canvas?
   back: |+
     Zeigt auf, wie ein Unternehmen mit seinen Kundensegmenten kommuniziert und seine Wertangebote übermittelt.
-    
+
     Leitfragen:
     - Through which channels do our customer segments want to be reached?
     - How are out channels integrated?
     - How are we integrating them with customer routines?
 
 - type: markdown
+  id: 46  # (generated)
   front: Was ist der Teil Customer Relationships aus dem Business Model Canvas?
   back: |+
     Definiert die Art der Beziehung, die das Unternehmen mit jedem Kundensegment aufbaut und pflegt, um Kundenbindung zu erzeugen.
-    
+
     Leitfragen:
     - What type of relationships does each of our customer segments expect us to establish and maintain with them?
     - How costly are they?
     - How are they integrated with the rest of our business model?
 
 - type: markdown
+  id: 47  # (generated)
   front: Was ist der Teil Revenue Streams aus dem Business Model Canvas?
   back: |+
     Identifiziert, wie das Unternehmen Geld verdient, welche Preismodelle und Zahlungsmechanismen es gibt.
-    
+
     Leitfragen:
     - For what value are our customers really willing to pay?
     - How would they prefer to pay?
@@ -321,35 +414,39 @@ cards:
     - Subscription model? One-time payment?
 
 - type: markdown
+  id: 48  # (generated)
   front: Was ist der Teil Cost Structure aus dem Business Model Canvas?
   back: |+
     Skizziert die wesentlichen Kosten, die bei der Ausführung des Geschäftsmodells entstehen, und wie diese Kosten mit den Schlüsselaktivitäten und -ressourcen verbunden sind.
-    
+
     Leitfragen:
     - What are the most important costs inherent in our business model?
     Which key resources are most expensive?
     Which key activities are most expensive?
 
 - type: markdown
+  id: 49  # (generated)
   front: Was ist der Teil Key Partnerships aus dem Business Model Canvas?
   back: |+
     Identifiziert die Netzwerke von Lieferanten und Partnern, die notwendig sind, um das Geschäftsmodell zu unterstützen und zu ermöglichen.  Leifragen: Who are our key partners?Who are our key suppliers?Which key resources are we acquiring from partners?Which key activities do partners perform?
 
 - type: markdown
+  id: 50  # (generated)
   front: Was ist der Teil Key Activities aus dem Business Model Canvas?
   back: |+
     Benennt die wichtigsten Tätigkeiten, die das Unternehmen ausführen muss, um seine Geschäftsmodell erfolgreich umzusetzen.
-    
+
     Leitfragen:
     - What key activities do our value propositions require?
     - Our distribution channels?Customer relationships?
     - Revenue streams?
 
 - type: markdown
+  id: 51  # (generated)
   front: Was ist der Teil Key Resources aus dem Business Model Canvas?
   back: |+
     Beschreibt die wichtigsten Vermögenswerte, die erforderlich sind, um das Geschäftsmodell zu betreiben und die Wertangebote zu erstellen.
-    
+
     Leitfragen:
     - What key resources do our value propositions require?
     - Our distribution channels?
@@ -357,7 +454,8 @@ cards:
     - Revenue streams?
 
 - type: markdown
-  front: |+
+  id: 52  # (generated)
+  front: |
     "To provide an online shopping platform that offers and quickly delivers any item, to any person, anywhere, at any time."
     Zu welchen Teil des Business Model Canvas könnte man dies zu ordnen?"
   back: Value Propositions
