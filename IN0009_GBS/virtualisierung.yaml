@@ -2,111 +2,129 @@ title: 'GBS: Kapitel 9: Virtualisierung'
 author: AnkiTUM
 id: 39934577650
 cards:
-  - type: markdown
-    front: Welche anforderungen gibt es an VMs?
-    back: |+
-      - Equivalenz: BS und andere anwendungen funktionieren ohne Änderungen
-      - Resource Control: Hypervisor in kontrolle über ressourcen
-      - Isolation: VMs voneinander isoliert
-      - Effizienz: Möglichst niedriger overhead
-      
-
-  - type: markdown
-    front: Was ist ein VMM / Hypervisor
-    back: |+
-      - Virtual Machine Monitor
-      - Überwacht VM(s)
-      - Hat kontrolle über die Ressourcen der VMs 
-      
-
-  - type: cloze
-    front: Bei {{c1::System}} VMs implementiert der Hypervisor eine virtuelle {{c1::ISA}}
+- type: markdown
+  id: 0  # (generated)
+  front: Welche anforderungen gibt es an VMs?
+  back: |+
+    - Equivalenz: BS und andere anwendungen funktionieren ohne Änderungen
+    - Resource Control: Hypervisor in kontrolle über ressourcen
+    - Isolation: VMs voneinander isoliert
+    - Effizienz: Möglichst niedriger overhead
 
 
-  - type: cloze
-    front: Die VM ist für das Gast BS {{c1::transparent}}. Aus der sicht des Gast BS hat es {{c1::vollständige Kontrolle}} über die Hardware
+- type: markdown
+  id: 1  # (generated)
+  front: Was ist ein VMM / Hypervisor
+  back: |+
+    - Virtual Machine Monitor
+    - Überwacht VM(s)
+    - Hat kontrolle über die Ressourcen der VMs 
 
 
-  - type: markdown
-    front: Welche Gründe gibt es für System VMs?
-    back: |+
-      - Emulation
-      - Isolation
-      - Sicherheit (Der hypervisor braucht keine hohen Priviliegien)
-      - flexiblere Ressourcennutzung
-      
-
-  - type: markdown
-    front: Was ist Binary translation?
-    back: |+
-      - Hypervisor interpretiert/emuliert Binärcode der Gast VM
-      - Sehr komplex, overhead durch software
-      - Gast BS kann unmodifiziert ausgeführt werden
-      
-
-  - type: markdown
-    front: Was ist Hardware unterstützte Virtualisierung?
-    back: |+
-      - Virtualization extensions: Intel VT-x, AMD-v, ARM
-      - Sehr effizientes implementieren von VMs
-      - Nicht auf allen Geräten unterstützt
-      
-
-  - type: markdown
-    front: Was ist der Unterschied zwischen den System/Kernel mode und user moder der **CPU**?
-    back: |+
-      - Im user mode sind einige Instruktionen nicht erlaubt (insb. IO)
-      - Der Kernel mode sollte möglichst nur vom BS Kernel ausgeführt werden
-      - Typ 1 Hypervisors werden oft im Kernel mode ausgeführt
-      
-
-  - type: markdown
-    front: Welche drei Instruktionsklassen gibt es?
-    back: |+
-      - Privileged Instructions (cpu System mode)
-      - Sensitive Instructions (Modifizieren Systemkonfiguration oder verhalten sich in user mode/system mode unterschiedlich)
-      - Innocuous Instructions (Nicht privilegiert)
-      
-
-  - type: markdown
-    front: Was versteht man unter "Trap-and-emulate"?
-    back: |+
-      - Hypervisor definiert bitmap an zugelassenen Instruktionen
-      - Ausführung von nicht zugelassener Instruktion führt zu Trap
-      - Hypervisor kann nach Trap die Instruktion emulieren
+- type: cloze
+  id: 2    # (generated)
+  front: Bei {{c1::System}} VMs implementiert der Hypervisor eine virtuelle {{c1::ISA}}
 
 
-  - type: markdown
-    front: Was sind VTs in CPUs und was gab es vor deren Einführung?
-    back: |+
-      - Virtualisierungsechnologien -> CPU erweiterungen
-      - Vorher: Dynamischen Umschreiben von Instruktionen
-      - Binary Translation, Trap and emulate
+- type: cloze
+  id: 3    # (generated)
+  front: Die VM ist für das Gast BS {{c1::transparent}}. Aus der sicht des Gast BS
+    hat es {{c1::vollständige Kontrolle}} über die Hardware
 
 
-  - type: cloze
-    front: |
-      Hypervisor teilt den {{c1::physischen Speicher}} zwischen VMs auf, 
-      da sonst mehrere BS um diesen {{c1::konkurrieren}}
-      
-
-  - type: markdown
-    front: Was ist der Unterschied zwischen Typ 1 und Typ 2 Hypervisors?
-    back: |+
-      - Typ 1: Wird direkt auf Hardware ausgeführt 
-      - Typ 2: Wird auf host BS ausgeführt (z.b. KVM, Virtualbox) 
-
-  - type: markdown
-    front: Was ist paravirtualisierung?
-    back: |+
-      - Virtualisierung eines Softwareinterfaces, welches der 
+- type: markdown
+  id: 4  # (generated)
+  front: Welche Gründe gibt es für System VMs?
+  back: |+
+    - Emulation
+    - Isolation
+    - Sicherheit (Der hypervisor braucht keine hohen Priviliegien)
+    - flexiblere Ressourcennutzung
 
 
-  - type: markdown
-    front:
-    back: |+
+- type: markdown
+  id: 5  # (generated)
+  front: Was ist Binary translation?
+  back: |+
+    - Hypervisor interpretiert/emuliert Binärcode der Gast VM
+    - Sehr komplex, overhead durch software
+    - Gast BS kann unmodifiziert ausgeführt werden
 
 
-  - type: markdown
-    front:
-    back: |+
+- type: markdown
+  id: 6  # (generated)
+  front: Was ist Hardware unterstützte Virtualisierung?
+  back: |+
+    - Virtualization extensions: Intel VT-x, AMD-v, ARM
+    - Sehr effizientes implementieren von VMs
+    - Nicht auf allen Geräten unterstützt
+
+
+- type: markdown
+  id: 7  # (generated)
+  front: Was ist der Unterschied zwischen den System/Kernel mode und user moder der
+    **CPU**?
+  back: |+
+    - Im user mode sind einige Instruktionen nicht erlaubt (insb. IO)
+    - Der Kernel mode sollte möglichst nur vom BS Kernel ausgeführt werden
+    - Typ 1 Hypervisors werden oft im Kernel mode ausgeführt
+
+
+- type: markdown
+  id: 8  # (generated)
+  front: Welche drei Instruktionsklassen gibt es?
+  back: |+
+    - Privileged Instructions (cpu System mode)
+    - Sensitive Instructions (Modifizieren Systemkonfiguration oder verhalten sich in user mode/system mode unterschiedlich)
+    - Innocuous Instructions (Nicht privilegiert)
+
+
+- type: markdown
+  id: 9  # (generated)
+  front: Was versteht man unter "Trap-and-emulate"?
+  back: |+
+    - Hypervisor definiert bitmap an zugelassenen Instruktionen
+    - Ausführung von nicht zugelassener Instruktion führt zu Trap
+    - Hypervisor kann nach Trap die Instruktion emulieren
+
+
+- type: markdown
+  id: 10  # (generated)
+  front: Was sind VTs in CPUs und was gab es vor deren Einführung?
+  back: |+
+    - Virtualisierungsechnologien -> CPU erweiterungen
+    - Vorher: Dynamischen Umschreiben von Instruktionen
+    - Binary Translation, Trap and emulate
+
+
+- type: cloze
+  id: 11 # (generated)
+  front: |
+    Hypervisor teilt den {{c1::physischen Speicher}} zwischen VMs auf, 
+    da sonst mehrere BS um diesen {{c1::konkurrieren}}
+
+
+- type: markdown
+  id: 12  # (generated)
+  front: Was ist der Unterschied zwischen Typ 1 und Typ 2 Hypervisors?
+  back: |+
+    - Typ 1: Wird direkt auf Hardware ausgeführt 
+    - Typ 2: Wird auf host BS ausgeführt (z.b. KVM, Virtualbox) 
+
+- type: markdown
+  id: 13  # (generated)
+  front: Was ist paravirtualisierung?
+  back: |+
+    - Virtualisierung eines Softwareinterfaces, welches der 
+
+
+- type: markdown
+  id: 14  # (generated)
+  front:
+  back: |2+
+
+
+- type: markdown
+  id: 15  # (generated)
+  front:
+  back: |
