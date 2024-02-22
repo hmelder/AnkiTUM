@@ -945,3 +945,17 @@ cards:
       In dieser Betriebsart werden Transaktionen, oft in Datenbanken, verarbeitet,
       wobei die Integrität der Daten trotz gleichzeitiger Zugriffe mehrerer Benutzer
       oder Systeme gewährleistet werden muss.
+
+- type: md_basic
+  id: 121  # (generated)
+  front: Nenne den Interval von validen *niceness* Werten zur Prioritisierung von Processen.
+  back: |+
+    Der *niceness* Wert kann zwischen -20 (inkl.) und 19 (inkl.) liegen.
+
+- type: md_basic
+  id: 122  # (generated)
+  front: Gegeben ist ein Process mit *niceness* Wert 10 und ein anderer mit *niceness*
+    Wert 0. Welcher der beiden Prozesse hat eine höhere Priorität?
+  back: |+
+    Generell gilt: Je niedriger der *niceness* Wert, desto höher die Priorität.
+    Somit hat der Prozess mit *niceness* Wert 0 eine höhere Priorität.
