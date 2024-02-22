@@ -960,3 +960,26 @@ cards:
   back: |-
     Generell gilt: Je niedriger der *niceness* Wert, desto höher die Priorität.
     Somit hat der Prozess mit *niceness* Wert 0 eine höhere Priorität.
+
+- type: md_basic
+  front: Was ist das Zeitquantum des CFS Schedulers?
+  back: |+
+    Es existiert kein festes Zeitquantum. Stattdessen wird dynamisch vor jeder Ausführung
+    ein Quantum bzw. ein Time Slice TS berechnet.
+
+    Hier wird die Anzahl aller Prozesse, als auch die Prioritäten *aller aktuell
+    aktiven* Prozesse berücksichtigt.
+
+- type: md_basic
+  front: Was ist die Target Latency (TL) des CFS Schedulers?
+  back: |+
+    Die TL stellt ein Intervall dar, in dem alle Prozesse mindestens einmal die CPU
+    bekommen sollen.
+
+- type: md_basic
+  front: Warum wird eine *virtual runtime* (vt) verwendet?
+  back: |+
+    Die virtual runtime ist eine Kombination der tatsächlichen Laufzeit eines Prozesses mit
+    der Gewichtung des Prozesses.
+
+    Sie wird verwendet, um die Fairness des Schedulers zu gewährleisten.
