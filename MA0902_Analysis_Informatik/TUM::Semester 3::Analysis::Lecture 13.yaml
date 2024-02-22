@@ -13,7 +13,6 @@ cards:
     <br> [/latex]'
 
 
-
 - type: latex_plus
   id: 2  # (generated)
   front: '[latex]%<br> Def.: Kompakte Mengen ($d \geq 2$)<br> [/latex]'
