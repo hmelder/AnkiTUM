@@ -962,6 +962,7 @@ cards:
     Somit hat der Prozess mit *niceness* Wert 0 eine höhere Priorität.
 
 - type: md_basic
+  id: 123  # (generated)
   front: Was ist das Zeitquantum des CFS Schedulers?
   back: |+
     Es existiert kein festes Zeitquantum. Stattdessen wird dynamisch vor jeder Ausführung
@@ -971,14 +972,16 @@ cards:
     aktiven* Prozesse berücksichtigt.
 
 - type: md_basic
+  id: 124  # (generated)
   front: Was ist die Target Latency (TL) des CFS Schedulers?
   back: |+
     Die TL stellt ein Intervall dar, in dem alle Prozesse mindestens einmal die CPU
     bekommen sollen.
 
 - type: md_basic
+  id: 125  # (generated)
   front: Warum wird eine *virtual runtime* (vt) verwendet?
-  back: |+
+  back: |
     Die virtual runtime ist eine Kombination der tatsächlichen Laufzeit eines Prozesses mit
     der Gewichtung des Prozesses.
 
