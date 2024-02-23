@@ -140,3 +140,9 @@ cards:
   back: |
     1. Kapazitätseinschränkung
     2. Initialbelegung der Stelle (Semaphore)
+
+- type: md_basic
+  front: Ist das zu einem Erreichbarkeitsgraphen zugehörige Petrinetz eindeutig?
+  back: |+
+    - Nein, es können Transitionen hinzugefügt werden, die niemals schaltbereit sind und folglich nicht im Erreichbarkeitsgraphen auftauchen.
+    - Kapazitäten sind nicht eindeutig.
