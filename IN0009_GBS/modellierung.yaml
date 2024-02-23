@@ -142,7 +142,8 @@ cards:
     2. Initialbelegung der Stelle (Semaphore)
 
 - type: md_basic
+  id: 17  # (generated)
   front: Ist das zu einem Erreichbarkeitsgraphen zugehörige Petrinetz eindeutig?
-  back: |+
+  back: |-
     - Nein, es können Transitionen hinzugefügt werden, die niemals schaltbereit sind und folglich nicht im Erreichbarkeitsgraphen auftauchen.
     - Kapazitäten sind nicht eindeutig.
