@@ -277,13 +277,16 @@ cards:
     - Puffer für Datenblöcke
 
 - type: md_basic
-  front: Kann Hugo den Ordner testdir lesen? `drw------- 2 hugo hugo 60 Feb 24 18:31 testdir`
+  id: 33  # (generated)
+  front: Kann Hugo den Ordner testdir lesen? `drw------- 2 hugo hugo 60 Feb 24 18:31
+    testdir`
   back: |
     Er kann die Dateinamen auslesen, aber nicht in den Ordner wechseln, oder
     Information über die Dateien erhalten. Für die letzteren Operationen werden
     execute (x) Rechte benötigt.
 
 - type: md_basic
+  id: 34  # (generated)
   front: Warum haben die meisten Ordner auf Unix Systemen das execute (x) Bit gesetzt?
   back: |
     Das execute Bit ist notwendig, um in den Ordner zu wechseln. Ohne dieses Bit
