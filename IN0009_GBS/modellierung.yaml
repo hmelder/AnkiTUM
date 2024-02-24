@@ -149,7 +149,9 @@ cards:
     - Kapazitäten sind nicht eindeutig.
 
 - type: md_basic
-  front: Beschreiben Sie, wie man in Petri-Netzen (i) lokale und (ii) vollständige Verklemmungen feststellen kann.
+  id: 18  # (generated)
+  front: Beschreiben Sie, wie man in Petri-Netzen (i) lokale und (ii) vollständige
+    Verklemmungen feststellen kann.
   back: |
     Modellierung eines Erreichbarkeitsgraphen.
     - Lokale Verklemmung: Es gibt eine Transition t, so dass ausgehend
@@ -158,6 +160,7 @@ cards:
     - Vollständige Verklemmung: Es existiert keine Transition t, die unter der erreichbaren Markierung M schalten kann.
 
 - type: md_basic
+  id: 19  # (generated)
   front: Was ist der Unterschied einer lokalen und einer globalen Verklemmung?
   back: |
     Bei einer vollständigen Verklemmung kann keine Transition schalten, bei
