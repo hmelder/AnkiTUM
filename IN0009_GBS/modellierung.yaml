@@ -147,3 +147,19 @@ cards:
   back: |-
     - Nein, es können Transitionen hinzugefügt werden, die niemals schaltbereit sind und folglich nicht im Erreichbarkeitsgraphen auftauchen.
     - Kapazitäten sind nicht eindeutig.
+
+- type: md_basic
+  front: Beschreiben Sie, wie man in Petri-Netzen (i) lokale und (ii) vollständige Verklemmungen feststellen kann.
+  back: |
+    Modellierung eines Erreichbarkeitsgraphen.
+    - Lokale Verklemmung: Es gibt eine Transition t, so dass ausgehend
+    von einer erreichbaren Markierung M keine Folgemarkierung M' erreichbar ist, in der t
+    transitionsbereit ist.
+    - Vollständige Verklemmung: Es existiert keine Transition t, die unter der erreichbaren Markierung M schalten kann.
+
+- type: md_basic
+  front: Was ist der Unterschied einer lokalen und einer globalen Verklemmung?
+  back: |
+    Bei einer vollständigen Verklemmung kann keine Transition schalten, bei
+    einer lokalen Verklemmung gibt es noch Transitionen die schalten können.
+    Nur eine (oder mehrere) Transitionen können nicht schalten.
