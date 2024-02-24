@@ -62,7 +62,7 @@ cards:
 
 - type: markdown
   id: 7  # (generated)
-  front: Was ist der Unterschied zwischen den System/Kernel mode und user moder der
+  front: Was ist der Unterschied zwischen den System/Kernel mode und user mode der
     **CPU**?
   back: |+
     - Im user mode sind einige Instruktionen nicht erlaubt (insb. IO)
@@ -112,19 +112,90 @@ cards:
     - Typ 2: Wird auf host BS ausgeführt (z.b. KVM, Virtualbox) 
 
 - type: markdown
-  id: 13  # (generated)
-  front: Was ist paravirtualisierung?
+  front: Was versteht man unter einer "Shadow Page Table"?
   back: |+
-    - Virtualisierung eines Softwareinterfaces, welches der 
-
-
-- type: markdown
-  id: 14  # (generated)
-  front:
-  back: |2+
-
+    Shadow page tables werden verwendet, um GPA (Guest Physical Address) in HPA
+    (Host Physical Address) zu übersetzen.  Dem Gast wird vorgetäuscht, dass er
+    direkten Zugriff auf die Hardware hat.
 
 - type: markdown
-  id: 15  # (generated)
-  front:
+  front: Wie kann die Übersetzung von GPA (Guest Physical Address) in HPA (Host Physical Address) beschleunigt werden?
   back: |
+    Hardwareunterstützung (z.B. Intel EPT, AMD RVI) kann durch nested page
+    tables die Übersetzung beschleunigen.  Dabei wird zunächst von der MMU die
+    GVA (Guest Virtual Address) zu GPA und dann GPA zu HPA übersetzt.
+
+- type: markdown
+  front: Was sind Linux Namespaces?
+  back: |
+    Linux Namespaces sind eine Technologie, um Systemresourcen zu isolieren.  Es gibt
+    verschiedene Namespaces für verschiedene Ressourcen, z.B. PID, Network,
+    Mount, IPC, UTS, User.
+
+- type: markdown
+  front: Was ist der Unterschied zwischen Namespaces und Cgroups?
+  back: |
+    Namespaces isolieren Ressourcen, Cgroups kontrollieren Ressourcen.
+
+- type: markdown
+  front: Was ist ein Mount Namespace?
+  back: |
+    Mount namespaces isolieren eine Menge von Mountpoints für eine Gruppe von Prozessen.
+    Dadurch können verschiedene Sichten auf die Verzeichnisstruktur erzeugt werden.
+
+- type: markdown
+  front: Was ist ein PID Namespace?
+  back: |
+    PID Namespaces isolieren die Prozess-ID-Sichtbarkeit.  Prozesse in verschiedenen
+    Namespaces können die gleiche PID haben.
+
+- type: markdown
+  front: Was ist ein Network Namespace?
+  back: |
+    Network Namespaces isolieren das Netzwerkstack.  Jeder Namespace hat seine eigene
+    Netzwerkschnittstelle, IP-Adressen, Routing-Tabellen, etc.
+
+- type: markdown
+  front: Was ist ein IPC Namespace?
+  back: |
+    IPC Namespaces isolieren Interprozesskommunikationsmechanismen, z.B. Shared Memory,
+    Semaphores, Message Queues.
+
+- type: markdown
+  front: Wofür können cgroups verwendet werden?
+  back: |
+    Cgroups können verwendet werden, um Ressourcen wie CPU, Memory, I/O, etc. zu
+    kontrollieren und zu limitieren.
+
+- type: markdown
+  front: Was macht der Befehl `unshare`?
+  back: |
+    Der Befehl `unshare` erstellt einen neuen Namespace und führt das Programm
+    (im Argument), oder "${SHELL}" aus.
+    
+    Switches wie `--pid`, `--mount`, `--net`, etc. können verwendet werden, um
+    den Typ des Namespaces zu bestimmen.
+
+- type: markdown
+  front: Wo ist das cgroup Pseudo-Dateisystem gemountet?
+  back: |
+    Das cgroup Pseudo-Dateisystem ist standardmäßig unter `/sys/fs/cgroup` gemountet.
+
+- type: markdown
+  front: Wie können cgroups konfiguriert werden?
+  back: |
+    Für jede cgroup gibt es ein Verzeichnis unterhalb des cgroup Pseudo-Dateisystems (`/sys/fs/cgroup/{GROUP}`).
+    Dort gibt es verschiedene Dateien, die die Ressourcensteuerung konfigurieren.
+
+
+- type: markdown
+  front: Wie kann eine cgroup erstellt werden?
+  back: |
+    Anlegen eines Verzeichnisses unterhalb des cgroup Pseudo-Dateisystems (z.B.
+    `/sys/fs/cgroup/foo`).
+
+- type: markdown
+  front: Wie kann ein Prozess in eine cgroup verschoben werden?
+  back: |
+    Ein Prozess kann in eine cgroup verschoben werden,
+    indem die PID in `/sys/fs/cgroup/{GROUP}/cgroup.procs` geschrieben wird.
