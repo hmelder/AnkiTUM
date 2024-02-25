@@ -574,8 +574,9 @@ cards:
 
 
 - type: markdown
+  id: 83  # (generated)
   front: Nenne drei Schutzmaßnahmen gegeb buffer overflow angriffe
-  back: |+
+  back: |
     - Stack canaries: Magic number auf dem stack welche vom BS geprüft wird
     - Data Execution Prevention: Stack wird mit NX bit als nicht ausführbar markiert
     - Adressen werden randomisiert -> erschwertes einschleusen von bestimmten adressen
