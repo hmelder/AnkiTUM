@@ -1,0 +1,24 @@
+title: Sonstiges
+author: HHuebner
+id: 11134577650
+cards:
+
+  - type: markdown
+    front: Unterschied Mikrokernel / Monolithische architektur
+    back: |+
+      - Mikrokernel erfüllt nur sehr grundlegende funktionen
+      - BS services teilweise im user space, z.b. Dateisystem, treiber
+
+  - type: markdown
+    front: Vorteile Mikrokernel
+    back: |+
+      - Fault toleranter
+      - Besser wartbar / kleiner
+
+  - type: markdown
+    front: Unterschied Deadlock avoidance / prevention
+    back: |+
+      - *Avoidance*: BS prüft ob resourcen anforderung erfolgen kann und lässt diese evtl nciht zu
+      - *Prevention*: eine der vier Deadlock vorrausetzungen wird außer kraft gesetzt
+      
+      

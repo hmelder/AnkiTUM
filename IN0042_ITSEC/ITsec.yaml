@@ -571,3 +571,11 @@ cards:
   id: 82  # (generated)
   front: Was ist SSO?
   back: Single sign on<br><br>Authentisieren bei mehreren Diensten mit einem login
+
+
+- type: markdown
+  front: Nenne drei Schutzmaßnahmen gegeb buffer overflow angriffe
+  back: |+
+    - Stack canaries: Magic number auf dem stack welche vom BS geprüft wird
+    - Data Execution Prevention: Stack wird mit NX bit als nicht ausführbar markiert
+    - Adressen werden randomisiert -> erschwertes einschleusen von bestimmten adressen
