@@ -232,5 +232,6 @@ cards:
     wird
 
 - type: basic
+  id: 23  # (generated)
   front: was heißt "jedwelcher"
-  back: "Alle, welche ..."
+  back: Alle, welche ...
