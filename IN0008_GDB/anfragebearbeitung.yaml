@@ -231,3 +231,6 @@ cards:
   back: Ein Teil der Daten, welcher sortiert wird und dann mit anderen Teilen "gemerged"
     wird
 
+- type: basic
+  front: was heißt "jedwelcher"
+  back: "Alle, welche ..."

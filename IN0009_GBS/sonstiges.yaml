@@ -24,5 +24,11 @@ cards:
     - *Avoidance*: BS prüft ob resourcen anforderung erfolgen kann und lässt diese evtl nciht zu
     - *Prevention*: eine der vier Deadlock vorrausetzungen wird außer kraft gesetzt
 
+- type: markdown
+  front: Wo werden Dateinamen gespeichert bei ext, FAT? Was ist mit langen file names?
+  back: |+
+    - ext/FAT: im parent directory bei den file paths
+    - lange file names bei ext: Nicht unterstützt
+    - lange filenames bei fat: Long File Name LFN entry bei modernen FAT versionen
 
 ...
