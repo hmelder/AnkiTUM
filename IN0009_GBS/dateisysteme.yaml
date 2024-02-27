@@ -304,9 +304,10 @@ cards:
     - verzeichnis management
     - i-nodes
     - freie blöcke management
-    
+
 
 - type: md_basic
+  id: 37  # (generated)
   front: nenne alle bestandteile einer ext2,3,4 block group
   back: |+
     - Superblock (enthält root dir)
@@ -315,7 +316,7 @@ cards:
     - block bitmap
     - inode bitmap
     - group descriptor
-    
+
 
 - type: md_basic
   id: 36  # (generated)
@@ -330,8 +331,9 @@ cards:
     - Adressen der referenzierten blöcke
 
 - type: md_basic
+  id: 38  # (generated)
   front: Was ist "line discipline"?
-  back: |+
+  back: |-
     - wie der terminal daten aufnimmt und verarbeitet
     - cooked mode / zeilenorientiert: eingaben werden vorverarbeitet, backspace, echo, enter etc
     - raw mode: Zeichen ungefiltert
