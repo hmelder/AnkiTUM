@@ -300,9 +300,20 @@ cards:
     - Superblock
     - datenblöcke
     - root dirs
-    - verzeichnisse
+    - verzeichnis management
     - i-nodes
-    - freie blöcke
+    - freie blöcke management
+    
+
+- type: md_basic
+  front: nenne alle bestandteile einer ext2,3,4 block group
+  back: |+
+    - Superblock (enthält root dir)
+    - group descriptor
+    - i-nodes
+    - block bitmap
+    - inode bitmap
+    - group descriptor
     
 
 - type: md_basic
@@ -315,3 +326,10 @@ cards:
     - hardlink count
     - flags
     - Adressen der referenzierten blöcke
+
+- type: md_basic
+  front: Was ist "line discipline"?
+  back: |+
+    - wie der terminal daten aufnimmt und verarbeitet
+    - cooked mode / zeilenorientiert: eingaben werden vorverarbeitet, backspace, echo, enter etc
+    - raw mode: Zeichen ungefiltert
