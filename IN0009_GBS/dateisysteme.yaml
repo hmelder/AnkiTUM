@@ -294,6 +294,7 @@ cards:
 
 
 - type: md_basic
+  id: 35  # (generated)
   front: nenne alle bestandteile einer unix festplatten partition
   back: |+
     - Bootblock
@@ -317,8 +318,9 @@ cards:
     
 
 - type: md_basic
+  id: 36  # (generated)
   front: Nenne die bestandteile einer I-Node
-  back: |+
+  back: |
     - File type
     - owner
     - user permissions
