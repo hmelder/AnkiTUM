@@ -291,3 +291,27 @@ cards:
   back: |
     Das execute Bit ist notwendig, um in den Ordner zu wechseln. Ohne dieses Bit
     können keine Metadaten über die Dateien im Ordner abgerufen werden.
+
+
+- type: md_basic
+  front: nenne alle bestandteile einer unix festplatten partition
+  back: |+
+    - Bootblock
+    - Superblock
+    - datenblöcke
+    - root dirs
+    - verzeichnisse
+    - i-nodes
+    - freie blöcke
+    
+
+- type: md_basic
+  front: Nenne die bestandteile einer I-Node
+  back: |+
+    - File type
+    - owner
+    - user permissions
+    - timestamps
+    - hardlink count
+    - flags
+    - Adressen der referenzierten blöcke
