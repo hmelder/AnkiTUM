@@ -101,9 +101,9 @@ cards:
 - type: html
   id: 14  # (generated)
   front: Was sollte für eine (trapdoor) Einweg Funktion f(x) gelten?
-  back: f(x) effizient berechenbar<br>f&lt;sup&gt;-1 &lt;/sup&gt;(y) nicht effizient
-    berechenbar&nbsp;<br><br>Mit einer weiteren information (schlüssel) ist die Umkehrfunktion
-    allerdings doch effizient berechenbar
+  back: f(x) effizient berechenbar<br> <sup>-1</sup>(y) nicht effizient berechenbar&nbsp;<br><br>Mit
+    einer weiteren information (schlüssel) ist die Umkehrfunktion allerdings doch
+    effizient berechenbar
 
 
 - type: html
@@ -115,7 +115,7 @@ cards:
 - type: html
   id: 16  # (generated)
   front: Auf welcher Einwegfunktion basiert DH?
-  back: Diskretes Logarithmus Problem<br>f(x) = g&lt;sup&gt;x &lt;/sup&gt;(mod p)
+  back: Diskretes Logarithmus Problem<br>f(x) = g<sup>x</sup>(mod p)
 
 
 - type: html
@@ -138,15 +138,14 @@ cards:
 - type: html
   id: 19  # (generated)
   front: Wie wird bei RSA Verschlüsselt?
-  back: RSA(x) = x&lt;sup&gt;e&lt;/sup&gt;&nbsp;mod n<br><br>wobei e der exponent
-    ist
+  back: RSA(x) = x<sup>e</sup> &nbsp; mod n<br><br>wobei e der exponent ist
 
 
 - type: html
   id: 20  # (generated)
   front: Wie wird bei RSA entschlüsselt?
-  back: RSA&lt;sup&gt;-1&lt;/sup&gt;(y) = y&lt;sup&gt;d&lt;/sup&gt;&nbsp;mod n<br><br>wobei
-    d der private key ist&nbsp;
+  back: RSA<sup>-1</sup>(y) = y<sup>d</sup>&nbsp;mod n<br><br>wobei d der private
+    key ist&nbsp;
 
 - type: basic
   id: 84  # (generated)
@@ -240,9 +239,12 @@ cards:
 - type: html
   id: 31  # (generated)
   front: Was macht der CBC modus von AES? Ist er sicher?
-  back: Der Klartext wird vor der AES Operation mit dem Kryptotext des vorherigen
-    Blocks XOR genommen. Für den ersten Block wird der Initialisierungsvektor IV verwendet.<br><br>Nicht
-    sicher.
+  back: |+
+    Der Klartext wird vor der AES Operation mit dem Kryptotext des vorherigen
+    Blocks XOR genommen. Für den ersten Block wird der Initialisierungsvektor IV verwendet.
+
+    Relativ sicher, wenn IV regelmäßig gewechselt wird. Padding oracle angriff  evtl möglich
+    .
 
 
 - type: html
@@ -327,7 +329,11 @@ cards:
 - type: html
   id: 43  # (generated)
   front: Welche Schutzziele haben MACs?
+<<<<<<< HEAD
   back: Integrität und Authentizität
+=======
+  back: Integrität, Authentizität
+>>>>>>> 53bff63971a78868b9cf43b26dc09a80f57947fa
 
 
 - type: html
@@ -443,8 +449,8 @@ cards:
   front: Wie funktioniert das DH Protokoll?
   back: |
     Es wird eine große Primzahl p und ein Generator Element festgelegt.<br><br>Wähle
-    private key a aus {2, ... , p - 2}<br>Berechne public key als A = g&lt;sup&gt;a&nbsp;&lt;/sup&gt;mod
-    p<br>Berechne shared key aus k = B&lt;sup&gt;a&lt;/sup&gt;&nbsp;mod p = g&lt;sup&gt;ab&lt;/sup&gt;&nbsp;modp
+    private key a aus {2, ... , p - 2}<br>Berechne public key als A = g<sup>a</sup>mod
+    p<br>Berechne shared key aus k = B<sup>a</sup>&nbsp;mod p = g<sup>ab</sup>&nbsp; mod p
 
 
 - type: html
@@ -766,6 +772,47 @@ cards:
     - Policy decision point: Führt beim ersten Zugriff auf ein Objekt eine Kontrolle durch und stellt bescheinigung aus
     - Policy enforcement point: Führt zulässigkeitskontrolle basierend auf bescheinigung aus
     - Beispiele: PDP: open() syscall stellt einen int token aus PEP: read() syscall token, wird geprüft
+
+- type: markdown
+  id: 107  # (generated)
+  front: Unterschied 0-RTT TLS 1-RTT TLS
+  back: |+
+    - 0 RTT: Server schickt mit seiner ersten nachricht verschlüsselte daten
+    - 1 RTT: Server schickt mit seiner zweiten Nachricht verschlüsselte daten
+
+- type: markdown
+  id: 108  # (generated)
+  front: Safety vs Security?
+  back: |+
+    - Safety ist Sicherheit "von innen" also z.b. sicherheit von systemabstürzen, bugs, Störungen etc
+    - Security ist Sicherheit "von außen", d.h. Schwachstellen durch welche die Schutzziele verletzt werden können
+
+- type: markdown
+  id: 109  # (generated)
+  front: Anforderungen an Biometrische Merkmale?
+  back: |+
+    - *Universalität* (jeder muss das merkmal besitzen)
+    - *Eindeutigkeit* (Es muss sch von person zu person unterscheiden)
+    - *Beständigkeit* (Es darf sich nicht verändern)
+    - *Erfassbarkeit* (Es muss leicht messbar sein)
+    - *Akzeptanz* (Die Messung muss gesellschaftlich akzeptiert sein)
+    - *Performanz* (Es lässt sich schnell und genau erfassen)
+    - *Fälschungssicherheit*
+
+- type: markdown
+  id: 110  # (generated)
+  front: HMAC bildung?
+  back: H(𝑘 ⨁ 𝑜𝑝𝑎𝑑 | H((𝑘 ⨁ 𝑖𝑝𝑎𝑑) | 𝑚))
+
+- type: markdown
+  id: 111  # (generated)
+  front: Wie funktioniert der DM length extension angriff bei einem h(k | m) hash?
+    m ist bekannt
+  back: |+
+    1. größe k bestimmen (z.b. brute force)
+    2. padding bestimmen, dabei länge von k beachten!
+    3. m2 = m + padding + "admin"
+    4. h2 = h("admin") mit internem zustand von h gleich h1
 
 - type: markdown
   front: |
