@@ -4,12 +4,14 @@ id: 1709159552
 cards:
 
 - type: md_basic
+  id: 0  # (generated)
   front: Randomisiert Address space layout randomization (ASLR) alle Segmente?
   back: |
     Nein! Zum Beispiel wird die Basisadresse des Codesegmentes nicht randomiziert,
     außer die Executable wird explizit mit `-fpie` kompiliert.
 
 - type: md_basic
+  id: 1  # (generated)
   front: Was versteht unter der Trusted Computing Base (TCB)?
   back: |
     - Menge der Software- und Hardwarekomponenten und Kontrollen, die
@@ -18,6 +20,7 @@ cards:
     zusammen.
 
 - type: md_basic
+  id: 2  # (generated)
   front: Kann ASLR _return-to-libc_ Angriffe verhindern?
   back: |
     Es kann sie zumindest erschweren, da die Adresse sich
@@ -25,11 +28,13 @@ cards:
     Linux).
 
 - type: md_basic
+  id: 3  # (generated)
   front: Welche Rechte haben Heap, Stack, und Data, wenn DEP aktiviert ist?
   back: |
     `rw-`
 
 - type: md_basic
+  id: 4  # (generated)
   front: Was versteht man unter DEP?
   back: |
     DEP (Data Execution Prevention) restriktiert die Ausführbarkeit von
@@ -37,8 +42,9 @@ cards:
     als nicht-ausführbar zu markieren.
 
 - type: md_basic
-  front: (Extra) Was kann man mit der `mprotect` function auf einer Seite ändern? 
-  back: |
+  id: 5  # (generated)
+  front: (Extra) Was kann man mit der `mprotect` function auf einer Seite ändern?
+  back: |-
     `mprotect`kontrolliert den Schutz von einzelnen Seiten. Zur Auswahl stehen:
     - PROT_NONE
     - PROT_READ

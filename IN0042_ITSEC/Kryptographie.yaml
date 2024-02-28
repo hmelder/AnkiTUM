@@ -4,6 +4,7 @@ id: 1709157560
 cards:
 
 - type: md_basic
+  id: 0  # (generated)
   front: Was kann bei DH schieflaufen?
   back: |
     Das Shared Secret sollte **niemals** selber als Schlüssel
@@ -12,11 +13,13 @@ cards:
     DH shared secret ab.
 
 - type: md_basic
+  id: 1  # (generated)
   front: Was ist ein Beispiel für eine KDF?
   back: |
     HKDF (HMAC-based Key Derivation Function)
 
 - type: md_basic
+  id: 2  # (generated)
   front: |
     Was ist die erforderliche Anzahl an Nachrichten, um mit
     Wahrscheinlichkeit > 0.5 eine Kollision zu erzeugen?
@@ -24,6 +27,7 @@ cards:
     sqrt(2^n) also 2^(n/2), bei n-bit Hashwerten
 
 - type: md_basic
+  id: 3  # (generated)
   front: |
     Bei einer Hashfunktion mit 80-bit Hashwerten, wie viele Berechnungen
     erfordert ca. ein Kollisionsangriff?
@@ -31,9 +35,11 @@ cards:
     Ungefähr 2^40 Hashwert-Berechnungen. n = 80 ist also zu klein!
 
 - type: md_basic
+  id: 4  # (generated)
   front: Nenne zwei dedizierte Signaturverfahren
   back: DSA, ECDSA
 
 - type: md_basic
+  id: 5  # (generated)
   front: Nenne ein Verfahren zur Festplattenverschlüsselung.
   back: AES-XTS

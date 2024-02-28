@@ -4,7 +4,9 @@ id: 1709156765
 cards:
 
 - type: md_basic
-  front: Wie wird ein HMAC gebildet, wenn m die Nachricht, K der secret key und H die Hashfunktion ist?
+  id: 0  # (generated)
+  front: Wie wird ein HMAC gebildet, wenn m die Nachricht, K der secret key und H
+    die Hashfunktion ist?
   back: |
     innerHash = H(K' xor ipad) | m)
     HMAC(K. m) = H((K' xor opad) | innerHash)
