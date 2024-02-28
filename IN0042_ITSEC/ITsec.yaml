@@ -329,11 +329,7 @@ cards:
 - type: html
   id: 43  # (generated)
   front: Welche Schutzziele haben MACs?
-<<<<<<< HEAD
   back: Integrität und Authentizität
-=======
-  back: Integrität, Authentizität
->>>>>>> 53bff63971a78868b9cf43b26dc09a80f57947fa
 
 
 - type: html

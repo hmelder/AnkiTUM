@@ -37,7 +37,7 @@ cards:
 
 - type: md_basic
   front: Angenommen eine stateful request wird via 0-RTT TLS an den Server
-  verschickt. Zu welchen Problem kann es hierbei kommen?
+    verschickt. Zu welchen Problem kann es hierbei kommen?
   back: |
      Da 0-RTT-Daten ohne vollständige Verhandlung gesendet werden, kann ein
      Angreifer diese Daten abfangen und erneut an den Server senden. Der Server
