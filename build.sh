@@ -6,7 +6,6 @@ dirs=(
     "EI00330_Signaltheorie"
     "IN0042_ITSEC"
     "MA0902_Analysis_Informatik"
-    "IN0019_Numprog"
     "WI00729_BWL2"
 )
 
