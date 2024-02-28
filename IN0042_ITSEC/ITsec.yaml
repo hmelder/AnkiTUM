@@ -13,9 +13,10 @@ cards:
 - type: html
   id: 1  # (generated)
   front: 'Was ist der unterschied zwischen: Angriff, Bedrohung und Schwachstelle?'
-  back: Schwachstelle = Ermöglicht das Umgehen von Sicherheitskontrollen<br>Bedrohung
-    = Ein Bösartiges Ereignis welches die Sicherheit von Assets gefährdet<br>Angriff
-    = Konkretes ausnutzen einer Schwachstelle
+  back: |+
+    Schwachstelle = Ermöglicht das Umgehen von Sicherheitskontrollen 
+    Bedrohung = Ein Bösartiges Ereignis welches die Sicherheit von Assets gefährdet
+    Angriff = Konkretes ausnutzen einer Schwachstelle
 
 
 - type: html
@@ -84,16 +85,17 @@ cards:
 - type: html
   id: 12  # (generated)
   front: Was ist symmtrische verschlüsseliung vs asymmetrische verschlüsselung
-  back: 'Symmetrisch: Geteilter (gleicher) schlüssel zwischen beiden Kommunikationspartnern
+  back: |+
+    Symmetrisch: Geteilter (gleicher) schlüssel zwischen beiden Kommunikationspartnern
     welcher die nachrichten verschlüsselt bzw entschlüsselt<br><br>Asymmetrisch: Public
-    / Private key verfahren'
+    / Private key verfahren
 
 
 - type: html_cloze
   id: 13 # (generated)
-  front: "\"<p>{{c1::Asymmetrische}} Verschlüsselung ist viel aufwändiger als&amp;lt;br&amp;gt;{{c1::symmetrische}}.
-    Es werden deshalb idR nur kleine Datenvolumen&amp;lt;br&amp;gt;verschlüsselt.</p>\n\
-    \""
+  front: |
+    <p>{{c1::Asymmetrische}} Verschlüsselung ist viel aufwändiger als&amp;lt;br&amp;gt;{{c1::symmetrische}}.
+    Es werden deshalb idR nur kleine Datenvolumen&amp;lt;br&amp;gt;verschlüsselt.</p>
 
 
 - type: html
@@ -268,10 +270,11 @@ cards:
 - type: html
   id: 36  # (generated)
   front: Welche Anforderungen an Hashfunktionen gibt es?
-  back: "Einwegeigenschaft: h = H(m) effizient berechenbar, umkehrfunktion nicht effizient
+  back: |+
+    Einwegeigenschaft: h = H(m) effizient berechenbar, umkehrfunktion nicht effizient
     berechenbar<br><br>Schwache Kollisionsresitenz: es ist nicht Möglich zu einem
     m ein m' zu finden sodass H(m) = H(m')<br><br>Starke Kollisionsresitenz: es ist
-    nicht möglich, effizient zwei verschiedene Texte mit gleichem Hash zu finden<br><br>"
+    nicht möglich, effizient zwei verschiedene Texte mit gleichem Hash zu finden<br><br>
 
 
 - type: html
@@ -338,15 +341,34 @@ cards:
 - type: html
   id: 46  # (generated)
   front: Def. AE
-  back: '"""Authenticated Encryption<br><br>Eine Verschlüsselte Nachricht mit einem
-    """"Authentication Tag"""" welches die authenzität der Nachricht garantiert"""'
+  back: |+
+    Authenticated Encryption
+  
+    Eine Verschlüsselte Nachricht mit einem Authentication Tag welches die authenzität der Nachricht garantiert
+    
 
 
-- type: html
+- type: markdown
   id: 47  # (generated)
   front: Def. AEAD
-  back: AE aber ein Teil der Nachricht ist als Klartext Lesbar.&nbsp;
+  back: |+
+    Authenticated Encryption aber zusätzlich ein Teil der Nachricht ist als Klartext Lesbar
+    Beispiel: Netzwerk pakete. Der header ist lesbar
 
+
+- type:  markdown
+  front: Vorteil AEAD chiffre vs MAC
+  back: |+
+    - AEAD chiffren verwenden nur einen Schlüssel
+    - AEAD ist weniger fehleranfällig da der Nutzer MAX unf verschlüsselung nichts selbst verknüpft
+
+
+- type:  markdown
+  front: Unterschied signatur MAC
+  back: |+
+    - Signatur: mit dem private key erstellt, public key kann validieren
+    - MAC: symmetrischer key nötig
+    
 
 - type: html
   id: 48  # (generated)
@@ -411,10 +433,10 @@ cards:
 - type: html
   id: 56  # (generated)
   front: Wie funktioniert das DH Protokoll?
-  back: Es wird eine große Primzahl p und ein Generator Element festgelegt.<br><br>Wähle
+  back: |
+    Es wird eine große Primzahl p und ein Generator Element festgelegt.<br><br>Wähle
     private key a aus {2, ... , p - 2}<br>Berechne public key als A = g&lt;sup&gt;a&nbsp;&lt;/sup&gt;mod
-    p<br>Berechne shared key aus k = B&lt;sup&gt;a&lt;/sup&gt;&nbsp;mod p = g&lt;sup&gt;ab&lt;/sup&gt;&nbsp;mod
-    p
+    p<br>Berechne shared key aus k = B&lt;sup&gt;a&lt;/sup&gt;&nbsp;mod p = g&lt;sup&gt;ab&lt;/sup&gt;&nbsp;modp
 
 
 - type: html
@@ -433,12 +455,6 @@ cards:
   id: 59  # (generated)
   front: Was ist ECDH?
   back: DH verfahren auf elliptischen kurven
-
-
-- type: html
-  id: 60  # (generated)
-  front: Welche Schutzziele verfolgt authentisierung?
-  back: authentzität (wer hätte das gedacht?)
 
 
 - type: html
@@ -628,3 +644,98 @@ cards:
 - type: markdown
   front: Wass muss für rsa exponenten gelten?
   back: ggT(phi(n), e) = 1, phi(n) = (p - 1)(q - 1)
+
+- type: markdown
+  front: Was ist dei Trusted COmputing Base
+  back: |+
+    - Mange der Hardware und software komponenten welche lkritisch für die sicherheit sind
+    - Sollte möglichst klein sein
+    
+
+- type: markdown
+  front: Was ist ein PIE?
+  back: |+
+    - position independent executable
+
+- type: markdown
+  front: Was ist die string tranquility regel?
+  back: |+
+    - Bell lapadula modell
+    - Sicherheitsklassen dürfen nciht zur laufzeit geändert werden
+    
+
+- type: markdown
+  front: Problem MAC-then-encrypt
+  back: Die Integrität der Nachricht kann erst nach dem entschlüsseln festgestellt werden. Das kann eventuell zu problemen führen wie z.b. beim padding oracle angriff
+
+
+- type: markdown
+  front: Funktionsweise DH
+  back: |+
+    - Große primzahl p und generator g werden ausgetauscht
+    - A und B wählen private keys a, b kleiner p
+    - g^a mod p = public key k_a
+    - k_b^a mod p = private key
+
+
+- type: markdown
+  front:  Was ist enrollment bei authentifizierung?
+  back: Erfassen von biometrischen merkmalen
+
+
+- type: markdown
+  front:  Eigenschaften OTP
+  back: |+
+    - Hardware basiert oder softwarebasiert
+    - challenge response basiert oder zeitsynchronisiert
+    
+
+- type: markdown
+  front: Probleme mit KDCs?
+  back: |+
+    - ggf. Keine Perfect forward secrecy
+    - signle point of failur
+
+- type: markdown
+  front:  ALG vs Paketfilter vs DPI vs Firewall
+  back: |+
+    
+    Alle drei sind Firewalls!
+    - Paketfilter: Analysiert paket header
+    - Deep packet inspection: Analysiert auch die payload
+    - Application Layer Gateway: Analysiert payload im kontext der spezifischen anwendung z.b. HTTP. SMTP
+    
+
+- type: markdown
+  front:  Welche verfahren werden alle bei TLS verwendet?
+  back: |+
+    - key exchange: Elliptic curve DH
+    - authetifizierung des key exchange: z.b. RSA und/oder SHA für signaturen/HMACs
+    - Nutzdaten: Symmetrische chiffre z.b. AES256 + GCM mode
+    - Hashfunktion, z.b. SHA für die schlüsselableitung
+    
+
+- type: markdown
+  front:  Was ist complete mediation / zero trust ?
+  back: Alle resourcen müssen geschüzt werden
+
+- type: markdown
+  front:  Mandatory access control vs Discretionary access control
+  back: |+
+    - *Discretionary*: Nutzer darf rechte weitergeben und bestimmt wer auf seine Resourcen zugreifen darf
+    - *Mandatory*: Alle rechte sind vom system vergeben und müssen strikt befolgt werden
+    
+
+- type: markdown
+  front:  Capabilities vs Access control lists
+  back: |+
+    - ACL: Einem Objekt wird eine liste von zugriffsrechten von Subjekten auf das Objekt zugeordnet Z.b. Unix file perissions
+    - Capabilities: Einem Subjekt wird eine liste Rechten auf Objekte zugeordnet
+
+    
+- type: markdown
+  front: Was sinf PEP und PDP? Beispiele?
+  back: |+
+    - Policy decision point: Führt beim ersten Zugriff auf ein Objekt eine Kontrolle durch und stellt bescheinigung aus
+    - Policy enforcement point: Führt zulässigkeitskontrolle basierend auf bescheinigung aus
+    - Beispiele: PDP: open() syscall stellt einen int token aus PEP: read() syscall token, wird geprüft
