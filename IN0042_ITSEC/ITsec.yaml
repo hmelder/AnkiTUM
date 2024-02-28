@@ -811,9 +811,10 @@ cards:
     4. h2 = h("admin") mit internem zustand von h gleich h1
 
 - type: markdown
+  id: 112  # (generated)
   front: |
     Angenommen das jedes Zeichen aus einem Passwortalphabet M gleich
     wahrscheinlich ist. Wie berechnet man die Entropie für ein Password der Länge
     L?
-  back: |
+  back: |-
     log_2(|M|^L)
