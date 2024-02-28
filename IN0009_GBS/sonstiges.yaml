@@ -25,6 +25,7 @@ cards:
     - *Prevention*: eine der vier Deadlock vorrausetzungen wird außer kraft gesetzt
 
 - type: markdown
+  id: 3  # (generated)
   front: Wo werden Dateinamen gespeichert bei ext, FAT? Was ist mit langen file names?
   back: |+
     - ext/FAT: im parent directory bei den file paths
