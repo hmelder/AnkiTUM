@@ -348,9 +348,9 @@ cards:
   front: Def. AE
   back: |+
     Authenticated Encryption
-  
+
     Eine Verschlüsselte Nachricht mit einem Authentication Tag welches die authenzität der Nachricht garantiert
-    
+
 
 
 - type: markdown
@@ -361,19 +361,21 @@ cards:
     Beispiel: Netzwerk pakete. Der header ist lesbar
 
 
-- type:  markdown
+- type: markdown
+  id: 60  # (generated)
   front: Vorteil AEAD chiffre vs MAC
   back: |+
     - AEAD chiffren verwenden nur einen Schlüssel
     - AEAD ist weniger fehleranfällig da der Nutzer MAX unf verschlüsselung nichts selbst verknüpft
 
 
-- type:  markdown
+- type: markdown
+  id: 92  # (generated)
   front: Unterschied signatur MAC
   back: |+
     - Signatur: mit dem private key erstellt, public key kann validieren
     - MAC: symmetrischer key nötig
-    
+
 
 - type: html
   id: 48  # (generated)
@@ -656,30 +658,36 @@ cards:
   back: ggT(phi(n), e) = 1, phi(n) = (p - 1)(q - 1)
 
 - type: markdown
+  id: 93  # (generated)
   front: Was ist dei Trusted COmputing Base
   back: |+
     - Mange der Hardware und software komponenten welche lkritisch für die sicherheit sind
     - Sollte möglichst klein sein
-    
+
 
 - type: markdown
+  id: 94  # (generated)
   front: Was ist ein PIE?
   back: |+
     - position independent executable
 
 - type: markdown
+  id: 95  # (generated)
   front: Was ist die string tranquility regel?
   back: |+
     - Bell lapadula modell
     - Sicherheitsklassen dürfen nciht zur laufzeit geändert werden
-    
+
 
 - type: markdown
+  id: 96  # (generated)
   front: Problem MAC-then-encrypt
-  back: Die Integrität der Nachricht kann erst nach dem entschlüsseln festgestellt werden. Das kann eventuell zu problemen führen wie z.b. beim padding oracle angriff
+  back: Die Integrität der Nachricht kann erst nach dem entschlüsseln festgestellt
+    werden. Das kann eventuell zu problemen führen wie z.b. beim padding oracle angriff
 
 
 - type: markdown
+  id: 97  # (generated)
   front: Funktionsweise DH
   back: |+
     - Große primzahl p und generator g werden ausgetauscht
@@ -689,63 +697,72 @@ cards:
 
 
 - type: markdown
-  front:  Was ist enrollment bei authentifizierung?
+  id: 98  # (generated)
+  front: Was ist enrollment bei authentifizierung?
   back: Erfassen von biometrischen merkmalen
 
 
 - type: markdown
-  front:  Eigenschaften OTP
+  id: 99  # (generated)
+  front: Eigenschaften OTP
   back: |+
     - Hardware basiert oder softwarebasiert
     - challenge response basiert oder zeitsynchronisiert
-    
+
 
 - type: markdown
+  id: 100  # (generated)
   front: Probleme mit KDCs?
   back: |+
     - ggf. Keine Perfect forward secrecy
     - signle point of failur
 
 - type: markdown
-  front:  ALG vs Paketfilter vs DPI vs Firewall
-  back: |+
-    
+  id: 101  # (generated)
+  front: ALG vs Paketfilter vs DPI vs Firewall
+  back: |2+
+
     Alle drei sind Firewalls!
     - Paketfilter: Analysiert paket header
     - Deep packet inspection: Analysiert auch die payload
     - Application Layer Gateway: Analysiert payload im kontext der spezifischen anwendung z.b. HTTP. SMTP
-    
+
 
 - type: markdown
-  front:  Welche verfahren werden alle bei TLS verwendet?
+  id: 102  # (generated)
+  front: Welche verfahren werden alle bei TLS verwendet?
   back: |+
     - key exchange: Elliptic curve DH
     - authetifizierung des key exchange: z.b. RSA und/oder SHA für signaturen/HMACs
     - Nutzdaten: Symmetrische chiffre z.b. AES256 + GCM mode
     - Hashfunktion, z.b. SHA für die schlüsselableitung
-    
+
 
 - type: markdown
-  front:  Was ist complete mediation / zero trust ?
+  id: 103  # (generated)
+  front: Was ist complete mediation / zero trust ?
   back: Alle resourcen müssen geschüzt werden
 
 - type: markdown
-  front:  Mandatory access control vs Discretionary access control
+  id: 104  # (generated)
+  front: Mandatory access control vs Discretionary access control
   back: |+
     - *Discretionary*: Nutzer darf rechte weitergeben und bestimmt wer auf seine Resourcen zugreifen darf
     - *Mandatory*: Alle rechte sind vom system vergeben und müssen strikt befolgt werden
-    
+
 
 - type: markdown
-  front:  Capabilities vs Access control lists
+  id: 105  # (generated)
+  front: Capabilities vs Access control lists
   back: |+
     - ACL: Einem Objekt wird eine liste von zugriffsrechten von Subjekten auf das Objekt zugeordnet Z.b. Unix file perissions
     - Capabilities: Einem Subjekt wird eine liste Rechten auf Objekte zugeordnet
 
-    
+
 - type: markdown
+  id: 106  # (generated)
   front: Was sinf PEP und PDP? Beispiele?
-  back: |+
+  back: |-
     - Policy decision point: Führt beim ersten Zugriff auf ein Objekt eine Kontrolle durch und stellt bescheinigung aus
     - Policy enforcement point: Führt zulässigkeitskontrolle basierend auf bescheinigung aus
     - Beispiele: PDP: open() syscall stellt einen int token aus PEP: read() syscall token, wird geprüft
