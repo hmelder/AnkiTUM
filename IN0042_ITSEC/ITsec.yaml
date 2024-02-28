@@ -147,10 +147,13 @@ cards:
     d der private key ist&nbsp;
 
 - type: basic
+  id: 84  # (generated)
   front: Was ist chacha20?
-  back: Ein AEAD Algorithmus (stromchiffre). Wird noch verwendet, allerdings gibt es erweiterte versionen.
+  back: Ein AEAD Algorithmus (stromchiffre). Wird noch verwendet, allerdings gibt
+    es erweiterte versionen.
 
 - type: markdown
+  id: 85  # (generated)
   front: Nenne symmetrische und asymmetrische verfahren
   back: |+
     symmetrisch:
@@ -159,7 +162,7 @@ cards:
     asymmetrisch:
     - RSA
     - ECC
-    
+
 
 - type: html
   id: 21  # (generated)
@@ -204,9 +207,11 @@ cards:
   id: 27  # (generated)
   front: 'Blockchiffren: Diffusion vs Konfusion?'
   back: 'Diffusion: Jedes Klartextbit beeinflusst jedes Ciphertextbit<br>Konfusion:
-    Zusammenhang zwischen Key und Ciphertext verschleiern z.b. durhcn nicht lineare substitution'
+    Zusammenhang zwischen Key und Ciphertext verschleiern z.b. durhcn nicht lineare
+    substitution'
 
 - type: basic
+  id: 86  # (generated)
   front: Was ist der Avalanche effekt?
   back: Kleine Änderung in klartext verursacht große änderung im cyphertext
 
@@ -382,6 +387,7 @@ cards:
 
 
 - type: basic
+  id: 87  # (generated)
   front: Bsp Hardware implementierung CSRNG
   back: Nichtlinear rückgekoppeltes Schieberegister
 
@@ -469,13 +475,14 @@ cards:
     wählen um sie sich merken zu können
 
 - type: markdown
+  id: 88  # (generated)
   front: Welche verfahren gelten als sicher?
   back: |+
     - AES
     - RSA
     - ECC
     - SHA3
-    
+
 
 - type: html
   id: 65  # (generated)
@@ -611,6 +618,7 @@ cards:
     - Adressen werden randomisiert -> erschwertes einschleusen von bestimmten adressen
 
 - type: markdown
+  id: 89  # (generated)
   front: Welche drei Cookie attribute wurden besprochen?
   back: |+
     - Secure: Cookie darf nur über HTTPS gesendet werden
@@ -618,13 +626,15 @@ cards:
     - SameSite: Mitigiert CSRF attacken
 
 - type: markdown
+  id: 90  # (generated)
   front: Welche drei optionen hat das SameSite cookie attribut?
   back: |+
     - strict: Cookie wird nur gesendet wenn man auf der seite ist für die er ausgestellt wurde
     - lax: CSRF anfällige methoden werden geblockt (POST, PUT), GET erlaubt
     - none: Cookie wird immer gesendet
-    
+
 
 - type: markdown
+  id: 91  # (generated)
   front: Wass muss für rsa exponenten gelten?
   back: ggT(phi(n), e) = 1, phi(n) = (p - 1)(q - 1)
