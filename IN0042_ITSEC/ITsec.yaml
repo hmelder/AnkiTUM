@@ -129,7 +129,7 @@ cards:
 
 - type: html
   id: 18  # (generated)
-  front: Was ist der public key bei RSA?&nbsp;
+  front: Was ist der public key bei RSA?;
   back: (e, n)
 
 
@@ -146,6 +146,20 @@ cards:
   back: RSA&lt;sup&gt;-1&lt;/sup&gt;(y) = y&lt;sup&gt;d&lt;/sup&gt;&nbsp;mod n<br><br>wobei
     d der private key ist&nbsp;
 
+- type: basic
+  front: Was ist chacha20?
+  back: Ein AEAD Algorithmus (stromchiffre). Wird noch verwendet, allerdings gibt es erweiterte versionen.
+
+- type: markdown
+  front: Nenne symmetrische und asymmetrische verfahren
+  back: |+
+    symmetrisch:
+    - AES
+    - ChaCha20
+    asymmetrisch:
+    - RSA
+    - ECC
+    
 
 - type: html
   id: 21  # (generated)
@@ -190,8 +204,11 @@ cards:
   id: 27  # (generated)
   front: 'Blockchiffren: Diffusion vs Konfusion?'
   back: 'Diffusion: Jedes Klartextbit beeinflusst jedes Ciphertextbit<br>Konfusion:
-    Zusammenhang zwischen Key und Ciphertext verschleiern'
+    Zusammenhang zwischen Key und Ciphertext verschleiern z.b. durhcn nicht lineare substitution'
 
+- type: basic
+  front: Was ist der Avalanche effekt?
+  back: Kleine Änderung in klartext verursacht große änderung im cyphertext
 
 - type: html
   id: 28  # (generated)
@@ -364,6 +381,10 @@ cards:
     Nachfolger/Vorgänger haben)<br>Gleichverteiltheit<br>
 
 
+- type: basic
+  front: Bsp Hardware implementierung CSRNG
+  back: Nichtlinear rückgekoppeltes Schieberegister
+
 - type: html
   id: 53  # (generated)
   front: Um Schlüssel zwischen Mehr als zwei Kommunikationspartnern auszutauschen,
@@ -447,6 +468,14 @@ cards:
   back: Nein, laut NIST Guidelines. Grund ist das Nutzer passwörter sonst sehr einfach
     wählen um sie sich merken zu können
 
+- type: markdown
+  front: Welche verfahren gelten als sicher?
+  back: |+
+    - AES
+    - RSA
+    - ECC
+    - SHA3
+    
 
 - type: html
   id: 65  # (generated)
@@ -580,3 +609,22 @@ cards:
     - Stack canaries: Magic number auf dem stack welche vom BS geprüft wird
     - Data Execution Prevention: Stack wird mit NX bit als nicht ausführbar markiert
     - Adressen werden randomisiert -> erschwertes einschleusen von bestimmten adressen
+
+- type: markdown
+  front: Welche drei Cookie attribute wurden besprochen?
+  back: |+
+    - Secure: Cookie darf nur über HTTPS gesendet werden
+    - HttpOnly: Cookie kann nicht mit Javascript ausgelesen werden
+    - SameSite: Mitigiert CSRF attacken
+
+- type: markdown
+  front: Welche drei optionen hat das SameSite cookie attribut?
+  back: |+
+    - strict: Cookie wird nur gesendet wenn man auf der seite ist für die er ausgestellt wurde
+    - lax: CSRF anfällige methoden werden geblockt (POST, PUT), GET erlaubt
+    - none: Cookie wird immer gesendet
+    
+
+- type: markdown
+  front: Wass muss für rsa exponenten gelten?
+  back: ggT(phi(n), e) = 1, phi(n) = (p - 1)(q - 1)
