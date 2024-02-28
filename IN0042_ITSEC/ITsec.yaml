@@ -327,7 +327,7 @@ cards:
 - type: html
   id: 43  # (generated)
   front: Welche Schutzziele haben MACs?
-  back: Vertraulichkeit, Integrität, Authentizität
+  back: Integrität und Authentizität
 
 
 - type: html
@@ -761,8 +761,16 @@ cards:
 
 - type: markdown
   id: 106  # (generated)
-  front: Was sinf PEP und PDP? Beispiele?
+  front: Was sind PEP und PDP? Beispiele?
   back: |-
     - Policy decision point: Führt beim ersten Zugriff auf ein Objekt eine Kontrolle durch und stellt bescheinigung aus
     - Policy enforcement point: Führt zulässigkeitskontrolle basierend auf bescheinigung aus
     - Beispiele: PDP: open() syscall stellt einen int token aus PEP: read() syscall token, wird geprüft
+
+- type: markdown
+  front: |
+    Angenommen das jedes Zeichen aus einem Passwortalphabet M gleich
+    wahrscheinlich ist. Wie berechnet man die Entropie für ein Password der Länge
+    L?
+  back: |
+    log_2(|M|^L)
