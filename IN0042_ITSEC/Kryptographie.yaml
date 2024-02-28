@@ -1,0 +1,39 @@
+title: Hashfunktionen
+author: Hugo Melder
+id: 1709157560
+cards:
+
+- type: md_basic
+  front: Was kann bei DH schieflaufen?
+  back: |
+    Das Shared Secret sollte **niemals** selber als Schlüssel
+    verwendet werden, da es nicht gleichverteilt ist.
+    Stattdessen leitet man einen symmetrischen Schlüssel von dem
+    DH shared secret ab.
+
+- type: md_basic
+  front: Was ist ein Beispiel für eine KDF?
+  back: |
+    HKDF (HMAC-based Key Derivation Function)
+
+- type: md_basic
+  front: |
+    Was ist die erforderliche Anzahl an Nachrichten, um mit
+    Wahrscheinlichkeit > 0.5 eine Kollision zu erzeugen?
+  back: |
+    sqrt(2^n) also 2^(n/2), bei n-bit Hashwerten
+
+- type: md_basic
+  front: |
+    Bei einer Hashfunktion mit 80-bit Hashwerten, wie viele Berechnungen
+    erfordert ca. ein Kollisionsangriff?
+  back: |
+    Ungefähr 2^40 Hashwert-Berechnungen. n = 80 ist also zu klein!
+
+- type: md_basic
+  front: Nenne zwei dedizierte Signaturverfahren
+  back: DSA, ECDSA
+
+- type: md_basic
+  front: Nenne ein Verfahren zur Festplattenverschlüsselung.
+  back: AES-XTS

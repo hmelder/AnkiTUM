@@ -1,0 +1,48 @@
+title: Systemsicherheit
+author: Hugo Melder
+id: 1709159552
+cards:
+
+- type: md_basic
+  front: Randomisiert Address space layout randomization (ASLR) alle Segmente?
+  back: |
+    Nein! Zum Beispiel wird die Basisadresse des Codesegmentes nicht randomiziert,
+    außer die Executable wird explizit mit `-fpie` kompiliert.
+
+- type: md_basic
+  front: Was versteht unter der Trusted Computing Base (TCB)?
+  back: |
+    - Menge der Software- und Hardwarekomponenten und Kontrollen, die
+    zusammenwirken, um die Sicherheitsdienste des Systems durchzusetzen.
+    - Fasst die sicherheitskritischen Funktionen der Hardware und des BS
+    zusammen.
+
+- type: md_basic
+  front: Kann ASLR _return-to-libc_ Angriffe verhindern?
+  back: |
+    Es kann sie zumindest erschweren, da die Adresse sich
+    regelmäßig ändern (Hängt von ASLR Implementierung ab. Jeder Prozessstart bei
+    Linux).
+
+- type: md_basic
+  front: Welche Rechte haben Heap, Stack, und Data, wenn DEP aktiviert ist?
+  back: |
+    `rw-`
+
+- type: md_basic
+  front: Was versteht man unter DEP?
+  back: |
+    DEP (Data Execution Prevention) restriktiert die Ausführbarkeit von
+    Code auf Seiten. Dabei bietet sich an alles außer das text Segment
+    als nicht-ausführbar zu markieren.
+
+- type: md_basic
+  front: (Extra) Was kann man mit der `mprotect` function auf einer Seite ändern? 
+  back: |
+    `mprotect`kontrolliert den Schutz von einzelnen Seiten. Zur Auswahl stehen:
+    - PROT_NONE
+    - PROT_READ
+    - PROT_WRITE
+    - PROT_EXEC
+
+    Eine Seite kann mehrere dieser Attribute gleichzeitig haben.

@@ -1,0 +1,59 @@
+title: Hashfunktionen
+author: Hugo Melder
+id: 1709158524
+cards:
+
+- type: md_basic
+  front: Was macht das `Secure` Attribut bei einem Cookie?
+  back: |
+    Der Cookie wird nur gesendet, wenn die Anfrage über einen
+    sicheren Kanal versendet wird.
+
+- type: md_basic
+  front: Was macht das `HTTPOnly` Attribut bei einem Cookie?
+  back: |
+    Wenn `HTTPOnly` gesetzt ist, wird der Zugang via ein Client-side
+    Script verwehrt.
+
+- type: md_basic
+  front: Welche Optionen gibt es beim SameSite Attribut?
+  back: |
+    - strict
+    - lax
+    - none
+
+- type: md_basic
+  front: Was gilt, wenn SameSite=Strict bei einem Cookie gesetzt ist?
+  back: |
+    Der Cookie wird nur gesendet, wenn es eine direkte, nutzer-initiierte
+    Anfrage ist (z.B von der Browser URL bar).
+
+- type: md_basic
+  front: Was gilt, wenn SameSite=Lax bei einem Cookie gesetzt ist?
+  back: |
+    Cookie wird bei Cross-Site-Anfragen nicht gesendet, außer, die Anfrage
+    erfolgt durch eine "Top-Level-Navigation" und ist eine GET oder HEAD Anfrage. z.B:
+    - Bei normalen Links von einer externen Site zur Website
+
+    Jedoch **nicht** bei anderen Arten von Cross-Site-Anfragen wie
+    POST-Methoden, Bildern in <img>-Tags oder in AJAX-Requests.
+
+- type: md_basic
+  front: Was ist die Same-Origin-Policy (SOP)?
+  back: |
+    Die SOP restriktiert Script-initiierte Anfragen zu dem gleichen Ursprung.
+    Das Triplet aus (Schema, Host, und Port) müssen hierbei Übereinstimmen, damit
+    die Anfrage erfolgreich durchgeführt werden darf.
+
+- type: md_basic
+  front: Wann greift die Same-Origin-Policy (SOP) nicht?
+  back: |
+    Bei Nutzer-initiierten Aktionen wie das versenden von Formularen!
+
+- type: md_basic
+  front: Was ist der Unterschied zwischen *persistent* und *reflective* XSS?
+  back: |
+    Bei persistentem XSS wird Schadcode in die Datenbank einer Website
+    eingefügt und bei jedem Aufruf der Seite dargestellt.
+    Bei reflektiertem XSS wird der Code direkt über die URL oder in einem Formular
+    gesendet und sofort ausgeführt.

@@ -1,0 +1,14 @@
+title: Hashfunktionen
+author: Hugo Melder
+id: 1709156765
+cards:
+
+- type: md_basic
+  front: Wie wird ein HMAC gebildet, wenn m die Nachricht, K der secret key und H die Hashfunktion ist?
+  back: |
+    innerHash = H(K' xor ipad) | m)
+    HMAC(K. m) = H((K' xor opad) | innerHash)
+
+    Wobei K' ein vom Secret Key abgeleiteter Schlüssel mit fester Blockgröße ist.
+
+    "|" ist hierbei die Konkatenierung von Strings.

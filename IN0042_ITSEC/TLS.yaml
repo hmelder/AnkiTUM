@@ -1,0 +1,44 @@
+title: TLS
+author: Hugo Melder
+id: 1708962331
+cards:
+
+- type: md_basic
+  front: Wann ist eine TLS Verbindung kompromitiert?
+  back:  |
+    Die Authenitizität des Servers basiert auf der Certificate Chain.
+    Beispielsweise würde die TLS Verbindung durch eine **kompromitierte
+    Certificate Authority (CA)** nicht mehr sicher sein.
+
+    Jedoch hilft eine intakte Certificate Chain nicht, wenn der
+    **Server kompromitiert** wurde.
+
+- type: md_basic
+  front: |
+    Ein Angreifer hat alle Nachrichten eines TLS-Handshakes abgefangen. Er
+    maskiert sich nun als Server und sendet dem Client beim nächsten Handshake in
+    jedem Schritt die entsprechende Nachricht der vorherigen Aufzeichnung zurück.
+    In welchem Schritt des Handshakes und woran erkennt der Client den Angriff?
+  back: |
+    Der Client erkennt den Replay-Angriff beim Überprüfen von ServerHello. Der
+    Server wird hier eine Nachricht zurückspielen, die nicht den aktuellen Nonce
+    Rc des Clients im MAC berücksichtigt.
+
+- type: md_basic
+  front: |
+    Kann der Server auch ein Zertifikat vom Client bei TLS erwarten?
+  back: |
+    Ja, hierbei überträgt der Client das angeforderte Zertifikat
+    nachdem er ServerHello empfangen, und die Anfrage übersetzt hat.
+
+    Die Authentizität wird mithilfe einer Signatur über alle bisherigen
+    Nachrichten mit dem um Zertifikat gehörenden privaten Schlüssel
+    signiert.
+
+- type: md_basic
+  front: Angenommen eine stateful request wird via 0-RTT TLS an den Server
+  verschickt. Zu welchen Problem kann es hierbei kommen?
+  back: |
+     Da 0-RTT-Daten ohne vollständige Verhandlung gesendet werden, kann ein
+     Angreifer diese Daten abfangen und erneut an den Server senden. Der Server
+     könnte diese erneut gesendeten Daten als neue, legitime Anfragen behandeln.

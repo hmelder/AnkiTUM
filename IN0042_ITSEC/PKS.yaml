@@ -1,0 +1,116 @@
+title: PKS
+author: Hugo Melder
+id: 1708962331
+cards:
+
+- type: md_basic
+  front: Was sind die Komponenten einer PKI?
+  back:  |
+    1. **Registration Authority (RA)**: bürgt für die Verbindung zw.
+    öffentlichem Schlüssel und Identitäten/Attributen
+    2. **Certification Authority (CA)**: Stellt Zertifikate aus
+    3. **Validierungsstelle (VA): Überprüfung von Zertifikaten
+    4. **Verzeichnisdienst**: Verzeichnis mit ausgestellten Zertifikaten
+    5. **Personal Security Environment (PSE)**: Sichere Speicherung des privaten
+    Schlüssels
+
+- type: md_basic
+  front: Wer signiert Root Zertifikate?
+  back: |
+    Root Zertifikate sind **selbstsigniert**.
+
+- type: md_basic
+  front: Was ist ein Trust Anchor?
+  back: |
+    Ein Trust Anchor (Vertrauensanker) ist eine autoritative Entität,
+    repräsentiert durch einen öffentlichen Schlüssel und eine zugehörige Identität
+    (wie eine Root-Zertifizierungsstelle (CA)), der Benutzer und Systeme inhärent
+    vertrauen.
+
+- type: md_basic
+  front: Wo werden Root CAs gespeichert?
+  back: |
+    - Betriebsystem
+    - Browser
+
+- type: md_basic
+  front: Wie wird die Gültigkeit der Signatur überprüft?
+  back: |
+    Jedes Zertifikat auf dem Pfad muss überprüft werden: d.h
+    - Signatur überprüfen
+    - Verwendete Algorithmen mit Blacklist abgleichen
+    - Zertifikat wurde nicht zurückgerufen
+    - Zertifikat nicht abgelaufen
+    - Root CA wird vertraut
+
+- type: md_basic
+  front: Wie funktioniert das asymmetrische Challenge Response (CR)-Verfahren
+  back: |
+    - d_A ist der private Signaturschlüssel
+    - e_A ist der öffentliche Validierungsschlüssel
+
+    Alice besitzt (e_A, d_A) und ein Zertifikat(e_A), was die Herkunft von e_A bestätigt.
+
+    1. Loginanfrage mit Zertifikat (Alice -> Server)
+    2. Server prüft Zertifikat und schickt eine Nonce zurück
+    3. Alice berechnet E_dA(Nonce) und sendet sie dem Server zurück
+    4. Server prüft Signatur und gibt Status zurück
+
+- type: md_basic
+  front: Wie kann der Client feststellen, ob ein Zertifikat rückgerufen wurde?
+  back: |
+    Lösung liefert das **O**nline **C**ertificate **S**tatus **P**rotocol (**OCSP**).
+    
+    Durch eine Anfrage kann die Gültigkeit des Zertifikats abgefragt werden, ohne eine große
+    Revokationliste lokal zu verwalten.
+
+- type: md_basic
+  front: Was ist der grundlegende Aufbau einer SSO Lösung?
+  back: |
+    - **Authentisierung** durch **Policy Decision-Point** (PDP)
+    - Prüfung auf **Gültigkeit** durch **Service** (z.B. S1): das
+    ist ein Policy-Enforcement-Point, PEP
+
+- type: md_basic
+  front: Nenne drei SSO-Protokolle, die in der Praxis verwendet werden
+  back: |
+    - Unternehmensnetzwerk: Kerberos-Protokoll
+    - Web-Anwendungen: OpenID Connect und OAuth
+    - Web-basiert, Akademia: Shibboleth (auch TUM)
+
+- type: md_basic
+  front: Wie ist der KDC (In der Vorlesung auch AuC genannt) bei Kerberos aufgeteilt?
+  back: |
+     - Authentication Service (AS)
+     - Ticket-Granting Service (TGS)
+
+- type: md_basic
+  front: Wird asymmetrische Kryptographie im Kerberos-Protokoll eingesetzt?
+  back: Nein. Kerberos verwendet im Standard nur symmetrische Kryptographie.
+
+- type: md_basic
+  front: Was sind die 2 Kern-Konzepte von Kerberos?
+  back: |
+    - **Ticket**: für Zugriff auf einen Service wird ein Ticket benötigt.
+    - **Authentikator**: Nachweis des berechtigten Ticket-Besitzes.
+
+- type: md_basic
+  front: Beschreibe den Aufbau des Ticket Granting Services
+  back: |
+    Ticket für A und Service S:
+    `T^(A,S) = (S, A, addr, timestamp, lifetime, k_AS)`
+
+- type: md_basic
+  front: Wie wird das Ticket T^(A, S) verschlüsselt?
+  back: |
+    Ticket wird von TGS mit Master-Key k_S von Service S verschlüsselt:
+    i.d.R wird AES verwendet: AES_ks(T^(A,S)).
+
+- type: md_basic
+  front: Was versteht man unter TOFU?
+  back: |
+    Bei diesem Modell wird einem Schlüssel oder einem Zertifikat beim ersten
+    Gebrauch vertraut, und dieser initial etablierte Vertrauensanker wird für
+    zukünftige Verbindungen oder Transaktionen verwendet.
+
+    TOFU findet zum Beispiel im SSH Protokol Verwendung.
