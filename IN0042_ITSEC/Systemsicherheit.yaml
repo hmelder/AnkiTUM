@@ -52,3 +52,15 @@ cards:
     - PROT_EXEC
 
     Eine Seite kann mehrere dieser Attribute gleichzeitig haben.
+
+- type: md_basic
+  front: Was ist ein Stack Canary und welche Werte schützt er?
+  back: |
+    - Einfügen eines zufälligen, zur Laufzeit erzeugten Canary-Werts auf dem Stack
+    vor der gespeicherten Rücksprungadresse.
+    - Vor dem Return: Programm vergleicht Canary-Wert mit Referenzwert. Veränderungen führen
+    zu Programmterminierung.
+
+- type: md_basic
+  front: Wer erzeugt den Stack Canary und wer bringt die Prüflogik ein?
+  back: Der Compiler
