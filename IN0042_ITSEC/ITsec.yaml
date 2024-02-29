@@ -496,12 +496,15 @@ cards:
 
 - type: markdown
   id: 88  # (generated)
-  front: Welche verfahren gelten als sicher?
+  front: Welche verfahren gelten als unsicher?
   back: |+
-    - AES
-    - RSA
-    - ECC
-    - SHA3
+    Blockchiffren:
+    - DES, 3DES
+    - AES ECB
+    Hashfunktionen
+    - MD4, MD5
+    - SHA1, SHA2
+    
 
 
 - type: markdown
@@ -620,10 +623,13 @@ cards:
 
 - type: html
   id: 81  # (generated)
-  front: Wie können Zertifikate zurückgerifen werden?
-  back: nline Certificate Status Protocol (OCSP) Stapling<br><br>Regelmäßiges erfragen
-    von Gültigkeitsbestätigungen
-
+  front: Wie können Zertifikate zurückgerufen werden?
+  back: |+
+    Durch das Certificate Status Protocol (OCSP) 
+      -> Regelmäßiges erfragen von Gültigkeitsbestätigungen
+    
+    Oder Certificate Revocation Lists (CRL)
+    
 
 - type: html
   id: 82  # (generated)
@@ -853,3 +859,52 @@ cards:
     - 80-bit secret s zu kurz (RFC 4226 HOTP fordert mind. 128-bit)
     - s ist im Klartext auf Smartphone gesichert
     - Server wird nicht authorisiert
+
+- type: markdown
+  front: Was ist eine TEE?
+  back: |+
+    Trusted execution environment
+    - Eine sichere bzw. vertrauenswürde Laufzeitumgebung für programme, z.b. Container
+
+- type: markdown
+  front: Was ist Intel SGX?
+  back: |+
+    - Intel CPU erweiterung
+    - Erlaubt es, von der CPU geschützte Speicherbereiche zu definieren
+    - Sogenannte "Enklaven" können on-the-fly verschlüsselt / entschlüsselt werden
+
+
+- type: markdown
+  front: Welche Probleme hat der default KDC aus der vorlesung?
+  back: |+
+    - Keine replay protection durch nonces oder timestamps
+    - Teilnehme authentisieren sich nicht gegenseitig
+    - Keine ticket lifetime / keine revocation
+    
+
+
+- type: markdown
+  front: Mögliche angriffe auf passwort hash datenbanken?
+  back: |+
+    - Rainbow tables -> verhinderbar durch salting
+    - brute force -> verhinderbar durch langsame hashfunktion, große hashes
+    
+
+- type: markdown
+  front: Probleme textbook rsa
+  back: |+
+    - c < N: keine modulo berechnung, man kann die wurzel ziehen
+    - Gleicher Klartext erzeugt gleichen kryptotext
+    
+
+- type: markdown
+  front: Probleme 0 RTT TLS handshake
+  back: |+
+    - Keine PFS
+    - Ein replay angriff bei den ersten nutzerdaten möglich
+        -> z.b. Replay einer POST request
+    
+
+    
+
+    
