@@ -106,6 +106,14 @@ cards:
     - SHA-512/256 (Von den 512-bit werden *256-bit* weiter genutzt)
 
 - type: md_basic
+  front: |
+    Gegeben ist die folgende Berechnungsvorschrift für einen MAC(m, k_AB) = H(m|k_AB).
+    Warum ist diese Art von Message-Authentication Code als **kritisch einzustufen**?
+  back:
+    Bei der Konstruktion reicht es eine Kollision für die Nachricht m zu finden,
+    um den MAC für jeden beliebigen Schlüssel zu brechen.
+
+- type: md_basic
   front: Was ist die sicherer? MAC-then-Encrypt oder Encrypt-then-MAC?
   back: |
     **Encrypt-then-MAC**, da wir zuerst die Integrität des Ciphertext mit dem MAC
