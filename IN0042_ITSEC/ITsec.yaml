@@ -855,7 +855,8 @@ cards:
     - Server wird nicht authorisiert
 
 - type: markdown
+  id: 116  # (generated)
   front: Grenze die Begriffe Safety und Security voneinander ab!
-  back: |
+  back: |-
     - **Safety**: Schutz vor Störungen von **Innen**: Funktions- und Betriebssicherheit
     - **Security**: Schutz vor Störungen von **Außen**: Angriffe durch Hacker, gezielte Angriffe
