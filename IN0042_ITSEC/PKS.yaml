@@ -108,7 +108,7 @@ cards:
 
 - type: md_basic
   id: 12  # (generated)
-  front: Beschreibe den Aufbau des Ticket Granting Services
+  front: Beschreibe den Aufbau eines Kerberos Tickets (vom TGS)
   back: |
     Ticket für A und Service S:
     `T^(A,S) = (S, A, addr, timestamp, lifetime, k_AS)`
