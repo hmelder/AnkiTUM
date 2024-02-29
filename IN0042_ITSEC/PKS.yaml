@@ -10,7 +10,7 @@ cards:
     1. **Registration Authority (RA)**: bürgt für die Verbindung zw.
     öffentlichem Schlüssel und Identitäten/Attributen
     2. **Certification Authority (CA)**: Stellt Zertifikate aus
-    3. **Validierungsstelle (VA): Überprüfung von Zertifikaten
+    3. **Validierungsstelle (VA)**: Überprüfung von Zertifikaten
     4. **Verzeichnisdienst**: Verzeichnis mit ausgestellten Zertifikaten
     5. **Personal Security Environment (PSE)**: Sichere Speicherung des privaten
     Schlüssels
