@@ -133,6 +133,7 @@ cards:
     TOFU findet zum Beispiel im SSH Protokol Verwendung.
 
 - type: md_basic
+  id: 15  # (generated)
   front: Was ist der Authenticator bei Kerberos und wie ist es aufgebaut?
   back: |
     - Instanz A legt Service S ein Ticket TA,S vor.
@@ -141,13 +142,14 @@ cards:
     - Authenticator wird mit shared key k_AS verschlüsselt
 
     **Achtung**: Partner müssen zeitsynchronisiert sein.
-    
+
     ## Die Authentikator-Datenstruktur
     AuthentA = (A, addr, timestamp),
 
 - type: md_basic
+  id: 16  # (generated)
   front: Was ist der allgemeine Kerberos-Protokoll-Ablauf?
-  back: |
+  back: |-
     - Initial: Anfrage von A nach einem Initial-Ticket, um nachfolgend von TGS
     Tickets ausstellen zu lassen.
     - Wiederholt: Ticket-Ausstellungs-Request für Dienst-Zugriff.
