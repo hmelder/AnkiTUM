@@ -40,7 +40,7 @@ cards:
 
 - type: md_basic
   id: 3  # (generated)
-  front: Angenommen eine stateful request wird via 0-RTT TLS an den Server verschickt.
+  front: Angenommen eine **stateful** request wird via 0-RTT TLS an den Server verschickt.
     Zu welchen Problem kann es hierbei kommen?
   back: |-
     Da 0-RTT-Daten ohne vollständige Verhandlung gesendet werden, kann ein

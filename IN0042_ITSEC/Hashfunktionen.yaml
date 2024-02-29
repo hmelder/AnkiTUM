@@ -39,7 +39,7 @@ cards:
     1. Zerlegen der Eingabe m in Blöcke: m = m1 | m2 | ... | mn
     2. Blockweises komprimieren mit Kompressionsfunktion f
 
-    [[image: merkle-damgard.png]]
+    [[image: merkledamgard.png]]
 
 - type: md_basic
   id: 4  # (generated)

@@ -41,11 +41,13 @@ cards:
   id: 4  # (generated)
   front: Wie wird die Gültigkeit der Signatur überprüft?
   back: |
-    Jedes Zertifikat auf dem Pfad muss überprüft werden: d.h
+    **Jedes** Zertifikat auf dem Pfad (bis zum Root Cert.) muss überprüft
+    *werden: d.h
     - Signatur überprüfen
     - Verwendete Algorithmen mit Blacklist abgleichen
     - Zertifikat wurde nicht zurückgerufen
     - Zertifikat nicht abgelaufen
+    - Einschränkungen wurden Eingehalten (z.B. `CA: FALSE`)
     - Root CA wird vertraut
 
 - type: md_basic
@@ -77,7 +79,7 @@ cards:
   back: |
     - **Authentisierung** durch **Policy Decision-Point** (PDP)
     - Prüfung auf **Gültigkeit** durch **Service** (z.B. S1): das
-    ist ein Policy-Enforcement-Point, PEP
+    ist ein **Policy-Enforcement-Point**, PEP
 
 - type: md_basic
   id: 8  # (generated)
@@ -124,7 +126,7 @@ cards:
   id: 14  # (generated)
   front: Was versteht man unter TOFU?
   back: |-
-    Bei diesem Modell wird einem Schlüssel oder einem Zertifikat beim ersten
+    Bei **T**rust **On** **F**irst **U**se (TOFU) wird einem Schlüssel oder einem Zertifikat beim ersten
     Gebrauch vertraut, und dieser initial etablierte Vertrauensanker wird für
     zukünftige Verbindungen oder Transaktionen verwendet.
 
