@@ -503,7 +503,7 @@ cards:
     Hashfunktionen
     - MD4, MD5
     - SHA1, SHA2
-    
+
 
 
 - type: markdown
@@ -626,9 +626,9 @@ cards:
   back: |+
     Durch das Certificate Status Protocol (OCSP) 
       -> Regelmäßiges erfragen von Gültigkeitsbestätigungen
-    
+
     Oder Certificate Revocation Lists (CRL)
-    
+
 
 - type: html
   id: 82  # (generated)
@@ -860,12 +860,14 @@ cards:
     - Server wird nicht authorisiert
 
 - type: markdown
+  id: 117  # (generated)
   front: Was ist eine TEE?
   back: |+
     Trusted execution environment
     - Eine sichere bzw. vertrauenswürde Laufzeitumgebung für programme, z.b. Container
 
 - type: markdown
+  id: 118  # (generated)
   front: Was ist Intel SGX?
   back: |+
     - Intel CPU erweiterung
@@ -874,35 +876,39 @@ cards:
 
 
 - type: markdown
+  id: 119  # (generated)
   front: Welche Probleme hat der default KDC aus der vorlesung?
   back: |+
     - Keine replay protection durch nonces oder timestamps
     - Teilnehme authentisieren sich nicht gegenseitig
     - Keine ticket lifetime / keine revocation
-    
+
 
 
 - type: markdown
+  id: 120  # (generated)
   front: Mögliche angriffe auf passwort hash datenbanken?
   back: |+
     - Rainbow tables -> verhinderbar durch salting
     - brute force -> verhinderbar durch langsame hashfunktion, große hashes
-    
+
 
 - type: markdown
+  id: 121  # (generated)
   front: Probleme textbook rsa
   back: |+
     - c < N: keine modulo berechnung, man kann die wurzel ziehen
     - Gleicher Klartext erzeugt gleichen kryptotext
-    
+
 
 - type: markdown
+  id: 122  # (generated)
   front: Probleme 0 RTT TLS handshake
   back: |+
     - Keine PFS
     - Ein replay angriff bei den ersten nutzerdaten möglich
         -> z.b. Replay einer POST request
-    
+
 
 - type: markdown
   id: 116  # (generated)
