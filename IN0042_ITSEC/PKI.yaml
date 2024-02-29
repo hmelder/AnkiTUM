@@ -1,4 +1,4 @@
-title: PKS
+title: PKI
 author: Hugo Melder
 id: 1708962331
 cards:
@@ -27,8 +27,8 @@ cards:
   back: |
     Ein Trust Anchor (Vertrauensanker) ist eine autoritative Entität,
     repräsentiert durch einen öffentlichen Schlüssel und eine zugehörige Identität
-    (wie eine Root-Zertifizierungsstelle (CA)), der Benutzer und Systeme inhärent
-    vertrauen.
+    (wie eine Root-Zertifizierungsstelle (CA)), der Benutzer und Systeme **inhärent
+    vertrauen**.
 
 - type: md_basic
   id: 3  # (generated)
