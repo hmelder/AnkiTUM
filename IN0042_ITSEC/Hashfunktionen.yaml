@@ -16,18 +16,21 @@ cards:
     "|" ist hierbei die Konkatenierung von Strings.
 
 - type: md_basic
+  id: 1  # (generated)
   front: Was ist die Idee einer kryptografischen Hashfunktion?
   back: |
     Erstellen eines „digitalen“ Fingerabdrucks h für ein Dokument / eine
     Nachricht m, sodass h das Dokument m repräsentiert.
 
 - type: md_basic
+  id: 2  # (generated)
   front: Was ist ein **Message Digest**?
   back: |
     Ein **Message Digest** ist eine numerische Representation fester Größe einer Nachricht,
     die von einer kryptographischen Hashfunktion berechnet wurde.
 
 - type: md_basic
+  id: 3  # (generated)
   front: Wie funktioniert das *Merkle-Damgård* Verfahren?
   back: |
     Gegeben Kompressionsfunktion f und IV. **IV** ist ein  Initialisierungsblock
@@ -35,10 +38,11 @@ cards:
 
     1. Zerlegen der Eingabe m in Blöcke: m = m1 | m2 | ... | mn
     2. Blockweises komprimieren mit Kompressionsfunktion f
-    
+
     [[image: merkle-damgard.png]]
 
 - type: md_basic
+  id: 4  # (generated)
   front: Wie funktionert das **Sponge**-Prinzip?
   back: |
     Zwei Phasen:
@@ -46,17 +50,19 @@ cards:
       - Initialzustand init = r | c mit 0-Bits gefüllt.
     2. **Ausgeben**
       - *Schrittweise Entnahme* von r-Bits aus den Zwischenzuständen; die r-Bits sind Ausgabebits.
-    
+
     [[image: sponge.png]]
- 
+
 - type: md_basic
+  id: 5  # (generated)
   front: Gibt es Einschränkungen bei der Länge des Hashs bei dem Spongeprinzip?
   back: |
     Nein. Länge der Ausgabe ist **flexibel bestimmbar**. Hash kann eine flexible Länge haben.
 
 - type: md_basic
+  id: 6  # (generated)
   front: Was ist der Unterschied zwischen einer Hashfunktion und einem MAC?
-  back: |
+  back: |-
     Jeder kann einen **Hashwert** berechnen, es ist **kein Ursprungsnachweis**!
 
     Lösung: Einbringen eines **gemeinsamen Geheimnisses**, z.B. eines shared Key
