@@ -71,6 +71,7 @@ cards:
     Der **Authentizitätsnachweis**: Kenntnis des Schlüssels K_AB nachweisen.
 
 - type: md_basic
+  id: 7  # (generated)
   front: Beschreibe den Aufbau eines MACs
   back: |
     - Hashfunktion mit Schlüssel: H: EK * M^* -> M^n
@@ -79,6 +80,7 @@ cards:
     - Empfänger prüft Authentizität und Integrität von m' mit k_AB
 
 - type: md_basic
+  id: 8  # (generated)
   front: |
     Was ist ein großes Problem wenn die Hashfunktion bei MAC auf der
     Merkle-Damgård Konstruktion beruht?
@@ -86,6 +88,7 @@ cards:
     **Length Extension Angriffe** sind möglich.
 
 - type: md_basic
+  id: 9  # (generated)
   front: Wie funktioniert ein **Length Extension Angriff**?
   back: |
     1. Gegeben authentisierte Nachricht: data, h=SHA-1(kmac | data)
@@ -95,26 +98,29 @@ cards:
     h' = SHA-1(h | fake'), (fake ' ist eine gepaddete Version von fake)
 
 - type: md_basic
+  id: 10  # (generated)
   front: Warum funktionieren Length Extension Angriffe bei SHA-1?
   back: |
     Basiert auf der Merkle-Damgård Konstruktion und gibt somit den **internen
     Zustand** als Hashwert h aus.
 
 - type: md_basic
+  id: 11  # (generated)
   front: Welche SHA Hashfunktionen sind resilient gegen length extension Angriffe?
   back: |
     - SHA-3
     - SHA-512/256 (Von den 512-bit werden *256-bit* weiter genutzt)
 
 - type: md_basic
+  id: 12  # (generated)
   front: |
     Gegeben ist die folgende Berechnungsvorschrift für einen MAC(m, k_AB) = H(m|k_AB).
     Warum ist diese Art von Message-Authentication Code als **kritisch einzustufen**?
-  back:
-    Bei der Konstruktion reicht es eine Kollision für die Nachricht m zu finden,
+  back: Bei der Konstruktion reicht es eine Kollision für die Nachricht m zu finden,
     um den MAC für jeden beliebigen Schlüssel zu brechen.
 
 - type: md_basic
+  id: 13  # (generated)
   front: Was ist die sicherer? MAC-then-Encrypt oder Encrypt-then-MAC?
   back: |
     **Encrypt-then-MAC**, da wir zuerst die Integrität des Ciphertext mit dem MAC
@@ -125,14 +131,16 @@ cards:
     des nicht-überprüften Ciphertexts verletzt wird.
 
 - type: md_basic
+  id: 14  # (generated)
   front: Was ist das Vorgehen beim Erstellen einer **elektronischen/digitalen Signatur**?
   back: |
     1. Hashen einer beliebigen Nachricht mit Hashfunktion H
     2. Signieren des Hashes (Message Digest) mit Signaturalgorithmus
 
 - type: md_basic
+  id: 15  # (generated)
   front: Wie werden **elektronische/digitale Signaturen** überprüft?
-  back: |
+  back: |-
     B erhält sig und m und kennt Hashfunktion H.
 
     1. B besitzt den öffentlichen Schlüssel e von A (offener Austausch)
