@@ -504,11 +504,13 @@ cards:
     - SHA3
 
 
-- type: html
+- type: markdown
   id: 65  # (generated)
   front: welche klassen von OTP Verfahren gibt es?
-  back: Hardware vs Software token<br>Zeitsynkronisiert, CR basiert
-
+  back: |
+    Hardware und Software Token.
+    - Zeitsynchronisiert (TOTP)
+    - Challenge-Response basiert
 
 - type: html
   id: 66  # (generated)
@@ -818,3 +820,33 @@ cards:
     L?
   back: |-
     log_2(|M|^L)
+
+- type: markdown
+  front: Wie funktioniert ein RSA SecureID Token?
+  back: |
+    ## Auf Server
+    Token Seriennummer mit 128-bit Seed s (Auch auf RSA-Token)
+
+    ## Erzeugen von OTPs
+    - Alle 60 Sekunden
+    - OTP = AES(TokenID | s | Zeit)
+    - 6-8 Stellige Zahl
+    
+- type: markdown
+  front: |
+    Das OTP was der Benutzer eingibt ist wesentlich kürzer, als das Resultat von
+    HMAC_SHA1, oder AES. Woher kommt diese kurze Zahlenfolge also?
+  back: |
+    Es gibt eine "Truncate" Funktion, die geschickt den HMAC auf die Ziffernanzahl
+    reduziert.
+
+    HOTP(K,C) = Truncate(HMAC-SHA-1(K,C))
+
+    K repräsentiert das Shared Secret und C den Zähler.
+
+- type: markdown
+  front: Was sind Schwachpunkte von Google Authenticator?
+  back: |
+    - 80-bit secret s zu kurz (RFC 4226 HOTP fordert mind. 128-bit)
+    - s ist im Klartext auf Smartphone gesichert
+    - Server wird nicht authorisiert
