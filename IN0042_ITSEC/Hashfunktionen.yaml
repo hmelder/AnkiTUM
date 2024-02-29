@@ -82,7 +82,8 @@ cards:
   front: |
     Was ist ein großes Problem wenn die Hashfunktion bei MAC auf der
     Merkle-Damgård Konstruktion beruht?
-  back: **Length Extension Angriffe** sind möglich.
+  back: |
+    **Length Extension Angriffe** sind möglich.
 
 - type: md_basic
   front: Wie funktioniert ein **Length Extension Angriff**?
