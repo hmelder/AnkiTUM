@@ -853,3 +853,9 @@ cards:
     - 80-bit secret s zu kurz (RFC 4226 HOTP fordert mind. 128-bit)
     - s ist im Klartext auf Smartphone gesichert
     - Server wird nicht authorisiert
+
+- type: markdown
+  front: Grenze die Begriffe Safety und Security voneinander ab!
+  back: |
+    - **Safety**: Schutz vor Störungen von **Innen**: Funktions- und Betriebssicherheit
+    - **Security**: Schutz vor Störungen von **Außen**: Angriffe durch Hacker, gezielte Angriffe
