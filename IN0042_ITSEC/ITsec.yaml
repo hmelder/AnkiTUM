@@ -84,7 +84,7 @@ cards:
 
 - type: html
   id: 12  # (generated)
-  front: Was ist symmtrische verschlüsseliung vs asymmetrische verschlüsselung
+  front: Was ist symmtrische verschlüsselung vs asymmetrische verschlüsselung
   back: |+
     Symmetrisch: Geteilter (gleicher) schlüssel zwischen beiden Kommunikationspartnern
     welcher die nachrichten verschlüsselt bzw entschlüsselt<br><br>Asymmetrisch: Public
@@ -120,7 +120,7 @@ cards:
 
 - type: html
   id: 17  # (generated)
-  front: Wie berechnet sich ein RSA SChlüsselpaar?
+  front: Wie berechnet sich ein RSA Schlüsselpaar?
   back: 1. wähle 2 große, geheime Primzahlen p, q (&gt; 1024 bit),<br>2. Berechne
     RSA-Modul n = pq, n ist öffentlich. P, q sind geheim<br>3. Berechne phi(n) = (p
     -1)(q -1), Eulersche Phi-Funktion<br>effizient zu berechnen, wenn p, q Primzahlen
@@ -201,7 +201,7 @@ cards:
   id: 26  # (generated)
   front: Warum benötigen Blockchiffren Padding?
   back: Letzter Block muss evtl aufgefüllt werden<br><br>letzten block mit bytes mit
-    dem gleichen wert wie die Anzahl der freien bytes auffpllen.
+    dem gleichen wert wie die Anzahl der freien bytes auffüllen.
 
 
 - type: html
@@ -301,8 +301,7 @@ cards:
 - type: html
   id: 39  # (generated)
   front: Was ist der Sinn an passworthashing?
-  back: '"""Falls Passwortlisten """"geleaked"""" werden, können diese nicht entschlüsselt
-    werden"""'
+  back: Falls Passwortlisten geleaked werden, können diese nicht entschlüsselt werden
 
 
 - type: html
@@ -314,7 +313,7 @@ cards:
 
 - type: html
   id: 41  # (generated)
-  front: '"""Was ist """"salting"""" im Bezug auf Passwort hashing?"""'
+  front: Was ist salting im Bezug auf Passwort hashing?
   back: Ein Zufälliger Wert wird im Passwort verhasht. Macht es deutlich schwerer
     Passwort Tabellen zu verwenden und gleiche Passwörter können nicht anhand ihrer
     hashes erkannt werden
@@ -417,7 +416,7 @@ cards:
   front: Bsp Hardware implementierung CSRNG
   back: Nichtlinear rückgekoppeltes Schieberegister
 
-- type: html
+- type: html_cloze
   id: 53  # (generated)
   front: Um Schlüssel zwischen Mehr als zwei Kommunikationspartnern auszutauschen,
     kann ein&nbsp;{{c1::Schlüsselverteilungs-Server}}, auch&nbsp;{{c1::Key Distribution
@@ -683,10 +682,10 @@ cards:
 
 - type: markdown
   id: 95  # (generated)
-  front: Was ist die string tranquility regel?
+  front: Was ist die strong tranquility regel?
   back: |+
     - Bell lapadula modell
-    - Sicherheitsklassen dürfen nciht zur laufzeit geändert werden
+    - Sicherheitsklassen dürfen nicht zur laufzeit geändert werden
 
 
 - type: markdown
@@ -725,7 +724,7 @@ cards:
   front: Probleme mit KDCs?
   back: |+
     - ggf. Keine Perfect forward secrecy
-    - signle point of failur
+    - single point of failure
 
 - type: markdown
   id: 101  # (generated)
@@ -751,7 +750,7 @@ cards:
 - type: markdown
   id: 103  # (generated)
   front: Was ist complete mediation / zero trust ?
-  back: Alle resourcen müssen geschüzt werden
+  back: Alle resourcen müssen geschützt werden
 
 - type: markdown
   id: 104  # (generated)
@@ -905,6 +904,9 @@ cards:
         -> z.b. Replay einer POST request
     
 
-    
-
-    
+- type: markdown
+  id: 116  # (generated)
+  front: Grenze die Begriffe Safety und Security voneinander ab!
+  back: |-
+    - **Safety**: Schutz vor Störungen von **Innen**: Funktions- und Betriebssicherheit
+    - **Security**: Schutz vor Störungen von **Außen**: Angriffe durch Hacker, gezielte Angriffe

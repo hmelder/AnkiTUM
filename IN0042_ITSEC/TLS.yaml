@@ -46,3 +46,10 @@ cards:
     Da 0-RTT-Daten ohne vollständige Verhandlung gesendet werden, kann ein
     Angreifer diese Daten abfangen und erneut an den Server senden. Der Server
     könnte diese erneut gesendeten Daten als neue, legitime Anfragen behandeln.
+
+- type: md_basic
+  id: 4  # (generated)
+  front: Was versteht man unter einem sicheren Kanal?
+  back: |-
+    Der sichere Kanal abstrahiert vom eigentlichen Anwendungsprotokoll, sichert
+    die Schutzziele (CIA) aber den höheren Protokollschichten zu.

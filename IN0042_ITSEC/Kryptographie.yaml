@@ -43,3 +43,11 @@ cards:
   id: 5  # (generated)
   front: Nenne ein Verfahren zur Festplattenverschlüsselung.
   back: AES-XTS
+
+- type: md_basic
+  id: 6  # (generated)
+  front: |
+    Wieso können bei ECC-basierten kryptografischen Verfahren deutlich kürzere Schlüssellängen als bei RSA eingesetzt werden?
+  back: |-
+    Das zugrunde liegende diskrete Logarithmus-Problemist auf elliptischen
+    Kurven schwieriger zu lösen als das Faktorisierungsproblem bei RSA.
