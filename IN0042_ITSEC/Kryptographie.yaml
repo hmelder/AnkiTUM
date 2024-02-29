@@ -45,8 +45,9 @@ cards:
   back: AES-XTS
 
 - type: md_basic
-  front: | 
+  id: 6  # (generated)
+  front: |
     Wieso können bei ECC-basierten kryptografischen Verfahren deutlich kürzere Schlüssellängen als bei RSA eingesetzt werden?
-  back: |
+  back: |-
     Das zugrunde liegende diskrete Logarithmus-Problemist auf elliptischen
     Kurven schwieriger zu lösen als das Faktorisierungsproblem bei RSA.
