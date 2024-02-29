@@ -822,6 +822,7 @@ cards:
     log_2(|M|^L)
 
 - type: markdown
+  id: 113  # (generated)
   front: Wie funktioniert ein RSA SecureID Token?
   back: |
     ## Auf Server
@@ -831,8 +832,9 @@ cards:
     - Alle 60 Sekunden
     - OTP = AES(TokenID | s | Zeit)
     - 6-8 Stellige Zahl
-    
+
 - type: markdown
+  id: 114  # (generated)
   front: |
     Das OTP was der Benutzer eingibt ist wesentlich kürzer, als das Resultat von
     HMAC_SHA1, oder AES. Woher kommt diese kurze Zahlenfolge also?
@@ -845,8 +847,9 @@ cards:
     K repräsentiert das Shared Secret und C den Zähler.
 
 - type: markdown
+  id: 115  # (generated)
   front: Was sind Schwachpunkte von Google Authenticator?
-  back: |
+  back: |-
     - 80-bit secret s zu kurz (RFC 4226 HOTP fordert mind. 128-bit)
     - s ist im Klartext auf Smartphone gesichert
     - Server wird nicht authorisiert
