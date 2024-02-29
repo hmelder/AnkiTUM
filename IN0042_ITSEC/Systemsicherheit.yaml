@@ -54,6 +54,7 @@ cards:
     Eine Seite kann mehrere dieser Attribute gleichzeitig haben.
 
 - type: md_basic
+  id: 6  # (generated)
   front: Was ist ein Stack Canary und welche Werte schützt er?
   back: |
     - Einfügen eines zufälligen, zur Laufzeit erzeugten Canary-Werts auf dem Stack
@@ -62,5 +63,6 @@ cards:
     zu Programmterminierung.
 
 - type: md_basic
+  id: 7  # (generated)
   front: Wer erzeugt den Stack Canary und wer bringt die Prüflogik ein?
   back: Der Compiler
