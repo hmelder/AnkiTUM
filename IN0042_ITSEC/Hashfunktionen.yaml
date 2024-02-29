@@ -69,3 +69,64 @@ cards:
     K_AB, in die Hash-Berechnung.
 
     Der **Authentizitätsnachweis**: Kenntnis des Schlüssels K_AB nachweisen.
+
+- type: md_basic
+  front: Beschreibe den Aufbau eines MACs
+  back: |
+    - Hashfunktion mit Schlüssel: H: EK * M^* -> M^n
+    - Pre-shared Secret **k_AB** zwischen Partnern A, B
+    - MAC-Berechnung: mac = H(m') mit m' = k_AB | m (m ist die Nachricht)
+    - Empfänger prüft Authentizität und Integrität von m' mit k_AB
+
+- type: md_basic
+  front: |
+    Was ist ein großes Problem wenn die Hashfunktion bei MAC auf der
+    Merkle-Damgård Konstruktion beruht?
+  back: **Length Extension Angriffe** sind möglich.
+
+- type: md_basic
+  front: Wie funktioniert ein **Length Extension Angriff**?
+  back: |
+    1. Gegeben authentisierte Nachricht: data, h=SHA-1(kmac | data)
+    2. Konkateniere nun fake an die ursprünglichen Daten: data' = data | fake
+    3. Berechnung eines **validen Hashes** kann aber hier **ohne Besitz** des Secrets erfolgen
+
+    h' = SHA-1(h | fake'), (fake ' ist eine gepaddete Version von fake)
+
+- type: md_basic
+  front: Warum funktionieren Length Extension Angriffe bei SHA-1?
+  back: |
+    Basiert auf der Merkle-Damgård Konstruktion und gibt somit den **internen
+    Zustand** als Hashwert h aus.
+
+- type: md_basic
+  front: Welche SHA Hashfunktionen sind resilient gegen length extension Angriffe?
+  back: |
+    - SHA-3
+    - SHA-512/256 (Von den 512-bit werden *256-bit* weiter genutzt)
+
+- type: md_basic
+  front: Was ist die sicherer? MAC-then-Encrypt oder Encrypt-then-MAC?
+  back: |
+    **Encrypt-then-MAC**, da wir zuerst die Integrität des Ciphertext mit dem MAC
+    überprüfen, **bevor** wir andere Validierungs/Entschlüsselungsmaßnahmen
+    starten.
+
+    Andersrum bestünde kein Integritätsschutz, da dieser schon bei der Entschlüsselung
+    des nicht-überprüften Ciphertexts verletzt wird.
+
+- type: md_basic
+  front: Was ist das Vorgehen beim Erstellen einer **elektronischen/digitalen Signatur**?
+  back: |
+    1. Hashen einer beliebigen Nachricht mit Hashfunktion H
+    2. Signieren des Hashes (Message Digest) mit Signaturalgorithmus
+
+- type: md_basic
+  front: Wie werden **elektronische/digitale Signaturen** überprüft?
+  back: |
+    B erhält sig und m und kennt Hashfunktion H.
+
+    1. B besitzt den öffentlichen Schlüssel e von A (offener Austausch)
+    Rekonstruktion eines Hashwertes und durch Signatur-Validierung:
+    RSA_e(sig) = sig^e mod n = h'.
+    2. Validieren: h' = H(m)?
