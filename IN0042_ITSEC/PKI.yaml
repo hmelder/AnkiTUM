@@ -1,0 +1,155 @@
+title: PKI
+author: Hugo Melder
+id: 1708962331
+cards:
+
+- type: md_basic
+  id: 0  # (generated)
+  front: Was sind die Komponenten einer PKI?
+  back: |
+    1. **Registration Authority (RA)**: bürgt für die Verbindung zw.
+    öffentlichem Schlüssel und Identitäten/Attributen
+    2. **Certification Authority (CA)**: Stellt Zertifikate aus
+    3. **Validierungsstelle (VA)**: Überprüfung von Zertifikaten
+    4. **Verzeichnisdienst**: Verzeichnis mit ausgestellten Zertifikaten
+    5. **Personal Security Environment (PSE)**: Sichere Speicherung des privaten
+    Schlüssels
+
+- type: md_basic
+  id: 1  # (generated)
+  front: Wer signiert Root Zertifikate?
+  back: |
+    Root Zertifikate sind **selbstsigniert**.
+
+- type: md_basic
+  id: 2  # (generated)
+  front: Was ist ein Trust Anchor?
+  back: |
+    Ein Trust Anchor (Vertrauensanker) ist eine autoritative Entität,
+    repräsentiert durch einen öffentlichen Schlüssel und eine zugehörige Identität
+    (wie eine Root-Zertifizierungsstelle (CA)), der Benutzer und Systeme **inhärent
+    vertrauen**.
+
+- type: md_basic
+  id: 3  # (generated)
+  front: Wo werden Root CAs gespeichert?
+  back: |
+    - Betriebsystem
+    - Browser
+
+- type: md_basic
+  id: 4  # (generated)
+  front: Wie wird die Gültigkeit der Signatur überprüft?
+  back: |
+    **Jedes** Zertifikat auf dem Pfad (bis zum Root Cert.) muss überprüft
+    *werden: d.h
+    - Signatur überprüfen
+    - Verwendete Algorithmen mit Blacklist abgleichen
+    - Zertifikat wurde nicht zurückgerufen
+    - Zertifikat nicht abgelaufen
+    - Einschränkungen wurden Eingehalten (z.B. `CA: FALSE`)
+    - Root CA wird vertraut
+
+- type: md_basic
+  id: 5  # (generated)
+  front: Wie funktioniert das asymmetrische Challenge Response (CR)-Verfahren
+  back: |
+    - d_A ist der private Signaturschlüssel
+    - e_A ist der öffentliche Validierungsschlüssel
+
+    Alice besitzt (e_A, d_A) und ein Zertifikat(e_A), was die Herkunft von e_A bestätigt.
+
+    1. Loginanfrage mit Zertifikat (Alice -> Server)
+    2. Server prüft Zertifikat und schickt eine Nonce zurück
+    3. Alice berechnet E_dA(Nonce) und sendet sie dem Server zurück
+    4. Server prüft Signatur und gibt Status zurück
+
+- type: md_basic
+  id: 6  # (generated)
+  front: Wie kann der Client feststellen, ob ein Zertifikat rückgerufen wurde?
+  back: |
+    Lösung liefert das **O**nline **C**ertificate **S**tatus **P**rotocol (**OCSP**).
+
+    Durch eine Anfrage kann die Gültigkeit des Zertifikats abgefragt werden, ohne eine große
+    Revokationliste lokal zu verwalten.
+
+- type: md_basic
+  id: 7  # (generated)
+  front: Was ist der grundlegende Aufbau einer SSO Lösung?
+  back: |
+    - **Authentisierung** durch **Policy Decision-Point** (PDP)
+    - Prüfung auf **Gültigkeit** durch **Service** (z.B. S1): das
+    ist ein **Policy-Enforcement-Point**, PEP
+
+- type: md_basic
+  id: 8  # (generated)
+  front: Nenne drei SSO-Protokolle, die in der Praxis verwendet werden
+  back: |
+    - Unternehmensnetzwerk: Kerberos-Protokoll
+    - Web-Anwendungen: OpenID Connect und OAuth
+    - Web-basiert, Akademia: Shibboleth (auch TUM)
+
+- type: md_basic
+  id: 9  # (generated)
+  front: Wie ist der KDC (In der Vorlesung auch AuC genannt) bei Kerberos aufgeteilt?
+  back: |
+    - Authentication Service (AS)
+    - Ticket-Granting Service (TGS)
+
+- type: md_basic
+  id: 10  # (generated)
+  front: Wird asymmetrische Kryptographie im Kerberos-Protokoll eingesetzt?
+  back: Nein. Kerberos verwendet im Standard nur symmetrische Kryptographie.
+
+- type: md_basic
+  id: 11  # (generated)
+  front: Was sind die 2 Kern-Konzepte von Kerberos?
+  back: |
+    - **Ticket**: für Zugriff auf einen Service wird ein Ticket benötigt.
+    - **Authentikator**: Nachweis des berechtigten Ticket-Besitzes.
+
+- type: md_basic
+  id: 12  # (generated)
+  front: Beschreibe den Aufbau eines Kerberos Tickets (vom TGS)
+  back: |
+    Ticket für A und Service S:
+    `T^(A,S) = (S, A, addr, timestamp, lifetime, k_AS)`
+
+- type: md_basic
+  id: 13  # (generated)
+  front: Wie wird das Ticket T^(A, S) verschlüsselt?
+  back: |
+    Ticket wird von TGS mit Master-Key k_S von Service S verschlüsselt:
+    i.d.R wird AES verwendet: AES_ks(T^(A,S)).
+
+- type: md_basic
+  id: 14  # (generated)
+  front: Was versteht man unter TOFU?
+  back: |-
+    Bei **T**rust **On** **F**irst **U**se (TOFU) wird einem Schlüssel oder einem Zertifikat beim ersten
+    Gebrauch vertraut, und dieser initial etablierte Vertrauensanker wird für
+    zukünftige Verbindungen oder Transaktionen verwendet.
+
+    TOFU findet zum Beispiel im SSH Protokol Verwendung.
+
+- type: md_basic
+  id: 15  # (generated)
+  front: Was ist der Authenticator bei Kerberos und wie ist es aufgebaut?
+  back: |
+    - Instanz A legt Service S ein Ticket TA,S vor.
+    - **A muss S nachweisen**, dass er der **berechtigte Besitzer** des Tickets TA,S ist.
+    - Dazu erzeugt A die Authentikator-Datenstruktur AuthentA
+    - Authenticator wird mit shared key k_AS verschlüsselt
+
+    **Achtung**: Partner müssen zeitsynchronisiert sein.
+
+    ## Die Authentikator-Datenstruktur
+    AuthentA = (A, addr, timestamp),
+
+- type: md_basic
+  id: 16  # (generated)
+  front: Was ist der allgemeine Kerberos-Protokoll-Ablauf?
+  back: |-
+    - Initial: Anfrage von A nach einem Initial-Ticket, um nachfolgend von TGS
+    Tickets ausstellen zu lassen.
+    - Wiederholt: Ticket-Ausstellungs-Request für Dienst-Zugriff.

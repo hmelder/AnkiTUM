@@ -1,0 +1,68 @@
+title: Systemsicherheit
+author: Hugo Melder
+id: 1709159552
+cards:
+
+- type: md_basic
+  id: 0  # (generated)
+  front: Randomisiert Address space layout randomization (ASLR) alle Segmente?
+  back: |
+    Nein! Zum Beispiel wird die Basisadresse des Codesegmentes nicht randomiziert,
+    außer die Executable wird explizit mit `-fpie` kompiliert.
+
+- type: md_basic
+  id: 1  # (generated)
+  front: Was versteht unter der Trusted Computing Base (TCB)?
+  back: |
+    - Menge der Software- und Hardwarekomponenten und Kontrollen, die
+    zusammenwirken, um die Sicherheitsdienste des Systems durchzusetzen.
+    - Fasst die sicherheitskritischen Funktionen der Hardware und des BS
+    zusammen.
+
+- type: md_basic
+  id: 2  # (generated)
+  front: Kann ASLR _return-to-libc_ Angriffe verhindern?
+  back: |
+    Es kann sie zumindest erschweren, da die Basisadressen sich
+    regelmäßig ändern (Hängt von ASLR Implementierung ab. Jeder Prozessstart bei
+    Linux).
+
+- type: md_basic
+  id: 3  # (generated)
+  front: Welche Rechte haben Heap, Stack, und Data, wenn DEP aktiviert ist?
+  back: |
+    `rw-`
+
+- type: md_basic
+  id: 4  # (generated)
+  front: Was versteht man unter DEP?
+  back: |
+    DEP (Data Execution Prevention) restriktiert die Ausführbarkeit von
+    Code auf Seiten. Dabei bietet sich an alles außer das text Segment
+    als nicht-ausführbar zu markieren.
+
+- type: md_basic
+  id: 5  # (generated)
+  front: (Extra) Was kann man mit der `mprotect` Funktion auf einer Seite ändern?
+  back: |-
+    `mprotect` kontrolliert den Schutz von einzelnen Seiten. Zur Auswahl stehen:
+    - PROT_NONE
+    - PROT_READ
+    - PROT_WRITE
+    - PROT_EXEC
+
+    Eine Seite kann mehrere dieser Attribute gleichzeitig haben.
+
+- type: md_basic
+  id: 6  # (generated)
+  front: Was ist ein Stack Canary und welche Werte schützt er?
+  back: |
+    - Einfügen eines zufälligen, zur Laufzeit erzeugten Canary-Werts auf dem Stack
+    vor der gespeicherten Rücksprungadresse.
+    - Vor dem Return: Programm vergleicht Canary-Wert mit Referenzwert. Veränderungen führen
+    zu Programmterminierung.
+
+- type: md_basic
+  id: 7  # (generated)
+  front: Wer erzeugt den Stack Canary und wer bringt die Prüflogik ein?
+  back: Der Compiler

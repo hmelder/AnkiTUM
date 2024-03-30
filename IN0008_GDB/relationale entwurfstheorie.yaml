@@ -152,7 +152,7 @@ cards:
       - a ist Superschlüssel von R.
 
 
-- type: latex
+- type: latex_plus
   id: 23  # (generated)
   front: Was ist eine Mehrwertige FD (MVD)?
   back: |+
