@@ -155,7 +155,7 @@ cards:
 - type: latex
   id: 23  # (generated)
   front: Was ist eine Mehrwertige FD (MVD)?
-  back: |+
+  back: |
     Seien a, b und c eine Partition von R, es gilt [$] a \twoheadrightarrow b [/$] gdw: 
     für alle Tupel [$] t_1, t_2 [/$] mit [$] t_1.a = t_2.a [/$] gibt es [$] t_4, t_4 [/$] sodass:
     [$] t_1.a = t_2.a = t_3.a = t_4.a [/$]
