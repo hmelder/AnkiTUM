@@ -59,7 +59,7 @@ cards:
 - type: markdown
   id: 8  # (generated)
   front: Wie berechnet man die kanonische Überdeckung?
-  back: '[[image: kanonischeÜberdeckung.png]]'
+  back: '[[image: kanonische_ueberdeckung.png]]'
 
 
 - type: markdown
@@ -140,7 +140,7 @@ cards:
 - type: markdown
   id: 21  # (generated)
   front: Wie überführt man eine Relation in die 4NF?
-  back: '[[image: dekomposition.png]]'
+  back: '[[image: 4nf.png]]'
 
 
 - type: markdown
@@ -152,10 +152,10 @@ cards:
       - a ist Superschlüssel von R.
 
 
-- type: markdown
+- type: latex
   id: 23  # (generated)
   front: Was ist eine Mehrwertige FD (MVD)?
-  back: |
+  back: |+
     Seien a, b und c eine Partition von R, es gilt [$] a \twoheadrightarrow b [/$] gdw: 
     für alle Tupel [$] t_1, t_2 [/$] mit [$] t_1.a = t_2.a [/$] gibt es [$] t_4, t_4 [/$] sodass:
     [$] t_1.a = t_2.a = t_3.a = t_4.a [/$]
