@@ -84,7 +84,7 @@ cards:
 
 - type: html
   id: 12  # (generated)
-  front: Was ist symmtrische verschlüsseliung vs asymmetrische verschlüsselung
+  front: Was ist symmtrische verschlüsselung vs asymmetrische verschlüsselung
   back: |+
     Symmetrisch: Geteilter (gleicher) schlüssel zwischen beiden Kommunikationspartnern
     welcher die nachrichten verschlüsselt bzw entschlüsselt<br><br>Asymmetrisch: Public
@@ -101,9 +101,9 @@ cards:
 - type: html
   id: 14  # (generated)
   front: Was sollte für eine (trapdoor) Einweg Funktion f(x) gelten?
-  back: f(x) effizient berechenbar<br> <sup>-1</sup>(y) nicht effizient
-    berechenbar&nbsp;<br><br>Mit einer weiteren information (schlüssel) ist die Umkehrfunktion
-    allerdings doch effizient berechenbar
+  back: f(x) effizient berechenbar<br> <sup>-1</sup>(y) nicht effizient berechenbar&nbsp;<br><br>Mit
+    einer weiteren information (schlüssel) ist die Umkehrfunktion allerdings doch
+    effizient berechenbar
 
 
 - type: html
@@ -120,7 +120,7 @@ cards:
 
 - type: html
   id: 17  # (generated)
-  front: Wie berechnet sich ein RSA SChlüsselpaar?
+  front: Wie berechnet sich ein RSA Schlüsselpaar?
   back: 1. wähle 2 große, geheime Primzahlen p, q (&gt; 1024 bit),<br>2. Berechne
     RSA-Modul n = pq, n ist öffentlich. P, q sind geheim<br>3. Berechne phi(n) = (p
     -1)(q -1), Eulersche Phi-Funktion<br>effizient zu berechnen, wenn p, q Primzahlen
@@ -138,14 +138,14 @@ cards:
 - type: html
   id: 19  # (generated)
   front: Wie wird bei RSA Verschlüsselt?
-  back: RSA(x) = x<sup>e</sup> &nbsp; mod n<br><br>wobei e der exponent
-    ist
+  back: RSA(x) = x<sup>e</sup> &nbsp; mod n<br><br>wobei e der exponent ist
 
 
 - type: html
   id: 20  # (generated)
   front: Wie wird bei RSA entschlüsselt?
-  back: RSA<sup>-1</sup>(y) = y<sup>d</sup>&nbsp;mod n<br><br>wobei d der private key ist&nbsp;
+  back: RSA<sup>-1</sup>(y) = y<sup>d</sup>&nbsp;mod n<br><br>wobei d der private
+    key ist&nbsp;
 
 - type: basic
   id: 84  # (generated)
@@ -201,7 +201,7 @@ cards:
   id: 26  # (generated)
   front: Warum benötigen Blockchiffren Padding?
   back: Letzter Block muss evtl aufgefüllt werden<br><br>letzten block mit bytes mit
-    dem gleichen wert wie die Anzahl der freien bytes auffpllen.
+    dem gleichen wert wie die Anzahl der freien bytes auffüllen.
 
 
 - type: html
@@ -242,7 +242,7 @@ cards:
   back: |+
     Der Klartext wird vor der AES Operation mit dem Kryptotext des vorherigen
     Blocks XOR genommen. Für den ersten Block wird der Initialisierungsvektor IV verwendet.
-    
+
     Relativ sicher, wenn IV regelmäßig gewechselt wird. Padding oracle angriff  evtl möglich
     .
 
@@ -301,8 +301,7 @@ cards:
 - type: html
   id: 39  # (generated)
   front: Was ist der Sinn an passworthashing?
-  back: '"""Falls Passwortlisten """"geleaked"""" werden, können diese nicht entschlüsselt
-    werden"""'
+  back: Falls Passwortlisten geleaked werden, können diese nicht entschlüsselt werden
 
 
 - type: html
@@ -314,7 +313,7 @@ cards:
 
 - type: html
   id: 41  # (generated)
-  front: '"""Was ist """"salting"""" im Bezug auf Passwort hashing?"""'
+  front: Was ist salting im Bezug auf Passwort hashing?
   back: Ein Zufälliger Wert wird im Passwort verhasht. Macht es deutlich schwerer
     Passwort Tabellen zu verwenden und gleiche Passwörter können nicht anhand ihrer
     hashes erkannt werden
@@ -329,7 +328,7 @@ cards:
 - type: html
   id: 43  # (generated)
   front: Welche Schutzziele haben MACs?
-  back: Integrität, Authentizität
+  back: Integrität und Authentizität
 
 
 - type: html
@@ -417,7 +416,7 @@ cards:
   front: Bsp Hardware implementierung CSRNG
   back: Nichtlinear rückgekoppeltes Schieberegister
 
-- type: html
+- type: html_cloze
   id: 53  # (generated)
   front: Um Schlüssel zwischen Mehr als zwei Kommunikationspartnern auszutauschen,
     kann ein&nbsp;{{c1::Schlüsselverteilungs-Server}}, auch&nbsp;{{c1::Key Distribution
@@ -496,19 +495,24 @@ cards:
 
 - type: markdown
   id: 88  # (generated)
-  front: Welche verfahren gelten als sicher?
+  front: Welche verfahren gelten als unsicher?
   back: |+
-    - AES
-    - RSA
-    - ECC
-    - SHA3
+    Blockchiffren:
+    - DES, 3DES
+    - AES ECB
+    Hashfunktionen
+    - MD4, MD5
+    - SHA1, SHA2
 
 
-- type: html
+
+- type: markdown
   id: 65  # (generated)
   front: welche klassen von OTP Verfahren gibt es?
-  back: Hardware vs Software token<br>Zeitsynkronisiert, CR basiert
-
+  back: |
+    Hardware und Software Token.
+    - Zeitsynchronisiert (TOTP)
+    - Challenge-Response basiert
 
 - type: html
   id: 66  # (generated)
@@ -618,9 +622,12 @@ cards:
 
 - type: html
   id: 81  # (generated)
-  front: Wie können Zertifikate zurückgerifen werden?
-  back: nline Certificate Status Protocol (OCSP) Stapling<br><br>Regelmäßiges erfragen
-    von Gültigkeitsbestätigungen
+  front: Wie können Zertifikate zurückgerufen werden?
+  back: |+
+    Durch das Certificate Status Protocol (OCSP) 
+      -> Regelmäßiges erfragen von Gültigkeitsbestätigungen
+
+    Oder Certificate Revocation Lists (CRL)
 
 
 - type: html
@@ -675,10 +682,10 @@ cards:
 
 - type: markdown
   id: 95  # (generated)
-  front: Was ist die string tranquility regel?
+  front: Was ist die strong tranquility regel?
   back: |+
     - Bell lapadula modell
-    - Sicherheitsklassen dürfen nciht zur laufzeit geändert werden
+    - Sicherheitsklassen dürfen nicht zur laufzeit geändert werden
 
 
 - type: markdown
@@ -717,7 +724,7 @@ cards:
   front: Probleme mit KDCs?
   back: |+
     - ggf. Keine Perfect forward secrecy
-    - signle point of failur
+    - single point of failure
 
 - type: markdown
   id: 101  # (generated)
@@ -743,7 +750,7 @@ cards:
 - type: markdown
   id: 103  # (generated)
   front: Was ist complete mediation / zero trust ?
-  back: Alle resourcen müssen geschüzt werden
+  back: Alle resourcen müssen geschützt werden
 
 - type: markdown
   id: 104  # (generated)
@@ -763,27 +770,28 @@ cards:
 
 - type: markdown
   id: 106  # (generated)
-  front: Was sinf PEP und PDP? Beispiele?
+  front: Was sind PEP und PDP? Beispiele?
   back: |-
     - Policy decision point: Führt beim ersten Zugriff auf ein Objekt eine Kontrolle durch und stellt bescheinigung aus
     - Policy enforcement point: Führt zulässigkeitskontrolle basierend auf bescheinigung aus
     - Beispiele: PDP: open() syscall stellt einen int token aus PEP: read() syscall token, wird geprüft
-    
 
 - type: markdown
+  id: 107  # (generated)
   front: Unterschied 0-RTT TLS 1-RTT TLS
   back: |+
     - 0 RTT: Server schickt mit seiner ersten nachricht verschlüsselte daten
     - 1 RTT: Server schickt mit seiner zweiten Nachricht verschlüsselte daten
 
 - type: markdown
+  id: 108  # (generated)
   front: Safety vs Security?
   back: |+
     - Safety ist Sicherheit "von innen" also z.b. sicherheit von systemabstürzen, bugs, Störungen etc
     - Security ist Sicherheit "von außen", d.h. Schwachstellen durch welche die Schutzziele verletzt werden können
-    
 
 - type: markdown
+  id: 109  # (generated)
   front: Anforderungen an Biometrische Merkmale?
   back: |+
     - *Universalität* (jeder muss das merkmal besitzen)
@@ -793,17 +801,118 @@ cards:
     - *Akzeptanz* (Die Messung muss gesellschaftlich akzeptiert sein)
     - *Performanz* (Es lässt sich schnell und genau erfassen)
     - *Fälschungssicherheit*
-    
 
 - type: markdown
+  id: 110  # (generated)
   front: HMAC bildung?
-  back: "H(𝑘 ⨁ 𝑜𝑝𝑎𝑑 | H((𝑘 ⨁ 𝑖𝑝𝑎𝑑) | 𝑚))"
+  back: H(𝑘 ⨁ 𝑜𝑝𝑎𝑑 | H((𝑘 ⨁ 𝑖𝑝𝑎𝑑) | 𝑚))
 
 - type: markdown
-  front: Wie funktioniert der DM length extension angriff bei einem h(k | m) hash? m ist bekannt
+  id: 111  # (generated)
+  front: Wie funktioniert der DM length extension angriff bei einem h(k | m) hash?
+    m ist bekannt
   back: |+
     1. größe k bestimmen (z.b. brute force)
     2. padding bestimmen, dabei länge von k beachten!
     3. m2 = m + padding + "admin"
     4. h2 = h("admin") mit internem zustand von h gleich h1
 
+- type: markdown
+  id: 112  # (generated)
+  front: |
+    Angenommen das jedes Zeichen aus einem Passwortalphabet M gleich
+    wahrscheinlich ist. Wie berechnet man die Entropie für ein Password der Länge
+    L?
+  back: |-
+    log_2(|M|^L)
+
+- type: markdown
+  id: 113  # (generated)
+  front: Wie funktioniert ein RSA SecureID Token?
+  back: |
+    ## Auf Server
+    Token Seriennummer mit 128-bit Seed s (Auch auf RSA-Token)
+
+    ## Erzeugen von OTPs
+    - Alle 60 Sekunden
+    - OTP = AES(TokenID | s | Zeit)
+    - 6-8 Stellige Zahl
+
+- type: markdown
+  id: 114  # (generated)
+  front: |
+    Das OTP was der Benutzer eingibt ist wesentlich kürzer, als das Resultat von
+    HMAC_SHA1, oder AES. Woher kommt diese kurze Zahlenfolge also?
+  back: |
+    Es gibt eine "Truncate" Funktion, die geschickt den HMAC auf die Ziffernanzahl
+    reduziert.
+
+    HOTP(K,C) = Truncate(HMAC-SHA-1(K,C))
+
+    K repräsentiert das Shared Secret und C den Zähler.
+
+- type: markdown
+  id: 115  # (generated)
+  front: Was sind Schwachpunkte von Google Authenticator?
+  back: |-
+    - 80-bit secret s zu kurz (RFC 4226 HOTP fordert mind. 128-bit)
+    - s ist im Klartext auf Smartphone gesichert
+    - Server wird nicht authorisiert
+
+- type: markdown
+  id: 117  # (generated)
+  front: Was ist eine TEE?
+  back: |+
+    Trusted execution environment
+    - Eine sichere bzw. vertrauenswürde Laufzeitumgebung für programme, z.b. Container
+
+- type: markdown
+  id: 118  # (generated)
+  front: Was ist Intel SGX?
+  back: |+
+    - Intel CPU erweiterung
+    - Erlaubt es, von der CPU geschützte Speicherbereiche zu definieren
+    - Sogenannte "Enklaven" können on-the-fly verschlüsselt / entschlüsselt werden
+
+
+- type: markdown
+  id: 119  # (generated)
+  front: Welche Probleme hat der default KDC aus der vorlesung?
+  back: |+
+    - Keine replay protection durch nonces oder timestamps
+    - Teilnehme authentisieren sich nicht gegenseitig
+    - Keine ticket lifetime / keine revocation
+
+
+
+- type: markdown
+  id: 120  # (generated)
+  front: Mögliche angriffe auf passwort hash datenbanken?
+  back: |+
+    - Rainbow tables -> verhinderbar durch salting
+    - brute force -> verhinderbar durch langsame hashfunktion, große hashes
+
+
+- type: markdown
+  id: 121  # (generated)
+  front: Probleme textbook rsa
+  back: |+
+    - c < N: keine modulo berechnung, man kann die wurzel ziehen
+    - Gleicher Klartext erzeugt gleichen kryptotext
+
+
+- type: markdown
+  id: 122  # (generated)
+  front: Probleme 0 RTT TLS handshake
+  back: |+
+    - Keine PFS
+    - Ein replay angriff bei den ersten nutzerdaten möglich
+        -> z.b. Replay einer POST request
+
+
+- type: markdown
+  id: 116  # (generated)
+  front: Grenze die Begriffe Safety und Security voneinander ab!
+  back: |-
+    - **Safety**: Schutz vor Störungen von **Innen**: Funktions- und Betriebssicherheit
+    - **Security**: Schutz vor Störungen von **Außen**: Angriffe durch Hacker, gezielte Angriffe
