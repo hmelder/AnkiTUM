@@ -154,6 +154,7 @@ cards:
     I.A. werden zu viele TAs zurückgesetzt, ohne dass tatsächlich ein Deadlock
     auftreten würde.
 - type: markdown
+  id: 21  # (generated)
   front: Nenne die Sperrmodi beim Multi-Granularity Locking (MGL)?
   back: |
     - **NL**: Keine Sperrung (no lock)
