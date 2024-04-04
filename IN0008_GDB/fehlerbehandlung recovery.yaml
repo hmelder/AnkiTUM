@@ -186,6 +186,7 @@ cards:
     <LSN, Transaktions-ID, Seiten-ID, *Redo*-Information, *PrevLSN*, *UndoNxtLSN*>
 
 - type: markdown
+  id: 32  # (generated)
   front: Wie wird ein fertiger TA-Rollback im Log-Eintag markiert?
   back: |+
     <LSN, Transaktions-ID, -, -, PrevLSN, 0>
@@ -208,6 +209,7 @@ cards:
   back: undo und redo von Transaktionen
 
 - type: markdown
+  id: 33  # (generated)
   front: Wie funktioniert das lokale Zurücksetzen einer Transaktion
   back: |+
     Die zur TA gehörenden Log-Einträge müssen **in chronologisch
@@ -239,6 +241,7 @@ cards:
     **nicht** mehr betrachtet werden müssen.
 
 - type: markdown
+  id: 34  # (generated)
   front: Welche drei Arten von Sicherungspunkten gibt es?
   back: |+
     1. (globale) transaktionskonsistente Sicherungspunkte
@@ -246,7 +249,8 @@ cards:
     3. unscharfe (fuzzy) Sicherungspunkte
 
 - type: markdown
-  front: |+
+  id: 35  # (generated)
+  front: |
     Wie kann bei aktionskonsistenten Sicherungspunkten der erste
     relevante UNDO-Eintrag ermittelt werden?
   back: |+
@@ -274,7 +278,7 @@ cards:
     Menge *DirtyPages*.
     - Ermittlung von *MinDirtyPageLSN*: LSN mit der die am längesten nicht mehr
     ausgeschriebene Seite in den Hintergrundspeicher propagiert wurde.
-  
+
     Um dies effizient durchzuführen merkt man sich *zu jeder* Seite im Puffer **die LSN
     der ältesten noch nicht ausgeschriebenen Änderungsoperation**.
 
