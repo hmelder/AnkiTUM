@@ -114,3 +114,36 @@ cards:
   back: |-
     - Anforderungen (1) bis (5) des 2PL-Protokolls bleiben erhalten
     - Es gibt keine Schrumpfungsphase mehr. Alle Sperren werden erst zum EOT freigegeben.
+- type: markdown
+  front: Wie ist ein **Wartegraph** aufgebaut?
+  back: |
+    - Gerichtete Kanten
+    - Wenn T_i auf Freigabe einer Sperre durch T_j wartet, wird die Kante
+      T_i -> T_j eingefügt
+    - Erkennung anhand von Zyklen
+- type: markdown
+  front: Was versteht man unter **Preclaiming**
+  back: |
+    TAs werden erst begonnen, wenn alle ihre Sperranforderung
+    schon bei **BOT** erfüllt werden können.
+
+    -> In der Praxis **meist nicht realisierbar**
+- type: markdown
+  front: Wie funktioniert die Deadlock-Vermeidung mittels **Time-out Verfahren**?
+  back: |
+    Falls TA innerhalb eines gewählten Zeitmaßes (z.B.: 1s)
+    keinen Fortschritt erzielt, wird sie zurückgesetzt.
+- type: markdown
+  front: Nenne ein Problem bei der Deadlock-Vermeidung mittels Time-out Verfahren?
+  back: |
+    Es ist schwer ein gutes Zeitmaß zu finden.
+- type: markdown
+  front: Wie funkioniert das **Zeitstempel Verfahren**?
+  back: |
+    Priorisierungsverfahren, welches das Alter von TAs vergleicht.  Zurücksetzen
+    von TAs entweder nach **wound-wait** oder **wait-die** Verfahren.
+- type: markdown
+  front: Nenne ein Problem bei der Deadlock-Vermeidung mittels Zeitstempel Verfahren?
+  back: |
+    I.A. werden zu viele TAs zurückgesetzt, ohne dass tatsächlich ein Deadlock
+    auftreten würde.
