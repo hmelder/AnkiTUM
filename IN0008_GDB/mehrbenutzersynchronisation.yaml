@@ -9,6 +9,18 @@ cards:
   back: |
     Arbeiten auf unterschiedlichen Datensätzen während
     der Ausführung der TA (durch äußere Einflüsse, wie andere TAs).
+# 11.3 Theorie der Serialisierbarkeit
+- type: markdown
+  front: Was besagt das **Serialisierbarkeitstheorem**?
+  back: |+
+    Eine Historie H ist genau dann serialisierbar, wenn der zugehörige
+    Serialisierbarkeitsgraph SG(H) azyklisch ist.
+- type: markdown
+  front: Was versteht man unter einer topologischen Sortierung des Serialisierbarkeitsgraphen (SG)?
+  back: |+
+    Eine Sequentielle Anordnung der Transaktionen des SG in der Form,
+    dass **keine Transaktion T_i vor einer Transaktion T_j steht**, wenn es einen **gerichteten
+    Pfad von T_j nach T_i** im Serialisierbarkeitsgraphen gibt.
 # 11.4.1 Rücksetzbare Historien
 - type: markdown
   id: 1  # (generated)
