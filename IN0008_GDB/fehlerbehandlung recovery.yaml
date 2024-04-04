@@ -162,21 +162,25 @@ cards:
     Änderungsoperation auf den Hintergrundspeicher propagiert worden.
 
 - type: markdown
+  id: 28  # (generated)
   front: Wie ist ein Log-Eintrag aufgebaut?
   back: |+
     [LSN, Transaktions-ID, Seiten-ID, *Redo*-Information, *Undo*-Information, PrevLSN]
 
 - type: markdown
+  id: 29  # (generated)
   front: Wie sieht ein *Begin-of-Transaction* (BOT) Log-Eintrag aus?
   back: |+
     [LSN, Transaktions-ID, **BOT**, 0]
 
 - type: markdown
+  id: 30  # (generated)
   front: Wie sieht ein *commit* Log-Eintrag aus?
   back: |+
     [LSN, Transaktions-ID, **commit**, PrevLSN]
 
 - type: markdown
+  id: 31  # (generated)
   front: Wie ist ein *Compensation Log Record* (CLR) aufgebaut?
   back: |+
     <LSN, Transaktions-ID, Seiten-ID, *Redo*-Information, *PrevLSN*, *UndoNxtLSN*>
