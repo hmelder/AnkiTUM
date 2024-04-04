@@ -147,6 +147,17 @@ cards:
     - Logisch: Beim Log eintrag werden die Operationen welche die Operation ausführt geloggt: z.b. += 10
     - Physisch: Es werden die Vorher / Nachher Zustände geloggt: z.b. 100, 110
 
+- type: markdown
+  front: Wie kann man erkennen, ob für einen bestimmten Log-Eintrag das Before-Image oder das After-Image in der Seite steht?
+  back: |+
+    Wenn eine Seite in den Hintergrundspeicher geschrieben wird, wird der derzeitige LSN-Eintrag mitkopiert.
+
+    Erkennung:
+    - Wenn die LSN der Seite einen **kleinern Wert** als die LSN des
+    Log-Eintrags enthält, handelt es sich um das *Before-Image*.
+    - Ist die LSN der Seite **größer oder gleich** der LSN des Log-Eintrags,
+    dann war schon das *After-Image* bezüglich der protokollierten
+    Änderungsoperation auf den Hintergrundspeicher propagiert worden.
 
 - type: markdown
   id: 15  # (generated)
