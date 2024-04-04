@@ -153,3 +153,14 @@ cards:
   back: |-
     I.A. werden zu viele TAs zurückgesetzt, ohne dass tatsächlich ein Deadlock
     auftreten würde.
+- type: markdown
+  front: Nenne die Sperrmodi beim Multi-Granularity Locking (MGL)?
+  back: |
+    - **NL**: Keine Sperrung (no lock)
+    - **S**: Lesesperre
+    - **X**: Schreibsperre
+    - **IS (Intention Share)**: Weiter unten in der Hierarchie ist eine
+    Lesesperre beabsichtigt
+    - **IX (Intention Exclusive)**: Weiter unten in der Hierarchie ist eine
+    Schreibsperre beabsichtigt
+
