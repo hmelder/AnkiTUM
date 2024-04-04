@@ -4,20 +4,23 @@ id: 1712234131
 
 cards:
 - type: markdown
+  id: 0  # (generated)
   front: Was ist das Phantomproblem?
-  back: |+
+  back: |
     Arbeiten auf unterschiedlichen Datensätzen während
     der Ausführung der TA (durch äußere Einflüsse, wie andere TAs).
 # 11.4.1 Rücksetzbare Historien
 - type: markdown
-  front: |+
+  id: 1  # (generated)
+  front: |
     Was ist die Minimalanforderung bezüglich der Recovery und in Folge
     **rücksetzbaren Historien**?
-  back: |+
+  back: |
     Man kann noch aktive Transaktionen jederzeit abbrechen, ohne
     das andere schon mit **commit** abgeschlossene Transaktionen
     ungültig werden.
 - type: markdown
+  id: 2  # (generated)
   front: Wann bezeichnet man eine Historie als rücksetzbar?
   back: |+
     Falls immer die **schreibende Transition** T_i vor der lesenden
@@ -27,61 +30,72 @@ cards:
 
 # 11.4.2 Historien ohne kaskadierendes Rücksetzen
 - type: markdown
+  id: 3  # (generated)
   front: Welchen unangenehmen Effekt können selbst rücksetzbare Historien verursachen?
-  back: |+
+  back: |
     Das Rücksetzen *einer* Transaktion kann eine **Lawine von weitern Rollbacks** auslösen.
 - type: markdown
+  id: 4  # (generated)
   front: Wann vermeidet eine Historie kaskadierendes Rücksetzen?
-  back: |+
+  back: |
     Wenn c_j <_H r_i(H) gilt, wann immer T_i ein Datum A von T_j liest.
 
     Änderungen werden erst nach dem **commit** freigegeben.
 # 11.4.3 Strikte Historien
 - type: markdown
+  id: 5  # (generated)
   front: Was versteht man unter strikten Historien?
-  back: |+
+  back: |
     Bei strikten Historien dürfen auch veränderte Daten einer noch laufenden
     Transaktion **nicht** überschrieben werden.
 - type: markdown
+  id: 6  # (generated)
   front: Nenne alle 4 Historienklassen
-  back: |+
+  back: |
     1. **SR**: serialisierbare Historien (**S**e**R**ializable)
     2. **RC**: rücksetzbare Historien (**R**e**C**overable)
     3. **ACA**: Historien ohen kaskadierendes Rücksetzen (**A**voiding **C**ascading **A**bort)
     4. **ST**: Strikte (**ST**rict) Historien
 # 11.5 Der Datenbank-Scheduler
 - type: markdown
+  id: 7  # (generated)
   front: Was ist die Aufgabe des **Datenbank-Schedulers**?
-  back: |+
+  back: |
     Einzeloperationen verschiedener TAs in einer Reihenfolge ausführen, sodass
     die **Historie mindestens serialisierbar** ist. (**Oft auch ACA** verlangt)
 - type: markdown
-  front: Welche zwei Synchronisations-Methoden werden u.A. vom Datenbank-Scheduler eingesetzt?
-  back: |+
+  id: 8  # (generated)
+  front: Welche zwei Synchronisations-Methoden werden u.A. vom Datenbank-Scheduler
+    eingesetzt?
+  back: |
     - **sperrbasierte** Synchronisation
     - **Zeitstempel-basierte** Synchronisation
 # 11.6 Sperrbasierte Synchronisation
 - type: markdown
+  id: 9  # (generated)
   front: Welche zwei Sperrmodi gibt es bei der sperrbasierten Synchronisation?
-  back: |+
+  back: |
     Sperrmodi werden **je nach Operation (read, write)** unterschieden:
 
     - S (shared, read lock, Lesesperre): Mehrere TAs können gleichzeitig ein Objekt lesen.
     - X (exclusive, write lock, Schreibsperre): Nur **eine TA** darf Zugriff auf das Objekt haben.
 - type: markdown
+  id: 10  # (generated)
   front: Was wird von einer Transaktion bei dem Zwei-Phasen-Sperrprotokoll (2PL) verlangt?
-  back: |+
+  back: |
     1. TA muss jedes verwendete **Objekt zuvor sperren**
     2. TA besitzt nur eine **Sperre pro Objekt**
     3. **Falls eine Sperre nicht gewährt** wird, muss die TA **warten**
     4. Eine TA durchläuft **Wachstumsphase** und **Schrumpfungsphase**
     5. Bei **EOT** (TA-Ende) müssen **alle Sperren zurückgegeben** werden
 - type: markdown
+  id: 11  # (generated)
   front: Was ist das Problem bei 2PL?
-  back: |+
+  back: |
     2PL **garantiert zwar Serialisierbarkeit**, aber **nicht ACA** (Historien ohen kaskadierendes Rücksetzen).
 - type: markdown
+  id: 12  # (generated)
   front: Was ist der Unterschied zwischen dem normalen und *strengen* 2PL-Protokol?
-  back: |+
+  back: |-
     - Anforderungen (1) bis (5) des 2PL-Protokolls bleiben erhalten
     - Es gibt keine Schrumpfungsphase mehr. Alle Sperren werden erst zum EOT freigegeben.
