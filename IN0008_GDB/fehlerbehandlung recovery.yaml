@@ -186,8 +186,13 @@ cards:
     <LSN, Transaktions-ID, Seiten-ID, *Redo*-Information, *PrevLSN*, *UndoNxtLSN*>
 
 - type: markdown
+  front: Wie wird ein fertiger TA-Rollback im Log-Eintag markiert?
+  back: |+
+    <LSN, Transaktions-ID, -, -, PrevLSN, 0>
+
+- type: markdown
   id: 15  # (generated)
-  front: In welche richtung wandern die Zeiger im Log ringpuffer?
+  front: In welche richtung wandern die Zeiger im Log Ringpuffer?
   back: Gegen den Uhrzeigersinn
 
 
@@ -202,6 +207,15 @@ cards:
   front: Welche zwei wichtigen Operationen zur recovery gibt es?
   back: undo und redo von Transaktionen
 
+- type: markdown
+  front: Wie funktioniert das lokale Zurücksetzen einer Transaktion
+  back: |+
+    Die zur TA gehörenden Log-Einträge müssen **in chronologisch
+    umgekehrter Reihenfolge abarbeitet werden**
+
+    1. Ermittelung des letzten zur TA gehörenden Log-Eintrags
+    2. Mit Hilfe der Rückwärtsverkettung zum Anfang traversieren und dabei mit den Undo-Informationen die TA zurücksetzen.
+    **Vor der Ausführung** wird ein entsprechender CLR protokolliert.
 
 - type: cloze
   id: 18 # (generated)
@@ -224,6 +238,19 @@ cards:
   back: Punkte in der Loghistory ab denen alle vorherigen Logenträge zur recovery
     **nicht** mehr betrachtet werden müssen.
 
+- type: markdown
+  front: Welche drei Arten von Sicherungspunkten gibt es?
+  back: |+
+    1. (globale) transaktionskonsistente Sicherungspunkte
+    2. aktionskonsistente Sicherungspunkte
+    3. unscharfe (fuzzy) Sicherungspunkte
+
+- type: markdown
+  front: |+
+    Wie kann bei aktionskonsistenten Sicherungspunkten der erste
+    relevante UNDO-Eintrag ermittelt werden?
+  back: |+
+    - Ermittlung der kleinsten LSN (Da LSN streng monoton wachsend) aller zu diesem Zeitpunkt aktiven TAs
 
 - type: markdown
   id: 21  # (generated)
@@ -240,10 +267,16 @@ cards:
 
 - type: markdown
   id: 23  # (generated)
-  front: Was sind fuzzy sicherungspunkte?
+  front: Was sind fuzzy Sicherungspunkte?
   back: |+
     - Verwendung bei modernen DBMS mit sehr großen Puffern
-    - DB merkt sich nur, welche Seiten modifiziert sind und die minimalen LSN in der Historie
+    - Anstatt modifizierte Seiten auszuschreiben, werden nur die LSN notiert. Wir nennen diese
+    Menge *DirtyPages*.
+    - Ermittlung von *MinDirtyPageLSN*: LSN mit der die am längesten nicht mehr
+    ausgeschriebene Seite in den Hintergrundspeicher propagiert wurde.
+  
+    Um dies effizient durchzuführen merkt man sich *zu jeder* Seite im Puffer **die LSN
+    der ältesten noch nicht ausgeschriebenen Änderungsoperation**.
 
 
 - type: markdown
