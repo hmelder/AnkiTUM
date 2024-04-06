@@ -201,28 +201,30 @@ cards:
 
 
 - type: markdown
+  id: 17  # (generated)
   front: |
     Gegeben ist folgende Relation: [$]R = \{A, B, C, D\}[/$]
 
     Und die FDs:
       - [$]AB \to C[/$]
       - [$]B \to D[/$]
-    
+
     Welche Normalformen sind für die Relation erfüllt?
   back: |
     Die Relation ist nicht mengenwertig, daher **1. NF**.
-    
+
     D ist lediglich von B abhängig, der Kandidatenschlüssel ist aber AB,
     weswegen D nicht voll funktional vom Kandidatenschlüssel abhängig ist, daher keine 2. NF.
 
 - type: markdown
+  id: 28  # (generated)
   front: |
     Gegeben ist folgende Relation: [$]R = \{A, B, C, D\}[/$]
 
     Und die FDs:
       - [$]AB \to C[/$]
       - [$]C \to D[/$]
-    
+
     Welche Normalformen sind für die Relation erfüllt?
   back: |
     Jedes Attribut der Relation ist voll funktional abhängig vom
@@ -232,29 +234,31 @@ cards:
     abhängig, darum nicht 3. NF.
 
 - type: markdown
+  id: 29  # (generated)
   front: |
     Gegeben ist folgende Relation: [$]R = \{A, B, C, D\}[/$]
 
     Und die FDs:
       - [$]BC \to AD[/$]
       - [$]D \to C[/$]
-    
+
     Welche Normalformen sind für die Relation erfüllt?
   back: |
     Für jede FD gilt entweder:
-    
+
     - Sie ist trivial
     - Die linke Seite ist ein Superschlüssel
     - Rechte Seite ist in einem Kandidatenschlüssel enthalten
-    
+
     daher **3. NF**.
-    
+
     Bei der BCNF fällt die dritte erlaubte Art von FD weg, daher müssen FDs
     trivial sein oder ihre linke Seite Superschlüssel.  Da die zweite FD des
     Beispiels dies verletzt, ist die Relation nicht in BCNF und daher genau in
     3. NF.
-  
+
 - type: markdown
+  id: 30  # (generated)
   front: |
     Gegeben ist folgende Relation: [$]R = \{A, B, C, D\}[/$]
 
@@ -262,7 +266,7 @@ cards:
       - [$]AB \to CD[/$]
       - [$]BC \to AD[/$]
       - [$]D \to\to C[/$]
-    
+
     Welche Normalformen sind für die Relation erfüllt?
   back: |
     **BCNF**, da die BCNF verletzende FD aus dem Beispiel für 3. NF entfernt wurde.
@@ -270,13 +274,14 @@ cards:
     Superschlüssel ist.
 
 - type: markdown
+  id: 31  # (generated)
   front: |
     Gegeben ist folgende Relation: [$]R = \{A, B, C, D\}[/$]
 
     Und die FDs:
       - [$]AB \to CD[/$]
       - [$]BC \to AD[/$]
-    
+
     Welche Normalformen sind für die Relation erfüllt?
   back: |
     Nach Entfernung der nicht trivialen MVD dann auch 4. NF.
