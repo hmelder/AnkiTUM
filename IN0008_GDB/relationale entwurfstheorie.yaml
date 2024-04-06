@@ -1,5 +1,6 @@
 title: 'GDB: Kapitel 6: Relationale Entwurfstheorie'
 author: HHuebner
+contributors: ['hmelder']
 id: 402722604
 
 cards:
@@ -101,20 +102,7 @@ cards:
   front: Welches Notwendige Kriterium muss gelten damit eine Zerlegung verlustfrei
     ist?
   back: |
-    [$] R_1 \difference R_2 \rightarrow R_1, R_2 [/$]
-
-
-- type: markdown
-  id: 17  # (generated)
-  front: Wann ist eine Relation in 2. NF?
-  back: |+
-    - Wenn sie nur ein Konzept modelliert
-    - Jedes nicht schlüssel Attribut muss voll funktional Abhängig von jedem Kandidatenschlüssel der Relation sein
-
-    Formal: Eine Relation R mit zugehörigen FDs F ist in 2NF,
-    falls jedes Nichtschlüssel-Attribut A in R voll funktional abhängig ist von
-    jedem Kandidatenschlüssel der Relation.
-
+    [$] R_1 \setminus R_2 \rightarrow R_1, R_2 [/$]
 
 - type: markdown
   id: 19  # (generated)
@@ -165,7 +153,7 @@ cards:
   id: 12  # (generated)
   front: Wann ist eine Relation in der 2. Normalform?
   back: |
-    **Jedes** Nichtschlüssel-Attribut [$]A \notin R[/$] ist voll funktional von jedem Kandidatenschlüssel der Relation abhängig.
+    **Jedes** Nichtschlüssel-Attribut [$]A \in R[/$] ist voll funktional **von jedem Kandidatenschlüssel** der Relation abhängig.
 
 - type: markdown
   id: 18  # (generated)
@@ -209,4 +197,4 @@ cards:
 
     1. [$]a \rightarrow b[/$] d.h. [$]b[/$] ist funktional abhängig von [$]a[/$]
     2. [$]a[/$] kann nicht mehr "verkleinert" werden, d.h. 
-    [$]\forall e \subseteq a: e \rightarrow b[/$]  
+    [$]\forall A \in a: a - \{A\} \not\to b[/$]  
