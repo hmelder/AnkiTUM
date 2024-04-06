@@ -14,8 +14,8 @@ cards:
   id: 1  # (generated)
   front: Was ist volle funktionale Abhängigkeit?
   back: |+
-    - [$] a \rightarrow b [/$]
-    - [$] \forall A \in a : \neg (a - {A} \to b) [/$]
+    - b ist funktional abhängig von a: [$] a \rightarrow b [/$]
+    - a kann nicht mehr "verkleinert" werden: [$] \forall A \in a : \neg (a - {A} \to b) [/$]
 
 
 - type: markdown
@@ -69,12 +69,6 @@ cards:
     ist. Vereinfacht das berechnen von Normalformen
 
 - type: markdown
-  id: 10  # (generated)
-  front: Wann ist eine Relation in 1. NF?
-  back: Wenn alle Attribute atomar sind, d.h. nicht aufgeteilt werden können
-
-
-- type: markdown
   id: 11  # (generated)
   front: Was ist eine Updateanomalie?
   back: Wenn ein Wert geändert wird, dieser Wert allerdings duplikate hat, kann es
@@ -117,12 +111,9 @@ cards:
     - Wenn sie nur ein Konzept modelliert
     - Jedes nicht schlüssel Attribut muss voll funktional Abhängig von jedem Kandidatenschlüssel der Relation sein
 
-
-- type: markdown
-  id: 18  # (generated)
-  front: Wann ist eine Relation in 3. NF?
-  back: |+
-    - 2NF + kein Nichtschlüssel-Attribut hängt transitiv von einem Kandidatenschlüssel ab
+    Formal: Eine Relation R mit zugehörigen FDs F ist in 2NF,
+    falls jedes Nichtschlüssel-Attribut A in R voll funktional abhängig ist von
+    jedem Kandidatenschlüssel der Relation.
 
 
 - type: markdown
@@ -163,3 +154,52 @@ cards:
     [$] t_4.b = t_2.b [/$]
     [$] t_3.c = t_2.c [/$]
     [$] t_4.c = t_1.c [/$]
+
+- type: markdown
+  front: Wann ist eine Relation in der 1. Normalform?
+  back: |
+    Wenn alle Attribute atomare Wertebereiche haben.
+
+- type: markdown
+  front: Wann ist eine Relation in der 2. Normalform?
+  back: |
+    **Jedes** Nichtschlüssel-Attribut [$]A \notin R[/$] ist voll funktional von jedem Kandidatenschlüssel der Relation abhängig.
+
+- type: markdown
+  front: Wann ist eine Relation in der 3. Normalform?
+  back: |
+    Jede für [$]R[/$] geltende funktionale Abhängigkeit der Form [$]a \rightarrow b[/$] mit [$]a \subseteq R[/$] und [$]b \in R[/$] muss eine der Bedingungen erfüllen:
+
+    - [$]b[/$] ist ein Primattribut, d.h. die FD ist trivial
+    - [$]a[/$] ist Superschlüssel von [$]R[/$]
+
+- type: markdown
+  front: Wann ist eine Relation in der BCNF?
+  back: |
+    Falls für [$]a \rightarrow b[/$] mindestens eine der folgenden zwei Bedingungen gilt:
+    - [$]b \subseteq a[/$], d.h. die Abhängigkeit ist trivial
+    - [$]a[/$] ist Superschlüssel von [$]R[/$]
+
+- type: markdown
+  front: Wann ist eine Relation in der 4. Normalform?
+  back: |
+    Wenn für jede MVD [$]a \rightarrow\rightarrow b[/$] [$]\in D[/$] eine der folgenden Bedingungen gilt:
+    - Die MVD ist trivial
+    - [$]a[/$] ist ein Superschlüssel von [$]R[/$]
+
+- type: markdown
+  front: Wann ist eine MVD trivial?
+  back: |
+   [$]a \rightarrow\rightarrow b[/$] genau dann trivial, wenn gilt:
+
+    1. [$]b \subseteq a[/$] oder
+    2. [$]b = R - a[/$]
+
+- type: markdown
+  front: Wann ist eine FD *voll* funktional abhängig?
+  back: |
+    Es gilt [$]a \stackrel{\cdot}{\rightarrow} b[/$], falls beide folgenden Kriterien gelten:
+
+    1. [$]a \rightarrow b[/$] d.h. [$]b[/$] ist funktional abhängig von [$]a[/$]
+    2. [$]a[/$] kann nicht mehr "verkleinert" werden, d.h. 
+    [$]\forall e \subseteq a: e \rightarrow b[/$]  
