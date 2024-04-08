@@ -84,3 +84,11 @@ cards:
     - Geringere Tiefe, da mehrere Kindknoten erlaubt sind
     - Gutes Cacheverhalten / Räumliche lokalität
     - Flexibele Knotengröße
+
+- type: markdown
+  front: |
+    Nennen Sie einen Vorteil und einen Nachteil von Hashtabellen gegenüber B+
+    Bäumen.
+  back: |
+    - Vorteil: Hashtabellen haben die Laufzeitkomplexität **O(1)** bei der Suche, B+-Bäume **O(log n)**.
+    - Nachteil: Auf Hashtabellen können **Bereichsanfragen nicht effizient** ausgeführt werden.

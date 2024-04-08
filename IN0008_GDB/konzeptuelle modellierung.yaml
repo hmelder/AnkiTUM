@@ -25,6 +25,27 @@ cards:
   back: |+
     - Entität welche von anderen Entitäten Abhängt
 
+- type: markdown
+  front: |
+    Um welche Art von Entity handelt es sich hier?
+    [[image: schwache_entities.png]]
+  back: |
+    Eine **schwache Entität**. Motivation:
+      - Schwache Entität kann nicht als eigenes Gebilde existieren
+      - Braucht „starke“ Entität für eine eindeutige Identifikation
+
+- type: markdown
+  front: |
+    Wie wird folgendes Konzept benannt?
+    [[image: generalisierung.png]]
+  back: Generalisierung
+
+- type: markdown
+  front: |
+    Wie wird folgendes Konzept benannt?
+    [[image: aggregation.png]]
+  back: Aggregation
+
 - type: basic
   id: 3  # (generated)
   front: Wofür steht SQL?
