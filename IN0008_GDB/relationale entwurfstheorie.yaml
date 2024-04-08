@@ -330,7 +330,7 @@ cards:
   front: Informellere Beschreibung des Synthesealgorithmus (überführt R in 3NF)  (4
     Schritte)
   back: |
-    1. **Kanonische Überdehcking**
+    1. **Kanonische Überdeckung**
     2. **Relationsschemata formen**: Aus jeder FD der kanonischen Überdeckung
     entsteht eine neue Relation
     3. **Schlüssel hinzufügen**: Füge ein neues Relationsschema mit einem
@@ -346,7 +346,7 @@ cards:
     genutzt werden darf?
   back: |
     - [$] a \cap b = \emptyset [/$]
-    - [$] a \not\in \mathcal{R}_i [/$]
+    - [$] a \not\to \mathcal{R}_i [/$]
 
 - type: markdown
   id: 38  # (generated)
