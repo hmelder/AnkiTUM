@@ -26,6 +26,7 @@ cards:
     - Entität welche von anderen Entitäten Abhängt
 
 - type: markdown
+  id: 4  # (generated)
   front: |
     Um welche Art von Entity handelt es sich hier?
     [[image: schwache_entities.png]]
@@ -35,12 +36,14 @@ cards:
       - Braucht „starke“ Entität für eine eindeutige Identifikation
 
 - type: markdown
+  id: 5  # (generated)
   front: |
     Wie wird folgendes Konzept benannt?
     [[image: generalisierung.png]]
   back: Generalisierung
 
 - type: markdown
+  id: 6  # (generated)
   front: |
     Wie wird folgendes Konzept benannt?
     [[image: aggregation.png]]

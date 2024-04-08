@@ -287,6 +287,7 @@ cards:
     Nach Entfernung der nicht trivialen MVD dann auch 4. NF.
 
 - type: markdown
+  id: 32  # (generated)
   front: Alternative Definition der 2NF vom Normaliser
   back: |
     Schema ist in 2NF, wenn es in 1NF ist und für jedes Attribut b auf der
@@ -295,6 +296,7 @@ cards:
     2. b ist nicht von einer echten Teilmenge eines Kandidatenschlüssels abhängig
 
 - type: markdown
+  id: 33  # (generated)
   front: Alternative Definition der 3NF vom Normalizer
   back: |
     Schema ist in 3NF, wenn jede FD α->β mindestens eine der folgenden
@@ -304,6 +306,7 @@ cards:
     3. Jedes Attribut in β ist in einem Kandidatenschlüssel enthalten
 
 - type: markdown
+  id: 34  # (generated)
   front: Alternative Definition der BCNF vom Normalizer
   back: |
     3NF ohne die dritte Bedingung.
@@ -314,6 +317,7 @@ cards:
     2. α ist Superschlüssel
 
 - type: markdown
+  id: 35  # (generated)
   front: Alternative Definition der 4NF vom Normalizer
   back: |
     Schema ist in 4NF, wenn jede MVD α->>β mindestens eine der folgenden
@@ -322,7 +326,9 @@ cards:
     2. α ist Superschlüssel
 
 - type: markdown
-  front: Informellere Beschreibung des Synthesealgorithmus (überführt R in 3NF)  (4 Schritte)
+  id: 36  # (generated)
+  front: Informellere Beschreibung des Synthesealgorithmus (überführt R in 3NF)  (4
+    Schritte)
   back: |
     1. **Kanonische Überdehcking**
     2. **Relationsschemata formen**: Aus jeder FD der kanonischen Überdeckung
@@ -333,6 +339,7 @@ cards:
     4. **Redundante Schemata eliminieren**: Eliminiere Ra, wenn Ra ⊆ R
 
 - type: markdown
+  id: 37  # (generated)
   front: |
     Welche Bedingungen müssen für eine Ri geltende nicht-triviale FD oder MVD a -> b
     erfüllt sein, damit eine FD oder MVD zur weiteren Dekomposition der Relation R_i
@@ -342,6 +349,7 @@ cards:
     - [$] a \not\in \mathcal{R}_i [/$]
 
 - type: markdown
+  id: 38  # (generated)
   front: |
     Wie wird eine Relation R_i beim Dekompositionsalgorithmus zerlegt, wenn eine FD/MVD
     gefunden wurde, die die gewünschte Normalform verletzt?
