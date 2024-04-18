@@ -7,6 +7,7 @@ dirs=(
     "IN0042_ITSEC"
     "MA0902_Analysis_Informatik"
     "WI00729_BWL2"
+    "IN0011_Theo"
 )
 
 mkdir -p build
