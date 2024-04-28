@@ -2,190 +2,215 @@ title: Endliche Automaten und reguläre Ausdrücke
 author: Hendrik Hübner
 id: 3709563985
 cards:
-  - type: latex_plus
-    front: Def. Konkatenation von Sprachen
-    back: |+
-      [$]AB = \{xy \mid x \in A \land y \in B\}[/$]
+- type: latex_plus
+  id: 0  # (generated)
+  front: Def. Konkatenation von Sprachen
+  back: |+
+    [$]AB = \{xy \mid x \in A \land y \in B\}[/$]
 
-  - type: latex_plus
-    front: Def. Kleene Stern bei Sprache A
-    back: |+
-      [$]A^* = \bigcup_{i=0}^{\infty} A^i[/$]
-  - type: latex_plus
-    front: Def. Kleene Plus bei Sprache A
-    back: |+
-      [$]A^+ = \bigcup_{i=1}^{\infty} A^i = AA^*[/$]
+- type: latex_plus
+  id: 1  # (generated)
+  front: Def. Kleene Stern bei Sprache A
+  back: |
+    [$]A^* = \bigcup_{i=0}^{\infty} A^i[/$]
+- type: latex_plus
+  id: 2  # (generated)
+  front: Def. Kleene Plus bei Sprache A
+  back: |+
+    [$]A^+ = \bigcup_{i=1}^{\infty} A^i = AA^*[/$]
 
-  - type: latex_plus
-    front: |
-      [$]A \emptyset = ?[$]
-    back: |+
-      [$]\emptyset[/$]
+- type: latex_plus
+  id: 3  # (generated)
+  front: |
+    [$]A \emptyset = ?[$]
+  back: |+
+    [$]\emptyset[/$]
 
-  - type: latex_plus
-    front: |
-      [$]A(B \cup C) = [/$]
-    back: |+
-      [$]AB \cup AC[/$]
+- type: latex_plus
+  id: 4  # (generated)
+  front: |
+    [$]A(B \cup C) = [/$]
+  back: |+
+    [$]AB \cup AC[/$]
 
-  - type: latex_plus
-    front: Def. Grammar
-    back: |+
-      [$]G = (V, \Sigma, P, S)[$]
+- type: latex_plus
+  id: 5  # (generated)
+  front: Def. Grammar
+  back: |+
+    [$]G = (V, \Sigma, P, S)[$]
 
-      [$]V[/$] is the set of non-terminal symbols.
-      [$]\Sigma[/$] is the set of terminal symbols.
-      [$]P \subseteq (V \cup \Sigma)^* \times (V \cup \Sigma)^*[/$] is the set of production rules.
-      [$]S[/$] is the start symbol.
+    [$]V[/$] is the set of non-terminal symbols.
+    [$]\Sigma[/$] is the set of terminal symbols.
+    [$]P \subseteq (V \cup \Sigma)^* \times (V \cup \Sigma)^*[/$] is the set of production rules.
+    [$]S[/$] is the start symbol.
 
-  - type: latex_plus
-    front: Def. Chomsky Hierarchy
-    back: |+
-      [$]
-      Type 0: All grammars
-      L = \{ w \in \Sigma^* \mid w \text{ can be derived from the start symbol using any production rule} \}
-      
-      Type 1: Context sensitive Grammars
-      L = \{ w \in \Sigma^* \mid \text{there exists a production } \alpha \rightarrow \beta \text{ such that} |\alpha| \leq |\beta| \text{ and} w = \alpha u \gamma \text{ where} u \in \Sigma^* \text{ and} \gamma \in \Sigma^* \}
+- type: latex_plus
+  id: 6  # (generated)
+  front: Def. Chomsky Hierarchy
+  back: |+
+    [$]
+    Type 0: All grammars
+    L = \{ w \in \Sigma^* \mid w \text{ can be derived from the start symbol using any production rule} \}
 
-      Type 2: Context free Grammars
-      L = \{ w \in \Sigma^* \mid S \Rightarrow^* w \}
+    Type 1: Context sensitive Grammars
+    L = \{ w \in \Sigma^* \mid \text{there exists a production } \alpha \rightarrow \beta \text{ such that} |\alpha| \leq |\beta| \text{ and} w = \alpha u \gamma \text{ where} u \in \Sigma^* \text{ and} \gamma \in \Sigma^* \}
 
-      Type 3: Regular languages
-      L = \{ w \in \Sigma^* \mid w \text{ can be derived from the start symbol using production rules of the form} A \rightarrow aB \text{ or} A \rightarrow a \text{ where} A,B \in V \text{ and} a \in \Sigma \}
+    Type 2: Context free Grammars
+    L = \{ w \in \Sigma^* \mid S \Rightarrow^* w \}
 
-      [/$]
+    Type 3: Regular languages
+    L = \{ w \in \Sigma^* \mid w \text{ can be derived from the start symbol using production rules of the form} A \rightarrow aB \text{ or} A \rightarrow a \text{ where} A,B \in V \text{ and} a \in \Sigma \}
 
-  - type: latex_plus
-    front: Def. DFA
-    back: |+
-      [$]DFA[/$] = (Q, \Sigma, \delta, q_0, F)[/$]
-      [$]Q[/$] is the set of states.
-      [$]\Sigma[/$] is the input alphabet.
-      [$]\delta: Q \times \Sigma \rightarrow Q[/$] is the transition function.
-      [$]q0 \in Q[/$] is the initial state.
-      [$]F \suseteq Q[/$] is the set of accepting (final) states.
+    [/$]
 
-  - type: latex_plus
-    front: Def. NFA
-    back: |+
-      [$]NFA[/$] = (Q, \Sigma, \delta, q_0, F)[/$]
-      [$]Q[/$] is the set of states.
-      [$]\Sigma[/$] is the input alphabet.
-      [$]\delta: Q \times \Sigma \rightarrow \mathcal{P}(Q)[/$] is the transition function.
-      [$]q0 \in Q[/$] is the initial state.
-      [$]F \suseteq Q[/$] is the set of accepting (final) states.
+- type: latex_plus
+  id: 7  # (generated)
+  front: Def. DFA
+  back: |+
+    [$]DFA[/$] = (Q, \Sigma, \delta, q_0, F)[/$]
+    [$]Q[/$] is the set of states.
+    [$]\Sigma[/$] is the input alphabet.
+    [$]\delta: Q \times \Sigma \rightarrow Q[/$] is the transition function.
+    [$]q0 \in Q[/$] is the initial state.
+    [$]F \suseteq Q[/$] is the set of accepting (final) states.
 
-  - type: latex_plus
-    front: |
-      Def. [$]\hat{\delta}(q, w)[/$]
-    back: |+
-      The state which is reached with w from q
+- type: latex_plus
+  id: 8  # (generated)
+  front: Def. NFA
+  back: |+
+    [$]NFA[/$] = (Q, \Sigma, \delta, q_0, F)[/$]
+    [$]Q[/$] is the set of states.
+    [$]\Sigma[/$] is the input alphabet.
+    [$]\delta: Q \times \Sigma \rightarrow \mathcal{P}(Q)[/$] is the transition function.
+    [$]q0 \in Q[/$] is the initial state.
+    [$]F \suseteq Q[/$] is the set of accepting (final) states.
 
-      [$]\hat{\delta}(q, \epsilon) = q[/$]
-      [$]\hat{\delta}(q, aw) = \hat{\delta}(\delta(q, a), w)[/$]
+- type: latex_plus
+  id: 9  # (generated)
+  front: |
+    Def. [$]\hat{\delta}(q, w)[/$]
+  back: |+
+    The state which is reached with w from q
 
-  - type: latex_plus
-    front: Welche gestalt haben Produktionen bei einer rechtslinearen Grammatik?
-    back: |+
-      [$]A \rightarrow a \mid aB [/$]
+    [$]\hat{\delta}(q, \epsilon) = q[/$]
+    [$]\hat{\delta}(q, aw) = \hat{\delta}(\delta(q, a), w)[/$]
 
-  - type: latex_plus
-    front: Was gilt für rechtslineare Grammatiken?
-    back: |+
-      - Es existiert ein äquivalenter DFA (und umgekehrt)
+- type: latex_plus
+  id: 10  # (generated)
+  front: Welche gestalt haben Produktionen bei einer rechtslinearen Grammatik?
+  back: |+
+    [$]A \rightarrow a \mid aB [/$]
 
-  - type: latex_plus
-    front: |
-      Def. [$]\bar{\delta}(S, a)[/$]
-    back: |+
-      The state which is reached with w from q
+- type: latex_plus
+  id: 11  # (generated)
+  front: Was gilt für rechtslineare Grammatiken?
+  back: |+
+    - Es existiert ein äquivalenter DFA (und umgekehrt)
 
-      [$]\bar{\delta}(S, a) = \bigcup\limits{q \in S} \delta(q, a} [/$]
+- type: latex_plus
+  id: 12  # (generated)
+  front: |
+    Def. [$]\bar{\delta}(S, a)[/$]
+  back: |+
+    The state which is reached with w from q
+
+    [$]\bar{\delta}(S, a) = \bigcup\limits{q \in S} \delta(q, a} [/$]
 
 
-  - type: latex_plus
-    front: Was ist die Potenzmengenkonstruktion?
-    back: |+
-      Sei N ein NFA
-      
-      Def. [$]DFA M = (\mathcal{P}(Q), \Sigma, \bar{\delta}, q_0, F_M)[/$]
-      Mit [$]F_M := {S \subseteq Q \mid S \cap F \neq \emptyset}[/$]
-      
-      Der enstehende DFA hat bis zu 2^|Q| zustände
+- type: latex_plus
+  id: 13  # (generated)
+  front: Was ist die Potenzmengenkonstruktion?
+  back: |+
+    Sei N ein NFA
 
-  - type: latex_plus
-    front: Def. pumping lemma
-    back: |+
-      [$]
-      A language $L$ is regular if and only if there exists a constant $p \geq 1$ such that for any string $s \in L$ with $|s| \geq p$, $s$ can be decomposed as $s = xyz$ satisfying the following conditions:
+    Def. [$]DFA M = (\mathcal{P}(Q), \Sigma, \bar{\delta}, q_0, F_M)[/$]
+    Mit [$]F_M := {S \subseteq Q \mid S \cap F \neq \emptyset}[/$]
 
-      \begin{itemize}
-          \item $|xy| \leq p$: The length of the prefix $xy$ is at most $p$.
-          \item $|y| \geq 1$: The substring $y$ is non-empty.
-          \item For all $i \geq 0$, $xy^iz \in L$: Repeating the substring $y$ any number of times ($i \geq 0$) and concatenating it with $xz$ results in a string in $L$.
-      \end{itemize}
-      [/$]
+    Der enstehende DFA hat bis zu 2^|Q| zustände
 
-  - type: latex_plus
-    front: |
-      Was gilt für [$]\epsilon[/$]-NFAs?
-    back: |+
-      Es existiert immer ein äquivalenter NFA und damit auch DFA
-      
+- type: latex_plus
+  id: 14  # (generated)
+  front: Def. pumping lemma
+  back: |+
+    [$]
+    A language $L$ is regular if and only if there exists a constant $p \geq 1$ such that for any string $s \in L$ with $|s| \geq p$, $s$ can be decomposed as $s = xyz$ satisfying the following conditions:
 
-  - type: latex_plus
-    front: Welche sechs erweiterungen von Regulären Ausdrücken für UNIX haben wir kennengelernt?
-    back: |+
-      . = beliebiges Zeichen des Alphabets
-      [a1 ... an] = beliebiges Zeichen aus {a1 ... an}
-      [^a1 ... an] = beliebiges Zeichen NICHT aus {a1 ... an}
-      w? = leeres Wort oder w
-      w+ = ww*
-      w{n} = www...ww (n mal)
+    \begin{itemize}
+        \item $|xy| \leq p$: The length of the prefix $xy$ is at most $p$.
+        \item $|y| \geq 1$: The substring $y$ is non-empty.
+        \item For all $i \geq 0$, $xy^iz \in L$: Repeating the substring $y$ any number of times ($i \geq 0$) and concatenating it with $xz$ results in a string in $L$.
+    \end{itemize}
+    [/$]
 
-  - type: latex_plus
-    front: Satz von Kleene?
-    back: |+
-      Eine Sprache ist genau dann als regulärer ausdruck darstellbar, wenn sie regulär ist
+- type: latex_plus
+  id: 15  # (generated)
+  front: |
+    Was gilt für [$]\epsilon[/$]-NFAs?
+  back: |+
+    Es existiert immer ein äquivalenter NFA und damit auch DFA
 
-  - type: latex_plus
-    front: Def. Ardens lemma
-    back: |+
-      [$]
-        Sind \alpha, \beta und X reguläre ausdrücke mit \epsilon \notin L(\alpha), so gilt:
-        X \equiv \alpha X \mid \beta \Rightarrow X \equiv \alpha^*\beta
-      [/$]
 
-  - type: latex_plus
-    front: Zeitkomplexität umwandlung RE -> e-NFA?
-    back: n -> Q in O(n)
+- type: latex_plus
+  id: 16  # (generated)
+  front: Welche sechs erweiterungen von Regulären Ausdrücken für UNIX haben wir kennengelernt?
+  back: |+
+    . = beliebiges Zeichen des Alphabets
+    [a1 ... an] = beliebiges Zeichen aus {a1 ... an}
+    [^a1 ... an] = beliebiges Zeichen NICHT aus {a1 ... an}
+    w? = leeres Wort oder w
+    w+ = ww*
+    w{n} = www...ww (n mal)
 
-  - type: latex_plus
-    front: Zeitkomplexität umwandlung NFA -> DFA?
-    back: n -> Q in O(2^n)
+- type: latex_plus
+  id: 17  # (generated)
+  front: Satz von Kleene?
+  back: |+
+    Eine Sprache ist genau dann als regulärer ausdruck darstellbar, wenn sie regulär ist
 
-  - type: latex_plus
-    front: Zeitkomplexität umwandlung NFA -> RE?
-    back: |+
-      n -> länge RE in O(3^n)
+- type: latex_plus
+  id: 18  # (generated)
+  front: Def. Ardens lemma
+  back: |+
+    [$]
+      Sind \alpha, \beta und X reguläre ausdrücke mit \epsilon \notin L(\alpha), so gilt:
+      X \equiv \alpha X \mid \beta \Rightarrow X \equiv \alpha^*\beta
+    [/$]
 
-  - type: latex_plus
-    front: Zeitkomplexität umwandlung e-NFA -> NFA?
-    back: Q -> Q
+- type: latex_plus
+  id: 19  # (generated)
+  front: Zeitkomplexität umwandlung RE -> e-NFA?
+  back: n -> Q in O(n)
 
-  - type: latex_plus
-    front: Wann sind zwei Reguläre Ausdrücke oder Automaten äquivalent?
-    back: |+
-      [$] \alpha \equiv \beta \Leftrightarrow L(\alpha) = L(\beta) [/$]
+- type: latex_plus
+  id: 20  # (generated)
+  front: Zeitkomplexität umwandlung NFA -> DFA?
+  back: n -> Q in O(2^n)
 
-  - type: latex_plus
-    front: Def. Produktautomat
-    back: |+
-      Sind [$]M_1[/$] und [$]M_2[/$] DFAs so ist der Produktautomat wie folgt definiert:
-      [$]
-      (Q_1 \times Q_2, \Sigma, \delta, (s_1, s_2), F_1 \times F_2)
-      wobei, \delta((q_1, q_2), a) = (\delta_1(q_1, a), \delta_2(q_2, a))
-      
-      Der Produktautomat akzeptiert L(M_1) \cap L(M_2)
-      [/$]
+- type: latex_plus
+  id: 21  # (generated)
+  front: Zeitkomplexität umwandlung NFA -> RE?
+  back: |+
+    n -> länge RE in O(3^n)
+
+- type: latex_plus
+  id: 22  # (generated)
+  front: Zeitkomplexität umwandlung e-NFA -> NFA?
+  back: Q -> Q
+
+- type: latex_plus
+  id: 23  # (generated)
+  front: Wann sind zwei Reguläre Ausdrücke oder Automaten äquivalent?
+  back: |+
+    [$] \alpha \equiv \beta \Leftrightarrow L(\alpha) = L(\beta) [/$]
+
+- type: latex_plus
+  id: 24  # (generated)
+  front: Def. Produktautomat
+  back: |
+    Sind [$]M_1[/$] und [$]M_2[/$] DFAs so ist der Produktautomat wie folgt definiert:
+    [$]
+    (Q_1 \times Q_2, \Sigma, \delta, (s_1, s_2), F_1 \times F_2)
+    wobei, \delta((q_1, q_2), a) = (\delta_1(q_1, a), \delta_2(q_2, a))
+
+    Der Produktautomat akzeptiert L(M_1) \cap L(M_2)
+    [/$]
