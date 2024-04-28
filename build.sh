@@ -8,6 +8,7 @@ dirs=(
     "MA0902_Analysis_Informatik"
     "WI00729_BWL2"
     "IN0011_Theo"
+    "IN0011_Theoretische_Informatik"
 )
 
 mkdir -p build
