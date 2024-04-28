@@ -17,12 +17,14 @@ cards:
       [$]A^+ = \bigcup_{i=1}^{\infty} A^i = AA^*[/$]
 
   - type: latex_plus
-    front: [$]A \emptyset = ?[$]
+    front: |
+      [$]A \emptyset = ?[$]
     back: |+
       [$]\emptyset[/$]
 
   - type: latex_plus
-    front: [$]A(B \cup C) = [/$]
+    front: |
+      [$]A(B \cup C) = [/$]
     back: |+
       [$]AB \cup AC[/$]
 
@@ -75,7 +77,8 @@ cards:
       [$]F \suseteq Q[/$] is the set of accepting (final) states.
 
   - type: latex_plus
-    front: Def. [$]\hat{\delta}(q, w)[/$]
+    front: |
+      Def. [$]\hat{\delta}(q, w)[/$]
     back: |+
       The state which is reached with w from q
 
@@ -93,7 +96,8 @@ cards:
       - Es existiert ein äquivalenter DFA (und umgekehrt)
 
   - type: latex_plus
-    front: Def. [$]\bar{\delta}(S, a)[/$]
+    front: |
+      Def. [$]\bar{\delta}(S, a)[/$]
     back: |+
       The state which is reached with w from q
 
@@ -124,7 +128,8 @@ cards:
       [/$]
 
   - type: latex_plus
-    front: Was gilt für [$]\epsilon[/$]-NFAs?
+    front: |
+      Was gilt für [$]\epsilon[/$]-NFAs?
     back: |+
       Es existiert immer ein äquivalenter NFA und damit auch DFA
       
