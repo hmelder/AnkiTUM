@@ -678,3 +678,8 @@ cards:
   back: |
     Switches kommunizieren miteinander, um redundante Pfade zu deaktivieren.
 # FIXME: WLAN Access Points
+- type: markdown
+  front: Was ist ein wesentlicher Unterschied zwischen WLAN Access Points und Switches?
+  back: |
+   - Clients sind sich der **Anwesenheit** eines Access Points **bewusst**.
+   - Zur Kommunikation untereinander wird der Access Point direkt adressiert.
