@@ -461,6 +461,7 @@ cards:
     - CSMA/CA mit RTS/CTS
     - Token Passing
 - type: markdown
+  id: 72  # (generated)
   front: Wie kann der Empfänger Rahmengrenzen erkennen?
   back: |
     - Längenangabe der Nutzdaten
@@ -468,13 +469,15 @@ cards:
     - Begrenzungsfelder und "Bit-Stopfen"
     - Coderegelverletzung
 - type: markdown
+  id: 73  # (generated)
   front: Wie kann der **4B5B-Code** genutzt werden, um Rahmengrenzen zu kodieren?
   back: |
-   - Einem Rahmen werden die Startsymbole J/K vorangestellt
-   - Nach einem Rahmen werden die Endsymbole T/R eingefügt
+    - Einem Rahmen werden die Startsymbole J/K vorangestellt
+    - Nach einem Rahmen werden die Endsymbole T/R eingefügt
 
-   [[image: 4b5b_rahmengrenzen.png]]
+    [[image: 4b5b_rahmengrenzen.png]]
 - type: markdown
+  id: 74  # (generated)
   front: |
     Der folgende Rahmen soll `1011 0101 0110` mit Steuerzeichen versehen werden.
 
@@ -487,12 +490,14 @@ cards:
   back: |
     `11000 (J) 10001 (K) 10111 01011 01110 01101 (T) 00111 (R)`
 - type: markdown
+  id: 75  # (generated)
   front: Was ist, wenn Steuerzeichen zufällig in den Nutzdaten vorkommen?
   back: |
     Kann nur passieren, wenn Steuerzeichen und Nutzdaten sich Datenworte teilen.
     Wenn das der Fall ist, kann der Payload mittels **Character Stuffing**
     abgeändert werden, um eine Kollision zu vermeiden.
 - type: markdown
+  id: 76  # (generated)
   front: |
     Führe "Bit-Stopfen" aus.
     - Start- / Endmarkierung sei `01111110`.
@@ -502,43 +507,52 @@ cards:
   back: |
     `01111110 11001011_11101011_11101 01111110`
 - type: markdown
+  id: 77  # (generated)
   front: Was ist die Idee hinter **Coderegelverletzung**?
   back: |
-   - Lasse bestimmte Signalwechsel aus.
-   - Auf diese Art wird ein ungültiges (im Code nicht existierendes) Symbol erzeugt.
-   - Dieses kann verwendet werden, um Start und Ende von Rahmen zu markieren.
+    - Lasse bestimmte Signalwechsel aus.
+    - Auf diese Art wird ein ungültiges (im Code nicht existierendes) Symbol erzeugt.
+    - Dieses kann verwendet werden, um Start und Ende von Rahmen zu markieren.
 # Adressierung und Fehlererkennung 2-57
 - type: markdown
+  id: 78  # (generated)
   front: Findet in Direktverbindungsnetzen eine Vermittlung (**Routing**) statt?
   back: |
     Nein. Alle angeschlossenen Knoten sind direkt erreichbar.
 - type: markdown
+  id: 79  # (generated)
   front: Was sind Anforderungen an Adressen auf Schicht 2?
   back: |
     **Eindeutige Identifizierung** der Knoten innerhalb des Direktverbindungsnetzes.
 - type: markdown
+  id: 80  # (generated)
   front: Was macht die **Broadcast-Adresse** auf Schicht 2?
   back: |
     Spricht alle Knoten im Direktverbindungsnetz an.
 - type: markdown
+  id: 81  # (generated)
   front: Wozu wird eine **Multicast-Adresse** auf Schicht 2 verwendet?
   back: |
     Ansprechen von bestimmten Gruppen (z.B. Router).
 - type: markdown
+  id: 82  # (generated)
   front: Wie bezeichnet man Adressen auf Schicht 2?
   back: Als **MAC-Adressen** (**M**dia **A**ccess **C**ontrol)
 - type: markdown
+  id: 83  # (generated)
   front: Was ist die **OUI** in MAC-Adressen?
   back: |
     **O**rganizationally **U**nique **I**dentifier ermöglichen es den Hersteller
     einer Netzwerkkarte zu identifizeren.
 - type: markdown
+  id: 84  # (generated)
   front: Wo befindet sich die **OUI** in der MAC-Adresse?
   back: |
     Ersten drei Bytes.
 
     z.B: `7c:6d:62:00:00:01` -> OUI: `7c:6d:62 = Apple` Device ID: `00:00:01`
 - type: markdown
+  id: 85  # (generated)
   front: |
     Wie kann man herausfinden, ob es sich bei einer MAC-Adresse um eine
     **Unicast-** oder **Multicast-Adresse** handelt?
@@ -546,6 +560,7 @@ cards:
     Erstes Bit des ersten Oktetts (Bytes):
     [[image: mac_diagramm.png]]
 - type: markdown
+  id: 86  # (generated)
   front: |
     Wie kann man herausfinden, ob es sich bei einer MAC-Adresse um eine
     **lokal-administrierte** oder **globale** Adresse handelt?
@@ -553,48 +568,58 @@ cards:
     Zweites Bit des ersten Oktetts (Bytes):
     [[image: mac_diagramm.png]]
 - type: markdown
+  id: 87  # (generated)
   front: Nenne die MAC Broadcast Adresse.
   back: |
     `ff:ff:ff:ff:ff:ff` ("all ones")
 - type: markdown
+  id: 88  # (generated)
   front: Was ist das Ziel von CRC?
   back: |
-   - Eine grosse Anzahl von Fehlern (Einbit-, Mehrbit-, Burstfehler) sollen erkannt werden.
-   - Die zugefügte Redundanz soll gering sein.
-   - Fehler sollen lediglich erkannt aber nicht korrigiert werden können.
+    - Eine grosse Anzahl von Fehlern (Einbit-, Mehrbit-, Burstfehler) sollen erkannt werden.
+    - Die zugefügte Redundanz soll gering sein.
+    - Fehler sollen lediglich erkannt aber nicht korrigiert werden können.
 - type: markdown
+  id: 89  # (generated)
   front: Welche Art von Code ist CRC?
   back: Ein **fehlererkennender** Code.
 - type: markdown
+  id: 90  # (generated)
   front: Wie lässt sich ein Datenwort der Länge *n* bit als Polynom darstellen?
   back: |
     [$$]a(x) = \sum_{i = 0}^{n - 1}a_ix^i \\ \text{mit } a_i \in \mathbb{F}_2 \\ \text{mit } \mathbb{F}_2 = \\{ 0, 1 \\}[/$$]
 - type: markdown
+  id: 91  # (generated)
   front: Wie haben wir den **endlichen Körper** [$]F_q[x][/$] definiert?
   back: |
     [$$]F_q[x] = \left \\{ a \\ | \\ a(x) = \sum_{i = 0}^{n - 1} a_ix^i, \ a_i \in \mathbb{F}_2 \right \\}[/$$]
 - type: markdown
+  id: 92  # (generated)
   front: Welche Elemente befinden sich in [$]F_4[x][/$]?
   back: |
     Zunächt gilt: [$]\log2(4) = 2[/$].
-    
+
     Somit sind alle Datenworte der Länge n bit enthalten (`00 -> 0`, `01 -> 1`, `10 -> x`, `11 -> x + 1`)
 
     [$$]F_4[x] = \\{ 0, 1, x, x + 1\\}[/$$]
 - type: markdown
-  front: Sei n die Länge der CRC Prüfsumme [$]n = \deg(r(x))[/$]. Welche Fehler werden dann erkannt?
+  id: 93  # (generated)
+  front: Sei n die Länge der CRC Prüfsumme [$]n = \deg(r(x))[/$]. Welche Fehler werden
+    dann erkannt?
   back: |
     - Alle 1-bit Fehler
     - Isolierte 2-bit Fehler
     - Einige Burst-Fehler, die länger sind als n
 # FIXME: Polynomdivision and Reducibilty CRC Missing
 - type: markdown
+  id: 94  # (generated)
   front: Welche Fehler erkennt CRC **nicht** zuverlässig, oder gar nicht?
   back: |
     - Fehler die **länger** sind **als n**
     - Fehler, die aus **mehreren Bursts** bestehen
     - Alle Fehler, die ein **Vielfaches des Reduktionspolynoms** sind
 - type: markdown
+  id: 95  # (generated)
   front: |
     Bei **Bluetooth** wird CRC als fehler*korrigierender* Blockcode eingesetzt.
     Dabei werden Datenblöcke der Länge 10 bit mit einer 5 bit langen Checksumme versehen.
@@ -603,6 +628,7 @@ cards:
   back: |
     [$$]\frac{2}{3}[/$$]
 - type: markdown
+  id: 96  # (generated)
   front: Wie wird die Coderate berechnet?
   back: |
     [$$]\frac{k}{n}[/$$]
@@ -612,6 +638,7 @@ cards:
 # FIXME: Missing FastEthernet and Wifi Examples
 # Hubs, Bridges und Switches 2-71
 - type: markdown
+  id: 97  # (generated)
   front: Wie funktioniert ein Hub?
   back: |
     - Der Hub verbindet die einzelnen Links zu einem **gemeinsamen Bus**
@@ -620,19 +647,23 @@ cards:
 
     [[image: hub_diagramm.png]]
 - type: markdown
+  id: 98  # (generated)
   front: Warum arbeitet Schicht 2 bis auf wenige Ausnahmen **verbindungslos**?
   back: |
     Weil **keine logische Verbindung** zwischen den Kommunikationspartnern aufgebaut wird.
 - type: markdown
+  id: 99  # (generated)
   front: Was ist eine **Kollisions-Domäne**?
   back: |
     Teil eines Direktverbindungsnetzes, innerhalb dem eine Kollision bei
     gleichzeitiger Übertragung mehrerer Knoten auftreten kann.
 - type: markdown
+  id: 100  # (generated)
   front: Was ist ein **Abschnitt** (engl. Segment) auf Schicht 2?
   back: |
     Eine Verbindung zu ein oder mehreren Knoten, oder ein Link zwischen Hubs.
 - type: markdown
+  id: 101  # (generated)
   front: Kann man Hubs kaskadieren?
   back: |
     Ja, aber mit Einschränkung bei Ethernet (802.3a/i).
@@ -642,6 +673,7 @@ cards:
     - verbunden durch 4 Repeater (Aktive Hubs die zusätzlich das Signal verstärken),
     - wobei nur in 3 Abschnitten aktive Endgeräte enthalten sein dürfen.
 - type: markdown
+  id: 102  # (generated)
   front: Wie funktioniert ein Switch?
   back: |
     ## Learning-Phase
@@ -651,29 +683,36 @@ cards:
     Weitere Rahmen werden direkt an den Ziel-Port weitergeleitet. Sonst an alle Ports.
     **Einträge** werden **nach Zeitintervall invalidiert**.
 - type: markdown
+  id: 103  # (generated)
   front: Was ist eine **Bridge**?
   back: |
 - type: markdown
+  id: 104  # (generated)
   front: Was ist der Hauptunterschied zwischen **Hub** und **Switch** (oder **Bridge**)
   back: |
     Eine Switch **unterbricht Kollisionsdomänen**.
 - type: markdown
+  id: 105  # (generated)
   front: Wissen Hosts i.A., dass sie mit Switches verbunden sind?
   back: |
     Nein. Switches sind für Hosts **transparent**.
 - type: markdown
+  id: 106  # (generated)
   front: Richtig oder Falsch? Switches ändern Sender- und Empfänger-Adressen.
   back: |
     Falsch.
 - type: markdown
+  id: 107  # (generated)
   front: Haben Switches für den grundlegenden Betrieb eigene MAC Adressen?
   back: |
     Nein.
 - type: markdown
+  id: 108  # (generated)
   front: Welche Auswirkungen haben *Schleifen* auf Schicht 2?
   back: |
     Mehrere Kopien eines Rahmens werden erzeugt und zirkulieren anschließend im Netzwerk.
 - type: markdown
+  id: 109  # (generated)
   front: Wie werden Schleifen vermieden??
   back: |
     Switches kommunizieren miteinander, um redundante Pfade zu deaktivieren.
