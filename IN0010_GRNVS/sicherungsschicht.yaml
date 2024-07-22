@@ -1,0 +1,387 @@
+title: 'GRNVS: Kapitel 2: Sicherungsschicht'
+author: Hugo Melder
+id: 6685981223
+cards:
+  - type: markdown
+    front: Wie lässt sich ein **asymmetrisches** Netzwerk darstellen?
+    back: |
+      Als gerichteter Graph.
+  - type: markdown
+    front: Wie lässt sich ein **symmetrisches** Netzwerk darstellen?
+    back: |
+      Als ungerichteter Graph.
+  - type: markdown
+    front: Was ist ein anderer Begriff für Pfadlänge.
+    back: |
+      Hop Count
+  - type: markdown
+    front: Wie ist die **Pfadlänge** definiert?
+    back: |
+      Anzahl der Kanten auf dem Pfad.
+  - type: markdown
+    front: Wie werden **Pfadkosten** berechnet?
+    back: |
+      [$]c(\mathcal{P}_{st}) = \sum_{(i, j) \in \mathcal{P}_{st}} c_{ij}[/$]
+  - type: markdown
+    front: Was ist eine Netztopologie?
+    back: |
+      Beschreibt die Struktur, wie Knoten miteinander verbunden sind.
+  - type: markdown
+    front: Wie unterscheiden wir Topologien?
+    back: |
+      - **Physikalische** Topologie
+      - **Logische** Topologie
+  - type: markdown
+    front: Was ist die logische Topologie eines Netzwerkes?
+    back: |
+      - Abstrahiert von der physischen Anordnung der Netzwerkknoten
+      - Routing von Frames
+  - type: markdown
+    front: Was ist die physische Topologie eines Netzwerkes?
+    back: |
+      Bezieht sich auf die physische Anordnung der Netzwerkknoten und Verbindungen.
+  - type: markdown
+    front: Nenne die 6 wichtigsten Topologien.
+    back: |
+      - **Punkt-zu-Punkt**: Direkte Verbindung zwischen Knoten i und j
+      - **Kette**: Verkette Verbindung zwischen Knoten (i, i+1), (i+1, i+2), ...
+      - **Stern**: Zentraler Knoten, der mit allen anderen Knoten verbunden ist
+      - **Vermaschung**: Jeder Knoten ist mit einem oder mehreren anderen verbunden
+      - **Baum** (meist eine logische Topologie)
+      - **Bus**: Teilnehmer senden und Empfangen Nachrichten über einen geteilten Kanal
+  - type: markdown
+    front: Wann ist eine Adjazenzmatrix symmetrisch?
+    back: |
+      Wenn die Kanten ungerichtet sind.
+  - type: markdown
+    front: Wie ist eine Distanzmatrix aufgebaut?
+    back: |
+      [$$](d_{ij}) = \begin{cases} c_{ij} & \text{if } (i,j) \in \mathcal{A} \\\ 0 & \text{if } i = j, \quad \forall i,j \in \mathcal{N} \\\  \infty & \text{otherwise} \end{cases}, \quad D \in \mathbb{R}^{N \times N}_{0+}[/$$]
+
+      Wobei das Element [$]d_{ij}[/$] die Distanz zwischen Knoten i und Knoten j angibt.
+  - type: markdown
+    front: Wie erhält man die Matrix, welche die Kosten eines kürzesten Pfads zwischen je zwei Knoten enthält?
+    back: |
+      Man potenziert D bzgl. des **Min-Plus-Produkts**.
+      [$$]D^n = D^{n-1} \otimes D[/$$]
+  - type: markdown
+    front: Was ist das Min-Plus Produkt?
+    back: |
+      [$$]D^n = D^{n-1} \otimes D , \ \text{mit} \ d_{ij} = \min_{k \in \mathcal{N}} \left \\{ d_{ik}^{n-1} + d_{kj}\right \\}[/$$]
+
+      Wobei [$]D^n[/$] die Länge eines jeweils kürzesten Pfades über höchstens n Hops enthält.
+  - type: markdown
+    front: Wie oft muss man eine Distanzmatrix multiplizieren, bis man alle kürzesten Distanzen erfasst hat?
+    back: |
+      [$]D^n[/$] konvergiert für ein endliches n, so dass [$]D^{n+1} = D^n = D^*[/$]. Dabei ist n durch den
+      **längsten einfachen Pfad im Netzwerk beschränkt**.
+
+      Damit ist n **durch die Anzahl der Knoten N** beschränkt: [$]n < N[/$].
+  - type: markdown
+    front: Was ist ein Shortest Path Tree (SPT)?
+    back: |
+      Verbindet einen Wurzelknoten mit jeweils minimalen Kosten mit jedem anderen Knoten des Netzwerks.
+  - type: markdown
+    front: Was ist ein Minimum Spanning Tree (MST)?
+    back: |
+      Verbindet alle Knoten des Netzwerks mit insgesamt minimalen Kosten.
+  - type: markdown
+    front: Welche Algorithmen zur Erzeugung von SPTs haben wir kennengelernt?
+    back: |
+      - Algorithmus von Bellman-Ford
+      - Dijkstras-Algorithmus
+  - type: markdown
+    front: Beschreibe den Bellman-Ford Algorithmus
+    back: |
+      Jeder Knoten wird mit dem Vorgängerknoten und Distanz zur Wurzel annotiert.
+
+      [[image: bellman_ford.png]]
+  - type: markdown
+    front: Beschreibe den Dijkstra Algorithmus
+    back: |
+      - Es werden immer Pfade über den im jeweiligen Schritt am günstigsten erreichbaren Knoten gesucht
+      - Kürzester Pfad wurde gefunden nach Dequeuing und Besuch aller Nachbarn.
+
+      [[image: dijkstra.png]]
+  - type: markdown
+    front: Welche Laufzeit hat der Algorithmus von Bellman-Ford
+    back: |
+      [$$]\mathcal{O}(|N| \cdot |E|)[/$$]
+  - type: markdown
+    front: Welche positiven Eigenschaften hat der Algorithmus von Bellman-Ford
+    back: |
+      - Keine komplexen Datenstrukturen notwendig
+      - Verteilte (dezentrale) Implementierung ohne Kenntnis der Topologie möglich
+  - type: markdown
+    front: Welche negativen Eigenschaften hat der Algorithmus von Dijkstra
+    back: |
+      - Resourcenintensiver als Bellman-Ford, da komplexere Datenstrukturen notwendig sind
+      - Vollständige Kenntnis der Netzwerktopologie möglich
+  - type: markdown
+    front: Welche Laufzeit hat der Algorithmus von Dijkstra
+    back: |
+      [$$]\mathcal{O}(|E| + |N| \log_2 |N|)[/$$]
+  - type: markdown
+    front: Was versteht man unter der Verbindungscharakterisierung?
+    back: |
+      - Übertragungsrate
+      - Übertragungsverzögerung
+      - Übertragungsrichtung
+      - Mehrfachzugriff (Multiplexing)
+  - type: markdown
+    front: Wie haben wir die Übertragungsrate und Serialisierungszeit definiert?
+    back: |
+      **Übertragungsrate**/**Serialisierungszeit** r (in bit/s) bestimmt die **notwendige Zeit**, um **L Datenbits auf** ein **Übertragungsmedium zu legen**.
+
+      [$$]t_s = \frac{L}{r}[/$$]
+  - type: markdown
+    front: Wie haben wir die Ausbreitungsverzögerung definiert?
+    back: |
+      Sei d eine Distanz in km und [$]c_0 \approx 300000km/s[/$] (Lichtgeschwindigkeit im Vakuum).
+
+      [$$]t_p = \frac{d}{vc_0}[/$$]
+
+      Wobei [$]0 < v < 1[/$] die **relative Ausbreitungsgeschwindigkeit** in einem Medium ist.
+  - type: markdown
+    front: Was ist die Gesamtverzögerung beim Senden und Empfangen von Nachrichten?
+    back: |
+      [$$]t_d = t_s + t_p = \frac{L}{r} + \frac{d}{vc_0}[/$$]
+  - type: markdown
+    front: Was ist das Bandbreitenverzögerungsprodukt?
+    back: |
+      Die Anzahl der Bits (Kapazität) die sich in einer Senderichtung gleichzeitig
+      auf der Leitung befinden können.
+
+      [$$]c = t_pr = \frac{d}{vc_0}r[/$$]
+  - type: markdown
+    front: Welche drei Übertragungsrichtungen gibt es und wie werden sie genannt?
+    back: |
+      - **Simplex**: Unidirektional
+      - **Halbduplex**: Bidirektional, aber nicht gleichzeitig
+      - **Vollduplex**: Bidirektional und gleichzeitig
+  - type: markdown
+    front: Was versteht man unter Multiplexing?
+    back: |
+      Nachrichten unterschiedlicher Teilnehmer gemeinsam über eine Leitung
+      zu übertragen.
+  - type: markdown
+    front: Welche Multiplex-Verfahren haben wir kennengelernt?
+    back: |
+      - **Zeitmultiplex** (TDM)
+      - **Frequenzmultiplex** (FDM)
+      - **Raummultiplex** (SDM)
+      - **Codemultiplex** (CDM)
+  - type: markdown
+    front: Wo wird Frequency Division Multiplexing (FDM) eingesetzt?
+    back: |
+      - Funkübertragungen
+      - Glasfaser
+  - type: markdown
+    front: Nenne Bewertungskriterien für Medienzugriffsverfahren.
+    back: |
+      - **Durchsatz**
+      - **Verzögerung**
+      - **Fairness**
+      - **Implementierungsaufwand**
+  - type: markdown
+    front: Welche Probleme treten bei synchronem TDMA auf?
+    back: |
+      - Kanal wird statisch zwischen Teilnehmern aufgeteilt
+      - Datenverkehr aber **stossartig**
+      - Ungenutze Bandbreite im Übertragungsfenster
+  - type: markdown
+    front: Wie unterscheidet sich asynchrones von synchronem TDMA?
+    back: |
+      **Zufälliger**, **konkurrierender**, oder **dynamisch geregelter** Medienzugriff.
+  - type: markdown
+    front: Beschreibe die Funktionsweise von ALOHA
+    back: |
+      - Jede Station sendet an eine **zentrale Station**
+      - **Kollision** bei gleichzeitigem Senden
+      - **Out-of-Band** Quittierung.
+  - type: markdown
+    front: Wie kann ALOHA mathematisch modelliert werden?
+    back: |
+      Sendewahrscheinlichkeit für Knoten ist ein **Bernoulli-Experiment**.
+      Mit N unabhängigen Knoten somit eine **Binomialverteilung** die durch
+      eine **Poisson-Verteilung** approximiert werden kann.
+  - type: markdown
+    front: Wann ist eine Übertragung bei ALOHA erfolgreich?
+    back: |
+      Wenn genau eine Übertragung stattfindet und während dieser Zeit
+      keine weitere Übertragung begonnen wurde.
+  - type: markdown
+    front: Beschreibe die Unterschiede zwischen ALOHA und Slotted ALOHA
+    back: |
+      Bei **Slotted ALOHA** dürfen Station nur noch zu Zeitpunkten
+      [$]t = nT[/$] mit [$]n = 0,1,\dots[/$] senden.
+  - type: markdown
+    front: Was ist CSMA?
+    back: |
+      Verbesserung von Slotted ALOHA:
+      - Höre das Medium ab
+      - Beginne erst dann zu senden, wenn Medium frei
+  - type: markdown
+    front: Welche verschiedenen Varianten von CSMA haben wir kennengelernt?
+    back: |
+      - **1-persistentes** CSMA
+      - **p-persistentes** CSMA
+      - **nicht-persistentes** CSMA
+  - type: markdown
+    front: Was ist **1-persistentes** CSMA?
+    back: |
+      1. Wenn Medium frei, beginne Übertragung
+      2. Wenn Medium belegt, warte bis frei und beginne dann Übertragung
+  - type: markdown
+    front: Was ist **p-persistentes** CSMA?
+    back: |
+      1. Wenn Medium frei, übertrage mit Wahrscheinlichkeit p oder verzögere mit 1-p um feste Zeit dann **1**.
+      2. Wenn Medium belegt, warte bis frei, dann **1**.
+  - type: markdown
+    front: Was ist **nicht-persistentes** CSMA?
+    back: |
+      1. Wenn Medium frei, beginne Übertragung
+      2. Wenn belegt, warte eine zufällig gewählte Zeitspanne dann **1**.
+  - type: markdown
+    front: Was ist ein Jam Signal?
+    back: |
+      Wenn ein Gerät eine Kollision erkennt, sendet es ein Jam-Signal, um andere Teilnehmer zu informieren.
+  - type: markdown
+    front: Wird das Jam-Signal bei CSDMA/CD in-Band oder out-of-Band gesendet?
+    back: |
+      In-Band.
+  - type: markdown
+    front: Wie ist ein Jam Signal aufgebaut? Wird es Out-of-Band gesendet?
+    back: |
+      Das Jam-Signal bei CSMA/CD ist ein 32-bit Code der von einem Gerät In-Band gesendet wird.
+  - type: markdown
+    front: Was ist eine Voraussetzung für CSMA/CD?
+    back: |
+      Damit Kollision erkannt werden können, müssen Nachrichten folgende Mindestlänge [$]L_\text{min}[/$] aufweisen:
+
+      [$$]L_\text{min} = 2t_pr = \frac{2d}{vc_0}r[/$$]
+  - type: markdown
+    front: Welches Problem entsteht, wenn 1-persistentes CSMA mit Kollisionserkennung verwendet wird? Was ist die Lösung?
+    back: |
+      - Die Kollision zerstört die Nachrichten beider in Kollision verwickelten Stationen
+      - Mind. eine der Station sendet ein JAM-Signal.
+      - Nachdem das Medium frei wird, wiederholen beide Stationen die Übertragung
+
+      **Lösung**: Warte "zufällige" Zeit nach einer Kollision.
+  - type: markdown
+    front: Was versteht man unter Binary Exponential Backoff?
+    back: |
+      Beim [$]k-ten[/$] Sendeversuch einer Nachricht
+        - wählt der Sender zufällig [$]n \in \left \\{ 0, \dots, min\\{2^{k-1}-1, 1023\\} \right \\}[/$] aus und
+        - wartet n Slotzeiten vor einem erneuten Sendeversuch.
+  - type: markdown
+    front: Was ist die maximale Wartezeit bei Binary Exponential Backoff (CSMA/CD)?
+    back: |
+      Nach 10 Wiederholungen (k = 11) und beträgt 1023 Slotzeiten.
+  - type: markdown
+    front: Warum kann CSMA/CD nicht in Funknetzwerken eingesetzt werden?
+    back: |
+      Senden eines Jam-Signals ist bei Funknetzwerken nicht zuverlässig.
+  - type: markdown
+    front: Was ist CSDMA/CA?
+    back: |
+      Basiert auf **p-basiertem** CSMA mit zusätzlichem Contention Window.
+  - type: markdown
+    front: Was ist Interframe Spacing bei IEEE 802.11?
+    back: |
+      Zeitintervalle zwischen Rahmen in Netzwerk, um Zugriff zu koordinieren.
+  - type: markdown
+    front: |
+      Was ist der Short Interframe Space (SIFS) bei IEEE 802.11?
+      [[image: ieee_802_11_dcf.png]]
+    back: |
+      In IEEE 802.11 Netzwerken, SIFS das interframe spacing vor der Übertragung
+      eines **ACK** (Acknowledge), oder **CTS** (Clear-to-Send) Frames.
+  - type: markdown
+    front: Wie ist das Contention Window bei IEEE 802.11 aufgebaut?
+    back: |
+      Ein vom PHY abhängiges Fenster mit [$]c > 0[/$].
+  - type: markdown
+    front: Was ist die Distributed Coordination Function bei IEEE 802.11?
+    back: |
+      Wenn das Medium für den DIFS Zeitraum unbelegt ist, wird zunächst eine Verzögerung eingeführt.
+      
+      Es wird unabhängig und gleichverteilt die Anzahl von Backoff-Slots aus dem
+      Intervall [$]\left \\{ 0, 1, 2, \dots, \text{min}\\{ 2^{c + k - 1}-1, 255\\} \right \\}[/$]
+
+      Wobei c > 0 abhängig vom PHY und k die Anzahl der Sendeversuche.
+  - type: markdown
+    front: Was macht ein IEEE 802.11 Gerät in der Backoff Periode?
+    back: |
+      Es wird in kleinen Abständen überprüft, ob das Medium in Benutzung ist.
+      Wenn dies der Fall ist, wird der Backoff-Timer pausiert bis
+      das Medium wieder frei ist.
+  - type: markdown
+    front: Wann gilt ein Rahmen in IEEE 802.11 als erfolgreich übertragen?
+    back: |
+      ## Unicast
+      Empfänger schickt eine Bestätigung.
+      ## Broadcast
+      Übertragung eines Frames wurde störungsfrei abgeschlossen.
+  - type: markdown
+    front: Wie funktioniert die RTS/CTS Erweiterung?
+    back: |
+      - Bevor ein Knoten eine Nachricht übertragt, wird ein RTS (Request to Send) an die Basisstaion geschickt
+      - Nur wenn die Basisstation mit eine CTS (Clear to Send) antwortet darf die Übertragung beginnen
+  - type: markdown
+    front: Nenne Vorteile von RTS/CTS.
+    back: |
+      - Kollisionen mit Hidden Stations werden vermieden, aber nicht gänzlich verhindert
+      - Insgesamt weniger Kollisionen
+  - type: markdown
+    front: Nenne Nachteile von RTS/CTS.
+    back: |
+      - Es können noch immer Kollisionen auftreten, z.B. wenn B das CTS nicht empfängt.
+      - RTS/CTS nimmt vorab Zeit in Anspruch, was die **maximal erzielbare Datenrate reduziert**.
+  - type: markdown
+    front: Wo werden CSMA/CD und CSMA/CA eingesetzt?
+    back: |
+      - **CSMA/CD**: Ethernet (IEEE 802.3)
+      - **CSMA/CA**: WLAN (IEEE 802.11)
+  - type: markdown
+    front: Beschreibe den Ablauf bei Token Passing
+    back: |
+      Idee: Kollisionsfreie Übertragung durch Weitergabe eines Tokens
+      - Stationen werden zu einem logischen Ring zusammen geschaltet.
+      - Ein Token zirkuliert im Ring.
+      - Will eine Station senden, nimmt sie das Token vom Ring und darf danach als einzige Station im Ring übertragen.
+      - Nachdem alle Nachrichten gesendet wurden (oder Time-out) wird das Token wieder auf den Ring gelegt.
+  - type: markdown
+    front: Was ist, wenn das Token bei Token Passing verloren geht?
+    back: |
+      Monitor-Station erzeugt bei Bedarf neue Tokens.
+  - type: markdown
+    front: Was passiert mit endlos kreisenden Paketen?
+    back: |
+      Monitor-Station entfernt endlos kreisende Pakete.
+  - type: markdown
+    front: Was passiert, wenn die Monitoring Station bei Token Passing ausfällt?
+    back: |
+      Eine von den verbleibenden Stationen wird als Neue Monitoring Station gewählt.
+  - type: markdown
+    front: Nenne Vorteile von Token Passing.
+    back: |
+      - Sehr effizient, da keine kollisionsbedingten Wiederholungen
+      - Garantierte maximale Verzögerung (Determinismus)
+  - type: markdown
+    front: Nenne Nachteile von Token Passing.
+    back: |
+      - Höhere Übertragungsverzögerung 
+      - Fehlerhaftes Verhalten eines Knotens stört die gesamte Kommunikation im Ring.
+  - type: markdown
+    front: Welche Zugriffsverfahren mit *konkurrierendem* Zugriff haben wir kennen gelernt
+    back: |
+      - ALOHA und Slotted ALOHA
+      - CSMA (non-persistent, 1-persistent, p-persistent)
+      - CSMA/CD
+      - CSMA/CA
+  - type: markdown
+    front: Welche Zugriffsverfahren mit *geregeltem* Zugriff haben wir kennen gelernt
+    back: |
+      - CSMA/CA mit RTS/CTS
+      - Token Passing

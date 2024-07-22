@@ -1,0 +1,71 @@
+title: 'GRNVS: Kapitel 3: Vermittlungsschicht'
+author: Hugo Melder
+id: 6645562923
+cards:
+  - type: markdown
+    front: Was ist der Unterschied zwischen dynamischen und statischen Routing?
+    back: |
+      - **Statisches Routing**: Routen werden manuell von Administratoren eingerichtet und aktualisiert.
+      - **Dynamisches Routing**: Routen werden automatisch, abhängig von Netzwerkaktivitäten, gefunden und aktualisiert.
+  - type: markdown
+    front: Welche zwei arten von **dynamischen** Routing-Protokollen haben wir kennengelernt?
+    back: |
+      ## Distanz-Vektor-Protokolle
+        - Router **kennen nur Richtung** (Next Hop) und Entfernung (Kosten) zu einem Ziel.
+        - Router haben **keine Information über Netzwerktopologie**.
+        - Router tauschen untereinander kumulierte Kosten aus.
+        - Distributed Bellman-Ford.
+      ## Link-State-Protokolle
+        - Router besitzen vollständige Topologieinformationen
+  - type: markdown
+    front: Was ist RIP?
+    back: |
+      **R**outing **I**nformation **P**rotokol (RIP) ist ein **Distanz-Vektor-Protokoll**.
+  - type: markdown
+    front: Welche Metrik verwendet das Routing Information Protocol (RIP)?
+    back: |
+      **Hop Count** mit Limit von 15
+  - type: markdown
+    front: Wie funktioniert das Routing Information Protocol (RIP)?
+    back: |
+      - **Router senden** in regelmäßigen Abständen den **Inhalt ihrer Routingtabelle** an **Multicast-Adresse 224.0.0.9**.
+      - Alle Geräte mit dieser Multicast-Adresse akzeptieren das Update.
+      - RIP-Router verarbeiten Updates.
+  - type: markdown
+    front: Wann werden bei RIP Routen aus der Routingtabelle entfernt?
+    back: |
+      Wenn **fünf aufeinanderfolgende Updates von einem Nachbarn ausbleiben**,
+      werden alle Routen über diesen Next Hop aus der Routingtabelle entfernt.
+  - type: markdown
+    front: An welche Multicast Adresse senden RIP-Router Updates?
+    back: |
+      224.0.0.9
+  - type: markdown
+    front: Ein RIP-Router hat eine neue Update-Nachricht empfangen. Was passiert als nächstes?
+    back: |
+      1. Alle Kosten der enthaltenen Routen werden um 1 inkrementiert
+      2. Unbekannte Routen werden übernommen
+      3. Bekannte Routen mit niedrigeren Kosten werden aktualisiert
+  - type: markdown
+    front: Nenne entstehende Probleme beim Routing Information Protocol (RIP).
+    back: |
+      - Die maximale Entfernung zwischen zwei Routern in Hops ist die obere Schranke für die Propagierungsverzögerung von Updates
+      - Bei einer maximalen Entfernung von 15 Hops und Updates jede 30s somit 7,5 min
+  - type: markdown
+    front: Was sind **triggered Updates**?
+    back: |
+      Bei Änderung wird sofort ein Update geschickt.
+  - type: markdown
+    front: Was ist ein großes Problem von **triggered Updates**?
+    back: |
+      Es führt zu einer Welle von Updates durch das Netzwerk, was zu einer hohen Belastung führen kann.
+  - type: markdown
+    front: Was ist der Vorteil von **triggered Updates**?
+    back: |
+      Konvergenzzeit wird reduziert.
+  - type: markdown
+    front: Was ist Count to Infinty im Kontext von RIP?
+    back: |
+  - type: markdown
+    front: Was sind Lösungsansätze für Count-to-Infinity?
+    back: |

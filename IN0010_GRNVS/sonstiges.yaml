@@ -1,0 +1,56 @@
+title: 'GRNVS: Sonstiges'
+author: Hugo Melder
+id: 6985671223
+cards:
+  - type: markdown
+    front: Was ist das OSI-Modell?
+    back: |
+      Das **O**pen **S**ystems **I**nterconnection Model ist ein
+      Referenzmodell für Netzwerkprotokolle und spezifiziert 7 Schichten.
+  - type: markdown
+    front: Nenne die Schichten im OSI-Modell.
+    back: |
+      1. Physikalische Schicht
+      2. Sicherungsschicht
+      3. Vermittlungsschicht
+      4. Transportschicht
+      5. Sitzungsschicht
+      6. Darstellungsschicht
+      7. Anwendungsschicht
+  - type: markdown
+    front: Was versteht man unter vertikaler Kommunikation
+    back: |
+      Kommunikation zwischen den Schichten *eines* Hosts.
+  - type: markdown
+    front: Was versteht man unter horizontaler Kommunikation
+    back:
+      Kommunikation zwischen gleichen Schichten verschiedener Hosts.
+  - type: markdown
+    front: Was versteht man unter einer PDU? 
+    back: |
+      Zwei, auf Schicht [$]N[/$] kommunizierende, Geräte tauschen **P**rotocol **D**ata **U**nits
+      über ein Schicht [$]N[/$] Protokoll aus.
+
+      Bestandteile:
+      - N-SDU: Payload
+      - N-PCI: Protocol Control Information
+  - type: markdown
+    front: Was ist eine IDU und wo wird sie beim Datenaustausch eingesetzt?
+    back: |
+      Wenn Schicht [$]N[/$] die Dienste von Schicht [$]N-1[/$] nutzen will, wird eine
+      **I**nterface **D**ata **U**nit (IDU) konstruiert und Schicht [$]N-1[/$] übergeben.
+
+      Bestandteile:
+      - N-SDU: Andere Bezeichnung für (N-PDU, N-PCI)
+      - N-ICI: Interface Control Information
+  - type: markdown
+    front: Wie werden PDUs auf Schicht 2, 3 und 4 jeweils bezeichnet? 
+    back: |
+      - **Segmente** auf der Transportschicht (4)
+      - **Pakete** auf der Vermittlungsschicht (3)
+      - **Rahmen** (Frames) auf der Sicherungsschicht (2)
+  - type: markdown
+    front: Was sind Schwächen des ISO/OSI-Models
+    back: |
+      - Trennung der Schichten kann in der wirklichen Implementierung ineffizient sein
+      - Protokollmechnismen sind teilweise nicht klar einer bestimmten Schicht zuzuordnen (Bsp. HTTP)
