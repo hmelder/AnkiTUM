@@ -1,5 +1,7 @@
 # AnkiTUM
 
+**Mirror**: [https://mirror.hugomelder.com/anki-decks/](https://mirror.hugomelder.com/anki-decks/)
+
 ## Overview
 AnkiTUM is a collaborative repository for computer science students at the Technical University of Munich to create and share flashcards for various CS modules. The flashcards are generated from yaml files, making it easy to contribute and maintain the content.
 
