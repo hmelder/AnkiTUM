@@ -1,0 +1,277 @@
+title: 'GRNVS: Kapitel 5: Sitzungs-, Darstellungs- und Anwendungsschicht'
+author: Hugo Melder
+id: 3473949327
+cards:
+- type: markdown
+  front: Was ist eine Session?
+  back: |
+    **Kommunikation** zwischen mindestens zwei Teilnehmern mit **definiertem Anfang
+    und Ende**, sowie sich darauf ergebender Dauer.
+- type: markdown
+  front: Welche verschiedenen Dienste werden üblicherweise im verbindungsorientierten Modus angeboten?
+  back: |
+    - **Aufbau** und **Abbau** von Sessions
+    - **Prioritisierung**
+    - **Synchronisation**
+    - **Fehlermeldungen**
+    - **Wiederherstellung** nach Verbindungsabbruch
+- type: markdown
+  front: Wozu werden Cookies bei HTTP gebraucht?
+  back: |
+     Um Informationen über mehrere Anfragen und Antworten zu erhalten.
+- type: markdown
+  front: Welchen Schichten kann HTTP zugeordnet werden?
+  back: |
+    Anwendungsschicht (7), beinhaltet aber auch Funktionen
+    der Darstellungs- und Sitzungsschicht (Schichten 6/5).
+- type: markdown
+  front: Was versteht man unter einem sicheren Kanal?
+  back: |
+    Der sichere Kanal abstrahiert vom eigentlichen Anwendungsprotokoll, sichert
+    die Schutzziele (CIA) aber den höheren Protokollschichten zu.
+- type: markdown
+  front: Was ist TLS?
+  back: |
+    Ein Protokoll um einen sicheren Kanal über einen verbindungsorientierten Transportdienst zu gewährleisten.
+- type: markdown
+  front: Wie können TLS Sitzungen über mehrere TCP-Verbindungen hinweg erhalten bleiben?
+  back: |
+- type: markdown
+  front: Welchen Schichten kann TLS zugeordnet werden?
+  back: |
+    - Verwaltung und Wiederaufnahme von Sessions: **Sitzungsschicht**
+    - Verschlüsselungsfunktionen: **Darstellungsschicht**
+- type: markdown
+  front: Was passiert im Verbindungsaufbau bei TLS?
+  back: |
+    Es werden **Verfahren für Authentifizierung und Verschlüsselung, sowie
+    Zertifikate** ausgetauscht
+- type: markdown
+  front: Erläutere die Aufgaben der **Darstellungsschicht**!
+  back: |
+    - **Kodierung** der Daten
+      - Zeichensätze
+      - Kompression
+      - Verschlüsselung
+    - **Strukturierte Darstellung** von Daten
+- type: markdown
+  front: Was ist ein Zeichensatz?
+  back: |
+    Eine Menge von Zeichen, bei der jedes **Zeichen** mit einem **Codepoint*** verknüpft ist.
+- type: markdown
+  front: Nenne Beispiele für Zeichensätze?
+  back: |
+    - ASCII
+    - Unicode
+- type: markdown
+  front: Was ist ein Codepoint?
+  back: |
+    Ein Codepoint ist eine eindeutige "Kennzahl" für höchstens ein Textzeichen.
+- type: markdown
+  front: Was ist der Unterschied zwischen **Fixed-Length** und **Variable-Length** Codes?
+  back: |
+    - **Fixed-Length**: Alle Zeichen werden mit Codewörtern derselben Länge kodiert
+    - **Variable-Length**: Zeichen können mit Codewörtern unterschiedlicher Länge kodiert werden 
+- type: markdown
+  front: Wofür steht UTF in UTF-8?
+  back: |
+    **U**nicode **T**ransformation **F**ormat
+- type: markdown
+  front: Was ist der Unterschied zwischen einem Codepoint und einer UTF Kodierung?
+  back: |
+    Ein Codepoint identifiziert höchstens ein Zeichen, während UTF die Kodierung eines
+    Codepoints spezifiziert.
+- type: markdown
+  front: Warum wird UTF-8 in der Praxis am häufigsten eingesetzt?
+  back: |
+    UTF-8 ist **rückwärts-kompatibel** zu ASCII
+- type: markdown
+  front: Warum ist es wichtig, dass UTF-8 prefixfrei und selbstsynchronisierend ist?
+  back: |
+    Ermöglicht effizientes Parsen und fehlerfreies Erkennen von Zeichenanfängen
+    in Datenströmen
+- type: markdown
+  front: Welchen Möglichkeiten gibt es für die strukturierte Austausch und Darstellung von Anwendungsdaten?
+  back: |
+    - **(gepackte) structs**/**serialisierte Speicherbereiche**: Daten werden so wie sie im Speicher vorliegen übertragen
+    - **Struktureierte Serialisierungsformate**: XML oder JSON
+- type: markdown
+  front: Warum ist es problematisch gepackte Structs für den Datenaustausch zu verwenden?
+  back: |
+    - **Platform-abhängig**e Kodierung (Endianes, etc.)
+    - Gleiche Datenstrukturen (und Compiler) müssen verwendet werden.
+- type: markdown
+  front: Wie werden Kompressionsverfahren unterschieden?
+  back: |
+    - **Verlustfreie Komprimierung** (engl. lossless compression)
+    - **Verlustbehaftete Komprimierung** (engl. lossy compression)
+- type: markdown
+  front: Was versteht man unter Quellenkodierung?
+  back: |
+    Komprimieren von Daten vor dem Senden.
+- type: markdown
+  front: Was ist die grundlegende idee der Huffman-Kodierung?
+  back: |
+    Variable Codewortlänge basierend auf Auftrittswahrscheinlichkeit.
+- type: markdown
+  front: Beschreibe wie man einen Huffman-Baum konstruiert.
+  back: |
+- type: markdown
+  front: Was ist ein optimaler Präfixcode?
+  back: |
+    Gültige Codewörter sind niemals Präfix eines anderen Codeworts. Minimiert mittlere Codewortlänge:
+
+    [$$]\sum_{i \in \mathcal{A}} p(i) \cdot |c(i)|[/$$]
+# Domain Name System (DNS)
+- type: markdown
+  front: Aus welchen *drei* wesentlichen Kompontenten besteht DNS?
+  back: |
+    1. **Domain Namespace**
+    2. **Nameserver**
+    3. **Resolver**
+- type: markdown
+  front: Was ist ein FQDN?
+  back: |
+    Ein **F**ully **Q**ualified **D**omain **N**ame besteht aus einer Sequenz
+    von Labels vom Knoten und endet an der Wurzel mit einem Punkt: `tum.de.`
+- type: markdown
+  front: Erläutere den Unterschied zwischen *Resolver* und *Nameserver*?
+  back: |
+- type: markdown
+  front: Welche Funktionen erfüllen `d.root-servers.net` und `a.gtld-servers.net`?
+  back: |
+- type: markdown
+  front: Was macht ein DNS **Resolver**?
+  back: |
+    Dienst der durch **Anfragen an Nameserver** Informationen aus dem Namespace extrahiert, **zwischenspeichert** und Clients zu Verfügung stellt.
+- type: markdown
+  front: Was macht ein DNS **Nameserver**?
+  back: |
+    - speichern Informationen über den Namensraum
+    - jeder Server kennt nur kleine Ausschnitte des Namensraums (**Zonen**)
+- type: markdown
+  front: Was ist der Well-Known Port für DNS?
+  back: |
+    53
+- type: markdown
+  front: Finden Zone Transfers über UDP oder TCP statt?
+  back: |
+    TCP
+- type: markdown
+  front: Nenne Beispiele für DNS **Resource Records**
+  back: |
+    - SOA
+    - NS
+    - A
+    - AAAA
+    - CNAME
+    - MX
+    - TXT
+    - PTR
+- type: markdown
+  front: Was machen der A und AAAA DNS **Resource Record**
+  back: |
+    Assoziieren einen FQDN mit einer IPv4 bzw. IPv6-Adresse
+- type: markdown
+  front: Was sind **MX** Resource Records?
+  back: |
+    Geben den FQDN eines Mailservers an
+- type: markdown
+  front: Was sind **SOA** Resource Records?
+  back: |
+    **S**tart **o**f **A**uthority Records geben den Wurzel der Zone an, für die ein Nameserver autoritär ist.
+- type: markdown
+  front: Was sind **NS** Resource Records?
+  back: |
+    Geben den FQDN eines Nameservers an
+- type: markdown
+  front: Was passiert, wenn der autoritativer Nameserver für `example.org` `ns.example.org` ist?
+  back: |
+    Um `ns.example.org` aufzulösen muss eine Anfrage an den autoritativen Nameserver für `example.org` abgeschickt werden.
+    Es tritt eine **zirkuläre Abhängigkeit** auf.
+
+    Eine **Lösung** sind **Glue-Records** in der DNS Zone der Eltern-Domäne (Hier `.org`).
+- type: markdown
+  front: |
+    Beschreibe den folgenden **SOA** Record von `grnvs.net`:
+
+    [[image: soa_record.png]]
+  back: |
+    - **TTL**: Für nachfolgenden Resource Records
+    - **Serial** Feld: Version der Zonendatei
+    - **Refresh** Feld: Update Intervall für Secondaries
+    - **Retry** Feld: Retry (Update) Intervall für Secondaries
+    - **Expire** Feld: Lebensdauer einer Kopie
+    - **NXDomain** Feld: Cache Lebensdauer für Resolver
+- type: markdown
+  front: Woher weiß ein Resolver, wo er anfangen soll?
+  back: |
+    Statische Liste der Root Server, die für die Root-Zone autoritativ sind.
+- type: markdown
+  front: Was versteht man unter **Reverse DNS**?
+  back: |
+    Im DNS können über **PTR Records** auch FQDNs für IP-Adressen hinterlegt werden.
+
+    - `in-addr.arpa.` für IPv4
+    - `ip6.arpa.` für IPv6
+- type: markdown
+  front: Welche Einschränkungen ergeben sich für den Namespace unterhalb von `in-addr.arpa.`?
+  back: |
+    - Da jede Ebene einem ganzen Oktett entspricht, gibt es **maximal vier Ebenen**
+    - Subnetze, deren Präfixlänge nicht 8, 16, 24, oder 32 ist, können nicht in
+    getrennten Zonen gespeichert werden
+- type: markdown
+  front: Was sind getrennte Zonen im Namespace unterhalb von `in-addr.arpa.`?
+  back: |
+    Getrennte Zonen entsprechen einzelne IP-Adressen.
+- type: markdown
+  front: Erläutere, wie der IPv4-Adressbereich in den DNS Namespace eingebettet wird.
+  back: |
+    IPv4-Adressen werden oktett-weise in umgekehrter Reihenfolge als Labels
+    interpretiert und unterhalb des FQDNs `in-addr.arpa.` gespeichert.
+- type: markdown
+  front: Was ist der FQDN für `8.8.4.4` im Reverse DNS?
+  back: |
+    `4.4.8.8.in-addr.arpa.`
+
+    Dieser zeigt wiederum auf `dns.google.`
+- type: markdown
+  front: Wofür steht URL?
+  back: |
+    **U**niform **R**esource **L**ocator
+- type: markdown
+  front: Was enthält eine HTTP **Request**?
+  back: |
+    - Methode (z.B. `GET`, `HEAD`, `PUT`, `POST`, etc.)
+    - URL
+    - Weitere Header (`Host`, `User-Agent`, etc.)
+- type: markdown
+  front: Was enthält eine HTTP **Response**?
+  back: |
+    - Status-Line (z.B. `200 OK`)
+    - Response Header
+    - (Abhängig von der Methode) Body
+- type: markdown
+  front: Was ist der Unterschied zwischen HTTP `PUT` und `POST`?
+  back: |
+    - **PUT**: Objekt überschreibt ggf. ein bereits existierendes Objekt
+    - **POST**: Objekt wird ggf. an ein bereits existierendes Objekt angehängt
+- type: markdown
+  front: Wie ist FTP aufgebaut?
+  back: |
+    - Nutzt **zwei** getrennte TCP-Verbindungen
+      1. Kontrollkanal
+      2. Datenkanal
+    - Kontrollkanal bleibt über *mehrere* Datentransfers hinweg bestehen
+- type: markdown
+  front: Ist FTP stateful?
+  back: |
+    Ja! Der Kontrollkanal bleibt über *mehrere* Datentransfers hinweg bestehen.
+- type: markdown
+  front: Was ist der Unterschied zwischen FTP *active mode* und *passive mode*?
+  back: |
+    - **Active Mode**: Client teilt mittels des `PORT`-Kommandos dem Server eine zufällige Portnummer mit
+    - **Passive Mode**: Client teilt mittels `PASV`-
+- type: markdown
+  front: Was ist das Problem mit FTP active mode und NAT?
+  back: |

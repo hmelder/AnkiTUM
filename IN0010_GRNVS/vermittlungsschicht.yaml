@@ -3,6 +3,290 @@ author: Hugo Melder
 id: 6645562923
 cards:
 - type: markdown
+  front: Was sind die *drei* grundlegenden **Vermittlungsarten**?
+  back: |
+    1. **Leitungsvermittlung**
+    2. **Nachrichtenvermittlung**
+    3. **Paketvermittlung**
+- type: markdown
+  front: Was versteht man unter **Leitungsvermittlung**?
+  back: |
+    Reserviere eine **dedizierte Leitung** zwischen Sender und Empfänger
+- type: markdown
+  front: Was versteht man unter **Nachrichtenvermittlung**?
+  back: |
+    Wähle für jede Nachricht individuell einen Weg und leite die Nachricht als Ganzes weiter.
+- type: markdown
+  front: Was versteht man unter **Paketvermittlung**?
+  back: |
+    Teile eine Nachricht in mehrere kleinere Pakete auf und versende jedes Paket unabhängig von den anderen.
+- type: markdown
+  front: Wie funktioniert Multiplexing auf Paketebene?
+  back: |
+    Jedes Paket wird **unabhängig** voneinander vermittelt. Adressierung im Paketheader.
+    [[image: paket_multiplexing.png]]
+- type: markdown
+  front: Nenne Vorteile von Multiplexing auf Paketebene.
+  back: |
+    - Flexibles Zeitmultiplex einzelner Pakete
+    - Pufferung kleiner Pakete statt ganzer Nachrichten
+- type: markdown
+  front: Nenne Nachteile von Multiplexing auf Paketebene.
+  back: |
+    - Verlust von Paketen durch begrenzten Puffer möglich
+    - Jedes Paket benötigt seinen eigenen Header (Overhead)
+    - Empfänger muss Pakete wieder zusammensetzen
+- type: markdown
+  front: In welche drei Phasen unterteilt man eine Übertragung bei Leitungsvermittlung?
+  back: |
+    1. **Verbindungsaufbau**: u.A. Wegwahl
+    2. **Datenaustausch**: Exklusive Nutzung des Kanals
+    3. **Verbinungsabbau**
+- type: markdown
+  front: Was sind Vorteile der Leitungsvermittlung?
+  back: |
+    - Gleichbleibende Güte
+    - Schnelle Datenübertragung ohne Vermittlungsentscheidungen
+- type: markdown
+  front: Was sind Nachteile der Leitungsvermittlung?
+  back: |
+    - Resourcenverschwendung
+    - Verbindungsaufbau kann komplex sein
+- type: markdown
+  front: Was ist der wesentliche Unterschied zwischen Adressierung auf Schicht 2 und Schicht 3?
+  back: |
+    Schicht 3 bietet eine global-eindeutige, logische Adressierung über mehrere Direktverbindungsnetze hinweg.
+# IPv4
+- type: markdown
+  front: Was ist das IHL Feld im IPv4 Header?
+  back: |
+    **I**nternet **H**eader **L**ength Feld gibt die Länge des IP Headers inkl. Optionen
+    in Vielfachen von 4B an.
+- type: markdown
+  front: Was gibt das **Total Length** Feld im IPv4 Header an?
+  back: |
+    Gesamtlänge des IP-Pakets (Header + Payload) in Bytes.
+- type: markdown
+  front: Was ist die **MTU**?
+  back: |
+    Die **M**aximum **T**ransmission **U**nit ist die *maximale* Paketlänge, so
+    dass keine Fragmentierung notwendig ist.
+- type: markdown
+  front: Wofür wird das Identification Feld im IPv4 Header verwendet?
+  back: |
+    Dient der Identifikation zusammengehörender Fragmente. Es wird zufällig gewählt.
+- type: markdown
+  front: Was sagt ein gesetztes **Don't Fragment (DF)** Flag im IPv4 Header aus?
+  back: |
+    IP-Paket darf nicht fragmentiert werden.
+- type: markdown
+  front: Was sagt das **More Fragments** Flag im IPv4 Header aus?
+  back: |
+    - Weitere Fragmente folgen (1)
+    - Dieses Paket ist das letzte Fragment (0)
+- type: markdown
+  front: Was ist das **Fragment Offset** Feld im IPv4 Header?
+  back: |
+    Gibt die **absolute Position** der Daten in diesem Fragment an. Vielfaches von 8B.
+- type: markdown
+  front: Wie behandelt ein Router das TTL Feld eines IPv4 Pakets?
+  back: |
+    - Er dekrementiert das TTL-Feld um 1
+    - Verwirft das Paket wenn TTL = 0 und sendet ICMP Time Exceeded an Absender
+# Address Resolution Protocol (ARP)
+- type: markdown
+  front: |
+    Problem: Ein Host will eine Nachricht an einen anderen Host (im gleichen
+    Subnetz) senden, kennt aber nur die IP-Adresse. Wie kann die zugehörige
+    MAC-Adresse erhalten werden?
+  back: |
+    Der Host kann eine ARP Request schicken.
+- type: markdown
+  front: An welche MAC-Adresse wird eine ARP-Request geschickt?
+  back: |
+    Der MAC-Broadcast-Adresse `ff:ff:ff:ff:ff:ff`
+# Dynamic Host Configuration Protocol (DHCP)
+- type: markdown
+  front: Woher bekommen Hosts ihre IP-Adresse?
+  back: |
+    - Statische Konfiguration von Hand
+    - Dynamisch von einem **DHCP-Server** zugewiesene IP-Adresse
+- type: markdown
+  front: Wie bekommt ein Client eine IP-Adresse von einem DHCP Server?
+  back: |
+    1. Client sendet DHCP-Discover (L2 Broadcast)
+    2. DHCP-Server antwortet mit einer DHCP-Offer, wodurch er dem Client eine IP-Adresse anbietet
+    3. Client antwortet mit DHCP-Request, wodurch er die angebotene Adresse anfordert
+    4. DHCP-Server antwortet mit **DHCP-ACK** oder **DHCP-NACK**
+# CIDR
+- type: markdown
+  front: Wie funktioniert **CIDR** für IPv4?
+  back: |
+    - Zusätzlich zur IP-Adresse gibt es eine 32-bit lange **Subnetzmaske**
+    - Subnetzmaske **unterteilt** IPv4 Adresse in einen **Netzanteil** und **Hostanteil**.
+    - Logische 1: Netzanteil
+    - Logische 0: Hostanteil
+- type: markdown
+  front: Was resultiert aus einer UND-Verknüpfung von IP-Adresse und Subnetzmaske?
+  back: |
+    Netzadresse
+- type: markdown
+  front: |
+    `192.168.0.128` mit 25-bit Netzanteil und 7-bit Hostanteil.
+
+    Wie viele Adressen hat das Subnetz und wieviel sind nutzbar?
+  back: |
+    2^7 = 128 Adressen wovon 128 - 2 = 126 Adressen nutzbar sind.
+
+    192.168.0.255 ist die Broadcast-Adresse
+- type: markdown
+  front: Was ist die IPv4 Global Broadcast Adresse?
+  back: |
+    `255.255.255.255/32`
+# IPv6
+- type: markdown
+  front: Gebe die vier Schritte an, wie man korrekt eine IPv6 Adresse kürzt.
+  back: |
+    - Führende Nullen in jedem 16-bit Feld werden unterdrückt `2001:0db8::0001:0000` => `2001:db8::1:0`)
+    - Die längste Folge an aufeinanderfolgenden Null-Feldern wird mit (::)
+    ausgetauscht. Wenn mehrere Felder gleicher Größe vorliegen, wird das erste
+    (von Links) gekürzt. (`2001:db8:0:0:1:0:0:1` => `2001:db8::1:0:0:1`)
+- type: markdown
+  front: Wofür ist das **Payload Length** Feld im IPv6 Header da?
+  back: |
+    Länge des Headers und Payload. In Vielfachen von 1B.
+- type: markdown
+  front: Wofür ist das **Next Header** Feld im IPv6 Header da?
+  back: |
+    - Gibt den Typ des nächsten Headers an, der am Ende des IPv6-Headers folgt
+    - **L4-Header** oder **IPv6 Extension Header**
+- type: markdown
+  front: |
+    Angenommen wir haben einen Routing Header, Fragment Header und TCP Payload
+    unter dem IPv6 Header. Wie sehen die jeweiligen **Next Header** Felder aus?
+  back: |
+    - IPv6 Header, Next Header: Routing
+    - Routing Header, Next Header: Fragment
+    - Fragment Header, Next Header: TCP
+- type: markdown
+  front: Was ist das **Fragment Offset** Feld im IPv6 Fragment (Extension) Header?
+  back: |
+    - Offset der fragmentierten L3-SDU in Vielfachen von 8B
+- type: markdown
+  front: Wo erfolgt bei IPv6 die Fragmentierung?
+  back: |
+   *Ausschließlich* am Sender
+- type: markdown
+  front: Wo erfolgt bei IPv4 die Fragmentierung?
+  back: |
+    Falls nicht explizit über das DF-Bit untersagt, können Pakete bei Bedarf
+    auch von Routern fragmentiert werden.
+- type: markdown
+  front: Welche vier Adressierungsarten gibt es auf Schicht 3 und 2?
+  back: |
+    - Unicast
+    - Broadcast
+    - Multicast
+    - Anycast
+- type: markdown
+  front: Wie funktioniert eine **Unicast** Adressierung?
+  back: |
+    **Unicast** identifiziert *genau* ein Network Interface
+- type: markdown
+  front: Wie funktioniert eine **Anycast** Adressierung?
+  back: |
+    **Anycast** identifiziert eine *Gruppe* von Network Interfaces. Packet wird
+    zum nächsten (abhängig vom Routing Protokoll) Host geschickt. Können nicht
+    einfach erkannt werden.
+- type: markdown
+  front: Wie funktioniert eine **Multicast** Adressierung bei IPv6?
+  back: |
+    Packet wird an eine Multicast-Gruppe adressiert
+- type: markdown
+  front: Wie funktioniert eine **Broadcast** Adressierung bei IPv6?
+  back: |
+    Nicht implementiert! Kann mittel *all-nodes* link-local multicast group `ff02::1` nachgeahnt werden, wird aber nicht empfohlen.
+- type: markdown
+  front: Wofür werden Solicited-Node Multicast Adressen bei IPv6 verwendet?
+  back: |
+    Wird u.A. benutzt, um effizient das Neighbor Discovery Protocol (NDP) in IPv6 zu implementieren.
+
+    Statt L2 Broadcast wird die eine MAC Adresse konstruiert.
+- type: markdown
+  front: Wie wird eine Multicast IPv6 Adresse auf eine MAC-Adresse gemapped?
+  back: |
+    IPv6-Pakete aus Präfix `ff00::/8` werden mit folgener MAC Adresse gesendet:
+    - Ersten 2 Oktette der MAC Adresse werden auf `33:33` gesetzt (Multicast, Locally Administered)
+    - Die letzten 4 Oktette sind die letzten 4 Oktette der IPv6 Multicastadresse
+- type: markdown
+  front: Wie ist eine Solicited-Multicast IPv6 Adresse aufgebaut?
+  back: |
+    Die Adresse wird konstruiert, in dem die letzten 24-bit der IPv6 Adresse  
+    an den Prefix `ff02::1:ff00:0/104` angehangen werden.
+# Stateless Adress Autoconfiguration
+- type: markdown
+  front: Wofür steht SLAAC?
+  back: |
+    **S**tateless **A**ddress **A**uto**c**onfiguration
+- type: markdown
+  front: Welchen Präfix hat eine Link-Local IPv6 Adresse?
+  back: |
+    `fe80::/10`
+- type: markdown
+  front: Wie ist eine LL IPv6 Adresse aufgebaut?
+  back: |
+    - **Präfix**: `fe80::/10`
+    - **Subnet Identifier**: Auf 0 gesetzt
+    - **Interface Identifier**: Modifizierter EUI-64 Indentifier
+- type: markdown
+  front: Wie wird der modifizierte EUI-64 Identifier konstruiert?
+  back: |
+    - Ersten 24-bit sind der OUI der MAC-Adresse
+    - Vorletztes Bit des ersten Oktetts wird **invertiert**
+    - Nachfolgenden 16-bit werden mit `ff:fe` gestopft
+    - Restlichen 24-bit werden mit dem Device Identifier der MAC-Adresse aufgefüllt.
+- type: markdown
+  front: Warum heißt SLAAC **stateless**?
+  back: |
+    Da die Adressen nicht von einem Server vergeben werden.
+- type: markdown
+  front: Was sind Funktion von IPv6 Neighbor Discovery?
+  back: |
+    - Adressauflösung und Duplicate Address Detection: **Neighbor Solicititations** und **Advertisements**
+    - **Router Discovery** und **Router Advertisements**
+    - **Redirects**
+- type: markdown
+  front: Welche Bedeutung hat das **Router-Flag** (R) bei ICMPv6?
+  back: |
+    Wird gesetzt, wenn der antwortende Knoten ein Router ist.
+- type: markdown
+  front: Welche Bedeutung hat das **Solicited-Flag** (S) bei ICMPv6?
+  back: |
+    Gibt an, ob das Advertisement infolge einer Solicitation geschickt wird.
+- type: markdown
+  front: Welche Bedeutung hat das **Override-Flag** (O) bei ICMPv6?
+  back: |
+    Wird gesetzt, wenn das Advertisement eine möglicherweise gecached Link-Layer Adresse beim Empfänger aktualisieren soll.
+# Byte Orders
+- type: markdown
+  front: Welche zwei verschiedenen Byte-orders gibt es?
+  back: |
+    - Big Endian
+    - Little Endian
+- type: markdown
+  front: Wie sind Bytes bei Big Endian geordnet?
+  back: |
+    Niederwertigstes Byte steht an höchstwertigster Adresse
+- type: markdown
+  front: Wie sind Bytes bei Little Endian geordnet?
+  back: |
+    Niederwertigstes Byte steht an niederwertigster Adresse
+- type: markdown
+  front: Ist die Network Byte Order Big- oder Little-Endian?
+  back: |
+    Big-Endian
+# Routing
+- type: markdown
   id: 0  # (generated)
   front: Was ist der Unterschied zwischen dynamischen und statischen Routing?
   back: |
@@ -77,10 +361,24 @@ cards:
   back: |
     Konvergenzzeit wird reduziert.
 - type: markdown
-  id: 12  # (generated)
-  front: Was ist Count to Infinty im Kontext von RIP?
-  back: |
-- type: markdown
   id: 13  # (generated)
   front: Was sind Lösungsansätze für Count-to-Infinity?
+  back: |
+    - Split Horizon
+    - Poison Reverse
+    - Path Vector
+# Autonome Systeme
+- type: markdown
+  front: Was ist ein Autonomes System?
+  back: |
+    Eine Menge von Netzwerken die unter einhaltlicher administrativer Kontrolle stehe.
+- type: markdown
+  front: Wie werden Routen zwischen Autonomen Systemen ausgetauscht?
+  back: |
+    Mit einem **Exterior Gateway Protocol** (EGP). In der Praxis ist es das **Border Gateway Protocol** (BGP).
+- type: markdown
+  front:
+  back: |
+- type: markdown
+  front:
   back: |
