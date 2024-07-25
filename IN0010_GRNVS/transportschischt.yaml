@@ -3,17 +3,20 @@ author: Hugo Melder
 id: 247835429
 cards:
 - type: markdown
+  id: 0  # (generated)
   front: Was ist sind die wesentlichen Aufgaben der Transportschicht?
   back: |
     - **Multiplexing** von Datenströmen unterschiedlicher Anwendungen.
     - Bereitstellung **verbundsloser** und **verbindungsorientierter** Transportmechanismen
     - **Stau-** und **Flusskontrolle**
 - type: markdown
+  id: 1  # (generated)
   front: Welche Art von Transportdiensten haben wir kennengelernt?
   back: |
     - **Verbindungslos**
     - **Verbindungsorientiert**
 - type: markdown
+  id: 2  # (generated)
   front: Was zeichnet einen *verbindungslosen* Transportdienst aus?
   back: |
     - **Segmente** sind aus Sicht der Transportschicht voneinander **unabhängig**
@@ -21,45 +24,55 @@ cards:
     - Keine Übertragungswiederholung
     - Kein Reordering von Segmenten
 - type: markdown
+  id: 3  # (generated)
   front: Was zeichnet einen *verbindungsorientierten* Transportdienst aus?
   back: |
     - Übertragungswiederholung bei Fehlern
     - Garantie der richtigen Reihenfolge einzelner Segmente
 - type: markdown
+  id: 4  # (generated)
   front: Unterscheide Stau- und Flusskontrolle
   back: |
     - **Staukontrolle** (Congestion Control): *Reaktion* auf drohende Überlast **im Netz**
     - **Flusskontrolle** (Flow Control): Laststeuerung durch den Empfänger
 - type: markdown
+  id: 5  # (generated)
   front: Warum werden `sendto()` und `recvfrom()` für verbindungslose Sockets benötigt?
   back: |
     Es werden Adressangaben benötigt.
 - type: markdown
-  front: Was sind die Mindestanforderungen an den Header eines *verbindungslosen* Transportprotokols?
+  id: 6  # (generated)
+  front: Was sind die Mindestanforderungen an den Header eines *verbindungslosen*
+    Transportprotokols?
   back: |
     - Quell- und Zielport
     - Längenangabe der Nutzdaten
 - type: markdown
+  id: 7  # (generated)
   front: Mit welchem Präprozessormakro werden verbindungslose POSIX-Sockets identifiziert?
   back: |
     `SOCK_DGRAM`, wobei `DGRAM` für **Datagram*  steht.
 - type: markdown
+  id: 8  # (generated)
   front: Was sind Vorteile von UDP?
   back: |
     - Geringer Overhead
     - Keine Verzögerung durch Verbindungsaufbau, Retransmits und ReorderingVorteile
     - Keine Beeinflussung der Datenrate durch Fluss- und Staukontrollmechanismen
 - type: markdown
+  id: 9  # (generated)
   front: Was sind Nachteile von UDP?
   back: |
     - Kein Zusicherung von Dienstqualität
     - Out-of-Order Delivery
     - Keine Fluss- oder Staukontrolle
 - type: markdown
+  id: 10  # (generated)
   front: Was ist die grundlegende Idee einer verbindungsorientierten Übertragung?
   back: |
     Linear durchnummerierte Segemnete mittels **Sequenznummern** im Protokolheader.
 - type: markdown
+  id: 11  # (generated)
   front: Was ermöglichen Sequenznummern?
   back: |
     - **Bestätigung** erfolgreich übertragener Segmente
@@ -67,96 +80,120 @@ cards:
     - **erneutes Anfordern** fehlender Segmente
     - **Zusammensetzen** der Segmente in **richtiger Reihenfolge**
 - type: markdown
+  id: 12  # (generated)
   front: Was ist die Voraussetzung für die Verwendung von Sequenznummern?
   back: |
     Sender und Empfänger müssen sich **synchronisieren** und **Zustand halten**.
 - type: markdown
+  id: 13  # (generated)
   front: Welchen Einfluss können Fenstergrößen beim Sliding-Window-Verfahren haben?
   back: |
     - Empfänger kann die Datenrate steuern (Flusskontrolle)
     - Anpassung an die verfügbare Datenrate auf dem Übertragungspfad (Staukontrolle)
 - type: markdown
-  front: Welche zwei Möglichkeiten gibt es beim Sliding-Window-Verfahren, um mit Segmentverlusten umzugehen?
+  id: 14  # (generated)
+  front: Welche zwei Möglichkeiten gibt es beim Sliding-Window-Verfahren, um mit Segmentverlusten
+    umzugehen?
   back: |
     - **Go-Back-N**:
     - **Selective-Repeat**:
 - type: markdown
+  id: 15  # (generated)
   front: Wie funktioniert **Go-Back-N**?
   back: |
     - Akzeptiert stets nur die nächste erwartete Sequenznummer
     - Alle anderen Segmente werden verworfen
 - type: markdown
+  id: 16  # (generated)
   front: Wie funktioniert **Selective-Repeat**?
   back: |
     - Akzeptiert alle Sequenznummern, die in das aktuelle Empfangsfenster fallen
     - Diese müssen gepuffert werden, bis fehlende Segmente erneut übertragen wurden
 - type: markdown
+  id: 17  # (generated)
   front: Was muss für das Sendefenster bei **Go-Back-N** stets gelten?
   back: |
     [$$]w_s \leq N - 1[/$$]
 - type: markdown
+  id: 18  # (generated)
   front: Was muss für das Empfangsfenster bei **Go-Back-N** gelten?
   back: |
     Da nur das nächste erwartete Segment akzeptiert wird, reicht ein Empfangsfenster
     der Größe [$]w_r = 1[/$] aus.
 - type: markdown
+  id: 19  # (generated)
   front: Was muss für das Sendefenster bei **Selective-Repeat** stets gelten?
   back: |
     [$$]w_s \leq \left\lfloor \frac{N}{2} \right\rfloor[/$$]
 - type: markdown
+  id: 20  # (generated)
   front: Was muss für das Empfangsfenster bei **Selective-Repeat** stets gelten?
   back: |
     [$$]w_s \leq w_r \leq \left\lfloor \frac{N}{2} \right\rfloor[/$$]
 - type: markdown
 # Transport Control Protocol (TCP)
+  id: 21 # (generated)
   front: Wie wird der TCP Handshake auch bezeichnet?
   back: 3-Way-Handshake
 - type: markdown
+  id: 22  # (generated)
   front: Wofür ist das `Offset` Feld im TCP Header da?
   back: |
     Gibt Länge des *Headers* in Vielfachen von 4B an.
 - type: markdown
+  id: 23  # (generated)
   front: Wofür wird das `ACK`-Flag verwendet?
   back: |
     Ist das Flag gesetzt, handelt es sich um eine **Empfangsbestätigung**.
 - type: markdown
-  front: Kann eine Empfangsbestätigung in TCP auch mit weiteren Nutzdaten kombiniert werden?
+  id: 24  # (generated)
+  front: Kann eine Empfangsbestätigung in TCP auch mit weiteren Nutzdaten kombiniert
+    werden?
   back: |
     Ja. Dabei wird `ACK` und die Acknowledgement Number entsprechend gesetzt.
 - type: markdown
+  id: 25  # (generated)
   front: Was gibt die Acknowledgement-Number bei TCP an?
   back: |
     Das **nächste erwartete** Byte.
 - type: markdown
+  id: 26  # (generated)
   front: Wann ist das `PSH`-Flag sinnvoll?
   back: |
     Für interaktive Anwendungen.
 - type: markdown
+  id: 27  # (generated)
   front: Welche Bedeutung hat ein gesetztes `PSH` flag?
   back: |
     Sende- und empfangsseitige Puffer des TCP-Stacks werden umgangen.
 - type: markdown
+  id: 28  # (generated)
   front: Wann wird das `RST`-Flag gesetzt?
   back: |
     Bei Abbruch einer TCP-Verbindung ohne ordnungsgemäßen Verbindungsabbau.
 - type: markdown
+  id: 29  # (generated)
   front: Welche Besonderheit haben das `SYN` und `FIN`flag?
   back: |
     Ein gesetztes `SYN`/`FIN`-Flag inkrementiert Sequenz- und Bestätigungsnummern um
     1, obwohl keien Nutzdaten transportiert werden.
 - type: markdown
+  id: 30  # (generated)
   front: Was ist das `Receive Window` Feld bei TCP?
   back: |
     Größe des aktuellen Empfangsfenster in Byte
 - type: markdown
-  front:  Was gibt die **MSS** an?
+  id: 31  # (generated)
+  front: Was gibt die **MSS** an?
   back: |
     Maximale Größe eines TCP-Segments (Nutzdaten ohne TCP-Header) an.
 - type: markdown
+  id: 32  # (generated)
   front: Wie sollte die MSS gewählt werden?
   back: |
     MSS sollte so gewählt werden, dass **keine IP-Fragmentierung beim Senden** stattfindet.
 - type: markdown
+  id: 33  # (generated)
   front: |
     Was ist die maximale MSS bei folgender Konfiguration, sodass keine Fragmentierung auftritt?
     - MTU: 1500B
@@ -165,6 +202,7 @@ cards:
   back: |
     1500B - 20B - 20B = 1460B
 - type: markdown
+  id: 34  # (generated)
   front: |
     Was ist die maximale MSS bei folgender Konfiguration, sodass keine Fragmentierung auftritt?
     - MTU: 1500B
@@ -174,41 +212,51 @@ cards:
   back: |
     1500B - 8B - 20B - 20B = 1452B
 - type: markdown
+  id: 35  # (generated)
   front: Wie wird die **Flusskontrolle** bei TCP realisiert?
   back: |
     - Empfänger teilt dem Sender über das `Receive Window` Feld die *aktuelle* Größe des Empfangsfensters mit
     - Sender interpretiert dies als die **maximale Anzahl an Bytes**, die ohne ein ACK übertragen werden dürfen
 - type: markdown
+  id: 36  # (generated)
   front: Wie kann bei TCP die Übertragungsrate des Senders gedrosselt werden?
   back: |
     Indem der Empfänger das `Receive Window` (im nächsten `ACK`) herabsetzt.
 - type: markdown
+  id: 37  # (generated)
   front: Ist das **Staukontrollfenster** im TCP Header zu finden?
   back: |
     Nein. Das Staukontrollfenster wird intern von Sender verwaltet.
 - type: markdown
+  id: 38  # (generated)
   front: Wann wird das Staukontrollfenster vergrößert?
   back: |
     Solange Daten verlustfrei übertragen werden.
 - type: markdown
+  id: 39  # (generated)
   front: Wann wird das Staukontrollfenster verkleinert?
   back: |
     Wenn Verluste bei der Übertragung auftreten.
 - type: markdown
+  id: 40  # (generated)
   front: Was gilt für das tatsächliche Sendefenster?
   back: |
     [$]w_s = \min\{ w_c, w_r\}[/$]
 - type: markdown
-  front: Zwischen welchen zwei Phasen der Staukontrolle wird bei TCP grundsätzlich unterschieden?
+  id: 41  # (generated)
+  front: Zwischen welchen zwei Phasen der Staukontrolle wird bei TCP grundsätzlich
+    unterschieden?
   back: |
     1. **Slow-Start**
     2. **Congestion Avoidance**
 - type: markdown
+  id: 42  # (generated)
   front: Was passiert in der **Slow-Start** Phase bei der TCP Staukontrolle?
   back: |
     - Für **jedes** bestätigte **Segment** wird das **Congestion Window um eine MSS vergrößert**.
     - Bis **Congestion Threshold** erreicht ist.
 - type: markdown
+  id: 43  # (generated)
   front: Warum wächst das Congestion Window in der Slow-Start Phase expoentiell?
   back: |
     Wenn wir das Congestion Window (cwnd) als k * MSS betrachten und **für jedes bestätigte
@@ -216,12 +264,14 @@ cards:
 
     [$$]W_c = 2^n * W_c0[/$$], wobei [$]n[/$] die Anzahl an RTs ist.
 - type: markdown
+  id: 44  # (generated)
   front: Wer setzt den initialen Slow-Start Threshold (sstresh)?
   back: |
     Der sstresh ist Abhängig von der TCP Implementierung, wird aber meistens
     zu einem großen vorgegebenen Wert, oder dem `receive window` des Empfängers
     gesetzt.
 - type: markdown
+  id: 45  # (generated)
   front: Beschreibe die **Congestion Avoidance** Phase bei TCP!
   back: |
     Für jedes bestätigte Segment wird das cwnd jediglich um (1/cwnd) MSS vergrößert.
@@ -229,11 +279,13 @@ cards:
 
     Damit ein **lineares Wachstum**.
 - type: markdown
+  id: 46  # (generated)
   front: Welche zusätzlichen Funktionen hat **TCP Reno**?
   back: |
     - 3 duplizierte Bestätigungen (Duplicate ACKs)
     - Timeout
 - type: markdown
+  id: 47  # (generated)
   front: Was versteht man unter "3 duplizierte Bestätigungen" bei TCP Reno
   back: |
     Wenn drei duplizierte Bestätigungen vom Empfänger gesendet werden:
@@ -241,6 +293,7 @@ cards:
     2. Reduziere `cwnd` auf `sstresh`
     3. Beginne mit Congestion Avoidance Phase
 - type: markdown
+  id: 48  # (generated)
   front: Was versteht man unter der "Timeout" bei TCP Reno
   back: |
     Wenn ein Timeout beim Senden auftritt:
@@ -248,6 +301,7 @@ cards:
     2. Setze `cwnd` = 1 MSS
     3. Beginne mit neuem Slow Start
 - type: markdown
+  id: 49  # (generated)
   front: |
     Wie groß muss das Sendefenster (gemessen in Byte) gewählt werden, damit
     *kontinuierlich* gesendet werden kann?
@@ -257,26 +311,33 @@ cards:
     [$$]w_s \geq \text{RTT} \cdot r[/$$], wobei r die Bitrate.
 # Network Address Translation (NAT) 4-36
 - type: markdown
+  id: 50  # (generated)
   front: Müssen IP-Adressen immer **eindeutig** sein?
   back: |
     Nein. z.B. wenn
     - Kommunikation zum Internet nicht bestehen muss (isoliertes Internet) oder
     - die nicht eindeutigen **privaten IP-Adressen** auf geeignete Weise **in öffentliche Adressen übersetzt werden**
 - type: markdown
+  id: 51  # (generated)
   front: Definiere NAT.
   back: |
     **N**etwork **A**ddress **T**ranslation sind Techniken zur Übersetzung von
     [$]N \geq 1[/$] auf [$]M \geq 1[/$] andere IP-Adressen. 
 - type: markdown
-  front: Wie funktioniert die Übersetzung von N **privaten** und M **öffentlichen** IP-Adressen bei [$]N \leq M[/$]?
+  id: 52  # (generated)
+  front: Wie funktioniert die Übersetzung von N **privaten** und M **öffentlichen**
+    IP-Adressen bei [$]N \leq M[/$]?
   back: |
     Jeder privaten IP-Adresse wird mind. eine öffentliche IP-Adresse zugeordnet.
 - type: markdown
-  front: Wie funktioniert die Übersetzung von N **privaten** und M **öffentlichen** IP-Adressen bei [$]N > M[/$]?
+  id: 53  # (generated)
+  front: Wie funktioniert die Übersetzung von N **privaten** und M **öffentlichen**
+    IP-Adressen bei [$]N > M[/$]?
   back: |
     **Port-Multiplexing**. Wir assoziieren öffentliche Ports mit einer privaten
     IP-Adresse und einem privaten Port (muss nicht gleich sein).
 - type: markdown
+  id: 54  # (generated)
   front: Was sind die vier privaten Adressbereiche bei IPv4?
   back: |
     - `10.0.0.0/8`
@@ -284,26 +345,31 @@ cards:
     - `169.254.0.0/16`
     - `192.168.0.0/16`
 - type: markdown
+  id: 55  # (generated)
   front: Wie viele Einträge kann eine NAT-Tabelle fassen?
   back: |
     2^16 pro Transportprotokoll (TCP und UDP) und pro globaler IP-Adresse.
 - type: markdown
+  id: 56  # (generated)
   front: |
     Was ist, wenn das Transportprotokoll keine Portnummern hat oder IP-Pakete
     ohne TCP-/UDP-Header verschickt werden, z. B. ICMP?
   back: |
     Die ICMP-ID kann anstelle der Portnummern genutzt werden.
 - type: markdown
+  id: 57  # (generated)
   front: Was repräsentiert `struct in_addr`?
   back: |
     Eine IPv4-Adresse in Network Byte Order.
 - type: markdown
+  id: 58  # (generated)
   front: |
     Wie kann eine `struct sock_addr_in local;` Instanz konfiguriert werden, damit von
     allen lokal konfigurierten Interfaces empfangen werden kann?
   back: |
     `local.sin_addr.s_addr = htonl(INADDR_ANY);`
 - type: markdown
+  id: 59  # (generated)
   front: Was macht `socket(AF_INET ,SOCK_DGRAM ,IPPROTO_UDP)`?
   back: |
     Es wird ein neuer Socket vom Typ:
@@ -311,20 +377,24 @@ cards:
     - `SOCK_DGRAM`: Datagram-oriented Socket
     - `IPPROTO_UDP`: UDP
 - type: markdown
+  id: 60  # (generated)
   front: Was macht `bind()`?
   back: |
     Assoziiert einen File Descriptor mit den zugehörigen Adressinformationen (Meistens Adresse und Port).
 - type: markdown
+  id: 61  # (generated)
   front: Welche Möglichkeiten gibt es bei Linux, einen Socket zu überwachen?
   back: |
     - `read()` auf dem Socket
     - `select()` oder `pselect()`
     - `epoll()`
 - type: markdown
+  id: 62  # (generated)
   front: Was ist das Problem von `read()`?
   back: |
     `read()` blockiert, solange bis etwas kommt.
 - type: markdown
+  id: 63  # (generated)
   front: Wie funktioniert `select()`?
   back: |
     1. Alle zu überwachenden File Descriptors kommen in `fd_set`s
@@ -332,46 +402,57 @@ cards:
     3. Passiert etwas, **modifiziert** `select()` die `fd_set`s, so dass es genau die FDs enthält, die bereit sind
     4. Rückgabewert ist die Anzahl bereitgewordener FDs oder -1 und `errno` gesetzt.
 - type: markdown
+  id: 64  # (generated)
   front: Warum gibt es `epoll()`?
   back: |
     Bei einer großen Anzahl von FDs wird `select()` ggf. ineffizient.
 - type: markdown
+  id: 65  # (generated)
   front: Gegeben `fd_set rfds, rfd;` wie kann `rfds` mit 0 intialisiert werden?
   back: |
     `FD_ZERO(&rfds`
 - type: markdown
+  id: 66  # (generated)
   front: Gegeben `fd_set rfds, rfd;` wie kann ein FD zu `rfds` hinzugefügt werden?
   back: |
     `FD_SET(fd, &rfds);`
 - type: markdown
+  id: 67  # (generated)
   front: Wie werden FD sets typischerweise Implementierung?
   back: |
     Als Bitvektoren.
 - type: markdown
+  id: 68  # (generated)
   front: |
     Wie muss das erste Argument `nfds` bei `select()` gesetzt werden, wenn wir zwei FDs (4 und 17) in einem FD set haben?
   back: |
     `nfds = max(4, 17) + 1`, da `select()` alle FDs von 0 bis `nfds - 1` inspiziert.
 - type: markdown
-  front: Welches Problem entsteht, wenn wir `read()`oder `recv()` auf verbindungslosen Sockets verwenden?
+  id: 69  # (generated)
+  front: Welches Problem entsteht, wenn wir `read()`oder `recv()` auf verbindungslosen
+    Sockets verwenden?
   back: |
     Wir werden so nie erfahren, wer uns etwas geschickt hat. Dafür gibt es `sendto()` und `recvfrom()`.
 - type: markdown
+  id: 70  # (generated)
   front: Wie unterscheiden sich `recvfrom()` und `recv()`?
   back: |
     Wir können `recvfrom()` einen Pointer zu einem Speicherbereich der Größe
     `sizeof(struct sockaddr_in)` übergeben, um Information über den Sender zu
     bekommen (hier IPv4).
 - type: markdown
+  id: 71  # (generated)
   front: Wofür wird `connect()` bei einem verbindungsorientierten Socket benutzt?
   back: |
     Verbinden mit einem entfernten Host.
 - type: markdown
-  front:  Was macht ein Aufruf zu `listen()` bei einem verbindungsorientierten Socket?
+  id: 72  # (generated)
+  front: Was macht ein Aufruf zu `listen()` bei einem verbindungsorientierten Socket?
   back: |
     Markiert den Socket als **passiv**. Socket versendet **keine** Daten,
     sondern erwartet eingehende Verbindungen.
 - type: markdown
+  id: 73  # (generated)
   front: |
     Warum sind bei verbindungsorientierten Sockets `recv()` und `send()` `read()` und `write()`
     zu bevorzugen?
@@ -379,11 +460,13 @@ cards:
     Hier werden bestimmte Ausnahmen wie eine abgebrochene Verbindung *sinnvoll* signalisiert.
 # Codedemos
 - type: markdown
+  id: 74  # (generated)
   front: Was sind Einschränkungen der vorgestellten UDP-Chat Codedemo?
   back: |
     - Nur 1:1 Chats
     - Fremde können einem der beiden Chatpartner ebenfalls Nachrichten senden (antworten aber nicht möglich)
 - type: markdown
+  id: 75  # (generated)
   front: Was ist bei dem UDP-basierten IRC möglich?
   back: |
     - N:N chats
