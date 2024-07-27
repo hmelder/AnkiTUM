@@ -474,6 +474,21 @@ cards:
     1. Updates enthalten vollständige Pfade
     2. Jeder Router prüft vor Installation der Route, ob er selbst in diesem Pfad bereits vorhanden ist.
     3. Falls ja, handelt es sich um eine Schleife und das Update wird verworfen.
+- type: markdown
+  front: Beschreibe wie **Triggered Updates** die Konvergenzzeit bei Router Updates reduziert.
+  back: |
+    Sobald ein Router eine Änderung an seiner Routingtabelle vornimmt, sendet er sofort ein Update.
+- type: markdown
+  front: Welchen Nachteil hat **Triggered Updates**?
+  back: |
+    Die Welle von Updates *kann* zu einer Überlastung im Netzwerk führen.
+- type: markdown
+  front: |
+    Bei RIP beträgt die maximale Entfernung 15 Hops. Angenommen Updates werden alle 30s verschickt.
+    
+    Was ist die maximale Verzögerung, bis jeder Router im Netzwerk das Update erhalten hat?
+  back: |
+    15 * 30 s = 7,5 min.
 # Autonome Systeme
 - type: markdown
   id: 68  # (generated)
