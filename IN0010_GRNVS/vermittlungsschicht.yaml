@@ -181,11 +181,6 @@ cards:
     ausgetauscht. Wenn mehrere Felder gleicher Größe vorliegen, wird das erste
     (von Links) gekürzt. (`2001:db8:0:0:1:0:0:1` => `2001:db8::1:0:0:1`)
 - type: markdown
-  id: 41  # (generated)
-  front: Wofür ist das **Payload Length** Feld im IPv6 Header da?
-  back: |
-    Länge des Headers und Payload. In Vielfachen von 1B.
-- type: markdown
   id: 42  # (generated)
   front: Wofür ist das **Next Header** Feld im IPv6 Header da?
   back: |
