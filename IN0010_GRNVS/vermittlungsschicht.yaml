@@ -211,6 +211,12 @@ cards:
   back: |
     *Ausschließlich* am Sender
 - type: markdown
+  front: Welche Bedeutung hat das `Payload Length` Feld im IPv6 Header?
+  back: |
+    Länge des IPv6 **Payloads** (inclusive IPv6 Extension Headers) in Bytes.
+    Nicht zu verwechseln mit dem IPv4 `Total Length` Feld, welches auch den
+    IPv4 Header miteinbezieht.
+- type: markdown
   id: 46  # (generated)
   front: Wo erfolgt bei IPv4 die Fragmentierung?
   back: |
@@ -434,11 +440,55 @@ cards:
   front: Wie werden Routen zwischen Autonomen Systemen ausgetauscht?
   back: |
     Mit einem **Exterior Gateway Protocol** (EGP). In der Praxis ist es das **Border Gateway Protocol** (BGP).
+# Neighbor Discovery Protocol (NDP)
 - type: markdown
-  id: 70  # (generated)
-  front:
+  front: |
+    Folgendes Scenario:
+
+    - Host 1 will eine Nachricht an Host 2 senden
+    - Wie erhält Host 1 die zugehörige MAC-Adresse (IP Adresse bereits bekannt)?
+
+    [[image: ipv6_ndp_example.png]]
   back: |
+    1. Host 1 **generiert** die **Solicited-Node** IPv6 und MAC **Adresse** aus den letzten
+    24-bit der IPv6 Adresse von Host 2.
+    2. Senden eines ICMPv6 Neighbor Solicitation Pakets an Solicited Node address
+    3. Warten auf ICMPv6 Neighbor Advertisment
 - type: markdown
-  id: 71  # (generated)
-  front:
+  front: |
+    Um welchen Headertypen handelt es sich hier? Was sagen das `Option Type` und
+    `Option Length` Feld aus?
+
+    [[image: neighbor_solicitation_hdr.png]]
   back: |
+    Es handelt sich hier um einen ICMPv6 Neighbor Solicitation Header.
+    - `Option Type = 0x1`: Source Link-Layer Address
+    - `Option Length = 0x1`: 8 Bytes (In vielfachen von 8B)
+- type: markdown
+  front: |
+    Um welchen Headertypen handelt es sich hier? Was sagen das `Option Type` und
+    `Option Length` Feld aus?
+
+    [[image: neighbor_advertisment_hdr.png]]
+  back: |
+    Es handelt sich hier um einen ICMPv6 Neighbor Advertisement Header.
+    - `Option Type = 0x2`: Target Link-Layer Address
+    - `Option Length = 0x1`: 8 Bytes (In vielfachen von 8B)
+- type: markdown
+  front: |
+    Generiere die Solicited-Node IPv6 und MAC Adresse für `2001:db8::2`
+  back: |
+    ## Solicited-Node IPv6 Adresse
+    - Der Adressbereich für Solicited-Node Adressen ist `ff02::1:ff00:0/104`
+    - Wir hängen also die **letzten 24-bit** der IPv6 Adresse dem Präfix an: `ff02::1:ff00:0002`
+
+    ## Mapping von Multicast IPv6 Adresse auf MAC Adresse
+    - Präfix für die MAC Adresse: `33:33`
+    - Wir hängen die letzten 32-bit der *Solicited-Node IPv6* Adresse dem Präfix an: `33:33:ff:00:00:02`
+- type: markdown
+  front: |
+    Analysiere folgende MAC Adresse: `33:33:ff:00:00:02`. Ist sie **Globally Unique**? Unicast, oder Multicast?
+  back: |
+    1. Wähle erstes Oktett aus: `0x33`
+    2. **Multicast**: Überprüfe ob Least-Significant Bit gesetzt ist: `0x33 & 0x01 != 0` Somit eine **Multicast MAC**
+    3. **Locally Administered**: Überprüfe ob Bit 0x2 gesetzt ist: `0x33 & 0x02 != 0`. Ja! Somit eine **Locally Administered MAC**

@@ -342,7 +342,7 @@ cards:
   id: 53  # (generated)
   front: Was ist CSDMA/CA?
   back: |
-    Basiert auf **p-basiertem** CSMA mit zusätzlichem Contention Window.
+    Basiert auf **p-persistenten** CSMA mit zusätzlichem Contention Window.
 - type: markdown
   id: 54  # (generated)
   front: Was ist Interframe Spacing bei IEEE 802.11?
