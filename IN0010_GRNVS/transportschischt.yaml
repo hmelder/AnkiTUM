@@ -110,6 +110,24 @@ cards:
     - Akzeptiert alle Sequenznummern, die in das aktuelle Empfangsfenster fallen
     - Diese müssen gepuffert werden, bis fehlende Segmente erneut übertragen wurden
 - type: markdown
+  front: |
+    Warum muss das Empfangsfenster bei Selective Repeat *mindestens* so groß
+    sein, wie das Sendefenster?
+  back: |
+    Der Empfänger könnte sonst u.U. Segmente verwerfen, die nicht in der
+    richtigen Reihenfolge eintreffen. Infolge der zu geringen Größe fallen diese
+    nicht mehr ins Empfangsfenster.
+- type: markdown
+  front: |
+    Was ist der Unterschied zwischen Empfangsfenster und Empfangspuffer?
+  back: |
+    Das Empfangsfenster ist eine Teilmenge des Sequenznummernraums.  Alle
+    eintreffenden Segmente mit Sequenznummern aus dieser Teilmenge werden
+    akzeptiert.
+    
+    Der Empfangspuffer ist nur der allozierte Speicherbereich zum
+    zwischenspeichern der empfangenen Nutzdaten.
+- type: markdown
   id: 17  # (generated)
   front: Was muss für das Sendefenster bei **Go-Back-N** stets gelten?
   back: |
