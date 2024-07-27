@@ -69,7 +69,7 @@ cards:
   id: 10  # (generated)
   front: Was ist ein Zeichensatz?
   back: |
-    Eine Menge von Zeichen, bei der jedes **Zeichen** mit einem **Codepoint*** verknüpft ist.
+    Eine Menge von Zeichen, bei der jedes **Zeichen** mit einem **Codepoint** verknüpft ist.
 - type: markdown
   id: 11  # (generated)
   front: Nenne Beispiele für Zeichensätze?
