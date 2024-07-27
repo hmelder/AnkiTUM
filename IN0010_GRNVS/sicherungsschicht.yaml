@@ -611,26 +611,31 @@ cards:
     - Isolierte 2-bit Fehler
     - Einige Burst-Fehler, die länger sind als n
 - type: markdown
+  id: 111  # (generated)
   front: Begründe, ob für CRC ein irreduzibles Reduktionspolynom benötigt wird.
   back: |
     Wird ein irreduzibles Polynom genutzt, so bilden alle möglichen Checksummen
     einen **endlichen Körper**.
-    
+
     Diese Eigenschaft wird für CRC (für die Fehlererkennung) **nicht benötigt**.
 - type: markdown
+  id: 112  # (generated)
   front: Wie reagiert bei Ethernet der Empfänger, wenn ein Bitfehler erkannt wird?
   back: |
     Der Rahmen wird verworfen.
 - type: markdown
+  id: 113  # (generated)
   front: Wofür wird das Reduktionspolynom bei CRC verwendet?
   back: |
     Mapping einer Nachricht beliebiger Länge auf eine Checksumme fester Länge.
 - type: markdown
+  id: 114  # (generated)
   front: Was versteht man unter Kanalkodierung?
   back: |
     Gezieltes Hinzufügen von Redundanz zur späteren Erkennung und Korrektur von
     Übertragungsfehlern.
 - type: markdown
+  id: 115  # (generated)
   front: Was versteht man unter Quellenkodierung?
   back: |
     Das Entfernen ungewollter Redundanz aus den zu sendenden Daten.
@@ -748,11 +753,13 @@ cards:
     - Clients sind sich der **Anwesenheit** eines Access Points **bewusst**.
     - Zur Kommunikation untereinander wird der Access Point direkt adressiert.
 - type: markdown
-  front: Was haben WLAN Access Points und Switches gemeinsam? 
+  id: 116  # (generated)
+  front: Was haben WLAN Access Points und Switches gemeinsam?
   back: |
     - **Weiterleitungsentscheidungen** auf Basis von MAC-Adressen
     - **Unterbrechen Kollisionsdomänen** auf logischer Ebene
 - type: markdown
+  id: 117  # (generated)
   front: |
     PC1 will mit NB1 kommunizieren, wobei NB 2 mit dem AP assoziiert ist.
     Was passiert als nächstes?
@@ -761,7 +768,7 @@ cards:
   back: |
     - Der AP empfängt und akzeptiert den Rahmen
     - Der IEEE 802.3 Rahmen wird zu einem IEEE 802.11 **Rahmen umgewandelt**
-    
+
     Folgende Adressen sind im neuen Rahmen enthalten:
     - **Receiver Address** (RA) = Destination Address (DA)
     - **Transmitter Address** (TA) = MAC-Adresse des AP

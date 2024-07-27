@@ -4,31 +4,38 @@ id: 49823820834
 cards:
 # Leitungskodierung
 - type: markdown
+  id: 0  # (generated)
   front: Was ist ein Basisbandsignal?
   back: |
 - type: markdown
+  id: 1  # (generated)
   front: Welchen Sendeimpuls hat **Non-Return-To-Zero** (NRZ)?
   back: |
     Einen Rechteck-Impuls mit Periodendauer T
 - type: markdown
+  id: 2  # (generated)
   front: Welchen Sendeimpuls hat **Return-To-Zero** (NRZ)?
   back: |
     [$$]g(t) = \text{rect}(2t + \frac{T}{2})[/$$]
 - type: markdown
+  id: 3  # (generated)
   front: Welchen Grundimpuls hat der **Manchester-Code**?
   back: |
     [$$]g(t) = \text{rect}(2t + \frac{T}{2}) - \text{rect}(2t - \frac{T}{2})[/$$]
 - type: markdown
+  id: 4  # (generated)
   front: Welchen Sendeimpuls hat **Multi-Level-Transmit 3** (MLT3)?
   back: |
     Einen Rechteck-Impuls mit Periodendauer T
 - type: markdown
+  id: 5  # (generated)
   front: Was ist das Besondere an der Gewichtung bei **Multi-Level-Transmit 3** (MLT3)?
   back: |
     [$$]d_n = \sin\left( \frac{\pi}{2} \sum_{k = 1}^n b_k \right)[/$$]
 
     Somit abhängig von der Anzahl der **bislang** beobachteten 1-Bits.
 - type: markdown
+  id: 6  # (generated)
   front: |
     Um welche Leitungskodierung handelt es sich hier?
     Wie viele Symbole werden pro Bit benutzt?
@@ -38,6 +45,7 @@ cards:
     Return to Zero. Es wird ein Symbol pro Bit genutzt.
     Das Signal ist nicht Gleichstromfrei.
 - type: markdown
+  id: 7  # (generated)
   front: |
     Um welche Leitungskodierung handelt es sich hier?
     Wie viele Symbole werden pro Bit benutzt?
@@ -47,6 +55,7 @@ cards:
     Non-Return to Zero. Es werden zwei Symbole pro Bit genutzt.
     Das Signal ist nicht Gleichstromfrei.
 - type: markdown
+  id: 8  # (generated)
   front: |
     Um welche Leitungskodierung handelt es sich hier?
     Wie viele Symbole werden pro Bit benutzt?
@@ -57,6 +66,7 @@ cards:
     - 2 Symbole/bit
     - Signal Gleichstromfrei
 - type: markdown
+  id: 9  # (generated)
   front: |
     Um welche Leitungskodierung handelt es sich hier?
     Wie viele Symbole werden pro Bit benutzt?
@@ -68,23 +78,27 @@ cards:
     - Keine Gleichstromfreiheit
 # Modulation
 - type: markdown
+  id: 10  # (generated)
   front: |
     Was ist ein Problem von zeitlich-begrenzten Sendeimpulsen?
   back: |
     Sie haben ein **unendlich ausgedehntes Spektrum**.
     Dies führt zu Problemen, wenn der Kanal *nicht* exklusiv genutzt wird.
 - type: markdown
+  id: 11  # (generated)
   front: Was ist ein Basisbandsignal?
   back: |
     Ein Basisbandsignal ist ein **nicht moduliertes Signal** und typischerweise
     in der niedrigsten Frequenzebene vorliegt (0 bis zu einer bestimmten
     maximalen Frequenz, wenn bandbegrenzt).
 - type: markdown
+  id: 12  # (generated)
   front: Wie kann ein Kanal von mehreren Übertragungen **zeitgleich** verwendet werden?
   back: |
     1. Das **Basisbandsignal** wird **tiefpass-gefiltert**
     2. **Modulierung** auf **Trägersignal**
 - type: markdown
+  id: 13  # (generated)
   front: |
     Zu welchem Modulationsverfahren gehört diese Signalraumzuordnung?
     Wie viele Signalstufen gibt es? Wieviele Bits kann ein Symbol repräsentieren?
@@ -94,6 +108,7 @@ cards:
     - 4-ASK (Amplitude Shift Keying)
     - Es gibt 4 Signalstufen, also log2(4) = 2 Bits pro Symbol
 - type: markdown
+  id: 14  # (generated)
   front: Wie funktioniert das **Amplitude Shift Keying** Modulationsverfahren?
   back: |
     - Es gibt eine Signalraumzuordnung für die Symbole zu einer Amplitude.
@@ -102,25 +117,30 @@ cards:
 
     Wichtig: Wir manipulieren hier nur die Amplitude, nicht die Phase.
 - type: markdown
+  id: 15  # (generated)
   front: Was bedeutet es, wenn zwei Sinuswellen in Quadratur stehen?
   back: |
     Wenn zwei Sinuswellen in Quadratur stehen, bedeutet das, dass ihre Phasen um
     90 Grad (π/2 Radian) verschoben sind.
 - type: markdown
+  id: 16  # (generated)
   front: Wie wird der Sinusanteil bei **QAM** bezeichnet?
   back: |
     **Quadratur-Anteil**
 - type: markdown
+  id: 17  # (generated)
   front: Wie wird der Kosinusanteil bei **QAM** bezeichnet?
   back: |
     **Inphase-Anteil**
 - type: markdown
+  id: 18  # (generated)
   front: Wie funktioniert **Quadratur-Amplituden-Modulation** Modulationsverfahren?
   back: |
     - Signalraum ist Zwei-Dimensional. Jedem Symbol kann also ein **Inphase
     (X-Achse)** und **Quadratur (Y-Achse)** Anteil zugeordnet werden
     - Getrennt auf zwei Trägersignale multipliziert
 - type: markdown
+  id: 19  # (generated)
   front: Was ist ein Nebeneffekt von der verdoppelten Datenrate bei QAM?
-  back: |
+  back: |-
     Wir nutzen durch die Phasenverschiebung nun auch die **doppelte Bandbreite**.
