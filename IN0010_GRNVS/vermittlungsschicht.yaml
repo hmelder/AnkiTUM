@@ -211,6 +211,7 @@ cards:
   back: |
     *Ausschließlich* am Sender
 - type: markdown
+  id: 70  # (generated)
   front: Welche Bedeutung hat das `Payload Length` Feld im IPv6 Header?
   back: |
     Länge des IPv6 **Payloads** (inclusive IPv6 Extension Headers) in Bytes.
@@ -442,6 +443,7 @@ cards:
     Mit einem **Exterior Gateway Protocol** (EGP). In der Praxis ist es das **Border Gateway Protocol** (BGP).
 # Neighbor Discovery Protocol (NDP)
 - type: markdown
+  id: 71  # (generated)
   front: |
     Folgendes Scenario:
 
@@ -455,6 +457,7 @@ cards:
     2. Senden eines ICMPv6 Neighbor Solicitation Pakets an Solicited Node address
     3. Warten auf ICMPv6 Neighbor Advertisment
 - type: markdown
+  id: 72  # (generated)
   front: |
     Um welchen Headertypen handelt es sich hier? Was sagen das `Option Type` und
     `Option Length` Feld aus?
@@ -465,6 +468,7 @@ cards:
     - `Option Type = 0x1`: Source Link-Layer Address
     - `Option Length = 0x1`: 8 Bytes (In vielfachen von 8B)
 - type: markdown
+  id: 73  # (generated)
   front: |
     Um welchen Headertypen handelt es sich hier? Was sagen das `Option Type` und
     `Option Length` Feld aus?
@@ -475,6 +479,7 @@ cards:
     - `Option Type = 0x2`: Target Link-Layer Address
     - `Option Length = 0x1`: 8 Bytes (In vielfachen von 8B)
 - type: markdown
+  id: 74  # (generated)
   front: |
     Generiere die Solicited-Node IPv6 und MAC Adresse für `2001:db8::2`
   back: |
@@ -486,9 +491,10 @@ cards:
     - Präfix für die MAC Adresse: `33:33`
     - Wir hängen die letzten 32-bit der *Solicited-Node IPv6* Adresse dem Präfix an: `33:33:ff:00:00:02`
 - type: markdown
+  id: 75  # (generated)
   front: |
     Analysiere folgende MAC Adresse: `33:33:ff:00:00:02`. Ist sie **Globally Unique**? Unicast, oder Multicast?
-  back: |
+  back: |-
     1. Wähle erstes Oktett aus: `0x33`
     2. **Multicast**: Überprüfe ob Least-Significant Bit gesetzt ist: `0x33 & 0x01 != 0` Somit eine **Multicast MAC**
     3. **Locally Administered**: Überprüfe ob Bit 0x2 gesetzt ist: `0x33 & 0x02 != 0`. Ja! Somit eine **Locally Administered MAC**
