@@ -431,36 +431,45 @@ cards:
     - Poison Reverse
     - Path Vector
 - type: markdown
+  id: 76  # (generated)
   front: Wie funktioniert **Split Horizon**?
   back: |
     "Sende dem Nachbarn, von dem Du die Route zu X gelernt hast, keine Route zu X."
 - type: markdown
+  id: 77  # (generated)
   front: Kann **Split Horizon** das Count-to-Infinty Problem lösen?
   back: |
     Nur verbessern, nicht lösen!
 - type: markdown
+  id: 78  # (generated)
   front: Wie funktioniert **Poison Reverse**?
   back: |
     "Sende dem Nachbarn, von dem Du die Route zu X gelernt hast, eine unendliche Metrik"
 - type: markdown
+  id: 79  # (generated)
   front: Kann **Poison Reverse** das Count-to-Infinty Problem lösen?
   back: |
     Nein.
 - type: markdown
+  id: 80  # (generated)
   front: Wie funktioniert **Path Vector**?
   back: |
     Sende bei Updates nicht nur Ziel und Kosten, sondern auch den vollständigen Pfad, über den
     das Ziel erreicht wird.
 - type: markdown
+  id: 81  # (generated)
   front: Kann **Path Vector** das Count-to-Infinity Problem lösen?
   back: |
     Ja.
 - type: markdown
+  id: 82  # (generated)
   front: Welchen Nachteil hat der **Path Vector** Lösungsansatz?
   back: |
     Update Nachrichten und Protokollkomplexität werden *vergrößert*.
 - type: markdown
-  front: Wie funktioniert der **Path Vector** Lösungsansatz für das Count-to-Infinity Problem?
+  id: 83  # (generated)
+  front: Wie funktioniert der **Path Vector** Lösungsansatz für das Count-to-Infinity
+    Problem?
   back: |
     1. Updates enthalten vollständige Pfade
     2. Jeder Router prüft vor Installation der Route, ob er selbst in diesem Pfad bereits vorhanden ist.
