@@ -610,6 +610,30 @@ cards:
     - Alle 1-bit Fehler
     - Isolierte 2-bit Fehler
     - Einige Burst-Fehler, die länger sind als n
+- type: markdown
+  front: Begründe, ob für CRC ein irreduzibles Reduktionspolynom benötigt wird.
+  back: |
+    Wird ein irreduzibles Polynom genutzt, so bilden alle möglichen Checksummen
+    einen **endlichen Körper**.
+    
+    Diese Eigenschaft wird für CRC (für die Fehlererkennung) **nicht benötigt**.
+- type: markdown
+  front: Wie reagiert bei Ethernet der Empfänger, wenn ein Bitfehler erkannt wird?
+  back: |
+    Der Rahmen wird verworfen.
+- type: markdown
+  front: Wofür wird das Reduktionspolynom bei CRC verwendet?
+  back: |
+    Mapping einer Nachricht beliebiger Länge auf eine Checksumme fester Länge.
+- type: markdown
+  front: Was versteht man unter Kanalkodierung?
+  back: |
+    Gezieltes Hinzufügen von Redundanz zur späteren Erkennung und Korrektur von
+    Übertragungsfehlern.
+- type: markdown
+  front: Was versteht man unter Quellenkodierung?
+  back: |
+    Das Entfernen ungewollter Redundanz aus den zu sendenden Daten.
 # FIXME: Polynomdivision and Reducibilty CRC Missing
 - type: markdown
   id: 94  # (generated)
@@ -716,10 +740,29 @@ cards:
   front: Wie werden Schleifen vermieden??
   back: |
     Switches kommunizieren miteinander, um redundante Pfade zu deaktivieren.
-# FIXME: WLAN Access Points
+# WLAN Access Points
 - type: markdown
   id: 110  # (generated)
   front: Was ist ein wesentlicher Unterschied zwischen WLAN Access Points und Switches?
   back: |
     - Clients sind sich der **Anwesenheit** eines Access Points **bewusst**.
     - Zur Kommunikation untereinander wird der Access Point direkt adressiert.
+- type: markdown
+  front: Was haben WLAN Access Points und Switches gemeinsam? 
+  back: |
+    - **Weiterleitungsentscheidungen** auf Basis von MAC-Adressen
+    - **Unterbrechen Kollisionsdomänen** auf logischer Ebene
+- type: markdown
+  front: |
+    PC1 will mit NB1 kommunizieren, wobei NB 2 mit dem AP assoziiert ist.
+    Was passiert als nächstes?
+
+    [[image: wifi_example.png]]
+  back: |
+    - Der AP empfängt und akzeptiert den Rahmen
+    - Der IEEE 802.3 Rahmen wird zu einem IEEE 802.11 **Rahmen umgewandelt**
+    
+    Folgende Adressen sind im neuen Rahmen enthalten:
+    - **Receiver Address** (RA) = Destination Address (DA)
+    - **Transmitter Address** (TA) = MAC-Adresse des AP
+    - **Source Address** (SA) bleibt gleich
