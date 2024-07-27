@@ -292,6 +292,7 @@ cards:
     - **Subnet Identifier**: Auf 0 gesetzt
     - **Interface Identifier**: Modifizierter EUI-64 Indentifier
 - type: markdown
+  id: 87  # (generated)
   front: Was ist das equivalent von `0.0.0.0/0` bei IPv6?
   back: |
     `::/0`
