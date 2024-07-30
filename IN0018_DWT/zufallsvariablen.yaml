@@ -3,59 +3,74 @@ author: Hugo Melder
 id: 238927804
 cards:
 - type: markdown
+  id: 0  # (generated)
   front: Wie haben wir **(numerische) Zufallsvariablen** definiert?
   back: |
     Sei ein Wahrscheinlichkeitsraum auf der Ergebnismenge Ω gegeben.
 
     [$$]X: \Omega \to \mathbb{R}[/$$]
 - type: markdown
+  id: 1  # (generated)
   front: Definiere den Wertebereich von diskreten Zufallsvariablen
   back: |
     [$$]W_X := X(\Omega) = \\{ x \in \mathbb{R}; \exists \omega \in \Omega : X(\omega) = x\\}[/$$]
 - type: markdown
+  id: 2  # (generated)
   front: Was gilt für den Wertebereich diskreter Zufallsvariablen?
   back: |
     Der Wertebereich ist ebenfalls wieder endlich (bzw. abzählbar unendlich)
 - type: markdown
+  id: 3  # (generated)
   front: Definiere die **diskrete Dichtefunktion** einer Zufallsvariablen X.
   back: |
     [$$]f_x : \mathbb{R} \ni x \mapsto \Pr[X = x] \in [0, 1][/$$]
 - type: markdown
+  id: 4  # (generated)
   front: Definiere die **diskrete Verteilungsfunktion** einer Zufallsvariablen X.
   back: |
     [$$]F_X : \mathbb{R} \ni x \mapsto \Pr[X \leq x] = \sum_{x' \in W_X : x' \leq x} \Pr[X = x'] \in [0, 1][/$$]
 - type: markdown
+  id: 5  # (generated)
   front: Definiere den **Erwartungswert** einer *diskreten* Zufallsvariable X.
   back: |
     [$$]\mathbb{E}[X] := \sum_{x \in W_X} x \cdot \Pr[X = x] = \sum_{x \in W_X} x \cdot f_x(x)[/$$] 
 
     sofern die Summe absolut konvergiert.
 - type: markdown
-  front: Wann ist der **Erwartungswert** einer *diskreten* Zufallsvariable X *nicht* definiert?
+  id: 6  # (generated)
+  front: Wann ist der **Erwartungswert** einer *diskreten* Zufallsvariable X *nicht*
+    definiert?
   back: |
     [$$]\sum_{x \in W_X} |x| \cdot \Pr[X = x] = \infty[/$$]
 - type: markdown
-  front:  Welche Monotonieeigenschaften gelten für den Erwartungswert für zwei Zufallsvariablen X und Y [$$]X(\omega) \leq Y(\omega)[/$$]?
+  id: 7  # (generated)
+  front: Welche Monotonieeigenschaften gelten für den Erwartungswert für zwei Zufallsvariablen
+    X und Y [$$]X(\omega) \leq Y(\omega)[/$$]?
   back: |
     [$$]\mathbb{E}[X] = \sum_{\omega \in \Omega} X(\omega) \cdot \Pr[\omega]
     \leq \sum_{\omega \in \Omega} Y(\omega) \cdot \Pr[\omega] = \mathbb{E}[Y][/$$]
 - type: markdown
+  id: 8  # (generated)
   front: Wann gilt [$]a \leq \mathbb{E}[X] \leq b[/$]?
   back: |
     Wenn [$]\forall \omega \in \Omega : a \leq X(\omega) \leq b[/$]
 - type: markdown
+  id: 9  # (generated)
   front: Wann ist [$]Y := f(X) = f \circ X[/$] wieder eine Zufallsvariable?
   back: |
     Wenn [$]W_X \subseteq \mathcal{D} \subseteq \mathbb{R}[/$]
 - type: markdown
+  id: 10  # (generated)
   front: Was versteht man unter der Linearität des Erwartungswerts
   back: |
     [$$]\mathbb{E}[a \cdot X + b] = a \cdot \mathbb{E}[X] + b[/$$]
 - type: markdown
+  id: 11  # (generated)
   front: Wahr oder Falsch? [$]\mathbb{E}[X] = \sum_{i = 1}^\infty \Pr[X \geq i][/$]
   back: |
     Wahr für eine Zufallsvariable mit [$]W_X \subseteq \mathbb{N}_0[/$]
 - type: markdown
+  id: 12  # (generated)
   front: |
     Sei X eine Zufallsvariable und A ein Ereignis mit [$]\Pr[A] > 0[/$].
 
@@ -63,6 +78,7 @@ cards:
   back: |
     [$$]f_{X | A}(x) := \Pr[X = x | A] = \frac{\Pr[(X = x) \cap A]}{\Pr[A]}[/$$]
 - type: markdown
+  id: 13  # (generated)
   front: |
     Sei X eine Zufallsvariable und A ein Ereignis mit [$]\Pr[A] > 0[/$].
 
@@ -70,6 +86,7 @@ cards:
   back: |
     [$$]\mathbb{E}[X | A] = \sum_{x \in W_X} x \cdot f_{X | A}(x)[/$$]
 - type: markdown
+  id: 14  # (generated)
   front: |
     Sei X eine Zufallsvariable und [$]A_1, \dots, A_n[/$] paarweise disjunkte
     Ereignisse mit [$]A_1 \cup \dots \cup A_n = \Omega[/$] und
@@ -79,6 +96,7 @@ cards:
   back: |
     [$$]\Pr[X] = \sum_{i = 1}^n \Pr[X | A_i] \cdot \Pr[A_i][/$$]
 - type: markdown
+  id: 15  # (generated)
   front: |
     Was muss für
     [$]\Pr[X] = \sum_{i = 1}^n \Pr[X | A_i] \cdot \Pr[A_i][/$] gelten
@@ -87,6 +105,7 @@ cards:
     2. [$]A_1 \cup \dots \cup A_n = \Omega[/$] und
     3. [$]\Pr[A_1], \dots, \Pr[A_n] > 0[/$]
 - type: markdown
+  id: 16  # (generated)
   front: |
     Wie haben wir die Varianz für eine Zufallsvariable X definiert?
   back: |
@@ -98,48 +117,57 @@ cards:
 
     [$$]\text{Var}[X] = \mathbb{E}[X^2] - \mathbb{E}[X]^2[/$$]
 - type: markdown
+  id: 17  # (generated)
   front: |
     Was ist die **Standardabweichung** von X?
   back: |
     [$$]\sigma := \sqrt{\text{Var}[X]}[/$$]
 - type: markdown
+  id: 18  # (generated)
   front: |
     Wie kann man [$]\text{Var}[a \cdot X + b][/$] vereinfachen?
   back: |
     [$$]a^2 \cdot \text{Var}[X][/$$]
 # TODO Intuition für Momente und MGFs
 - type: markdown
+  id: 19  # (generated)
   front: |
     Definiere den **k-ten Moment**
   back: |
     [$$]\mathbb{E}[X^k][/$$]
 - type: markdown
+  id: 20  # (generated)
   front: |
     Definiere den **k-ten zentralen Moment**
   back: |
     [$$]\mathbb{E}[(X-\mathbb{E}[X])^k][/$$]
 # Mehrere Zufallsvariablen
 - type: markdown
+  id: 21  # (generated)
   front: |
     Seien X und Y Zufallsvariablen. Wie ist die **gemeinsame Dichte** der Zufallsvariablen X und Y definiert?
   back: |
     [$$]f_X,Y(x, y) := \Pr[X = x, Y = y] = \Pr[\\{ \omega \in \Omega : X(\omega) = x \land Y(\omega)  = y\\}][/$$]
 - type: markdown
+  id: 22  # (generated)
   front: |
     Wie sind die **Randdichten** für [$]f_X,Y(x, y[/$] definiert?
   back: |
     [$]f_X(x) = \sum_{y \in W_y} f_{X,Y}(x, y)[/$] und für Y analog.
 - type: markdown
+  id: 23  # (generated)
   front: |
     Wie ist die **gemeinsame Verteilung** für [$]f_X,Y(x, y[/$] definiert?
   back: |
     [$$]F_{X,Y}(x, y) = \Pr[X \leq x, Y \leq y] = \Pr[\\{ \omega : X(\omega) \leq x \land Y(\omega) \leq y\\}][/$$]
 - type: markdown
+  id: 24  # (generated)
   front: |
     Wie sind die **Randverteilungen** für [$]f_X,Y(x, y[/$] definiert?
   back: |
     [$]F_X(x) = \sum_{x' \leq x} f_X(x')[/$] für Y analog.
 - type: markdown
+  id: 25  # (generated)
   front: |
     Wann heißen **Zufallsvariablen** [$]X_1, \dots, X_n[/$] **unabhängig**?
   back: |
@@ -147,16 +175,19 @@ cards:
 
     [$$]\Pr[X_1 = x_1, \dots, X_n = x_n] = \Pr[X_1 = x_1] \cdot \\ \dots \\ \cdot \Pr[X_n = x_n][/$$]
 - type: markdown
+  id: 26  # (generated)
   front: |
     Wenn zwei **Zufallsvariablen** [$]X_1, \dots, X_n[/$] **unabhängig** sind, was gilt dann für die *gemeinsame* Dichte?
   back: |
     [$$]f_{X_1, \dots, X_n}(x_1, \dots, x_n) = f_{X_1}(x_1) \cdot \\ \dots \\ \cdot f_{X_n}(x_n)[/$$]
 - type: markdown
+  id: 27  # (generated)
   front: |
     Wenn zwei **Zufallsvariablen** [$]X_1, \dots, X_n[/$] **unabhängig** sind, was gilt dann für die *gemeinsame* Verteilung?
   back: |
     [$$]F_{X_1, \dots, X_n}(x_1, \dots, x_n) = F_{X_1}(x_1) \cdot \\ \dots \\ \cdot F_{X_n}(x_n)[/$$]
 - type: markdown
+  id: 28  # (generated)
   front: |
     Wie kann man [$]\Pr[X_1 \in S_1, \dots, X_n \in S_n][/$] umschreiben, wenn
     [$]X_1, \dots, X_n[/$] unabhängig und [$]S_i \subseteq W_{X_i}[/$]
@@ -165,6 +196,7 @@ cards:
 # Zusammengesetzte Zufallsvariablen
 # TODO: Intuition Faltung und Zufallsvariablen
 - type: markdown
+  id: 29  # (generated)
   front: |
     Seien X und Y zwei *unabhängige* Zufallsvariablen. Wie kann die Dichte von Z
     = X + Y berechnet werden?
@@ -173,18 +205,21 @@ cards:
     [$$]f_z(z) = \sum_{x \in W_X} f_X(x) \cdot f_Y(z-x)[/$$]
 # Momente zusammengesetzter Zufallsvariablen
 - type: markdown
+  id: 30  # (generated)
   front: |
     Wie können wir den Erwartungswert von [$]X := a_1X_1 + \dots + a_nX_n[/$] mit
     [$]a_1, \dots, a_n \in \mathbb{R}[/$] zerlegen (Ausnutzung der Linearität)?
   back: |
     [$$]\mathbb{E}[X] = a_1 \mathbb{E}[X_1] + \dots + a_n \mathbb{E}[X_n][/$$]
 - type: markdown
+  id: 31  # (generated)
   front: |
     Was versteht man unter der Multiplikativität des Erwartungswerts?
   back: |
     Für **unabhängige** Zufallsvariablen gilt
     [$$]\mathbb{E}[X_1 \cdot \dots \cdot X_n] = \mathbb{E}[X_1] \cdot \dots \cdot \mathbb{E}[X_n][/$$]
 - type: markdown
+  id: 32  # (generated)
   front: |
     Welche Eigenschaft müssen die Zufallsvariablen erfüllen, damit
     [$$]\mathbb{E}[X_1 \cdot \dots \cdot X_n] = \mathbb{E}[X_1] \cdot \dots \cdot \mathbb{E}[X_n][/$$]
@@ -193,6 +228,7 @@ cards:
     Die **Zufallsvariablen** müssen **unabhängig** sein.
 # Indikatorvariablen
 - type: markdown
+  id: 33  # (generated)
   front: |
     Wie haben wir Indikatorvariablen für ein Ereignis A definiert?
   back: |
@@ -201,11 +237,13 @@ cards:
     0 & \text{sonst}
     \end{cases}[/$$]
 - type: markdown
+  id: 34  # (generated)
   front: |
     Was ist [$]\mathbb{E}[I_A][/$] für Indikatorvariable [$]I_A[/$]?
   back: |
     [$$]\mathbb{E}[I_A] = 1 \cdot \Pr[A] + 0 \cdot \Pr[\bar{A}] = \Pr[A][/$$]
 - type: markdown
+  id: 35  # (generated)
   front: |
     Was ist [$]\mathbb{E}[I_{A_1} \cdot \\ \dots \\ \cdot I_{A_n}][/$] für Indikatorvariablen?
   back: |
@@ -214,9 +252,10 @@ cards:
     da das Produkt von Indikatorvariablen *genau dann gleich 1* ist, wenn *alle
     entsprechenden Ereignisse eintreten*.
 - type: markdown
+  id: 36  # (generated)
   front: |
     Wie können wir die Varianz von [$]X := X_1 + \dots + X_n[/$] zerlegen?
-  back: |
+  back: |-
     Wenn [$]X_1, \dots, X_n[/$] **unabhängig**, dann
 
     [$$]\text{Var}[X] = \text{Var}[X_1] + \dots + \text{Var}[X_n][/$$]
