@@ -30,21 +30,17 @@ cards:
     Seien A, B und C Ereignisse und [$]\Pr[A \cup B \cup C][/$].
     Wende die Siebformel an.
   back: |
-    [$$]\Pr[A \cup B \cup C] =
-    \Pr[A] + \Pr[B] + \Pr[C]
-    - \Pr[A \cap B] - \Pr[A \cap C] -\Pr[B \cap C]
-    + \Pr[A \cap B \cap C]
-    [/$$]
+    [$$]\Pr[A \cup B \cup C] = \Pr[A] + \Pr[B] + \Pr[C] - \Pr[A \cap B] - \Pr[A \cap C] -\Pr[B \cap C] + \Pr[A \cap B \cap C][/$$]
 - type: markdown
   front: |
     Was ist die **boolesche Ungleichung** für eine *endliche Menge* von Ereignissen?
   back: |
-    [$$]\Pr \left[ \bugcup_{i = 1}^n A_i \right] \leq \sum_{i = 1}^n \Pr[A_i][/$$]
+    [$$]\Pr \left[ \bigcup_{i = 1}^n A_i \right] \leq \sum_{i = 1}^n \Pr[A_i][/$$]
 - type: markdown
   front: |
     Was ist die **boolesche Ungleichung** für eine *abzählbar unendliche Menge* von Ereignissen?
   back: |
-    [$$]\Pr \left[ \bugcup_{i = 1}^\infty A_i \right] \leq \sum_{i = 1}^\infty \Pr[A_i][/$$]
+    [$$]\Pr \left[ \bigcup_{i = 1}^\infty A_i \right] \leq \sum_{i = 1}^\infty \Pr[A_i][/$$]
 - type: markdown
   front: |
     Was sagt das Prinzip von Laplace aus?
@@ -83,11 +79,7 @@ cards:
   back: |
     Seien [$]A_1, \dots, A_n[/$] Ereignisse. Falls [$]\Pr[A_1 \cap \dots \cap A_n] > 0[/$], dann
 
-    [$$]
-    \Pr[A_1 \cap \dots \cap A_n] =
-    \Pr[A_1] \cdot \Pr[A_2 | A_1] \cdot \Pr[A_3 | A_1 \cap A_2]
-    \cdot \\ \dots \\ \cdot \Pr[A_n | A_1 \cap \dots \cap A_{n - 1}]
-    [/$$]
+    [$$]\Pr[A_1 \cap \dots \cap A_n] = \Pr[A_1] \cdot \Pr[A_2 | A_1] \cdot \Pr[A_3 | A_1 \cap A_2] \cdot \\ \dots \\ \cdot \Pr[A_n | A_1 \cap \dots \cap A_{n - 1}][/$$]
 - type: markdown
   front: |
     Seien [$]A_1, \dots, A_n[/$] Ereignisse. Wir wollen den Multiplikationssatz anwenden.
@@ -107,7 +99,7 @@ cards:
     Definiere den Satz von der totalen Wahrscheinlichkeit für eine **abzählbar unendliche Menge** an Ereignissen.
   back: |
     Ereignisse [$]A_1, \dots, A_n[/$] seien paarweise disjunkt und es gelte
-    [$]B \subseteq \bugcup_{i = 1}^\infty[/$]. Dann:
+    [$]B \subseteq \bigcup_{i = 1}^\infty[/$]. Dann:
 
     [$$]\Pr[B] = \sum_{i = 1}^\infty \Pr[B | A_i] \cdot \Pr[A_i][/$$]
 - type: markdown
@@ -133,7 +125,7 @@ cards:
   front: |
     Wie können wir
     [$$]\Pr[A \cap B] = \Pr[A] \cdot \Pr[B][/$$]
-    umschreiben, wenn zusätzlich [$]\Pr[B] \noteq 0[/$] gilt?
+    umschreiben, wenn zusätzlich [$]\Pr[B] \neq 0[/$] gilt?
   back: |
     [$$]\Pr[A] = \frac{\Pr[A \cap B]}{\Pr[B]} = \Pr[A | B][/$$]
 - type: markdown

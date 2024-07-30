@@ -196,10 +196,7 @@ cards:
   front: |
     Wie haben wir Indikatorvariablen für ein Ereignis A definiert?
   back: |
-    [$$]I_A := \begin{cases} 
-    1 & \text{falls } A \text{ eintritt}, \\\
-    0 & \text{sonst}
-    \end{cases}[/$$]
+    [$$]I_A := \begin{cases} 1 & \text{falls } A \text{ eintritt}, \\\\ 0 & \text{sonst} \end{cases}[/$$]
 - type: markdown
   front: |
     Was ist [$]\mathbb{E}[I_A][/$] für Indikatorvariable [$]I_A[/$]?
