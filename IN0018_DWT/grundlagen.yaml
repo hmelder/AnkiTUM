@@ -1,0 +1,172 @@
+title: 'DWT: Grundlagen'
+author: Hugo Melder
+id: 239239021
+cards:
+# Lemma 8: Additionssatz
+- type: markdown
+  front: Was ist der Additionssatz für eine *endliche Menge* von Ereignissen?
+  back: |
+    Seien [$]A_1, \dots, A_n[/$] paarweise disjunkt. Dann gilt:
+
+    [$$]\Pr \left [ \bigcup_{i = 1}^n A_i \right ] = \sum_{i = 1}^n \Pr[A_i][/$$]
+- type: markdown
+  front: Was ist der Additionssatz für eine *abzählbar unendliche Menge* von Ereignissen?
+  back: |
+    [$$]\Pr \left [ \bigcup_{i = 1}^\infty A_i \right ] = \sum_{i = 1}^\infty \Pr[A_i][/$$]
+- type: markdown
+  front: |
+    Seien A und B Ereignisse und [$]A \subseteq B[/$]. Was gilt dann für
+    [$]Pr[A][/$] und [$]Pr[B][/$]?
+  back: |
+    [$$]A \subseteq B \implies \Pr[A] \leq \Pr[B][/$$]
+- type: markdown
+  front: |
+    Seien A und B Ereignisse und [$]\Pr[A \cup B][/$].
+    Wende die Siebformel an.
+  back: |
+    [$$]\Pr[A \cup B] = \Pr[A] + \Pr[B] - \Pr[A \cap B][/$$]
+- type: markdown
+  front: |
+    Seien A, B und C Ereignisse und [$]\Pr[A \cup B \cup C][/$].
+    Wende die Siebformel an.
+  back: |
+    [$$]\Pr[A \cup B \cup C] =
+    \Pr[A] + \Pr[B] + \Pr[C]
+    - \Pr[A \cap B] - \Pr[A \cap C] -\Pr[B \cap C]
+    + \Pr[A \cap B \cap C]
+    [/$$]
+- type: markdown
+  front: |
+    Was ist die **boolesche Ungleichung** für eine *endliche Menge* von Ereignissen?
+  back: |
+    [$$]\Pr \left[ \bugcup_{i = 1}^n A_i \right] \leq \sum_{i = 1}^n \Pr[A_i][/$$]
+- type: markdown
+  front: |
+    Was ist die **boolesche Ungleichung** für eine *abzählbar unendliche Menge* von Ereignissen?
+  back: |
+    [$$]\Pr \left[ \bugcup_{i = 1}^\infty A_i \right] \leq \sum_{i = 1}^\infty \Pr[A_i][/$$]
+- type: markdown
+  front: |
+    Was sagt das Prinzip von Laplace aus?
+  back: |
+    Wenn nichts dagegen spricht, gehen wir davon aus, dass alle Elementarereignisse gleich wahrscheinlich sind.
+    Also:
+
+    [$$]\Pr[E] = \frac{|E|}{|\Omega|}[/$$]
+# Bedingte Wahrscheinlichkeiten
+- type: markdown
+  front: |
+    Was sind für [$]\Pr[A|B][/$] erforderliche Eigenschaften:
+  back: |
+    1. [$]\Pr[B | B] = 1[/$]
+    2. [$]\Pr[A | \Omega] = \Pr[A][/$]
+    3. für festes B ist [$]\Pr[A | B][/$] proportional zu [$]\Pr[A \cap B][/$]
+- type: markdown
+  front: |
+    Wie ist die **bedingte Wahrscheinlichkeit** definiert?
+  back: |
+    Seien A und B Ereignisse mit [$]\Pr[B] > 0[/$].
+
+    [$$]\Pr[A | B] := \frac{\Pr[A \cap B]}{\Pr[B]}[/$$]
+- type: markdown
+  front: 
+    Angenommen wir kennen [$]/Pr[A | B][/$].
+    Wie können wir [$]\Pr[\bar{A} | B][/$] umschreiben?
+  back: |
+    [$$]\Pr[\hat{A} | B] = 1 - \Pr[A | B][/$$]
+- type: markdown
+  front: Was ist [$]\Pr[\emptyset | B][/$]?
+  back: |
+    [$$]\Pr[\emptyset ] B] = 0[/$$]
+- type: markdown
+  front: Definiere den Multiplikationssatz.
+  back: |
+    Seien [$]A_1, \dots, A_n[/$] Ereignisse. Falls [$]\Pr[A_1 \cap \dots \cap A_n] > 0[/$], dann
+
+    [$$]
+    \Pr[A_1 \cap \dots \cap A_n] =
+    \Pr[A_1] \cdot \Pr[A_2 | A_1] \cdot \Pr[A_3 | A_1 \cap A_2]
+    \cdot \\ \dots \\ \cdot \Pr[A_n | A_1 \cap \dots \cap A_{n - 1}]
+    [/$$]
+- type: markdown
+  front: |
+    Seien [$]A_1, \dots, A_n[/$] Ereignisse. Wir wollen den Multiplikationssatz anwenden.
+    Welche Bedingung muss für die Ereignisse gelten?
+  back: |
+    [$$]\Pr[A_1 \cap \dots \cap A_n] > 0[/$$]
+- type: markdown
+  front: |
+    Definiere den Satz von der totalen Wahrscheinlichkeit für eine **endliche Menge** an Ereignissen.
+  back: |
+    Ereignisse [$]A_1, \dots, A_n[/$] seien paarweise disjunkt und es gelte
+    [$]B \subseteq A_1 \cup \dots \cup A_n[/$]. Dann:
+
+    [$$]\Pr[B] = \sum_{i = 1}^n \Pr[B | A_i] \cdot \Pr[A_i][/$$]
+- type: markdown
+  front: |
+    Definiere den Satz von der totalen Wahrscheinlichkeit für eine **abzählbar unendliche Menge** an Ereignissen.
+  back: |
+    Ereignisse [$]A_1, \dots, A_n[/$] seien paarweise disjunkt und es gelte
+    [$]B \subseteq \bugcup_{i = 1}^\infty[/$]. Dann:
+
+    [$$]\Pr[B] = \sum_{i = 1}^\infty \Pr[B | A_i] \cdot \Pr[A_i][/$$]
+- type: markdown
+  front: |
+    Seien [$]A_1, \dots, A_n[/$] und B Ereignisse. Welche Bedingungen müssen gelten,
+    damit der Satz der totalen Wahrscheinlichkeit angewendet werden kann?
+  back: |
+    - **Paarweise Disjunkt**
+    - [$]B \subseteq A_1 \cup \dots \cup A_n[/$]
+- type: markdown
+  front: |
+    Seien [$]A_1, A_2, \dots[/$] und B Ereignisse. Welche Bedingungen müssen gelten,
+    damit der Satz der totalen Wahrscheinlichkeit angewendet werden kann?
+  back: |
+    - **Paarweise Disjunkt**
+    - [$]B \subseteq \bigcup_{i = 1}^\infty A_i[/$]
+# TODO: Intuition Satz von Bayes
+- type: markdown
+  front: Wann heißen Ereignisse A und B **unabhängig**?
+  back: |
+    [$$]\Pr[A \cap B] = \Pr[A] \cdot \Pr[B][/$$]
+- type: markdown
+  front: |
+    Wie können wir
+    [$$]\Pr[A \cap B] = \Pr[A] \cdot \Pr[B][/$$]
+    umschreiben, wenn zusätzlich [$]\Pr[B] \noteq 0[/$] gilt?
+  back: |
+    [$$]\Pr[A] = \frac{\Pr[A \cap B]}{\Pr[B]} = \Pr[A | B][/$$]
+- type: markdown
+  front: |
+    Wann heißen *paarweise verschiedene* Ereignisse [$]A_1, \dots, A_n[/$] **unabhängig**?
+  back: |
+    Wenn für alle Teilmengen [$]I = \\{ i_1, \dots, i_k \\} \subseteq \\{ 1, \dots, n\\}[/$]
+    mit [$]i_1 < i_2 < \dots < i_k[/$] gilt, dass
+
+    [$$]\Pr[A_{i_1} \cap \dots \cap A_{i_k}] = \Pr[A_{i_1}] \cdot \\ \dots \\ \cdot \Pr[A_{i_k}][/$$]
+- type: markdown
+  front: |
+    Welche verallgemeinerte Version von Unabhängigkeit haben wir für
+    *paarweise verschiedene* Ereignisse [$]A_1, \dots, A_n[/$] kennengelernt? (*Bitvektoren*)
+  back: |
+    Unabhängig, wenn für alle [$](s_1, \dots, s_n) \in \\{ 0, 1\\}^n[/$] gilt, dass
+
+    [$$]\Pr[A_1^{s_1} \cap \dots \cap A_n^{s_n}] = \Pr[A_1^{s_1}] \cdot \\ \dots \\ \cdot \Pr[A_n^{s_n}][/$$]
+
+    wobei [$]A_i^0 = \bar{A}_i[/$] und [$]A_i^1 = A_i[/$].
+- type: markdown
+  front: |
+    Wenn A und B unabhängig, sind dann auch ¬A und B unabhängig?
+  back: |
+    Ja (Siehe "Bitvektor Unabhängigkeitslemma").
+
+    Wenn A und B unabhängig, dann:
+    - ¬A und B unabhängig
+    - A und ¬B unabhängig
+    - ¬A und ¬B unabhängig
+- type: markdown
+  front: |
+    Seien A, B und C unabhängige Ereignisse. Welche Aussagen über Schnitt und
+    Vereinigung können gemacht werden?
+  back: |
+    [$]A \cap B[$] und C bzw [$]A \cup B[/$] und C unabhängig.
