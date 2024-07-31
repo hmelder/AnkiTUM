@@ -94,7 +94,7 @@ cards:
 
     Wie können wir den Erwartungswert von X anders berechnen? (Law of total expectation)
   back: |
-    [$$]\Pr[X] = \sum_{i = 1}^n \Pr[X | A_i] \cdot \Pr[A_i][/$$]
+    [$$]\mathbb{E}[X] = \sum_{i = 1}^n \mathbb{E}[X | A_i] \cdot \Pr[A_i][/$$]
 - type: markdown
   id: 15  # (generated)
   front: |
