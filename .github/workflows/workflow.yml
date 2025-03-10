@@ -72,4 +72,6 @@ jobs:
         MIRROR_IP: ${{ secrets.MIRROR_IP }}
         MIRROR_USER: ${{ secrets.MIRROR_USER }}
       run: |
-        sftp -i $HOME/.ssh/id_rsa $MIRROR_USER@$MIRROR_IP:/var/www/html/anki-decks <<< $'put -r build/*.apkg'
+        find build -type f -name "*.apkg" | while read file; do
+          sftp -i "$HOME/.ssh/id_rsa" "$MIRROR_USER@$MIRROR_IP:/var/www/html/anki-decks" <<< $"put \"$file\""
+        done
