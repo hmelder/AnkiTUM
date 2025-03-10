@@ -83,12 +83,6 @@ cards:
       - Characterized carefully by the foundry
     - For FPGAs
       - Composed of functions offered by configurable logic blocks (CLBs)
-- type: markdown
-  id: 10  # (generated)
-  front: |
-    What is done in Behavo
-  back: |
-    ff
 # Architectual Synthesis
 - type: markdown
   id: 11  # (generated)
