@@ -1,0 +1,28 @@
+title: High-Level Synthesis
+author: Hugo Melder
+id: 3423843429
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    What are the HLS design steps?
+  back: |
+    - Design entry
+    - C simulation
+    - C synthesis
+    - Hardware-Software Cosimulation
+    - Hardware export to logic synthesis tool
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    How does HLS roughly work?
+  back: ^¥ 1. Translate high-level code into *sequencing graphs* 2. Behavioural-level
+    optimisation 3. Architectual synthesis and optimisation
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    What are disadvantages of HLS?
+  back: |-
+    - Slight changes in code might have an avalanche effect
+    - Does not work well for control-oriented blocks
+    - Directives (e.g. `#pragma`) may be required

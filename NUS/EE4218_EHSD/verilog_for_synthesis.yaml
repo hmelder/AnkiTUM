@@ -1,0 +1,164 @@
+title: Verilog for Synthesis
+author: Hugo Melder
+id: 3472309428
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    Why is the following circuit _in general_ not synthesizable?
+    [[image: multiple_drivers.png]]
+  back: |
+    **regs** and **wires** should not have multiple drivers
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    Where should a **wire** appear in an **assign** statement?
+  back: |
+    On the **left-hand side**.
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    Where should a **reg** appear in an **always** block?
+  back: |
+    On the **left-hand-side**.
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    Is it _allowed_ to assign the same wire multiple times?
+  back: |
+    Not in general.
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    Is it ok to have a reg at the LHS of multiple statements within the same
+    always block?
+  back: |
+    Yes as long as the same type of assignment is used.
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    What to consider when writing **always** blocks?
+  back: |
+    Every always should follow one of the three templates given in the lecture.
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    Describe the **purely combinational** always block template.
+  back: |
+    - All outputs of the block are **SOP and POS functions** of the current inputs of the block
+    - Every input must be present in the sensitivity list
+    - Use only blocking assignments (one can use non-blocking assignments for the outputs)
+
+    ## Regs
+    - must be assigned a meaningful value for every possible combination of
+    inputs (i.e., all branches of if / case statements)
+    - reg appearing on both LHS and RHS within an always block should appear on
+    the LHS before RHS.
+    - reg assigned using non-blocking assignment should not appear on the RHS of
+    the same block
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    Describe the **synchronous** always block template.
+  back: |
+    - Only **posedge/negedge** CLK in the sensitivity list
+    - **Only regs** that change on the **same edge of the same clock** should be assigned in the always block 
+    - **Use non-blocking assignments** for the outputs of the always block (signals)
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    Why is it discouraged to use a **synchronous** always block with
+    asynchronous reset?
+  back: |
+    An asynchronous reset can cause **metastability** in a digital circuit
+    because if the reset signal changes state near a clock edge, the circuit may
+    enter an indeterminate state.
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    Is the following `always` block considered good practise?
+
+    ```
+    always @ (posedge CLK or posedge RST) begin
+      if(RST)
+        Z <= 1'b0;
+        //do not have anything else here
+      else begin
+        //the rest of the code goes here
+        Z <= X | Y;
+      end
+    end
+    ```
+  back: |
+    No! Synchronous always blocks with asynch set/reset can lead to
+    metastability issues.
+# Inference of physical registers
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    Physical registers are inferred when...
+  back: |
+    - Non-blocking assignments of **reg**s in synchronous always block
+    - Blocking assignment of **reg**s in the synchronous part of an always block
+    where they are read (on RHS) before being written (on LHS)
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    Is it recommended to infer **reg**s by reading from a reg, before being written?
+  back: |
+    No.
+# Verilog Coding Guidelines (SNUG San Jose)
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    Describe the 8 verilog coding guidelines
+  back: |
+    1. When modeling sequential logic, use nonblocking assignments.
+    2. When modeling latches, use nonblocking assignments.
+    3. When modeling combinational logic with an always block, use blocking
+    assignments.
+    4. When modeling both sequential and combinational logic within the same always
+    block, use nonblocking assignments.
+    5. Do not mix blocking and nonblocking assignments in the same always block.
+    6. Do not make assignments to the same variable from more than one always block.
+    7. Use `$strobe` to display values that have been assigned using nonblocking
+    assignments.
+    8. Do not make assignments using #0 delays.
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    When modeling sequential logic, use _____________ assignments. 
+  back: |
+    When modeling sequential logic, use nonblocking assignments. 
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    When modeling latches logic, use _____________ assignments. 
+  back: |
+    When modeling latches logic, use nonblocking assignments. 
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    When modeling combinational logic with an always block, use _____________ assignments. 
+  back: |
+    When modeling combinational logic with an always block, use blocking assignments. 
+- type: markdown
+  id: 16  # (generated)
+  front: |
+    When modeling both sequential and combinational logic within the same always
+    block, use ____________ assignments.
+  back: |
+    When modeling both sequential and combinational logic within the same always
+    block, use nonblocking assignments.
+- type: markdown
+  id: 17  # (generated)
+  front: |
+    Do not mix blocking and nonblocking assignments in _______ always block.
+  back: |
+    Do not mix blocking and nonblocking assignments in the same always block.
+- type: markdown
+  id: 18  # (generated)
+  front: |
+    Do not make assignments to ________ variable from more than ___ always block.
+  back: |-
+    Do not make assignments to the same variable from more than one always block.

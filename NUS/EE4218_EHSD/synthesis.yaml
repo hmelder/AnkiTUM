@@ -1,0 +1,388 @@
+title: Synthesis
+author: Hugo Melder
+id: 480923482934
+cards:
+# Abstract Models
+- type: markdown
+  id: 0  # (generated)
+  front: |
+  back: |
+## Logic Network
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    What is a **Logic Network**?
+  back: |
+    - An interconnection of blocks
+    - Each block modeled by a Boolean function
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    What does a Vertex describe in a **Logic Network**?
+  back: |
+    A *multi-input/single-output* leaf module
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    How is this Diagram called?
+    [[image: logic_network.png]]
+  back: |
+    A **Logic Network**
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    How is this Graph called?
+    [[image: logic_network_graph.png]]
+  back: |
+    A **Logic Network Graph**
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    What is a **Dataflow Graph**, and how is it used?
+  back: |
+    A Graph with vertices = *operations*, and edges = *dependencies*.
+
+    Useful to represent data-paths.
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    What is a **Sequencing Graph**, and how is it used?
+  back: |
+    Extended dataflow graph with:
+    - **Control-flow commands** (Subroutines, Looping, and Branching)
+    - Source and Sink
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    Give examples for vertex attributes in sequencing graphs.
+  back: |
+    - Area cost
+    - Delay cost
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    What are some estimates that can be made from a sequencing graph?
+  back: |
+    - Area (worst-case): Sum of the area attributes of all vertices
+    - Delay Best-case (assuming no sharing): Length of longest path from
+    source to sink assuming bounded latency
+
+# Behavioural Synthesis
+
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    What are the benefits of Behavioural Synthesis?
+  back: |
+    - Reduce specification of details
+    - Reduce design time
+    - Extend designer base
+    - Self-documenting design specifications
+    - Ease of modifications and extensions
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    What are the primary steps in behavioural synthesis?
+  back: |
+    - **Translate** high-level models **into sequencing graphs**
+    - Behavioural-level optimisation
+    - Architectual synthesis and optimisation
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    What is behavioural-level optimisation?
+  back: |
+    Optimise abstract models independently from the implementation parameters
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    How does hardware compilation work?
+  back: |
+    - Compile high-level model into sequencing graph
+    - Optimise sequencing graph
+    - Generate gate-level interconnection for a cell library
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    What is happening in the Compilation Front-end?
+  back: |
+    - Lexer (Tokenisation)
+    - Parser (Syntax-Tree)
+    - Semantic Analysis
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    What is **Semantic Analysis** in Hardware Compilation?
+  back: |
+    - **Data-flow** and **Control-flow** analysis
+    - Type checking
+## Optimisations
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    On what data structure do behavioural-level optimisations operate?
+  back: |
+    Parse-trees
+- type: markdown
+  id: 16  # (generated)
+  front: |
+    What is Tree-height reduction?
+  back: |
+    Reduce height of expression tree to exploit hardware parallelism
+- type: markdown
+  id: 17  # (generated)
+  front: |
+    What is operator-strength reduction?
+  back: |
+    Reduce operator-strength, i.e. x**2 -> x * x
+
+# Architectural Synthesis
+
+- type: markdown
+  id: 18  # (generated)
+  front: |
+    What is architectural synthesis?
+  back: |
+    Implementation of the design from optimized CDFGs
+    (**C**ontrol and **D**ata **F**low **G**raphs)
+- type: markdown
+  id: 19  # (generated)
+  front: |
+    What inputs are give for architectural synthesis?
+  back: |
+    - Circuit behaviour (**sequencing graph**)
+    - Building blocks
+    - Constraints (e.g. timing, area, and resource)
+- type: markdown
+  id: 20  # (generated)
+  front: |
+    What is the main problem in architectural synthesis?
+  back: |
+    Explore area/performance trade-off; determine an optimal implementation
+- type: markdown
+  id: 21  # (generated)
+  front: |
+    What is scheduling?
+  back: |
+    Placing operand-operations in time. Schedules at which clock cycle it starts.
+- type: markdown
+  id: 22  # (generated)
+  front: |
+    What is binding?
+  back: |
+    Placing operand-operations in time. Binds operation to instance of functional unit.
+- type: markdown
+  id: 23  # (generated)
+  front: |
+    What are some datapath building blocks?
+  back: |
+    - Functional resources (ALU)
+    - Storage (memory and registers)
+    - Interfaces (buses and ports)
+    - Steering logic (multiplexers)
+- type: markdown
+  id: 24  # (generated)
+  front: |
+    What are some control unit building blocks?
+  back: |
+    - State machine
+    - Microprogrammed
+- type: markdown
+  id: 25  # (generated)
+  front: |
+    What is a *recource-dominated* circuit?
+  back: |
+    Area and performance depend on few, well-characterized fucntional resources (e.g. DSPs)
+- type: markdown
+  id: 26  # (generated)
+  front: |
+    What is a *non resource-dominated* circuit?
+  back: |
+    Area and performance are strongly influenced by sparse logic, control, and wiring
+- type: markdown
+  id: 27  # (generated)
+  front: |
+    What does **scheduling** determine?
+  back: |
+    **latency** and **parallelism**
+- type: markdown
+  id: 28  # (generated)
+  front: |
+    What is a scheduled sequencing graph?
+  back: |
+    Sequencing graph with start-time annotation.
+- type: markdown
+  id: 29  # (generated)
+  front: |
+    What was the goal in this schedule?
+    [[image: schedule_unconstrained.png]]
+  back: |
+    Minimize delay with unconstrained resource usage.
+- type: markdown
+  id: 30  # (generated)
+  front: |
+    What was the goal in this schedule?
+    [[image: schedule_constrained.png]]
+  back: |
+    Constrained to use 1 resource for each type.
+- type: markdown
+  id: 31  # (generated)
+  front: |
+    What is Scheduling with Chaining?
+    [[image: schedule_chaining.png]]
+  back: |
+    Operations that take less time combined into one cycle.
+## Synthesis in the Spatial Domain
+- type: markdown
+  id: 32  # (generated)
+  front: |
+    What is binding?
+  back: |
+    - Associating a **resource** with each operation with the same type
+    - Determines the **area** of the implementation
+- type: markdown
+  id: 33  # (generated)
+  front: |
+    What is sharing in binding?
+  back: |
+    - Binding a resource to more than one operation
+    - Operations must not execute concurrently
+- type: markdown
+  id: 34  # (generated)
+  front: |
+    What is a bound sequencing graph?
+  back: |
+    Sequencing graph with resource annotation.
+- type: markdown
+  id: 35  # (generated)
+  front: |
+    What was the binding strategy here?
+    [[image: binding_dedicated.png]]
+  back: |
+    Dedicated binding, no resource sharing
+- type: markdown
+  id: 36  # (generated)
+  front: |
+    What was the binding strategy here?
+    [[image: binding_sharing.png]]
+  back: |
+    Resource sharing:
+    - 4 multipliers
+    - 2 ALUs
+
+# Area and Performance Estimation
+- type: markdown
+  id: 37  # (generated)
+  front: |
+    How is **Area** estimated in *resource-dominated* circuits?
+  back: |
+    Sum of the areas of the resources bound to the operations (*determined* by binding)
+- type: markdown
+  id: 38  # (generated)
+  front: |
+    How is **Latency** estimated in *resource-dominated* circuits?
+  back: |
+    time(sink) - time(start) (*determined* by scheduling)
+- type: markdown
+  id: 39  # (generated)
+  front: |
+    How is **Area** estimated in *non resource-dominated* circuits?
+  back: |
+    - Number of Registers, Muxes, and other components such as bus drivers
+    - statistical placement and wiring models
+    - Memory
+- type: markdown
+  id: 40  # (generated)
+  front: |
+    How is **Latency** estimated in *non resource-dominated* circuits?
+  back: |
+    - Propagation delay of components
+    - Interconnect length
+
+# Design Space Exploration
+
+- type: markdown
+  id: 41  # (generated)
+  front: |
+    What is a Design Space?
+  back: |
+    Set of all feasible implementations
+- type: markdown
+  id: 42  # (generated)
+  front: |
+    What are some Implementation parameters that can be tracked in **Design Space Exploitation**?
+  back: |
+    - Area
+    - Performance
+      - Cycle-time
+      - Latency
+      - Throughut
+    - Power consumption
+- type: markdown
+  id: 43  # (generated)
+  front: |
+    What is *Pareto optimal*?
+  back: |
+    State at which resources in a given system are optimized in a way that one
+    dimension cannot improve without a second worsening.
+
+# TODO: Data-Path and Control Unit Synthesis
+
+# Microcode
+
+- type: markdown
+  id: 44  # (generated)
+  front: |
+    What is **Horizontal Microcode**?
+  back: |
+    - One activation signal per resource
+    - Vector of activation signals is one microword
+- type: markdown
+  id: 45  # (generated)
+  front: |
+    Given 4 words of 11-bits of microcode, what's the width of the counter
+    driving the ROM?
+  back: |
+    `log2(4) = 2 bit`
+- type: markdown
+  id: 46  # (generated)
+  front: |
+    How is the following **Microcode** Architecture called?
+    [[image: microcode_horizontal.png]]
+  back: |
+    *Horizontal* Microcode
+- type: markdown
+  id: 47  # (generated)
+  front: |
+    How is the following **Microcode** Architecture called?
+    [[image: microcode_vertical.png]]
+  back: |
+    *Vertical* Microcode
+- type: markdown
+  id: 48  # (generated)
+  front: |
+    What is the primary difference between horizontal and vertical microcode?
+  back: |
+    The vertical microcode
+    - needs decoders at ROM output to decode activation signals
+    - can activate only one resource at a time
+- type: markdown
+  id: 49  # (generated)
+  front: |
+    What's the width of one microword in **Vertical Microcode**?
+  back: |
+    [$]\log_2(n_{\text{act}}\text{bits})[/$] for [$]n_{\text{act}}[/$] activation signals
+- type: markdown
+  id: 50  # (generated)
+  front: |
+    What is **Vertical Microcode with Grouping**?
+  back: |
+    Group operations into sets, and assign an encoding for each set.
+    The microcode format is just a concatenation of the fields.
+- type: markdown
+  id: 51  # (generated)
+  front: |
+    How is the following **Microcode** Architecture called?
+    [[image: microcode_with_grouping.png]]
+  back: |-
+    Vertical Microcode with Grouping

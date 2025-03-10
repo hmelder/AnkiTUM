@@ -9,6 +9,8 @@ dirs=(
     "WI00729_BWL2"
     "IN0010_GRNVS"
     "IN0018_DWT"
+    "NUS/EE4218_EHSD"
+    "NUS/CS4277_3CV"
 )
 
 mkdir -p build

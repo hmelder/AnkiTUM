@@ -1,0 +1,287 @@
+title: Sequential Logic Optimisation
+author: Hugo Melder
+id: 704549334320
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    Which two models are commonly used for modeling synchronous circuits?
+  back: |
+    - **State-based** model
+    - **Structural** model
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    The **state-based** model has ______ notion of state, and ______ notion of area and delay.
+  back: |
+    The **state-based** model has **explicit** notion of state, and **implicit** notion of area and delay.
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    The **structural** model has ______ notion of state, and ______ notion of area and delay.
+  back: |
+    The **structural** model has implicit notion of state, and explicit notion of area and delay.
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    What are some optimisations for the **state-based** model?
+  back: |
+    - State minimization
+    - State encoding
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    What are some optimisations for the **structural** model?
+  back: |
+    - Retiming
+    - Synchronous logic transformations
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    What is the typical flow for modeling synchronous circuits?
+  back: |
+    1. FSM specification
+    2. State minimization
+    3. State encoding
+    4. Combinational (next-state, output) logic optimisation
+    5, State extraction (for verification)
+    6. Retiming and synchronous transformations
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    What kind of FSM is this?
+
+    [[image: mealy_graph.png]]
+  back: |
+    A Mealy Machine.
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    What kind of FSM is this?
+
+    [[image: moore_graph.png]]
+  back: |
+    A Moore Machine.
+
+# State Minimization
+
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    Describe the problem "State Minimization"!
+  back: |
+    Objective is to reduce the number of states and hence the area
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    What is a *completely-specified* finite-state machine?
+  back: |
+    **No** don't care conditions
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    What happens if a FSM is not completely-specified?
+  back: |
+    - Unspecified transitions and/or outputs
+    - Intractable problem
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    Define "equivalent states".
+  back: |
+    Two states are equivalent *if and only if*:
+      - They lead to identical outputs and
+      - Their next-states are equivalent
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    What are the three steps in "stepwise partition refinement"
+  back: |
+    1. Initially, all states in the same partition block
+    2. Iteratively refine partition blocks
+    3. At convergence partition blocks identify equivalent states
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    How is the **initial partition** in the refinement procedure formed?
+  back: |
+    States belong to the same block when outputs are the same for any input.
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    How is the **next partition** in the refinement procedure formed?
+  back: |
+    States belong to the same block if they were *previously* in the same block
+    **and** their **next states** are in the **same block** for *any* input.
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    When does the refinement procedure end?
+  back: |
+    When convergence is reached.
+
+## Example
+
+- type: markdown
+  id: 16  # (generated)
+  front: |
+    Perform the "stepwise partition refinement" algorithm:
+
+    [[image: refinement_example.png]]
+  back: |
+    [[image: refinement_example_result.png]]
+
+# Implication Chart Method 
+
+- type: markdown
+  id: 17  # (generated)
+  front: |
+    Explain how the **Implication Chart Method** works.
+  back: |
+    1. *Cross out* those cells corresponding to state pairs which are **I/O incompatible**
+    2. Write down the **conditions for equivalence** for other pairs
+    3. Cross out more cells if any of the indexed chart entries are already cross out
+    4. Repeat (3) until no more cells can be crossed out
+    5. Pairs corresponding to cells which are not crossed out are equivalent
+- type: markdown
+  id: 18  # (generated)
+  front: |
+    How are conditions for equivalence for other pairs written down in the **Implication Chart Method**?
+  back: |
+    - Conditions are called *implications*
+    - Example : S3 and S4 are equivalent only if S2-S4 are equivalent and S1-S5 are equivalent
+
+# Incompletely-specified FSMs
+
+- type: markdown
+  id: 19  # (generated)
+  front: |
+    Define "compatible states".
+  back: |
+    Two states are compatible *if and only if*:
+      - They lead to identiical outputs if specified
+      - Their next states are compatible
+
+- type: markdown
+  id: 20  # (generated)
+  front: |
+    Is Compatibility transitive?
+  back: |
+    No, it is not an equivalence relation.
+
+- type: markdown
+  id: 21  # (generated)
+  front: |
+    How to minimise incompletely-specified FSMs?
+  back: |
+    Find a **minimum number** of **partition blocks** such that:
+      - All states are covered
+      - All implications are satisfied
+
+# State Encoding
+
+- type: markdown
+  id: 22  # (generated)
+  front: |
+    What is **State Encoding**?
+  back: |
+    Process of assigning bit vectors to each symbolic state.
+- type: markdown
+  id: 23  # (generated)
+  front: |
+    **State Encoding** maps a ______ representation into a _____ one.
+  back: |
+    **State Encoding** maps a state-based representation into a structural one.
+- type: markdown
+  id: 24  # (generated)
+  front: |
+    Is the optimal solution of **state encoding** tractable?
+  back: |
+    No. it is intractable.
+- type: markdown
+  id: 25  # (generated)
+  front: |
+    What are some non-optimal strategies for **state encoding**?
+  back: |
+    - **Sequential**
+    - **Random**
+    - **One-Hot**
+    - **Heuristic**
+- type: markdown
+  id: 26  # (generated)
+  front: |
+    What are *advantages* of **One-hot Encoding**?
+  back: |
+    - Simple to encode
+    - Combinational logic is usually small
+    - Suitable for FPGAs, as proper initialisation is needed 
+- type: markdown
+  id: 27  # (generated)
+  front: |
+    What are *disadvantages* of **One-hot Encoding**?
+  back: |
+    - Proper initialisation needed
+    - Large number of states will need large number of FFs
+- type: markdown
+  id: 28  # (generated)
+  front: |
+    What are some heuristics for State Encodings?
+  back: |
+    - Adjacent codes to states that:
+      - share a **common next-state**
+      - share a common **predecessor (ancestor) state**
+      - have a **common output behaviour**
+    - Gray and Johnson codes
+
+# State Extraction
+
+- type: markdown
+  id: 29  # (generated)
+  front: |
+    What is **State Extraction**?
+  back: |
+    Recover state information from a structural moel
+
+# Synchronous Network Graph
+
+- type: markdown
+  id: 30  # (generated)
+  front: |
+    What are vertices in a **Synchronous network graph**?
+  back: |
+    SOP/POS expressions <-> Gates
+
+- type: markdown
+  id: 31  # (generated)
+  front: |
+    What are edges in a **Synchronous network graph**?
+  back: |
+    Dependencies <-> Nets
+
+- type: markdown
+  id: 32  # (generated)
+  front: |
+    What are edge weights in a **Synchronous network graph**?
+  back: |
+    Synchronous delays <-> Registers
+
+## Retiming
+
+- type: markdown
+  id: 33  # (generated)
+  front: |
+    What is **Retiming**?
+  back: |
+    Change register postions -> Change weights on graph
+
+- type: markdown
+  id: 34  # (generated)
+  front: |
+    Explain **Relaxation-based** Retiming Algorithm!
+  back: |
+    1. Find vertices with _data ready_ > φ
+    2. Retime these vertices by 1. Make sure that no edge has a negative weight
+    3. Repeat until predicate from (1) is false for all v.
+    4. If a legal retiming is not found in |V] iterations, then **no legal retiming exists** for that φ
+
+# TODO: Examples

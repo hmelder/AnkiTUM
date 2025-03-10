@@ -1,0 +1,192 @@
+title: Introduction
+author: Hugo Melder
+id: 3483934098098
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    What are characteristics of an embedded system?
+  back: |
+    - Embedded into a larger system, doing a dedicated task
+    - Typically real-time
+    - Power, cost, size constraints
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    What is an ASSP?
+  back: |
+    A **Application Specific Standard Product**: An IC creasted and optimised
+    for market and sold to multiple companies.
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    What is an ASIC?
+  back: |
+    Special-purpose device designed and/or used by a single company in a
+    specific system.
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    What is CMOS VLSI?
+  back: |
+    Complementary metal oxide semiconductor (**CMOS**): **Combination** of
+    N-channel MOS (**NMOS**) and P-channel MOS (**PMOS**) field effect
+    transistors (FETs).
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    What is a BJT?
+  back: |
+    Bipolar Junction Transistor
+
+# TODO: Simplified diagram and production steps of NMOS/PMOS
+
+
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    What are the levels of abstraction in digital circuit design?
+  back: |
+    1. Algorithm / System Level (untimed)
+    2. Register Transfer Level (RTL, timed)
+    3. Gate Level
+    4. Circuit Level
+    5. Layout Level
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    Primary features between HDLs and traditional programming languages?
+  back: |
+    - **Event-based**
+    - Allow real **concurrency**, **timing**, **delays**
+    - Coding and testing in the same language
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    Describe the simplified FPGA / ASIC design flow!
+  back: |
+    Functional Specification -> Behavioural Modeling -> Architectual Synthesis -> Logic Synthesis -> Physical Design
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    What is the difference between a FPGA and ASIC design flow?
+  back: |
+    - FPGA: physical design is converted into a **bitstream** for **FPGA Programming**.
+    - ASIC: Layout for fabrication
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    What are Technology Libraries?
+  back: |
+    - For ASICs
+      - Gates or gate combinations
+      - Characterized carefully by the foundry
+    - For FPGAs
+      - Composed of functions offered by configurable logic blocks (CLBs)
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    What is done in Behavo
+  back: |
+    ff
+# Architectual Synthesis
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    What is done in the **Architectual Synthesis** step?
+  back: |
+    Convert purely functional/behavioural/algorithmic model into **macroscopic structural model**
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    What is the result of **Architectual Synthesis**?
+  back: |
+    Results in **macroscopic-block-level** cycle accurate functional specification
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    What is **Scheduling** in Architectual Synthesis?
+  back: |
+    Specifies which clock cycle an operand-operation is performed at
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    What is **Binding** in Architectual Synthesis?
+  back: |
+    Which specific macroscopic block (ALU, etc.) performs the operation
+# Logic Synthesis
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    What are the main steps in **Logic Synthesis**?
+  back: |
+    1. Logic optimisation
+    2. Technology mapping (library binding)
+# RTL and Registers
+- type: markdown
+  id: 16  # (generated)
+  front: |
+    What does RTL describe?
+  back: |
+    The **flow of signals** between registers
+- type: markdown
+  id: 17  # (generated)
+  front: |
+    Registers can be described as a _____ ____.
+  back: |
+    Registers can be described as a brick wall.
+- type: markdown
+  id: 18  # (generated)
+  front: |
+    What do RTL (logic) synthesis tools optimise?
+  back: |
+    The combinational logic between the registers.
+- type: markdown
+  id: 19  # (generated)
+  front: |
+    What is the **Critical Path**?
+  back: |
+    The Cominbational Path with the **maximum delay**.
+# Physical Design
+- type: markdown
+  id: 20  # (generated)
+  front: |
+    What is **Placement** in Physical Design?
+  back: |
+    Shape of a cell to physical place in the layout
+- type: markdown
+  id: 21  # (generated)
+  front: |
+    What is **Routing** in Physical Design?
+  back: |
+    Mapping of logical connections between cells to physical interconnects
+# Introduction to FPGAs
+- type: markdown
+  id: 22  # (generated)
+  front: |
+    Describe the architecture of an FPGA!
+  back: |
+    - Matrix of **configurable logic blocks** (CLBs) connected via **programmable interconnects** (switches)
+- type: markdown
+  id: 23  # (generated)
+  front: |
+    What parts other than CLBs do FPGAs usually have?
+  back: |
+    - Blocks of high-speed static/dynamic RAMs
+    - Sometimes additional embedded processors, ALUs, etc.
+- type: markdown
+  id: 24  # (generated)
+  front: |
+    What are some advantages of FPGAs?
+  back: |
+    - Scalable
+    - Fast deployable
+    - Bug fixes
+- type: markdown
+  id: 25  # (generated)
+  front: |
+    What are some disadvantages of FPGAs?
+  back: |-
+    - **Power**: 14 times ASIC's power
+    - **Area/Cost**: 35 times large than ASIC
+    - **Speed**: 3-4 times slower than ASIC
