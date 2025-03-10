@@ -14,7 +14,7 @@ cards:
   front: |
     What is the **fundamental property of a homography**?
   back: |
-  It always maps a straight line to a straight line.
+    It always maps a straight line to a straight line.
 - type: markdown
   front: |
     What is the group of all 3x3 homographies?
@@ -31,8 +31,3 @@ cards:
     What subgroups of PL(3) are we interested in?
   back: |
     **Projective** <- **Affine** <- **Similarity** <- **Euclidean**
-- type: markdown
-  front: |
-    What is the **general projective transform**?
-  back: |
-    [$$]H = \begin{bmatrix} A & \vec{t} \\\ \vec{v}^T & v\end{bmatrix}[/$$]

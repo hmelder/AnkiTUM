@@ -558,7 +558,7 @@ cards:
   id: 71  # (generated)
   front: |
     Explain the complete algorithm of **Robust 2D Homography Computation**?
-  back: |-
+  back: |
     1. **Interest points**: Compute keypoints in each image
     2. **Putative correspondences**: match keypoints using descriptors
     3. **RANSAC robust estimation:** Repeat for N samples, where N is determined adaptively
