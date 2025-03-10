@@ -1,0 +1,211 @@
+title: Rigid Body Motion and Robust Homography Estimation
+author: Hugo Melder
+id: 23293248907
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    What is a **bound vector**?
+  back: |
+    If p has coordinates X and q has coordinates Y, then v has coordinates:
+    [$$]v = Y - X \in \mathbb{R}^3[/$$]
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    What is a **free vector**?
+  back: |
+    Two pairs of points [$](p, q), (p', q')[/$] with coordinates satisfying
+    - [$]X = Y' - X'[/$] define the **same** free vector.
+
+    A free vector does *not* depend on its base point.
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    How to compute the **angle** between two vectors?
+  back: |
+    [$$]\cos \theta = \frac{\langle u, v \rangle}{||u||||v||}[/$$]
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    How to compute the **cross product** between two vectors?
+  back: |
+    [$$]u \times v = \begin{bmatrix} u_2v_3 - u_3v_2 \\\ u_3v_1 - u_1v_3 \\\ u_1v_2 - u_2v_1\end{bmatrix} \in \mathbb{R}^3[/$$]
+
+# TODO: Important properties of the cross product
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    What are the two coordinate frames we learned about in the 2nd lecture?
+  back: |
+    - object/body coordinate frame
+    - world frame
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    What is the **object coordinate frame**?
+  back: |
+    A rigid object can always be associated with a right-handed orthonormal
+    frame, which we call the **object coordinate frame**.
+
+# Special Euclidean Transformation
+
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    What is a rigid-body motion or a **special Euclidean transformation**?
+  back: |
+    A map [$]g: \mathbb{R}^3 \mapsto \mathbb{R}^3[/$] that:
+    - **preserves the norm** (*distance preserving*), and the
+    - **cross product** (*orientation preserving*)
+    of any two vectors.
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    What does a **change of basis** mean?
+  back: |
+    Write X as a linear combination of a new basis:
+    [$$]X = x'r_1 + y'r_2 + z'r_3 = \begin{bmatrix} r_1 & r_2 & r_3\end{bmatrix} \begin{bmatrix} x' \\ y' \\ z' \end{bmatrix}[/$$]
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    True or False. Rotations **preserve both** the inner and cross product of vectors
+  back: |
+    True
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    What is the *homogenous representation* of a rotation and translation special euclidean transformation?
+  back: |
+    [$$]SE(3) := \left\\{ g = \begin{bmatrix} R & T \\\ 0 & 1 \end{bmatrix} \vert R \in SO(3), T \in \mathbb{R}^3 \right\\} \subset \mathbb{R}^{4 \times 4}[/$$]
+
+# Composition of Rigid-body-motions
+
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    Given *three* camera frames, what is the rigid-body motion relating X1 to X3?
+    [[image: composition_rbm.png]]
+  back: |
+    [$$]X_3 = g_{32}g_{21}X_1 = g_{31}X_1[/$$]
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    What are the **composition rules** in homogeneous representation?
+  back: |
+    - [$]X_i = g_{ij}X_j[/$]
+    - [$]g_{ik} = g_{ij}g_{jk}[/$]
+    - [$]g_{ij}^{-1} = g_{ji}[/$]
+
+# Planar Projective Transformations
+
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    How are [$]X_1[/$] and [$]X_2[/$] related?
+    [[image: planar_scene.png]]
+  back: |
+    [$$]X_2 = (R - \frac{tN^T}{d})X_1[/$$]
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    How are [$]x_1[/$] and [$]x_2[/$] related?
+    [[image: planar_scene.png]]
+  back: |
+    [$$]\lambda x_2 = (R - \frac{tN^T}{d})x_1[/$$]
+    where [$]\lambda = \lambda_1/\lambda_2[/$]
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    Let [$]N = [n_1, n_2, n_3]^T[/$] be the **unit normal vector** representing
+    the plane w.r.t [$]C_1[/$].
+
+    What is [$]N^TX_1[/$]?
+  back: |
+    [$$]N^TX_1 = -d[/$$] the **perpendicular distance** from plane to [$]C_1[/$].
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    Why do we perform **reverse mapping** of a planar projective transformation?
+  back: |
+    Directly computing [$]x' = Hx[/$] leads to holes.
+    Instead compute [$]H^{-1}x' = x[/$]
+
+# 2D Homography
+
+- type: markdown
+  id: 16  # (generated)
+  front: |
+    What is a 2D Homography?
+  back: |
+    - **Given**: A set of **point correspondences** [$]x_i \leftrightarrow
+    x_i'[/$] between two images
+    - **Compute**: The **2D Homography** H, such that [$]Hx_i = x_i'[/$] for each i.
+- type: markdown
+  id: 17  # (generated)
+  front: |
+    How *many* **corresponding points** are required to compute H (2D Homography)?
+  back: |
+    H has 8 dof, and each point correspondence gives 2 constraints.
+    -> 4 point correspondences
+- type: markdown
+  id: 18  # (generated)
+  front: |
+    Why are in practice more the 4 point correspondences used to constrain H?
+  back: |
+    Messurements contain noise, thus more correspondences and the
+    **least-squares solution** is used.
+
+# Direct Linear Transform (DLT) Algorithm
+
+- type: markdown
+  id: 19  # (generated)
+  front: |
+    What is the objective of the Direct Linear Transform (DLT) Algorithm
+  back: |
+    Given [$]n \geq 4[/$] 2D to 2D point correspondences [$]\\{ x_i \leftrightarrow x_i'\\}[/$]
+    determine the 2D homography matrix H such that [$]x_i' = Hx_i[/$]
+- type: markdown
+  id: 20  # (generated)
+  front: |
+    Give an overview of how the Direct Linear Transform (DLT) Algorithm works.
+  back: |
+    1. For each correspondence compute [$]A_i[/$]. Usually only two first rows needed.
+    2. Assemble n [$]2 \times 9[/$] matrices [$]A_i[/$] into a single [$]2n \times 9[/$] matrix A
+    3. Obtain SVD of A. Solution for h is the last column of V.
+    4. Determine H from h.
+- type: markdown
+  id: 21  # (generated)
+  front: |
+    What happens if *three* of the minimum four points correspondences are **collinear**? 
+  back: |
+    The Rank of matrix A drops below 8, and we cannot solve for h.
+- type: markdown
+  id: 22  # (generated)
+  front: |
+    Do we need to check the selected points before performing DLT?
+  back: |
+    Check that selected points are not in the critical configuration, i.e. **collinear**.
+- type: markdown
+  id: 23  # (generated)
+  front: |
+    Why is data normalisation important before doing the SVD in DLT?
+  back: |
+    Orders of magnitude difference in constraint matrix causes bad behavior in the SVD solution.
+- type: markdown
+  id: 24  # (generated)
+  front: |
+    How can Data normalization be carried out?
+  back: |
+    By a tranformation of the points:
+    1. Points are translated so that their centroid is at the origin.
+    2. Points are then scaled so that the average distance from the origin is
+    equal to sqrt(2).
+    3. Transformation is applied to each of the two images independently.
+- type: markdown
+  id: 25  # (generated)
+  front: |
+    Explain how the normalised DLT Algorithm works!
+  back: |
+    [[image: normalised_dlt.png]]
+
+# TODO: Different Cost Functions

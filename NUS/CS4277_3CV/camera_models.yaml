@@ -1,0 +1,565 @@
+title: Camera Models and Calibration
+author: Hugo Melder
+id: 23471203903
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    Consider the plane [$]Z = f[/$] as the **image plane**, what is the
+    **central projection mapping** from world coordinates [$](X, Y, Z)^T[/$]?
+  back: |
+    [$$](X, Y, Z)^T \mapsto (fX/Z, fY/Z)^T, \mathbb{R}^3 \mapsto \mathbb{R}^2[/$$]
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    How is point **C**, the plane intersecting with **p**, and the **Z** axis called?
+    [[image: pinhole_model.png]]
+  back: |
+    - **C**: Camera Centre
+    - Image Plane
+    - Principal Axis
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    What is **p** and **f**?
+    [[image: pinhole_model_side.png]]
+  back: |
+    - **p**: Principal Point
+    - **f**: Focal Length
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    P is the 3x4 homogeneous _________ matrix
+  back: |
+    P is the 3x4 homogeneous camera projection matrix
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    Consider the plane [$]Z = f[/$] as the **image plane** with [$](p_x,
+    p_y)^T[/$] being the coordinates of the **principal point**, what is the
+    **central projection mapping** from world coordinates [$](X, Y, Z)^T[/$]?
+  back: |
+    [$$](X, Y, Z)^T \mapsto (fX/Z + p_x, fY/Z + p_y)^T, \mathbb{R}^3 \mapsto \mathbb{R}^2[/$$]
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    What is the **Camera Instrinsic Matrix** and how many DoF does it have?
+  back: |
+    [$$]\begin{bmatrix} f_x & s & p_x \\\ 0 & f_x & p_y \\\ 0 & 0 & 1\end{bmatrix}[/$$]
+
+    5 DoF
+# Camera Rotation and Translation
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    What is the **Camera Coordinate Frame**?
+  back: |
+    Frame anchored at the camera. Camera is at origin and principal axis points in the z-axis.
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    How are the **Camera Coordinate Frame** and **World Coordinate Frame** related?
+  back: |
+    By a **rigid transformation** (R, t)
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    Assuming the translation between **Camera Coordinate Frame** and **World Coordinate Frame**
+    is 0, and let [$]R[/$] be the rotation matrix.
+
+    How to compute [$]X_\text{cam}[/$] from [$]X[/$]?
+  back: |
+    [$$]X_\text{cam} = RX[/$$]
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    Assuming there is no rotation between **Camera Coordinate Frame** and **World Coordinate Frame**
+    is 0, and let [$]\tilde{C}[/$] be the translation vector.
+
+    How to compute [$]X_\text{cam}[/$] from [$]X[/$]?
+  back: |
+    [$$]X_\text{cam} = X - \tilde{C}[/$$]
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    Assuming there is rotation and translation between **Camera Coordinate Frame** and **World Coordinate Frame**
+    is 0.
+
+    Let [$]R[/$] be the rotation matrix and [$]\tilde{C}[/$] the translation vector.
+
+    How to compute [$]X_\text{cam}[/$] from [$]X[/$]?
+  back: |
+    [$$]X_\text{cam} = R(X - \tilde{C})[/$$]
+
+    or as in the lecture
+
+    [$$]X_\text{cam} = \begin{bmatrix} R & -R\tilde{C} \\\ 0 & 1\end{bmatrix}X[/$$]
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    Give the **general mapping** of a pinhole mapping?
+  back: |
+    [$]x = KR[I \vert -\tilde{C}]X[/$], where X is in a **world coordinate frame**.
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    Define the **camera projection matrix** P of the basic pinhole model.
+    How many DoF does P have?
+  back: |
+    [$]P = KR[I \vert -\tilde{C}][/$]. P has 9 dof.
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    How many DOF does a general camera projection matrix have?
+  back: |
+    11
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    What are the **internal camera parameters**?
+  back: |
+    Parameters contained in [$]K[/$].
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    What are the **external camera parameters**?
+  back: |
+    Parameters of [$]R[/$] and [$]\tilde{C}[/$] 
+
+# Euler Angles to Rotation Matrix
+
+- type: markdown
+  id: 16  # (generated)
+  front: |
+    What is the corresponding matrix for a **Yaw** rotation?
+
+    [[image: yaw_rotation.png]]
+  back: |
+    [$$]\begin{bmatrix} \cos \gamma & -\sin \gamma & 0 \\\ \sin \gamma & \cos \gamma & 0 \\\ 0 & 0 & 1 \end{bmatrix}[/$$]
+- type: markdown
+  id: 17  # (generated)
+  front: |
+    What is the corresponding matrix for a **Pitch** rotation?
+
+    [[image: pitch_rotation.png]]
+  back: |
+    [$$]\begin{bmatrix} \cos \beta & 0 & \sin \beta \\\ 0 & 1 & 0 \\\ -\sin \beta & 0 & \cos \beta \end{bmatrix}[/$$]
+- type: markdown
+  id: 18  # (generated)
+  front: |
+    What is the corresponding matrix for a **Roll** rotation?
+
+    [[image: roll_rotation.png]]
+  back: |
+    [$$]\begin{bmatrix} 1 & 0 & 0 \\\ 0 & \cos \alpha & -\sin \alpha \\\ 0 & \sin \alpha & \cos \alpha \end{bmatrix}[/$$]
+- type: markdown
+  id: 19  # (generated)
+  front: |
+    How is R decomposed into Roll, Pitch, Yaw?
+  back: |
+    [$$]R = R_\text{yaw} R_\text{pitch} R_\text{roll}[/$$]
+- type: markdown
+  id: 20  # (generated)
+  front: |
+    What is a Yaw rotation?
+  back: |
+    Rotation along Z-axis.
+- type: markdown
+  id: 21  # (generated)
+  front: |
+    What is a Pitch rotation?
+  back: |
+    Rotation along Y-axis.
+- type: markdown
+  id: 22  # (generated)
+  front: |
+    What is a Roll rotation?
+  back: |
+    Rotation along X-axis.
+- type: markdown
+  id: 23  # (generated)
+  front: |
+    What are two properties of rotation matrices?
+  back: |
+    1. **Square** (either 2x2 or 3x3)
+    2. **Orthonormal**
+- type: markdown
+  id: 24  # (generated)
+  front: |
+    What are 5 important properties of **orthonormal matrices**?
+  back: |
+    [[image: orthonormal_matrix_prop.png]]
+
+# General Projective Camera
+
+- type: markdown
+  id: 25  # (generated)
+  front: |
+    What is the **General Projective Camera**?
+  back: |
+    The only constraint placed on the projection matrix P is rank(P) = 3.
+
+# Finite Projective Cameras
+- type: markdown
+  id: 26  # (generated)
+  front: |
+    True or false? The Finite Projective set includes cameras that cannot be realised physically.
+  back: |
+    True.
+
+- type: markdown
+  id: 27  # (generated)
+  front: |
+    The set of camera matrices of **finite projective cameras**
+    [$]P = KR[I \vert -\tilde{C}][/$]
+    is identical with...
+  back: |
+    the set of homogeneous 3x4 matrices, i.e.
+    [$]P = M[I \vert M^{-1}p_4] = KR[I \vert -\tilde{C}][/$]
+
+    for which M is **non-singular**.
+
+## Camera Anatomy
+
+- type: markdown
+  id: 28  # (generated)
+  front: |
+    How to compute the camera centre [$]C[/$] from the **camera projection
+    matrix** [$]P[/$]?
+  back: |
+    [$]C[/$] is the right null-space of [$]P[/$], i.e. [$]PC = 0[/$].
+- type: markdown
+  id: 29  # (generated)
+  front: |
+    What is the **undefined** image point?
+  back: |
+    The camera centre is one unique point in the world frame for which an image point is *not* defined.
+- type: markdown
+  id: 30  # (generated)
+  front: |
+    Why is the camera centre the right-nullspace fo the **camera projection matrix**?
+  back: |
+    The points on a 3D line passing through C and A are expressed as a **vector span**:
+
+    [$$]X(\lambda) = \lambda A + (1 - \lambda)C[/$$]
+
+    Under the mapping [$]x = PX[/$], points on this line are projected to
+
+    [$$]x = PX(\lambda) = \lambda PA + (1-\lambda)PC = \lambda PA[/$$]
+
+    i.e. *all* points [$]X(\lambda)[/$] are mapped to the same image point [$]PA[/$].
+    Hence, the line must be a **ray through the camera centre**.
+- type: markdown
+  id: 31  # (generated)
+  front: |
+    What are the first three column vectors of the **camera projection matrix**?
+  back: |
+    The **vanishing points of the world coordinate** X,Y, and Z-axis.
+- type: markdown
+  id: 32  # (generated)
+  front: |
+    What is the fourth column vector of the **camera projection matrix**?
+  back: |
+    The **image of the world origin [$]\begin{pmatrix} 0 & 0 & 0 & 1\end{pmatrix}^T[/$]
+- type: markdown
+  id: 33  # (generated)
+  front: |
+    How can the row vectors of the **camera projection matrix** be interpreted geometrically?
+  back: |
+    As **particular world planes**.
+- type: markdown
+  id: 34  # (generated)
+  front: |
+    What is the **principal plane**?
+  back: |
+    The plane **through the camera centre parallel to the image plane**.
+
+    [[image: principal_plane.png]]
+- type: markdown
+  id: 35  # (generated)
+  front: |
+    What is the third row vector of the **camera projection matrix**?
+  back: |
+    The **principal plane**.
+- type: markdown
+  id: 36  # (generated)
+  front: |
+    What are the **axis planes**?
+  back: |
+    Defined by the camera centre C and the line x = 0 and y = 0 respectively.
+
+    [[image: axis_plane.png]]
+- type: markdown
+  id: 37  # (generated)
+  front: |
+    What is the first and second row vector of the **camera projection matrix**?
+  back: |
+    The **axis planes**.
+- type: markdown
+  id: 38  # (generated)
+  front: |
+    What is the **principal axis vector**?
+  back: |
+    [$]v = \det(M)m^3[/$] is a vector in the direction of the principal axis,
+    directed towards the **front of the camera**.
+
+    Where [$]P = [M \vert p_4][/$], and [$]m^3[/$] the third row of M.
+- type: markdown
+  id: 39  # (generated)
+  front: |
+    How to compute the principal point from the **camera projection matrix**
+    [$]P = [M \vert p_4][/$]?
+  back: |
+    The **image point** [$]x_0 = Mm^3[/$] is the **principal point** of the camera, where [$]m^{3T}[/$] is the third row of M.
+
+# Action of a Projective Camera on Points
+
+- type: markdown
+  id: 40  # (generated)
+  front: |
+    What is **forward projection**?
+  back: |
+    Mapping a point in space to an image point: [$]x = PX[/$].
+- type: markdown
+  id: 41  # (generated)
+  front: |
+    What is **back-projection**?
+  back: |
+    Back-projection of *points* to *rays*. The ray is **the line**:
+    [$]X(\lambda) = P^+ x + \lambda C[/$].
+- type: markdown
+  id: 42  # (generated)
+  front: |
+    What is the **pseudo-inverse** of P?
+  back: |
+    [$$]P^+ = P^T(PP^T)^{-1}[/$$]
+- type: markdown
+  id: 43  # (generated)
+  front: |
+    Let [$]X = (X, Y, Z, T)^T[/$] be a 3D point and P be a camera matrix for a
+    **finite camera**.
+
+    Suppose [$]P(X,Y,Z,T)^T = w(x,y,1)^T[/$]. How to compute the depth of X **in
+    front of the principal plane** of the camera.
+  back: |
+    [$$]\text{depth}(X; P) = \frac{\text{sign}(\det M)w}{T ||m^3||}[/$$]
+- type: markdown
+  id: 44  # (generated)
+  front: |
+    How to determinate if a point X is in front of the camera?
+  back: |
+    Compute the depth(X; P).
+
+# Decomposition of the Camera Matrix
+
+- type: markdown
+  id: 45  # (generated)
+  front: |
+    Explain what is meant by the **Decomposition of the Camera Matrix**!
+  back: |
+    - **Given**: The  **camera matrix** P representing a *general projective* camera.
+    - **Find**: The **camera centre**, **orientation**, and the **internal parameters**.
+- type: markdown
+  id: 46  # (generated)
+  front: |
+    How to decompose the **camera projection matrix** P into KR?
+  back: |
+    From **RQ decomposition** of M.
+- type: markdown
+  id: 47  # (generated)
+  front: |
+    What are the parameters in
+    [$$]K = \begin{bmatrix} f_x & s & p_x \\\ 0 & f_x & p_y \\\ 0 & 0 & 1\end{bmatrix}[/$$]?
+  back: |
+    - [$]f_x[/$]: Scale factor in the x-coordinate direction
+    - [$]f_y[/$]: Scale factor in the y-coordinate direction
+    - [$]s[/$]: skew
+    - [$](p_x, p_y)^T[/$]: coordinates of the principal point.
+- type: markdown
+  id: 48  # (generated)
+  front: |
+    What is the aspect ratio of camera
+    [$$]K = \begin{bmatrix} f_x & s & p_x \\\ 0 & f_x & p_y \\\ 0 & 0 & 1\end{bmatrix}[/$$]?
+  back: |
+    [$]f_y/f_x[/$]
+
+# A Hierarchy of Affine Cameras
+
+- type: markdown
+  id: 49  # (generated)
+  front: |
+    What is Orthographic Projection?
+  back: |
+    - No change in scale
+    - **optical centre** is located at infinity
+    - Projection rays are parallel
+    - Model *ignores* depth
+
+    [[image: orthographic_projection.png]]
+- type: markdown
+  id: 50  # (generated)
+  front: |
+    What is the Camera projection matrix for Orthographic Projection?
+  back: |
+    [$$]P = \begin{bmatrix} 1 & 0 & 0 & 0 \\\ 0 & 1 & 0 & 0 \\\ 0 & 0 & 0 & 1 \end{bmatrix} \begin{bmatrix} R & \bold{t} \\\ \bold{0}^T & 1\end{bmatrix} = \begin{bmatrix} r^{1T} & t_1 \\\ r^{2T} & t_2 \\\ 0^T & 1\end{bmatrix}[/$$]
+- type: markdown
+  id: 51  # (generated)
+  front: |
+    How many dof does an orthographic camera projection matrix have?
+  back: |
+    5 (three parameters for R, and two for t)
+- type: markdown
+  id: 52  # (generated)
+  front: |
+    What is a scaled orthographic projection?
+  back: |
+    A point in 3D space is:
+    1. projected to a **reference plane** using *orthographic projection*, and then
+    2. projected to the image plane using a **perspective projective**
+
+    [[image: scaled_orthographic_projection.png]]
+- type: markdown
+  id: 53  # (generated)
+  front: |
+    What is the camera projection matrix of a scaled orthographic projection?
+  back: |
+    [$$]P = \begin{bmatrix} k & 0 & 0 \\\ 0 & k & 0 \\\ 0 & 0 & 1\end{bmatrix} \begin{bmatrix} r^{1T} & t_1 \\\ r^{2T} & t_2 \\\ 0^T & 1\end{bmatrix} = \begin{bmatrix} r^{1T} & t_1 \\\ r^{2T} & t_2 \\\ 0^T & 1/k\end{bmatrix}[/$$]
+- type: markdown
+  id: 54  # (generated)
+  front: |
+    How many dof does a scaled orthographic camera projection matrix have?
+  back: |
+    6
+- type: markdown
+  id: 55  # (generated)
+  front: |
+    What is a weak perspective projection?
+  back: |
+    - Similar to scaled orthographic projection.
+    - Difference: allow **two different scalings** in the two different axial
+    image directions.
+
+# TODO: Calibration of Projective Camera
+
+- type: markdown
+  id: 56  # (generated)
+  front: |
+    What does the DLT algorithm minimize?
+  back: |
+    The norm [$]||Ah||[/$], where [$]\epsilon = Ah[/$] is called the residual vector.
+- type: markdown
+  id: 57  # (generated)
+  front: |
+    How does the **Algebraic Distance** cost function work?
+  back: |
+    Each correspondence contributes a partial error vector [$]\epsilon_i[/$], where the norm is called the
+    **algebraic distance**:
+
+    [$$]d_\text{alg}(x_i', Hx_i)^2 = ||\epsilon_i||^2[/$$]
+- type: markdown
+  id: 58  # (generated)
+  front: |
+    What is one disadvantage of the **Algebraic Distance** cost function?
+  back: |
+    The disadvantage is that the quantity that is minimized is **not meaningful** geometrically nor statistically.
+- type: markdown
+  id: 59  # (generated)
+  front: |
+    What is one advantage of the **Algebraic Distance** cost function?
+  back: |
+    **linear solution** thus **computationally inexpensive**.
+- type: markdown
+  id: 60  # (generated)
+  front: |
+    What is the **geometric distance** cost function?
+  back: |
+    **Difference between** the **meassured and estimated** image coordinates.
+
+    The **transfer error** is minimized over the estimated homography H:
+    [$$]\sum_i d(x_i', Hx_i)^2[/$$]
+- type: markdown
+  id: 61  # (generated)
+  front: |
+    What is the **symmetric transfer error** in the *geometric distance* cost function?
+  back: |
+    Considers the forward (H) and the backward (H^-1) tranformation:
+    [$$]\sum_i d(x_i,H^{-1}x_i')^2 + d(x_i', Hx_i)^2[/$$]
+- type: markdown
+  id: 62  # (generated)
+  front: |
+    What is the **reprojection transfer error** in the *geometric distance* cost function?
+  back: |
+    Seeking of a homography [$]\hat{H}[/$] and pairs of **perfectly matched points** [$]\hat{x}_i[/$]
+    and [$]\hat{x}_i'[/$] that minimize the total error function:
+
+    [$$]\sum_i d(x_i, \hat{x}_i)^2 + d(x_i', \hat{x}_i')^2[/$$] subject to [$$]\hat{x}_i' = \hat{H}\hat{x}_i, \forall i[/$$]
+- type: markdown
+  id: 63  # (generated)
+  front: |
+    What is one disadvantage of the *geometric distance* cost function?
+  back: |
+    Reprojection error is **computationally complex**
+- type: markdown
+  id: 64  # (generated)
+  front: |
+    What is one advantage of the *sampson error* cost function?
+  back: |
+    - **Lies between** the algebraic and geometric cost functions in terms of complexity
+    - **close approximation** to reprojection error
+- type: markdown
+  id: 65  # (generated)
+  front: |
+    How does the *sampson error* work?
+  back: |
+    Let [$]C_H(X) = 0[/$] denote the cost function Ah = 0. [$]\hat{X}[/$] is the desired point so that [$]C_H(\hat{X}) = 0[/$], where [$]\delta_X = \hat{X} - X[/$].
+    The cost function is approximanted by a **taylor expansion**:
+    [$$]\mathcal{C}_H(X + \delta_X) = \mathcal{C}_H(X) + (\partial \mathcal{C}_H / \partial X)\delta_X = 0[/$$]
+# TODO: Solving sampson error and Iterative Minimisation
+
+# RANSAC Algorithm
+
+- type: markdown
+  id: 66  # (generated)
+  front: |
+    What is the objective of the RANSAC algorithm?
+  back: |
+    Robust fit of a model to a data set S which contains outliers.
+- type: markdown
+  id: 67  # (generated)
+  front: |
+    How does the RANSAC algorithm work?
+  back: |
+    1. **Randomly select** a sample of s data points from S and instantiate the model from this subset.
+    2. Determine a set of data points [$]S_i[/$] which are **within a distance threshold** t of the model.
+    3. After N trials, select the **largest consensus set [$]S_i[/$]. The model
+    is re-estimated using all the points in the subset [$]S_i[/$].
+- type: markdown
+  id: 68  # (generated)
+  front: |
+    What are the minimum number of points needed to fit the model in RANSAC?
+  back: |
+    2 for line and 4 for homography
+- type: markdown
+  id: 69  # (generated)
+  front: |
+    How is the distance threshold t chosen in RANSAC?
+  back: |
+    Usually chosen empirically
+- type: markdown
+  id: 70  # (generated)
+  front: |
+    What is the probability that RANSAC never selects a set of s points which all are inliers?
+  back: |
+    [$$]1-p = (1-w^s)^N \implies N = \frac{\log(1-p)}{\log(1-w^s)}[/$$]
+
+    - p: *probability* that **at least one** of the random samples of s points is **free from outliers**
+    - w: *probability* **that any selected point is an inlier**.
+- type: markdown
+  id: 71  # (generated)
+  front: |
+    Explain the complete algorithm of **Robust 2D Homography Computation**?
+  back: |-
+    1. **Interest points**: Compute keypoints in each image
+    2. **Putative correspondences**: match keypoints using descriptors
+    3. **RANSAC robust estimation:** Repeat for N samples, where N is determined adaptively
+    4. **Optimal estimation**: re-estimate H from all correspondences classified as inliers.

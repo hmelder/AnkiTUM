@@ -1,0 +1,38 @@
+title: Transformation and Transformation Groups (ECE 661)
+author: Hugo Melder
+id: 3948234324234
+cards:
+- type: markdown
+  front: |
+    What is a **Planar Projective Transform**?
+  back: |
+    - *linear* transformation on homogenenous vectors
+    - represented by **non-singular** matrix H
+
+    [$]x' = Hx[/$]
+- type: markdown
+  front: |
+    What is the **fundamental property of a homography**?
+  back: |
+  It always maps a straight line to a straight line.
+- type: markdown
+  front: |
+    What is the group of all 3x3 homographies?
+  back: |
+    PL(3) (*projective linear*)
+- type: markdown
+  front: |
+    How is PL(3) constructed?
+  back: |
+    We partition GL(3) into **equivalence classes** where all the 3x3 matrices
+    in the same class are related by scalar multiples.
+- type: markdown
+  front: |
+    What subgroups of PL(3) are we interested in?
+  back: |
+    **Projective** <- **Affine** <- **Similarity** <- **Euclidean**
+- type: markdown
+  front: |
+    What is the **general projective transform**?
+  back: |
+    [$$]H = \begin{bmatrix} A & \vec{t} \\\ \vec{v}^T & v\end{bmatrix}[/$$]
