@@ -209,3 +209,72 @@ cards:
     [[image: normalised_dlt.png]]
 
 # TODO: Different Cost Functions
+- type: cloze
+  id: 26  # (generated)
+  front: |
+    The DLT algorithm minimizes the norm {{c1:: ||Ah|| }}, where {{c1: 𝝐 = Ah}} is called the residual vector.
+- type: markdown
+  id: 27  # (generated)
+  front: |
+    What is the **algebraic distance**?
+  back: |
+    Each correspondence contributes a *partial error vector* [$]\epsilon_i \in
+    \mathbb{R}^2[/$], where **the norm** is called the algebraic distance.
+- type: markdown
+  id: 28  # (generated)
+  front: |
+    What is the **total algebraic error**?
+  back: |
+    The sum of all squared *algebraic distances*: [$]\sum_i ||\epsilon_i||^2[/$]
+- type: markdown
+  id: 29  # (generated)
+  front: |
+    What is a disadvantage of the algebraic distance as a cost function?
+  back: |
+    The quantity that is minimized is *not meaningful* geometrically nor statistically.
+- type: markdown
+  id: 30  # (generated)
+  front: |
+    What is an advantage of the algebraic distance as a cost function?
+  back: |
+    **Linear** and thus **computationally inexpensive**.
+- type: markdown
+  id: 31  # (generated)
+  front: |
+    What is the geometric distance?
+  back: |
+    **Difference between** the **messured and estimated** image coordinates.
+- type: markdown
+  id: 32  # (generated)
+  front: |
+    What is the **transfer error** in one image?
+  back: |
+    [$$]\sum_i d(x_i', Hx_i)^2[/$$]
+- type: markdown
+  id: 33  # (generated)
+  front: |
+    What is the **symmetric transfer error** in one image?
+  back: |
+    [$$]\sum_i d(x_i, H^{-1}x_i')^2 + d(x_i', Hx_i)^2[/$$]
+- type: markdown
+  id: 34  # (generated)
+  front: |
+    What is the **reprojection error**?
+  back: |
+    We are seeking a homography [$]\hat{H}[/$] and pairs of **perfectly matched
+    points** that minimize the total error function. 
+- type: markdown
+  id: 35  # (generated)
+  front: |
+    What is the disadvantage of using the **reprojection error** as the cost function?
+  back: |
+    Computationally complex
+- type: markdown
+  id: 36  # (generated)
+  front: |
+    What is the advantage of using the **sampson error** as the cost function?
+  back: |
+    - **lies between** the algebraic and geometric cost functions in terms of complexity
+    - **close approximation** to reprojection error
+
+# TODO: Sampson Error and Iterative Minimization

@@ -36,3 +36,73 @@ cards:
     What subgroups of PL(3) are we interested in?
   back: |-
     **Projective** <- **Affine** <- **Similarity** <- **Euclidean**
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    What is the **general planar projective transform?
+  back: |
+    [$$]\begin{bmatrix} A & \vec{t} \\\ \vec{v}^T & v\end{bmatrix}[/$$]
+
+    with [$]A = \begin{bmatrix} a_{11} & a_{12} \\\ a_{21} & a_{22} \end{bmatrix}[/$],
+    [$]\vec{t} = \begin{pmatrix} t_x \\\ t_y \end{pmatrix}[/$],
+    [$]\vec{v} = \begin{pmatrix} v_1 \\\ v_2 \end{pmatrix}[/$]
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    What implication does it have for homography H to be homogeneous?
+  back: |
+    Only the *ratios* of elements of H are important.
+
+# Affine Transformations
+
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    How are **affine transformations** commonly expressed as?
+  back: |
+    [$]\begin{pmatrix} x_1' \\\ x_2' \\\ 1\end{pmatrix} = \begin{bmatrix} a_{11} & a_{12} & t_x \\\ a_{21} & a_{22} & t_y \\\ 0 & 0 & 1\end{bmatrix} \begin{pmatrix} x_1 \\\ x_2 \\\ 1\end{pmatrix}[/$]
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    Is the **affine transformations** Matrix A singular?
+  back: |
+    No. It is **non-singular**
+- type: cloze
+  id: 9  # (generated)
+  front: |
+    A not only takes straight lines into straight lines, it also keeps {{c1::parallel}} lines {{c1::parallel}}.
+- type: cloze
+  id: 10 # (generated)
+  front: |
+    A homography H is *affine* if and only if the {{c1::line at infinity}} is mapped to the {{c1::line at infinity}}
+
+# Similarity Transformations
+
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    How is the similarity group obtained from the affine group?
+  back: |
+    By requiring that A be orthogonal: [$]A^TA = \lambda^2I[/$]
+- type: cloze
+  id: 12 # (generated)
+  front: |
+    Similarity transform preserves {{c1::angles}} 
+
+# Euclidean Transformations
+
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    How is the euclidean group obtained from the similarity group?
+  back: |
+    By further requiring that A be orthonormal: [$]A^TA = I[/$].
+- type: cloze
+  id: 14  # (generated)
+  front: |
+    The group of euclidean transformations corresponds to {{c1::rigid body motions}} 
+- type: cloze
+  id: 15  # (generated)
+  front: |-
+    Euclidean transformations preserve the {{c1::euclidean distance}} between
+    any two points in the domain plane.

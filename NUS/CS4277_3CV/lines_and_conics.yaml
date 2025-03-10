@@ -1,0 +1,88 @@
+title: Points, Lines, and Conics (ECE 661)
+author: Hugo Melder
+id: 22348923238
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    Given any two lines [$]l_1 = \begin{pmatrix} a_1 \\\ b_1 \\\ c_1 \end{pmatrix}[/$]
+    and [$]l_2 = \begin{pmatrix} a_2 \\\ b_2 \\\ c_2 \end{pmatrix}[/$], what is the point at the intersection?
+  back: |
+    [$]x = l_1 \times l_2[/$]
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    Given any two points [$]x_1 = \begin{pmatrix} x_1 \\\ y_1 \\\ z_1 \end{pmatrix}[/$]
+    and [$]x_2 = \begin{pmatrix} x_2 \\\ y_2 \\\ z_2 \end{pmatrix}[/$], what is the line passing through both points?
+  back: |
+    [$]l = x_1 \times x_2[/$]
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    What is the scalar triple dot product identity?
+  back: |
+    [$]\vec{A} \cdot (\vec{A} \times \vec{B}) = \vec{B} \cdot (\vec{A} \times \vec{B}) = 0[/$]
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    What are ideal points?
+  back: |
+    [$]\begin{pmatrix} u \\\ v \\\ 0 \end{pmatrix}[/$] are known as **Ideal Points**.
+- type: cloze
+  id: 4  # (generated)
+  front: |
+    All ideal points form a {{c1::straight line in R^2}}.
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    What is the line at infinity?
+  back: |
+    [$]\begin{pmatrix} 0 & 0 & 1 \end{pmatrix}[/$]
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    How is the camera image of the line at infinity called?
+  back: |
+    Vanishing Line.
+
+# Conic
+
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    What is a conic?
+  back: |
+    A curve that is described by a *second-degree* implicit algebraic form in a plane.
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    What is the implicit form for a conic in the physical plane [$]\mathbb{R}^2[/$]?
+  back: |
+    [$$]ax^2 + bxy + cy^2 + dx + ey + f = 0[/$$]
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    What is the HC representation of a conic?
+  back: |
+    [$$]\begin{bmatrix} a & b/2 & d/2 \\\ b/2 & c & e/2 \\\ d/2 & e/2 & f\end{bmatrix}[/$$]
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    What is the line tangent to a conic C at point x?
+  back: |
+    [$$]l = Cx[/$$]
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    What is a degenerate conic?
+  back: |
+    When you slice the double cones with a plane that passe through the **axis**
+    of the double cones, you will now see two intersecting straight lines.
+
+    These two lines constitute a **degenerate conic**.
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    What is the HC representation of a degenerate conic?
+  back: |
+    [$$]C = lm^T + ml^T[/$$]
