@@ -70,16 +70,6 @@ cards:
 # Behavioural Synthesis
 
 - type: markdown
-  id: 9  # (generated)
-  front: |
-    What are the benefits of Behavioural Synthesis?
-  back: |
-    - Reduce specification of details
-    - Reduce design time
-    - Extend designer base
-    - Self-documenting design specifications
-    - Ease of modifications and extensions
-- type: markdown
   id: 10  # (generated)
   front: |
     What are the primary steps in behavioural synthesis?
