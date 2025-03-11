@@ -1,0 +1,203 @@
+title: Single View Metrology
+author: Hugo Melder
+id: 347802347283
+cards:
+# Action of Projective Camera on Lines
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    What is a **forward projection**?
+  back: |
+    A line in 3-space **projects to a line** in the image.
+- type: cloze
+  id: 1  # (generated)
+  front: |
+    The line and camera centre define a {{c1:plane}}, and the image is the {{c1:intersection}} of this plane with the {{c1:image plane}}.
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    Describe the following picture:
+    [[image: forward_projection.png]]
+  back: |
+    Forward projection of line in 3-space to a line in the image.
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    Given two 3-space points [$]\bold{A}, \bold{B}[/$], where [$]\bold{a}, \bold{b}[/$]
+    are their images under P, then a point [$]\bold{X}(\mu) = \bold{A} + \mu\bold{B}[/$] on L projects to  a point ...
+
+    [[image: forward_projection_point.png]]
+  back: |
+    [$$]x(\mu) = P(\bold{A} + \mu\bold{B}) = P\bold{A} + \muP\bold{B} = \bold{a} + \mu \bold{b}[/$$]
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    What is the **back-projection of lines**?
+
+    [[image: forward_projection.png]]
+  back: |
+    The set of points in space which map to a line in the image is a **plane in
+    space** defined by the camera centre and image line.
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    The set of points in space mapping to a line l via the camera matrix P is the **plane**...
+
+    [[image: forward_projection.png]]
+  back: |
+    [$$]\pi = P^Tl[/$$]
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    What is the **back-projection of conics** under the camera P?
+  back: |
+    Conic C **back-projects** to a **cone**:
+    [$$]Q_\text{co} = P^TCP
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    What is a cone?
+  back: |
+    A **degenerate quadric**: The 4x4 matrix Q does not have full rank.
+
+# TODO: Images of Smooth Surfaces
+
+# Action of a Projective Camera on Quadrics
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    What is the **forward-projection** of a quadric under the camera matrix P?
+  back: |
+    [$$]C^\* = PQ^\*P^T[/$$]
+
+# The Importance of the Camera Centre
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    What effect does the moving of the image plane by increasing the *focal length* have?
+  back: |
+    Zooming
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    What is the magnification factor, when moving the image plane?
+  back: |
+    [$]f'/f[/$]
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    How to manipulate K to account for a zooming by a factor k?
+  back: |
+    Multiply the calibration matrix K on the right by [$]\text{diag}(k, k, 1)[/$].
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    Consider the camera is **rotated about its centre** with **no change** in
+    the internal parameters.
+
+    How are x and x' related?
+
+    [[image: pure_camera_rotation.png]]
+  back: |
+    [$$]x' = Hx, \\ H = KRK^{-1}[/$$]
+
+## Conjugate rotation
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    How do we call the homography [$]H = KRK^{-1}[/$], which is a pure rotation of the camera?
+  back: |
+    Conjugate rotation.
+- type: cloze
+  id: 14  # (generated)
+  front: |
+    The conjugate rotation H has the same {{c1:eigenvalues}} (up to scale) as the rotation matrix
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    How can the **angle of rotation** between views computed by only having the conjugate rotation matrix H?
+  back: |
+    From the *phase* of the complex eigenvalues of H
+
+## Moving the camera centre
+- type: markdown
+  id: 16  # (generated)
+  front: |
+    How is moving the camera centre (motion parallax) often used?
+  back: |
+    To partially **determine the structure**.
+- type: markdown
+  id: 17  # (generated)
+  front: |
+    What are **synthetic views**?
+  back: |
+    New images corresponding to *different* camera orientations *(same camera
+    centre)*.
+- type: markdown
+  id: 18  # (generated)
+  front: |
+    How can **synthetic views** be generated?
+  back: |
+    From an existing image by **warping with planar homographies**
+- type: markdown
+  id: 19  # (generated)
+  front: |
+    What is the algorithm for creating a synthetic view?
+  back: |
+    1. Compute the homography H which **maps the image quadrilateral to a
+    rectangle** with correct aspect ratio.
+    2. Projectively warp the source image with this homography.
+
+# Planar Panoramic Mosaicing
+- type: cloze
+  id: 20  # (generated)
+  front: |
+    Images acquired by a camera rotating about its centre are related to each other by a {{c1:planar homography}}.
+- type: markdown
+  id: 21  # (generated)
+  front: |
+    Outline the Planar Panoramic Mosaicing algorithm.
+  back: |
+    1. Choose one image of the **set as a reference**
+    2. **Compute the homography** H (4-point) which maps one of the other images of the set to this reference image
+    3. Projectively **warp the images** with this homography, and augment the refgerence image with the non-overlapping part of the warped image
+    4. Repeat step 2 and 3 for the remaining images
+
+# What does Calibration Give?
+- type: cloze
+  id: 22 # (generated)
+  front: |
+    The angle between rays can be {{c1:messured}} from their corresponding
+    {{c1:image points}}, if the camera K is {{c1:calibrated}}.
+
+# Image of the Absolute Conic
+- type: markdown
+  id: 23  # (generated)
+  front: |
+    Points on [$]\pi_\infty[/$] may be written as [$]X_\infty = (\bold{d}^T, 0)^T, and are imaged by a general camera as ...
+  back: |
+    [$$]x = PX_\infty = KR[I | -\tilde{C}] \begin{pmatrix} \bold{d} \\\ 0\end{pmatrix} = KR\bold{d}[/$$]
+- type: markdown
+  id: 24  # (generated)
+  front: |
+    What is the **image of the absolute conic** (IAC)?
+  back: |
+    The conic [$]\omega = (KK^T)^{-1} = K^{-T}K^{-1}[/$]
+- type: cloze
+  id: 25  # (generated)
+  front: |
+    The IAC depends only on {{c1:the internal camera parameters}}, and does not
+    depend on {{c1:orientation}} or {{c1:position}}.
+- type: markdown
+  id: 26  # (generated)
+  front: |
+    What is the dual image of the absolute conic (DIAC)?
+  back: |-
+    [$$]\omega^\* = w^{-1} = KK^T[/$$]
+- type: markdown
+  front: |
+    How can K be identified, once the IAC is known?
+  back: |-
+    Via **Cholesky factorization**, i.e. [$]\omega^\* = KK^T[/$]
+
+# TODO: A simple Calibration Device

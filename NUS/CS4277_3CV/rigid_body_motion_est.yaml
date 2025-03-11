@@ -178,6 +178,9 @@ cards:
     What is [$]N^TX_1[/$]?
   back: |
     [$$]N^TX_1 = -d[/$$] the **perpendicular distance** from plane to [$]C_1[/$].
+
+# TODO: How can a plane be represented by a unit normal vector?
+
 - type: markdown
   id: 15  # (generated)
   front: |
@@ -257,6 +260,17 @@ cards:
     2. Points are then scaled so that the average distance from the origin is
     equal to sqrt(2).
     3. Transformation is applied to each of the two images independently.
+- type: markdown
+  id: 47  # (generated)
+  front: |
+    Now to construct [$]T_\text{norm}[/$] for the normalized DLT algorithm?
+  back: |
+    [$$]T_\text{norm} = \begin{bmatrix} s & 0 & -sc_y \\\ 0 & s & -sc_y \\\ 0 & 0 & 1\end{bmatrix}[/$$]
+
+    - c is the **centroid** of all data points
+    - [$]s = \frac{\sqrt{2}}{d}[/$]
+    - d is the *mean distance* of all points from centroid
+
 - type: markdown
   id: 25  # (generated)
   front: |
