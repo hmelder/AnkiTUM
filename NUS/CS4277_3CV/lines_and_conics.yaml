@@ -86,3 +86,17 @@ cards:
     What is the HC representation of a degenerate conic?
   back: |
     [$$]C = lm^T + ml^T[/$$]
+
+# Five Points Define a Conci
+- type: cloze
+  id: 13  # (generated)
+  front: |
+    {{c1: Five}} points define a conic
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    How to constrain a conic C given five points?
+  back: |-
+    1. Stack constraints from five points to matrix A
+    2. Obtain the right null-space of this 5x6 matrix
+    3. Reconstruct C from the solution
