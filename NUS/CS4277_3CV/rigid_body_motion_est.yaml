@@ -31,7 +31,63 @@ cards:
   back: |
     [$$]u \times v = \begin{bmatrix} u_2v_3 - u_3v_2 \\\ u_3v_1 - u_1v_3 \\\ u_1v_2 - u_2v_1\end{bmatrix} \in \mathbb{R}^3[/$$]
 
-# TODO: Important properties of the cross product
+# Important properties of the cross product
+- type: cloze
+  id: 37  # (generated)
+  front: |
+    The cross product can be represented by a {{c1: linear mapping}} from R^3 to R^3
+- type: markdown
+  id: 38  # (generated)
+  front: |
+    How can the **cross product** be represented as a matrix, and what properties does this matrix have?
+  back: |
+    [$$]\hat{u} = \begin{bmatrix} 0 & -u_3 & u_2 \\\ u_3 & 0 & -u_1 \\\ -u_2 & u_1 & 0 \end{bmatrix} \in \mathbb{R}^{3 \times 3}[/$$]
+
+    The matrix is **skew-symmetric**.
+
+# Extra: Properties of a skew-symmetric matrix
+
+- type: markdown
+  id: 39  # (generated)
+  front: |
+    What property does a **skew-symmetric** matrix satisfy?
+  back: |
+    [$$]A^T = -A[/$$]
+- type: cloze
+  id: 40  # (generated)
+  front: |
+    The sum of two skew-symmetric matrices is {{c1: skew-symmetric}}
+- type: cloze
+  id: 41  # (generated)
+  front: |
+    A scalar multiple of a skew-symmetric matrix is {{c1: skew-symmetric}}
+- type: markdown
+  id: 42  # (generated)
+  front: |
+    What are the values of the diagonal elements of a skew-symmetric matrix?
+  back: |
+    All elements are zero.
+- type: markdown
+  id: 43  # (generated)
+  front: |
+    If A is a *real* skew-symmetric matrix and λ is a real eigenvalue, what is λ?
+  back: |
+    [$$]\lambda = 0[/$$]
+- type: cloze
+  id: 44  # (generated)
+  front: |
+    Nonzero eigenvalues of a skew-symmetric matrix are {{c1: non-real}}.
+- type: markdown
+  id: 45  # (generated)
+  front: |
+    If A is a *real* skew-symmetric matrix, then [$]I + A[/$] is...
+  back: |
+    Invertible
+- type: cloze
+  id: 46 # (generated)
+  front: |
+    If A is a skew-symmetric matrix, then A^2 is a {{c1: symmetric negative semi-definite matrix}}.
+
 - type: markdown
   id: 4  # (generated)
   front: |
