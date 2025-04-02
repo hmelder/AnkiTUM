@@ -39,20 +39,20 @@ cards:
 - type: markdown
   id: 4  # (generated)
   front: |
-    What is clock skew ([$]\gamma_\text{skew}[/$])
+    What is clock skew ([$]\delta\text{skew}[/$])
   back: |
     Additional time required for the clock to reach the capture FF relative to the launching FF.
     - Positive skew: Clock reaches the capture FF later than the launching FF
 - type: markdown
   id: 5  # (generated)
   front: |
-    What is the arrival time [$]\text{arrival time} = t_{CQ} + t_\text{logic_max}[/$]?
+    What is the arrival time [$]\text{arrival time} = t_{CQ} + t_\text{logic\_max}[/$]?
   back: |
     Time at which D stabilizes with refrence to the launching edge.
 - type: markdown
   id: 6  # (generated)
   front: |
-    What is the required time [$]\text{required time} = T + \gamma_\text{skew} - t_\text{setup}[/$]?
+    What is the required time [$]\text{required time} = T + \delta_\text{skew} - t_\text{setup}[/$]?
 
     [[image: timing_flipflop.png]]
   back: |
