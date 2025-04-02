@@ -3,6 +3,7 @@ author: Hugo Melder
 id: 270524652305925
 cards:
 - type: markdown
+  id: 0  # (generated)
   front: |
     What is technology mapping?
   back: |
@@ -10,16 +11,19 @@ cards:
     optimization by *matching pieces of the network* with the **logic cells**
     available.
 - type: markdown
+  id: 1  # (generated)
   front: |
     What does the algorithm attempt while performing technology mapping?
   back: |
     Minimize area, while meeting user constraints.
 - type: markdown
+  id: 2  # (generated)
   front: |
     What is the output of technology mapping?
   back: |
     **Network** of **technology cells**
 - type: markdown
+  id: 3  # (generated)
   front: |
     What is the three step procedure for technology mapping?
   back: |
@@ -27,16 +31,19 @@ cards:
     2. Partitioning
     3. Matching and Covering
 - type: markdown
+  id: 4  # (generated)
   front: |
     What is done in step one when performing technology mapping?
   back: |
     Decomposition. **Boolean function** is restructured into **subject graph**.
 - type: markdown
+  id: 5  # (generated)
   front: |
     What is done in step two when performing technology mapping?
   back: |
     **Partitioning**. Partitions the big network into sub-networks.
 - type: markdown
+  id: 6  # (generated)
   front: |
     What is done in step three when performing technology mapping?
   back: |
@@ -44,33 +51,39 @@ cards:
     - Use patterns to cover the subject graph
 # Decomposition
 - type: markdown
+  id: 7  # (generated)
   front: |
     What is the most common choice for primitives when decomposing a network?
   back: |
     `NAND2`and `INV`
 - type: markdown
+  id: 8  # (generated)
   front: |
     True or False. The library cells must be decomposed in logic decomposition.
   back: |
     True.
 # Parititoning
 - type: markdown
+  id: 9  # (generated)
   front: |
     How is the subject network reduced in the partitioning step.
   back: |
     Reduced to many *multi-input*, *single-output* networks.
 - type: markdown
+  id: 10  # (generated)
   front: |
     Why is the subject network partitioned?
   back: |
     Reduces the size of covering problem.
 - type: markdown
+  id: 11  # (generated)
   front: |
     What are implications of the partitioning of the subject network?
   back: |
     - Might reduce problem difficulty
     - Hurts the quality of the final solution
 - type: markdown
+  id: 12  # (generated)
   front: |
     Describe the partitioning algorithm.
   back: |
@@ -78,17 +91,20 @@ cards:
     - Edges whose tails are marked as vertices define the partition boundary
 # Pattern Matching and Covering
 - type: markdown
+  id: 13  # (generated)
   front: |
     What are the two main types of pattern matching?
   back: |
     - Structural matching
     - Boolean matching
 - type: markdown
+  id: 14  # (generated)
   front: |
     How does the structural matching algorithm work?
   back: |
     Identifies if a pattern tree is isomorphic to a subgraph of the subject tree recursively
 - type: markdown
+  id: 15  # (generated)
   front: |
     What are problems with structural matching?
   back: |
@@ -98,16 +114,19 @@ cards:
     - Imperfect matchings: Different structure, same function not identified.
 # Boolean Matching
 - type: markdown
+  id: 16  # (generated)
   front: |
     Explain the concept behind boolean matching.
   back: |
     - Relies on matching the pattern to the subject network logically
     - **Decomposition independent**
 - type: cloze
+  id: 17  # (generated)
   front: |
     Patterns that match {{c1::structurally}} will always match with boolean
     matching, but not necessarly the other way.
 - type: markdown
+  id: 18  # (generated)
   front: |
     How does boolean matching work?
   back: |
@@ -117,6 +136,7 @@ cards:
 
     **Functional equivalence**.
 - type: markdown
+  id: 19  # (generated)
   front: |
     How can Equivalence of functions be grouped into categories?
   back: |
@@ -124,63 +144,75 @@ cards:
     - PN-equivalent
     - P-equivalent
 - type: markdown
+  id: 20  # (generated)
   front: |
     What is NPN equivalence?
   back: |
     Equivalent under input negation, input permutation and output negation.
 - type: markdown
+  id: 21  # (generated)
   front: |
     What is PN equivalence?
   back: |
     Equivalent under input permutation and output negation.
 - type: markdown
+  id: 22  # (generated)
   front: |
     What is P equivalence?
   back: |
     Equivalent under input permutation.
 # Boolean Signatures
 - type: markdown
+  id: 23  # (generated)
   front: |
     What are **boolean signatures**?
   back: |
-   Signature of a Boolean function is a compact representation that
-   characterizes some of the properties of Boolean functions.
+    Signature of a Boolean function is a compact representation that
+    characterizes some of the properties of Boolean functions.
 - type: markdown
+  id: 24  # (generated)
   front: |
     How are **boolean signatures** used?
   back: |
     As filters to reduce computation.
 - type: markdown
+  id: 25  # (generated)
   front: |
     Examples for **boolean signatures**?
   back: |
     - Symmetries of a function
     - Number of unate/binate variables.
 - type: markdown
+  id: 26  # (generated)
   front: |
     What are **unate** variables?
   back: |
     A unate variable in a Boolean function has a consistent polarity (always
     appears as x or !x , but not both).
 - type: markdown
+  id: 27  # (generated)
   front: |
     What are **binate** variables?
   back: |
     A binate variable appears in both forms (x and !x) in the function.
 # Covering
 - type: cloze
+  id: 28  # (generated)
   front: |
     DAG covering is {{c1::NP hard}}.
 - type: cloze
+  id: 29  # (generated)
   front: |
     Tree-covering-by-tree is {{c1::in P}}.
 - type: markdown
+  id: 30  # (generated)
   front: |
     What are the two steps in tree-covering-by-tree?
   back: |
     1. *Treeifying*
     2. Dynamic Programming
 - type: markdown
+  id: 31  # (generated)
   front: |
     How does tree-covering-by-tree dynamic programming algorithm work?
   back: |
@@ -189,6 +221,7 @@ cards:
       - Locally rooted sub-tree to all library cells
       - Find best match and record
 - type: markdown
+  id: 32  # (generated)
   front: |
     What is **Polarity Assignment** in tree-covering-by-tree?
   back: |
@@ -197,6 +230,7 @@ cards:
       - Connections to or from inverters don't need to be replaced
     - Transformation applied to subject and pattern graphs.
 - type: markdown
+  id: 33  # (generated)
   front: |
     How is FPGA technology mapping achieved?
   back: |
@@ -204,6 +238,7 @@ cards:
     manageable size
     - Matching and covering done differently, as we have LUTs or MUXs.
 - type: markdown
+  id: 34  # (generated)
   front: |
     How are SOP expressions of a single-output function partitioned into groups
     that are then assigned to LUTs (n-input LUTs)?
@@ -211,9 +246,10 @@ cards:
     - If the function has a total of nvariables, the entire function can be
     implemented in ONE table
     - Else, groups of SOP terms need to be assigned to different tables
-    
+
     -> **Modified Bin Packing**
 - type: markdown
+  id: 35  # (generated)
   front: |
     How does the **Modified Bin Packing** algorithm work?
   back: |
@@ -224,14 +260,16 @@ cards:
       - Declare the table with the fewest unused variables as final and
       associate a variable with it
       - Assign this variable to the first table that can accept
-    
+
     Procedure *terminated when only one table is left*.
 - type: markdown
+  id: 36  # (generated)
   front: |
     Does the **Modified Bin Packing** algorithm always compute an optimal solution?
   back: |
     No it is a heuristic.
 - type: markdown
+  id: 37  # (generated)
   front: |
     What is Packing?
   back: |
@@ -239,9 +277,10 @@ cards:
     - Logic block packing groups several LUTs and registers into one logic block
     under constraints
 - type: markdown
+  id: 38  # (generated)
   front: |
     How does Packing work?
-  back: |
+  back: |-
     Form of clustering:
     - Dividing a netlist into several pieces, under constraints e.g.  maximum
     partition size
