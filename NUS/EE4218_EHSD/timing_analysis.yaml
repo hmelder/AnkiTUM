@@ -4,6 +4,7 @@ id: 2358623482238
 cards:
 # Questions about flipflop timing
 - type: markdown
+  id: 0  # (generated)
   front: |
     What is the Clk to output [$]Q[/$] propagation delay ([$]t_{CQ}[/$])?
 
@@ -12,6 +13,7 @@ cards:
     The time for output to change, following the launching clock edge.
     -> Propagation delay of the launching FF
 - type: markdown
+  id: 1  # (generated)
   front: |
     What is the setup time ([$]t_\text{setup}[/$])?
 
@@ -20,6 +22,7 @@ cards:
     The time for which the data (D) has to be stable before the capture clock
     edge to ensure reliable capture of data.
 - type: markdown
+  id: 2  # (generated)
   front: |
     What is the hold time ([$]t_\text{hold}[/$])?
 
@@ -28,22 +31,26 @@ cards:
     The time for which the data (D) has to be stable after the capture clock
     edge to *ensure reliable capture of data*.
 - type: markdown
+  id: 3  # (generated)
   front: |
     What happens if there is a change in D during aperture time `Aperature time = setup time + hold time`?
   back: |
     FF might go into metastability.
 - type: markdown
+  id: 4  # (generated)
   front: |
     What is clock skew ([$]\gamma_\text{skew}[/$])
   back: |
     Additional time required for the clock to reach the capture FF relative to the launching FF.
     - Positive skew: Clock reaches the capture FF later than the launching FF
 - type: markdown
+  id: 5  # (generated)
   front: |
     What is the arrival time [$]\text{arrival time} = t_{CQ} + t_\text{logic_max}[/$]?
   back: |
     Time at which D stabilizes with refrence to the launching edge.
 - type: markdown
+  id: 6  # (generated)
   front: |
     What is the required time [$]\text{required time} = T + \gamma_\text{skew} - t_\text{setup}[/$]?
 
@@ -51,38 +58,47 @@ cards:
   back: |
     Latest time the data needs to stabilize for reliable capture with reference to the launching edge.
 - type: markdown
+  id: 7  # (generated)
   front: |
     How is setup slack computed?
   back: |
     Difference between the required time and the arrival time.
 - type: markdown
+  id: 8  # (generated)
   front: |
     Why should the data not arrive too fast?
   back: |
     The arrival should be *after* the hold time of the capture FF has passed (arrival time > required time).
 - type: cloze
+  id: 9  # (generated)
   front: |
     Positive clock skews are good for {{c1::fixing setup violations}}
 - type: cloze
+  id: 10  # (generated)
   front: |
     Negative clock skew can guard against {{c1::hold violation}}, but can cause {{c1:setup violation}}
 - type: cloze
+  id: 11  # (generated)
   front: |
     A circuit with setup violation can work at a {{c1::lower frequency}}.
 - type: cloze
+  id: 12  # (generated)
   front: |
     A circuit with hold violation will {{c1::not work at all}}.
 - type: markdown
+  id: 13  # (generated)
   front: |
     How are constraints provided for the synthesis tool?
   back: |
     `.xdc` or `.sdc` file
 - type: markdown
+  id: 14  # (generated)
   front: |
     What is the `create_clock` function?
   back: |
     Tells the tool the clock frequency we are targeting
 - type: markdown
+  id: 15  # (generated)
   front: |
     Explain the following command:
 
@@ -95,6 +111,7 @@ cards:
     - 50% duty cycle: 0 is the low time, and 5 the high time.
     - clock signal is expected to come from `clk` port
 - type: markdown
+  id: 16  # (generated)
   front: |
     Explain the following command:
 
@@ -106,6 +123,7 @@ cards:
     - `-through [get_pins mux1/I0]`: Applies the constraint to signals passing through pin I0 of instance mux1.
     - `-through [get_pins mux2/I0]`: Further extends the false path to signals that also pass through pin I0 of instance mux2.
 - type: markdown
+  id: 17  # (generated)
   front: |
     What does `set_multicycle_path` do?
   back: |
@@ -113,9 +131,10 @@ cards:
 
     [[image: constraints_multi_cycle.png]]
 - type: markdown
+  id: 18  # (generated)
   front: |
     What does `set_input_delay` and `set_output_delay` do?
-  back: |
+  back: |-
     Used to set combinational delays for inputs and outputs
 
     [[image: constraints_delay.png]]
