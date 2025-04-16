@@ -1,0 +1,45 @@
+title: Language Processing
+author: Hugo Melder
+id: 283138910342
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    What does the following diagram visualise?
+
+    [[image: diagram_processor_x86.png]]
+  back: |
+    x86 processor
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    What does the following diagram visualise?
+
+    [[image: diagram_program_x86.png]]
+  back: |
+    **Program** "Command & Conquer" written in x86.
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    What does the following diagram visualise?
+
+    [[image: diagram_translator.png]]
+  back: |
+    Translator translating Basic to C written in x86 machine code.
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    What does the following diagram visualise?
+
+    [[image: diagram_translator_running.png]]
+  back: |
+    Translate the "Command & Conquer" basic program to a C program with the
+    translator running on a x86 processor.
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    What does the following diagram visualise?
+
+    [[image: diagram_interpreter.png]]
+  back: |-
+    Interpreter

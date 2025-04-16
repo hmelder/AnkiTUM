@@ -1,0 +1,197 @@
+title: Programming Language Implementation in a Nutshell
+author: Hugo Melder
+id: 283241348932
+cards:
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    What is the idea of **small-step** semantics?
+  back: |
+    An expression is evaluated by contracting subexpressions, until no further
+    contraction is possible.
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    What is the goal of evaluating an expression?
+  back: |
+    To reach a *value*.
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    How did we define [$]\gg_S0[/$]?
+  back: |
+    Contraction relation for small-step semantics
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    What does the contraction relation for small-step semantics do?
+  back: |
+    Directly captures the application of primitive operators to values.
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    How is the following operation in small-step semantics called?
+    [[image: contraction_op1.png]]
+  back: |
+    Contraction
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    How is the following operation in small-step semantics called?
+    [[image: one_step.png]]
+  back: |
+    One-step evaluation.
+
+# Static Semantics for Source §0
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    How is type safety implemented in compilers?
+  back: |
+    The compiler checks that all type annotations are correct.
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    Describe the diagram
+    [[image: type_annotated_small_step.png]]
+  back: |
+    - Expression in small-step semantics
+    - With type annotation
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    What problems are guaranteed to not occur at runtime?
+  back: |
+    1. Stuck in the process of evaluation
+    2. Type changes as evaluation proceeds (**type preservation**)
+- type: markdown
+  id: 9  # (generated)
+  front: |
+    What is a disadvantage of small-step semantics?
+  back: |
+    - Infinitely many rules
+    - Execution may get stuck
+    - Cannot be extended easily to other languag paradigms
+
+# Denotational Semantics
+
+- type: markdown
+  id: 10  # (generated)
+  front: |
+    What is the idea of denotational semantics?
+  back: |
+    Directly assign a mathematical value as a meaning to an expression.
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    What advantage does denotational semantics have over small-step semantics?
+  back: |
+    - Using mathematical concepts avoids "infinite" rules
+    - Avoids clumsy construction of evaluation as the transitive closure of one-step evaluation
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    How did we define denotational semantics?
+  back: |
+    - a description of the syntax of the language in question,
+    - a collection of semantic domains with associated algebraic operations and
+    properties, and
+    - a collection of semantic functions which together describe the meaning of
+    programs.
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    How did we define the **Bool** semantic domain?
+  back: |
+    Boolean semiring
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    How did we define the **Int** semantic domain?
+  back: |
+    Ring of integers
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    How did we define the **EV** semantic domain?
+  back: |
+    Expressible values (Bool + Int semantic domain)
+- type: markdown
+  id: 16  # (generated)
+  front: |
+    What is [$]\cdot \rightarrowtail \cdot : \mathbf{S0} \to \mathbf{EV}[/$]?
+  back: |
+    The **semantic function**.
+
+# A virtual machine for Source $0
+- type: markdown
+  id: 17  # (generated)
+  front: |
+    What is [$]\twoheadrightarrow : \text{Source §0} \to \text{S0VML}[/$]?
+  back: |
+    Function which translates Source $0 to S0VML.
+- type: cloze
+  id: 18  # (generated)
+  front: |
+    The machine used to execute S0VML programs is a variation of a {{c1:push-down automaton}}
+- type: cloze
+  id: 19  # (generated)
+  front: |
+    In the case of S0VML, we need {{c1:two}} registers, called {{c1:operand}} stack, and {{c1:program counter}}.
+- type: markdown
+  id: 20  # (generated)
+  front: |
+    Explain the following translation function to S0VML
+
+    [[image: addition_s0vml.png]]
+  back: |
+    - Pushes instruction and arguments in reverse order onto the stack.
+    - Recursive evaluation of arguments.
+
+- type: markdown
+  id: 21  # (generated)
+  front: |
+    Explain the following transition function for S0VML
+
+    [[image: addition_s0vml_execution.png]]
+  back: |
+    1. Arguments one and two are on the operand stack
+    2. Values are popped and addition is performed
+    3. Result is stored on the stack
+    4. PC is incremented
+- type: markdown
+  id: 22  # (generated)
+  front: |
+    Compile the following program into S0VML instructions
+    `(1 + 2) * 3`
+  back: |
+    `[LDCI 1, LDCI 2, PLUS, LDCI 3, TIMES, DONE]`
+- type: markdown
+  id: 23  # (generated)
+  front: |
+    Compile the following program into S0VML instructions
+    `1 + (2 * 3)`
+  back: |
+    `[LDCI 1, LDCI 2, LDCI 3, TIMES, PLUS, DONE]`
+
+# Structural Operational Semantics
+- type: markdown
+  id: 24  # (generated)
+  front: |
+    What are structural operational semantics (SOS)?
+  back: |
+    Small-step semantics that operate on the given program instead of using
+    machine instructions and a program counter.
+- type: markdown
+  id: 25  # (generated)
+  front: |
+    How did we define the SOS transition function?
+  back: |
+    Operates on a pair: (**operand stack**, and **control**).
+- type: markdown
+  id: 26  # (generated)
+  front: |
+    What does the sequence describe?
+    [[image: sos_sequence_of_states.png]]
+  back: |-
+    Sequence of states in structural operational semantics
