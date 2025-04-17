@@ -1,0 +1,23 @@
+title: Concurrent Programming
+author: Hugo Melder
+id: 34289042834
+cards:
+  - type: markdown
+    front: |
+      How is interleaving implemented in the Source VM?
+    back: |
+      - time-slicing
+      - context-switching
+  - type: markdown
+    front: |
+      How does the `BTS` instruction work in x86?
+    back: |
+      - Syntax: BTS destination, bit-position
+      - write (set) 1 to destination
+      - return its old value (0 or 1) in carry flag
+      - guaranteed atomicity
+  - type: markdown
+    front: |
+      What are memory fences?
+    back: |
+      Instructions that prevent reordering of other instructions

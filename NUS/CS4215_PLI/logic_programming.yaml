@@ -1,0 +1,41 @@
+title: Logic Programming
+author: Hugo Melder
+id: 471037237429
+cards:
+  - type: markdown
+    front: |
+      What is a rule in logic programming?
+    back: |
+      Define relationships between facts. They state: **IF** the `body` is true,
+      **THEN** the `conclusion` is true.
+  - type: markdown
+    front: |
+      What is the general form of a rule?
+    back: |
+      `rule(conclusion, body)`
+  - type: markdown
+    front: |
+      What does the following rule state?
+
+      `rule(lives_near(X,Y), and(address(X, address(Y, not(same(X,Y))))))`
+    back: |
+      If person X has an address and person Y also has an address *and* they
+      aren't the same person, then X lives near Y.
+  - type: markdown
+    front: |
+      How to query the rule 
+      `rule(lives_near(X,Y), and(address(X, address(Y, not(same(X,Y))))))`
+      with input `list ( " Bitdiddle " , " Ben " )`
+    back: |
+      `lives_ near ( $x , list ( " Bitdiddle " , " Ben " ))`
+  - type: markdown
+    front: |
+      How does rule application work?
+    back: |
+      - Unify the query with the conclusion of the rule to form, if successful, an extension of the original
+  - type: markdown
+    front: |
+      What are the principles of Warren's Abstract Machine?
+    back: |
+      - Efficient unification and backtracking with specialised instructions
+      - Specific memory layout and management scheme
