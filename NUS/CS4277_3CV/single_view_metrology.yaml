@@ -195,6 +195,7 @@ cards:
   back: |-
     [$$]\omega^\* = w^{-1} = KK^T[/$$]
 - type: markdown
+  id: 27  # (generated)
   front: |
     How can K be identified, once the IAC is known?
   back: |-

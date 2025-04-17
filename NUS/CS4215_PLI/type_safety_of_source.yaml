@@ -2,32 +2,37 @@ title: Typing and Type Safety
 author: Hugo Melder
 id: 23472374734
 cards:
-  - type: markdown
-    front: |
-      Given a function that takes two numbers and returns a bool, give the
-      type annotation used in source.
-    back: |
-      `number * number > bool`
-  - type: markdown
-    front: |
-      What does Γ represent in typed source?
-    back: |
-      It represents a type environment, and is a partial function from names to
-      types.
-  - type: markdown
-    front: |
-      What is a type relation [$]\Gamma [x \leftarrow t ][/$]?
-    back: |
-      Constructs a type environment that specifies the type of x is t.
-  - type: markdown
-    front: |
-      What are free names?
-    back: |
-      Names that are not bound by an expression or statement.
-  - type: markdown
-    front: |
-      A programming language with a given typing relation and one
-      step-evaluation is type-safe if both conditions hold...
-    back: |
-      - Preservation
-      - Progress
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    Given a function that takes two numbers and returns a bool, give the
+    type annotation used in source.
+  back: |
+    `number * number > bool`
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    What does Γ represent in typed source?
+  back: |
+    It represents a type environment, and is a partial function from names to
+    types.
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    What is a type relation [$]\Gamma [x \leftarrow t ][/$]?
+  back: |
+    Constructs a type environment that specifies the type of x is t.
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    What are free names?
+  back: |
+    Names that are not bound by an expression or statement.
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    A programming language with a given typing relation and one
+    step-evaluation is type-safe if both conditions hold...
+  back: |
+    - Preservation
+    - Progress

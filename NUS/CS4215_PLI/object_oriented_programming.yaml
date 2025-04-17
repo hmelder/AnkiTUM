@@ -2,99 +2,115 @@ title: Object-Oriented Programming
 author: Hugo Melder
 id: 3463923467234
 cards:
-  - type: markdown
-    front: |
-      What is Aggregation?
-    back: |
-      - Objects can contain other objects as their parts
-      - Represents "has-a" relationships between objects
-      - Enables composition of complex objects from simpler ones
-  - type: markdown
-    front: |
-      What is Classification?
-    back: |
-      - Groups objects with similar properties and behaviours
-      - Defines a template for creating instances
-      - Encapsulates state and operations related to a concept
-  - type: markdown
-    front: |
-      What is Specialization?
-    back: |
-      - Creates a more specific variants of a general concept
-      - Represents "is-a" relationships between objects
-      - Allows code reuse while adding or modifying behaviour
-  - type: markdown
-    front: |
-      What are the fundamental components of JavaScript's Object System?
-    back: |
-      - Basic objects (hash tables)
-      - Prototype chaining mechanism
-      - "this" binding for method context
-      - Syntactic sugar (new, class syntax)
-  - type: markdown
-    front: |
-      How are the OOP goals *Aggregation, Classification, Specialisation, and
-      Late Binding* achieved in JS?
-    back: |
-      - Aggregation: Object contain properties
-      - Classification: Constructors create similar objects
-      - Specialisation: Prototype Chain
-      - Late binding: Lookups via prototype chain
-  - type: markdown
-    front: |
-      How to formally denote that "S is a subtype of T"?
-    back: |
-      `S <: T`
-  - type: markdown
-    front: |
-      How is the subtyping rule for object types defined?
-    back: |
-      On methods and their function types.
-  - type: markdown
-    front: |
-      How is the subtyping rule for object types also called?
-    back: |
-      **Width** Subtyping
-  - type: markdown
-    front: |
-      How is the subtyping rule for method types also called?
-    back: |
-      **Depth Subtyping**
-  - type: cloze
-    front: Parameter types are {{c1::contravariant}}, they can be more general in subtypes
-  - type: cloze
-    front: Return types are {{c1::covariant}}, they can be more specific in subtypes
-  - type: markdown
-    front: |
-      What is the subtyping relationship, when:
-      - Car has all methods of Vehicle (Width Subtyping)
-      - Method types are compatible (Depth Subtyping)
-    back: |
-      `Car <: Vehicle`
-  - type: markdown
-    front: |
-      What is the Liskov Substitution Principle?
-    back: |
-      If S is a subtype of T, then objects of type T in a program may be
-      replaced with objects of type S ithout altering any of the ddisrable
-      properties of that program.
-  - type: markdown
-    front: |
-      What is Nominal Typing?
-    back: |
-      - Subtyping based on declared inheritance
-      - Types are compatible if explicitly declared in class hierachy
-      - `class B extends A {}`
-  - type: markdown
-    front: |
-      What is Structural Typing?
-    back: |
-      - Subtyping based on structure (shape) of objects
-      - Types are compatible if they have compatible members
-  - type: markdown
-    front: |
-      What is the array covariance problem?
-    back: |
-      - Arrays are both *readable* and *writable*
-      - Covariance is safe for reading but unsafe for writing
-      - Contravariance is safe for writing but unsafe for reading
+- type: markdown
+  id: 0  # (generated)
+  front: |
+    What is Aggregation?
+  back: |
+    - Objects can contain other objects as their parts
+    - Represents "has-a" relationships between objects
+    - Enables composition of complex objects from simpler ones
+- type: markdown
+  id: 1  # (generated)
+  front: |
+    What is Classification?
+  back: |
+    - Groups objects with similar properties and behaviours
+    - Defines a template for creating instances
+    - Encapsulates state and operations related to a concept
+- type: markdown
+  id: 2  # (generated)
+  front: |
+    What is Specialization?
+  back: |
+    - Creates a more specific variants of a general concept
+    - Represents "is-a" relationships between objects
+    - Allows code reuse while adding or modifying behaviour
+- type: markdown
+  id: 3  # (generated)
+  front: |
+    What are the fundamental components of JavaScript's Object System?
+  back: |
+    - Basic objects (hash tables)
+    - Prototype chaining mechanism
+    - "this" binding for method context
+    - Syntactic sugar (new, class syntax)
+- type: markdown
+  id: 4  # (generated)
+  front: |
+    How are the OOP goals *Aggregation, Classification, Specialisation, and
+    Late Binding* achieved in JS?
+  back: |
+    - Aggregation: Object contain properties
+    - Classification: Constructors create similar objects
+    - Specialisation: Prototype Chain
+    - Late binding: Lookups via prototype chain
+- type: markdown
+  id: 5  # (generated)
+  front: |
+    How to formally denote that "S is a subtype of T"?
+  back: |
+    `S <: T`
+- type: markdown
+  id: 6  # (generated)
+  front: |
+    How is the subtyping rule for object types defined?
+  back: |
+    On methods and their function types.
+- type: markdown
+  id: 7  # (generated)
+  front: |
+    How is the subtyping rule for object types also called?
+  back: |
+    **Width** Subtyping
+- type: markdown
+  id: 8  # (generated)
+  front: |
+    How is the subtyping rule for method types also called?
+  back: |
+    **Depth Subtyping**
+- type: cloze
+  id: 9  # (generated)
+  front: Parameter types are {{c1::contravariant}}, they can be more general in subtypes
+- type: cloze
+  id: 10  # (generated)
+  front: Return types are {{c1::covariant}}, they can be more specific in subtypes
+- type: markdown
+  id: 11  # (generated)
+  front: |
+    What is the subtyping relationship, when:
+    - Car has all methods of Vehicle (Width Subtyping)
+    - Method types are compatible (Depth Subtyping)
+  back: |
+    `Car <: Vehicle`
+- type: markdown
+  id: 12  # (generated)
+  front: |
+    What is the Liskov Substitution Principle?
+  back: |
+    If S is a subtype of T, then objects of type T in a program may be
+    replaced with objects of type S ithout altering any of the ddisrable
+    properties of that program.
+- type: markdown
+  id: 13  # (generated)
+  front: |
+    What is Nominal Typing?
+  back: |
+    - Subtyping based on declared inheritance
+    - Types are compatible if explicitly declared in class hierachy
+    - `class B extends A {}`
+- type: markdown
+  id: 14  # (generated)
+  front: |
+    What is Structural Typing?
+  back: |
+    - Subtyping based on structure (shape) of objects
+    - Types are compatible if they have compatible members
+- type: markdown
+  id: 15  # (generated)
+  front: |
+    What is the array covariance problem?
+  back: |
+    - Arrays are both *readable* and *writable*
+    - Covariance is safe for reading but unsafe for writing
+    - Contravariance is safe for writing but unsafe for reading
